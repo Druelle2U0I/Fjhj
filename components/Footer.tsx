@@ -1,114 +1,137 @@
-import Image from "next/image";
 import Link from "next/link";
-import Visual from "@/components/Visual";
+import FooterCta from "@/components/FooterCta";
 import { company, footerImage, legal, services } from "@/lib/data";
 
-export default function Footer() {
+/**
+ * Le logo est utilisé comme masque : la photo du pied de page apparaît
+ * à travers la forme du logo. Sans photo, un dégradé de marque la remplace.
+ */
+function CutoutLogo() {
+  const mask = {
+    WebkitMaskImage: "url(/brand/logo-icon.png)",
+    maskImage: "url(/brand/logo-icon.png)",
+    WebkitMaskSize: "contain",
+    maskSize: "contain",
+    WebkitMaskRepeat: "no-repeat",
+    maskRepeat: "no-repeat",
+    WebkitMaskPosition: "center",
+    maskPosition: "center",
+  } as React.CSSProperties;
+
   return (
-    <footer className="relative overflow-hidden border-t border-border">
-      <div className="absolute inset-0">
-        <Visual src={footerImage} alt="" sizes="100vw" />
-        <div className="absolute inset-0 bg-background/65" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/45 to-background/90" />
-      </div>
+    <div
+      aria-hidden="true"
+      className="mx-auto aspect-square w-40 bg-cover bg-center lg:w-48"
+      style={{
+        ...mask,
+        backgroundImage: footerImage
+          ? `url(${footerImage})`
+          : "linear-gradient(135deg, var(--accent), var(--surface-2))",
+      }}
+    />
+  );
+}
 
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <Image
-          src="/brand/logo-wordmark.png"
-          alt=""
-          width={1200}
-          height={497}
-          className="w-[70%] max-w-3xl opacity-10"
-        />
-      </div>
+function Column({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <p className="text-xs font-semibold uppercase tracking-[0.15em] text-foreground">
+        {title}
+      </p>
+      <ul className="mt-4 space-y-2.5">{children}</ul>
+    </div>
+  );
+}
 
-      <div className="relative px-6 py-16">
+export default function Footer() {
+  const mainSectors = services.slice(0, 4);
+
+  return (
+    <>
+      <FooterCta />
+
+      <footer className="border-t border-border bg-surface px-6 py-16">
         <div className="mx-auto max-w-6xl text-sm text-muted">
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <p className="text-base font-semibold text-foreground">
-                {company.name}
-              </p>
-              <p className="mt-3">{company.address}</p>
-              <p className="mt-1">{company.serviceArea}</p>
-              <p className="mt-3">
-                <a
-                  href={`mailto:${company.email}`}
-                  className="hover:text-accent"
-                >
-                  {company.email}
-                </a>
-              </p>
-              <p>
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto_1fr_1fr] lg:items-start lg:gap-12">
+            <Column title="Formations">
+              {mainSectors.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/formations/${service.slug}`}
+                    className="hover:text-accent"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/formations" className="hover:text-accent">
+                  Toutes les formations
+                </Link>
+              </li>
+            </Column>
+
+            <Column title="L'organisme">
+              <li>
+                <Link href="/financement" className="hover:text-accent">
+                  Qualiopi &amp; financement
+                </Link>
+              </li>
+              <li>
+                <Link href="/equipe" className="hover:text-accent">
+                  Notre équipe
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-accent">
+                  Contact
+                </Link>
+              </li>
+            </Column>
+
+            <div className="order-first sm:col-span-2 lg:order-none lg:col-span-1 lg:px-6">
+              <CutoutLogo />
+            </div>
+
+            <Column title="Nous joindre">
+              <li>{company.address}</li>
+              <li>
                 <a
                   href={`tel:${company.phone.replace(/\s/g, "")}`}
                   className="hover:text-accent"
                 >
                   {company.phone}
                 </a>
-              </p>
-            </div>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${company.email}`}
+                  className="hover:text-accent"
+                >
+                  {company.email}
+                </a>
+              </li>
+            </Column>
 
-            <div>
-              <p className="font-semibold text-foreground">Nos formations</p>
-              <ul className="mt-3 space-y-2">
-                {services.map((service) => (
-                  <li key={service.slug}>
-                    <Link
-                      href={`/formations/${service.slug}`}
-                      className="hover:text-accent"
-                    >
-                      {service.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <p className="font-semibold text-foreground">L&apos;organisme</p>
-              <ul className="mt-3 space-y-2">
-                <li>
-                  <Link href="/formations" className="hover:text-accent">
-                    Toutes les formations
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/financement" className="hover:text-accent">
-                    Qualiopi &amp; financement
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/equipe" className="hover:text-accent">
-                    Notre équipe
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-accent">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="font-semibold text-foreground">
-                Zone d&apos;intervention
-              </p>
-              <p className="mt-3">
-                Intra-entreprise et inter-entreprises partout dans les
-                Hauts-de-France.
-              </p>
-            </div>
+            <Column title="Zone d'intervention">
+              <li>{company.serviceArea}</li>
+              <li>Intra-entreprise et inter-entreprises</li>
+            </Column>
           </div>
 
-          <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
+          <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-xs sm:flex-row">
             <p>
               &copy; {new Date().getFullYear()} {company.name}. Tous droits
               réservés.
             </p>
             {(legal.activityDeclaration || legal.qualiopiCertificate) && (
-              <p className="text-xs">
+              <p>
                 {legal.activityDeclaration &&
                   `Déclaration d'activité n° ${legal.activityDeclaration}`}
                 {legal.activityDeclaration && legal.qualiopiCertificate && " · "}
@@ -118,7 +141,7 @@ export default function Footer() {
             )}
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }

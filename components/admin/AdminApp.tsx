@@ -222,14 +222,81 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   Pied de page
                 </p>
                 <ImageField
-                  label="Photo de fond du pied de page"
+                  label="Photo du pied de page"
                   value={content.footerImage}
                   onChange={(v) => update({ ...content, footerImage: v })}
                 />
                 <p className="text-xs text-muted">
-                  Le logo apparaît en transparence par-dessus. Sans photo, un
-                  dégradé aux couleurs de la marque est utilisé.
+                  Cette photo sert de fond au bandeau et apparaît à travers la
+                  découpe du logo. Sans photo, un dégradé de marque est utilisé.
                 </p>
+              </Card>
+
+              <Card className="grid gap-4">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                    Bandeau de demande de catalogue
+                  </p>
+                  <label className="flex items-center gap-2 text-xs">
+                    <input
+                      type="checkbox"
+                      checked={content.footerCta.enabled}
+                      onChange={(e) =>
+                        update({
+                          ...content,
+                          footerCta: {
+                            ...content.footerCta,
+                            enabled: e.target.checked,
+                          },
+                        })
+                      }
+                      className="h-4 w-4 accent-[color:var(--accent)]"
+                    />
+                    Afficher
+                  </label>
+                </div>
+                <Field
+                  label="Sur-titre"
+                  value={content.footerCta.eyebrow}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      footerCta: { ...content.footerCta, eyebrow: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Titre"
+                  rows={2}
+                  value={content.footerCta.title}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      footerCta: { ...content.footerCta, title: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Texte"
+                  rows={3}
+                  value={content.footerCta.text}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      footerCta: { ...content.footerCta, text: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Texte du bouton"
+                  value={content.footerCta.buttonLabel}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      footerCta: { ...content.footerCta, buttonLabel: v },
+                    })
+                  }
+                />
               </Card>
 
               <Card className="grid gap-4">

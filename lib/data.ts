@@ -102,6 +102,13 @@ export type SiteContent = {
   };
   theme: Theme;
   footerImage?: string;
+  footerCta: {
+    enabled: boolean;
+    eyebrow: string;
+    title: string;
+    text: string;
+    buttonLabel: string;
+  };
 };
 
 const content = site as SiteContent;
@@ -117,6 +124,7 @@ export const team = content.team;
 export const home = content.home;
 export const theme = content.theme;
 export const footerImage = content.footerImage;
+export const footerCta = content.footerCta;
 
 /** Variables CSS dérivées du thème, appliquées sur <html>. */
 export function themeStyle(t: Theme): Record<string, string> {

@@ -1435,5 +1435,12 @@
     "accent": "#fff9c7",
     "accentForeground": "#0b032b",
     "headingFont": "archivo"
+  },
+  "footerCta": {
+    "enabled": true,
+    "eyebrow": "Recevez notre catalogue",
+    "title": "Le catalogue complet de nos 35 formations",
+    "text": "Laissez votre adresse e-mail : nous vous envoyons le catalogue et nous restons disponibles pour construire un parcours adapté à vos équipes.",
+    "buttonLabel": "Recevoir"
   }
 }
