@@ -35,17 +35,24 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-lg font-semibold tracking-tight"
+          className="flex items-center gap-3"
+          aria-label={company.name}
         >
+          <span className="flex flex-col leading-none font-display">
+            <span className="text-xl font-bold tracking-tight sm:text-2xl">
+              ENMA
+            </span>
+            <span className="mt-0.5 text-[0.6rem] font-semibold tracking-[0.25em] text-muted sm:text-xs">
+              FORMATION
+            </span>
+          </span>
           <Image
             src="/brand/logo-icon.png"
-            alt="Logo ENMA Formation"
-            width={36}
-            height={36}
-            className="rounded-md"
+            alt=""
+            width={40}
+            height={40}
             priority
           />
-          {company.name}
         </Link>
         <nav className="hidden gap-8 text-sm font-medium text-muted md:flex">
           {links.map((link) => {
