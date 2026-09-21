@@ -49,47 +49,100 @@ export const services = [
   {
     title: "Sécurité incendie & évacuation",
     description:
-      "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation : premier témoin, équipier d'évacuation, équipier de première intervention.",
+      "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation.",
+    trainings: [
+      { title: "Exercice d'évacuation", duration: "1 demi-journée", format: "Intra ou inter-entreprises" },
+      { title: "Premier témoin incendie", duration: "1 à 2 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Équipier d'évacuation", duration: "1 à 2 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Équipier de première intervention", duration: "2 demi-journées", format: "Intra-entreprise" },
+    ],
   },
   {
     title: "Secours & premiers soins",
     description:
-      "ENMA Formation forme vos équipes aux gestes de premiers secours : SST, gestes qui sauvent, PSC1.",
+      "ENMA Formation forme vos équipes aux gestes de premiers secours.",
+    trainings: [
+      { title: "Gestes qui sauvent (GQS)", duration: "1 demi-journée", format: "Intra ou inter-entreprises" },
+      { title: "Maintien et actualisation des compétences SST", duration: "2 demi-journées", format: "Intra-entreprise" },
+      { title: "PSC 1 — Prévention et secours civiques niveau 1", duration: "2 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Sauveteur secouriste du travail (SST)", duration: "4 demi-journées", format: "Intra ou inter-entreprises" },
+    ],
   },
   {
     title: "Habilitation électrique",
     description:
-      "ENMA Formation prépare vos salariés électriciens et non électriciens à l'habilitation, basse et haute tension (NF C 18-510).",
+      "ENMA Formation prépare vos salariés électriciens et non électriciens à l'habilitation.",
+    trainings: [
+      { title: "Habilitation électrique — basse tension (NF C 18-510)", duration: "4 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Habilitation électrique — haute tension (NF C 18-510)", duration: "4 à 6 demi-journées", format: "Intra ou inter-entreprises" },
+    ],
   },
   {
     title: "CACES & habilitations",
     description:
-      "ENMA Formation forme vos conducteurs d'engins et de chariots à la conduite : CACES R482, R485, R486, R489, R490, ponts roulants.",
+      "ENMA Formation forme vos conducteurs d'engins et de chariots à la conduite.",
+    trainings: [
+      { title: "AIPR — intervention à proximité des réseaux", duration: "2 demi-journées", format: "Intra-entreprise" },
+      { title: "CACES R489 — conduite de chariots élévateurs", duration: "2 à 6 demi-journées", format: "Intra-entreprise" },
+      { title: "Engins de chantier (R482)", duration: "4 à 10 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Gerbeur à conducteur accompagnant (R485)", duration: "2 à 4 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Grue de chargement (R490)", duration: "6 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "PEMP — nacelle élévatrice (R486)", duration: "2 à 6 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Pont roulant (R484)", duration: "2 à 4 demi-journées", format: "Intra ou inter-entreprises" },
+    ],
   },
   {
     title: "Travail en hauteur & échafaudages",
     description:
-      "ENMA Formation forme vos équipes au travail en hauteur, au port du harnais et au montage d'échafaudages (R408, R457).",
+      "ENMA Formation forme vos équipes au travail en hauteur, au port du harnais et au montage d'échafaudages.",
+    trainings: [
+      { title: "Montage, démontage et utilisation des échafaudages de pied (R408)", duration: "4 à 6 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Montage, démontage et utilisation des échafaudages roulants et fixes (R457)", duration: "2 à 4 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Travail en hauteur et port du harnais", duration: "2 à 4 demi-journées", format: "Intra ou inter-entreprises" },
+      { title: "Vérification des échafaudages", duration: "2 à 4 demi-journées", format: "Intra ou inter-entreprises" },
+    ],
   },
   {
     title: "Prévention des risques professionnels",
     description:
-      "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels : gestes et postures, gestion du stress, santé mentale.",
+      "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels.",
+    trainings: [
+      { title: "Gestes et postures", duration: "1 à 2 demi-journées", format: "Intra-entreprise" },
+      { title: "Gestion du stress", duration: "2 à 4 demi-journées", format: "Intra-entreprise" },
+      { title: "Premiers secours en santé mentale (PSSM)", duration: "4 demi-journées", format: "Intra-entreprise" },
+      { title: "Prévention de l'absentéisme", duration: "2 à 4 demi-journées", format: "Intra-entreprise" },
+      { title: "Sécurité des salariés des entreprises extérieures — Niveau 1", duration: "2 demi-journées", format: "Intra-entreprise" },
+    ],
   },
   {
     title: "Management & qualité",
     description:
-      "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles : gestion des conflits, sécurité au quotidien.",
+      "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles.",
+    trainings: [
+      { title: "Faire face à l'agressivité et à l'incivilité", duration: "Durée à définir", format: "Intra-entreprise" },
+      { title: "Gestion des conflits", duration: "4 demi-journées", format: "Intra-entreprise" },
+      { title: "Les bases de la sécurité au quotidien", duration: "2 demi-journées", format: "Intra-entreprise" },
+    ],
   },
   {
     title: "Photovoltaïque",
     description:
-      "ENMA Formation forme les professionnels du solaire aux compétences techniques du photovoltaïque : bureau d'études, chiffrage, contrôle.",
+      "ENMA Formation forme les professionnels du solaire aux compétences techniques du photovoltaïque.",
+    trainings: [
+      { title: "Bureau d'études technique photovoltaïque", duration: "10 demi-journées", format: "Intra-entreprise" },
+      { title: "Chiffrage et dimensionnement", duration: "4 demi-journées", format: "Intra-entreprise" },
+      { title: "Contrôle par électroluminescence", duration: "Nous consulter", format: "Intra-entreprise" },
+    ],
   },
   {
     title: "Collectivités et élus",
     description:
       "ENMA Formation accompagne les élus et les agents de la fonction publique territoriale dans leurs missions.",
+    trainings: [
+      { title: "Fonctions de l'élu", duration: "2 demi-journées", format: "Intra-entreprise" },
+      { title: "Gestes et postures de l'élu", duration: "1 à 2 demi-journées", format: "Intra-entreprise" },
+      { title: "Maîtriser la création d'un dossier de candidature à un appel d'offres public", duration: "Durée à définir", format: "Intra-entreprise" },
+    ],
   },
 ];
 
