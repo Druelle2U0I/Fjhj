@@ -55,6 +55,7 @@ export type SiteContent = {
   funding: { intro: string; points: { title: string; text: string }[] };
   accessibility: { text: string; referent: string };
   team: { name: string; role: string; email: string; bio: string }[];
+  footerImage?: string;
 };
 
 const content = site as SiteContent;
@@ -67,6 +68,7 @@ export const topTrainings = content.topTrainings;
 export const funding = content.funding;
 export const accessibility = content.accessibility;
 export const team = content.team;
+export const footerImage = content.footerImage;
 
 export const services = content.sectors.map((sector) => ({
   ...sector,

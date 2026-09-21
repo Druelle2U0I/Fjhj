@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { SiteContent } from "@/lib/data";
 import SectorsEditor from "./SectorsEditor";
-import { Card, Field, ListEditor } from "./ui";
+import { Card, Field, ImageField, ListEditor } from "./ui";
 
 const SECTIONS = [
   { id: "entreprise", label: "Entreprise & contact" },
@@ -213,6 +213,21 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                     }
                   />
                 </div>
+              </Card>
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Pied de page
+                </p>
+                <ImageField
+                  label="Photo de fond du pied de page"
+                  value={content.footerImage}
+                  onChange={(v) => update({ ...content, footerImage: v })}
+                />
+                <p className="text-xs text-muted">
+                  Le logo apparaît en transparence par-dessus. Sans photo, un
+                  dégradé aux couleurs de la marque est utilisé.
+                </p>
               </Card>
 
               <Card className="grid gap-4">
