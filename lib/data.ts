@@ -14,9 +14,9 @@ export const company = {
     "Formations sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention des risques, management, qualité : ENMA Formation couvre l'ensemble de vos besoins en formation professionnelle. Certifié Qualiopi, financement OPCO pris en charge.",
   about:
     "Organisme de formation certifié Qualiopi, implanté dans les Hauts-de-France. Formations en intra-entreprise et en inter-entreprises, partout en Aisne et dans la Somme.",
-  email: "maxence@enma-formation.fr",
-  phone: "07 50 93 14 90",
-  address: "18 rue des Verriers, 59200 Tourcoing",
+  email: "maxence@enma-formation.com",
+  phone: "07 69 35 55 19",
+  address: "24 rue Colmar, 62410 Wingles",
   serviceArea: "Hauts-de-France — intervention en Aisne et dans la Somme",
 };
 
@@ -58,6 +58,11 @@ type TrainingRaw = {
   title: string;
   duration: string;
   format: string;
+  intro: string;
+  prerequisites: string;
+  certification: string;
+  effectif?: string;
+  programme: { title: string; text: string }[];
   image?: string;
   imageAlt?: string;
   description: string[];
@@ -68,6 +73,7 @@ type TrainingRaw = {
 type SectorRaw = {
   title: string;
   description: string;
+  why: { title: string; text: string };
   image?: string;
   imageAlt?: string;
   trainings: TrainingRaw[];
@@ -76,12 +82,33 @@ type SectorRaw = {
 const servicesRaw: SectorRaw[] = [
   {
     title: "Sécurité incendie & évacuation",
-    description: "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation.",
+    description: "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation — équipier de première intervention, guide et serre-file, exercice d'évacuation — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises et les établissements recevant du public dans le respect de leurs obligations réglementaires de prévention incendie et la construction d'une véritable culture de sécurité au sein de leurs équipes.",
+    why: {
+      title: "Une obligation réglementaire, un réflexe à installer",
+      text: "L'article R4227-39 du Code du travail impose un exercice d'évacuation tous les six mois. Au-delà du texte, c'est la répétition qui fait la différence : nos formations placent vos équipes en situation, avec le matériel que vous utilisez au quotidien.",
+    },
     trainings: [
       {
         title: "Exercice d'évacuation",
         duration: "1 demi-journée",
         format: "Intra ou inter-entreprises",
+        intro: "Alarme déclenchée, chronomètre en main : vérifier que votre plan d'évacuation tient debout en conditions réelles.",
+        prerequisites: "Aucun",
+        certification: "Compte-rendu détaillé | Notification au registre de sécurité",
+        programme: [
+          {
+            title: "Préparation de l'exercice",
+            text: "Objectif : être capable d'organiser un exercice d'évacuation représentatif des conditions réelles. Analyse du plan d'évacuation existant, définition du scénario d'exercice avec l'encadrement, information préalable ou exercice inopiné selon les objectifs poursuivis, mise en place des observateurs et des outils de chronométrage.",
+          },
+          {
+            title: "Déclenchement et déroulement",
+            text: "Objectif : être capable d'observer et d'évaluer le comportement des occupants et des équipiers en situation d'évacuation. Déclenchement de l'alarme incendie, observation du temps de réaction et du cheminement emprunté, respect des consignes et du rôle de chacun (guides, serre-files), gestion du point de rassemblement et du comptage des effectifs.",
+          },
+          {
+            title: "Débriefing et compte-rendu",
+            text: "Objectif : être capable d'analyser les résultats de l'exercice et de formuler des préconisations d'amélioration. Restitution à chaud avec les participants, analyse du temps d'évacuation et des écarts observés, identification des points faibles (signalétique, comportement, organisation), remise d'un compte-rendu écrit avec plan d'actions correctives.",
+          },
+        ],
         description: ["Former des équipiers d'évacuation ne suffit pas : encore faut-il vérifier que l'organisation fonctionne réellement, en conditions proches du réel. L'article R4227-39 du Code du travail impose des exercices d'évacuation périodiques afin de familiariser l'ensemble du personnel avec les issues de secours et les procédures d'alerte. Ces exercices permettent de révéler les points faibles d'un plan d'évacuation (issue mal signalée, point de rassemblement inadapté, temps d'évacuation trop long) avant qu'ils ne deviennent critiques lors d'un sinistre réel.", "ENMA Formation organise pour votre établissement un exercice d'évacuation grandeur nature, avec déclenchement de l'alarme, observation du comportement des occupants et des équipiers, chronométrage du temps d'évacuation et vérification du point de rassemblement. L'exercice se conclut par un débriefing détaillé et un compte-rendu écrit formulant des axes d'amélioration concrets pour votre organisation."],
         audience: "Cet exercice s'adresse à l'ensemble des occupants d'un site : salariés, encadrement, équipiers d'évacuation et, le cas échéant, public accueilli dans l'établissement. Il ne nécessite aucun prérequis et constitue le complément indispensable des formations théoriques dispensées aux équipiers d'évacuation et équipiers de première intervention. La fréquence recommandée est d'au moins un exercice par an, davantage dans les établissements recevant du public ou présentant un effectif important ou une forte rotation de personnel.",
         funding: "L'exercice d'évacuation, en tant qu'action de formation pratique liée à une obligation réglementaire, est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit l'ensemble des pièces justificatives nécessaires à votre dossier de financement : convention de formation, programme détaillé et compte-rendu d'exercice. Cette prestation peut être couplée avec les formations EPI/ESI et équipier d'évacuation pour une prise en charge globale de votre dispositif de sécurité incendie.",
@@ -90,6 +117,23 @@ const servicesRaw: SectorRaw[] = [
         title: "Premier témoin incendie",
         duration: "1 à 2 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Alerter vite et bien : le réflexe qui empêche un départ de feu de devenir un sinistre.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences | Notification au registre de sécurité",
+        programme: [
+          {
+            title: "Réagir face à un départ de feu",
+            text: "Objectif : être capable d'identifier un début d'incendie et d'adopter immédiatement le bon comportement. Les signes avant-coureurs d'un départ de feu (fumée, odeur, chaleur), les réflexes prioritaires : donner l'alerte, protéger, ne pas s'exposer inutilement, la différence entre intervenir et évacuer selon l'ampleur du sinistre.",
+          },
+          {
+            title: "Consignes de sécurité incendie",
+            text: "Objectif : être capable d'appliquer les consignes de sécurité incendie propres à son établissement. Lecture des consignes affichées et des plans d'évacuation, procédure d'alerte interne et externe (numéros d'urgence, informations à transmettre), rôle de chacun selon l'organisation du site, connaissance des points de rassemblement.",
+          },
+          {
+            title: "Sensibilisation aux moyens de secours",
+            text: "Objectif : être capable d'utiliser un extincteur de façon élémentaire en toute sécurité si la situation le permet. Présentation des différents types d'extincteurs et de leur usage, principes de base de l'extinction, limites de l'intervention du témoin non équipier, mise en pratique simplifiée sur un moyen de première intervention.",
+          },
+        ],
         description: ["Tout salarié, quel que soit son poste, peut un jour se trouver face à un début d'incendie. Contrairement à l'équipier de première intervention, le premier témoin n'a pas vocation à combattre systématiquement le feu : sa mission première est de donner l'alerte rapidement et correctement, de mettre en sécurité les personnes à proximité, et de ne s'engager dans une extinction que si les conditions le permettent en toute sécurité. Cette sensibilisation, bien que non détaillée nommément dans le Code du travail, répond à l'obligation générale de prévention de l'employeur (article L4121-1) qui doit informer l'ensemble de son personnel sur la conduite à tenir en cas de sinistre.", "À l'issue de cette sensibilisation, chaque participant est capable de reconnaître les signes d'un départ de feu, de déclencher l'alarme selon la procédure du site, de donner l'alerte aux secours extérieurs en transmettant les informations essentielles, et d'utiliser un extincteur de façon élémentaire si la situation le permet, sans se mettre en danger."],
         audience: "Cette sensibilisation s'adresse à l'ensemble des salariés d'une entreprise, sans distinction de poste ni de fonction, et ne nécessite aucun prérequis. Elle se distingue de la formation d'équipier de première intervention par un contenu plus général, centré sur les réflexes d'alerte et de mise en sécurité plutôt que sur la maîtrise technique de l'extinction. Elle constitue un socle minimal recommandé pour tout nouvel arrivant dans le cadre de son accueil sécurité, en complément de la formation des équipiers désignés.",
         funding: "Cette sensibilisation entre dans le champ des actions de formation à la sécurité et peut, à ce titre, être prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre demande de financement. Elle est fréquemment organisée en même temps que l'accueil sécurité des nouveaux embauchés ou dans le cadre d'une campagne annuelle de sensibilisation à la sécurité incendie pour l'ensemble du personnel.",
@@ -98,6 +142,23 @@ const servicesRaw: SectorRaw[] = [
         title: "Équipier d'évacuation",
         duration: "1 à 2 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Guide-file, serre-file, point de rassemblement : organiser une évacuation qui ne laisse personne derrière.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences | Notification au registre de sécurité",
+        programme: [
+          {
+            title: "Rôle et missions de l'équipier d'évacuation",
+            text: "Objectif : être capable de définir précisément les missions du guide-file et du serre-file au sein de l'organisation de l'évacuation. Le cadre réglementaire de l'évacuation, l'organisation type d'un plan d'évacuation, les rôles complémentaires (guide-file, serre-file, chargé d'évacuation), la reconnaissance du signal d'alarme et des consignes spécifiques au site.",
+          },
+          {
+            title: "Consignes et cheminement d'évacuation",
+            text: "Objectif : être capable de guider les occupants vers les issues de secours en respectant le cheminement défini. Lecture des plans d'évacuation et des itinéraires balisés, gestion des points de rassemblement, prise en charge des personnes en situation de handicap ou à mobilité réduite, vérification de l'évacuation complète des locaux dont on a la charge.",
+          },
+          {
+            title: "Exercice pratique d'évacuation",
+            text: "Objectif : être capable de conduire une évacuation réelle dans le calme et en toute sécurité. Mise en situation d'évacuation grandeur nature, gestion du comportement des occupants et du stress, coordination avec les autres équipiers et le responsable d'évacuation, compte-rendu au point de rassemblement et retour d'expérience.",
+          },
+        ],
         description: ["L'évacuation d'un bâtiment en cas d'incendie ou d'alerte ne s'improvise pas : sans organisation claire, la panique et la désorientation des occupants augmentent considérablement les risques de blessure ou d'accident. L'article R4227-39 du Code du travail impose la mise en place de consignes de sécurité et, dans de nombreux établissements, la désignation de guides et serre-files chargés d'encadrer l'évacuation. Cette organisation est également exigée dans les établissements recevant du public (ERP) au titre du règlement de sécurité incendie.", "À l'issue de la formation, le participant est capable d'assurer les missions de guide-file ou de serre-file : reconnaître le signal d'alarme, diriger les occupants vers les issues de secours, vérifier que les locaux sont évacués, encadrer les personnes en situation de handicap et rendre compte au point de rassemblement. Une attestation individuelle est délivrée à l'issue de la session."],
         audience: "Cette formation s'adresse à tout salarié désigné pour tenir un rôle de guide ou de serre-file dans le cadre du plan d'évacuation de son établissement. Elle ne nécessite aucun prérequis particulier, si ce n'est une bonne connaissance des locaux et des circulations du site. Le nombre d'équipiers à former dépend de la configuration des locaux, du nombre d'occupants et du nombre d'issues de secours : nous vous conseillons sur le dimensionnement adapté à votre site lors de l'élaboration du devis, afin de garantir une couverture complète même en cas d'absence d'un équipier titulaire.",
         funding: "Cette formation, liée à une obligation réglementaire de sécurité incendie, est éligible à une prise en charge par votre OPCO dans le cadre du plan de développement des compétences. ENMA Formation établit un devis et un programme pédagogique détaillés pour appuyer votre demande de financement. Elle peut également être organisée en intra-entreprise pour former simultanément l'ensemble des guides et serre-files d'un même site, ce qui optimise le coût par participant et facilite la coordination du plan d'évacuation.",
@@ -106,6 +167,24 @@ const servicesRaw: SectorRaw[] = [
         title: "Équipier de première intervention",
         duration: "2 demi-journées",
         format: "Intra-entreprise",
+        intro: "Extincteur, RIA, triangle du feu : agir sur un départ de feu sans se mettre en danger.",
+        prerequisites: "Aucun",
+        certification: "Attestation de formation, recyclage conseillé tous les 2 ans",
+        effectif: "6 à 12 stagiaires",
+        programme: [
+          {
+            title: "Naissance et propagation du feu",
+            text: "Objectif : être capable d'expliquer le mécanisme de la combustion et d'anticiper le comportement du feu pour agir en sécurité. Le triangle du feu (combustible, comburant, énergie d'activation), les classes de feux (A, B, C, D, F) et leurs risques spécifiques, les modes de propagation (rayonnement, convection, conduction), les fumées et leur toxicité, les effets du feu sur les personnes et les structures.",
+          },
+          {
+            title: "Les moyens de première intervention",
+            text: "Objectif : être capable de sélectionner et d'utiliser le moyen d'extinction adapté à chaque situation. Les différents types d'extincteurs (eau, poudre, CO2) et leur agent extincteur, le principe de l'extinction par étouffement, refroidissement et inhibition, la lecture des pictogrammes et des zones d'efficacité, l'utilisation du robinet d'incendie armé (RIA), les règles de sécurité individuelle lors d'une intervention.",
+          },
+          {
+            title: "Exercices sur feux réels",
+            text: "Objectif : être capable d'intervenir efficacement et sereinement sur un départ de feu réel. Mise en situation sur bac à feu ou générateur de flammes écologique, entraînement à l'extinction avec différents types d'extincteurs, gestion du stress et respect des distances de sécurité, procédure d'alerte et de repli, débriefing individuel et collectif après chaque exercice.",
+          },
+        ],
         description: ["En cas de départ de feu, les premières minutes sont décisives : un incendie non maîtrisé peut doubler de volume toutes les 30 secondes et rendre les locaux impraticables en quelques instants. Le Code du travail (article R4227-28) impose à l'employeur de désigner et de former du personnel capable d'intervenir immédiatement avec les moyens de première intervention (extincteurs, robinets d'incendie armés) avant l'arrivée des secours extérieurs. Cette obligation s'inscrit dans une démarche globale de prévention du risque incendie qui engage la responsabilité civile et pénale du chef d'établissement.", "À l'issue de la formation, l'équipier de première intervention est capable d'identifier les causes et le comportement du feu, de donner l'alerte selon la procédure interne, de choisir et d'utiliser le moyen d'extinction adapté à la nature du feu, et de limiter la propagation en attendant les secours. Une attestation individuelle de formation est remise à chaque participant à l'issue de la session."],
         audience: "Cette formation s'adresse à tout salarié désigné par l'employeur pour intégrer une équipe de première intervention (EPI) au sein de son établissement, quel que soit le secteur d'activité. Aucun prérequis technique n'est nécessaire : la formation est accessible à tout public apte physiquement à manipuler un extincteur. Il est recommandé de former plusieurs équipiers par site et par poste afin de garantir une présence permanente en cas d'absence ou de rotation d'équipe. Conformément aux préconisations de la commission de sécurité, un recyclage est conseillé tous les 2 ans afin de maintenir les automatismes et d'actualiser les connaissances face à l'évolution des consignes internes.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, dans la mesure où elle répond à une obligation réglementaire de sécurité incendie. ENMA Formation vous accompagne dans la constitution du dossier de financement : devis détaillé, programme pédagogique et convocation nominative sont fournis pour faciliter votre demande de prise en charge auprès de votre opérateur de compétences. Le financement peut également être mobilisé dans le cadre d'un budget formation interne ou d'une convention multi-sites pour les entreprises disposant de plusieurs établissements.",
@@ -114,12 +193,37 @@ const servicesRaw: SectorRaw[] = [
   },
   {
     title: "Secours & premiers soins",
-    description: "ENMA Formation forme vos équipes aux gestes de premiers secours.",
+    description: "ENMA Formation forme vos équipes aux gestes de premiers secours — SST, PSC1, gestes qui sauvent, premiers secours en santé mentale — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises de tous secteurs dans le respect de leurs obligations réglementaires de secourisme et la diffusion d'une culture du secours au sein de leurs équipes.",
+    why: {
+      title: "Les premières minutes décident du reste",
+      text: "Le Code du travail impose la présence d'un membre du personnel formé aux premiers secours dans chaque atelier où sont effectués des travaux dangereux. Nos formations SST sont conformes au référentiel INRS et donnent lieu à un certificat national.",
+    },
     trainings: [
       {
         title: "Gestes qui sauvent (GQS)",
         duration: "1 demi-journée",
         format: "Intra ou inter-entreprises",
+        intro: "Quelques heures pour savoir quoi faire pendant les minutes qui précèdent l'arrivée des secours.",
+        prerequisites: "Aucun",
+        certification: "Attestation de participation | Grille de compétences",
+        programme: [
+          {
+            title: "Protéger et alerter",
+            text: "Objectif : être capable d'adopter les bons réflexes de protection et d'alerte face à une situation d'urgence. Identification d'un danger persistant, mise en sécurité de la victime et des témoins, transmission d'une alerte claire et structurée aux services de secours.",
+          },
+          {
+            title: "Hémorragie et étouffement",
+            text: "Objectif : être capable de réagir efficacement face à une hémorragie externe ou une obstruction des voies aériennes. Techniques d'arrêt d'une hémorragie externe par compression, gestes de désobstruction des voies aériennes chez l'adulte.",
+          },
+          {
+            title: "Arrêt cardiaque",
+            text: "Objectif : être capable de reconnaître un arrêt cardiaque et de réagir immédiatement en attendant les secours. Signes de reconnaissance de l'arrêt cardiaque, réalisation d'un massage cardiaque efficace, utilisation d'un défibrillateur automatisé externe (DAE).",
+          },
+          {
+            title: "Mise en pratique",
+            text: "Objectif : être capable de mobiliser l'ensemble des gestes appris face à des situations concrètes. Ateliers pratiques sur mannequins, cas concrets combinant alerte et gestes de secours, débriefing individuel avec le formateur.",
+          },
+        ],
         description: ["Toutes les entreprises ou tous les particuliers ne disposent pas nécessairement du temps ou du budget pour une formation complète PSC1 ou SST. Le dispositif Gestes Qui Sauvent (GQS), porté au niveau national dans le cadre du plan de développement des compétences de premiers secours, offre une alternative courte et accessible : en une demi-journée, chaque participant acquiert les réflexes essentiels pour réagir face aux urgences vitales les plus fréquentes, en attendant l'arrivée des secours ou une formation plus complète.", "À l'issue de cette sensibilisation, le participant est capable de protéger une victime, d'alerter les secours de façon adaptée, d'arrêter une hémorragie externe, de désobstruer les voies aériennes et de reconnaître un arrêt cardiaque pour réaliser un massage cardiaque et utiliser un défibrillateur automatisé externe. Cette formation constitue un premier pas efficace vers une culture du secourisme au sein de l'entreprise ou du grand public."],
         audience: "Cette sensibilisation s'adresse à tout public, sans prérequis, et convient particulièrement aux entreprises souhaitant sensibiliser rapidement un grand nombre de collaborateurs, aux collectivités organisant des campagnes de sensibilisation citoyenne, ou à toute personne désireuse d'acquérir les réflexes de base avant d'envisager, dans un second temps, une formation PSC1 ou SST plus complète et plus approfondie. Sa durée courte en fait un format particulièrement adapté aux plannings contraints des entreprises.",
         funding: "La formation Gestes Qui Sauvent est éligible à une prise en charge par votre OPCO au titre des actions de sensibilisation à la sécurité, lorsqu'elle est organisée dans un cadre professionnel. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre dossier de financement. Son format court permet d'organiser plusieurs sessions successives afin de sensibiliser l'ensemble de vos effectifs à moindre coût et sans impact majeur sur l'organisation du travail.",
@@ -128,6 +232,24 @@ const servicesRaw: SectorRaw[] = [
         title: "Maintien et actualisation des compétences SST",
         duration: "2 demi-journées",
         format: "Intra-entreprise",
+        intro: "Le recyclage obligatoire qui maintient le certificat SST de vos salariés valide.",
+        prerequisites: "Être titulaire d'un certificat SST, en cours de validité ou expiré depuis moins de 24 mois",
+        certification: "Certificat SST prolongé de 24 mois",
+        effectif: "4 à 10 stagiaires",
+        programme: [
+          {
+            title: "Retour sur les situations vécues",
+            text: "Objectif : être capable de tirer les enseignements des interventions réalisées depuis la formation initiale. Échange collectif sur les accidents ou malaises rencontrés sur le terrain, analyse des difficultés éventuelles rencontrées lors d'une intervention réelle, partage d'expérience entre participants.",
+          },
+          {
+            title: "Révision des gestes de secours",
+            text: "Objectif : être capable de réaliser à nouveau, avec aisance, l'ensemble des gestes de premiers secours du référentiel SST. Protéger, examiner, alerter, secourir : révision complète de la chaîne de secours, mise en situation sur mannequin et défibrillateur, correction individuelle des gestes.",
+          },
+          {
+            title: "Actualisation des connaissances",
+            text: "Objectif : être capable d'intégrer les évolutions du référentiel national de secourisme dans sa pratique. Présentation des évolutions du référentiel INRS depuis la dernière formation, mise à jour des recommandations de premiers secours, réponses aux questions spécifiques des participants.",
+          },
+        ],
         description: ["Les gestes de premiers secours s'oublient vite lorsqu'ils ne sont pas pratiqués régulièrement, et le référentiel de secourisme évolue périodiquement pour intégrer les dernières recommandations médicales. C'est pourquoi le certificat SST délivré par l'INRS n'est valable que 24 mois : au-delà, le sauveteur secouriste du travail doit suivre une session de Maintien et Actualisation des Compétences (MAC SST) pour conserver la validité de son certificat. Un certificat expiré sans recyclage réalisé dans les délais impose de repasser l'intégralité de la formation initiale, plus longue et plus coûteuse.", "Cette journée de recyclage permet au sauveteur secouriste du travail de réviser l'ensemble des gestes de secours, d'échanger sur les situations rencontrées depuis sa dernière formation et d'actualiser ses connaissances au regard des évolutions du référentiel INRS. À l'issue de la session, le certificat SST est prolongé pour une nouvelle durée de 24 mois."],
         audience: "Cette formation s'adresse exclusivement aux titulaires d'un certificat SST en cours de validité, à suivre impérativement avant la date d'échéance des 24 mois pour éviter toute rupture de couverture. Aucun prérequis supplémentaire n'est demandé au-delà de la détention du certificat initial. Nous recommandons d'anticiper l'inscription au recyclage plusieurs semaines avant l'échéance afin de garantir une place disponible et d'éviter que votre entreprise ne se retrouve temporairement sans sauveteur secouriste opérationnel.",
         funding: "Le MAC SST est éligible à une prise en charge par votre OPCO au même titre que la formation initiale, dans le cadre du plan de développement des compétences. ENMA Formation vous fournit devis, convention et programme pédagogique pour faciliter votre demande de financement. Pour vous simplifier la gestion de vos échéances, nous proposons un suivi personnalisé et vous alertons à l'approche de la date d'expiration des certificats de vos salariés si vous le souhaitez.",
@@ -136,6 +258,31 @@ const servicesRaw: SectorRaw[] = [
         title: "PSC 1 — Prévention et secours civiques niveau 1",
         duration: "2 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "La formation citoyenne de référence aux premiers secours, reconnue par l'État.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Protection et alerte",
+            text: "Objectif : être capable de protéger une victime et de transmettre une alerte efficace aux services de secours adaptés. Identification des dangers persistants, suppression ou isolement du danger, choix et contenu du message d'alerte selon le numéro d'urgence sollicité (15, 18, 112).",
+          },
+          {
+            title: "Obstruction des voies aériennes et hémorragies",
+            text: "Objectif : être capable de réagir efficacement face à une victime qui s'étouffe ou qui saigne abondamment. Techniques de désobstruction des voies aériennes chez l'adulte, l'enfant et le nourrisson, compression manuelle et pansement compressif face à une hémorragie externe.",
+          },
+          {
+            title: "Perte de connaissance et arrêt cardiaque",
+            text: "Objectif : être capable de mettre en sécurité une victime inconsciente et de réagir face à un arrêt cardiaque. Mise en position latérale de sécurité, reconnaissance des signes de l'arrêt cardiaque, réanimation cardio-pulmonaire et utilisation d'un défibrillateur automatisé externe (DAE).",
+          },
+          {
+            title: "Malaises et traumatismes",
+            text: "Objectif : être capable d'adopter la conduite à tenir adaptée face à un malaise ou une blessure. Conduite à tenir face à un malaise, prise en charge d'une plaie simple ou grave, conduite à tenir face à une brûlure et à un traumatisme (fracture, entorse).",
+          },
+          {
+            title: "Mise en situation et évaluation",
+            text: "Objectif : être capable de mobiliser l'ensemble des gestes appris face à des cas concrets réalistes. Ateliers pratiques sur mannequins, mises en situation de cas concrets combinant plusieurs gestes de secours, évaluation continue individuelle des compétences acquises.",
+          },
+        ],
         description: ["La majorité des accidents de la vie courante et des malaises graves surviennent en dehors du cadre professionnel, dans un contexte où aucun professionnel de santé n'est immédiatement présent. Le dispositif national PSC1 (Prévention et Secours Civiques de niveau 1), défini par le ministère de l'Intérieur et dispensé selon un référentiel national unique, vise à démocratiser l'apprentissage des gestes qui sauvent auprès du plus grand nombre. Contrairement au SST, centré sur le contexte professionnel, le PSC1 couvre l'ensemble des situations d'urgence de la vie quotidienne.", "À l'issue de la formation, le participant est capable de protéger une victime et les témoins d'un sur-accident, d'alerter les secours de manière adaptée, et de réaliser les gestes de premiers secours face à une obstruction des voies aériennes, une hémorragie, une perte de connaissance, un arrêt cardiaque, un malaise ou un traumatisme. Une attestation nationale PSC1 est délivrée à l'issue de la session, reconnue par l'ensemble des acteurs du secourisme en France."],
         audience: "Cette formation s'adresse à tout public à partir de l'adolescence, sans aucun prérequis technique ou médical. Elle est particulièrement recommandée pour les salariés en dehors du cadre strictement professionnel du SST, les représentants du personnel, les encadrants d'activités périscolaires ou associatives, ainsi qu'à toute personne souhaitant être en mesure d'agir efficacement face à une urgence dans sa vie personnelle. Elle constitue également une excellente première étape avant d'envisager, pour les salariés directement concernés, une formation SST plus orientée sur le contexte professionnel.",
         funding: "Le PSC1 est éligible à une prise en charge par votre OPCO lorsqu'il est organisé dans un cadre professionnel, au titre des actions de sensibilisation à la sécurité. ENMA Formation vous accompagne dans le montage du dossier de financement en fournissant devis, programme et justificatifs de réalisation. Cette formation peut également être financée sur fonds propres ou proposée en avantage salarié dans le cadre d'une politique de qualité de vie au travail élargie à la sécurité personnelle des collaborateurs.",
@@ -144,6 +291,28 @@ const servicesRaw: SectorRaw[] = [
         title: "Sauveteur secouriste du travail",
         duration: "4 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Le secouriste de votre entreprise : intervenir sur un accident et repérer les risques au quotidien.",
+        prerequisites: "Aucun",
+        certification: "Certificat SST INRS valable 24 mois",
+        effectif: "4 à 10 stagiaires",
+        programme: [
+          {
+            title: "Le sauvetage secourisme du travail",
+            text: "Objectif : être capable de situer le rôle du SST dans la démarche de prévention de l'entreprise. Rôle et missions du SST, cadre juridique de l'intervention, notion de prévention des risques professionnels, articulation entre secourisme et prévention (situations dangereuses).",
+          },
+          {
+            title: "Protéger",
+            text: "Objectif : être capable d'identifier et de supprimer ou isoler un danger persistant pour protéger la victime et les témoins. Repérage des dangers dans l'environnement de l'accident, suppression ou isolement du danger, dégagement d'urgence lorsque la protection n'est pas possible autrement.",
+          },
+          {
+            title: "Examiner et alerter",
+            text: "Objectif : être capable de rechercher les signes d'urgence vitale et de transmettre une alerte précise et structurée. Recherche des signes qui traduisent une urgence vitale (saignement, conscience, respiration), choix du message d'alerte, organisation de l'accès des secours sur le lieu de l'accident.",
+          },
+          {
+            title: "Secourir",
+            text: "Objectif : être capable de réaliser les gestes de premiers secours adaptés à chaque situation rencontrée. Conduite à tenir face à un saignement abondant, un étouffement, un malaise, une brûlure, un traumatisme ; position latérale de sécurité en cas de perte de connaissance ; réanimation cardio-pulmonaire et utilisation du défibrillateur automatisé externe en cas d'arrêt cardiaque.",
+          },
+        ],
         description: ["Chaque année en France, des milliers d'accidents du travail surviennent alors qu'aucun témoin formé n'est présent pour intervenir dans les premières minutes, celles où le pronostic vital se joue souvent. Le Code du travail (article R4224-15) impose à l'employeur de disposer d'un nombre suffisant de travailleurs formés pour donner les premiers secours en cas d'accident, particulièrement dans les établissements présentant des risques particuliers. La formation Sauveteur Secouriste du Travail (SST), conçue et contrôlée par l'INRS, permet de répondre à cette obligation tout en dotant le salarié d'une double compétence : porter secours et contribuer à la prévention des risques professionnels de son entreprise.", "À l'issue de la formation, le sauveteur secouriste du travail est capable de protéger une victime et les témoins d'un sur-accident, d'examiner la victime pour rechercher les signes d'urgence vitale, d'alerter ou de faire alerter les secours de manière structurée, et de réaliser les gestes de secours adaptés face à un saignement, un étouffement, une brûlure, un traumatisme ou un arrêt cardiaque. Le certificat SST délivré par l'INRS est valable 24 mois et doit être maintenu à jour par un recyclage MAC SST."],
         audience: "Cette formation s'adresse à tout salarié désigné par son employeur pour intégrer le dispositif de secours interne à l'entreprise, sans prérequis particulier si ce n'est une aptitude physique compatible avec la réalisation des gestes de premiers secours (notamment le massage cardiaque). Elle est particulièrement recommandée dans les ateliers, ERP et chantiers où le risque d'accident est élevé, mais reste utile dans tout environnement de travail. La formation est accessible aux personnes en situation de handicap : contactez notre référent handicap pour étudier ensemble les adaptations pédagogiques et matérielles nécessaires avant la session.",
         funding: "La formation SST est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, la prise en charge étant fréquemment intégrale pour les entreprises de moins de 50 salariés. ENMA Formation vous fournit l'ensemble des pièces nécessaires à votre dossier : convention de formation, programme conforme au référentiel INRS et convocations nominatives. Nous assurons également le suivi des échéances de recyclage MAC SST de vos salariés afin que votre effectif de sauveteurs secouristes reste opérationnel en continu.",
@@ -152,12 +321,41 @@ const servicesRaw: SectorRaw[] = [
   },
   {
     title: "Habilitation électrique",
-    description: "ENMA Formation prépare vos salariés électriciens et non électriciens à l'habilitation.",
+    description: "ENMA Formation prépare vos salariés électriciens et non électriciens à l'habilitation électrique selon la norme NF C 18-510, en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises de l'industrie, du bâtiment et de la maintenance pour répondre à leurs obligations réglementaires en matière de sécurité électrique et délivrer un avis d'habilitation fiable à l'employeur.",
+    why: {
+      title: "L'habilitation protège le salarié comme l'employeur",
+      text: "La norme NF C 18-510 conditionne toute intervention à proximité d'une installation électrique à une habilitation délivrée par l'employeur, elle-même adossée à une formation. Nos sessions distinguent le personnel électricien du personnel non électricien, et se terminent par un avis motivé transmis à l'employeur.",
+    },
     trainings: [
       {
         title: "Habilitation électrique — basse tension (NF C 18-510)",
         duration: "4 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "L'habilitation qui autorise vos salariés à intervenir en basse tension en toute légalité.",
+        prerequisites: "Connaissances en électricité adaptées aux opérations confiées",
+        certification: "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+        programme: [
+          {
+            title: "Risques électriques et niveaux d'habilitation",
+            text: "Objectif : être capable d'identifier les risques électriques et les mesures de prévention associées à son niveau d'habilitation. Cette séquence aborde les effets du courant électrique sur le corps humain (électrisation, électrocution, brûlures), les zones et niveaux de tension (TBT, BT, HT), ainsi que les niveaux d'habilitation et leurs symboles conformes à la norme NF C 18-510.",
+          },
+          {
+            title: "Travaux hors tension et au voisinage (B2V)",
+            text: "Objectif : être capable de réaliser, en sécurité, des travaux hors tension et au voisinage d'installations basse tension. Mise en œuvre de la procédure de consignation en 4 étapes, respect des distances de voisinage et des zones d'environnement, port des équipements de protection individuelle et collective adaptés.",
+          },
+          {
+            title: "Interventions générales basse tension (BR)",
+            text: "Objectif : être capable de réaliser, en sécurité, des interventions générales basse tension (dépannage, raccordement, remplacement). Apprentissage de la procédure d'intervention, rédaction du rapport d'intervention, utilisation du matériel de mesure et de vérification (VAT).",
+          },
+          {
+            title: "Consignation basse tension pour autrui (BC)",
+            text: "Objectif : être capable de réaliser, en sécurité, une consignation basse tension pour le compte d'autrui. Apprentissage des 4 étapes de la consignation, du rôle et des responsabilités du chargé de consignation, et de la communication avec le chargé de travaux.",
+          },
+          {
+            title: "Mise en situation et évaluation",
+            text: "Consolidation de l'ensemble des procédures B2V, BR et BC par des mises en situation pratiques encadrées sur plateau technique, suivies d'une évaluation théorique (QCM de 15 questions) et d'une évaluation pratique. Les résultats sont transmis à l'employeur, seul habilité à délivrer le titre.",
+          },
+        ],
         description: ["L'habilitation électrique n'est pas une option administrative : sans titre valide, toute intervention sur une installation électrique sous tension est interdite par la loi, et engage la responsabilité de l'employeur comme celle du salarié en cas d'accident. Chaque année, l'électrisation reste l'une des causes majeures d'accidents graves et mortels au travail.\n\nCette formation prépare vos électriciens à l'habilitation basse tension B2V-BR-BC, conforme à la norme NF C 18-510, pour intervenir en sécurité sur les installations basse tension de votre entreprise. Elle couvre trois niveaux complémentaires : B2V pour les travaux hors tension et au voisinage, BR pour les interventions générales (dépannage, raccordement, remplacement), et BC pour la consignation. La formation alterne apports théoriques en salle et mises en situation pratiques sur plateau technique basse tension, dans des conditions proches du réel."],
         audience: "Cette formation s'adresse au personnel électricien amené à réaliser des travaux ou interventions sur des installations basse tension : électriciens de maintenance, techniciens, agents de travaux. Aucun diplôme n'est exigé, mais une aptitude médicale au poste de travail délivrée par le médecin du travail est nécessaire avant toute habilitation. Elle concerne aussi bien les primo-habilités que les électriciens confirmés en renouvellement — la norme NF C 18-510 ne fixe pas de durée de validité réglementaire, mais recommande un recyclage tous les 3 ans, périodicité que la plupart des employeurs retiennent.",
         funding: "Formation finançable par votre OPCO au titre du plan de développement des compétences. Nous vous remettons l'ensemble des documents nécessaires au montage du dossier : convention de formation, devis détaillé et programme pédagogique. Un point essentiel à connaître : le titre d'habilitation électrique n'est jamais délivré par l'organisme de formation, mais par l'employeur, sur la base des résultats aux évaluations théorique (QCM) et pratique que nous lui transmettons à l'issue de la session.",
@@ -166,6 +364,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Habilitation électrique — haute tension (NF C 18-510)",
         duration: "4 à 6 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Intervenir en haute tension avec le niveau d'habilitation exigé par la NF C 18-510.",
+        prerequisites: "Expérience des travaux électriques et connaissances techniques en haute tension",
+        certification: "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+        programme: [
+          {
+            title: "Risques électriques et niveaux d'habilitation HT",
+            text: "Objectif : être capable d'identifier les risques électriques spécifiques à la haute tension et les mesures de prévention associées à son niveau d'habilitation. Effets du courant électrique sur le corps humain, spécificités de la haute tension, distances de voisinage renforcé, symboles et limites de l'habilitation H2V-HC.",
+          },
+          {
+            title: "Travaux hors tension et au voisinage renforcé (H2V)",
+            text: "Objectif : être capable de réaliser, en sécurité, des travaux hors tension et au voisinage renforcé d'installations haute tension. Procédure de consignation en haute tension, distances de voisinage renforcé, équipements de protection individuelle et collective adaptés à la HT.",
+          },
+          {
+            title: "Consignation haute tension (HC)",
+            text: "Objectif : être capable de réaliser, en sécurité, une consignation haute tension pour le compte d'autrui. Étapes de la consignation HT, rôle et responsabilités du chargé de consignation, communication avec le chargé de travaux.",
+          },
+          {
+            title: "Mise en situation et évaluation",
+            text: "Mises en situation pratiques encadrées sur plateau technique haute tension, débriefing, puis évaluation théorique (QCM) et pratique. Les résultats sont transmis à l'employeur pour délivrance du titre.",
+          },
+        ],
         description: ["La haute tension ne pardonne pas l'improvisation : sans habilitation valide, toute intervention sur ces installations est interdite par la loi, et les conséquences d'un accident en haute tension sont presque toujours graves, voire mortelles. L'employeur comme le salarié engagent leur responsabilité en cas d'intervention non habilitée.\n\nCette formation prépare le personnel électricien confirmé à l'habilitation haute tension H2V-HC, conforme à la norme NF C 18-510. Elle couvre les travaux hors tension et au voisinage renforcé (H2V) ainsi que la consignation haute tension (HC). La haute tension impose des distances de sécurité plus strictes et une maîtrise technique plus poussée que la basse tension : la formation combine apports théoriques et mises en situation pratiques sur plateau technique haute tension."],
         audience: "Personnel électricien confirmé amené à réaliser des travaux ou des consignations sur des installations haute tension : techniciens et électriciens expérimentés, généralement déjà habilités en basse tension. Une aptitude médicale au poste de travail est requise. Cette habilitation demande une maîtrise technique plus poussée que la basse tension : une expérience préalable sur des installations électriques est fortement recommandée avant d'aborder ce niveau.",
         funding: "Formation finançable par votre OPCO au titre du plan de développement des compétences. Comme pour la basse tension, le titre d'habilitation haute tension est délivré par l'employeur, jamais par l'organisme de formation, sur la base des résultats aux évaluations théorique et pratique que nous lui transmettons. Convention, devis et programme détaillé vous sont remis pour constituer votre dossier.",
@@ -174,7 +393,11 @@ const servicesRaw: SectorRaw[] = [
   },
   {
     title: "CACES & habilitations",
-    description: "ENMA Formation forme vos conducteurs d'engins et de chariots à la conduite.",
+    description: "ENMA Formation forme vos conducteurs d'engins et de chariots à la conduite en sécurité — CACES R482, R485, R486, R489, R490, pont roulant R484, AIPR — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises du BTP, de la logistique et de l'industrie pour répondre à leurs obligations réglementaires de conduite d'engins et sécuriser durablement leurs chantiers et entrepôts.",
+    why: {
+      title: "L'autorisation de conduite engage l'employeur",
+      text: "L'article R4323-55 du Code du travail subordonne la conduite des équipements mobiles à une formation adéquate. Le CACES n'est pas obligatoire en soi, mais c'est le dispositif qui atteste le mieux de cette formation devant l'inspection du travail comme devant l'assurance. Nos tests se déroulent sur plateforme, avec les catégories d'engins de votre parc.",
+    },
     image: "/images/entrepot-caces.jpg",
     imageAlt: "Cariste conduisant un chariot élévateur en entrepôt lors d'une formation CACES",
     trainings: [
@@ -182,6 +405,28 @@ const servicesRaw: SectorRaw[] = [
         title: "AIPR, intervention à proximité des réseaux",
         duration: "2 demi-journées",
         format: "Intra-entreprise",
+        intro: "Travailler près des réseaux enterrés sans provoquer l'accident qui coûte le plus cher.",
+        prerequisites: "Aucun",
+        certification: "Attestation AIPR valable 5 ans",
+        effectif: "4 à 12 stagiaires",
+        programme: [
+          {
+            title: "La réforme anti-endommagement",
+            text: "Objectif : être capable de situer les démarches administratives obligatoires avant tout chantier à proximité de réseaux. Déclaration de projet de travaux (DT), déclaration d'intention de commencement de travaux (DICT), fonctionnement du guichet unique.",
+          },
+          {
+            title: "Repérer les réseaux",
+            text: "Objectif : être capable d'identifier la nature et la localisation d'un réseau à partir des informations disponibles sur le chantier. Codes couleur normalisés, techniques de marquage et de piquetage, lecture des plans de récolement, classes de précision des réseaux.",
+          },
+          {
+            title: "Travailler à proximité",
+            text: "Objectif : être capable d'adapter sa pratique de travail aux distances et techniques de sécurité requises à proximité d'un réseau. Distances de sécurité réglementaires selon la nature du réseau, techniques de terrassement douces, conduite à tenir en cas d'endommagement avéré ou de doute sur la localisation.",
+          },
+          {
+            title: "Examen AIPR",
+            text: "Objectif : être capable de réussir l'examen national correspondant à son profil d'intervention. Présentation du questionnaire par profil (opérateur, encadrant ou concepteur), conditions de passage sur plateforme agréée, modalités de délivrance de l'attestation.",
+          },
+        ],
         image: "/images/reseaux-chantier.jpg",
         imageAlt: "Chantier de voirie avec câbles et signalisation, intervention à proximité des réseaux enterrés",
         description: ["Chaque année, des centaines d'accidents et d'interruptions de service résultent de travaux réalisés à proximité de réseaux enterrés ou aériens mal identifiés (gaz, électricité, télécommunications, eau). La réforme anti-endommagement des réseaux (décret DT-DICT) impose depuis 2018 que tout intervenant sur un chantier à proximité de réseaux soit titulaire d'une Autorisation d'Intervention à Proximité des Réseaux (AIPR), délivrée après réussite à un examen national sur plateforme agréée. Cette obligation concerne aussi bien les opérateurs de travaux que l'encadrement et les concepteurs de projets.", "À l'issue de la préparation, le participant est capable de comprendre les démarches administratives de la réforme anti-endommagement, de lire un plan de réseaux et d'en interpréter le marquage-piquetage, d'appliquer les distances et techniques de sécurité adaptées à proximité d'un réseau, et de réagir correctement en cas d'endommagement ou de doute sur la localisation d'un réseau. La formation prépare spécifiquement à l'examen AIPR correspondant au profil du participant (opérateur, encadrant ou concepteur)."],
@@ -192,6 +437,28 @@ const servicesRaw: SectorRaw[] = [
         title: "CACES R489, conduite de chariots élévateurs",
         duration: "2 à 6 demi-journées",
         format: "Intra-entreprise",
+        intro: "Conduire un chariot élévateur en sécurité, avec le certificat reconnu par vos donneurs d'ordre.",
+        prerequisites: "Aptitude médicale à la conduite, 18 ans minimum",
+        certification: "CACES R489 valable 5 ans",
+        effectif: "4 à 8 stagiaires",
+        programme: [
+          {
+            title: "Le cadre réglementaire",
+            text: "Objectif : être capable de situer les responsabilités du conducteur et de l'employeur dans le cadre de la conduite de chariots élévateurs. Recommandation R489 de la CNAM, autorisation de conduite délivrée par l'employeur, responsabilités civiles et pénales du conducteur.",
+          },
+          {
+            title: "Technologie du chariot",
+            text: "Objectif : être capable d'identifier les organes de sécurité du chariot et de réaliser les vérifications réglementaires avant prise de poste. Catégories d'engins de la recommandation R489, organes de sécurité, lecture de la plaque de charge, vérifications journalières.",
+          },
+          {
+            title: "Conduite en sécurité",
+            text: "Objectif : être capable de conduire un chariot élévateur en respectant les règles de circulation et de stabilité. Règles de circulation en entrepôt ou sur chantier, opérations de gerbage et dégerbage, chargement d'un véhicule, maintien de la stabilité de la charge en toutes circonstances.",
+          },
+          {
+            title: "Tests CACES",
+            text: "Objectif : être capable de démontrer la maîtrise théorique et pratique requise pour chaque catégorie visée. Évaluation théorique sous forme de QCM, évaluation pratique sur plateforme technique, par catégorie de chariot visée.",
+          },
+        ],
         image: "/images/chariot-elevateur.jpg",
         imageAlt: "Fourches d'un chariot élévateur, formation CACES R489",
         description: ["La conduite d'un chariot élévateur est une opération à risque : chute de charge, renversement de l'engin, collision avec un piéton figurent parmi les accidents du travail les plus graves recensés en entrepôt et sur chantier. L'article R4323-55 du Code du travail impose que tout conducteur de chariot automoteur à conducteur porté soit titulaire d'une autorisation de conduite délivrée par son employeur, elle-même fondée sur une évaluation des connaissances et savoir-faire conforme à la recommandation R489 de la CNAM. Cette formation constitue le socle indispensable à la délivrance de cette autorisation.", "À l'issue de la formation, le conducteur est capable d'appliquer les règles de circulation propres à son site, de vérifier son chariot avant la prise de poste, de manœuvrer en sécurité en charge comme à vide, et de réaliser les opérations de gerbage, dégerbage et chargement de véhicule dans le respect de la plaque de charge. La durée de la formation varie selon l'expérience du conducteur et le nombre de catégories visées : une journée suffit généralement pour un recyclage, jusqu'à trois jours pour une première qualification portant sur plusieurs catégories."],
@@ -202,6 +469,31 @@ const servicesRaw: SectorRaw[] = [
         title: "Engins de chantier (R482)",
         duration: "4 à 10 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Pelles, chargeuses, tombereaux : la conduite d'engins de chantier certifiée par catégorie.",
+        prerequisites: "Aptitude médicale à la conduite, 18 ans minimum",
+        certification: "Attestation de fin de formation | Grille de compétences | Dossier d'autorisation de conduite",
+        programme: [
+          {
+            title: "Cadre réglementaire et catégories d'engins",
+            text: "Objectif : être capable de situer les responsabilités du conducteur selon la catégorie d'engin utilisée. Autorisation de conduite, recommandation R482 et ses catégories d'engins de chantier (de A à G), obligations de l'employeur et du conducteur.",
+          },
+          {
+            title: "Technologie et vérifications avant service",
+            text: "Objectif : être capable de réaliser les vérifications réglementaires avant la prise de poste. Organes de service et de sécurité de l'engin, vérifications de prise et de fin de poste, équipements de protection individuelle requis.",
+          },
+          {
+            title: "Circulation et conduite en sécurité",
+            text: "Objectif : être capable de circuler et de manœuvrer sur chantier en identifiant les zones à risque. Règles de circulation sur chantier, repérage des zones de danger et des réseaux, stabilité de l'engin.",
+          },
+          {
+            title: "Opérations et manœuvres",
+            text: "Objectif : être capable de réaliser les manœuvres propres à son engin dans le respect des règles de sécurité. Prise de poste, manœuvres adaptées à l'usage de l'engin (terrassement, chargement, nivellement selon la catégorie), conduite à tenir en situation dégradée.",
+          },
+          {
+            title: "Mise en situation et évaluation",
+            text: "Objectif : être capable de démontrer la maîtrise théorique et pratique requise pour la catégorie visée. Parcours d'évaluation pratique, tests théoriques (QCM) et pratiques CACES®.",
+          },
+        ],
         image: "/images/engins-chantier-champ.jpg",
         imageAlt: "Pelleteuse et bulldozers sur un chantier, formation engins de chantier R482",
         description: ["Un engin de chantier mal maîtrisé figure parmi les premières causes d'accident grave sur les chantiers du BTP : renversement, ensevelissement, collision avec un piéton ou un réseau enterré. L'article R4323-55 du Code du travail impose que tout conducteur d'engin de chantier soit titulaire d'une autorisation de conduite délivrée par l'employeur, fondée sur une évaluation conforme à la recommandation R482 de la CNAM, qui couvre sept catégories d'engins (A à G) selon leur usage.", "Cette formation théorique et pratique alterne plateau technique et conditions réelles de chantier. À l'issue de la session, le conducteur est capable de vérifier son engin avant utilisation, de circuler en sécurité sur le chantier en tenant compte des zones de danger et des réseaux enterrés, et de réaliser les manœuvres propres à son engin (terrassement, chargement, nivellement) dans le respect des règles de stabilité."],
@@ -212,6 +504,31 @@ const servicesRaw: SectorRaw[] = [
         title: "Gerbeur à conducteur accompagnant (R485)",
         duration: "2 à 4 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "La certification adaptée aux gerbeurs accompagnants, souvent oubliée des plans de formation.",
+        prerequisites: "Aptitude médicale à la conduite, 18 ans minimum",
+        certification: "Attestation de fin de formation | Grille de compétences | Dossier d'autorisation de conduite",
+        programme: [
+          {
+            title: "Cadre réglementaire et catégories de gerbeurs",
+            text: "Objectif : être capable de situer les responsabilités du conducteur et de l'employeur selon la catégorie de gerbeur utilisée. Autorisation de conduite, recommandation R485 : catégorie 1 (hauteur de levée ≤ 2,50 m) et catégorie 2 (> 2,50 m), obligations de l'employeur et du conducteur.",
+          },
+          {
+            title: "Technologie et vérifications avant service",
+            text: "Objectif : être capable de réaliser les vérifications réglementaires avant la prise de poste. Organes de commande, dispositifs de sécurité, vérifications de prise et de fin de poste, équipements de protection individuelle requis.",
+          },
+          {
+            title: "Circulation et prise de charge",
+            text: "Objectif : être capable de circuler en sécurité en entrepôt tout en maintenant la stabilité du gerbeur et de la charge. Règles de circulation en entrepôt, stabilité du gerbeur et de la charge, gerbage et dégerbage en sécurité.",
+          },
+          {
+            title: "Manutention en sécurité",
+            text: "Objectif : être capable de réaliser les opérations de manutention courantes en toute sécurité. Prise, déplacement et dépose de charges, gestion des allées et zones de circulation partagées avec les piétons.",
+          },
+          {
+            title: "Mise en situation et évaluation",
+            text: "Objectif : être capable de démontrer la maîtrise théorique et pratique requise pour la délivrance de l'autorisation. Parcours d'évaluation pratique, tests théoriques (QCM) et pratiques CACES®.",
+          },
+        ],
         description: ["En entrepôt, la manutention avec un gerbeur mal maîtrisé expose à des risques réels de chute de charge et d'écrasement du conducteur ou des piétons évoluant à proximité. L'article R4323-55 du Code du travail impose que tout conducteur d'équipement de travail mobile automoteur, y compris les gerbeurs à conducteur accompagnant, soit titulaire d'une autorisation de conduite délivrée par l'employeur sur la base d'une évaluation conforme à la recommandation R485 de la CNAM.", "Cette formation combine apports théoriques et pratique de manutention en sécurité. À l'issue de la session, le conducteur est capable de choisir la catégorie de gerbeur adaptée à son usage, de réaliser les vérifications de prise de poste, de circuler en sécurité en entrepôt et de réaliser les opérations de gerbage et de dégerbage dans le respect de la stabilité de la charge et de l'engin."],
         audience: "Cette formation s'adresse à tout salarié amené à utiliser un gerbeur à conducteur accompagnant dans le cadre de ses fonctions en entrepôt ou en zone de stockage. Une aptitude médicale à la conduite délivrée par le médecin du travail est requise. La catégorie visée (1 pour une hauteur de levée inférieure ou égale à 2,50 mètres, 2 au-delà) dépend directement du matériel utilisé sur votre site : nous vous aidons à déterminer la catégorie adaptée lors de l'établissement du devis.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous accompagne dans le montage du dossier de financement en fournissant devis, programme pédagogique et convention de formation. Elle peut être couplée avec d'autres formations CACES de votre parc d'engins pour optimiser l'organisation des sessions et le coût global de votre plan de formation.",
@@ -220,6 +537,31 @@ const servicesRaw: SectorRaw[] = [
         title: "Grue de chargement (R490)",
         duration: "6 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Manipuler une grue auxiliaire sans jamais compromettre la stabilité du véhicule porteur.",
+        prerequisites: "Aptitude médicale à la conduite, 18 ans minimum",
+        certification: "Attestation de fin de formation | Grille de compétences | Dossier d'autorisation de conduite",
+        programme: [
+          {
+            title: "Cadre réglementaire et types de grues",
+            text: "Objectif : être capable de situer les responsabilités du conducteur et d'identifier les différents types de grues de chargement. Autorisation de conduite, recommandation R490, obligations de l'employeur et du conducteur. Panorama des différents types de grues de chargement et de leurs équipements.",
+          },
+          {
+            title: "Technologie et vérifications avant service",
+            text: "Objectif : être capable de réaliser les vérifications réglementaires avant l'utilisation de la grue. Structure, vérins, système hydraulique, dispositifs de sécurité. Vérifications de prise et de fin de poste, équipements de protection individuelle.",
+          },
+          {
+            title: "Mise en station et conduite en sécurité",
+            text: "Objectif : être capable de mettre en station la grue en sécurité et de la manœuvrer en respectant les règles de circulation. Choix de l'emplacement, calage et stabilisation, règles de circulation, repérage des zones de danger, gestes de commandement.",
+          },
+          {
+            title: "Levage et manutention de charges",
+            text: "Objectif : être capable de réaliser une opération de levage en toute sécurité. Choix et vérification des accessoires de levage, trajectoire et stabilité de la charge, conduite à tenir en situation dégradée.",
+          },
+          {
+            title: "Mise en situation et évaluation",
+            text: "Objectif : être capable de démontrer la maîtrise théorique et pratique requise pour la délivrance de l'autorisation. Parcours d'évaluation pratique en conditions réelles, tests théoriques (QCM) et pratiques CACES®.",
+          },
+        ],
         description: ["La grue de chargement, montée sur véhicule, permet de lever et déplacer des charges lourdes lors des opérations de livraison ou de chantier : une mauvaise stabilisation ou un défaut d'élingage peut entraîner le renversement du véhicule ou la chute de la charge. L'article R4323-55 du Code du travail impose que tout conducteur de grue de chargement soit titulaire d'une autorisation de conduite délivrée par l'employeur, fondée sur une évaluation conforme à la recommandation R490 de la CNAM.", "Cette formation alterne apports théoriques, découverte de la technologie et exercices pratiques de levage. À l'issue de la session, le conducteur est capable de mettre en station la grue en sécurité, de choisir et vérifier les accessoires de levage, de réaliser une opération de levage en respectant la trajectoire et la stabilité de la charge, et de réagir correctement en situation dégradée."],
         audience: "Cette formation s'adresse à tout conducteur amené à utiliser une grue de chargement dans le cadre de son activité professionnelle, notamment dans les secteurs du transport, de la livraison de matériaux ou du BTP. Une aptitude médicale à la conduite délivrée par le médecin du travail est requise. Aucune expérience préalable n'est exigée, mais une bonne compréhension des consignes écrites et orales est nécessaire pour suivre la partie théorique et réussir l'évaluation.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée directement sur votre site avec votre propre matériel, sous réserve de sa conformité, afin de limiter les contraintes d'organisation.",
@@ -228,6 +570,31 @@ const servicesRaw: SectorRaw[] = [
         title: "PEMP — nacelle élévatrice (R486)",
         duration: "2 à 6 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Nacelles élévatrices : travailler en hauteur sur plateforme mobile, en sécurité et en conformité.",
+        prerequisites: "Aptitude médicale à la conduite et au travail en hauteur, 18 ans minimum",
+        certification: "Attestation de fin de formation | Grille de compétences | Dossier d'autorisation de conduite",
+        programme: [
+          {
+            title: "Cadre réglementaire et catégories de PEMP",
+            text: "Objectif : être capable de situer les responsabilités du conducteur selon la catégorie de PEMP utilisée. Autorisation de conduite, recommandation R486 : catégorie A (élévation verticale) et catégorie B (élévation multidirectionnelle), obligations de l'employeur et du conducteur.",
+          },
+          {
+            title: "Technologie et vérifications avant service",
+            text: "Objectif : être capable de réaliser les vérifications réglementaires avant l'utilisation d'une PEMP. Types de PEMP (élévation verticale, translation, ciseaux), dispositifs de sécurité, vérifications de prise et de fin de poste.",
+          },
+          {
+            title: "Mise en station et stabilisation",
+            text: "Objectif : être capable de mettre en station une PEMP en toute sécurité selon la configuration du terrain. Choix de l'emplacement, calage, dévers admissible, repérage des zones de danger (lignes électriques, obstacles aériens).",
+          },
+          {
+            title: "Travail en hauteur sur nacelle",
+            text: "Objectif : être capable de travailler en sécurité depuis la nacelle en respectant les consignes de protection contre les chutes. Port du harnais et ancrage dans la nacelle, déplacement en hauteur, gestes de commandement, conduite à tenir en situation dégradée.",
+          },
+          {
+            title: "Mise en situation et évaluation",
+            text: "Objectif : être capable de démontrer la maîtrise théorique et pratique requise pour la catégorie visée. Parcours d'évaluation pratique, tests théoriques (QCM) et pratiques CACES®.",
+          },
+        ],
         description: ["Travailler en hauteur sur une plateforme élévatrice mobile de personnes (PEMP) mal maîtrisée multiplie les risques de basculement, de chute depuis la nacelle et de collision avec des obstacles aériens tels que des lignes électriques. L'article R4323-55 du Code du travail impose que tout conducteur de PEMP soit titulaire d'une autorisation de conduite délivrée par l'employeur, fondée sur une évaluation conforme à la recommandation R486 de la CNAM.", "À l'issue de la formation, le conducteur est capable de choisir le type de PEMP adapté à son intervention, de la mettre en station en sécurité, de travailler en hauteur dans la nacelle avec les équipements de protection individuelle requis, et de réagir correctement en cas de situation dégradée. La formation prépare à la catégorie A (élévation verticale) ou B (élévation multidirectionnelle) selon le matériel utilisé sur votre site."],
         audience: "Cette formation s'adresse à tout salarié amené à utiliser une plateforme élévatrice mobile de personnes dans le cadre de son activité (maintenance, montage, entretien d'espaces verts, bâtiment). Une aptitude médicale à la conduite ainsi que l'absence de vertige invalidant sont requises, le travail en nacelle exposant le conducteur au vide. Le choix de la catégorie (A ou B) dépend du type de PEMP utilisé sur votre site : nous vous aidons à l'identifier lors de l'établissement du devis.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être couplée avec une formation au port du harnais antichute pour les conducteurs amenés à travailler en hauteur en dehors de la nacelle elle-même.",
@@ -236,6 +603,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Pont roulant (R484)",
         duration: "2 à 4 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Lever et déplacer des charges au pont roulant sans mettre l'atelier en danger.",
+        prerequisites: "Aptitude médicale à la conduite, 18 ans minimum",
+        certification: "Attestation de fin de formation | Grille de compétences | Dossier d'autorisation de conduite",
+        programme: [
+          {
+            title: "Cadre réglementaire et technologie",
+            text: "Objectif : être capable de situer le cadre réglementaire de la conduite de ponts roulants et d'identifier les composants de l'appareil. Autorisation de conduite, recommandation R484, obligations de l'employeur et du conducteur, structure et organes de sécurité du pont roulant.",
+          },
+          {
+            title: "Vérifications et accessoires de levage",
+            text: "Objectif : être capable de vérifier le pont roulant et de choisir les accessoires de levage adaptés à la charge. Vérifications de prise et de fin de poste, choix et contrôle des élingues, chaînes et crochets, calcul et respect de la charge maximale d'utilisation.",
+          },
+          {
+            title: "Conduite en sécurité et gestes de commandement",
+            text: "Objectif : être capable de piloter le pont roulant en sécurité en coordination avec les personnes au sol. Pilotage depuis une commande au sol ou en cabine, trajectoire et stabilité de la charge, gestes de commandement normalisés, conduite à tenir en situation dégradée.",
+          },
+          {
+            title: "Mise en situation et évaluation",
+            text: "Objectif : être capable de démontrer la maîtrise théorique et pratique requise pour la délivrance de l'autorisation. Parcours d'évaluation pratique sur pont roulant, tests théoriques (QCM).",
+          },
+        ],
         description: ["Le pont roulant permet de déplacer des charges lourdes en hauteur, au-dessus des zones de travail et de circulation : une erreur de manœuvre ou un défaut d'élingage peut provoquer la chute de la charge sur des personnes ou des équipements, avec des conséquences potentiellement mortelles. L'article R4323-55 du Code du travail impose que tout conducteur d'appareil de levage soit titulaire d'une autorisation de conduite délivrée par l'employeur, fondée sur une évaluation conforme à la recommandation R484 de la CNAM.", "À l'issue de la formation, le conducteur est capable de vérifier son pont roulant avant utilisation, de choisir et vérifier les accessoires de levage adaptés à la charge, de piloter le pont en sécurité depuis le sol ou en cabine, et d'appliquer les gestes de commandement normalisés lors d'un levage encadré par un tiers. La formation alterne apports théoriques et exercices pratiques sur pont roulant."],
         audience: "Cette formation s'adresse à tout salarié amené à conduire un pont roulant dans le cadre de son activité, en atelier ou sur site industriel. Une aptitude médicale à la conduite délivrée par le médecin du travail est requise. Aucune expérience préalable n'est exigée, mais une bonne compréhension des consignes de sécurité écrites et orales est nécessaire pour suivre la partie théorique et réussir l'évaluation.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la conduite d'appareils de levage. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée directement sur votre site si vous disposez d'un pont roulant, ou dans nos locaux équipés à cet effet.",
@@ -244,12 +632,41 @@ const servicesRaw: SectorRaw[] = [
   },
   {
     title: "Travail en hauteur & échafaudages",
-    description: "ENMA Formation forme vos équipes au travail en hauteur, au port du harnais et au montage d'échafaudages.",
+    description: "ENMA Formation forme vos équipes au travail en hauteur, au port du harnais et à l'utilisation sécurisée des échafaudages, en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises du BTP, de l'industrie et de la maintenance pour répondre à leurs obligations réglementaires en matière de prévention des chutes de hauteur et construire une culture de sécurité durable au sein de leurs équipes.",
+    why: {
+      title: "La chute de hauteur reste la deuxième cause d'accident mortel au travail",
+      text: "L'article R4323-69 du Code du travail impose une formation adéquate à l'utilisation des équipements de protection individuelle contre les chutes. Un harnais mal ajusté ou mal ancré donne un sentiment de sécurité sans en offrir la réalité : nos formations se déroulent sur structure, avec mise en situation de suspension et de récupération.",
+    },
     trainings: [
       {
         title: "Montage, démontage et utilisation des échafaudages de pied (R408)",
         duration: "4 à 6 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Monter, démonter et réceptionner un échafaudage de pied selon la recommandation R408.",
+        prerequisites: "Aptitude médicale au travail en hauteur",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Accueil et cadre réglementaire",
+            text: "Objectif : être capable de situer les responsabilités de chacun dans le cadre réglementaire du montage d'échafaudages de pied. Risque de chute de hauteur, Code du travail et décret du 1er septembre 2004, recommandations R.408 et R.457, responsabilités de chacun.",
+          },
+          {
+            title: "Technologie des échafaudages",
+            text: "Objectif : être capable d'identifier les composants spécifiques et les limites d'usage d'un échafaudage de pied. Échafaudages fixes de pied et échafaudages roulants : composants, notices, charges admissibles et classes, protections collectives et équipements de protection individuelle.",
+          },
+          {
+            title: "Montage et démontage",
+            text: "Objectif : être capable de monter et démonter un échafaudage de pied conforme, y compris dans des configurations complexes. Réception du support, montage et démontage des échafaudages fixes de pied et des échafaudages roulants, traitement des cas particuliers de montage.",
+          },
+          {
+            title: "Vérifications et utilisation en sécurité",
+            text: "Objectif : être capable de vérifier un échafaudage de pied et de garantir son utilisation en sécurité. Mise et remise en service, vérification journalière, accès et amarrage, exercice du droit d'alerte en cas d'anomalie.",
+          },
+          {
+            title: "Ateliers pratiques et évaluation",
+            text: "Objectif : être capable de démontrer la maîtrise pratique du montage d'un échafaudage de pied en conditions réelles. Ateliers pratiques de montage, évaluation individuelle théorique (QCM) et évaluation pratique.",
+          },
+        ],
         description: ["Les échafaudages de pied, montés directement au sol et destinés à rester en place plusieurs jours voire plusieurs semaines, présentent des exigences de montage spécifiques liées à leur hauteur, à leur stabilisation et à la nature du support sur lequel ils reposent. Le décret du 1er septembre 2004 et les recommandations R.408 et R.457 de la CNAM imposent une formation approfondie pour toute personne chargée du montage, du démontage ou de la vérification de ce type d'ouvrage, plus complexe qu'un échafaudage roulant.", "Cette formation approfondie couvre l'ensemble des opérations liées à l'échafaudage de pied : réception du support et calcul de la répartition des charges, montage selon la notice du fabricant en tenant compte des cas particuliers (façades irrégulières, encorbellements), vérifications de mise et de remise en service, puis démontage en sécurité. À l'issue de la session, le participant maîtrise l'ensemble du cycle de vie de l'échafaudage de pied."],
         audience: "Cette formation s'adresse à tout salarié amené à monter, démonter ou utiliser des échafaudages fixes de pied dans le cadre de son activité, en particulier sur des chantiers de longue durée nécessitant un ouvrage stable et de grande hauteur. Aucun prérequis technique n'est exigé, mais une aptitude médicale au travail en hauteur est recommandée. Cette formation constitue un approfondissement recommandé pour les monteurs confrontés régulièrement à des configurations de montage complexes.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être couplée avec la formation aux échafaudages roulants pour les équipes amenées à utiliser les deux types d'ouvrages selon les chantiers.",
@@ -258,6 +675,31 @@ const servicesRaw: SectorRaw[] = [
         title: "Montage, démontage et utilisation des échafaudages roulants et fixes (R457)",
         duration: "2 à 4 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Échafaudages roulants et fixes : le montage conforme et l'utilisation sécurisée au quotidien.",
+        prerequisites: "Aptitude médicale au travail en hauteur",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Accueil et cadre réglementaire",
+            text: "Objectif : être capable de situer les responsabilités de chacun dans le cadre réglementaire du montage d'échafaudages. Risque de chute de hauteur, Code du travail et décret du 1er septembre 2004, recommandations R.408 et R.457, responsabilités du monteur, du vérificateur et de l'utilisateur.",
+          },
+          {
+            title: "Technologie des échafaudages",
+            text: "Objectif : être capable d'identifier les composants et les limites d'usage d'un échafaudage fixe ou roulant. Échafaudages fixes de pied et échafaudages roulants : composants, notices, charges admissibles et classes, protections collectives et équipements de protection individuelle.",
+          },
+          {
+            title: "Montage, démontage et vérifications",
+            text: "Objectif : être capable de monter, démonter et vérifier un échafaudage conforme à la notice du fabricant. Réception du support, montage et démontage des échafaudages fixes et roulants, vérification de mise en service et vérification journalière.",
+          },
+          {
+            title: "Utilisation en sécurité",
+            text: "Objectif : être capable d'utiliser un échafaudage mis à disposition dans le respect des règles de sécurité. Accès, circulation et amarrage, prévention des chutes et des renversements, identification des anomalies et droit d'alerte.",
+          },
+          {
+            title: "Ateliers pratiques et évaluation",
+            text: "Objectif : être capable de démontrer la maîtrise pratique du montage et du démontage en conditions réelles. Atelier pratique de montage, évaluation individuelle théorique (QCM) et évaluation pratique.",
+          },
+        ],
         description: ["Un échafaudage mal monté représente un risque de chute immédiat pour son utilisateur comme pour les personnes évoluant à proximité : basculement, effondrement partiel ou rupture d'un plancher figurent parmi les causes récurrentes d'accident grave sur les chantiers. Le décret du 1er septembre 2004 et les recommandations R.408 et R.457 de la CNAM encadrent strictement les conditions de montage, de démontage et d'utilisation des échafaudages, qu'ils soient fixes de pied ou roulants sur roulettes.", "Cette formation couvre l'ensemble du cycle de vie de l'échafaudage roulant et fixe : réception du support, montage dans le respect de la notice du fabricant, vérifications de mise en service et journalières, puis démontage en sécurité. À l'issue de la session, le participant est capable de monter et démonter un échafaudage conforme, d'identifier les non-conformités et d'utiliser l'ouvrage en sécurité une fois celui-ci mis à disposition."],
         audience: "Cette formation s'adresse à tout salarié amené à monter, démonter ou utiliser des échafaudages fixes de pied ou roulants dans le cadre de son activité (BTP, industrie, maintenance de bâtiment). Aucun prérequis technique n'est exigé, mais une aptitude médicale au travail en hauteur est recommandée pour les opérations de montage réalisées en hauteur. Un recyclage périodique est conseillé afin de maintenir la maîtrise des procédures de montage et des évolutions réglementaires.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée sur votre site avec votre propre matériel d'échafaudage afin de rapprocher la formation des conditions réelles d'utilisation.",
@@ -266,6 +708,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Travail en hauteur et port du harnais",
         duration: "2 à 4 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Harnais, points d'ancrage, systèmes antichute : travailler en hauteur sans jouer sa vie.",
+        prerequisites: "Aptitude médicale au travail en hauteur",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Le risque de chute de hauteur",
+            text: "Objectif : être capable d'identifier les situations de travail en hauteur et la hiérarchie des mesures de prévention applicables. Statistiques et gravité des accidents de chute, cadre réglementaire (article R4323-104), hiérarchie des protections : collective avant individuelle.",
+          },
+          {
+            title: "Le harnais antichute et ses composants",
+            text: "Objectif : être capable de choisir et de vérifier un équipement de protection individuelle contre les chutes avant utilisation. Types de harnais et de longes, dispositifs anti-chute (absorbeur d'énergie, antichute à rappel automatique), vérification visuelle avant chaque utilisation, durée de vie et péremption du matériel.",
+          },
+          {
+            title: "Points d'ancrage et arrimage",
+            text: "Objectif : être capable de choisir un point d'ancrage adapté et de s'arrimer correctement selon la situation de travail. Critères de choix d'un point d'ancrage résistant, calcul du tirant d'air nécessaire, techniques d'arrimage selon la configuration (travail statique, déplacement).",
+          },
+          {
+            title: "Conduite à tenir en cas de chute",
+            text: "Objectif : être capable d'appliquer les gestes de secours adaptés en cas de suspension accidentelle dans le harnais. Reconnaissance et prévention du syndrome du harnais, procédure d'alerte et de secours, exercices pratiques de mise en situation.",
+          },
+        ],
         description: ["La chute de hauteur reste l'une des principales causes d'accident mortel au travail en France, devant de nombreux autres risques professionnels pourtant plus médiatisés. L'article R4323-104 du Code du travail impose à l'employeur de former tout salarié amené à porter un équipement de protection individuelle contre les chutes, le harnais antichute ne devant être utilisé qu'en dernier recours, lorsque la protection collective (garde-corps, filets) n'est pas envisageable.", "Cette formation combine apports théoriques et mise en pratique sur structure dédiée ou directement sur votre site, afin d'ancrer les bons réflexes avant toute intervention réelle. À l'issue de la session, le participant est capable de choisir un point d'ancrage adapté, de vérifier son harnais et sa longe avant utilisation, de s'arrimer correctement selon la configuration de travail, et de réagir en cas de suspension accidentelle prolongée, situation qui présente un risque vital propre appelé syndrome du harnais."],
         audience: "Cette formation s'adresse à tout salarié amené à travailler en hauteur avec port du harnais antichute, quel que soit le secteur d'activité (bâtiment, industrie, maintenance, télécommunications, espaces verts). Une aptitude médicale au travail en hauteur délivrée par le médecin du travail est requise, ainsi qu'une absence de contre-indication au port prolongé d'un harnais. Un recyclage est recommandé tous les 1 à 3 ans selon la fréquence d'exposition au risque, afin de maintenir les automatismes de vérification et d'arrimage.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée directement sur votre site afin d'entraîner les participants sur les points d'ancrage réels qu'ils utiliseront au quotidien.",
@@ -274,6 +737,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Vérification des échafaudages",
         duration: "2 à 4 demi-journées",
         format: "Intra ou inter-entreprises",
+        intro: "Former votre vérificateur interne aux contrôles réglementaires avant, pendant et après montage.",
+        prerequisites: "Expérience du montage ou de l'utilisation d'échafaudages",
+        certification: "Attestation de fin de formation | Grille de compétences | Modèle de registre de vérification",
+        programme: [
+          {
+            title: "Cadre réglementaire de la vérification",
+            text: "Objectif : être capable de situer les obligations réglementaires de vérification d'un échafaudage. Décret du 1er septembre 2004, moments de vérification obligatoire (mise en service, remise en service, périodique), responsabilités du vérificateur désigné.",
+          },
+          {
+            title: "Méthode de vérification",
+            text: "Objectif : être capable de conduire une vérification structurée et reproductible d'un échafaudage. Points de contrôle méthodiques (ancrages, stabilité, planchers, garde-corps, accès), grille de vérification, identification des non-conformités les plus fréquentes.",
+          },
+          {
+            title: "Traçabilité et décision",
+            text: "Objectif : être capable de formaliser le résultat de la vérification et de statuer sur l'utilisation de l'ouvrage. Renseignement du registre de sécurité, rédaction d'un compte-rendu de non-conformité, procédure de blocage ou d'autorisation d'utilisation de l'échafaudage.",
+          },
+          {
+            title: "Mise en pratique",
+            text: "Objectif : être capable d'appliquer la méthode de vérification sur un échafaudage réel. Exercice pratique de vérification sur échafaudage monté, débriefing individuel, cas de non-conformités volontairement introduites à identifier.",
+          },
+        ],
         description: ["Un échafaudage non vérifié peut dissimuler un défaut de montage invisible à l'usage courant : ancrage insuffisant, plancher mal fixé ou garde-corps manquant ne se révèlent parfois qu'au moment de l'accident. Le décret du 1er septembre 2004 impose une vérification de l'échafaudage avant sa première mise en service, après tout démontage-remontage, et à chaque changement de configuration, en complément des vérifications journalières réalisées par les utilisateurs eux-mêmes.", "Cette formation permet à la personne désignée d'identifier méthodiquement les non-conformités d'un échafaudage avant sa mise à disposition des équipes. À l'issue de la session, le participant est capable de conduire une vérification structurée selon une méthode reproductible, de renseigner le registre de sécurité, et de statuer sur l'autorisation ou l'interdiction d'utilisation de l'ouvrage vérifié."],
         audience: "Cette formation s'adresse aux personnes désignées par l'employeur pour assurer la vérification des échafaudages avant mise à disposition des équipes : chef d'équipe, responsable sécurité ou monteur confirmé. Une bonne connaissance préalable de la technologie des échafaudages est recommandée, une formation au montage d'échafaudages constituant un prérequis idéal avant cette formation de vérification. Elle s'adresse en priorité aux entreprises disposant de leur propre parc d'échafaudages ou intervenant régulièrement sur des chantiers avec montage d'ouvrages temporaires.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en complément d'une formation au montage d'échafaudages afin de former une même personne aux deux compétences complémentaires.",
@@ -282,12 +766,37 @@ const servicesRaw: SectorRaw[] = [
   },
   {
     title: "Prévention des risques professionnels",
-    description: "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels.",
+    description: "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels — gestes et postures, gestion du stress, prévention de l'absentéisme, premiers secours en santé mentale — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme aide les entreprises de tous secteurs à répondre à leurs obligations de prévention et à construire une démarche de qualité de vie au travail durable.",
+    why: {
+      title: "Ce qui se prévient coûte moins cher que ce qui se répare",
+      text: "Les troubles musculo-squelettiques représentent la première cause de maladie professionnelle reconnue en France. L'article L4121-1 du Code du travail fait de la prévention une obligation de l'employeur, pas une option : nos formations partent de vos postes réels, analysés sur place, plutôt que d'un catalogue de bonnes pratiques générales.",
+    },
     trainings: [
       {
         title: "Gestes et postures",
         duration: "1 à 2 demi-journées",
         format: "Intra-entreprise",
+        intro: "Manutention et port de charges : protéger le dos de vos équipes avant que le mal s'installe.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences | Notification au registre de sécurité",
+        programme: [
+          {
+            title: "Comprendre les TMS",
+            text: "Objectif : être capable d'expliquer les mécanismes d'apparition des troubles musculosquelettiques. Anatomie et fonctionnement du corps humain, mécanismes d'apparition des troubles musculosquelettiques liés à l'activité physique.",
+          },
+          {
+            title: "Identifier les situations à risque",
+            text: "Objectif : être capable de repérer les situations de son poste de travail susceptibles de générer des TMS. Repérer les postures, efforts et mouvements répétitifs à risque dans sa situation de travail.",
+          },
+          {
+            title: "Adopter les bons gestes",
+            text: "Objectif : être capable d'appliquer les principes de sécurité physique et d'économie d'effort au quotidien. Principes de sécurité physique et d'économie d'effort, bonnes pratiques de manutention manuelle.",
+          },
+          {
+            title: "Mise en pratique",
+            text: "Objectif : être capable de transposer les bonnes pratiques apprises à son propre poste de travail. Exercices pratiques sur des situations issues du poste de travail des stagiaires.",
+          },
+        ],
         description: ["Les troubles musculosquelettiques (TMS) constituent la première cause de maladie professionnelle reconnue en France, loin devant tous les autres risques professionnels. Lombalgies, tendinites, troubles du canal carpien : ces pathologies s'installent progressivement, souvent sans signal d'alarme franc, jusqu'à devenir invalidantes et générer un absentéisme durable. L'obligation générale de prévention de l'employeur (article L4121-1 du Code du travail) impose d'agir sur ce risque avant que les douleurs ne deviennent chroniques.", "Cette sensibilisation permet d'agir en amont, en donnant à chaque salarié les clés pour comprendre l'origine de ces troubles et adapter sa pratique quotidienne. À l'issue de la formation, le participant est capable d'identifier les situations à risque de son propre poste de travail, d'appliquer les principes de sécurité physique et d'économie d'effort, et de solliciter le bon geste plutôt que la bonne force pour limiter la sollicitation de son corps."],
         audience: "Cette formation s'adresse à tout salarié exposé à des manutentions manuelles, des postures contraignantes ou des mouvements répétitifs dans le cadre de son activité, quel que soit le secteur (industrie, logistique, bâtiment, tertiaire). Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée aux postes identifiés comme à risque dans le document unique d'évaluation des risques professionnels (DUERP) de l'entreprise, et peut être adaptée aux spécificités de chaque métier représenté dans le groupe.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques professionnels. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée sur votre site et adaptée aux postes de travail réels de vos salariés afin de maximiser la pertinence des exercices pratiques.",
@@ -296,6 +805,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Gestion du stress",
         duration: "2 à 4 demi-journées",
         format: "Intra-entreprise",
+        intro: "Identifier les signaux, comprendre les mécanismes, retrouver des marges de manœuvre.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Comprendre le stress",
+            text: "Objectif : être capable d'expliquer les mécanismes physiologiques et psychologiques du stress. Mécanismes physiologiques et psychologiques du stress, distinction entre stress aigu et stress chronique, notion de risques psychosociaux.",
+          },
+          {
+            title: "Identifier ses sources de stress",
+            text: "Objectif : être capable de repérer les facteurs de stress propres à sa situation de travail. Repérer les facteurs de stress liés à l'organisation, à la charge de travail et aux relations professionnelles.",
+          },
+          {
+            title: "Techniques de gestion du stress",
+            text: "Objectif : être capable de mobiliser des techniques concrètes de gestion du stress au quotidien. Respiration, gestion du temps et des priorités, techniques de relaxation applicables en situation de travail.",
+          },
+          {
+            title: "Construire son plan d'action personnel",
+            text: "Objectif : être capable d'élaborer un plan d'action individuel adapté à sa propre situation. Élaboration d'un plan d'action individuel pour mieux gérer son stress au quotidien.",
+          },
+        ],
         description: ["Le stress chronique au travail impacte autant la santé des salariés que la performance de l'entreprise : troubles du sommeil, irritabilité, baisse de concentration et, à terme, risque d'épuisement professionnel. Les risques psychosociaux font partie intégrante des risques professionnels que l'employeur doit évaluer et prévenir au titre de son obligation générale de sécurité (article L4121-1 du Code du travail), au même titre que les risques physiques ou chimiques.", "Cette formation permet à chaque participant de comprendre les mécanismes physiologiques et psychologiques du stress, d'identifier ses propres sources de stress professionnel, et de mobiliser des techniques concrètes et applicables immédiatement au quotidien. À l'issue de la session, chaque participant repart avec un plan d'action personnel adapté à sa situation de travail."],
         audience: "Cette formation s'adresse à tout salarié exposé au stress professionnel souhaitant développer des techniques de gestion adaptées à sa situation, quel que soit son poste ou son secteur d'activité. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les environnements à forte charge mentale ou relationnelle (relation client, encadrement, urgence) et peut être proposée en complément d'une démarche plus large de prévention des risques psychosociaux au sein de l'entreprise.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention.",
@@ -304,6 +834,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Premiers secours en santé mentale (PSSM)",
         duration: "4 demi-journées",
         format: "Intra-entreprise",
+        intro: "Repérer un collègue en souffrance psychique et savoir comment l'orienter.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Comprendre la santé mentale",
+            text: "Objectif : être capable de distinguer les principaux troubles psychiques et de déconstruire les idées reçues associées. Repères sur les troubles psychiques courants, déconstruction des idées reçues et de la stigmatisation liée à la santé mentale.",
+          },
+          {
+            title: "Repérer les signes de mal-être",
+            text: "Objectif : être capable d'identifier les signaux d'alerte d'une souffrance psychique ou d'une crise. Identifier les signaux d'alerte d'une souffrance psychique ou d'une crise chez un collègue, un proche ou soi-même.",
+          },
+          {
+            title: "La méthode AÉRER",
+            text: "Objectif : être capable d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne concernée. Les 5 étapes du plan d'action : Approcher la personne, Écouter activement sans jugement, Réconforter et informer, Encourager à consulter un professionnel, Renseigner sur les ressources disponibles.",
+          },
+          {
+            title: "Mise en pratique",
+            text: "Objectif : être capable de mobiliser la méthode AÉRER face à des situations concrètes réalistes. Mises en situation à partir de cas concrets pour s'approprier la méthode AÉRER.",
+          },
+        ],
         description: ["Un collègue en difficulté psychologique ne le montre pas toujours clairement, et l'entourage professionnel se sent souvent démuni face à des signes de souffrance qu'il ne sait pas interpréter. Le programme Premiers Secours en Santé Mentale (PSSM), adaptation française du programme international Mental Health First Aid né en Australie et aujourd'hui déployé dans plus de 25 pays, vise à donner au plus grand nombre les outils pour repérer une souffrance psychique et orienter la personne concernée vers une aide adaptée, sans se substituer à un professionnel de santé.", "À l'issue de la formation, le participant est capable de reconnaître les signes de mal-être ou de crise chez un collègue, un proche ou lui-même, de déconstruire les idées reçues liées à la stigmatisation de la santé mentale, et d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne vers les ressources appropriées."],
         audience: "Cette formation s'adresse à tout salarié, quel que soit son poste ou son niveau hiérarchique, souhaitant être en mesure d'aider un collègue ou un proche traversant une période de souffrance psychique. Aucun prérequis n'est nécessaire, et la formation n'exige aucune compétence préalable en santé mentale. Elle est particulièrement recommandée pour les managers et les représentants du personnel, en première ligne pour repérer les signaux de mal-être au sein des équipes, ainsi que dans le cadre d'une démarche globale de prévention des risques psychosociaux.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large.",
@@ -312,6 +863,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Prévention de l'absentéisme",
         duration: "2 à 4 demi-journées",
         format: "Intra-entreprise",
+        intro: "Comprendre ce que l'absentéisme dit de votre organisation, puis agir dessus.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Comprendre l'absentéisme",
+            text: "Objectif : être capable de définir et de quantifier l'absentéisme au sein de son organisation. Définitions, indicateurs et coûts de l'absentéisme, distinction entre les différentes formes (maladie, désengagement, absences répétées).",
+          },
+          {
+            title: "Identifier les causes",
+            text: "Objectif : être capable d'analyser les causes organisationnelles, managériales et individuelles de l'absentéisme. Facteurs organisationnels, managériaux et individuels de l'absentéisme, lien avec les risques psychosociaux et les conditions de travail.",
+          },
+          {
+            title: "Repérer les signaux d'alerte",
+            text: "Objectif : être capable de repérer les indicateurs précoces d'un absentéisme naissant au sein d'une équipe. Indicateurs précoces d'un absentéisme naissant au sein d'une équipe, rôle de l'encadrement de proximité.",
+          },
+          {
+            title: "Agir et prévenir",
+            text: "Objectif : être capable de construire un plan de prévention adapté à sa propre équipe. Leviers d'action managériaux, dialogue avec les salariés, construction d'un plan de prévention adapté à son équipe.",
+          },
+        ],
         description: ["Un absentéisme qui s'installe coûte cher à l'entreprise, en désorganisation comme en charge supplémentaire pour les équipes en place, et révèle souvent un mal-être plus profond que le simple arrêt maladie ne laisse paraître. Détecté tardivement, il devient un phénomène difficile à inverser ; repéré tôt par l'encadrement de proximité, il peut au contraire être traité à la racine, avant qu'il ne s'ancre durablement dans le fonctionnement d'une équipe.", "Cette formation permet de comprendre les causes multiples de l'absentéisme, de repérer les signaux d'alerte précoces au sein d'une équipe, et de mettre en place des actions de prévention adaptées à l'organisation de l'entreprise. À l'issue de la session, chaque participant est capable de distinguer les différentes formes d'absentéisme et de mobiliser les leviers managériaux appropriés à chaque situation."],
         audience: "Cette formation s'adresse aux managers, encadrants et responsables RH souhaitant prévenir et réduire l'absentéisme au sein de leurs équipes. Une première expérience d'encadrement est recommandée, bien qu'aucun prérequis formel ne soit exigé. Elle s'adresse particulièrement aux entreprises confrontées à un taux d'absentéisme en hausse ou souhaitant structurer une démarche de prévention avant que le phénomène ne s'installe durablement.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la prévention. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par une formation à la gestion du stress ou aux risques psychosociaux pour une approche globale de la qualité de vie au travail.",
@@ -320,6 +892,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Sécurité des salariés des entreprises extérieures — Niveau 1",
         duration: "2 demi-journées",
         format: "Intra-entreprise",
+        intro: "Le socle sécurité exigé avant toute intervention sur un site industriel client.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Attestation provisoire de réussite au stage",
+        programme: [
+          {
+            title: "Enjeux de la sécurité en entreprise extérieure",
+            text: "Objectif : être capable de situer les enjeux et le cadre réglementaire de la coactivité sur site industriel. Enjeux humains et économiques des accidents du travail, spécificités de la coactivité entre entreprises, cadre réglementaire (référentiel France Chimie DT40).",
+          },
+          {
+            title: "Identifier les risques sur site industriel",
+            text: "Objectif : être capable d'identifier les principaux risques présents sur un site industriel avant d'intervenir. Risques chimique, incendie/explosion, électrique, liés aux machines, travaux en hauteur, manutention, espaces confinés, équipements de protection.",
+          },
+          {
+            title: "S'inscrire dans l'organisation de la prévention du site",
+            text: "Objectif : être capable de comprendre et de respecter les documents encadrant son intervention sur le site. Plan de prévention et protocole de sécurité, autorisations de travail, inspection commune préalable, document unique.",
+          },
+          {
+            title: "Adopter les bons comportements de sécurité",
+            text: "Objectif : être capable d'appliquer les consignes de sécurité du site et de réagir face à une situation dégradée. Respect des consignes et du balisage, droit de retrait, conduite à tenir en cas de situation dégradée.",
+          },
+        ],
         description: ["Sur un site industriel, la coactivité entre l'entreprise utilisatrice et les entreprises extérieures intervenant pour des opérations de maintenance, de travaux ou de prestations constitue une source majeure d'accidents du travail : méconnaissance des risques spécifiques du site, absence de coordination entre les équipes, ou non-respect des consignes locales de sécurité. Le référentiel France Chimie DT40 encadre la formation obligatoire des salariés d'entreprises extérieures intervenant sur des sites industriels, en particulier dans le secteur de la chimie et de la pétrochimie, afin de sécuriser cette coactivité.", "Cette formation de Niveau 1 permet au salarié d'une entreprise extérieure d'identifier les risques propres à un site industriel (chimique, incendie/explosion, électrique, mécanique) et de s'inscrire dans l'organisation de la prévention mise en place par le site accueillant. À l'issue de la session, le participant est capable d'appliquer les règles de sécurité du site, de comprendre les documents encadrant son intervention (plan de prévention, protocole de sécurité) et de réagir de manière adaptée face à une situation dégradée."],
         audience: "Cette formation s'adresse aux salariés d'entreprises extérieures amenés à intervenir sur un site industriel client, notamment dans les secteurs de la chimie, de la pétrochimie ou de l'industrie lourde. Aucun prérequis technique n'est exigé, mais une bonne compréhension des consignes écrites et orales est nécessaire pour appliquer les règles de sécurité propres à chaque site d'intervention. Cette formation de Niveau 1 constitue le socle minimal avant toute intervention sur un site relevant du référentiel France Chimie DT40.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en amont d'une campagne d'intervention groupée sur un site industriel afin de certifier l'ensemble d'une équipe avant le début des travaux.",
@@ -328,12 +921,37 @@ const servicesRaw: SectorRaw[] = [
   },
   {
     title: "Management & qualité",
-    description: "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles.",
+    description: "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles et la culture sécurité — gestion des conflits, posture face à l'agressivité, sécurité au quotidien — en intra, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme construit des sessions courtes autour de vos situations réelles pour renforcer durablement les pratiques managériales et la culture sécurité de vos équipes.",
+    why: {
+      title: "On devient encadrant sans y avoir été formé",
+      text: "La promotion vient récompenser une expertise technique, rarement une aptitude à conduire une équipe, et les deux ne s'apprennent pas au même endroit. Nos sessions travaillent sur des situations rapportées par les participants, avec des mises en situation plutôt qu'un exposé de modèles.",
+    },
     trainings: [
       {
         title: "Faire face à l'agressivité et à l'incivilité",
         duration: "Durée à définir",
         format: "Intra-entreprise",
+        intro: "Accueil et relation client : désamorcer une montée en tension avant le passage à l'acte.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Comprendre l'agressivité au travail",
+            text: "Objectif : être capable de distinguer les différentes formes de violence au travail et leurs facteurs de risque. Repères INRS sur les violences internes et externes, facteurs de risque liés au public accueilli.",
+          },
+          {
+            title: "Gérer ses émotions et sa posture",
+            text: "Objectif : être capable de réguler ses émotions et d'adopter une posture sécurisante face à une personne agressive. Mécanismes du stress face à l'agressivité, notion de distance et de sécurité physique, techniques simples de régulation.",
+          },
+          {
+            title: "Procédures d'alerte et de protection",
+            text: "Objectif : être capable de déclencher les procédures d'alerte adaptées et de prendre en charge un salarié victime ou témoin. Procédures internes d'alerte et de secours, prise en charge d'un salarié victime ou témoin, signalement et suivi de l'incident.",
+          },
+          {
+            title: "Mise en situation globale",
+            text: "Objectif : être capable de mobiliser l'ensemble des techniques apprises face à un scénario représentatif de son activité. Scénarios représentatifs du contexte professionnel des stagiaires, application combinée des techniques vues en formation.",
+          },
+        ],
         description: ["Face à un public agressif ou incivil, la première réaction détermine souvent si la situation s'apaise ou s'aggrave : une posture inadaptée peut transformer une simple incivilité en agression physique. Les violences externes, provenant de personnes extérieures à l'entreprise, constituent un risque professionnel à part entière identifié par l'INRS, au même titre que les violences internes, et doivent à ce titre être intégrées à la démarche de prévention de l'entreprise.", "Cette formation permet d'identifier les situations à risque d'agressivité, d'adopter une posture professionnelle sécurisante face à une personne agressive, et d'appliquer les bonnes procédures après un incident. À l'issue de la session, chaque participant est capable de gérer ses propres émotions face à l'agressivité, de maintenir une distance de sécurité physique adaptée, et de déclencher les procédures d'alerte internes le cas échéant."],
         audience: "Cette formation s'adresse à tout salarié en contact avec du public, exposé à un risque d'agressivité ou d'incivilité dans le cadre de son activité : accueil, guichet, service client, intervention à domicile. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les secteurs où le contact avec le public constitue le cœur de l'activité (commerce, administration, transport, établissements de santé) et peut être adaptée aux situations spécifiques rencontrées par chaque groupe de stagiaires.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques professionnels liés aux violences externes. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir de scénarios représentatifs des situations réellement rencontrées par vos équipes pour renforcer la pertinence des mises en situation.",
@@ -342,6 +960,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Gestion des conflits",
         duration: "4 demi-journées",
         format: "Intra-entreprise",
+        intro: "Repérer la phase dans laquelle se trouve un conflit et l'interrompre avant l'escalade.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Comprendre la dynamique du conflit",
+            text: "Objectif : être capable d'identifier les phases successives d'un conflit interpersonnel. Phases d'un conflit (tension, escalade, crise, résolution), facteurs de risque organisationnels et relationnels.",
+          },
+          {
+            title: "Repérer les signaux d'alerte",
+            text: "Objectif : être capable de détecter les signaux faibles annonçant une montée en tension. Signaux faibles verbaux et non verbaux de la montée en tension, grilles de repérage et d'évaluation d'une situation à risque.",
+          },
+          {
+            title: "Techniques de communication et de désamorçage",
+            text: "Objectif : être capable de mobiliser des techniques de communication pour désamorcer une tension naissante. Écoute active, reformulation, communication non verbale, techniques de désamorçage verbal en jeux de rôle filmés.",
+          },
+          {
+            title: "Mise en pratique",
+            text: "Objectif : être capable d'appliquer les techniques apprises à des situations concrètes issues de son activité. Mises en situation à partir de cas concrets apportés par les stagiaires, débriefing individuel et collectif.",
+          },
+        ],
         description: ["Un désaccord mal géré peut vite dégénérer en conflit ouvert, avec des conséquences durables sur l'ambiance de travail, la cohésion d'équipe et parfois la santé des personnes impliquées. Loin d'être une fatalité, le conflit suit une dynamique identifiable, faite de phases successives, qu'il est possible d'apprendre à repérer et à interrompre avant l'escalade. Prévenir les conflits interpersonnels s'inscrit pleinement dans l'obligation de l'employeur de préserver la santé physique et mentale de ses salariés.", "Cette formation permet de comprendre les mécanismes du conflit, de repérer les signaux d'alerte précoces et de mobiliser des techniques de communication concrètes pour désamorcer les tensions avant qu'elles ne s'installent. À l'issue de la session, chaque participant est capable d'identifier la phase dans laquelle se trouve une situation tendue et d'adapter sa posture et son discours en conséquence."],
         audience: "Cette formation s'adresse à tout salarié en relation avec du public ou avec une équipe, exposé à des situations de tension ou de désaccord dans le cadre de son activité (encadrement, relation client, accueil, coordination de projet). Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée aux managers de proximité et aux personnes en contact fréquent avec du public, pour qui la gestion des tensions relationnelles fait partie intégrante de l'activité quotidienne.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences relationnelles et managériales. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en intra-entreprise à partir de situations réellement vécues par vos équipes pour un ancrage pédagogique maximal.",
@@ -350,6 +989,31 @@ const servicesRaw: SectorRaw[] = [
         title: "Les bases de la sécurité au quotidien",
         duration: "2 demi-journées",
         format: "Intra-entreprise",
+        intro: "Le manager, premier maillon de la prévention : assumer ce rôle au quotidien.",
+        prerequisites: "Aucun ; une première expérience d'encadrement facilite l'appropriation",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "La sécurité dans le management au quotidien",
+            text: "Objectif : être capable de situer la sécurité comme une composante à part entière de la pratique managériale. Enjeux humains, juridiques et économiques ; la sécurité comme composante des décisions et pratiques du manager.",
+          },
+          {
+            title: "Obligations et responsabilités du manager",
+            text: "Objectif : être capable d'identifier ses obligations et sa responsabilité en tant que manager en matière de sécurité. Obligation générale de sécurité de l'employeur, délégation de pouvoir, responsabilités civile et pénale.",
+          },
+          {
+            title: "Identifier et prévenir les risques de son équipe",
+            text: "Objectif : être capable de conduire une démarche d'évaluation des risques au sein de son équipe. Démarche d'évaluation des risques, document unique (DUERP), principes généraux de prévention.",
+          },
+          {
+            title: "Plan de prévention et permis feu",
+            text: "Objectif : être capable d'identifier les situations nécessitant un plan de prévention ou un permis feu. Cadre et étapes du plan de prévention, situations nécessitant un permis feu et mesures associées.",
+          },
+          {
+            title: "Animer la culture sécurité de son équipe",
+            text: "Objectif : être capable de mobiliser des leviers concrets pour animer la culture sécurité de son équipe. Rôle d'exemplarité du manager, leviers d'animation (causeries sécurité, retours d'expérience), plan d'action individuel.",
+          },
+        ],
         description: ["Le manager de proximité est le premier maillon de la prévention des risques professionnels : c'est lui qui organise le travail au quotidien, qui repère les situations dangereuses avant qu'elles ne deviennent des accidents, et dont l'exemplarité conditionne l'adhésion de son équipe aux règles de sécurité. Pourtant, la sécurité est parfois perçue comme une contrainte annexe plutôt que comme une composante à part entière du rôle managérial, alors même que sa responsabilité civile et pénale peut être engagée en cas d'accident.", "Cette formation permet au manager d'intégrer pleinement la sécurité dans sa pratique managériale quotidienne : connaître ses obligations réglementaires, savoir évaluer et prévenir les risques de son équipe, et animer une véritable culture sécurité au sein de son périmètre. À l'issue de la session, le manager est capable de mobiliser les outils de prévention adaptés à son équipe et d'incarner l'exemplarité attendue de son rôle."],
         audience: "Cette formation s'adresse aux managers et encadrants de proximité souhaitant intégrer la sécurité dans leur pratique managériale quotidienne, quel que soit leur secteur d'activité. Aucun prérequis n'est nécessaire, bien qu'une première expérience d'encadrement facilite l'appropriation des concepts abordés. Elle est particulièrement recommandée pour les nouveaux managers découvrant leurs responsabilités en matière de sécurité, ainsi que pour tout encadrant souhaitant structurer sa démarche de prévention.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la sécurité. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à un parcours d'intégration pour tout nouveau manager prenant la responsabilité d'une équipe.",
@@ -358,12 +1022,41 @@ const servicesRaw: SectorRaw[] = [
   },
   {
     title: "Photovoltaïque",
-    description: "ENMA Formation forme les professionnels du solaire aux compétences techniques du photovoltaïque.",
+    description: "ENMA Formation forme les professionnels du solaire aux compétences techniques du photovoltaïque — bureau d'études, chiffrage et dimensionnement, contrôle qualité par électroluminescence — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises d'installation photovoltaïque pour fiabiliser leurs projets, de l'étude technique jusqu'au contrôle qualité des modules posés.",
+    why: {
+      title: "La filière photovoltaïque exige une expertise technique pointue",
+      text: "Un projet mal dimensionné ou mal chiffré peut coûter des années de rentabilité, et les compétences internes des entreprises d'installation photovoltaïque ne suivent pas toujours le rythme d'un marché en forte croissance. Nos formations techniques couvrent l'ensemble de la chaîne, du dimensionnement au contrôle qualité par électroluminescence, pour sécuriser vos projets et fiabiliser votre expertise en interne plutôt que de dépendre systématiquement d'un bureau d'études externe.",
+    },
     trainings: [
       {
         title: "Bureau d'études technique photovoltaïque",
         duration: "10 demi-journées",
         format: "Intra-entreprise",
+        intro: "Conduire une étude photovoltaïque complète, du cahier des charges au dossier finalisé.",
+        prerequisites: "Bases en électricité et en calcul technique recommandées",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Contexte technique, réglementaire et économique",
+            text: "Objectif : être capable de situer un projet photovoltaïque dans son cadre technique, réglementaire et économique. Panorama des montages d'installations photovoltaïques vis-à-vis du réseau, cadre réglementaire en vigueur, enjeux économiques d'un projet photovoltaïque.",
+          },
+          {
+            title: "Calculs de dimensionnement",
+            text: "Objectif : être capable de réaliser les calculs de dimensionnement d'une installation à partir d'un cahier des charges client. Calcul du potentiel solaire, de la demande énergétique et du productible à partir d'un cahier des charges client.",
+          },
+          {
+            title: "Conception de l'installation",
+            text: "Objectif : être capable de choisir les équipements et l'implantation adaptés aux contraintes du site. Choix technique des équipements (modules, onduleurs, structures), intégration au bâti ou au sol, contraintes techniques du site.",
+          },
+          {
+            title: "Montage du dossier et planification",
+            text: "Objectif : être capable de constituer un dossier financier et administratif complet et de planifier les travaux. Constitution du dossier financier et administratif, planification des travaux.",
+          },
+          {
+            title: "Étude de cas",
+            text: "Objectif : être capable de conduire une étude complète de bout en bout à partir d'un cahier des charges réel. Étude complète d'un projet photovoltaïque à partir d'un cahier des charges réel.",
+          },
+        ],
         description: ["Un projet photovoltaïque mal dimensionné dès le bureau d'études compromet sa rentabilité pour des années : sous-dimensionnement qui limite la production, surdimensionnement qui alourdit l'investissement sans gain proportionnel, ou choix techniques inadaptés aux contraintes du site. La phase d'étude conditionne la totalité du cycle de vie de l'installation, bien avant la pose du premier module, et constitue le principal levier de maîtrise du risque technique et financier d'un projet.", "Cette formation couvre l'ensemble de la démarche du bureau d'études technique appliquée aux installations photovoltaïques : contexte technique, réglementaire et économique, calculs de dimensionnement, conception de l'installation et montage du dossier. À l'issue de la session, le participant est capable de conduire une étude complète, du cahier des charges client jusqu'au dossier financier et administratif finalisé."],
         audience: "Cette formation s'adresse aux chargés d'études, chargés de projet et référents techniques d'entreprises d'installation photovoltaïque souhaitant structurer ou approfondir leur démarche d'étude. Des bases en électricité et en calcul technique sont utiles pour suivre les séquences de dimensionnement dans de bonnes conditions, sans constituer un prérequis strict. Elle est particulièrement adaptée aux entreprises souhaitant internaliser tout ou partie de leurs études techniques plutôt que de les sous-traiter.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir d'un cahier des charges réel issu de votre activité pour un ancrage pédagogique maximal.",
@@ -372,6 +1065,31 @@ const servicesRaw: SectorRaw[] = [
         title: "Chiffrage et dimensionnement",
         duration: "4 demi-journées",
         format: "Intra-entreprise",
+        intro: "Produire un chiffrage fiable et argumenté sur tout type d'installation photovoltaïque.",
+        prerequisites: "Bases en électricité recommandées",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Calcul du productible",
+            text: "Objectif : être capable d'estimer la production attendue d'une installation photovoltaïque. Estimation du potentiel solaire, de l'ensoleillement et de la production attendue d'une installation photovoltaïque.",
+          },
+          {
+            title: "Dimensionnement technique",
+            text: "Objectif : être capable de dimensionner les équipements d'une installation en fonction du productible visé. Choix et dimensionnement des modules, onduleurs et câblages en fonction du productible visé et des contraintes du site.",
+          },
+          {
+            title: "Chiffrage du projet",
+            text: "Objectif : être capable de construire un devis chiffré fiable pour un projet photovoltaïque. Estimation des coûts de matériel, de pose et de raccordement, construction d'un devis chiffré.",
+          },
+          {
+            title: "Optimisation et rentabilité",
+            text: "Objectif : être capable d'analyser la rentabilité d'un projet et de proposer des optimisations. Analyse du retour sur investissement, comparaison de scénarios techniques et financiers, recommandations d'optimisation.",
+          },
+          {
+            title: "Étude de cas",
+            text: "Objectif : être capable de réaliser un chiffrage et un dimensionnement complets à partir d'un cas concret. Chiffrage et dimensionnement complets d'un projet photovoltaïque à partir d'un cas concret.",
+          },
+        ],
         description: ["Un mauvais chiffrage peut transformer un projet photovoltaïque rentable en gouffre financier : sous-estimation des coûts de pose ou de raccordement, surestimation de la production attendue, ou choix d'équipements mal dimensionnés par rapport aux besoins réels du client. Dans un marché où la concurrence sur les devis est forte, la précision du chiffrage constitue à la fois un argument commercial et une protection contre les mauvaises surprises en cours de chantier.", "Cette formation couvre l'ensemble de la chaîne allant du calcul de production au chiffrage financier final : estimation du productible, dimensionnement technique des équipements, construction d'un devis chiffré et analyse de rentabilité. À l'issue de la session, le participant est capable de produire un chiffrage fiable et argumenté pour tout type d'installation photovoltaïque."],
         audience: "Cette formation s'adresse aux chargés d'affaires et techniciens amenés à chiffrer et dimensionner des installations photovoltaïques dans le cadre de leur activité commerciale ou technique. Des bases en électricité sont utiles mais ne constituent pas un prérequis strict, la formation reprenant les notions essentielles nécessaires au calcul. Elle est particulièrement recommandée pour les équipes commerciales souhaitant gagner en autonomie sur l'établissement des devis techniques.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par la formation Bureau d'études technique photovoltaïque pour les profils souhaitant approfondir la conception complète d'un projet.",
@@ -380,6 +1098,31 @@ const servicesRaw: SectorRaw[] = [
         title: "Contrôle par électroluminescence",
         duration: "Nous consulter",
         format: "Intra-entreprise",
+        intro: "Révéler les microfissures invisibles d'un module avant qu'elles ne coûtent des années de production.",
+        prerequisites: "Connaissance de base des installations photovoltaïques",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Principe de l'électroluminescence",
+            text: "Objectif : être capable d'expliquer le principe physique sur lequel repose la technique de contrôle EL. Fonctionnement de la technique EL, qui révèle l'intérieur de la cellule photovoltaïque à la manière d'une radiographie.",
+          },
+          {
+            title: "Détection des défauts",
+            text: "Objectif : être capable d'identifier les principaux types de défauts détectables par électroluminescence. Identification des microfissures, défauts de fabrication et dommages liés au transport ou au stockage, avant qu'ils n'affectent la performance.",
+          },
+          {
+            title: "Mise en œuvre du contrôle",
+            text: "Objectif : être capable de réaliser un contrôle par électroluminescence et d'en interpréter les résultats. Réalisation d'un contrôle par électroluminescence sur site ou en atelier, interprétation des images obtenues.",
+          },
+          {
+            title: "Cas pratiques et mise en situation",
+            text: "Objectif : être capable de distinguer un module sain d'un module défectueux à partir d'images réelles. Contrôle électroluminescence sur différents types de modules, analyse comparative d'images saines et défectueuses, traitement des cas limites.",
+          },
+          {
+            title: "Compte-rendu et suivi",
+            text: "Objectif : être capable de rédiger un compte-rendu de contrôle exploitable et d'assurer le suivi des modules défectueux. Rédaction du compte-rendu de contrôle, préconisations et suivi des modules défectueux.",
+          },
+        ],
         description: ["Une microfissure invisible à l'œil nu peut réduire la performance d'un module photovoltaïque pendant toute sa durée de vie sans jamais être détectée à temps par une simple inspection visuelle. Ces défauts, souvent liés au transport, au stockage ou à un défaut de fabrication, peuvent entraîner une perte de production significative voire l'apparition de points chauds (hot spots) présentant un risque d'incendie à moyen terme.", "Cette formation enseigne la technique de contrôle qualité par électroluminescence (EL), méthode non destructive qui révèle l'intérieur de la cellule photovoltaïque à la manière d'une radiographie. À l'issue de la session, le participant est capable de mettre en œuvre un contrôle EL sur site ou en atelier, d'interpréter les images obtenues pour distinguer un module sain d'un module défectueux, et de rédiger un compte-rendu de contrôle exploitable."],
         audience: "Cette formation s'adresse aux techniciens et installateurs amenés à contrôler la qualité de modules photovoltaïques, que ce soit à la réception d'une livraison, en cours de garantie ou dans le cadre d'une opération de maintenance. Aucun prérequis technique poussé n'est exigé, une connaissance de base des installations photovoltaïques étant suffisante pour suivre la formation. Elle est particulièrement recommandée pour les entreprises réalisant des contrôles qualité réguliers sur leurs propres installations ou pour le compte de tiers.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée avec votre propre matériel de contrôle si vous en disposez déjà, afin d'ancrer la formation dans vos conditions réelles d'utilisation.",
@@ -388,12 +1131,41 @@ const servicesRaw: SectorRaw[] = [
   },
   {
     title: "Collectivités et élus",
-    description: "ENMA Formation accompagne les élus et les agents de la fonction publique territoriale dans leurs missions.",
+    description: "ENMA Formation accompagne les élus et les agents de la fonction publique territoriale dans l'exercice de leur mandat — fonctions de l'élu, gestes et postures, montage de dossiers de candidature aux marchés publics — partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme construit des formations éligibles au DIFE pour permettre aux élus locaux d'exercer leur mandat avec les connaissances et la sérénité nécessaires.",
+    why: {
+      title: "Les élus ont des besoins de formation spécifiques",
+      text: "Le Code général des collectivités territoriales reconnaît à chaque élu local un droit individuel à la formation (DIFE), financé indépendamment du budget de la collectivité. Entre exercice du mandat, santé physique au quotidien et réponse aux marchés publics, nous adaptons nos formations aux réalités concrètes des collectivités territoriales, avec des sessions accessibles à tout moment du mandat, individuellement ou en groupe.",
+    },
     trainings: [
       {
         title: "Fonctions de l'élu",
         duration: "2 demi-journées",
         format: "Intra-entreprise",
+        intro: "Bien démarrer son mandat : rôles, cadre institutionnel et responsabilités personnelles.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "L'équipe municipale et ses attributions",
+            text: "Objectif : être capable de situer le rôle de chaque membre de l'équipe municipale. Rôle du maire, des adjoints, des conseillers délégués et des conseillers municipaux, majorité et opposition.",
+          },
+          {
+            title: "L'action communale dans l'organisation territoriale",
+            text: "Objectif : être capable de situer l'action de la commune parmi les autres échelons territoriaux. Compétences de l'intercommunalité, du Département, de la Région et relations avec les services de l'État.",
+          },
+          {
+            title: "Droits, devoirs et exemplarité de l'élu",
+            text: "Objectif : être capable d'identifier ses droits et devoirs en tant qu'élu local. Statut de l'élu (protection, formation, indemnités), relation avec les agents municipaux.",
+          },
+          {
+            title: "Responsabilités de l'élu",
+            text: "Objectif : être capable de distinguer les différents types de responsabilité engagés par la fonction d'élu. Distinction entre responsabilité pénale, civile et politique, à partir d'études de cas concrets.",
+          },
+          {
+            title: "Relation de proximité et exemplarité",
+            text: "Objectif : être capable d'adopter une posture d'exemplarité dans sa relation avec les habitants. Prévention des conflits d'intérêts, relation avec les habitants, bilan et synthèse.",
+          },
+        ],
         description: ["Débuter un mandat municipal, c'est intégrer en quelques semaines un fonctionnement institutionnel complexe : répartition des rôles au sein de l'équipe municipale, articulation avec l'intercommunalité, le Département, la Région et les services de l'État, sans oublier les responsabilités personnelles engagées par la fonction. Le Code général des collectivités territoriales reconnaît d'ailleurs à chaque élu un droit à la formation, financé par le DIFE, précisément pour lui permettre d'exercer son mandat en pleine connaissance de ses droits, devoirs et responsabilités.", "Cette formation permet à l'élu de bien débuter ou de consolider son mandat en clarifiant l'organisation de l'équipe municipale, le cadre institutionnel dans lequel s'inscrit l'action communale, et l'étendue de ses responsabilités personnelles. À l'issue de la session, le participant est capable de situer le rôle de chaque élu dans l'organisation municipale, de distinguer les responsabilités pénale, civile et politique, et d'adopter une posture d'exemplarité dans sa relation avec les habitants et les agents municipaux."],
         audience: "Cette formation s'adresse aux élus municipaux nouvellement élus souhaitant bien démarrer leur mandat, ainsi qu'aux élus en cours de mandat souhaitant consolider leur pratique institutionnelle. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée en tout début de mandat, dans les premiers mois suivant l'élection, période durant laquelle les nouveaux élus doivent rapidement s'approprier un grand nombre de notions institutionnelles et juridiques.",
         funding: "Cette formation est éligible au Droit Individuel à la Formation des Élus (DIFE), financé par une cotisation obligatoire prélevée sur les indemnités de fonction et mutualisée au niveau national, indépendamment du budget formation de la collectivité. ENMA Formation vous accompagne dans les démarches administratives liées à la mobilisation du DIFE. Elle constitue un excellent point de départ pour tout élu souhaitant construire progressivement son parcours de formation sur la durée du mandat.",
@@ -402,6 +1174,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Gestes et postures de l'élu",
         duration: "1 à 2 demi-journées",
         format: "Intra-entreprise",
+        intro: "Préserver sa santé physique sur toute la durée d'un mandat.",
+        prerequisites: "Aucun",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Comprendre les TMS liés au mandat",
+            text: "Objectif : être capable d'identifier les sollicitations physiques propres à l'exercice d'un mandat local. Sollicitations physiques propres à l'activité de l'élu : réunions prolongées, déplacements, prises de parole, événements publics.",
+          },
+          {
+            title: "Adopter les bonnes postures",
+            text: "Objectif : être capable d'appliquer les principes de sécurité physique et d'économie d'effort dans ses activités d'élu. Principes de sécurité physique et d'économie d'effort applicables aux situations rencontrées par l'élu.",
+          },
+          {
+            title: "Gérer sa fatigue et son confort au quotidien",
+            text: "Objectif : être capable d'aménager ses conditions de travail et de mieux gérer sa fatigue au quotidien. Aménagement de son poste et de ses conditions de travail, gestion de la fatigue liée à un emploi du temps chargé.",
+          },
+          {
+            title: "Mise en pratique",
+            text: "Objectif : être capable de transposer les bonnes pratiques apprises aux situations concrètes de son mandat. Exercices pratiques à partir de situations concrètes rencontrées par les élus.",
+          },
+        ],
         description: ["Un mandat électif s'accompagne de sollicitations physiques souvent sous-estimées : réunions à rallonge en position assise prolongée, déplacements fréquents, stations debout lors d'inaugurations ou de cérémonies, prises de parole répétées. Contrairement à une idée reçue, l'exercice d'un mandat local n'est pas exempt de contraintes physiques, et ces sollicitations cumulées sur la durée d'un mandat peuvent générer fatigue chronique et troubles musculosquelettiques si elles ne sont pas anticipées.", "Cette sensibilisation aide l'élu à préserver sa santé physique tout au long de son mandat, en identifiant les situations à risque propres à son activité et en adoptant les postures et l'organisation adaptées. À l'issue de la formation, le participant est capable de repérer les sollicitations physiques de son quotidien d'élu, d'appliquer les principes d'économie d'effort adaptés, et de mieux gérer sa fatigue face à un emploi du temps souvent chargé."],
         audience: "Cette formation s'adresse aux élus municipaux souhaitant préserver leur santé physique dans l'exercice de leur mandat, quel que soit leur niveau de responsabilité (maire, adjoint, conseiller municipal). Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée en début de mandat, période où les nouvelles sollicitations physiques liées à la fonction ne sont pas encore anticipées, mais reste utile à tout moment du mandat pour ajuster ses habitudes.",
         funding: "Cette formation est éligible au Droit Individuel à la Formation des Élus (DIFE), un droit personnel attaché à chaque élu local et indépendant du budget formation de la collectivité. ENMA Formation vous accompagne dans les démarches administratives liées à la mobilisation du DIFE, de l'inscription sur la plateforme dédiée jusqu'à la validation de la prise en charge. Cette formation peut être suivie de manière individuelle ou organisée collectivement pour plusieurs élus d'une même collectivité.",
@@ -410,6 +1203,27 @@ const servicesRaw: SectorRaw[] = [
         title: "Maîtriser la création d'un dossier de candidature à un appel d'offres public",
         duration: "Durée à définir",
         format: "Intra-entreprise",
+        intro: "Constituer un dossier qui passe le premier tri administratif, puis convainc sur le fond.",
+        prerequisites: "Aucun prérequis juridique",
+        certification: "Attestation de fin de formation | Grille de compétences",
+        programme: [
+          {
+            title: "Comprendre la commande publique",
+            text: "Objectif : être capable de situer les principes fondamentaux et la typologie des marchés publics. Principes de la commande publique, typologie des marchés publics, seuils et procédures de passation.",
+          },
+          {
+            title: "Analyser un avis de marché",
+            text: "Objectif : être capable de lire un avis de marché et d'en identifier les pièces attendues. Lecture d'un avis d'appel public à la concurrence, identification des pièces du dossier de consultation des entreprises (DCE).",
+          },
+          {
+            title: "Constituer le dossier de candidature",
+            text: "Objectif : être capable de réunir un dossier de candidature complet et de rédiger un mémoire technique convaincant. Pièces administratives et techniques à réunir, rédaction du mémoire technique, présentation de l'offre.",
+          },
+          {
+            title: "Suivre et sécuriser sa candidature",
+            text: "Objectif : être capable d'identifier les points de vigilance permettant d'éviter le rejet d'une candidature. Respect des délais et formalités, points de vigilance pour éviter le rejet d'une candidature.",
+          },
+        ],
         description: ["Un dossier de candidature incomplet ou mal ficelé peut disqualifier une offre pourtant compétitive dès le premier tri administratif, avant même que le contenu technique ou financier de la proposition ne soit examiné. La commande publique obéit à un formalisme strict, encadré par le Code de la commande publique, où le non-respect d'une pièce attendue ou d'un délai de remise peut suffire à écarter une candidature par ailleurs pertinente.", "Cette formation permet de comprendre la procédure de la commande publique, de réunir les pièces nécessaires à une candidature recevable, et de présenter une offre complète et convaincante. À l'issue de la session, le participant est capable d'analyser un avis de marché, de constituer un dossier de candidature complet incluant le mémoire technique, et de sécuriser sa candidature face aux points de vigilance les plus fréquents."],
         audience: "Cette formation s'adresse aux élus et agents territoriaux impliqués dans la réponse à des appels d'offres publics, que ce soit du côté de la collectivité qui lance la consultation ou du côté d'une structure candidate à un marché public. Aucun prérequis juridique n'est nécessaire, la formation reprenant les notions essentielles de la commande publique. Elle est particulièrement recommandée pour toute personne découvrant la procédure de réponse aux marchés publics ou souhaitant structurer sa pratique.",
         funding: "Cette formation est éligible au Droit Individuel à la Formation des Élus (DIFE) pour les élus locaux concernés. ENMA Formation vous accompagne dans les démarches administratives liées à la mobilisation du DIFE, de l'inscription sur la plateforme dédiée jusqu'à la validation de la prise en charge. Pour les agents territoriaux, d'autres dispositifs de financement de la formation professionnelle peuvent être mobilisés : n'hésitez pas à nous consulter pour identifier la solution adaptée à votre situation.",
@@ -473,7 +1287,7 @@ export const team = [
   {
     name: "Maxence Druelle",
     role: "Conseiller formation",
-    email: "maxence@enma-formation.fr",
+    email: "maxence@enma-formation.com",
     bio: "Votre interlocuteur pour construire le parcours de formation adapté à vos besoins et à votre financement OPCO.",
   },
   {

@@ -42,7 +42,9 @@ export const metadata: Metadata = {
     "travail en hauteur",
     "financement OPCO",
     "formation sécurité incendie",
-    "Tourcoing",
+    "Wingles",
+    "Lens",
+    "Pas-de-Calais",
   ],
   authors: [{ name: "ENMA Formation" }],
   alternates: {
