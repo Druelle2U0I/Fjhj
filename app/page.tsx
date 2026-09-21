@@ -2,7 +2,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Reveal from "@/components/Reveal";
-import SectorWheel from "@/components/SectorWheel";
+import TrainingTree from "@/components/TrainingTree";
 import { services, funding, home } from "@/lib/data";
 import type { HomeSection } from "@/lib/data";
 
@@ -26,15 +26,16 @@ function FormationsSection({ section }: { section: HomeSection }) {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-12">
-          <SectorWheel
+          <TrainingTree
             sectors={services.map((service) => ({
               slug: service.slug,
               title: service.title,
-              image: service.image,
-              imageAlt: service.imageAlt,
-              count: service.trainings.length,
               opco: service.opco,
-              intro: service.description,
+              trainings: service.trainings.map((t) => ({
+                slug: t.slug,
+                title: t.title,
+                duration: t.duration,
+              })),
             }))}
           />
         </Reveal>
