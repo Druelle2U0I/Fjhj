@@ -1,8 +1,9 @@
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
 import { company, home, pillars } from "@/lib/data";
+import type { HomeSection } from "@/lib/data";
 
-export default function About() {
+export default function About({ section }: { section: HomeSection }) {
   return (
     <section id="a-propos" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
@@ -17,14 +18,17 @@ export default function About() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-              À propos
-            </span>
+            {section.eyebrow && (
+              <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+                {section.eyebrow}
+              </span>
+            )}
             <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-              Un organisme de formation certifié Qualiopi, ancré dans les
-              Hauts-de-France
+              {section.title}
             </h2>
-            <p className="mt-5 max-w-2xl text-muted">{company.about}</p>
+            <p className="mt-5 max-w-2xl text-muted">
+              {section.text || company.about}
+            </p>
           </Reveal>
         </div>
 

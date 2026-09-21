@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { SiteContent } from "@/lib/data";
 import SectorsEditor from "./SectorsEditor";
+import DesignEditor from "./DesignEditor";
 import { Card, Field, ImageField, ListEditor } from "./ui";
 
 const SECTIONS = [
@@ -13,6 +14,7 @@ const SECTIONS = [
   { id: "equipe", label: "Équipe" },
   { id: "financement", label: "Qualiopi & financement" },
   { id: "accueil", label: "Page d'accueil" },
+  { id: "design", label: "Design & sections" },
   { id: "accessibilite", label: "Accessibilité" },
 ] as const;
 
@@ -504,6 +506,17 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 />
               </div>
             </>
+          )}
+
+          {section === "design" && (
+            <DesignEditor
+              theme={content.theme}
+              sections={content.home.sections}
+              onThemeChange={(theme) => update({ ...content, theme })}
+              onSectionsChange={(sections) =>
+                update({ ...content, home: { ...content.home, sections } })
+              }
+            />
           )}
 
           {section === "accessibilite" && (

@@ -1393,6 +1393,47 @@
       }
     ],
     "aboutImage": "/images/entrepot-caces.jpg",
-    "aboutImageAlt": "Chariot élévateur en entrepôt, formation CACES"
+    "aboutImageAlt": "Chariot élévateur en entrepôt, formation CACES",
+    "sections": [
+      {
+        "id": "about",
+        "visible": true,
+        "eyebrow": "À propos",
+        "title": "Un organisme de formation certifié Qualiopi, ancré dans les Hauts-de-France",
+        "text": ""
+      },
+      {
+        "id": "formations",
+        "visible": true,
+        "eyebrow": "Nos formations",
+        "title": "9 domaines de formation, 35 parcours certifiés Qualiopi",
+        "text": "Toutes nos formations sont finançables OPCO et proposées en intra-entreprise, partout en Hauts-de-France."
+      },
+      {
+        "id": "financement",
+        "visible": true,
+        "eyebrow": "Qualiopi & financement",
+        "title": "Un financement pris en charge, sans démarche de votre côté",
+        "text": ""
+      },
+      {
+        "id": "contact",
+        "visible": true,
+        "eyebrow": "",
+        "title": "Parlons de vos besoins en formation",
+        "text": "Décrivez votre projet, nous revenons vers vous sous 24 heures avec une proposition adaptée et le montage du dossier OPCO."
+      }
+    ]
+  },
+  "theme": {
+    "background": "#0b032b",
+    "surface": "#160f3f",
+    "surface2": "#1f1a4d",
+    "foreground": "#ffffff",
+    "muted": "#b3b3ba",
+    "border": "#2a2455",
+    "accent": "#fff9c7",
+    "accentForeground": "#0b032b",
+    "headingFont": "archivo"
   }
 }

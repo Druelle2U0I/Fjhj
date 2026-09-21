@@ -44,6 +44,37 @@ export type HeroSlide = {
   text?: string;
 };
 
+export type HomeSectionId = "about" | "formations" | "financement" | "contact";
+
+export type HomeSection = {
+  id: HomeSectionId;
+  visible: boolean;
+  eyebrow: string;
+  title: string;
+  text: string;
+};
+
+export const HEADING_FONTS = {
+  archivo: "var(--font-archivo)",
+  grotesk: "var(--font-grotesk)",
+  manrope: "var(--font-manrope)",
+  fraunces: "var(--font-fraunces)",
+} as const;
+
+export type HeadingFont = keyof typeof HEADING_FONTS;
+
+export type Theme = {
+  background: string;
+  surface: string;
+  surface2: string;
+  foreground: string;
+  muted: string;
+  border: string;
+  accent: string;
+  accentForeground: string;
+  headingFont: HeadingFont;
+};
+
 export type SiteContent = {
   company: {
     name: string;
@@ -67,7 +98,9 @@ export type SiteContent = {
     heroSlides: HeroSlide[];
     aboutImage?: string;
     aboutImageAlt?: string;
+    sections: HomeSection[];
   };
+  theme: Theme;
   footerImage?: string;
 };
 
@@ -82,7 +115,23 @@ export const funding = content.funding;
 export const accessibility = content.accessibility;
 export const team = content.team;
 export const home = content.home;
+export const theme = content.theme;
 export const footerImage = content.footerImage;
+
+/** Variables CSS dérivées du thème, appliquées sur <html>. */
+export function themeStyle(t: Theme): Record<string, string> {
+  return {
+    "--background": t.background,
+    "--surface": t.surface,
+    "--surface-2": t.surface2,
+    "--foreground": t.foreground,
+    "--muted": t.muted,
+    "--border": t.border,
+    "--accent": t.accent,
+    "--accent-foreground": t.accentForeground,
+    "--heading-font": HEADING_FONTS[t.headingFont] ?? HEADING_FONTS.archivo,
+  };
+}
 
 export const services = content.sectors.map((sector) => ({
   ...sector,

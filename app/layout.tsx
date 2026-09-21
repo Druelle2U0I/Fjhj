@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Archivo } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Archivo,
+  Space_Grotesk,
+  Manrope,
+  Fraunces,
+} from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
+import { theme, themeStyle } from "@/lib/data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,6 +27,32 @@ const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
+  display: "swap",
+  preload: false,
+});
+
+const grotesk = Space_Grotesk({
+  variable: "--font-grotesk",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  preload: false,
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+  preload: false,
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  display: "swap",
+  preload: false,
 });
 
 const siteUrl = "https://fjhj-one.vercel.app";
@@ -74,7 +108,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
-      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} h-full antialiased`}
+      style={themeStyle(theme) as React.CSSProperties}
     >
       <body className="min-h-full flex flex-col">
         <SiteChrome header={<Header />} footer={<Footer />}>

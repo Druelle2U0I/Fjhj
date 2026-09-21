@@ -243,6 +243,40 @@ export function ImageField({
   );
 }
 
+export function ColorField({
+  label,
+  value,
+  onChange,
+  hint,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  hint?: string;
+}) {
+  return (
+    <div>
+      <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+        {label}
+      </span>
+      <div className="mt-1.5 flex items-center gap-3">
+        <input
+          type="color"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="h-10 w-12 shrink-0 cursor-pointer rounded-lg border border-border bg-surface-2"
+        />
+        <input
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full rounded-xl border border-border bg-surface-2 px-3 py-2 font-mono text-sm outline-none focus:border-accent"
+        />
+      </div>
+      {hint && <span className="mt-1 block text-xs text-muted">{hint}</span>}
+    </div>
+  );
+}
+
 /** Un paragraphe par bloc séparé d'une ligne vide. */
 export function ParagraphsField({
   label,
