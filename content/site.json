@@ -10,8 +10,8 @@
     "serviceArea": "Hauts-de-France — intervention en Aisne et dans la Somme"
   },
   "legal": {
-    "activityDeclaration": "",
-    "qualiopiCertificate": ""
+    "activityDeclaration": "32 62 04507 62",
+    "qualiopiCertificate": "10122288"
   },
   "stats": [
     {
@@ -172,7 +172,8 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, dans la mesure où elle répond à une obligation réglementaire de sécurité incendie. ENMA Formation vous accompagne dans la constitution du dossier de financement : devis détaillé, programme pédagogique et convocation nominative sont fournis pour faciliter votre demande de prise en charge auprès de votre opérateur de compétences. Le financement peut également être mobilisé dans le cadre d'un budget formation interne ou d'une convention multi-sites pour les entreprises disposant de plusieurs établissements."
         }
       ],
-      "opco": true
+      "opco": true,
+      "image": "/images/extincteur-1600px-1790023354494.png"
     },
     {
       "title": "Secours & premiers soins",
@@ -1434,8 +1435,9 @@
     "border": "#2a2455",
     "accent": "#fff9c7",
     "accentForeground": "#0b032b",
-    "headingFont": "archivo"
+    "headingFont": "fraunces"
   },
+  "footerImage": "/images/1-1790025066228.jpg",
   "footerCta": {
     "enabled": true,
     "eyebrow": "Recevez notre catalogue",
