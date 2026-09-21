@@ -1,3 +1,12 @@
+export function slugify(input: string): string {
+  return input
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 export const company = {
   name: "ENMA Formation",
   tagline: "Vos équipes méritent le meilleur. Nous leur donnons les moyens d'y arriver.",
@@ -45,7 +54,7 @@ export const pillars = [
   },
 ];
 
-export const services = [
+const servicesRaw = [
   {
     title: "Sécurité incendie & évacuation",
     description: "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation.",
@@ -381,6 +390,15 @@ export const services = [
     ],
   },
 ];
+
+export const services = servicesRaw.map((sector) => ({
+  ...sector,
+  slug: slugify(sector.title),
+  trainings: sector.trainings.map((training) => ({
+    ...training,
+    slug: slugify(training.title),
+  })),
+}));
 
 export const topTrainings = [
   {

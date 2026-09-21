@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { company, stats } from "@/lib/data";
 
@@ -45,18 +46,18 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-8 flex flex-wrap gap-4"
           >
-            <a
-              href="#formations"
+            <Link
+              href="/formations"
               className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
             >
               Découvrir nos formations
-            </a>
-            <a
-              href="#contact"
+            </Link>
+            <Link
+              href="/contact"
               className="rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
             >
               Parler à un conseiller
-            </a>
+            </Link>
           </motion.div>
 
           <motion.dl

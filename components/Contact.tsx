@@ -6,7 +6,11 @@ import { accessibility, company } from "@/lib/data";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-export default function Contact() {
+export default function Contact({
+  defaultTraining,
+}: {
+  defaultTraining?: string;
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
 
@@ -141,6 +145,7 @@ export default function Contact() {
                 <input
                   id="training"
                   name="training"
+                  defaultValue={defaultTraining}
                   placeholder="Ex : CACES R489, SST..."
                   className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
                 />
