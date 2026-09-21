@@ -7,7 +7,16 @@ export const company = {
     "Organisme de formation certifié Qualiopi, implanté dans les Hauts-de-France. Formations en intra-entreprise et en inter-entreprises, partout en Aisne et dans la Somme.",
   email: "maxence@enma-formation.fr",
   phone: "07 50 93 14 90",
-  address: "Hauts-de-France — Aisne, Somme",
+  address: "18 rue des Verriers, 59200 Tourcoing",
+  serviceArea: "Hauts-de-France — intervention en Aisne et dans la Somme",
+};
+
+// Numéros à confirmer avant mise en ligne définitive (déclaration
+// d'activité et certification Qualiopi) — laisser vide tant qu'ils ne
+// sont pas confirmés par ENMA Formation.
+export const legal = {
+  activityDeclaration: "",
+  qualiopiCertificate: "",
 };
 
 export const stats = [
@@ -101,6 +110,30 @@ export const topTrainings = [
     format: "Intra ou inter-entreprises",
   },
 ];
+
+export const funding = {
+  intro:
+    "ENMA Formation est certifié Qualiopi au titre des actions de formation. Cette certification conditionne l'accès aux fonds publics et mutualisés.",
+  points: [
+    {
+      title: "Aucune démarche de votre côté",
+      text: "Nous montons le dossier de financement pour vous : vous n'avez aucune démarche administrative à effectuer.",
+    },
+    {
+      title: "Financement OPCO",
+      text: "Plan de développement des compétences, alternance, dispositifs conventionnels : selon votre branche et votre effectif, tout ou partie du coût pédagogique est financé.",
+    },
+    {
+      title: "Mise en place rapide",
+      text: "Une fois le dossier validé, les sessions peuvent généralement être programmées sous deux à quatre semaines.",
+    },
+  ],
+};
+
+export const accessibility = {
+  text: "ENMA Formation s'engage à rechercher, en lien avec chaque client, des solutions d'adaptation pour favoriser l'accueil des personnes en situation de handicap (allongement des sessions, pauses plus fréquentes, supports adaptés, salles accessibles). Les demandes d'aménagement sont à formuler avant l'inscription auprès de notre référent handicap.",
+  referent: "Maxence Druelle, référent handicap",
+};
 
 export const team = [
   {

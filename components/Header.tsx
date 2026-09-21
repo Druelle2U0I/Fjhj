@@ -6,6 +6,7 @@ import { company } from "@/lib/data";
 const links = [
   { href: "#a-propos", label: "À propos" },
   { href: "#formations", label: "Formations" },
+  { href: "#financement", label: "Financement" },
   { href: "#equipe", label: "Équipe" },
   { href: "#contact", label: "Contact" },
 ];

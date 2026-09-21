@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Reveal from "@/components/Reveal";
-import { company } from "@/lib/data";
+import { accessibility, company } from "@/lib/data";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -70,7 +70,18 @@ export default function Contact() {
               <span className="font-medium text-muted">Adresse</span>
               <span>{company.address}</span>
             </p>
+            <p className="flex gap-2">
+              <span className="font-medium text-muted">Zone</span>
+              <span>{company.serviceArea}</span>
+            </p>
           </div>
+
+          <p className="mt-8 max-w-md text-xs text-muted">
+            {accessibility.text} — {accessibility.referent} :{" "}
+            <a href={`mailto:${company.email}`} className="hover:text-accent">
+              {company.email}
+            </a>
+          </p>
         </Reveal>
 
         <Reveal delay={0.1}>
