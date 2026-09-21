@@ -54,7 +54,26 @@ export const pillars = [
   },
 ];
 
-const servicesRaw = [
+type TrainingRaw = {
+  title: string;
+  duration: string;
+  format: string;
+  image?: string;
+  imageAlt?: string;
+  description: string[];
+  audience: string;
+  funding: string;
+};
+
+type SectorRaw = {
+  title: string;
+  description: string;
+  image?: string;
+  imageAlt?: string;
+  trainings: TrainingRaw[];
+};
+
+const servicesRaw: SectorRaw[] = [
   {
     title: "Sécurité incendie & évacuation",
     description: "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation.",
@@ -156,11 +175,15 @@ const servicesRaw = [
   {
     title: "CACES & habilitations",
     description: "ENMA Formation forme vos conducteurs d'engins et de chariots à la conduite.",
+    image: "/images/entrepot-caces.jpg",
+    imageAlt: "Cariste conduisant un chariot élévateur en entrepôt lors d'une formation CACES",
     trainings: [
       {
         title: "AIPR, intervention à proximité des réseaux",
         duration: "2 demi-journées",
         format: "Intra-entreprise",
+        image: "/images/reseaux-chantier.jpg",
+        imageAlt: "Chantier de voirie avec câbles et signalisation, intervention à proximité des réseaux enterrés",
         description: ["Chaque année, des centaines d'accidents et d'interruptions de service résultent de travaux réalisés à proximité de réseaux enterrés ou aériens mal identifiés (gaz, électricité, télécommunications, eau). La réforme anti-endommagement des réseaux (décret DT-DICT) impose depuis 2018 que tout intervenant sur un chantier à proximité de réseaux soit titulaire d'une Autorisation d'Intervention à Proximité des Réseaux (AIPR), délivrée après réussite à un examen national sur plateforme agréée. Cette obligation concerne aussi bien les opérateurs de travaux que l'encadrement et les concepteurs de projets.", "À l'issue de la préparation, le participant est capable de comprendre les démarches administratives de la réforme anti-endommagement, de lire un plan de réseaux et d'en interpréter le marquage-piquetage, d'appliquer les distances et techniques de sécurité adaptées à proximité d'un réseau, et de réagir correctement en cas d'endommagement ou de doute sur la localisation d'un réseau. La formation prépare spécifiquement à l'examen AIPR correspondant au profil du participant (opérateur, encadrant ou concepteur)."],
         audience: "Cette formation s'adresse aux opérateurs, encadrants et concepteurs de travaux intervenant à proximité de réseaux enterrés ou aériens, quel que soit le secteur d'activité (BTP, VRD, espaces verts, réseaux). Aucun prérequis technique n'est exigé, seule une maîtrise suffisante du français écrit et parlé est nécessaire pour passer l'examen final. Le profil visé (opérateur, encadrant ou concepteur) détermine le contenu de l'examen final : nous vous aidons à identifier le profil adapté à la fonction de chaque participant.",
         funding: "La préparation à l'AIPR est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la sécurité des travaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre dossier de financement. L'examen AIPR étant valable 5 ans, nous pouvons également organiser des sessions de renouvellement groupées pour l'ensemble de vos équipes intervenant sur chantier.",
@@ -169,6 +192,8 @@ const servicesRaw = [
         title: "CACES R489, conduite de chariots élévateurs",
         duration: "2 à 6 demi-journées",
         format: "Intra-entreprise",
+        image: "/images/chariot-elevateur.jpg",
+        imageAlt: "Fourches d'un chariot élévateur, formation CACES R489",
         description: ["La conduite d'un chariot élévateur est une opération à risque : chute de charge, renversement de l'engin, collision avec un piéton figurent parmi les accidents du travail les plus graves recensés en entrepôt et sur chantier. L'article R4323-55 du Code du travail impose que tout conducteur de chariot automoteur à conducteur porté soit titulaire d'une autorisation de conduite délivrée par son employeur, elle-même fondée sur une évaluation des connaissances et savoir-faire conforme à la recommandation R489 de la CNAM. Cette formation constitue le socle indispensable à la délivrance de cette autorisation.", "À l'issue de la formation, le conducteur est capable d'appliquer les règles de circulation propres à son site, de vérifier son chariot avant la prise de poste, de manœuvrer en sécurité en charge comme à vide, et de réaliser les opérations de gerbage, dégerbage et chargement de véhicule dans le respect de la plaque de charge. La durée de la formation varie selon l'expérience du conducteur et le nombre de catégories visées : une journée suffit généralement pour un recyclage, jusqu'à trois jours pour une première qualification portant sur plusieurs catégories."],
         audience: "Cette formation s'adresse à toute personne appelée à conduire un chariot élévateur, qu'il s'agisse d'une première qualification ou d'un recyclage. Une aptitude médicale à la conduite délivrée par le médecin du travail est requise, ainsi qu'une maîtrise suffisante du français écrit et parlé pour comprendre les consignes de sécurité et répondre au test théorique. Le choix des catégories à faire certifier (1 à 6 selon la nomenclature R489) dépend du type de chariots utilisés sur votre site : nous vous aidons à identifier les catégories pertinentes lors de l'établissement du devis.",
         funding: "La formation CACES R489 est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, dans la mesure où elle répond à une obligation réglementaire de sécurité liée à la conduite d'engins. ENMA Formation vous transmet le devis détaillé par catégorie visée, le programme pédagogique et la convention de formation nécessaires à votre demande de financement. Un accompagnement est également proposé pour la mise à jour des autorisations de conduite de l'ensemble de vos conducteurs, notamment lors du renouvellement périodique recommandé tous les 5 ans.",
@@ -177,6 +202,8 @@ const servicesRaw = [
         title: "Engins de chantier (R482)",
         duration: "4 à 10 demi-journées",
         format: "Intra ou inter-entreprises",
+        image: "/images/engins-chantier-champ.jpg",
+        imageAlt: "Pelleteuse et bulldozers sur un chantier, formation engins de chantier R482",
         description: ["Un engin de chantier mal maîtrisé figure parmi les premières causes d'accident grave sur les chantiers du BTP : renversement, ensevelissement, collision avec un piéton ou un réseau enterré. L'article R4323-55 du Code du travail impose que tout conducteur d'engin de chantier soit titulaire d'une autorisation de conduite délivrée par l'employeur, fondée sur une évaluation conforme à la recommandation R482 de la CNAM, qui couvre sept catégories d'engins (A à G) selon leur usage.", "Cette formation théorique et pratique alterne plateau technique et conditions réelles de chantier. À l'issue de la session, le conducteur est capable de vérifier son engin avant utilisation, de circuler en sécurité sur le chantier en tenant compte des zones de danger et des réseaux enterrés, et de réaliser les manœuvres propres à son engin (terrassement, chargement, nivellement) dans le respect des règles de stabilité."],
         audience: "Cette formation s'adresse à tout conducteur amené à utiliser un engin de chantier dans le cadre de son activité professionnelle. Une aptitude médicale à la conduite délivrée par le médecin du travail est requise. La catégorie R482 visée (de A à G) dépend directement du type d'engin utilisé dans votre activité : pelle, chargeuse, tractopelle, compacteur ou autre engin de chantier ; nous vous aidons à l'identifier lors de l'établissement du devis.",
         funding: "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous accompagne dans le montage du dossier de financement en fournissant devis par catégorie, programme pédagogique et convention de formation. Une préparation groupée à l'AIPR peut également être proposée pour les conducteurs intervenant à proximité de réseaux.",

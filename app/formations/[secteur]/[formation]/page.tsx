@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
@@ -50,33 +51,56 @@ export default async function FormationPage(
     <>
       <section className="relative overflow-hidden px-6 pt-16 pb-14">
         <div className="pointer-events-none absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-accent-soft blur-3xl" />
-        <div className="relative mx-auto max-w-4xl">
-          <div className="mb-6 text-sm text-muted">
-            <Link href="/formations" className="hover:text-accent">
-              Formations
-            </Link>
-            <span className="mx-2">/</span>
-            <Link
-              href={`/formations/${service.slug}`}
-              className="hover:text-accent"
-            >
-              {service.title}
-            </Link>
-            <span className="mx-2">/</span>
-            <span>{training.title}</span>
+        <div
+          className={`relative mx-auto max-w-6xl ${
+            training.image
+              ? "grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center"
+              : "max-w-4xl"
+          }`}
+        >
+          <div>
+            <div className="mb-6 text-sm text-muted">
+              <Link href="/formations" className="hover:text-accent">
+                Formations
+              </Link>
+              <span className="mx-2">/</span>
+              <Link
+                href={`/formations/${service.slug}`}
+                className="hover:text-accent"
+              >
+                {service.title}
+              </Link>
+              <span className="mx-2">/</span>
+              <span>{training.title}</span>
+            </div>
+
+            <Reveal>
+              <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+                {service.title}
+              </span>
+              <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+                {training.title}
+              </h1>
+              <p className="mt-4 text-muted">
+                {training.duration} · {training.format}
+              </p>
+            </Reveal>
           </div>
 
-          <Reveal>
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-              {service.title}
-            </span>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-              {training.title}
-            </h1>
-            <p className="mt-4 text-muted">
-              {training.duration} · {training.format}
-            </p>
-          </Reveal>
+          {training.image && (
+            <Reveal
+              delay={0.1}
+              className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-3xl border border-border"
+            >
+              <Image
+                src={training.image}
+                alt={training.imageAlt ?? training.title}
+                fill
+                sizes="(min-width: 1024px) 40vw, 90vw"
+                className="dyn-photo object-cover"
+              />
+            </Reveal>
+          )}
         </div>
       </section>
 

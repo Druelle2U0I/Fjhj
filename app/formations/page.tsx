@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
@@ -34,17 +35,34 @@ export default function FormationsPage() {
               <Reveal key={service.slug} delay={(i % 3) * 0.05}>
                 <Link
                   href={`/formations/${service.slug}`}
-                  className="dyn-card block h-full rounded-2xl border border-border bg-surface p-6"
+                  className="dyn-card block h-full overflow-hidden rounded-2xl border border-border bg-surface"
                 >
-                  <div className="mb-3 h-1 w-10 rounded-full bg-gold" />
-                  <h2 className="text-lg font-semibold">{service.title}</h2>
-                  <p className="mt-2 text-sm text-muted">
-                    {service.description}
-                  </p>
-                  <p className="mt-4 text-sm font-medium text-accent">
-                    {service.trainings.length} formation
-                    {service.trainings.length > 1 ? "s" : ""} →
-                  </p>
+                  {service.image ? (
+                    <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.imageAlt ?? service.title}
+                        fill
+                        sizes="(min-width: 1024px) 33vw, 90vw"
+                        className="dyn-photo object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-surface/90 via-surface/0 to-transparent" />
+                    </div>
+                  ) : (
+                    <div className="pt-6 px-6">
+                      <div className="h-1 w-10 rounded-full bg-gold" />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <h2 className="text-lg font-semibold">{service.title}</h2>
+                    <p className="mt-2 text-sm text-muted">
+                      {service.description}
+                    </p>
+                    <p className="mt-4 text-sm font-medium text-accent">
+                      {service.trainings.length} formation
+                      {service.trainings.length > 1 ? "s" : ""} →
+                    </p>
+                  </div>
                 </Link>
               </Reveal>
             ))}

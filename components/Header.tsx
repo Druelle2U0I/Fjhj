@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { company } from "@/lib/data";
@@ -32,7 +33,18 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 text-lg font-semibold tracking-tight"
+        >
+          <Image
+            src="/brand/logo-icon.png"
+            alt="Logo ENMA Formation"
+            width={36}
+            height={36}
+            className="rounded-md"
+            priority
+          />
           {company.name}
         </Link>
         <nav className="hidden gap-8 text-sm font-medium text-muted md:flex">

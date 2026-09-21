@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0b0d;
-  --surface: #131519;
-  --surface-2: #1a1d23;
-  --foreground: #f6f5f2;
-  --muted: #c4c3ca;
-  --border: #2b2e35;
-  --accent: #6d8cff;
-  --accent-foreground: #0a0b0d;
-  --accent-soft: #1c2440;
-  --gold: #f4b859;
+  --background: #0b032b;
+  --surface: #160f3f;
+  --surface-2: #1f1a4d;
+  --foreground: #ffffff;
+  --muted: #b3b3ba;
+  --border: #2a2455;
+  --accent: #fff9c7;
+  --accent-foreground: #0b032b;
+  --accent-soft: #3a331a;
+  --gold: #dbdbdb;
 }
 
 @theme inline {
@@ -59,8 +59,8 @@ h4 {
   transform: translateY(-6px);
   border-color: var(--accent);
   box-shadow:
-    0 20px 40px -20px rgba(109, 140, 255, 0.35),
-    0 4px 12px -4px rgba(0, 0, 0, 0.4);
+    0 20px 40px -20px rgba(255, 249, 199, 0.3),
+    0 4px 12px -4px rgba(0, 0, 0, 0.5);
 }
 
 .dyn-photo {
