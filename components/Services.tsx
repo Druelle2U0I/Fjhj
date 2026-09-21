@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
-import { services } from "@/lib/data";
+import { services, topTrainings } from "@/lib/data";
 
 export default function Services() {
   return (
@@ -13,8 +13,12 @@ export default function Services() {
             Nos formations
           </span>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Des parcours pensés pour chaque étape de votre développement
+            9 domaines de formation, 35 parcours certifiés Qualiopi
           </h2>
+          <p className="mt-4 max-w-2xl text-muted">
+            Toutes nos formations sont finançables OPCO et proposées en
+            intra-entreprise, partout en Hauts-de-France.
+          </p>
         </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -34,6 +38,22 @@ export default function Services() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.1}>
+          <div className="mt-16 rounded-2xl border border-border bg-background p-6 sm:p-8">
+            <h3 className="text-lg font-semibold">Les plus demandées</h3>
+            <div className="mt-6 grid gap-6 sm:grid-cols-3">
+              {topTrainings.map((training) => (
+                <div key={training.title}>
+                  <p className="font-medium">{training.title}</p>
+                  <p className="mt-1 text-sm text-muted">
+                    {training.duration} · {training.format}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

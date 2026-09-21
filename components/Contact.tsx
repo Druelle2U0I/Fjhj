@@ -49,8 +49,10 @@ export default function Contact() {
             Parlons de vos besoins en formation
           </h2>
           <p className="mt-5 max-w-md text-muted">
-            Décrivez-nous votre projet, nous revenons vers vous sous 48h
-            ouvrées avec une première proposition de parcours.
+            Vous avez une obligation réglementaire à couvrir, un besoin de
+            montée en compétences ou simplement une question sur le
+            financement&nbsp;? On revient vers vous sous 24 heures avec une
+            réponse concrète.
           </p>
 
           <div className="mt-8 space-y-3 text-sm">
@@ -100,7 +102,7 @@ export default function Contact() {
                   className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
                 />
               </div>
-              <div className="sm:col-span-2">
+              <div className="sm:col-span-1">
                 <label htmlFor="company" className="text-sm font-medium">
                   Entreprise
                 </label>
@@ -109,6 +111,55 @@ export default function Contact() {
                   name="company"
                   className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
                 />
+              </div>
+              <div className="sm:col-span-1">
+                <label htmlFor="phone" className="text-sm font-medium">
+                  Téléphone
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                />
+              </div>
+              <div className="sm:col-span-1">
+                <label htmlFor="training" className="text-sm font-medium">
+                  Formation souhaitée
+                </label>
+                <input
+                  id="training"
+                  name="training"
+                  placeholder="Ex : CACES R489, SST..."
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                />
+              </div>
+              <div className="sm:col-span-1">
+                <label htmlFor="trainees" className="text-sm font-medium">
+                  Nombre de stagiaires
+                </label>
+                <input
+                  id="trainees"
+                  name="trainees"
+                  type="number"
+                  min={1}
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                />
+              </div>
+              <div className="sm:col-span-2">
+                <label htmlFor="format" className="text-sm font-medium">
+                  Format préféré
+                </label>
+                <select
+                  id="format"
+                  name="format"
+                  defaultValue="Intra-entreprise"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                >
+                  <option>Intra-entreprise</option>
+                  <option>Inter-entreprises</option>
+                  <option>Je ne sais pas encore</option>
+                </select>
               </div>
               <div className="sm:col-span-2">
                 <label htmlFor="message" className="text-sm font-medium">

@@ -1,72 +1,136 @@
 export const company = {
   name: "ENMA Formation",
-  tagline: "Développer les compétences qui font grandir votre entreprise",
+  tagline: "Vos équipes méritent le meilleur. Nous leur donnons les moyens d'y arriver.",
   description:
-    "ENMA Formation conçoit et anime des parcours de formation professionnelle sur mesure, pensés pour des équipes exigeantes qui veulent progresser vite et bien.",
-  email: "contact@enma-formation.com",
-  phone: "+33 1 23 45 67 89",
-  address: "Paris, France",
+    "Formations sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention des risques, management, qualité : ENMA Formation couvre l'ensemble de vos besoins en formation professionnelle. Certifié Qualiopi, financement OPCO pris en charge.",
+  about:
+    "Organisme de formation certifié Qualiopi, implanté dans les Hauts-de-France. Formations en intra-entreprise et en inter-entreprises, partout en Aisne et dans la Somme.",
+  email: "maxence@enma-formation.fr",
+  phone: "07 50 93 14 90",
+  address: "Hauts-de-France — Aisne, Somme",
 };
 
 export const stats = [
-  { value: "12+", label: "années d'expérience" },
-  { value: "300+", label: "sessions animées" },
-  { value: "2 400+", label: "professionnels formés" },
-  { value: "96%", label: "taux de satisfaction" },
+  { value: "35", label: "formations certifiées Qualiopi" },
+  { value: "5", label: "départements couverts" },
+  { value: "9", label: "domaines de formation" },
+  { value: "100%", label: "formations finançables OPCO" },
+];
+
+export const pillars = [
+  {
+    title: "Expertise de terrain",
+    text: "Nos intervenants connaissent les réalités des entreprises des Hauts-de-France et s'adaptent à chaque contexte.",
+  },
+  {
+    title: "Ancrage régional",
+    text: "Des formations sur mesure, alignées sur les réalités du marché du travail local.",
+  },
+  {
+    title: "Qualité Qualiopi",
+    text: "Des formations structurées, évaluées et en amélioration continue pour garantir la qualité.",
+  },
+  {
+    title: "Accompagnement complet",
+    text: "Nous gérons toute la conformité administrative et réglementaire, vous vous concentrez sur votre activité.",
+  },
 ];
 
 export const services = [
   {
-    title: "Finance & gestion",
+    title: "Sécurité incendie & évacuation",
     description:
-      "Analyse financière, contrôle de gestion, gestion de trésorerie : des fondamentaux solides pour piloter la performance.",
+      "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation : premier témoin, équipier d'évacuation, équipier de première intervention.",
   },
   {
-    title: "Management & leadership",
+    title: "Secours & premiers soins",
     description:
-      "Développer des managers capables de fédérer, décider et faire grandir leurs équipes au quotidien.",
+      "ENMA Formation forme vos équipes aux gestes de premiers secours : SST, gestes qui sauvent, PSC1.",
   },
   {
-    title: "Investissement & marchés",
+    title: "Habilitation électrique",
     description:
-      "Comprendre les marchés financiers, la gestion de patrimoine et les stratégies d'allocation de capital.",
+      "ENMA Formation prépare vos salariés électriciens et non électriciens à l'habilitation, basse et haute tension (NF C 18-510).",
   },
   {
-    title: "Compétences digitales",
+    title: "CACES & habilitations",
     description:
-      "Outils, data et intelligence artificielle appliqués aux métiers, pour rester compétitif dans un monde qui change vite.",
+      "ENMA Formation forme vos conducteurs d'engins et de chariots à la conduite : CACES R482, R485, R486, R489, R490, ponts roulants.",
   },
   {
-    title: "Communication & soft skills",
+    title: "Travail en hauteur & échafaudages",
     description:
-      "Prise de parole, négociation, gestion du temps : les compétences transverses qui font la différence.",
+      "ENMA Formation forme vos équipes au travail en hauteur, au port du harnais et au montage d'échafaudages (R408, R457).",
   },
   {
-    title: "Certifications sur mesure",
+    title: "Prévention des risques professionnels",
     description:
-      "Des parcours certifiants conçus avec vos équipes RH pour répondre à vos enjeux métiers spécifiques.",
+      "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels : gestes et postures, gestion du stress, santé mentale.",
+  },
+  {
+    title: "Management & qualité",
+    description:
+      "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles : gestion des conflits, sécurité au quotidien.",
+  },
+  {
+    title: "Photovoltaïque",
+    description:
+      "ENMA Formation forme les professionnels du solaire aux compétences techniques du photovoltaïque : bureau d'études, chiffrage, contrôle.",
+  },
+  {
+    title: "Collectivités et élus",
+    description:
+      "ENMA Formation accompagne les élus et les agents de la fonction publique territoriale dans leurs missions.",
+  },
+];
+
+export const topTrainings = [
+  {
+    title: "CACES R489 — conduite de chariots élévateurs",
+    duration: "2 à 6 demi-journées",
+    format: "Intra-entreprise",
+  },
+  {
+    title: "AIPR — intervention à proximité des réseaux",
+    duration: "2 demi-journées",
+    format: "Intra-entreprise",
+  },
+  {
+    title: "Sauveteur secouriste du travail (SST)",
+    duration: "4 demi-journées",
+    format: "Intra ou inter-entreprises",
   },
 ];
 
 export const team = [
   {
-    name: "Emma Nkoulou",
-    role: "Fondatrice & Directrice pédagogique",
-    bio: "15 ans d'expérience en formation professionnelle et en ingénierie pédagogique.",
+    name: "Maxence Druelle",
+    role: "Conseiller formation",
+    bio: "Votre interlocuteur pour construire le parcours de formation adapté à vos besoins et à votre financement OPCO.",
   },
   {
-    name: "Marc Aubert",
-    role: "Responsable formations finance",
-    bio: "Ancien analyste financier, il conçoit nos parcours finance & investissement.",
+    name: null,
+    role: "Responsable pédagogique",
+    bio: "Conçoit et structure nos parcours de formation dans une démarche d'amélioration continue Qualiopi.",
   },
   {
-    name: "Nadia Haddad",
-    role: "Responsable management & leadership",
-    bio: "Coach certifiée, spécialiste du développement des équipes et des managers.",
+    name: null,
+    role: "Référent handicap",
+    bio: "Votre contact dédié pour adapter nos formations aux situations de handicap.",
   },
   {
-    name: "Antoine Chevalier",
-    role: "Responsable digital & data",
-    bio: "Pilote nos formations sur les outils digitaux, la data et l'IA appliquée.",
+    name: null,
+    role: "Formateur sécurité incendie",
+    bio: "Intervient sur les formations évacuation, premier témoin et équipier de première intervention.",
+  },
+  {
+    name: null,
+    role: "Formateur secourisme, habilité INRS",
+    bio: "Anime nos formations SST, gestes qui sauvent et premiers secours en santé mentale.",
+  },
+  {
+    name: null,
+    role: "Formateur CACES et engins",
+    bio: "Forme vos conducteurs d'engins et de chariots sur l'ensemble des habilitations CACES.",
   },
 ];

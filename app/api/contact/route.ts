@@ -5,6 +5,10 @@ type ContactPayload = {
   name?: string;
   email?: string;
   company?: string;
+  phone?: string;
+  training?: string;
+  trainees?: string;
+  format?: string;
   message?: string;
 };
 
@@ -23,6 +27,10 @@ export async function POST(request: Request) {
   const name = body?.name?.trim();
   const email = body?.email?.trim();
   const company = body?.company?.trim() ?? "";
+  const phone = body?.phone?.trim() ?? "";
+  const training = body?.training?.trim() ?? "";
+  const trainees = body?.trainees?.trim() ?? "";
+  const format = body?.format?.trim() ?? "";
   const message = body?.message?.trim();
 
   if (!name || !email || !message) {
@@ -67,6 +75,10 @@ export async function POST(request: Request) {
         <p><strong>Nom :</strong> ${escapeHtml(name)}</p>
         <p><strong>Email :</strong> ${escapeHtml(email)}</p>
         ${company ? `<p><strong>Entreprise :</strong> ${escapeHtml(company)}</p>` : ""}
+        ${phone ? `<p><strong>Téléphone :</strong> ${escapeHtml(phone)}</p>` : ""}
+        ${training ? `<p><strong>Formation souhaitée :</strong> ${escapeHtml(training)}</p>` : ""}
+        ${trainees ? `<p><strong>Nombre de stagiaires :</strong> ${escapeHtml(trainees)}</p>` : ""}
+        ${format ? `<p><strong>Format préféré :</strong> ${escapeHtml(format)}</p>` : ""}
         <p><strong>Message :</strong></p>
         <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
       `,
