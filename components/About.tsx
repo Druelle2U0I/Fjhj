@@ -23,10 +23,10 @@ export default function About({ section }: { section: HomeSection }) {
                 {section.eyebrow}
               </span>
             )}
-            <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-3 max-w-2xl whitespace-pre-line text-3xl font-semibold tracking-tight sm:text-4xl">
               {section.title}
             </h2>
-            <p className="mt-5 max-w-2xl text-muted">
+            <p className="mt-5 max-w-2xl whitespace-pre-line text-muted">
               {section.text || company.about}
             </p>
           </Reveal>
@@ -37,7 +37,7 @@ export default function About({ section }: { section: HomeSection }) {
             <Reveal key={pillar.title} delay={i * 0.1}>
               <div className="dyn-card h-full rounded-2xl border border-border bg-surface p-6">
                 <h3 className="text-lg font-semibold">{pillar.title}</h3>
-                <p className="mt-2 text-sm text-muted">{pillar.text}</p>
+                <p className="mt-2 whitespace-pre-line text-sm text-muted">{pillar.text}</p>
               </div>
             </Reveal>
           ))}

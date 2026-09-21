@@ -18,11 +18,11 @@ function FormationsSection({ section }: { section: HomeSection }) {
               {section.eyebrow}
             </span>
           )}
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl whitespace-pre-line text-3xl font-semibold tracking-tight sm:text-4xl">
             {section.title}
           </h2>
           {section.text && (
-            <p className="mt-4 max-w-2xl text-muted">{section.text}</p>
+            <p className="mt-4 max-w-2xl whitespace-pre-line text-muted">{section.text}</p>
           )}
         </Reveal>
 
@@ -88,7 +88,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             {section.title}
           </h2>
-          <p className="mt-5 max-w-2xl text-muted">
+          <p className="mt-5 max-w-2xl whitespace-pre-line text-muted">
             {section.text || funding.intro}
           </p>
           <Link
@@ -113,11 +113,11 @@ function ContactSection({ section }: { section: HomeSection }) {
               {section.eyebrow}
             </span>
           )}
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-3 whitespace-pre-line text-3xl font-semibold tracking-tight sm:text-4xl">
             {section.title}
           </h2>
           {section.text && (
-            <p className="mx-auto mt-4 max-w-xl text-muted">{section.text}</p>
+            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-muted">{section.text}</p>
           )}
           <Link
             href="/contact"

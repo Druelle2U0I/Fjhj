@@ -34,7 +34,7 @@ export default function Team() {
                 <p className="mt-1 text-sm font-medium text-accent">
                   {member.role}
                 </p>
-                <p className="mt-2 text-sm text-muted">{member.bio}</p>
+                <p className="mt-2 whitespace-pre-line text-sm text-muted">{member.bio}</p>
                 <a
                   href={`mailto:${member.email}`}
                   className="mt-3 inline-block text-sm text-muted hover:text-accent"

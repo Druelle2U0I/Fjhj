@@ -67,7 +67,7 @@ export default async function SecteurPage(
 
           <Reveal delay={0.1}>
             <div className="mt-10 max-w-xl rounded-3xl border border-border bg-surface/80 p-7 backdrop-blur sm:p-8">
-              <p className="text-muted">{service.description}</p>
+              <p className="whitespace-pre-line text-muted">{service.description}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href={`/contact?formation=${encodeURIComponent(service.title)}`}
@@ -98,7 +98,7 @@ export default async function SecteurPage(
               <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
                 {service.why.title}
               </h2>
-              <p className="mt-5 max-w-3xl text-muted">{service.why.text}</p>
+              <p className="mt-5 max-w-3xl whitespace-pre-line text-muted">{service.why.text}</p>
             </div>
           </Reveal>
         </div>
@@ -127,7 +127,7 @@ export default async function SecteurPage(
                       </Link>
                     </h3>
 
-                    <p className="mt-3 rounded-xl bg-surface-2 px-4 py-3 text-sm text-muted">
+                    <p className="mt-3 whitespace-pre-line rounded-xl bg-surface-2 px-4 py-3 text-sm text-muted">
                       {training.intro}
                     </p>
 
