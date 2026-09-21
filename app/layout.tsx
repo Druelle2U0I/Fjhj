@@ -12,10 +12,51 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://fjhj-one.vercel.app";
+const siteTitle =
+  "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
+const siteDescription =
+  "Formations sécurité incendie, secourisme, habilitation électrique, CACES, travail en hauteur, prévention des risques, management et photovoltaïque. Certifié Qualiopi, financement OPCO pris en charge, intra et inter-entreprises dans les Hauts-de-France.";
+
 export const metadata: Metadata = {
-  title: "ENMA Formation | Formation professionnelle sur mesure",
-  description:
-    "ENMA Formation conçoit et anime des parcours de formation professionnelle sur mesure en finance, management, investissement et compétences digitales.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: "%s | ENMA Formation",
+  },
+  description: siteDescription,
+  keywords: [
+    "organisme de formation Hauts-de-France",
+    "formation Qualiopi",
+    "SST secourisme",
+    "CACES",
+    "habilitation électrique NF C 18-510",
+    "travail en hauteur",
+    "financement OPCO",
+    "formation sécurité incendie",
+    "Tourcoing",
+  ],
+  authors: [{ name: "ENMA Formation" }],
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: siteUrl,
+    siteName: "ENMA Formation",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

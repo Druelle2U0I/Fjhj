@@ -5,6 +5,66 @@ import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import { services, topTrainings } from "@/lib/data";
 
+type Training = (typeof services)[number]["trainings"][number];
+
+function TrainingDetail({ training }: { training: Training }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="py-3">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full flex-col gap-1 text-left sm:flex-row sm:items-center sm:justify-between"
+        aria-expanded={open}
+      >
+        <span className="font-medium">{training.title}</span>
+        <span className="flex items-center gap-3 text-sm text-muted">
+          {training.duration} · {training.format}
+          <motion.span
+            animate={{ rotate: open ? 45 : 0 }}
+            transition={{ duration: 0.2 }}
+            className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border text-accent"
+            aria-hidden
+          >
+            +
+          </motion.span>
+        </span>
+      </button>
+
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="space-y-4 pt-4 text-sm text-muted">
+              {training.description.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+              <div className="rounded-xl border border-border bg-surface p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Public concerné
+                </p>
+                <p className="mt-1.5">{training.audience}</p>
+              </div>
+              <div className="rounded-xl border border-border bg-surface p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Financement
+                </p>
+                <p className="mt-1.5">{training.funding}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
 export default function Services() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -66,21 +126,14 @@ export default function Services() {
                         className="overflow-hidden"
                       >
                         <div className="border-t border-border px-6 py-4">
-                          <ul className="divide-y divide-border">
+                          <div className="divide-y divide-border">
                             {service.trainings.map((training) => (
-                              <li
+                              <TrainingDetail
                                 key={training.title}
-                                className="flex flex-col gap-1 py-3 sm:flex-row sm:items-center sm:justify-between"
-                              >
-                                <span className="font-medium">
-                                  {training.title}
-                                </span>
-                                <span className="text-sm text-muted">
-                                  {training.duration} · {training.format}
-                                </span>
-                              </li>
+                                training={training}
+                              />
                             ))}
-                          </ul>
+                          </div>
                         </div>
                       </motion.div>
                     )}
