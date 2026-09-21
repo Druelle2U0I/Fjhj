@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 p-3 sm:p-4">
       <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-background/70 shadow-lg backdrop-blur-xl sm:rounded-full">
-        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-3 sm:px-6">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4 px-4 py-3 sm:px-6">
           <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
             {leftLinks.map((link) => (
               <Link key={link.href} href={link.href} className={linkClass(link.href)}>
