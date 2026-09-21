@@ -18,7 +18,7 @@ export default function Funding() {
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {funding.points.map((point, i) => (
             <Reveal key={point.title} delay={i * 0.1}>
-              <div className="h-full rounded-2xl border border-border bg-surface p-6 transition-shadow hover:shadow-lg">
+              <div className="dyn-card h-full rounded-2xl border border-border bg-surface p-6">
                 <h3 className="text-lg font-semibold">{point.title}</h3>
                 <p className="mt-2 text-sm text-muted">{point.text}</p>
               </div>

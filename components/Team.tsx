@@ -26,7 +26,7 @@ export default function Team() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 sm:max-w-2xl">
           {team.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.08}>
-              <div className="h-full rounded-2xl border border-border bg-surface p-6 text-center transition-shadow hover:shadow-lg">
+              <div className="dyn-card h-full rounded-2xl border border-border bg-surface p-6 text-center">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-soft text-lg font-semibold text-accent">
                   {initials(member.name)}
                 </div>

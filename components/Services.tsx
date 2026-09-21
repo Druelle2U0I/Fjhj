@@ -45,13 +45,13 @@ function TrainingDetail({ training }: { training: Training }) {
               {training.description.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
-              <div className="rounded-xl border border-border bg-surface p-4">
+              <div className="dyn-card rounded-xl border border-border bg-surface-2 p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   Public concerné
                 </p>
                 <p className="mt-1.5">{training.audience}</p>
               </div>
-              <div className="rounded-xl border border-border bg-surface p-4">
+              <div className="dyn-card rounded-xl border border-border bg-surface-2 p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   Financement
                 </p>
@@ -90,7 +90,7 @@ export default function Services() {
             const isOpen = openIndex === i;
             return (
               <Reveal key={service.title} delay={(i % 3) * 0.05}>
-                <div className="rounded-2xl border border-border bg-background">
+                <div className="dyn-card rounded-2xl border border-border bg-background">
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : i)}
@@ -147,9 +147,12 @@ export default function Services() {
         <Reveal delay={0.1}>
           <div className="mt-10 rounded-2xl border border-border bg-background p-6 sm:p-8">
             <h3 className="text-lg font-semibold">Les plus demandées</h3>
-            <div className="mt-6 grid gap-6 sm:grid-cols-3">
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
               {topTrainings.map((training) => (
-                <div key={training.title}>
+                <div
+                  key={training.title}
+                  className="dyn-card rounded-xl border border-border bg-surface-2 p-4"
+                >
                   <p className="font-medium">{training.title}</p>
                   <p className="mt-1 text-sm text-muted">
                     {training.duration} · {training.format}

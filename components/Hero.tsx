@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { company, stats } from "@/lib/data";
 
@@ -7,71 +8,98 @@ export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden px-6 pt-20 pb-24">
       <div className="pointer-events-none absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-accent-soft blur-3xl" />
-      <div className="pointer-events-none absolute top-40 left-[-10%] h-72 w-72 rounded-full bg-gold/20 blur-3xl" />
+      <div className="pointer-events-none absolute top-40 left-[-10%] h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-6xl">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-medium text-muted"
-        >
-          Organisme de formation professionnelle
-        </motion.p>
+      <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-medium text-muted"
+          >
+            Organisme de formation professionnelle
+          </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl"
-        >
-          {company.tagline}
-        </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="max-w-xl text-4xl font-semibold tracking-tight sm:text-5xl"
+          >
+            {company.tagline}
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 max-w-xl text-lg text-muted"
-        >
-          {company.description}
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-6 max-w-xl text-lg text-muted"
+          >
+            {company.description}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-8 flex flex-wrap gap-4"
+          >
+            <a
+              href="#formations"
+              className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            >
+              Découvrir nos formations
+            </a>
+            <a
+              href="#contact"
+              className="rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+            >
+              Parler à un conseiller
+            </a>
+          </motion.div>
+
+          <motion.dl
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-16 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-4 lg:grid-cols-2"
+          >
+            {stats.map((stat) => (
+              <div key={stat.label}>
+                <dt className="text-2xl font-semibold text-accent sm:text-3xl">
+                  {stat.value}
+                </dt>
+                <dd className="mt-1 text-sm text-muted">{stat.label}</dd>
+              </div>
+            ))}
+          </motion.dl>
+        </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 flex flex-wrap gap-4"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="dyn-photo-wrap dyn-card relative aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-2xl lg:aspect-[3/4]"
         >
-          <a
-            href="#formations"
-            className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
-          >
-            Découvrir nos formations
-          </a>
-          <a
-            href="#contact"
-            className="rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
-          >
-            Parler à un conseiller
-          </a>
+          <Image
+            src="/images/engins-chantier-champ.jpg"
+            alt="Engins de chantier sur un site industriel"
+            fill
+            priority
+            sizes="(min-width: 1024px) 40vw, 90vw"
+            className="dyn-photo object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-transparent" />
+          <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-background/70 p-4 backdrop-blur">
+            <p className="text-sm font-medium text-foreground">
+              CACES, engins de chantier, travail en hauteur
+            </p>
+            <p className="mt-1 text-xs text-muted">
+              Formations pratiques, sur site ou sur plateau technique
+            </p>
+          </div>
         </motion.div>
-
-        <motion.dl
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-4"
-        >
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="text-2xl font-semibold text-accent sm:text-3xl">
-                {stat.value}
-              </dt>
-              <dd className="mt-1 text-sm text-muted">{stat.label}</dd>
-            </div>
-          ))}
-        </motion.dl>
       </div>
     </section>
   );

@@ -87,7 +87,7 @@ export default function Contact() {
         <Reveal delay={0.1}>
           <form
             onSubmit={handleSubmit}
-            className="rounded-2xl border border-border bg-background p-6 sm:p-8"
+            className="dyn-card rounded-2xl border border-border bg-background p-6 sm:p-8"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="sm:col-span-1">
@@ -195,12 +195,12 @@ export default function Contact() {
             </button>
 
             {status === "sent" && (
-              <p className="mt-4 text-sm text-green-600">
+              <p className="mt-4 text-sm text-green-400">
                 Merci, votre message a bien été envoyé.
               </p>
             )}
             {status === "error" && (
-              <p className="mt-4 text-sm text-red-600">{error}</p>
+              <p className="mt-4 text-sm text-red-400">{error}</p>
             )}
           </form>
         </Reveal>
