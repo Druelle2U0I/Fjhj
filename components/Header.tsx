@@ -12,6 +12,7 @@ const leftLinks = [
 ];
 
 const rightLinks = [
+  { href: "/centre", label: "Le centre" },
   { href: "/equipe", label: "Équipe" },
   { href: "/contact", label: "Contact" },
 ];
@@ -28,8 +29,25 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 p-3 sm:p-4">
       <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-background/70 shadow-lg backdrop-blur-xl sm:rounded-full">
-        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4 px-4 py-3 sm:px-6">
-          <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
+        <div className="relative flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
+          {/* Le logo reste toujours au centre exact de la barre, quel que
+              soit le poids des groupes de liens de chaque côté. */}
+          <Link
+            href="/"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            aria-label={company.name}
+          >
+            <Image
+              src="/brand/logo-wordmark.png"
+              alt={company.name}
+              width={1200}
+              height={497}
+              className="h-9 w-auto sm:h-11"
+              priority
+            />
+          </Link>
+
+          <nav className="z-10 hidden items-center gap-8 text-sm font-medium md:flex">
             {leftLinks.map((link) => (
               <Link key={link.href} href={link.href} className={linkClass(link.href)}>
                 {link.label}
@@ -42,7 +60,7 @@ export default function Header() {
             aria-label="Ouvrir le menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted transition-colors hover:text-foreground md:hidden"
+            className="z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted transition-colors hover:text-foreground md:hidden"
           >
             <span className="grid gap-1">
               <span className="block h-0.5 w-4 bg-current" />
@@ -50,19 +68,8 @@ export default function Header() {
             </span>
           </button>
 
-          <Link href="/" className="flex justify-center" aria-label={company.name}>
-            <Image
-              src="/brand/logo-wordmark.png"
-              alt={company.name}
-              width={1200}
-              height={497}
-              className="h-9 w-auto sm:h-11"
-              priority
-            />
-          </Link>
-
-          <div className="flex items-center justify-end gap-7 text-sm font-medium">
-            <nav className="hidden items-center gap-7 md:flex">
+          <div className="z-10 ml-auto flex items-center gap-8 text-sm font-medium">
+            <nav className="hidden items-center gap-8 md:flex">
               {rightLinks.map((link) => (
                 <Link key={link.href} href={link.href} className={linkClass(link.href)}>
                   {link.label}
