@@ -349,6 +349,71 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
             <>
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+                  Carrousel de photos (haut de page)
+                </p>
+                <ListEditor
+                  items={content.home.heroSlides}
+                  onChange={(heroSlides) =>
+                    update({ ...content, home: { ...content.home, heroSlides } })
+                  }
+                  createItem={() => ({ image: "", alt: "", title: "", text: "" })}
+                  addLabel="Ajouter une photo au carrousel"
+                  titleFor={(s, i) => s.title || `Photo ${i + 1}`}
+                  renderItem={(slide, set) => (
+                    <div className="grid gap-4">
+                      <ImageField
+                        label="Photo"
+                        value={slide.image || undefined}
+                        onChange={(v) => set({ ...slide, image: v ?? "" })}
+                      />
+                      <Field
+                        label="Titre affiché sur la photo"
+                        value={slide.title ?? ""}
+                        onChange={(v) => set({ ...slide, title: v })}
+                      />
+                      <Field
+                        label="Sous-titre"
+                        value={slide.text ?? ""}
+                        onChange={(v) => set({ ...slide, text: v })}
+                      />
+                      <Field
+                        label="Description de la photo (accessibilité)"
+                        value={slide.alt ?? ""}
+                        onChange={(v) => set({ ...slide, alt: v })}
+                      />
+                    </div>
+                  )}
+                />
+              </div>
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Section « À propos »
+                </p>
+                <ImageField
+                  label="Photo"
+                  value={content.home.aboutImage}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, aboutImage: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Description de la photo (accessibilité)"
+                  value={content.home.aboutImageAlt ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, aboutImageAlt: v },
+                    })
+                  }
+                />
+              </Card>
+
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
                   Chiffres clés
                 </p>
                 <ListEditor

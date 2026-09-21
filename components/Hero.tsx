@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { company, stats } from "@/lib/data";
+import HeroCarousel from "@/components/HeroCarousel";
+import { company, home, stats } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -81,25 +81,8 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="dyn-photo-wrap dyn-card relative aspect-[4/5] overflow-hidden rounded-3xl border border-border shadow-2xl lg:aspect-[3/4]"
         >
-          <Image
-            src="/images/engins-chantier-champ.jpg"
-            alt="Engins de chantier sur un site industriel"
-            fill
-            priority
-            sizes="(min-width: 1024px) 40vw, 90vw"
-            className="dyn-photo object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/0 to-transparent" />
-          <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-background/70 p-4 backdrop-blur">
-            <p className="text-sm font-medium text-foreground">
-              CACES, engins de chantier, travail en hauteur
-            </p>
-            <p className="mt-1 text-xs text-muted">
-              Formations pratiques, sur site ou sur plateau technique
-            </p>
-          </div>
+          <HeroCarousel slides={home.heroSlides} />
         </motion.div>
       </div>
     </section>

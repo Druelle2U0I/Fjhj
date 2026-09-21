@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import { company, pillars } from "@/lib/data";
+import Visual from "@/components/Visual";
+import { company, home, pillars } from "@/lib/data";
 
 export default function About() {
   return (
@@ -8,12 +8,11 @@ export default function About() {
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <Reveal className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-3xl border border-border">
-            <Image
-              src="/images/entrepot-caces.jpg"
-              alt="Chariot élévateur en entrepôt, formation CACES"
-              fill
+            <Visual
+              src={home.aboutImage}
+              alt={home.aboutImageAlt ?? ""}
               sizes="(min-width: 1024px) 45vw, 90vw"
-              className="dyn-photo object-cover"
+              className="dyn-photo"
             />
           </Reveal>
 

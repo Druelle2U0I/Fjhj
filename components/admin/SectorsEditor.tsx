@@ -31,6 +31,7 @@ function emptySector(): Sector {
     title: "Nouveau secteur",
     description: "",
     why: { title: "", text: "" },
+    opco: true,
     trainings: [],
   };
 }
@@ -243,6 +244,18 @@ export default function SectorsEditor({
                     updateSector(index, { ...sector, description: v })
                   }
                 />
+                <label className="flex items-center gap-3 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={sector.opco}
+                    onChange={(e) =>
+                      updateSector(index, { ...sector, opco: e.target.checked })
+                    }
+                    className="h-4 w-4 accent-[color:var(--accent)]"
+                  />
+                  Afficher la mention « Finançable OPCO » sur les cartes
+                </label>
+
                 <ImageField
                   label="Photo de fond du secteur"
                   value={sector.image}

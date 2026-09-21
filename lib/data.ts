@@ -31,9 +31,17 @@ export type Sector = {
   title: string;
   description: string;
   why: { title: string; text: string };
+  opco: boolean;
   image?: string;
   imageAlt?: string;
   trainings: Training[];
+};
+
+export type HeroSlide = {
+  image: string;
+  alt?: string;
+  title?: string;
+  text?: string;
 };
 
 export type SiteContent = {
@@ -55,6 +63,11 @@ export type SiteContent = {
   funding: { intro: string; points: { title: string; text: string }[] };
   accessibility: { text: string; referent: string };
   team: { name: string; role: string; email: string; bio: string }[];
+  home: {
+    heroSlides: HeroSlide[];
+    aboutImage?: string;
+    aboutImageAlt?: string;
+  };
   footerImage?: string;
 };
 
@@ -68,6 +81,7 @@ export const topTrainings = content.topTrainings;
 export const funding = content.funding;
 export const accessibility = content.accessibility;
 export const team = content.team;
+export const home = content.home;
 export const footerImage = content.footerImage;
 
 export const services = content.sectors.map((sector) => ({

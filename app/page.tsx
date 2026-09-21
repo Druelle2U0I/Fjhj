@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Gallery from "@/components/Gallery";
 import Reveal from "@/components/Reveal";
+import Visual from "@/components/Visual";
 import { services, funding } from "@/lib/data";
 
 export default function Home() {
@@ -33,13 +33,32 @@ export default function Home() {
               <Reveal key={service.slug} delay={(i % 3) * 0.05}>
                 <Link
                   href={`/formations/${service.slug}`}
-                  className="dyn-card block h-full rounded-2xl border border-border bg-background p-6"
+                  className="dyn-card block h-full overflow-hidden rounded-3xl border border-border bg-background"
                 >
-                  <div className="mb-3 h-1 w-10 rounded-full bg-gold" />
-                  <h3 className="text-lg font-semibold">{service.title}</h3>
-                  <p className="mt-2 text-sm text-muted">
-                    {service.description}
-                  </p>
+                  <div className="dyn-photo-wrap relative aspect-[4/3] overflow-hidden">
+                    <Visual
+                      src={service.image}
+                      alt={service.imageAlt ?? service.title}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                      className="dyn-photo"
+                    />
+                  </div>
+                  <div className="border-t border-border px-6 py-5">
+                    <h3 className="text-lg font-semibold leading-snug">
+                      {service.title}
+                    </h3>
+                    <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+                      <span className="rounded-full border border-border px-3 py-1 text-muted">
+                        {service.trainings.length} formation
+                        {service.trainings.length > 1 ? "s" : ""}
+                      </span>
+                      {service.opco && (
+                        <span className="rounded-full bg-accent px-3 py-1 font-semibold text-accent-foreground">
+                          Finançable OPCO
+                        </span>
+                      )}
+                    </div>
+                  </div>
                 </Link>
               </Reveal>
             ))}
@@ -55,8 +74,6 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-
-      <Gallery />
 
       <section id="financement" className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
