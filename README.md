@@ -14,12 +14,40 @@ Ouvrir [http://localhost:3000](http://localhost:3000).
 
 ## Structure
 
+- `content/site.json` — tout le contenu du site (secteurs, formations,
+  équipe, coordonnées). C'est ce fichier qu'édite l'espace d'administration.
+- `lib/data.ts` — charge `content/site.json` et calcule les adresses de page
 - `app/page.tsx` — assemble les sections de la page d'accueil
-- `components/` — Header, Hero, About, Services, Team, Contact, Footer
-- `lib/data.ts` — contenu du site (formations, équipe, coordonnées) à
-  personnaliser
+- `app/formations/` — catalogue, pages secteur et fiches formation
+- `app/admin/` + `components/admin/` — espace d'administration
 - `app/api/contact/route.ts` — API qui envoie les messages du formulaire de
   contact par email via [Resend](https://resend.com)
+
+## Espace d'administration
+
+L'espace `/admin`, protégé par mot de passe, permet de modifier le contenu
+sans toucher au code : coordonnées, secteurs et formations (ajout,
+suppression, réordonnancement, textes, programme), équipe, financement,
+page d'accueil, accessibilité, et envoi de photos.
+
+Chaque publication écrit `content/site.json` dans le dépôt via l'API GitHub.
+Ce commit déclenche un redéploiement : les modifications sont visibles en
+ligne au bout d'une à deux minutes.
+
+Deux variables d'environnement sont nécessaires :
+
+- `ADMIN_PASSWORD` — le mot de passe d'accès à `/admin`
+- `GITHUB_TOKEN` — un jeton GitHub à portée fine, limité à ce dépôt, avec la
+  permission *Contents* en lecture et écriture
+
+Facultatif : `GITHUB_REPOSITORY` (par défaut `Druelle2U0I/Fjhj`) et
+`GITHUB_BRANCH` (par défaut `main`).
+
+Après avoir ajouté ou modifié ces variables sur Vercel, il faut redéployer :
+elles sont injectées au moment de la construction, pas lues en continu.
+
+En développement local, aucun jeton n'est requis : les publications écrivent
+directement le fichier sur le disque.
 
 ## Configurer l'envoi d'email du formulaire de contact
 
@@ -38,12 +66,14 @@ message d'erreur clair au lieu d'échouer silencieusement.
 
 ## Personnaliser le contenu
 
-- Textes, formations, équipe, coordonnées : `lib/data.ts`
-- Couleurs (palette, accent, mode sombre) : `app/globals.css`
+- Textes, formations, équipe, coordonnées : espace `/admin`, ou directement
+  `content/site.json`
+- Couleurs (palette de marque) : `app/globals.css`
 - Métadonnées SEO (titre, description) : `app/layout.tsx`
 
 ## Déploiement
 
-Le plus simple est [Vercel](https://vercel.com/new) : connecter le dépôt
-GitHub, renseigner les variables d'environnement (`RESEND_API_KEY`,
-`CONTACT_EMAIL`, `CONTACT_FROM`) dans les réglages du projet, puis déployer.
+Hébergé sur [Vercel](https://vercel.com), déployé automatiquement à chaque
+envoi sur `main`. Variables d'environnement à renseigner dans les réglages
+du projet : `ADMIN_PASSWORD`, `GITHUB_TOKEN`, `RESEND_API_KEY`,
+`CONTACT_EMAIL`, `CONTACT_FROM`.
