@@ -1,8 +1,8 @@
 import Reveal from "@/components/Reveal";
 import { team } from "@/lib/data";
 
-function initials(source: string) {
-  return source
+function initials(name: string) {
+  return name
     .split(" ")
     .map((part) => part[0])
     .join("")
@@ -19,29 +19,28 @@ export default function Team() {
             Notre équipe
           </span>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Une équipe de formateurs expérimentés, pédagogues et
-            opérationnels
+            Une équipe à votre écoute
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 sm:max-w-2xl">
           {team.map((member, i) => (
-            <Reveal key={member.role} delay={(i % 3) * 0.08}>
+            <Reveal key={member.name} delay={i * 0.08}>
               <div className="h-full rounded-2xl border border-border bg-surface p-6 text-center transition-shadow hover:shadow-lg">
                 <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-accent-soft text-lg font-semibold text-accent">
-                  {initials(member.name ?? member.role)}
+                  {initials(member.name)}
                 </div>
-                {member.name && (
-                  <h3 className="mt-4 font-semibold">{member.name}</h3>
-                )}
-                <p
-                  className={`text-sm font-medium text-accent ${
-                    member.name ? "mt-1" : "mt-4"
-                  }`}
-                >
+                <h3 className="mt-4 font-semibold">{member.name}</h3>
+                <p className="mt-1 text-sm font-medium text-accent">
                   {member.role}
                 </p>
                 <p className="mt-2 text-sm text-muted">{member.bio}</p>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="mt-3 inline-block text-sm text-muted hover:text-accent"
+                >
+                  {member.email}
+                </a>
               </div>
             </Reveal>
           ))}

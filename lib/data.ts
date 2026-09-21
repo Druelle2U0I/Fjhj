@@ -106,31 +106,13 @@ export const team = [
   {
     name: "Maxence Druelle",
     role: "Conseiller formation",
+    email: "maxence@enma-formation.fr",
     bio: "Votre interlocuteur pour construire le parcours de formation adapté à vos besoins et à votre financement OPCO.",
   },
   {
-    name: null,
-    role: "Responsable pédagogique",
-    bio: "Conçoit et structure nos parcours de formation dans une démarche d'amélioration continue Qualiopi.",
-  },
-  {
-    name: null,
-    role: "Référent handicap",
-    bio: "Votre contact dédié pour adapter nos formations aux situations de handicap.",
-  },
-  {
-    name: null,
-    role: "Formateur sécurité incendie",
-    bio: "Intervient sur les formations évacuation, premier témoin et équipier de première intervention.",
-  },
-  {
-    name: null,
-    role: "Formateur secourisme, habilité INRS",
-    bio: "Anime nos formations SST, gestes qui sauvent et premiers secours en santé mentale.",
-  },
-  {
-    name: null,
-    role: "Formateur CACES et engins",
-    bio: "Forme vos conducteurs d'engins et de chariots sur l'ensemble des habilitations CACES.",
+    name: "Kenza Kessad",
+    role: "Secrétaire administrative",
+    email: "kenza@enma-formation.com",
+    bio: "Votre contact pour le suivi administratif de vos dossiers de formation et de financement.",
   },
 ];
