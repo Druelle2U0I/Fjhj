@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import Visual from "@/components/Visual";
 import { services } from "@/lib/data";
 
 export async function generateStaticParams() {
@@ -18,7 +17,7 @@ export async function generateMetadata(
   if (!service) return {};
   return {
     title: service.title,
-    description: `${service.description} ${service.trainings.length} formations certifiées Qualiopi, finançables OPCO.`,
+    description: `${service.description.slice(0, 150)}…`,
   };
 }
 
@@ -29,60 +28,133 @@ export default async function SecteurPage(
   const service = services.find((s) => s.slug === secteur);
   if (!service) notFound();
 
+  const count = service.trainings.length;
+
   return (
     <>
-      <PageHero
-        eyebrow="Nos formations"
-        title={service.title}
-        description={service.description}
-        image={service.image}
-        imageAlt={service.imageAlt}
-        breadcrumb={
-          <>
+      {/* Hero : grande photo de fond floutée, voilée */}
+      <section className="relative overflow-hidden px-6 pt-14 pb-16 sm:pt-20 sm:pb-24">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 scale-110 blur-[7px]">
+            <Visual
+              src={service.image}
+              alt=""
+              sizes="100vw"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-background/55" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
+        </div>
+
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mb-6 text-sm text-muted">
             <Link href="/formations" className="hover:text-accent">
               Formations
             </Link>
             <span className="mx-2">/</span>
             <span>{service.title}</span>
-          </>
-        }
-      />
+          </div>
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-6 sm:grid-cols-2">
-            {service.trainings.map((training, i) => (
-              <Reveal key={training.slug} delay={(i % 4) * 0.05}>
+          <Reveal>
+            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+              {count} formation{count > 1 ? "s" : ""}
+            </p>
+            <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
+              {service.title}
+            </h1>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <div className="mt-10 max-w-xl rounded-3xl border border-border bg-surface/80 p-7 backdrop-blur sm:p-8">
+              <p className="text-muted">{service.description}</p>
+              <div className="mt-7 flex flex-wrap gap-3">
                 <Link
-                  href={`/formations/${service.slug}/${training.slug}`}
-                  className="dyn-card flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface sm:flex-row"
+                  href={`/contact?formation=${encodeURIComponent(service.title)}`}
+                  className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
                 >
-                  {training.image && (
-                    <div className="dyn-photo-wrap relative aspect-[16/10] shrink-0 overflow-hidden sm:aspect-auto sm:w-40">
-                      <Image
-                        src={training.image}
-                        alt={training.imageAlt ?? training.title}
-                        fill
-                        sizes="160px"
-                        className="dyn-photo object-cover"
-                      />
-                    </div>
-                  )}
-                  <div className="p-6">
-                    <h2 className="text-lg font-semibold">
-                      {training.title}
-                    </h2>
-                    <p className="mt-2 text-sm text-muted">
-                      {training.duration} · {training.format}
-                    </p>
-                    <p className="mt-3 text-sm text-muted line-clamp-2">
-                      {training.description[0]}
-                    </p>
-                    <p className="mt-4 text-sm font-medium text-accent">
-                      Voir la formation →
-                    </p>
-                  </div>
+                  Demander un devis
                 </Link>
+                <a
+                  href="#catalogue"
+                  className="rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+                >
+                  Voir le catalogue
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Pourquoi former vos équipes */}
+      <section className="px-6 pb-20">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <div className="rounded-3xl border border-border bg-surface p-8 sm:p-12">
+              <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+                Pourquoi former vos équipes
+              </p>
+              <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
+                {service.why.title}
+              </h2>
+              <p className="mt-5 max-w-3xl text-muted">{service.why.text}</p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Catalogue du secteur */}
+      <section id="catalogue" className="scroll-mt-24 px-6 pb-24">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+              Formations disponibles
+            </h2>
+          </Reveal>
+
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {service.trainings.map((training, i) => (
+              <Reveal key={training.slug} delay={(i % 3) * 0.05}>
+                <article className="dyn-card relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-surface">
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="text-lg font-semibold leading-snug">
+                      <Link
+                        href={`/formations/${service.slug}/${training.slug}`}
+                        className="after:absolute after:inset-0 after:content-['']"
+                      >
+                        {training.title}
+                      </Link>
+                    </h3>
+
+                    <p className="mt-3 rounded-xl bg-surface-2 px-4 py-3 text-sm text-muted">
+                      {training.intro}
+                    </p>
+
+                    <p className="mt-4 text-sm font-medium text-accent">
+                      {training.duration}
+                    </p>
+
+                    <div className="mt-auto pt-5">
+                      <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden rounded-2xl">
+                        <Visual
+                          src={training.image}
+                          alt={training.imageAlt ?? training.title}
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                          className="dyn-photo"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <Link
+                    href={`/contact?formation=${encodeURIComponent(training.title)}`}
+                    className="relative z-10 flex items-center justify-between border-t border-border px-6 py-4 text-sm font-semibold transition-colors hover:bg-surface-2 hover:text-accent"
+                  >
+                    Devis
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </article>
               </Reveal>
             ))}
           </div>

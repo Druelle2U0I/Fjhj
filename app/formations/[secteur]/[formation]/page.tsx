@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
-import { services } from "@/lib/data";
+import Visual from "@/components/Visual";
+import { company, services } from "@/lib/data";
 
 export async function generateStaticParams() {
   return services.flatMap((service) =>
@@ -31,7 +31,7 @@ export async function generateMetadata(
   const { service, training } = found;
   return {
     title: training.title,
-    description: `${training.title} — ${training.duration}, ${training.format}. Formation certifiée Qualiopi du domaine ${service.title.toLowerCase()}, finançable OPCO.`,
+    description: `${training.intro} ${training.duration}, ${training.format}. Formation ${service.title.toLowerCase()} certifiée Qualiopi, finançable OPCO.`,
   };
 }
 
@@ -47,126 +47,186 @@ export default async function FormationPage(
     (t) => t.slug !== training.slug,
   );
 
+  const recap = [
+    { label: "Lieu", value: training.format },
+    { label: "Durée", value: training.duration },
+    { label: "Prérequis", value: training.prerequisites },
+    ...(training.effectif
+      ? [{ label: "Effectif", value: training.effectif }]
+      : []),
+    { label: "Validation", value: training.certification },
+  ];
+
   return (
     <>
-      <section className="relative overflow-hidden px-6 pt-16 pb-14">
-        <div className="pointer-events-none absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-accent-soft blur-3xl" />
-        <div
-          className={`relative mx-auto max-w-6xl ${
-            training.image
-              ? "grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center"
-              : "max-w-4xl"
-          }`}
-        >
-          <div>
-            <div className="mb-6 text-sm text-muted">
-              <Link href="/formations" className="hover:text-accent">
-                Formations
-              </Link>
-              <span className="mx-2">/</span>
-              <Link
-                href={`/formations/${service.slug}`}
-                className="hover:text-accent"
-              >
-                {service.title}
-              </Link>
-              <span className="mx-2">/</span>
-              <span>{training.title}</span>
-            </div>
+      {/* Hero : grande photo de fond */}
+      <section className="relative overflow-hidden px-6 pt-14 pb-16 sm:pt-20 sm:pb-24">
+        <div className="absolute inset-0">
+          <Visual
+            src={training.image ?? service.image}
+            alt=""
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-background/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background" />
+        </div>
 
-            <Reveal>
-              <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-                {service.title}
-              </span>
-              <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                {training.title}
-              </h1>
-              <p className="mt-4 text-muted">
-                {training.duration} · {training.format}
-              </p>
-            </Reveal>
+        <div className="relative mx-auto max-w-6xl">
+          <div className="mb-6 text-sm text-muted">
+            <Link href="/formations" className="hover:text-accent">
+              Formations
+            </Link>
+            <span className="mx-2">/</span>
+            <Link
+              href={`/formations/${service.slug}`}
+              className="hover:text-accent"
+            >
+              {service.title}
+            </Link>
+            <span className="mx-2">/</span>
+            <span>{training.title}</span>
           </div>
 
-          {training.image && (
-            <Reveal
-              delay={0.1}
-              className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-3xl border border-border"
-            >
-              <Image
-                src={training.image}
-                alt={training.imageAlt ?? training.title}
-                fill
-                sizes="(min-width: 1024px) 40vw, 90vw"
-                className="dyn-photo object-cover"
-              />
-            </Reveal>
-          )}
+          <Reveal>
+            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+              {service.title}
+            </p>
+            <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
+              {training.title}
+            </h1>
+            <p className="mt-5 max-w-2xl text-lg text-muted">{training.intro}</p>
+          </Reveal>
         </div>
       </section>
 
+      {/* Contenu + encart latéral */}
       <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-4xl gap-10">
-          <Reveal className="space-y-4 text-muted">
-            {training.description.map((paragraph, i) => (
-              <p key={i}>{paragraph}</p>
-            ))}
-          </Reveal>
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
+          <div className="grid gap-12">
+            <Reveal className="space-y-4 text-muted">
+              {training.description.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
+            </Reveal>
 
-          <Reveal delay={0.05} className="grid gap-6 sm:grid-cols-2">
-            <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
-              <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                Public concerné
-              </p>
-              <p className="mt-2 text-sm text-muted">{training.audience}</p>
-            </div>
-            <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
-              <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                Financement
-              </p>
-              <p className="mt-2 text-sm text-muted">{training.funding}</p>
-            </div>
-          </Reveal>
+            {training.programme.length > 0 && (
+              <Reveal>
+                <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                  Programme de la formation
+                </h2>
+                <ol className="mt-6 grid gap-4">
+                  {training.programme.map((module, i) => (
+                    <li
+                      key={module.title}
+                      className="dyn-card rounded-2xl border border-border bg-surface p-6"
+                    >
+                      <div className="flex items-baseline gap-4">
+                        <span className="text-sm font-semibold text-accent">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <h3 className="text-base font-semibold">
+                          {module.title}
+                        </h3>
+                      </div>
+                      <p className="mt-3 text-sm text-muted">{module.text}</p>
+                    </li>
+                  ))}
+                </ol>
+              </Reveal>
+            )}
 
-          <Reveal delay={0.1}>
-            <div className="dyn-card rounded-2xl border border-border bg-surface p-6 sm:p-8">
-              <h2 className="text-lg font-semibold">
-                Un projet pour cette formation ?
+            <Reveal className="grid gap-6 sm:grid-cols-2">
+              <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Public concerné
+                </p>
+                <p className="mt-3 text-sm text-muted">{training.audience}</p>
+              </div>
+              <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Financement
+                </p>
+                <p className="mt-3 text-sm text-muted">{training.funding}</p>
+              </div>
+            </Reveal>
+
+            {otherTrainings.length > 0 && (
+              <Reveal>
+                <h2 className="text-lg font-semibold">
+                  Autres formations en {service.title.toLowerCase()}
+                </h2>
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  {otherTrainings.map((t) => (
+                    <Link
+                      key={t.slug}
+                      href={`/formations/${service.slug}/${t.slug}`}
+                      className="dyn-card rounded-xl border border-border bg-surface-2 p-4"
+                    >
+                      <p className="font-medium">{t.title}</p>
+                      <p className="mt-1 text-sm text-muted">
+                        {t.duration} · {t.format}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </Reveal>
+            )}
+          </div>
+
+          {/* Encart récapitulatif */}
+          <aside className="lg:sticky lg:top-24">
+            <div className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
+              <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                {service.title}
+              </p>
+              <h2 className="mt-2 text-lg font-semibold leading-snug">
+                {training.title}
               </h2>
-              <p className="mt-2 text-sm text-muted">
-                Décrivez votre besoin et le nombre de stagiaires : nous
-                revenons vers vous sous 24 heures avec une proposition
-                adaptée et le montage du dossier OPCO.
-              </p>
+
+              <dl className="mt-6 grid gap-4 border-t border-border pt-6">
+                {recap.map((item) => (
+                  <div key={item.label}>
+                    <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
+                      {item.label}
+                    </dt>
+                    <dd className="mt-1 text-sm">{item.value}</dd>
+                  </div>
+                ))}
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
+                    Tarif
+                  </dt>
+                  <dd className="mt-1 text-sm">
+                    Sur devis · prise en charge OPCO possible
+                  </dd>
+                </div>
+              </dl>
+
               <Link
                 href={`/contact?formation=${encodeURIComponent(training.title)}`}
-                className="mt-5 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+                className="mt-7 flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
               >
                 Demander un devis
               </Link>
-            </div>
-          </Reveal>
 
-          {otherTrainings.length > 0 && (
-            <Reveal delay={0.15}>
-              <h2 className="text-lg font-semibold">
-                Autres formations en {service.title.toLowerCase()}
-              </h2>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                {otherTrainings.map((t) => (
-                  <Link
-                    key={t.slug}
-                    href={`/formations/${service.slug}/${t.slug}`}
-                    className="dyn-card rounded-xl border border-border bg-surface-2 p-4"
-                  >
-                    <p className="font-medium">{t.title}</p>
-                    <p className="mt-1 text-sm text-muted">
-                      {t.duration} · {t.format}
-                    </p>
-                  </Link>
-                ))}
+              <div className="mt-6 border-t border-border pt-5 text-sm text-muted">
+                <p>Une question sur cette formation ?</p>
+                <a
+                  href={`tel:${company.phone.replace(/\s/g, "")}`}
+                  className="mt-2 block font-semibold text-foreground hover:text-accent"
+                >
+                  {company.phone}
+                </a>
+                <a
+                  href={`mailto:${company.email}`}
+                  className="mt-1 block hover:text-accent"
+                >
+                  {company.email}
+                </a>
               </div>
-            </Reveal>
-          )}
+            </div>
+          </aside>
         </div>
       </section>
     </>
