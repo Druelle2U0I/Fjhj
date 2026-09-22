@@ -401,7 +401,8 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Comme pour la basse tension, le titre d'habilitation haute tension est délivré par l'employeur, jamais par l'organisme de formation, sur la base des résultats aux évaluations théorique et pratique que nous lui transmettons. Convention, devis et programme détaillé vous sont remis pour constituer votre dossier."
         }
       ],
-      "opco": true
+      "opco": true,
+      "image": "/images/secteur-electrique-1790073151718.jpg"
     },
     {
       "title": "CACES & habilitations",
