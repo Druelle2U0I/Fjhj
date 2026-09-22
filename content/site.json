@@ -218,7 +218,8 @@
             "À l'issue de cette sensibilisation, le participant est capable de protéger une victime, d'alerter les secours de façon adaptée, d'arrêter une hémorragie externe, de désobstruer les voies aériennes et de reconnaître un arrêt cardiaque pour réaliser un massage cardiaque et utiliser un défibrillateur automatisé externe. Cette formation constitue un premier pas efficace vers une culture du secourisme au sein de l'entreprise ou du grand public."
           ],
           "audience": "Cette sensibilisation s'adresse à tout public, sans prérequis, et convient particulièrement aux entreprises souhaitant sensibiliser rapidement un grand nombre de collaborateurs, aux collectivités organisant des campagnes de sensibilisation citoyenne, ou à toute personne désireuse d'acquérir les réflexes de base avant d'envisager, dans un second temps, une formation PSC1 ou SST plus complète et plus approfondie. Sa durée courte en fait un format particulièrement adapté aux plannings contraints des entreprises.",
-          "funding": "La formation Gestes Qui Sauvent est éligible à une prise en charge par votre OPCO au titre des actions de sensibilisation à la sécurité, lorsqu'elle est organisée dans un cadre professionnel. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre dossier de financement. Son format court permet d'organiser plusieurs sessions successives afin de sensibiliser l'ensemble de vos effectifs à moindre coût et sans impact majeur sur l'organisation du travail."
+          "funding": "La formation Gestes Qui Sauvent est éligible à une prise en charge par votre OPCO au titre des actions de sensibilisation à la sécurité, lorsqu'elle est organisée dans un cadre professionnel. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre dossier de financement. Son format court permet d'organiser plusieurs sessions successives afin de sensibiliser l'ensemble de vos effectifs à moindre coût et sans impact majeur sur l'organisation du travail.",
+          "image": "/images/2-1790072297690.png"
         },
         {
           "title": "Maintien et actualisation des compétences SST",
@@ -319,7 +320,8 @@
           "funding": "La formation SST est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, la prise en charge étant fréquemment intégrale pour les entreprises de moins de 50 salariés. ENMA Formation vous fournit l'ensemble des pièces nécessaires à votre dossier : convention de formation, programme conforme au référentiel INRS et convocations nominatives. Nous assurons également le suivi des échéances de recyclage MAC SST de vos salariés afin que votre effectif de sauveteurs secouristes reste opérationnel en continu."
         }
       ],
-      "opco": true
+      "opco": true,
+      "image": "/images/secourisme-secteur-1790072254173.jpg"
     },
     {
       "title": "Habilitation électrique",
