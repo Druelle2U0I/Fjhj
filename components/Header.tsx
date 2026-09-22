@@ -7,12 +7,12 @@ import { usePathname } from "next/navigation";
 import { company } from "@/lib/data";
 
 const leftLinks = [
-  { href: "/formations", label: "Formations" },
   { href: "/financement", label: "Financement" },
+  { href: "/formations", label: "Catalogue" },
+  { href: "/centre", label: "Le centre" },
 ];
 
 const rightLinks = [
-  { href: "/centre", label: "Le centre" },
   { href: "/equipe", label: "Équipe" },
   { href: "/contact", label: "Contact" },
 ];

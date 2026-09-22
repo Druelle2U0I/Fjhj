@@ -6,9 +6,10 @@ import Visual from "@/components/Visual";
 import { company, footerCta, footerImage, legal, services } from "@/lib/data";
 
 /**
- * Le logo comme fenêtre : la photo du pied de page n'apparaît que dans
- * la silhouette de l'icône, posée sur un fond uni. Sans photo, un
- * dégradé de marque la remplace.
+ * Le logo comme fenêtre, posé dans une bande colorée : la photo du pied
+ * de page n'apparaît que dans la silhouette de l'icône, le reste du
+ * panneau reste dans les couleurs de la marque. Sans photo, un dégradé
+ * de marque remplace la photo à l'intérieur du logo.
  */
 function CutoutLogo() {
   const mask = {
@@ -24,15 +25,22 @@ function CutoutLogo() {
 
   return (
     <div
-      aria-hidden="true"
-      className="mx-auto aspect-square w-40 bg-cover bg-center lg:w-48"
+      className="mx-auto aspect-square w-40 rounded-3xl p-5 lg:w-48"
       style={{
-        ...mask,
-        backgroundImage: footerImage
-          ? `url(${footerImage})`
-          : "linear-gradient(135deg, var(--accent), var(--surface-2))",
+        background: "linear-gradient(135deg, var(--accent), var(--background))",
       }}
-    />
+    >
+      <div
+        aria-hidden="true"
+        className="h-full w-full bg-cover bg-center"
+        style={{
+          ...mask,
+          backgroundImage: footerImage
+            ? `url(${footerImage})`
+            : "linear-gradient(135deg, var(--background), var(--surface-2))",
+        }}
+      />
+    </div>
   );
 }
 
