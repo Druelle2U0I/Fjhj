@@ -74,13 +74,13 @@ export default async function FormationPage(
 
         <div className="relative mx-auto max-w-6xl">
           <div className="mb-6 text-sm text-muted">
-            <Link href="/formations" className="hover:text-accent">
+            <Link href="/formations" className="underline decoration-dotted underline-offset-2 hover:text-accent">
               Formations
             </Link>
             <span className="mx-2">/</span>
             <Link
               href={`/formations/${service.slug}`}
-              className="hover:text-accent"
+              className="underline decoration-dotted underline-offset-2 hover:text-accent"
             >
               {service.title}
             </Link>

@@ -49,7 +49,7 @@ export default async function SecteurPage(
 
         <div className="relative mx-auto max-w-6xl">
           <div className="mb-6 text-sm text-muted">
-            <Link href="/formations" className="hover:text-accent">
+            <Link href="/formations" className="underline decoration-dotted underline-offset-2 hover:text-accent">
               Formations
             </Link>
             <span className="mx-2">/</span>
@@ -158,6 +158,32 @@ export default async function SecteurPage(
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={0.1}>
+            <div className="mt-8 flex items-start gap-4 rounded-2xl border-l-4 border-accent bg-accent/10 p-6">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={1.5}
+                className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path strokeLinecap="round" d="M12 11v5" />
+                <circle cx="12" cy="8" r="0.75" fill="currentColor" stroke="none" />
+              </svg>
+              <div>
+                <p className="font-semibold">
+                  Une formation absente de cette liste ?
+                </p>
+                <p className="mt-1 text-sm text-muted">
+                  Nous construisons également des parcours sur mesure adaptés
+                  à vos besoins spécifiques.
+                </p>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>
