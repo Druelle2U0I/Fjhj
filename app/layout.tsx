@@ -10,7 +10,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
-import { theme, themeStyle } from "@/lib/data";
+import { company, legal, siteUrl, theme, themeStyle } from "@/lib/data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -55,7 +55,6 @@ const fraunces = Fraunces({
   preload: false,
 });
 
-const siteUrl = "https://fjhj-one.vercel.app";
 const siteTitle =
   "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
 const siteDescription =
@@ -94,13 +93,41 @@ export const metadata: Metadata = {
     description: siteDescription,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
   },
   robots: {
     index: true,
     follow: true,
+  },
+};
+
+const [addressLine1, addressLine2] = company.address.split(", ");
+const [postalCode, ...cityParts] = (addressLine2 ?? "").split(" ");
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: company.name,
+  url: siteUrl,
+  logo: `${siteUrl}/brand/logo-wordmark.png`,
+  image: `${siteUrl}/opengraph-image`,
+  description: company.description,
+  telephone: company.phone,
+  email: company.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: addressLine1,
+    postalCode,
+    addressLocality: cityParts.join(" "),
+    addressCountry: "FR",
+  },
+  areaServed: company.serviceArea,
+  identifier: {
+    "@type": "PropertyValue",
+    name: "Certification Qualiopi",
+    value: legal.qualiopiCertificate,
   },
 };
 
@@ -111,6 +138,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} h-full antialiased`}
       style={themeStyle(theme) as React.CSSProperties}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <SiteChrome header={<Header />} footer={<Footer />}>
           {children}
