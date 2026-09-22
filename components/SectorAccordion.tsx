@@ -57,10 +57,9 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
               }`}
             >
               <motion.div
-                layout
-                transition={SPRING}
+                animate={{ width: isActive ? 88 : 44, height: isActive ? 88 : 44 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="relative shrink-0 overflow-hidden rounded-full border border-border bg-surface-2"
-                style={{ width: isActive ? 88 : 44, height: isActive ? 88 : 44 }}
               >
                 <Visual
                   src={service.image}
