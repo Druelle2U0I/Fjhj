@@ -711,7 +711,8 @@
             "Cette formation approfondie couvre l'ensemble des opérations liées à l'échafaudage de pied : réception du support et calcul de la répartition des charges, montage selon la notice du fabricant en tenant compte des cas particuliers (façades irrégulières, encorbellements), vérifications de mise et de remise en service, puis démontage en sécurité. À l'issue de la session, le participant maîtrise l'ensemble du cycle de vie de l'échafaudage de pied."
           ],
           "audience": "Cette formation s'adresse à tout salarié amené à monter, démonter ou utiliser des échafaudages fixes de pied dans le cadre de son activité, en particulier sur des chantiers de longue durée nécessitant un ouvrage stable et de grande hauteur. Aucun prérequis technique n'est exigé, mais une aptitude médicale au travail en hauteur est recommandée. Cette formation constitue un approfondissement recommandé pour les monteurs confrontés régulièrement à des configurations de montage complexes.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être couplée avec la formation aux échafaudages roulants pour les équipes amenées à utiliser les deux types d'ouvrages selon les chantiers."
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être couplée avec la formation aux échafaudages roulants pour les équipes amenées à utiliser les deux types d'ouvrages selon les chantiers.",
+          "image": "/images/2-1790074542563.jpg"
         },
         {
           "title": "Montage, démontage et utilisation des échafaudages roulants et fixes (R457)",
@@ -814,7 +815,8 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en complément d'une formation au montage d'échafaudages afin de former une même personne aux deux compétences complémentaires."
         }
       ],
-      "opco": true
+      "opco": true,
+      "image": "/images/1-1790074549460.jpg"
     },
     {
       "title": "Prévention des risques professionnels",
