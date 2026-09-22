@@ -84,7 +84,8 @@
             "ENMA Formation organise pour votre établissement un exercice d'évacuation grandeur nature, avec déclenchement de l'alarme, observation du comportement des occupants et des équipiers, chronométrage du temps d'évacuation et vérification du point de rassemblement. L'exercice se conclut par un débriefing détaillé et un compte-rendu écrit formulant des axes d'amélioration concrets pour votre organisation."
           ],
           "audience": "Cet exercice s'adresse à l'ensemble des occupants d'un site : salariés, encadrement, équipiers d'évacuation et, le cas échéant, public accueilli dans l'établissement. Il ne nécessite aucun prérequis et constitue le complément indispensable des formations théoriques dispensées aux équipiers d'évacuation et équipiers de première intervention. La fréquence recommandée est d'au moins un exercice par an, davantage dans les établissements recevant du public ou présentant un effectif important ou une forte rotation de personnel.",
-          "funding": "L'exercice d'évacuation, en tant qu'action de formation pratique liée à une obligation réglementaire, est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit l'ensemble des pièces justificatives nécessaires à votre dossier de financement : convention de formation, programme détaillé et compte-rendu d'exercice. Cette prestation peut être couplée avec les formations EPI/ESI et équipier d'évacuation pour une prise en charge globale de votre dispositif de sécurité incendie."
+          "funding": "L'exercice d'évacuation, en tant qu'action de formation pratique liée à une obligation réglementaire, est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit l'ensemble des pièces justificatives nécessaires à votre dossier de financement : convention de formation, programme détaillé et compte-rendu d'exercice. Cette prestation peut être couplée avec les formations EPI/ESI et équipier d'évacuation pour une prise en charge globale de votre dispositif de sécurité incendie.",
+          "image": "/images/exo-evac-1790070913312.jpg"
         },
         {
           "title": "Premier témoin incendie",
@@ -112,7 +113,8 @@
             "À l'issue de cette sensibilisation, chaque participant est capable de reconnaître les signes d'un départ de feu, de déclencher l'alarme selon la procédure du site, de donner l'alerte aux secours extérieurs en transmettant les informations essentielles, et d'utiliser un extincteur de façon élémentaire si la situation le permet, sans se mettre en danger."
           ],
           "audience": "Cette sensibilisation s'adresse à l'ensemble des salariés d'une entreprise, sans distinction de poste ni de fonction, et ne nécessite aucun prérequis. Elle se distingue de la formation d'équipier de première intervention par un contenu plus général, centré sur les réflexes d'alerte et de mise en sécurité plutôt que sur la maîtrise technique de l'extinction. Elle constitue un socle minimal recommandé pour tout nouvel arrivant dans le cadre de son accueil sécurité, en complément de la formation des équipiers désignés.",
-          "funding": "Cette sensibilisation entre dans le champ des actions de formation à la sécurité et peut, à ce titre, être prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre demande de financement. Elle est fréquemment organisée en même temps que l'accueil sécurité des nouveaux embauchés ou dans le cadre d'une campagne annuelle de sensibilisation à la sécurité incendie pour l'ensemble du personnel."
+          "funding": "Cette sensibilisation entre dans le champ des actions de formation à la sécurité et peut, à ce titre, être prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre demande de financement. Elle est fréquemment organisée en même temps que l'accueil sécurité des nouveaux embauchés ou dans le cadre d'une campagne annuelle de sensibilisation à la sécurité incendie pour l'ensemble du personnel.",
+          "image": "/images/extincteur-1600px-1790070965699.png"
         },
         {
           "title": "Équipier d'évacuation",
@@ -140,7 +142,9 @@
             "À l'issue de la formation, le participant est capable d'assurer les missions de guide-file ou de serre-file : reconnaître le signal d'alarme, diriger les occupants vers les issues de secours, vérifier que les locaux sont évacués, encadrer les personnes en situation de handicap et rendre compte au point de rassemblement. Une attestation individuelle est délivrée à l'issue de la session."
           ],
           "audience": "Cette formation s'adresse à tout salarié désigné pour tenir un rôle de guide ou de serre-file dans le cadre du plan d'évacuation de son établissement. Elle ne nécessite aucun prérequis particulier, si ce n'est une bonne connaissance des locaux et des circulations du site. Le nombre d'équipiers à former dépend de la configuration des locaux, du nombre d'occupants et du nombre d'issues de secours : nous vous conseillons sur le dimensionnement adapté à votre site lors de l'élaboration du devis, afin de garantir une couverture complète même en cas d'absence d'un équipier titulaire.",
-          "funding": "Cette formation, liée à une obligation réglementaire de sécurité incendie, est éligible à une prise en charge par votre OPCO dans le cadre du plan de développement des compétences. ENMA Formation établit un devis et un programme pédagogique détaillés pour appuyer votre demande de financement. Elle peut également être organisée en intra-entreprise pour former simultanément l'ensemble des guides et serre-files d'un même site, ce qui optimise le coût par participant et facilite la coordination du plan d'évacuation."
+          "funding": "Cette formation, liée à une obligation réglementaire de sécurité incendie, est éligible à une prise en charge par votre OPCO dans le cadre du plan de développement des compétences. ENMA Formation établit un devis et un programme pédagogique détaillés pour appuyer votre demande de financement. Elle peut également être organisée en intra-entreprise pour former simultanément l'ensemble des guides et serre-files d'un même site, ce qui optimise le coût par participant et facilite la coordination du plan d'évacuation.",
+          "image": "/images/equipier-evac-1790071054007.jpg",
+          "imageAlt": "photo d'une signalétique d'une sortie de secours"
         },
         {
           "title": "Équipier de première intervention",
@@ -173,7 +177,7 @@
         }
       ],
       "opco": true,
-      "image": "/images/extincteur-1600px-1790023354494.png"
+      "image": "/images/incendie-temoin-1790071012662.jpg"
     },
     {
       "title": "Secours & premiers soins",
