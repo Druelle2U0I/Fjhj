@@ -24,23 +24,33 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
               layout
               onMouseEnter={() => setActive(i)}
               onClick={() => setActive(i)}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              transition={{ type: "spring", stiffness: 300, damping: 28 }}
               className={`dyn-card flex items-center gap-4 rounded-2xl border px-4 text-left transition-colors ${
                 isActive
-                  ? "border-accent bg-surface py-5"
-                  : "border-border bg-background py-3 hover:border-accent/50"
+                  ? "border-accent bg-surface py-6"
+                  : "border-border bg-background py-2.5 hover:border-accent/50"
               }`}
             >
-              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-border bg-surface-2">
+              <motion.div
+                layout
+                transition={{ type: "spring", stiffness: 300, damping: 28 }}
+                className="relative shrink-0 overflow-hidden rounded-full border border-border bg-surface-2"
+                style={{ width: isActive ? 88 : 44, height: isActive ? 88 : 44 }}
+              >
                 <Visual
                   src={service.image}
                   alt=""
-                  sizes="56px"
+                  sizes="88px"
                   className="object-cover"
                 />
-              </div>
+              </motion.div>
               <div className="min-w-0 flex-1">
-                <p className="truncate font-semibold">{service.title}</p>
+                <motion.p
+                  layout="position"
+                  className={`truncate font-semibold ${isActive ? "text-lg" : "text-sm"}`}
+                >
+                  {service.title}
+                </motion.p>
                 <p className="text-xs text-muted">
                   {service.trainings.length} formation
                   {service.trainings.length > 1 ? "s" : ""}
