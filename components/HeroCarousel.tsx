@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { HeroSlide } from "@/lib/data";
 
-export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
+export default function HeroCarousel({ slides: allSlides }: { slides: HeroSlide[] }) {
+  const slides = allSlides.filter((slide) => slide.image);
   const track = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
 

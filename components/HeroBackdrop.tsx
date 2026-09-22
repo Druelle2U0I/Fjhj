@@ -15,7 +15,7 @@ function Tile({
   progress: MotionValue<number>;
   order: number;
 }) {
-  const start = order / MAX_ORDER;
+  const start = (order / MAX_ORDER) * (1 - BAND);
   const rotateX = useTransform(progress, [start, start + BAND], [-100, 0]);
   const opacity = useTransform(progress, [start, start + BAND], [0, 1]);
 
