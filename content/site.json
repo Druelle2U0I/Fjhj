@@ -1325,23 +1325,30 @@
         "alt": "",
         "title": "Photovoltaïque",
         "text": "Chiffrage et dimensionnement"
+      },
+      {
+        "image": "/images/2-1790110393319.jpg",
+        "alt": "",
+        "title": "Management & qualité",
+        "text": "Gestion des conflits",
+        "link": ""
       }
     ],
     "aboutImageAlt": "Chariot élévateur en entrepôt, formation CACES",
     "sections": [
-      {
-        "id": "formations",
-        "visible": true,
-        "eyebrow": "Nos formations",
-        "title": "9 domaines de formation, 35 parcours certifiés Qualiopi",
-        "text": "Toutes nos formations sont finançables OPCO et proposées en intra-entreprise, partout en Hauts-de-France."
-      },
       {
         "id": "about",
         "visible": true,
         "eyebrow": "À propos",
         "title": "Un organisme de formation certifié Qualiopi, ancré dans les Hauts-de-France",
         "text": ""
+      },
+      {
+        "id": "formations",
+        "visible": true,
+        "eyebrow": "Nos formations",
+        "title": "9 domaines de formation, 35 parcours certifiés Qualiopi",
+        "text": "Toutes nos formations sont finançables OPCO et proposées en intra-entreprise, partout en Hauts-de-France."
       },
       {
         "id": "financement",
