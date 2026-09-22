@@ -1,44 +1,30 @@
 "use client";
 
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function HeroBackdrop() {
-  const { scrollYProgress } = useScroll();
-  const yFar = useTransform(scrollYProgress, [0, 1], [0, -180]);
-  const yNear = useTransform(scrollYProgress, [0, 1], [0, -90]);
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const insetY = useTransform(scrollYProgress, [0, 1], [32, 0]);
+  const insetX = useTransform(scrollYProgress, [0, 1], [28, 0]);
+  const gridOpacity = useTransform(scrollYProgress, [0, 1], [0.22, 0.09]);
+  const clipPath = useTransform(
+    [insetY, insetX],
+    ([y, x]) => `inset(${y}% ${x}% round 28px)`,
+  );
 
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      <motion.svg
-        style={{ y: yFar }}
-        className="absolute left-0 top-[-10%] h-[160%] w-full opacity-[0.16]"
-        viewBox="0 0 1000 1800"
-        fill="none"
-        preserveAspectRatio="xMidYMin slice"
-      >
-        <path
-          d="M -100 40 C 250 220, 80 480, 460 560 S 980 760, 620 1000 S 1080 1300, 700 1520 S 150 1680, 400 1900"
-          stroke="#fff9c7"
-          strokeWidth="2.5"
-        />
-      </motion.svg>
-
-      <motion.svg
-        style={{ y: yNear }}
-        className="absolute left-0 top-[-10%] h-[160%] w-full opacity-[0.1]"
-        viewBox="0 0 1000 1800"
-        fill="none"
-        preserveAspectRatio="xMidYMin slice"
-      >
-        <path
-          d="M 1050 0 C 750 180, 900 420, 560 520 S 60 700, 380 940 S -60 1250, 320 1460 S 800 1650, 560 1900"
-          stroke="#dbdbdb"
-          strokeWidth="1.5"
-          strokeDasharray="2 10"
-        />
-      </motion.svg>
-
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(255,249,199,0.16),transparent_70%)]" />
+    <div ref={ref} className="pointer-events-none absolute inset-0 overflow-hidden">
+      <motion.div
+        style={{ clipPath, opacity: gridOpacity }}
+        className="absolute inset-0 [background-image:linear-gradient(to_right,#fff9c7_1px,transparent_1px),linear-gradient(to_bottom,#fff9c7_1px,transparent_1px)] [background-size:40px_40px]"
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(255,249,199,0.14),transparent_70%)]" />
     </div>
   );
 }
