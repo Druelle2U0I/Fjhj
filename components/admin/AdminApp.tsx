@@ -481,6 +481,94 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 />
               </Card>
 
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Message du patron
+                </p>
+                <Field
+                  label="Citation"
+                  rows={5}
+                  value={content.home.founderQuote?.text ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: {
+                        ...content.home,
+                        founderQuote: {
+                          name: content.home.founderQuote?.name ?? "",
+                          role: content.home.founderQuote?.role ?? "",
+                          photo: content.home.founderQuote?.photo ?? "",
+                          photoAlt: content.home.founderQuote?.photoAlt ?? "",
+                          text: v,
+                        },
+                      },
+                    })
+                  }
+                />
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Field
+                    label="Nom"
+                    value={content.home.founderQuote?.name ?? ""}
+                    onChange={(v) =>
+                      update({
+                        ...content,
+                        home: {
+                          ...content.home,
+                          founderQuote: {
+                            text: content.home.founderQuote?.text ?? "",
+                            role: content.home.founderQuote?.role ?? "",
+                            photo: content.home.founderQuote?.photo ?? "",
+                            photoAlt: content.home.founderQuote?.photoAlt ?? "",
+                            name: v,
+                          },
+                        },
+                      })
+                    }
+                  />
+                  <Field
+                    label="Fonction"
+                    value={content.home.founderQuote?.role ?? ""}
+                    onChange={(v) =>
+                      update({
+                        ...content,
+                        home: {
+                          ...content.home,
+                          founderQuote: {
+                            text: content.home.founderQuote?.text ?? "",
+                            name: content.home.founderQuote?.name ?? "",
+                            photo: content.home.founderQuote?.photo ?? "",
+                            photoAlt: content.home.founderQuote?.photoAlt ?? "",
+                            role: v,
+                          },
+                        },
+                      })
+                    }
+                  />
+                </div>
+                <ImageField
+                  label="Photo"
+                  value={content.home.founderQuote?.photo || undefined}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: {
+                        ...content.home,
+                        founderQuote: {
+                          text: content.home.founderQuote?.text ?? "",
+                          name: content.home.founderQuote?.name ?? "",
+                          role: content.home.founderQuote?.role ?? "",
+                          photoAlt: content.home.founderQuote?.photoAlt ?? "",
+                          photo: v ?? "",
+                        },
+                      },
+                    })
+                  }
+                />
+                <p className="text-xs text-muted">
+                  Sans photo, les initiales du nom sont affichées à la place.
+                </p>
+              </Card>
+
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
                   Chiffres clés

@@ -65,7 +65,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-4 lg:grid-cols-2"
+            className="dyn-card mt-16 grid grid-cols-2 gap-8 rounded-3xl border border-border bg-surface p-8 sm:grid-cols-4 lg:grid-cols-2"
           >
             {stats.map((stat) => (
               <div key={stat.label}>
