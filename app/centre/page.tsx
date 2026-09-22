@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FranceMap from "@/components/FranceMap";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { company, home, pillars, services, stats } from "@/lib/data";
@@ -20,6 +21,8 @@ export default function CentrePage() {
         image={home.aboutImage}
         imageAlt={home.aboutImageAlt}
       />
+
+      <FranceMap />
 
       <section className="px-6 py-20">
         <div className="mx-auto max-w-3xl">
