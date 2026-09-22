@@ -87,7 +87,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Resend error:", error);
       return NextResponse.json(
-        { error: "L'envoi du message a échoué. Merci de réessayer.", debug: error, debugTo: to },
+        { error: "L'envoi du message a échoué. Merci de réessayer." },
         { status: 502 },
       );
     }
