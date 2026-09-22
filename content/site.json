@@ -1381,7 +1381,7 @@
         "text": "CACES R489, en intra-entreprise ou sur plateau"
       },
       {
-        "image": "/images/reseaux-chantier.jpg",
+        "image": "",
         "alt": "Chantier à proximité de réseaux enterrés",
         "title": "Intervention à proximité des réseaux",
         "text": "AIPR, pour travailler sans provoquer l'accident"
@@ -1436,7 +1436,7 @@
     "accentForeground": "#0b032b",
     "headingFont": "fraunces"
   },
-  "footerImage": "/images/1-1790025066228.jpg",
+  "footerImage": "/images/2048-1790069858090.webp",
   "footerCta": {
     "enabled": true,
     "eyebrow": "Recevez notre catalogue",
