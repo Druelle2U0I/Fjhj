@@ -80,8 +80,10 @@ export default async function FormationPage(
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
       />
 
-      {/* Hero : grande photo de fond */}
-      <section className="relative overflow-hidden px-6 pt-14 pb-16 sm:pt-20 sm:pb-24">
+      {/* Hero : grande photo de fond. Remonte sous l'en-tête (sticky,
+          semi-transparent) pour que la photo continue jusqu'en haut de
+          la page au lieu de s'arrêter net dessous. */}
+      <section className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-16 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
         <div className="absolute inset-0">
           <Visual
             src={training.image ?? service.image}
