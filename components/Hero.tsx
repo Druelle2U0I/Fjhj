@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import AnimatedStat from "@/components/AnimatedStat";
 import HeroCarousel from "@/components/HeroCarousel";
+import HeroBackdrop from "@/components/HeroBackdrop";
 import { company, home, stats } from "@/lib/data";
 
 export default function Hero() {
@@ -12,8 +13,7 @@ export default function Hero() {
       id="top"
       className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-24 sm:-mt-[94px] sm:pt-[154px]"
     >
-      <div className="pointer-events-none absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-accent-soft blur-3xl" />
-      <div className="pointer-events-none absolute top-40 left-[-10%] h-72 w-72 rounded-full bg-gold/10 blur-3xl" />
+      <HeroBackdrop />
 
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
