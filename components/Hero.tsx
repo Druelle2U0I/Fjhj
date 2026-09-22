@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import AnimatedStat from "@/components/AnimatedStat";
 import HeroCarousel from "@/components/HeroCarousel";
 import { company, home, stats } from "@/lib/data";
 
@@ -69,7 +70,7 @@ export default function Hero() {
             {stats.map((stat) => (
               <div key={stat.label}>
                 <dt className="text-2xl font-semibold text-accent sm:text-3xl">
-                  {stat.value}
+                  <AnimatedStat value={stat.value} />
                 </dt>
                 <dd className="mt-1 text-sm text-muted">{stat.label}</dd>
               </div>

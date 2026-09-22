@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnimatedStat from "@/components/AnimatedStat";
 import FranceMap from "@/components/FranceMap";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
@@ -80,7 +81,7 @@ export default function CentrePage() {
             {stats.map((stat) => (
               <div key={stat.label} className="text-center sm:text-left">
                 <p className="text-3xl font-semibold text-accent">
-                  {stat.value}
+                  <AnimatedStat value={stat.value} />
                 </p>
                 <p className="mt-1 text-sm text-muted">{stat.label}</p>
               </div>
