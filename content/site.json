@@ -859,7 +859,9 @@
             "Cette sensibilisation permet d'agir en amont, en donnant à chaque salarié les clés pour comprendre l'origine de ces troubles et adapter sa pratique quotidienne. À l'issue de la formation, le participant est capable d'identifier les situations à risque de son propre poste de travail, d'appliquer les principes de sécurité physique et d'économie d'effort, et de solliciter le bon geste plutôt que la bonne force pour limiter la sollicitation de son corps."
           ],
           "audience": "Cette formation s'adresse à tout salarié exposé à des manutentions manuelles, des postures contraignantes ou des mouvements répétitifs dans le cadre de son activité, quel que soit le secteur (industrie, logistique, bâtiment, tertiaire). Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée aux postes identifiés comme à risque dans le document unique d'évaluation des risques professionnels (DUERP) de l'entreprise, et peut être adaptée aux spécificités de chaque métier représenté dans le groupe.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques professionnels. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée sur votre site et adaptée aux postes de travail réels de vos salariés afin de maximiser la pertinence des exercices pratiques."
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques professionnels. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée sur votre site et adaptée aux postes de travail réels de vos salariés afin de maximiser la pertinence des exercices pratiques.",
+          "image": "/images/gestes-et-postures.jpg",
+          "imageAlt": "Salarié aidé à adopter la bonne posture pour soulever une charge"
         },
         {
           "title": "Gestion du stress",
@@ -891,7 +893,9 @@
             "Cette formation permet à chaque participant de comprendre les mécanismes physiologiques et psychologiques du stress, d'identifier ses propres sources de stress professionnel, et de mobiliser des techniques concrètes et applicables immédiatement au quotidien. À l'issue de la session, chaque participant repart avec un plan d'action personnel adapté à sa situation de travail."
           ],
           "audience": "Cette formation s'adresse à tout salarié exposé au stress professionnel souhaitant développer des techniques de gestion adaptées à sa situation, quel que soit son poste ou son secteur d'activité. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les environnements à forte charge mentale ou relationnelle (relation client, encadrement, urgence) et peut être proposée en complément d'une démarche plus large de prévention des risques psychosociaux au sein de l'entreprise.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention."
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention.",
+          "image": "/images/gestion-du-stress.jpg",
+          "imageAlt": "Salariée en situation de stress au travail"
         },
         {
           "title": "Premiers secours en santé mentale (PSSM)",
@@ -923,7 +927,9 @@
             "À l'issue de la formation, le participant est capable de reconnaître les signes de mal-être ou de crise chez un collègue, un proche ou lui-même, de déconstruire les idées reçues liées à la stigmatisation de la santé mentale, et d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne vers les ressources appropriées."
           ],
           "audience": "Cette formation s'adresse à tout salarié, quel que soit son poste ou son niveau hiérarchique, souhaitant être en mesure d'aider un collègue ou un proche traversant une période de souffrance psychique. Aucun prérequis n'est nécessaire, et la formation n'exige aucune compétence préalable en santé mentale. Elle est particulièrement recommandée pour les managers et les représentants du personnel, en première ligne pour repérer les signaux de mal-être au sein des équipes, ainsi que dans le cadre d'une démarche globale de prévention des risques psychosociaux.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large."
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large.",
+          "image": "/images/premiers-secours-sante-mentale.jpg",
+          "imageAlt": "Geste de soutien et d'écoute entre deux personnes"
         },
         {
           "title": "Prévention de l'absentéisme",
@@ -990,7 +996,9 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en amont d'une campagne d'intervention groupée sur un site industriel afin de certifier l'ensemble d'une équipe avant le début des travaux."
         }
       ],
-      "opco": true
+      "opco": true,
+      "image": "/images/gestes-et-postures.jpg",
+      "imageAlt": "Salarié aidé à adopter la bonne posture pour soulever une charge"
     },
     {
       "title": "Management & qualité",
@@ -1030,7 +1038,9 @@
             "Cette formation permet d'identifier les situations à risque d'agressivité, d'adopter une posture professionnelle sécurisante face à une personne agressive, et d'appliquer les bonnes procédures après un incident. À l'issue de la session, chaque participant est capable de gérer ses propres émotions face à l'agressivité, de maintenir une distance de sécurité physique adaptée, et de déclencher les procédures d'alerte internes le cas échéant."
           ],
           "audience": "Cette formation s'adresse à tout salarié en contact avec du public, exposé à un risque d'agressivité ou d'incivilité dans le cadre de son activité : accueil, guichet, service client, intervention à domicile. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les secteurs où le contact avec le public constitue le cœur de l'activité (commerce, administration, transport, établissements de santé) et peut être adaptée aux situations spécifiques rencontrées par chaque groupe de stagiaires.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques professionnels liés aux violences externes. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir de scénarios représentatifs des situations réellement rencontrées par vos équipes pour renforcer la pertinence des mises en situation."
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques professionnels liés aux violences externes. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir de scénarios représentatifs des situations réellement rencontrées par vos équipes pour renforcer la pertinence des mises en situation.",
+          "image": "/images/agressivite-incivilite.jpg",
+          "imageAlt": "Échange tendu entre collègues autour d'une table"
         },
         {
           "title": "Gestion des conflits",
@@ -1101,7 +1111,9 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la sécurité. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à un parcours d'intégration pour tout nouveau manager prenant la responsabilité d'une équipe."
         }
       ],
-      "opco": true
+      "opco": true,
+      "image": "/images/management-equipe.jpg",
+      "imageAlt": "Équipe unissant ses mains autour d'une table de travail"
     },
     {
       "title": "Photovoltaïque",

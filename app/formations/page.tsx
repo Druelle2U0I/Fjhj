@@ -36,10 +36,14 @@ export default function FormationsPage() {
                     className="dyn-photo"
                   />
                 </div>
-                <div className="border-t border-border px-6 py-5">
+                <div className="flex items-center justify-between gap-3 border-t border-border px-6 py-5">
                   <h2 className="text-lg font-semibold leading-snug">
                     {service.title}
                   </h2>
+                  <span className="shrink-0 text-sm text-muted">
+                    {service.trainings.length} formation
+                    {service.trainings.length > 1 ? "s" : ""}
+                  </span>
                 </div>
               </Link>
             </Reveal>
