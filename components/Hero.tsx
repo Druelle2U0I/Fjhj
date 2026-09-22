@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import AnimatedStat from "@/components/AnimatedStat";
 import HeroCarousel from "@/components/HeroCarousel";
-import HeroBackdrop from "@/components/HeroBackdrop";
 import { company, home, stats } from "@/lib/data";
 
 export default function Hero() {
@@ -13,8 +12,6 @@ export default function Hero() {
       id="top"
       className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-24 sm:-mt-[94px] sm:pt-[154px]"
     >
-      <HeroBackdrop />
-
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
           <motion.p

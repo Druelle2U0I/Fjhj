@@ -16,13 +16,11 @@ const NODE_COLOR = "255, 249, 199";
 const ACTIVATE_BAND = 0.08;
 
 export default function HeroBackdrop() {
-  const sectionRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
     const canvas = canvasRef.current;
-    if (!section || !canvas) return;
+    if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -42,9 +40,8 @@ export default function HeroBackdrop() {
     const density = window.innerWidth < 640 ? 26000 : 19000;
 
     const setup = () => {
-      const rect = section.getBoundingClientRect();
-      width = rect.width;
-      height = rect.height;
+      width = window.innerWidth;
+      height = window.innerHeight;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       canvas.width = width * dpr;
       canvas.height = height * dpr;
@@ -67,9 +64,9 @@ export default function HeroBackdrop() {
 
     const updateScroll = () => {
       scrollRaf = 0;
-      const rect = section.getBoundingClientRect();
-      const h = rect.height || 1;
-      const p = -rect.top / h;
+      const doc = document.documentElement;
+      const scrollable = doc.scrollHeight - window.innerHeight;
+      const p = scrollable > 0 ? window.scrollY / scrollable : 1;
       scrollProgress = Math.min(1, Math.max(0, p));
     };
     const onScroll = () => {
@@ -154,8 +151,7 @@ export default function HeroBackdrop() {
     };
 
     const onMouseMove = (e: MouseEvent) => {
-      const rect = section.getBoundingClientRect();
-      mouse = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+      mouse = { x: e.clientX, y: e.clientY };
     };
 
     setup();
@@ -182,7 +178,7 @@ export default function HeroBackdrop() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(255,249,199,0.14),transparent_70%)]" />
     </div>

@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Reveal from "@/components/Reveal";
 import SectorAccordion from "@/components/SectorAccordion";
 import Faq from "@/components/Faq";
+import HeroBackdrop from "@/components/HeroBackdrop";
 import { services, funding, home } from "@/lib/data";
 import type { HomeSection } from "@/lib/data";
 
@@ -128,6 +129,7 @@ function ContactSection({ section }: { section: HomeSection }) {
 export default function Home() {
   return (
     <>
+      <HeroBackdrop />
       <Hero />
       {home.sections
         .filter((section) => section.visible)
