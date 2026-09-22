@@ -52,7 +52,7 @@ export default function About({ section }: { section: HomeSection }) {
               >
                 <path d="M0 24V14.4Q0 7.2 3.6 3.6 7.2 0 14.4 0v4.8Q9.6 4.8 7.2 7.2 4.8 9.6 4.8 14.4H12V24ZM19.2 24V14.4Q19.2 7.2 22.8 3.6 26.4 0 33.6 0v4.8Q28.8 4.8 26.4 7.2 24 9.6 24 14.4h7.2V24Z" />
               </svg>
-              <p className="mt-4 max-w-3xl whitespace-pre-line text-base italic leading-relaxed text-foreground sm:text-lg">
+              <p className="mt-4 max-w-3xl whitespace-pre-line text-xs italic leading-relaxed text-foreground sm:text-sm">
                 {home.founderQuote.text}
               </p>
               <div className="mt-6 flex items-center gap-4">
