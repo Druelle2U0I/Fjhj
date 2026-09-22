@@ -425,7 +425,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   onChange={(heroSlides) =>
                     update({ ...content, home: { ...content.home, heroSlides } })
                   }
-                  createItem={() => ({ image: "", alt: "", title: "", text: "" })}
+                  createItem={() => ({ image: "", alt: "", title: "", text: "", link: "" })}
                   addLabel="Ajouter une photo au carrousel"
                   titleFor={(s, i) => s.title || `Photo ${i + 1}`}
                   renderItem={(slide, set) => (
@@ -444,6 +444,12 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                         label="Sous-titre"
                         value={slide.text ?? ""}
                         onChange={(v) => set({ ...slide, text: v })}
+                      />
+                      <Field
+                        label="Lien (optionnel)"
+                        hint="Ex. /formations/caces-habilitations — rend la photo cliquable vers cette page."
+                        value={slide.link ?? ""}
+                        onChange={(v) => set({ ...slide, link: v })}
                       />
                       <Field
                         label="Description de la photo (accessibilité)"

@@ -1294,31 +1294,36 @@
         "image": "/images/6-1790067937290.jpg",
         "alt": "Engins de chantier sur un site industriel",
         "title": "CACES, engins de chantier, travail en hauteur",
-        "text": "Formations pratiques, sur site ou sur plateau technique"
+        "text": "Formations pratiques, sur site ou sur plateau technique",
+        "link": "/formations/caces-habilitations/engins-de-chantier-r482"
       },
       {
         "image": "/images/1-1790067951111.jpg",
         "alt": "Chariot élévateur en entrepôt",
         "title": "Conduite de chariots élévateurs",
-        "text": "CACES R489, en intra-entreprise ou sur plateau"
+        "text": "CACES R489, en intra-entreprise ou sur plateau",
+        "link": "/formations/caces-habilitations/caces-r489-conduite-de-chariots-elevateurs"
       },
       {
         "image": "",
         "alt": "Chantier à proximité de réseaux enterrés",
         "title": "Intervention à proximité des réseaux",
-        "text": "AIPR, pour travailler sans provoquer l'accident"
+        "text": "AIPR, pour travailler sans provoquer l'accident",
+        "link": "/formations/caces-habilitations/aipr-intervention-a-proximite-des-reseaux"
       },
       {
         "image": "",
         "alt": "Engins de chantier sur une route",
         "title": "Sécurité sur chantier",
-        "text": "Prévention des risques et travail en hauteur"
+        "text": "Prévention des risques et travail en hauteur",
+        "link": "/formations/prevention-des-risques-professionnels"
       },
       {
         "image": "/images/9-1790074290755.jpg",
         "alt": "",
         "title": "Photovoltaïque",
-        "text": "Chiffrage et dimensionnement"
+        "text": "Chiffrage et dimensionnement",
+        "link": "/formations/photovoltaique"
       }
     ],
     "aboutImageAlt": "Chariot élévateur en entrepôt, formation CACES",

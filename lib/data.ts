@@ -44,6 +44,7 @@ export type HeroSlide = {
   alt?: string;
   title?: string;
   text?: string;
+  link?: string;
 };
 
 export type HomeSectionId = "about" | "formations" | "financement" | "contact" | "faq";
