@@ -1,5 +1,11 @@
 import site from "@/content/site.json";
 
+/**
+ * Domaine provisoire (site.vercel.app) en attendant le branchement du
+ * domaine définitif — seul cet endroit sera à changer à ce moment-là.
+ */
+export const siteUrl = "https://fjhj-one.vercel.app";
+
 export function slugify(input: string): string {
   return input
     .toLowerCase()

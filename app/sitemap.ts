@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { services } from "@/lib/data";
+import { services, siteUrl } from "@/lib/data";
 
-const base = "https://fjhj-one.vercel.app";
+const base = siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -13,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.9,
+    },
+    {
+      url: `${base}/centre`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${base}/financement`,
