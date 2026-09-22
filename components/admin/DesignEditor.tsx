@@ -26,6 +26,7 @@ const SECTION_LABELS: Record<HomeSection["id"], string> = {
   formations: "Nos formations",
   financement: "Qualiopi & financement",
   contact: "Appel à contact",
+  faq: "Questions fréquentes",
 };
 
 export default function DesignEditor({

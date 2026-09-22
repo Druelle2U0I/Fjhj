@@ -46,7 +46,7 @@ export type HeroSlide = {
   text?: string;
 };
 
-export type HomeSectionId = "about" | "formations" | "financement" | "contact";
+export type HomeSectionId = "about" | "formations" | "financement" | "contact" | "faq";
 
 export type HomeSection = {
   id: HomeSectionId;
@@ -54,6 +54,11 @@ export type HomeSection = {
   eyebrow: string;
   title: string;
   text: string;
+};
+
+export type FaqItem = {
+  question: string;
+  answer: string;
 };
 
 export const HEADING_FONTS = {
@@ -101,6 +106,7 @@ export type SiteContent = {
     aboutImage?: string;
     aboutImageAlt?: string;
     sections: HomeSection[];
+    faq: FaqItem[];
     founderQuote?: {
       text: string;
       name: string;

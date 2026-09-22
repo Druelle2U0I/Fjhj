@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Reveal from "@/components/Reveal";
 import SectorAccordion from "@/components/SectorAccordion";
+import Faq from "@/components/Faq";
 import { services, funding, home } from "@/lib/data";
 import type { HomeSection } from "@/lib/data";
 
@@ -69,6 +70,33 @@ function FinancementSection({ section }: { section: HomeSection }) {
   );
 }
 
+function FaqSection({ section }: { section: HomeSection }) {
+  if (home.faq.length === 0) return null;
+  return (
+    <section className="px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <Reveal className="text-center">
+          {section.eyebrow && (
+            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+              {section.eyebrow}
+            </span>
+          )}
+          <h2 className="mx-auto mt-3 max-w-2xl whitespace-pre-line text-3xl font-semibold tracking-tight sm:text-4xl">
+            {section.title}
+          </h2>
+          {section.text && (
+            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-muted">{section.text}</p>
+          )}
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <Faq items={home.faq} />
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function ContactSection({ section }: { section: HomeSection }) {
   return (
     <section className="bg-surface px-6 py-24">
@@ -113,6 +141,8 @@ export default function Home() {
               return <FinancementSection key={section.id} section={section} />;
             case "contact":
               return <ContactSection key={section.id} section={section} />;
+            case "faq":
+              return <FaqSection key={section.id} section={section} />;
           }
         })}
     </>

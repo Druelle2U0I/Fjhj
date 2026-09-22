@@ -660,6 +660,36 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   )}
                 />
               </div>
+
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+                  Questions fréquentes (bas de page d&apos;accueil)
+                </p>
+                <ListEditor
+                  items={content.home.faq}
+                  onChange={(faq) =>
+                    update({ ...content, home: { ...content.home, faq } })
+                  }
+                  createItem={() => ({ question: "", answer: "" })}
+                  addLabel="Ajouter une question"
+                  titleFor={(f) => f.question}
+                  renderItem={(item, set) => (
+                    <div className="grid gap-4">
+                      <Field
+                        label="Question"
+                        value={item.question}
+                        onChange={(v) => set({ ...item, question: v })}
+                      />
+                      <Field
+                        label="Réponse"
+                        rows={3}
+                        value={item.answer}
+                        onChange={(v) => set({ ...item, answer: v })}
+                      />
+                    </div>
+                  )}
+                />
+              </div>
             </>
           )}
 
