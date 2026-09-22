@@ -2,10 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const COLS = 16;
-const ROWS = 10;
+const COLS = 30;
+const ROWS = 18;
 const MAX_ORDER = ROWS + COLS - 2;
-const BAND = 0.06;
+const BAND = 0.05;
 
 export default function HeroBackdrop() {
   const ref = useRef<HTMLDivElement>(null);
@@ -53,19 +53,22 @@ export default function HeroBackdrop() {
         style={{
           gridTemplateColumns: `repeat(${COLS}, 1fr)`,
           gridTemplateRows: `repeat(${ROWS}, 1fr)`,
-          perspective: 500,
+          perspective: 600,
         }}
       >
         {tiles.map((t) => {
           const start = (t.order / MAX_ORDER) * (1 - BAND);
           const local = Math.min(1, Math.max(0, (progress - start) / BAND));
+          const spin = (1 - local) * 220;
           return (
             <div
               key={`${t.row}-${t.col}`}
               style={{
                 opacity: local,
-                transform: `rotateX(${(1 - local) * -100}deg)`,
-                transformOrigin: "top",
+                transform: `rotateX(${spin}deg) rotateY(${spin * 0.6}deg) scale(${0.55 + local * 0.45})`,
+                transformOrigin: "center",
+                transition:
+                  "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease-out",
               }}
               className="border border-[#fff9c7]/[0.18] bg-[#fff9c7]/[0.035]"
             />
