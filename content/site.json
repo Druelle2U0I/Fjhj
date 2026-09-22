@@ -1236,7 +1236,23 @@
       "opco": true
     }
   ],
-  "topTrainings": [],
+  "topTrainings": [
+    {
+      "title": "CACES R489 — conduite de chariots élévateurs",
+      "duration": "2 à 6 demi-journées",
+      "format": "Intra-entreprise"
+    },
+    {
+      "title": "AIPR — intervention à proximité des réseaux",
+      "duration": "2 demi-journées",
+      "format": "Intra-entreprise"
+    },
+    {
+      "title": "Sauveteur secouriste du travail (SST)",
+      "duration": "4 demi-journées",
+      "format": "Intra ou inter-entreprises"
+    }
+  ],
   "funding": {
     "intro": "ENMA Formation est certifié Qualiopi au titre des actions de formation. Cette certification conditionne l'accès aux fonds publics et mutualisés.",
     "points": [
@@ -1330,10 +1346,17 @@
       },
       {
         "id": "contact",
-        "visible": true,
+        "visible": false,
         "eyebrow": "",
         "title": "Parlons de vos besoins en formation",
         "text": "Décrivez votre projet, nous revenons vers vous sous 24 heures avec une proposition adaptée et le montage du dossier OPCO."
+      },
+      {
+        "id": "faq",
+        "visible": true,
+        "eyebrow": "Questions fréquentes",
+        "title": "Tout ce que vous devez savoir avant de nous contacter",
+        "text": ""
       }
     ],
     "founderQuote": {
@@ -1341,8 +1364,34 @@
       "role": "Fondateur d'ENMA Formation",
       "photo": "",
       "photoAlt": "",
-      "name": ""
-    }
+      "name": "Maxence Druelle"
+    },
+    "faq": [
+      {
+        "question": "Comment se déroulent les formations, avez-vous un centre de formation ?",
+        "answer": "ENMA n'a pas de centre de formation : nous venons directement chez vous, sur vos équipements et à vos horaires. Vos équipes s'entraînent dans les conditions réelles de leur poste de travail, ce qui rend la formation plus concrète et plus efficace."
+      },
+      {
+        "question": "Vos formations sont-elles finançables par mon OPCO ?",
+        "answer": "Oui. Toutes nos formations sont certifiées Qualiopi, ce qui vous permet de les faire financer par votre OPCO. Nous vous accompagnons dans le montage du dossier de financement, sans démarche administrative supplémentaire de votre côté."
+      },
+      {
+        "question": "Dans quelles zones intervenez-vous ?",
+        "answer": "Nous intervenons dans toute la région Hauts-de-France, en intra-entreprise. Contactez-nous pour vérifier la faisabilité si votre site se trouve en dehors de cette zone."
+      },
+      {
+        "question": "Quel est le délai pour organiser une formation ?",
+        "answer": "Le délai dépend de la formation et du nombre de participants, mais nous revenons vers vous sous 24 heures avec une proposition adaptée à votre besoin et vos contraintes de planning."
+      },
+      {
+        "question": "Combien de personnes peuvent suivre une formation en même temps ?",
+        "answer": "Les groupes sont volontairement restreints pour garantir un apprentissage de qualité et un suivi individualisé, notamment sur les formations pratiques (CACES, habilitations, travail en hauteur). Le nombre exact dépend de la formation : nous vous le précisons lors de l'établissement du devis."
+      },
+      {
+        "question": "Qu'est-ce que la certification Qualiopi et que garantit-elle ?",
+        "answer": "Qualiopi est la certification qualité délivrée par l'État français à tous les prestataires d'actions de formation. Elle atteste du sérieux de nos processus pédagogiques et administratifs, et c'est elle qui rend nos formations éligibles aux financements OPCO."
+      }
+    ]
   },
   "theme": {
     "background": "#0b032b",
