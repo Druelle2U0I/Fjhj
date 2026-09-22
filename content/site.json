@@ -1234,117 +1234,6 @@
         }
       ],
       "opco": true
-    },
-    {
-      "title": "Collectivités et élus",
-      "description": "ENMA Formation accompagne les élus et les agents de la fonction publique territoriale dans l'exercice de leur mandat — fonctions de l'élu, gestes et postures, montage de dossiers de candidature aux marchés publics — partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme construit des formations éligibles au DIFE pour permettre aux élus locaux d'exercer leur mandat avec les connaissances et la sérénité nécessaires.",
-      "why": {
-        "title": "Les élus ont des besoins de formation spécifiques",
-        "text": "Le Code général des collectivités territoriales reconnaît à chaque élu local un droit individuel à la formation (DIFE), financé indépendamment du budget de la collectivité. Entre exercice du mandat, santé physique au quotidien et réponse aux marchés publics, nous adaptons nos formations aux réalités concrètes des collectivités territoriales, avec des sessions accessibles à tout moment du mandat, individuellement ou en groupe."
-      },
-      "trainings": [
-        {
-          "title": "Fonctions de l'élu",
-          "duration": "2 demi-journées",
-          "format": "Intra-entreprise",
-          "intro": "Bien démarrer son mandat : rôles, cadre institutionnel et responsabilités personnelles.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "L'équipe municipale et ses attributions",
-              "text": "Objectif : être capable de situer le rôle de chaque membre de l'équipe municipale. Rôle du maire, des adjoints, des conseillers délégués et des conseillers municipaux, majorité et opposition."
-            },
-            {
-              "title": "L'action communale dans l'organisation territoriale",
-              "text": "Objectif : être capable de situer l'action de la commune parmi les autres échelons territoriaux. Compétences de l'intercommunalité, du Département, de la Région et relations avec les services de l'État."
-            },
-            {
-              "title": "Droits, devoirs et exemplarité de l'élu",
-              "text": "Objectif : être capable d'identifier ses droits et devoirs en tant qu'élu local. Statut de l'élu (protection, formation, indemnités), relation avec les agents municipaux."
-            },
-            {
-              "title": "Responsabilités de l'élu",
-              "text": "Objectif : être capable de distinguer les différents types de responsabilité engagés par la fonction d'élu. Distinction entre responsabilité pénale, civile et politique, à partir d'études de cas concrets."
-            },
-            {
-              "title": "Relation de proximité et exemplarité",
-              "text": "Objectif : être capable d'adopter une posture d'exemplarité dans sa relation avec les habitants. Prévention des conflits d'intérêts, relation avec les habitants, bilan et synthèse."
-            }
-          ],
-          "description": [
-            "Débuter un mandat municipal, c'est intégrer en quelques semaines un fonctionnement institutionnel complexe : répartition des rôles au sein de l'équipe municipale, articulation avec l'intercommunalité, le Département, la Région et les services de l'État, sans oublier les responsabilités personnelles engagées par la fonction. Le Code général des collectivités territoriales reconnaît d'ailleurs à chaque élu un droit à la formation, financé par le DIFE, précisément pour lui permettre d'exercer son mandat en pleine connaissance de ses droits, devoirs et responsabilités.",
-            "Cette formation permet à l'élu de bien débuter ou de consolider son mandat en clarifiant l'organisation de l'équipe municipale, le cadre institutionnel dans lequel s'inscrit l'action communale, et l'étendue de ses responsabilités personnelles. À l'issue de la session, le participant est capable de situer le rôle de chaque élu dans l'organisation municipale, de distinguer les responsabilités pénale, civile et politique, et d'adopter une posture d'exemplarité dans sa relation avec les habitants et les agents municipaux."
-          ],
-          "audience": "Cette formation s'adresse aux élus municipaux nouvellement élus souhaitant bien démarrer leur mandat, ainsi qu'aux élus en cours de mandat souhaitant consolider leur pratique institutionnelle. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée en tout début de mandat, dans les premiers mois suivant l'élection, période durant laquelle les nouveaux élus doivent rapidement s'approprier un grand nombre de notions institutionnelles et juridiques.",
-          "funding": "Cette formation est éligible au Droit Individuel à la Formation des Élus (DIFE), financé par une cotisation obligatoire prélevée sur les indemnités de fonction et mutualisée au niveau national, indépendamment du budget formation de la collectivité. ENMA Formation vous accompagne dans les démarches administratives liées à la mobilisation du DIFE. Elle constitue un excellent point de départ pour tout élu souhaitant construire progressivement son parcours de formation sur la durée du mandat."
-        },
-        {
-          "title": "Gestes et postures de l'élu",
-          "duration": "1 à 2 demi-journées",
-          "format": "Intra-entreprise",
-          "intro": "Préserver sa santé physique sur toute la durée d'un mandat.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "Comprendre les TMS liés au mandat",
-              "text": "Objectif : être capable d'identifier les sollicitations physiques propres à l'exercice d'un mandat local. Sollicitations physiques propres à l'activité de l'élu : réunions prolongées, déplacements, prises de parole, événements publics."
-            },
-            {
-              "title": "Adopter les bonnes postures",
-              "text": "Objectif : être capable d'appliquer les principes de sécurité physique et d'économie d'effort dans ses activités d'élu. Principes de sécurité physique et d'économie d'effort applicables aux situations rencontrées par l'élu."
-            },
-            {
-              "title": "Gérer sa fatigue et son confort au quotidien",
-              "text": "Objectif : être capable d'aménager ses conditions de travail et de mieux gérer sa fatigue au quotidien. Aménagement de son poste et de ses conditions de travail, gestion de la fatigue liée à un emploi du temps chargé."
-            },
-            {
-              "title": "Mise en pratique",
-              "text": "Objectif : être capable de transposer les bonnes pratiques apprises aux situations concrètes de son mandat. Exercices pratiques à partir de situations concrètes rencontrées par les élus."
-            }
-          ],
-          "description": [
-            "Un mandat électif s'accompagne de sollicitations physiques souvent sous-estimées : réunions à rallonge en position assise prolongée, déplacements fréquents, stations debout lors d'inaugurations ou de cérémonies, prises de parole répétées. Contrairement à une idée reçue, l'exercice d'un mandat local n'est pas exempt de contraintes physiques, et ces sollicitations cumulées sur la durée d'un mandat peuvent générer fatigue chronique et troubles musculosquelettiques si elles ne sont pas anticipées.",
-            "Cette sensibilisation aide l'élu à préserver sa santé physique tout au long de son mandat, en identifiant les situations à risque propres à son activité et en adoptant les postures et l'organisation adaptées. À l'issue de la formation, le participant est capable de repérer les sollicitations physiques de son quotidien d'élu, d'appliquer les principes d'économie d'effort adaptés, et de mieux gérer sa fatigue face à un emploi du temps souvent chargé."
-          ],
-          "audience": "Cette formation s'adresse aux élus municipaux souhaitant préserver leur santé physique dans l'exercice de leur mandat, quel que soit leur niveau de responsabilité (maire, adjoint, conseiller municipal). Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée en début de mandat, période où les nouvelles sollicitations physiques liées à la fonction ne sont pas encore anticipées, mais reste utile à tout moment du mandat pour ajuster ses habitudes.",
-          "funding": "Cette formation est éligible au Droit Individuel à la Formation des Élus (DIFE), un droit personnel attaché à chaque élu local et indépendant du budget formation de la collectivité. ENMA Formation vous accompagne dans les démarches administratives liées à la mobilisation du DIFE, de l'inscription sur la plateforme dédiée jusqu'à la validation de la prise en charge. Cette formation peut être suivie de manière individuelle ou organisée collectivement pour plusieurs élus d'une même collectivité."
-        },
-        {
-          "title": "Maîtriser la création d'un dossier de candidature à un appel d'offres public",
-          "duration": "Durée à définir",
-          "format": "Intra-entreprise",
-          "intro": "Constituer un dossier qui passe le premier tri administratif, puis convainc sur le fond.",
-          "prerequisites": "Aucun prérequis juridique",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "Comprendre la commande publique",
-              "text": "Objectif : être capable de situer les principes fondamentaux et la typologie des marchés publics. Principes de la commande publique, typologie des marchés publics, seuils et procédures de passation."
-            },
-            {
-              "title": "Analyser un avis de marché",
-              "text": "Objectif : être capable de lire un avis de marché et d'en identifier les pièces attendues. Lecture d'un avis d'appel public à la concurrence, identification des pièces du dossier de consultation des entreprises (DCE)."
-            },
-            {
-              "title": "Constituer le dossier de candidature",
-              "text": "Objectif : être capable de réunir un dossier de candidature complet et de rédiger un mémoire technique convaincant. Pièces administratives et techniques à réunir, rédaction du mémoire technique, présentation de l'offre."
-            },
-            {
-              "title": "Suivre et sécuriser sa candidature",
-              "text": "Objectif : être capable d'identifier les points de vigilance permettant d'éviter le rejet d'une candidature. Respect des délais et formalités, points de vigilance pour éviter le rejet d'une candidature."
-            }
-          ],
-          "description": [
-            "Un dossier de candidature incomplet ou mal ficelé peut disqualifier une offre pourtant compétitive dès le premier tri administratif, avant même que le contenu technique ou financier de la proposition ne soit examiné. La commande publique obéit à un formalisme strict, encadré par le Code de la commande publique, où le non-respect d'une pièce attendue ou d'un délai de remise peut suffire à écarter une candidature par ailleurs pertinente.",
-            "Cette formation permet de comprendre la procédure de la commande publique, de réunir les pièces nécessaires à une candidature recevable, et de présenter une offre complète et convaincante. À l'issue de la session, le participant est capable d'analyser un avis de marché, de constituer un dossier de candidature complet incluant le mémoire technique, et de sécuriser sa candidature face aux points de vigilance les plus fréquents."
-          ],
-          "audience": "Cette formation s'adresse aux élus et agents territoriaux impliqués dans la réponse à des appels d'offres publics, que ce soit du côté de la collectivité qui lance la consultation ou du côté d'une structure candidate à un marché public. Aucun prérequis juridique n'est nécessaire, la formation reprenant les notions essentielles de la commande publique. Elle est particulièrement recommandée pour toute personne découvrant la procédure de réponse aux marchés publics ou souhaitant structurer sa pratique.",
-          "funding": "Cette formation est éligible au Droit Individuel à la Formation des Élus (DIFE) pour les élus locaux concernés. ENMA Formation vous accompagne dans les démarches administratives liées à la mobilisation du DIFE, de l'inscription sur la plateforme dédiée jusqu'à la validation de la prise en charge. Pour les agents territoriaux, d'autres dispositifs de financement de la formation professionnelle peuvent être mobilisés : n'hésitez pas à nous consulter pour identifier la solution adaptée à votre situation."
-        }
-      ],
-      "opco": true
     }
   ],
   "topTrainings": [
@@ -1461,13 +1350,6 @@
         "eyebrow": "",
         "title": "Parlons de vos besoins en formation",
         "text": "Décrivez votre projet, nous revenons vers vous sous 24 heures avec une proposition adaptée et le montage du dossier OPCO."
-      },
-      {
-        "id": "faq",
-        "visible": true,
-        "eyebrow": "Questions fréquentes",
-        "title": "Tout ce que vous devez savoir avant de nous contacter",
-        "text": ""
       }
     ],
     "founderQuote": {
@@ -1476,33 +1358,7 @@
       "role": "Fondateur d'ENMA Formation",
       "photo": "",
       "photoAlt": ""
-    },
-    "faq": [
-      {
-        "question": "Comment se déroulent les formations, avez-vous un centre de formation ?",
-        "answer": "ENMA n'a pas de centre de formation : nous venons directement chez vous, sur vos équipements et à vos horaires. Vos équipes s'entraînent dans les conditions réelles de leur poste de travail, ce qui rend la formation plus concrète et plus efficace."
-      },
-      {
-        "question": "Vos formations sont-elles finançables par mon OPCO ?",
-        "answer": "Oui. Toutes nos formations sont certifiées Qualiopi, ce qui vous permet de les faire financer par votre OPCO. Nous vous accompagnons dans le montage du dossier de financement, sans démarche administrative supplémentaire de votre côté."
-      },
-      {
-        "question": "Dans quelles zones intervenez-vous ?",
-        "answer": "Nous intervenons dans toute la région Hauts-de-France, en intra-entreprise. Contactez-nous pour vérifier la faisabilité si votre site se trouve en dehors de cette zone."
-      },
-      {
-        "question": "Quel est le délai pour organiser une formation ?",
-        "answer": "Le délai dépend de la formation et du nombre de participants, mais nous revenons vers vous sous 24 heures avec une proposition adaptée à votre besoin et vos contraintes de planning."
-      },
-      {
-        "question": "Combien de personnes peuvent suivre une formation en même temps ?",
-        "answer": "Les groupes sont volontairement restreints pour garantir un apprentissage de qualité et un suivi individualisé, notamment sur les formations pratiques (CACES, habilitations, travail en hauteur). Le nombre exact dépend de la formation : nous vous le précisons lors de l'établissement du devis."
-      },
-      {
-        "question": "Qu'est-ce que la certification Qualiopi et que garantit-elle ?",
-        "answer": "Qualiopi est la certification qualité délivrée par l'État français à tous les prestataires d'actions de formation. Elle atteste du sérieux de nos processus pédagogiques et administratifs, et c'est elle qui rend nos formations éligibles aux financements OPCO."
-      }
-    ]
+    }
   },
   "theme": {
     "background": "#0b032b",
