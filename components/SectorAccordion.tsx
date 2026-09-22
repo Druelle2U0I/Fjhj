@@ -40,20 +40,14 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
               className="transition-transform duration-700 group-hover:scale-105"
             />
             <div
-              className={`absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 transition-opacity duration-500 ${
-                isActive ? "opacity-100" : "opacity-75"
+              className={`absolute inset-0 transition-all duration-500 ${
+                isActive
+                  ? "bg-gradient-to-t from-black/85 via-black/35 to-black/10"
+                  : "bg-black/35"
               }`}
             />
 
             <div className="absolute inset-0 flex flex-col justify-end p-4 lg:p-6">
-              <p
-                className={`font-semibold text-white transition-all duration-300 ${
-                  isActive ? "text-lg lg:text-2xl" : "line-clamp-2 text-xs lg:text-sm"
-                }`}
-              >
-                {service.title}
-              </p>
-
               <AnimatePresence>
                 {isActive && (
                   <motion.div
@@ -62,6 +56,9 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
                     exit={{ opacity: 0, y: 6 }}
                     transition={{ duration: 0.35, delay: 0.1 }}
                   >
+                    <p className="text-lg font-semibold text-white lg:text-2xl">
+                      {service.title}
+                    </p>
                     <p className="mt-2 line-clamp-3 text-sm text-white/80">
                       {service.description}
                     </p>
@@ -75,13 +72,6 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
                   </motion.div>
                 )}
               </AnimatePresence>
-
-              {!isActive && (
-                <p className="mt-1 text-[11px] text-white/60">
-                  {service.trainings.length} formation
-                  {service.trainings.length > 1 ? "s" : ""}
-                </p>
-              )}
             </div>
           </motion.div>
         );
