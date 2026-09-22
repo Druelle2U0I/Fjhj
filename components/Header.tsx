@@ -47,7 +47,7 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="z-10 hidden items-center gap-8 text-sm font-medium md:flex">
+          <nav className="z-10 hidden flex-1 items-center justify-between text-sm font-medium md:flex md:pr-28">
             {leftLinks.map((link) => (
               <Link key={link.href} href={link.href} className={linkClass(link.href)}>
                 {link.label}
@@ -68,8 +68,8 @@ export default function Header() {
             </span>
           </button>
 
-          <div className="z-10 ml-auto flex items-center gap-8 text-sm font-medium">
-            <nav className="hidden items-center gap-8 md:flex">
+          <div className="z-10 flex flex-1 items-center justify-end gap-8 text-sm font-medium">
+            <nav className="hidden flex-1 items-center justify-between md:flex md:pl-28">
               {rightLinks.map((link) => (
                 <Link key={link.href} href={link.href} className={linkClass(link.href)}>
                   {link.label}
@@ -78,7 +78,7 @@ export default function Header() {
             </nav>
             <Link
               href="/contact"
-              className="rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105 sm:px-5 sm:text-sm"
+              className="shrink-0 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105 sm:px-5 sm:text-sm"
             >
               Devis
             </Link>

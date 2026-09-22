@@ -6,41 +6,31 @@ import Visual from "@/components/Visual";
 import { company, footerCta, footerImage, legal, services } from "@/lib/data";
 
 /**
- * Le logo comme fenêtre, posé dans une bande colorée : la photo du pied
- * de page n'apparaît que dans la silhouette de l'icône, le reste du
- * panneau reste dans les couleurs de la marque. Sans photo, un dégradé
- * de marque remplace la photo à l'intérieur du logo.
+ * Le cache uni du bandeau de navigation, percé exactement à la forme du
+ * logo : la même photo continue (partagée avec le bandeau newsletter
+ * au-dessus) apparaît à travers ce trou, le reste du cache reste opaque.
  */
-function CutoutLogo() {
-  const mask = {
-    WebkitMaskImage: "url(/brand/logo-icon.png)",
-    maskImage: "url(/brand/logo-icon.png)",
-    WebkitMaskSize: "contain",
-    maskSize: "contain",
-    WebkitMaskRepeat: "no-repeat",
-    maskRepeat: "no-repeat",
-    WebkitMaskPosition: "center",
-    maskPosition: "center",
+function LogoWindow() {
+  const cutout = {
+    WebkitMaskImage:
+      "linear-gradient(#000, #000), url(/brand/logo-icon.png)",
+    maskImage: "linear-gradient(#000, #000), url(/brand/logo-icon.png)",
+    WebkitMaskSize: "auto, 160px",
+    maskSize: "auto, 160px",
+    WebkitMaskRepeat: "no-repeat, no-repeat",
+    maskRepeat: "no-repeat, no-repeat",
+    WebkitMaskPosition: "center, center",
+    maskPosition: "center, center",
+    WebkitMaskComposite: "source-out",
+    maskComposite: "exclude",
   } as React.CSSProperties;
 
   return (
     <div
-      className="mx-auto aspect-square w-40 rounded-3xl p-5 lg:w-48"
-      style={{
-        background: "linear-gradient(135deg, var(--accent), var(--background))",
-      }}
-    >
-      <div
-        aria-hidden="true"
-        className="h-full w-full bg-cover bg-center"
-        style={{
-          ...mask,
-          backgroundImage: footerImage
-            ? `url(${footerImage})`
-            : "linear-gradient(135deg, var(--background), var(--surface-2))",
-        }}
-      />
-    </div>
+      aria-hidden="true"
+      className="absolute inset-0 bg-surface"
+      style={cutout}
+    />
   );
 }
 
@@ -96,11 +86,14 @@ function NewsletterBand() {
   };
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0">
-        <Visual src={footerImage} alt="" sizes="100vw" />
-        <div className="absolute inset-0 bg-background/70" />
-      </div>
+    <div className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-background/70" />
+      <div
+        className="absolute inset-x-0 bottom-0 h-32"
+        style={{
+          background: "linear-gradient(to bottom, transparent, var(--surface))",
+        }}
+      />
 
       <div className="relative mx-auto max-w-2xl px-6 py-20 text-center">
         {footerCta.eyebrow && (
@@ -148,7 +141,7 @@ function NewsletterBand() {
 
         {error && <p className="mt-3 text-sm text-red-400">{error}</p>}
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -156,13 +149,20 @@ export default function Footer() {
   const mainSectors = services.slice(0, 4);
 
   return (
-    <>
+    <section className="relative overflow-hidden">
+      {/* Une seule photo continue derrière tout le pied de page : la
+          bande newsletter l'assombrit d'un voile translucide, la bande
+          de navigation la cache complètement sauf dans le trou découpé
+          à la forme du logo (LogoWindow). */}
+      <div className="absolute inset-0">
+        <Visual src={footerImage} alt="" sizes="100vw" />
+      </div>
+
       <NewsletterBand />
 
-      {/* Fond uni opaque : aucune photo ne passe à travers, sauf dans
-          la silhouette du logo (CutoutLogo, ci-dessus). */}
-      <footer className="border-t border-border bg-surface px-6 py-16">
-        <div className="mx-auto max-w-6xl text-sm text-muted">
+      <footer className="relative border-t border-white/10 px-6 py-16">
+        <LogoWindow />
+        <div className="relative mx-auto max-w-6xl text-sm text-muted">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto_1fr_1fr] lg:items-start lg:gap-12">
             <Column title="Formations">
               {mainSectors.map((service) => (
@@ -205,9 +205,10 @@ export default function Footer() {
               </li>
             </Column>
 
-            <div className="order-first sm:col-span-2 lg:order-none lg:col-span-1 lg:px-6">
-              <CutoutLogo />
-            </div>
+            <div
+              aria-hidden="true"
+              className="order-first mx-auto aspect-square w-40 sm:col-span-2 lg:order-none lg:col-span-1"
+            />
 
             <Column title="Nous joindre">
               <li>{company.address}</li>
@@ -252,6 +253,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-    </>
+    </section>
   );
 }
