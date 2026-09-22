@@ -99,6 +99,13 @@ export type SiteContent = {
     aboutImage?: string;
     aboutImageAlt?: string;
     sections: HomeSection[];
+    founderQuote?: {
+      text: string;
+      name: string;
+      role: string;
+      photo?: string;
+      photoAlt?: string;
+    };
   };
   theme: Theme;
   footerImage?: string;

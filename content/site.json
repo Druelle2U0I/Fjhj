@@ -1438,7 +1438,14 @@
         "text": "Décrivez votre projet, nous revenons vers vous sous 24 heures avec une proposition adaptée et le montage du dossier OPCO."
       }
     ],
-    "aboutImage": "/images/img-3928-1790073940042.jpg"
+    "aboutImage": "/images/img-3928-1790073940042.jpg",
+    "founderQuote": {
+      "text": "Nous choisissons des formateurs issus du métier qu'ils enseignent : leur expérience de terrain change la manière de transmettre. Ce que vous achetez chez nous n'est pas une attestation de plus, mais une capacité concrète : que vos équipes reconnaissent le risque et réagissent au bon moment. C'est pourquoi ENMA n'a pas de centre de formation — nous venons chez vous, sur vos équipements, à vos horaires. Ce choix a un coût, mais nous préférons cette exigence à une promesse que nous ne pourrions pas tenir.",
+      "name": "Maxence Druelle",
+      "role": "Fondateur d'ENMA Formation",
+      "photo": "",
+      "photoAlt": ""
+    }
   },
   "theme": {
     "background": "#0b032b",
