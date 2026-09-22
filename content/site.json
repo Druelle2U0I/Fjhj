@@ -1158,7 +1158,8 @@
             "Cette formation couvre l'ensemble de la démarche du bureau d'études technique appliquée aux installations photovoltaïques : contexte technique, réglementaire et économique, calculs de dimensionnement, conception de l'installation et montage du dossier. À l'issue de la session, le participant est capable de conduire une étude complète, du cahier des charges client jusqu'au dossier financier et administratif finalisé."
           ],
           "audience": "Cette formation s'adresse aux chargés d'études, chargés de projet et référents techniques d'entreprises d'installation photovoltaïque souhaitant structurer ou approfondir leur démarche d'étude. Des bases en électricité et en calcul technique sont utiles pour suivre les séquences de dimensionnement dans de bonnes conditions, sans constituer un prérequis strict. Elle est particulièrement adaptée aux entreprises souhaitant internaliser tout ou partie de leurs études techniques plutôt que de les sous-traiter.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir d'un cahier des charges réel issu de votre activité pour un ancrage pédagogique maximal."
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir d'un cahier des charges réel issu de votre activité pour un ancrage pédagogique maximal.",
+          "image": "/images/8-2-1790108175049.jpg"
         },
         {
           "title": "Chiffrage et dimensionnement",
@@ -1233,7 +1234,8 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée avec votre propre matériel de contrôle si vous en disposez déjà, afin d'ancrer la formation dans vos conditions réelles d'utilisation."
         }
       ],
-      "opco": true
+      "opco": true,
+      "image": "/images/9-2-1790108152816.jpg"
     }
   ],
   "topTrainings": [
