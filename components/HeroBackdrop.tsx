@@ -2,18 +2,34 @@
 
 import { useEffect, useRef } from "react";
 
-type Node = {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
+type Segment = {
+  x1: number;
+  y1: number;
+  x2: number;
+  y2: number;
   order: number;
 };
 
-const LINK_DISTANCE = 150;
-const MOUSE_LINK_DISTANCE = 180;
-const NODE_COLOR = "255, 249, 199";
-const ACTIVATE_BAND = 0.08;
+type Pad = {
+  x: number;
+  y: number;
+  order: number;
+  phase: number;
+};
+
+const COLOR = "255, 249, 199";
+const BAND = 0.22;
+const MIN_LEN = 50;
+const MAX_LEN = 150;
+const MAX_SEGMENTS = 260;
+const MAX_DEPTH = 11;
+
+const DIRS: [number, number][] = [
+  [1, 0],
+  [-1, 0],
+  [0, 1],
+  [0, -1],
+];
 
 export default function HeroBackdrop() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -31,15 +47,16 @@ export default function HeroBackdrop() {
 
     let width = 0;
     let height = 0;
-    let nodes: Node[] = [];
+    let segments: Segment[] = [];
+    let pads: Pad[] = [];
+    let maxOrder = 1;
     let mouse: { x: number; y: number } | null = null;
     let scrollProgress = 0;
     let raf = 0;
     let scrollRaf = 0;
+    let startTime = performance.now();
 
-    const density = window.innerWidth < 640 ? 26000 : 19000;
-
-    const setup = () => {
+    const build = () => {
       width = window.innerWidth;
       height = window.innerHeight;
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -49,17 +66,61 @@ export default function HeroBackdrop() {
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-      const count = Math.round((width * height) / density);
-      const orders = Array.from({ length: count }, (_, i) => i / count).sort(
-        () => Math.random() - 0.5,
-      );
-      nodes = Array.from({ length: count }, (_, i) => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.22,
-        vy: (Math.random() - 0.5) * 0.22,
-        order: orders[i],
-      }));
+      const originX = width * 0.72;
+      const originY = Math.min(height * 0.4, 480);
+
+      segments = [];
+      pads = [{ x: originX, y: originY, order: 0, phase: Math.random() * Math.PI * 2 }];
+
+      type Node = { x: number; y: number; dir: number; depth: number; dist: number };
+      const queue: Node[] = [
+        { x: originX, y: originY, dir: -1, depth: 0, dist: 0 },
+      ];
+
+      while (queue.length && segments.length < MAX_SEGMENTS) {
+        const node = queue.shift()!;
+        if (node.depth >= MAX_DEPTH) continue;
+
+        const branchCount = node.depth === 0 ? 4 : Math.random() < 0.5 ? 1 : 2;
+
+        const ax = node.x - originX;
+        const ay = node.y - originY;
+        const amag = Math.sqrt(ax * ax + ay * ay) || 1;
+        const away: [number, number] = [ax / amag, ay / amag];
+
+        const candidateDirs = DIRS.map((_, i) => i).filter((i) => i !== node.dir);
+        const weighted = candidateDirs
+          .map((i) => {
+            const [dx, dy] = DIRS[i];
+            const score = dx * away[0] + dy * away[1];
+            return { i, weight: Math.max(0.12, 0.55 + 0.45 * score) + Math.random() * 0.3 };
+          })
+          .sort((a, b) => b.weight - a.weight)
+          .map((d) => d.i);
+
+        for (let b = 0; b < Math.min(branchCount, weighted.length); b++) {
+          const dirIndex = weighted[b];
+          const [dx, dy] = DIRS[dirIndex];
+          const len = MIN_LEN + Math.random() * (MAX_LEN - MIN_LEN);
+          const nx = node.x + dx * len;
+          const ny = node.y + dy * len;
+
+          if (nx < -40 || nx > width + 40 || ny < -40 || ny > height + 40) continue;
+
+          const dist = node.dist + len;
+          segments.push({ x1: node.x, y1: node.y, x2: nx, y2: ny, order: dist });
+          pads.push({ x: nx, y: ny, order: dist, phase: Math.random() * Math.PI * 2 });
+
+          const continueProb = 0.85 - node.depth * 0.05;
+          if (Math.random() < continueProb) {
+            queue.push({ x: nx, y: ny, dir: dirIndex, depth: node.depth + 1, dist });
+          }
+
+          if (segments.length >= MAX_SEGMENTS) break;
+        }
+      }
+
+      maxOrder = segments.reduce((m, s) => Math.max(m, s.order), 1);
     };
 
     const updateScroll = () => {
@@ -75,76 +136,51 @@ export default function HeroBackdrop() {
     };
 
     const activation = (order: number) => {
-      const start = order * (1 - ACTIVATE_BAND);
-      return Math.min(1, Math.max(0, (scrollProgress - start) / ACTIVATE_BAND));
+      const start = (order / maxOrder) * (1 - BAND);
+      return Math.min(1, Math.max(0, (scrollProgress - start) / BAND));
     };
 
-    const drawNode = (x: number, y: number, alpha: number) => {
-      const size = 5;
-      ctx.strokeStyle = `rgba(${NODE_COLOR}, ${0.55 * alpha})`;
-      ctx.lineWidth = 1;
-      ctx.strokeRect(x - size / 2, y - size / 2, size, size);
-      ctx.fillStyle = `rgba(${NODE_COLOR}, ${0.6 * alpha})`;
-      ctx.beginPath();
-      ctx.arc(x, y, 1, 0, Math.PI * 2);
-      ctx.fill();
-    };
-
-    const draw = () => {
+    const draw = (now: number) => {
       ctx.clearRect(0, 0, width, height);
+      const t = (now - startTime) / 1000;
 
-      for (const n of nodes) {
-        n.x += n.vx;
-        n.y += n.vy;
-        if (n.x < 0 || n.x > width) n.vx *= -1;
-        if (n.y < 0 || n.y > height) n.vy *= -1;
-        n.x = Math.max(0, Math.min(width, n.x));
-        n.y = Math.max(0, Math.min(height, n.y));
+      for (const s of segments) {
+        const alpha = activation(s.order);
+        if (alpha <= 0) continue;
+        ctx.strokeStyle = `rgba(${COLOR}, ${0.22 * alpha})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(s.x1, s.y1);
+        ctx.lineTo(s.x2, s.y2);
+        ctx.stroke();
       }
 
-      for (let i = 0; i < nodes.length; i++) {
-        const a = nodes[i];
-        const aAlpha = activation(a.order);
-        if (aAlpha <= 0) continue;
+      for (const p of pads) {
+        const alpha = activation(p.order);
+        if (alpha <= 0) continue;
+        const pulse = 0.7 + 0.3 * Math.sin(t * 1.4 + p.phase);
+        const size = 4;
 
-        for (let j = i + 1; j < nodes.length; j++) {
-          const b = nodes[j];
-          const bAlpha = activation(b.order);
-          if (bAlpha <= 0) continue;
+        ctx.strokeStyle = `rgba(${COLOR}, ${0.5 * alpha})`;
+        ctx.lineWidth = 1;
+        ctx.strokeRect(p.x - size / 2, p.y - size / 2, size, size);
 
-          const dx = a.x - b.x;
-          const dy = a.y - b.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < LINK_DISTANCE) {
-            const linkAlpha = aAlpha * bAlpha * (1 - dist / LINK_DISTANCE);
-            ctx.strokeStyle = `rgba(${NODE_COLOR}, ${0.18 * linkAlpha})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-          }
-        }
+        ctx.fillStyle = `rgba(${COLOR}, ${0.65 * alpha * pulse})`;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 1.3, 0, Math.PI * 2);
+        ctx.fill();
 
         if (mouse) {
-          const dx = a.x - mouse.x;
-          const dy = a.y - mouse.y;
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < MOUSE_LINK_DISTANCE) {
-            const linkAlpha = aAlpha * (1 - dist / MOUSE_LINK_DISTANCE);
-            ctx.strokeStyle = `rgba(${NODE_COLOR}, ${0.32 * linkAlpha})`;
-            ctx.lineWidth = 1;
+          if (dist < 120) {
+            ctx.fillStyle = `rgba(${COLOR}, ${0.4 * alpha * (1 - dist / 120)})`;
             ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
+            ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
+            ctx.fill();
           }
         }
-      }
-
-      for (const n of nodes) {
-        const alpha = activation(n.order);
-        if (alpha > 0) drawNode(n.x, n.y, alpha);
       }
 
       raf = requestAnimationFrame(draw);
@@ -154,18 +190,18 @@ export default function HeroBackdrop() {
       mouse = { x: e.clientX, y: e.clientY };
     };
 
-    setup();
+    build();
     updateScroll();
     if (prefersReducedMotion) {
       scrollProgress = 1;
-      draw();
+      draw(performance.now());
     } else {
       raf = requestAnimationFrame(draw);
       window.addEventListener("mousemove", onMouseMove, { passive: true });
       window.addEventListener("scroll", onScroll, { passive: true });
     }
 
-    const onResize = () => setup();
+    const onResize = () => build();
     window.addEventListener("resize", onResize);
 
     return () => {
@@ -180,7 +216,7 @@ export default function HeroBackdrop() {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_-10%,rgba(255,249,199,0.14),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_72%_30%,rgba(255,249,199,0.12),transparent_70%)]" />
     </div>
   );
 }
