@@ -87,7 +87,7 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Resend error:", error);
       return NextResponse.json(
-        { error: "L'envoi du message a échoué. Merci de réessayer.", debug: error },
+        { error: "L'envoi du message a échoué. Merci de réessayer." },
         { status: 502 },
       );
     }
@@ -96,10 +96,7 @@ export async function POST(request: Request) {
   } catch (err) {
     console.error("Contact form error:", err);
     return NextResponse.json(
-      {
-        error: "L'envoi du message a échoué. Merci de réessayer.",
-        debug: err instanceof Error ? err.message : String(err),
-      },
+      { error: "L'envoi du message a échoué. Merci de réessayer." },
       { status: 500 },
     );
   }
