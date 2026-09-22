@@ -19,10 +19,10 @@ type Pad = {
 
 const COLOR = "255, 249, 199";
 const BAND = 0.22;
-const MIN_LEN = 50;
-const MAX_LEN = 150;
-const MAX_SEGMENTS = 260;
-const MAX_DEPTH = 11;
+const MIN_LEN = 44;
+const MAX_LEN = 140;
+const MAX_SEGMENTS = 520;
+const MAX_DEPTH = 18;
 
 const DIRS: [number, number][] = [
   [1, 0],
@@ -78,10 +78,17 @@ export default function HeroBackdrop() {
       ];
 
       while (queue.length && segments.length < MAX_SEGMENTS) {
-        const node = queue.shift()!;
+        const node = queue.pop()!;
         if (node.depth >= MAX_DEPTH) continue;
 
-        const branchCount = node.depth === 0 ? 4 : Math.random() < 0.5 ? 1 : 2;
+        const branchCount =
+          node.depth === 0
+            ? 4
+            : node.depth < 4
+              ? Math.random() < 0.45 ? 2 : 3
+              : Math.random() < 0.55
+                ? 1
+                : 2;
 
         const ax = node.x - originX;
         const ay = node.y - originY;
@@ -111,7 +118,7 @@ export default function HeroBackdrop() {
           segments.push({ x1: node.x, y1: node.y, x2: nx, y2: ny, order: dist });
           pads.push({ x: nx, y: ny, order: dist, phase: Math.random() * Math.PI * 2 });
 
-          const continueProb = 0.85 - node.depth * 0.05;
+          const continueProb = 0.94 - node.depth * 0.025;
           if (Math.random() < continueProb) {
             queue.push({ x: nx, y: ny, dir: dirIndex, depth: node.depth + 1, dist });
           }
@@ -125,9 +132,8 @@ export default function HeroBackdrop() {
 
     const updateScroll = () => {
       scrollRaf = 0;
-      const doc = document.documentElement;
-      const scrollable = doc.scrollHeight - window.innerHeight;
-      const p = scrollable > 0 ? window.scrollY / scrollable : 1;
+      const deployDistance = window.innerHeight * 1.1;
+      const p = deployDistance > 0 ? window.scrollY / deployDistance : 1;
       scrollProgress = Math.min(1, Math.max(0, p));
     };
     const onScroll = () => {
