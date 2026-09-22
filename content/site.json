@@ -1369,13 +1369,13 @@
   "home": {
     "heroSlides": [
       {
-        "image": "/images/6-1790027959392.jpg",
+        "image": "/images/6-1790067937290.jpg",
         "alt": "Engins de chantier sur un site industriel",
         "title": "CACES, engins de chantier, travail en hauteur",
         "text": "Formations pratiques, sur site ou sur plateau technique"
       },
       {
-        "image": "/images/1-1790027886634.jpg",
+        "image": "/images/1-1790067951111.jpg",
         "alt": "Chariot élévateur en entrepôt",
         "title": "Conduite de chariots élévateurs",
         "text": "CACES R489, en intra-entreprise ou sur plateau"
@@ -1387,13 +1387,12 @@
         "text": "AIPR, pour travailler sans provoquer l'accident"
       },
       {
-        "image": "/images/engins-chantier-route.jpg",
+        "image": "",
         "alt": "Engins de chantier sur une route",
         "title": "Sécurité sur chantier",
         "text": "Prévention des risques et travail en hauteur"
       }
     ],
-    "aboutImage": "/images/equipier-evac-1790027915439.jpg",
     "aboutImageAlt": "Chariot élévateur en entrepôt, formation CACES",
     "sections": [
       {
@@ -1437,5 +1436,12 @@
     "accentForeground": "#0b032b",
     "headingFont": "fraunces"
   },
-  "footerImage": "/images/1-1790025066228.jpg"
+  "footerImage": "/images/1-1790025066228.jpg",
+  "footerCta": {
+    "enabled": true,
+    "eyebrow": "Recevez notre catalogue",
+    "title": "Le catalogue complet de nos 35 formations",
+    "text": "Laissez votre adresse e-mail : nous vous envoyons le catalogue et nous restons disponibles pour construire un parcours adapté à vos équipes.",
+    "buttonLabel": "Recevoir"
+  }
 }
