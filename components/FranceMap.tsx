@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type ReactNode } from "react";
+import { useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import {
   motion,
   useMotionTemplate,
@@ -34,99 +34,140 @@ function padded(
 const FRANCE_VIEW = padded(allBounds, 0.03);
 const HDF_VIEW = padded(hdfBounds, 0.18);
 
+// Vrai sur grand écran (≥ 1024 px), où la carte peut glisser pour laisser
+// la place au texte à côté d'elle.
+function useIsDesktop() {
+  return useSyncExternalStore(
+    (onChange) => {
+      const query = window.matchMedia("(min-width: 1024px)");
+      query.addEventListener("change", onChange);
+      return () => query.removeEventListener("change", onChange);
+    },
+    () => window.matchMedia("(min-width: 1024px)").matches,
+    () => false,
+  );
+}
+
+// Scène en trois temps pendant le défilement :
+// 1. la carte de France s'affiche seule, centrée ;
+// 2. elle zoome sur les Hauts-de-France et le reste du pays s'efface ;
+// 3. sur grand écran, elle glisse vers la droite et le texte (children)
+//    apparaît à sa gauche. Sur mobile, le texte suit sous la carte.
 export default function FranceMap({ children }: { children?: ReactNode }) {
+  const isDesktop = useIsDesktop();
+  // La scène est reconstruite quand on passe du mode mobile au mode grand
+  // écran : les animations liées au défilement sont calculées à la
+  // création et ne suivraient pas un changement de mode en cours de route.
+  return (
+    <MapScene key={isDesktop ? "desktop" : "mobile"} isDesktop={isDesktop}>
+      {children}
+    </MapScene>
+  );
+}
+
+function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: boolean }) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState<string | null>(null);
 
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
-    offset: ["start 0.6", "end end"],
+    offset: isDesktop ? ["start start", "end end"] : ["start 0.7", "center 0.4"],
   });
 
-  const vx = useTransform(scrollYProgress, [0, 0.7], [FRANCE_VIEW[0], HDF_VIEW[0]]);
-  const vy = useTransform(scrollYProgress, [0, 0.7], [FRANCE_VIEW[1], HDF_VIEW[1]]);
-  const vw = useTransform(scrollYProgress, [0, 0.7], [FRANCE_VIEW[2], HDF_VIEW[2]]);
-  const vh = useTransform(scrollYProgress, [0, 0.7], [FRANCE_VIEW[3], HDF_VIEW[3]]);
+  // Zoom : première moitié du défilement (tout le parcours sur mobile).
+  const zoomEnd = isDesktop ? 0.5 : 1;
+  const vx = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[0], HDF_VIEW[0]]);
+  const vy = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[1], HDF_VIEW[1]]);
+  const vw = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[2], HDF_VIEW[2]]);
+  const vh = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[3], HDF_VIEW[3]]);
   const viewBox = useMotionTemplate`${vx} ${vy} ${vw} ${vh}`;
 
-  const detailOpacity = useTransform(scrollYProgress, [0.55, 0.75], [0, 1]);
-  const strokeW = useTransform(scrollYProgress, [0, 0.7], [0.012, 0.0035]);
-  const pinScale = useTransform(scrollYProgress, [0.65, 0.85], [0, 1]);
-  const pinOpacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
-  // Le reste de la France s'efface pendant le zoom : à la fin, seule la
-  // zone d'intervention reste visible.
-  const otherOpacity = useTransform(scrollYProgress, [0.15, 0.55], [0.5, 0]);
-  const otherStroke = useTransform(scrollYProgress, [0.15, 0.55], [1, 0]);
+  const strokeW = useTransform(scrollYProgress, [0, zoomEnd], [0.012, 0.0035]);
+  const otherOpacity = useTransform(scrollYProgress, [0.1 * zoomEnd, 0.8 * zoomEnd], [0.5, 0]);
+  const otherStroke = useTransform(scrollYProgress, [0.1 * zoomEnd, 0.8 * zoomEnd], [1, 0]);
+  const pinScale = useTransform(scrollYProgress, [0.85 * zoomEnd, zoomEnd], [0, 1]);
+  const pinOpacity = useTransform(scrollYProgress, [0, 0.8 * zoomEnd, zoomEnd, 1], [0, 0, 1, 1]);
+  const detailOpacity = useTransform(scrollYProgress, [0, 0.8 * zoomEnd, zoomEnd, 1], [0, 0, 1, 1]);
 
-  // Texte (children) à gauche et carte à droite. Sur grand écran, le bloc
-  // reste épinglé pendant le défilement, le temps que la carte zoome sur
-  // les Hauts-de-France ; sur mobile, la carte passe au-dessus du texte.
+  // Glissement de la carte vers la droite puis apparition du texte.
+  // Les valeurs sont données sur tout le parcours (0 → 1) : sans cela,
+  // l'animation accélérée par le navigateur continuait au-delà de la fin.
+  // La carte occupe 40 % de la largeur : 62,5 % de sa largeur la place au
+  // centre de la moitié droite.
+  const mapX = useTransform(scrollYProgress, [0, 0.52, 0.72, 1], ["0%", "0%", "62.5%", "62.5%"]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.6, 0.78, 1], [0, 0, 1, 1]);
+  const textX = useTransform(scrollYProgress, [0, 0.6, 0.78, 1], [-32, -32, 0, 0]);
+
   return (
-    <section ref={wrapperRef} className="relative px-6 lg:h-[190vh]">
-      <div className="mx-auto grid max-w-6xl items-start gap-10 pb-16 pt-2 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] lg:grid-cols-2 lg:gap-16 lg:pb-8 lg:pt-4">
-        <div className="order-2 lg:order-1">{children}</div>
-
-        <div className="order-1 flex flex-col items-center lg:order-2">
-          <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-            {pages.centre.mapEyebrow}
-          </p>
-          <div className="relative mt-4 aspect-square w-full max-w-md">
-            <motion.svg
-              viewBox={viewBox}
-              className="h-full w-full overflow-hidden"
-            >
-              {depts.map((dept) => (
-                <motion.path
-                  key={dept.code}
-                  d={dept.path}
-                  fill={dept.hdf ? "var(--accent)" : "var(--surface-2)"}
-                  fillOpacity={dept.hdf ? 1 : otherOpacity}
-                  stroke="var(--background)"
-                  strokeWidth={strokeW}
-                strokeOpacity={dept.hdf ? 1 : otherStroke}
-                  onMouseEnter={() => dept.hdf && setHovered(dept.code)}
-                  onMouseLeave={() => setHovered(null)}
-                  className={dept.hdf ? "cursor-pointer transition-opacity" : ""}
-                  style={
-                    dept.hdf
-                      ? { opacity: hovered === dept.code ? 0.75 : 1 }
-                      : undefined
-                  }
-                />
-              ))}
-
-              <motion.g style={{ opacity: pinOpacity, scale: pinScale }}>
-                <circle
-                  cx={wingles.x}
-                  cy={wingles.y}
-                  r={0.055}
-                  fill="var(--background)"
-                />
-                <circle
-                  cx={wingles.x}
-                  cy={wingles.y}
-                  r={0.028}
-                  fill="var(--accent)"
-                  stroke="var(--background)"
-                  strokeWidth={0.008}
-                />
-              </motion.g>
-            </motion.svg>
-
-            <motion.div
-              style={{ opacity: pinOpacity }}
-              className="pointer-events-none absolute left-1/2 top-[8%] -translate-x-1/2 whitespace-nowrap rounded-full border border-accent/40 bg-background/90 px-4 py-2 text-xs font-semibold shadow-lg backdrop-blur"
-            >
-              Notre centre — Wingles (62)
-            </motion.div>
-          </div>
-
-          <motion.p
-            style={{ opacity: detailOpacity }}
-            className="mt-4 max-w-md text-center text-sm text-muted"
+    <section ref={wrapperRef} className="relative px-6 lg:h-[320vh]">
+      <div className="mx-auto max-w-6xl lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-center lg:pt-20">
+        <div className="relative w-full">
+          <motion.div
+            style={isDesktop ? { x: mapX } : undefined}
+            className="mx-auto flex w-full max-w-md flex-col items-center lg:w-[40%] lg:max-w-none"
           >
-            {pages.centre.mapText}
-          </motion.p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+              {pages.centre.mapEyebrow}
+            </p>
+            <div className="relative mt-4 aspect-square w-full">
+              <motion.svg viewBox={viewBox} className="h-full w-full overflow-hidden">
+                {depts.map((dept) => (
+                  <motion.path
+                    key={dept.code}
+                    d={dept.path}
+                    fill={dept.hdf ? "var(--accent)" : "var(--surface-2)"}
+                    fillOpacity={dept.hdf ? 1 : otherOpacity}
+                    stroke="var(--background)"
+                    strokeWidth={strokeW}
+                    strokeOpacity={dept.hdf ? 1 : otherStroke}
+                    onMouseEnter={() => dept.hdf && setHovered(dept.code)}
+                    onMouseLeave={() => setHovered(null)}
+                    className={dept.hdf ? "cursor-pointer transition-opacity" : ""}
+                    style={
+                      dept.hdf
+                        ? { opacity: hovered === dept.code ? 0.75 : 1 }
+                        : undefined
+                    }
+                  />
+                ))}
+
+                <motion.g style={{ opacity: pinOpacity, scale: pinScale }}>
+                  <circle cx={wingles.x} cy={wingles.y} r={0.055} fill="var(--background)" />
+                  <circle
+                    cx={wingles.x}
+                    cy={wingles.y}
+                    r={0.028}
+                    fill="var(--accent)"
+                    stroke="var(--background)"
+                    strokeWidth={0.008}
+                  />
+                </motion.g>
+              </motion.svg>
+
+              <motion.div
+                style={{ opacity: pinOpacity }}
+                className="pointer-events-none absolute left-1/2 top-[8%] -translate-x-1/2 whitespace-nowrap rounded-full border border-accent/40 bg-background/90 px-4 py-2 text-xs font-semibold shadow-lg backdrop-blur"
+              >
+                Notre centre — Wingles (62)
+              </motion.div>
+            </div>
+
+            <motion.p
+              style={{ opacity: detailOpacity }}
+              className="mt-4 max-w-md text-center text-sm text-muted"
+            >
+              {pages.centre.mapText}
+            </motion.p>
+          </motion.div>
+
+          {children && (
+            <motion.div
+              style={isDesktop ? { opacity: textOpacity, x: textX } : undefined}
+              className="pb-16 pt-10 lg:absolute lg:left-0 lg:top-1/2 lg:w-[46%] lg:-translate-y-1/2 lg:p-0"
+            >
+              {children}
+            </motion.div>
+          )}
         </div>
       </div>
     </section>
