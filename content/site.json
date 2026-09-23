@@ -2,7 +2,7 @@
   "company": {
     "name": "ENMA Formation",
     "tagline": "Vos équipes méritent le meilleur. \nNous leur donnons les moyens d'y arriver.",
-    "description": "Formations sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention des risques, management, qualité : ENMA Formation couvre l'ensemble de vos besoins en formation professionnelle. Certifié Qualiopi, financement OPCO pris en charge.",
+    "description": "Formations sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention des risques, management, qualité : ENMA Formation couvre l'ensemble de vos besoins en formation professionnelle. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO.",
     "about": "Organisme de formation certifié Qualiopi, implanté dans les Hauts-de-France. Formations en intra-entreprise et en inter-entreprises, partout en Aisne et dans la Somme.",
     "email": "maxence@enma-formation.com",
     "phone": "07 69 35 55 19",
@@ -11,12 +11,28 @@
   },
   "legal": {
     "activityDeclaration": "32 62 04507 62",
-    "qualiopiCertificate": "10122288"
+    "qualiopiCertificate": "10122288",
+    "legalName": "ENMA FORMATION",
+    "legalForm": "SASU (société par actions simplifiée unipersonnelle)",
+    "capital": "1 000 €",
+    "siren": "105 455 620",
+    "siret": "105 455 620 00010",
+    "rcs": "105 455 620 R.C.S. Arras",
+    "vat": "FR14105455620",
+    "publicationDirector": "Maxence Druelle",
+    "activityRegion": "Hauts-de-France",
+    "qualiopiCategory": "actions de formation",
+    "cancellationNotice": "15 jours",
+    "paymentTerms": "30 jours",
+    "accessDelay": "2 à 4 semaines après validation du devis et, le cas échéant, de l'accord de financement",
+    "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (taux de satisfaction des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
+    "cancellationFee": "50 % du prix de la formation",
+    "court": "Tribunal de commerce d'Arras"
   },
   "stats": [
     {
       "value": "35",
-      "label": "formations certifiées Qualiopi"
+      "label": "formations au catalogue"
     },
     {
       "value": "5",
@@ -28,7 +44,7 @@
     },
     {
       "value": "100%",
-      "label": "formations finançables OPCO"
+      "label": "formations éligibles OPCO"
     }
   ],
   "pillars": [
@@ -1323,27 +1339,27 @@
       },
       {
         "image": "/images/9-1790074290755.jpg",
-        "alt": "",
+        "alt": "Technicien casqué fixant un panneau solaire sur une toiture",
         "title": "Photovoltaïque",
         "text": "Chiffrage et dimensionnement"
       },
       {
         "image": "/images/2-1790110393319.jpg",
-        "alt": "",
+        "alt": "Équipe réunie autour d'une table de travail, mains posées les unes sur les autres",
         "title": "Management & qualité",
         "text": "Gestion des conflits",
         "link": ""
       },
       {
         "image": "/images/4-1790110514323.jpg",
-        "alt": "",
+        "alt": "Massage cardiaque pratiqué sur un mannequin de secourisme",
         "title": "Secours & premiers soins",
         "text": "Sauveteur Secouriste du travail",
         "link": ""
       },
       {
         "image": "/images/n1-1790111052703.jpg",
-        "alt": "",
+        "alt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
         "title": "Préventions des risques professionnels",
         "text": "Sécurité des salariés des entreprises extérieures - N1",
         "link": ""
@@ -1355,7 +1371,7 @@
         "id": "formations",
         "visible": true,
         "eyebrow": "Nos formations",
-        "title": "9 domaines de formation, 35 parcours certifiés Qualiopi",
+        "title": "9 domaines de formation, 35 parcours, un organisme certifié Qualiopi",
         "text": "Toutes nos formations sont finançables OPCO et proposées en intra-entreprise, partout en Hauts-de-France."
       },
       {
@@ -1369,7 +1385,7 @@
         "id": "financement",
         "visible": true,
         "eyebrow": "Qualiopi & financement",
-        "title": "Un financement pris en charge, sans démarche de votre côté",
+        "title": "Un financement OPCO facilité, sans démarche de votre côté",
         "text": ""
       },
       {
@@ -1401,7 +1417,7 @@
       },
       {
         "question": "Vos formations sont-elles finançables par mon OPCO ?",
-        "answer": "Oui. Toutes nos formations sont certifiées Qualiopi, ce qui vous permet de les faire financer par votre OPCO. Nous vous accompagnons dans le montage du dossier de financement, sans démarche administrative supplémentaire de votre côté."
+        "answer": "Oui. ENMA Formation est un organisme certifié Qualiopi : nos formations sont donc éligibles à une prise en charge par votre OPCO, selon ses critères et votre budget disponible. Nous vous accompagnons dans le montage du dossier de financement, sans démarche administrative supplémentaire de votre côté."
       },
       {
         "question": "Dans quelles zones intervenez-vous ?",
@@ -1439,5 +1455,9 @@
     "title": "Le catalogue complet de nos 35 formations",
     "text": "Laissez votre adresse e-mail : nous vous envoyons le catalogue et nous restons disponibles pour construire un parcours adapté à vos équipes.",
     "buttonLabel": "Recevoir"
+  },
+  "trainingInfo": {
+    "methods": "Apports théoriques illustrés, démonstrations et mises en situation pratiques, au plus près des conditions réelles de travail. Nos formateurs disposent des habilitations et certifications requises pour les formations réglementées.",
+    "evaluation": "Positionnement en début de formation, évaluation des acquis en fin de formation (questionnaire et/ou mise en situation pratique selon la formation), questionnaire de satisfaction. Une attestation de fin de formation est remise à chaque stagiaire."
   }
 }

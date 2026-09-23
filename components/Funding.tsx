@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import { funding } from "@/lib/data";
+import { funding, legal, qualiopiText } from "@/lib/data";
 
 export default function Funding() {
   return (
@@ -10,7 +10,7 @@ export default function Funding() {
             Qualiopi & financement
           </span>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Un financement pris en charge, sans démarche de votre côté
+            Un financement OPCO facilité, sans démarche de votre côté
           </h2>
           <p className="mt-5 max-w-2xl whitespace-pre-line text-muted">{funding.intro}</p>
         </Reveal>
@@ -24,6 +24,23 @@ export default function Funding() {
               </div>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+          {qualiopiText() && (
+            <Reveal className="dyn-card rounded-2xl border border-border bg-surface p-6">
+              <h3 className="text-lg font-semibold">Certification Qualiopi</h3>
+              <p className="mt-2 text-sm text-muted">{qualiopiText()}</p>
+            </Reveal>
+          )}
+          {legal.resultsIndicators && (
+            <Reveal delay={0.1} className="dyn-card rounded-2xl border border-border bg-surface p-6">
+              <h3 className="text-lg font-semibold">Nos indicateurs de résultats</h3>
+              <p className="mt-2 whitespace-pre-line text-sm text-muted">
+                {legal.resultsIndicators}
+              </p>
+            </Reveal>
+          )}
         </div>
       </div>
     </section>

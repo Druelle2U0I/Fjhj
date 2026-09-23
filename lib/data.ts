@@ -94,7 +94,27 @@ export type SiteContent = {
     address: string;
     serviceArea: string;
   };
-  legal: { activityDeclaration: string; qualiopiCertificate: string };
+  legal: {
+    activityDeclaration: string;
+    qualiopiCertificate: string;
+    legalName?: string;
+    legalForm?: string;
+    capital?: string;
+    siren?: string;
+    siret?: string;
+    rcs?: string;
+    vat?: string;
+    publicationDirector?: string;
+    activityRegion?: string;
+    qualiopiCategory?: string;
+    cancellationNotice?: string;
+    paymentTerms?: string;
+    cancellationFee?: string;
+    court?: string;
+    accessDelay?: string;
+    resultsIndicators?: string;
+  };
+  trainingInfo?: { methods: string; evaluation: string };
   stats: { value: string; label: string }[];
   pillars: { title: string; text: string }[];
   sectors: Sector[];
@@ -131,6 +151,7 @@ const content = site as SiteContent;
 
 export const company = content.company;
 export const legal = content.legal;
+export const trainingInfo = content.trainingInfo ?? { methods: "", evaluation: "" };
 export const stats = content.stats;
 export const pillars = content.pillars;
 export const topTrainings = content.topTrainings;
@@ -165,3 +186,18 @@ export const services = content.sectors.map((sector) => ({
     slug: slugify(training.title),
   })),
 }));
+
+// Formule imposée par l'article L6352-12 du Code du travail dès que le
+// numéro de déclaration d'activité est affiché.
+export function activityDeclarationText(): string {
+  if (!legal.activityDeclaration) return "";
+  const region = legal.activityRegion ? ` auprès du préfet de la région ${legal.activityRegion}` : "";
+  return `Déclaration d'activité enregistrée sous le numéro ${legal.activityDeclaration}${region}. Cet enregistrement ne vaut pas agrément de l'État.`;
+}
+
+// Mention exigée par la charte d'usage de la marque Qualiopi.
+export function qualiopiText(): string {
+  if (!legal.qualiopiCertificate) return "";
+  const category = legal.qualiopiCategory ? ` La certification qualité a été délivrée au titre de la catégorie d'action suivante : ${legal.qualiopiCategory}.` : "";
+  return `Organisme certifié Qualiopi, certificat n° ${legal.qualiopiCertificate}.${category}`;
+}

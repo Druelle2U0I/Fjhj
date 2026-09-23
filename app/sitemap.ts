@@ -38,6 +38,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
+    ...["mentions-legales", "confidentialite", "cgv", "accessibilite"].map(
+      (path) => ({
+        url: `${base}/${path}`,
+        lastModified: now,
+        changeFrequency: "yearly" as const,
+        priority: 0.2,
+      }),
+    ),
   ];
 
   const sectorRoutes: MetadataRoute.Sitemap = services.map((service) => ({

@@ -3,7 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
-import { company, services, siteUrl } from "@/lib/data";
+import {
+  accessibility,
+  company,
+  legal,
+  services,
+  siteUrl,
+  trainingInfo,
+} from "@/lib/data";
 
 export async function generateStaticParams() {
   return services.flatMap((service) =>
@@ -55,6 +62,9 @@ export default async function FormationPage(
       ? [{ label: "Effectif", value: training.effectif }]
       : []),
     { label: "Validation", value: training.certification },
+    ...(legal.accessDelay
+      ? [{ label: "Délai d'accès", value: legal.accessDelay }]
+      : []),
   ];
 
   const courseJsonLd = {
@@ -172,6 +182,34 @@ export default async function FormationPage(
                 </p>
                 <p className="mt-3 text-sm text-muted">{training.funding}</p>
               </div>
+              {trainingInfo.methods && (
+                <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                    Méthodes pédagogiques
+                  </p>
+                  <p className="mt-3 text-sm text-muted">{trainingInfo.methods}</p>
+                </div>
+              )}
+              {trainingInfo.evaluation && (
+                <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                    Modalités d&apos;évaluation
+                  </p>
+                  <p className="mt-3 text-sm text-muted">{trainingInfo.evaluation}</p>
+                </div>
+              )}
+              <div className="dyn-card rounded-2xl border border-border bg-surface p-6 sm:col-span-2">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Accessibilité aux personnes en situation de handicap
+                </p>
+                <p className="mt-3 text-sm text-muted">
+                  {accessibility.text} Contact : {accessibility.referent},{" "}
+                  <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent">
+                    {company.email}
+                  </a>
+                  .
+                </p>
+              </div>
             </Reveal>
 
             {otherTrainings.length > 0 && (
@@ -221,7 +259,7 @@ export default async function FormationPage(
                     Tarif
                   </dt>
                   <dd className="mt-1 text-sm">
-                    Sur devis · prise en charge OPCO possible
+                    Sur devis · éligible à une prise en charge OPCO
                   </dd>
                 </div>
               </dl>

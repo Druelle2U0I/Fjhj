@@ -324,6 +324,173 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                     })
                   }
                 />
+                <Field
+                  label="Raison sociale"
+                  value={content.legal.legalName ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, legalName: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Forme juridique"
+                  value={content.legal.legalForm ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, legalForm: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Capital social"
+                  value={content.legal.capital ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, capital: v },
+                    })
+                  }
+                />
+                <Field
+                  label="SIREN"
+                  value={content.legal.siren ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, siren: v },
+                    })
+                  }
+                />
+                <Field
+                  label="SIRET"
+                  value={content.legal.siret ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, siret: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Numéro RCS"
+                  value={content.legal.rcs ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, rcs: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Numéro de TVA intracommunautaire"
+                  value={content.legal.vat ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, vat: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Directeur de la publication"
+                  value={content.legal.publicationDirector ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, publicationDirector: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Région de la déclaration d'activité"
+                  value={content.legal.activityRegion ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, activityRegion: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Catégorie d'action Qualiopi"
+                  hint="Ex. : actions de formation"
+                  value={content.legal.qualiopiCategory ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, qualiopiCategory: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Délai d'accès aux formations"
+                  hint="Affiché sur chaque fiche formation."
+                  rows={2}
+                  value={content.legal.accessDelay ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, accessDelay: v },
+                    })
+                  }
+                />
+                <Field
+                  label="CGV — délai d'annulation sans frais"
+                  hint="Ex. : 15 jours"
+                  value={content.legal.cancellationNotice ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, cancellationNotice: v },
+                    })
+                  }
+                />
+                <Field
+                  label="CGV — somme due en cas d'annulation tardive"
+                  value={content.legal.cancellationFee ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, cancellationFee: v },
+                    })
+                  }
+                />
+                <Field
+                  label="CGV — délai de paiement"
+                  hint="Ex. : 30 jours"
+                  value={content.legal.paymentTerms ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, paymentTerms: v },
+                    })
+                  }
+                />
+                <Field
+                  label="CGV — tribunal compétent"
+                  value={content.legal.court ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, court: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Indicateurs de résultats"
+                  hint="Affichés sur la page Qualiopi & financement."
+                  rows={4}
+                  value={content.legal.resultsIndicators ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, resultsIndicators: v },
+                    })
+                  }
+                />
               </Card>
             </>
           )}
@@ -730,6 +897,36 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   update({
                     ...content,
                     accessibility: { ...content.accessibility, referent: v },
+                  })
+                }
+              />
+              <Field
+                label="Fiches formation — méthodes pédagogiques"
+                hint="Texte commun affiché sur toutes les fiches formation."
+                rows={3}
+                value={content.trainingInfo?.methods ?? ""}
+                onChange={(v) =>
+                  update({
+                    ...content,
+                    trainingInfo: {
+                      methods: v,
+                      evaluation: content.trainingInfo?.evaluation ?? "",
+                    },
+                  })
+                }
+              />
+              <Field
+                label="Fiches formation — modalités d'évaluation"
+                hint="Texte commun affiché sur toutes les fiches formation."
+                rows={3}
+                value={content.trainingInfo?.evaluation ?? ""}
+                onChange={(v) =>
+                  update({
+                    ...content,
+                    trainingInfo: {
+                      methods: content.trainingInfo?.methods ?? "",
+                      evaluation: v,
+                    },
                   })
                 }
               />

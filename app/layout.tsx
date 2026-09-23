@@ -58,7 +58,7 @@ const fraunces = Fraunces({
 const siteTitle =
   "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
 const siteDescription =
-  "Formations sécurité incendie, secourisme, habilitation électrique, CACES, travail en hauteur, prévention des risques, management et photovoltaïque. Certifié Qualiopi, financement OPCO pris en charge, intra et inter-entreprises dans les Hauts-de-France.";
+  "Formations sécurité incendie, secourisme, habilitation électrique, CACES, travail en hauteur, prévention des risques, management et photovoltaïque. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO, en intra et inter-entreprises dans les Hauts-de-France.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

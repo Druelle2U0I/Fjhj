@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import Reveal from "@/components/Reveal";
+import Link from "next/link";
 import { accessibility, company } from "@/lib/data";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -198,6 +199,16 @@ export default function Contact({
             >
               {status === "sending" ? "Envoi en cours..." : "Envoyer le message"}
             </button>
+
+            <p className="mt-4 text-xs text-muted">
+              Les informations saisies servent uniquement à répondre à votre
+              demande et à établir votre devis. Elles sont conservées 3 ans et
+              ne sont jamais cédées. Vous pouvez y accéder, les rectifier ou les
+              faire supprimer à tout moment.{" "}
+              <Link href="/confidentialite" className="underline hover:text-accent">
+                Politique de confidentialité
+              </Link>
+            </p>
 
             {status === "sent" && (
               <p className="mt-4 text-sm text-green-400">

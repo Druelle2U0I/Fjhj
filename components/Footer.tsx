@@ -3,7 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 import Visual from "@/components/Visual";
-import { company, footerCta, footerImage, legal, services } from "@/lib/data";
+import {
+  activityDeclarationText,
+  company,
+  footerCta,
+  footerImage,
+  qualiopiText,
+  services,
+} from "@/lib/data";
 
 function Column({
   title,
@@ -102,6 +109,17 @@ function NewsletterForm() {
       )}
 
       {error && <p className="mt-3 text-sm text-red-400">{error}</p>}
+
+      {state !== "sent" && (
+        <p className="mt-4 text-xs text-muted">
+          Votre adresse sert à vous envoyer le catalogue et, ponctuellement, des
+          informations sur nos formations. Vous pouvez vous y opposer à tout
+          moment par simple e-mail.{" "}
+          <Link href="/confidentialite" className="underline hover:text-accent">
+            En savoir plus
+          </Link>
+        </p>
+      )}
     </div>
   );
 }
@@ -193,20 +211,33 @@ export default function Footer() {
               </Column>
             </div>
 
-            <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs sm:flex-row">
-              <p>
+            <div className="mt-14 grid gap-4 border-t border-white/10 pt-6 text-xs">
+              <nav
+                aria-label="Informations légales"
+                className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-start"
+              >
+                <Link href="/mentions-legales" className="hover:text-accent">
+                  Mentions légales
+                </Link>
+                <Link href="/confidentialite" className="hover:text-accent">
+                  Confidentialité
+                </Link>
+                <Link href="/cgv" className="hover:text-accent">
+                  CGV
+                </Link>
+                <Link href="/accessibilite" className="hover:text-accent">
+                  Accessibilité
+                </Link>
+              </nav>
+              {(activityDeclarationText() || qualiopiText()) && (
+                <p className="text-center sm:text-left">
+                  {activityDeclarationText()} {qualiopiText()}
+                </p>
+              )}
+              <p className="text-center sm:text-left">
                 &copy; {new Date().getFullYear()} {company.name}. Tous droits
                 réservés.
               </p>
-              {(legal.activityDeclaration || legal.qualiopiCertificate) && (
-                <p>
-                  {legal.activityDeclaration &&
-                    `Déclaration d'activité n° ${legal.activityDeclaration}`}
-                  {legal.activityDeclaration && legal.qualiopiCertificate && " · "}
-                  {legal.qualiopiCertificate &&
-                    `Certification Qualiopi n° ${legal.qualiopiCertificate}`}
-                </p>
-              )}
             </div>
           </div>
         </div>
