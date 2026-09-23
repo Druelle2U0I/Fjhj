@@ -1442,7 +1442,8 @@
     "footerVeil": 84,
     "sectionOpacity": 64,
     "aurora3": "#ff9300",
-    "tagBackground": "#2c1376"
+    "tagBackground": "#2c1376",
+    "tagText": "#d4e3fe"
   },
   "footerImage": "/images/2048-1790071486997.webp",
   "footerCta": {
