@@ -148,21 +148,23 @@ export default async function FormationPage(
               </h2>
             </Reveal>
 
-            <div className="mt-10 divide-y divide-border border-t border-border">
+            <div className="group/programme mt-10 divide-y divide-border border-t border-border">
               {training.programme.map((module, i) => (
-                <Reveal
-                  key={module.title}
-                  delay={i * 0.1}
-                  className="grid gap-3 py-8 first:pt-0 sm:grid-cols-[120px_1fr] sm:gap-8"
-                >
-                  <span className="text-4xl font-semibold text-accent sm:text-5xl">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold sm:text-xl">
-                      {module.title}
-                    </h3>
-                    <p className="mt-3 max-w-2xl text-muted">{module.text}</p>
+                <Reveal key={module.title} delay={i * 0.1} className="py-8 first:pt-0">
+                  {/* L'opacité de survol vit sur ce div interne, séparé de
+                      celui que Reveal anime : Framer Motion laisse un style
+                      inline opacity:1 après l'entrée, qui écraserait sinon
+                      cette classe. */}
+                  <div className="grid gap-3 opacity-100 transition-opacity duration-300 hover:!opacity-100 group-hover/programme:opacity-40 sm:grid-cols-[120px_1fr] sm:gap-8">
+                    <span className="text-4xl font-semibold text-accent sm:text-5xl">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-semibold sm:text-xl">
+                        {module.title}
+                      </h3>
+                      <p className="mt-3 max-w-2xl text-muted">{module.text}</p>
+                    </div>
                   </div>
                 </Reveal>
               ))}
