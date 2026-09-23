@@ -18,6 +18,7 @@ export async function generateMetadata(
   return {
     title: service.title,
     description: `${service.description.slice(0, 150)}…`,
+    alternates: { canonical: `/formations/${service.slug}` },
   };
 }
 

@@ -5,6 +5,7 @@ import { pages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Qualiopi & financement",
   description: pages.funding.seoDescription,
+  alternates: { canonical: "/financement" },
 };
 
 export default function FinancementPage() {

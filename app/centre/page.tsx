@@ -9,6 +9,7 @@ import { company, fillCounts, home, pages, pillars, services, stats } from "@/li
 export const metadata: Metadata = {
   title: "Le centre",
   description: pages.centre.seoDescription,
+  alternates: { canonical: "/centre" },
 };
 
 export default function CentrePage() {

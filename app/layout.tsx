@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import {
   Geist,
   Geist_Mono,
@@ -148,6 +149,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteChrome header={<Header />} footer={<Footer />}>
           {children}
         </SiteChrome>
+        <Analytics />
       </body>
     </html>
   );

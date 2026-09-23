@@ -39,6 +39,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Empêche le menu sticky (~84px sur mobile, ~100px au-delà) de recouvrir
+   le titre d'une section ciblée par une ancre ou un lien #hash. */
+section[id] {
+  scroll-margin-top: 6.5rem;
+}
+
 h1,
 h2,
 h3 {

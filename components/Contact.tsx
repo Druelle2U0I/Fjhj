@@ -50,9 +50,9 @@ export default function Contact({
           <span className="text-sm font-semibold uppercase tracking-wide text-accent">
             {pages.contact.eyebrow}
           </span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
             {pages.contact.title}
-          </h2>
+          </h1>
           <p className="mt-5 max-w-md whitespace-pre-line text-muted">
             {pages.contact.text}
           </p>

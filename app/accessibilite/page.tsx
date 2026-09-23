@@ -5,6 +5,7 @@ import { accessibility, company } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Accessibilité",
   description: `Accueil des personnes en situation de handicap et accessibilité du site ${company.name}.`,
+  alternates: { canonical: "/accessibilite" },
 };
 
 export default function AccessibilitePage() {

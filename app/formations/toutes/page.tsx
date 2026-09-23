@@ -7,6 +7,7 @@ import { fillCounts, pages, services } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Toutes les formations",
   description: fillCounts(pages.allTrainings.seoDescription),
+  alternates: { canonical: "/formations/toutes" },
 };
 
 export default function AllTrainingsPage() {

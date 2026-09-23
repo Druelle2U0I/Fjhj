@@ -9,9 +9,9 @@ export default function Funding() {
           <span className="text-sm font-semibold uppercase tracking-wide text-accent">
             {pages.funding.eyebrow}
           </span>
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             {pages.funding.title}
-          </h2>
+          </h1>
           <p className="mt-5 max-w-2xl whitespace-pre-line text-muted">{funding.intro}</p>
         </Reveal>
 

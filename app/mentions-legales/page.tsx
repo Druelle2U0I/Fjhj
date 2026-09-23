@@ -6,6 +6,7 @@ import { activityDeclarationText, company, legal, qualiopiText, siteUrl } from "
 export const metadata: Metadata = {
   title: "Mentions légales",
   description: `Mentions légales du site ${siteUrl.replace("https://", "")}, édité par ${company.name}.`,
+  alternates: { canonical: "/mentions-legales" },
 };
 
 export default function MentionsLegalesPage() {
