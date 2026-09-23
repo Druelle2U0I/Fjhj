@@ -96,7 +96,11 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
         hint: "Affiché après le texte « À propos » de l'entreprise. Laissez une ligne vide entre deux paragraphes.",
       },
       { key: "whyEyebrow", label: "Engagements — sur-titre" },
-      { key: "whyTitle", label: "Engagements — titre" },
+      {
+        key: "whyTitle",
+        label: "Engagements — titre",
+        hint: "Les cartes (titre et texte de chaque engagement) se modifient dans « Page d'accueil » › Nos atouts. Pensez à accorder le nombre du titre avec le nombre de cartes.",
+      },
       { key: "domainsEyebrow", label: "Domaines — sur-titre" },
       { key: "domainsTitle", label: "Domaines — titre", hint: COUNTS_HINT },
       { key: "ctaTitle", label: "Appel final — titre" },
