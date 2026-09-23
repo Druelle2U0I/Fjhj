@@ -151,6 +151,16 @@ export type SiteContent = {
 export type Pages = {
   hero: { badge: string; primaryButton: string; secondaryButton: string };
   catalogue: { eyebrow: string; title: string; text: string; seoDescription: string };
+  allTrainings: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    linkLabel: string;
+    allFilter: string;
+    searchPlaceholder: string;
+    emptyText: string;
+    seoDescription: string;
+  };
   sector: {
     quoteMainButton: string;
     catalogueButton: string;

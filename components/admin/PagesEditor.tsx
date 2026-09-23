@@ -35,6 +35,21 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
     ],
   },
   {
+    key: "allTrainings",
+    title: "Toutes les formations",
+    hint: "Page accessible depuis le catalogue, qui liste toutes les formations avec leur domaine.",
+    fields: [
+      { key: "eyebrow", label: "Sur-titre" },
+      { key: "title", label: "Titre", hint: COUNTS_HINT },
+      { key: "text", label: "Texte d'introduction", rows: 2, hint: COUNTS_HINT },
+      { key: "linkLabel", label: "Bouton sur la page Catalogue" },
+      { key: "allFilter", label: "Filtre « tous les domaines »" },
+      { key: "searchPlaceholder", label: "Texte du champ de recherche" },
+      { key: "emptyText", label: "Message si aucun résultat", rows: 2 },
+      { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
+    ],
+  },
+  {
     key: "sector",
     title: "Pages des domaines de formation",
     hint: "Ces textes sont communs à toutes les pages de domaine. Le titre, la description et le « pourquoi » de chaque domaine se modifient dans « Secteurs & formations ».",

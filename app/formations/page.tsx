@@ -19,6 +19,18 @@ export default function FormationsPage() {
         description={fillCounts(pages.catalogue.text)}
       />
 
+      <section className="px-6 pb-8">
+        <div className="mx-auto max-w-6xl">
+          <Link
+            href="/formations/toutes"
+            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+          >
+            {pages.allTrainings.linkLabel} ({fillCounts("{formations}")})
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </section>
+
       <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (

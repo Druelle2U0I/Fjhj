@@ -154,7 +154,7 @@ export default function Footer() {
                   </li>
                 ))}
                 <li>
-                  <Link href="/formations" className="hover:text-accent">
+                  <Link href="/formations/toutes" className="hover:text-accent">
                     Toutes les formations
                   </Link>
                 </li>

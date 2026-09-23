@@ -1531,6 +1531,16 @@
       "eyebrow": "Qualiopi & financement",
       "title": "Un financement OPCO facilité, sans démarche de votre côté",
       "seoDescription": "ENMA Formation est un organisme certifié Qualiopi. Nos formations sont éligibles à une prise en charge OPCO et nous montons le dossier de financement pour vous."
+    },
+    "allTrainings": {
+      "eyebrow": "Toutes les formations",
+      "title": "Nos {formations} formations en un coup d'œil",
+      "text": "L'ensemble de notre catalogue sur une seule page. Filtrez par domaine ou recherchez une formation par son nom.",
+      "linkLabel": "Voir toutes les formations",
+      "allFilter": "Tous les domaines",
+      "searchPlaceholder": "Rechercher une formation (ex. : SST, nacelle, R489…)",
+      "emptyText": "Aucune formation ne correspond à votre recherche. Contactez-nous : nous construisons aussi des parcours sur mesure.",
+      "seoDescription": "Les {formations} formations d'ENMA Formation sur une seule page : sécurité, secourisme, CACES, habilitation électrique, travail en hauteur, management et photovoltaïque."
     }
   }
 }
