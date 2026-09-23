@@ -1435,7 +1435,12 @@
     "border": "#3c337a",
     "accent": "#fff9c7",
     "accentForeground": "#0b032b",
-    "headingFont": "fraunces"
+    "headingFont": "fraunces",
+    "auroraIntensity": 55,
+    "auroraSpeed": 9,
+    "sectorVeil": 48,
+    "footerVeil": 84,
+    "sectionOpacity": 64
   },
   "footerImage": "/images/2048-1790071486997.webp",
   "footerCta": {
