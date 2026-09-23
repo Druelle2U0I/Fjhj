@@ -150,12 +150,9 @@ export default async function FormationPage(
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
                   {pages.training.programmeTitle}
                 </h2>
-                <ol className="mt-6 grid gap-4">
+                <ol className="mt-6 divide-y divide-border border-t border-border">
                   {training.programme.map((module, i) => (
-                    <li
-                      key={module.title}
-                      className="dyn-card rounded-2xl border border-border bg-surface p-6"
-                    >
+                    <li key={module.title} className="py-5 first:pt-0">
                       <div className="flex items-baseline gap-4">
                         <span className="text-sm font-semibold text-accent">
                           {String(i + 1).padStart(2, "0")}
@@ -171,21 +168,21 @@ export default async function FormationPage(
               </Reveal>
             )}
 
-            <Reveal className="grid gap-6 sm:grid-cols-2">
-              <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+            <Reveal className="grid gap-6 border-t border-border pt-8 sm:grid-cols-2">
+              <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {pages.training.audienceTitle}
                 </p>
                 <p className="mt-3 text-sm text-muted">{training.audience}</p>
               </div>
-              <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+              <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {pages.training.fundingTitle}
                 </p>
                 <p className="mt-3 text-sm text-muted">{training.funding}</p>
               </div>
               {trainingInfo.methods && (
-                <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+                <div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                     {pages.training.methodsTitle}
                   </p>
@@ -193,14 +190,14 @@ export default async function FormationPage(
                 </div>
               )}
               {trainingInfo.evaluation && (
-                <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+                <div>
                   <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                     {pages.training.evaluationTitle}
                   </p>
                   <p className="mt-3 text-sm text-muted">{trainingInfo.evaluation}</p>
                 </div>
               )}
-              <div className="dyn-card rounded-2xl border border-border bg-surface p-6 sm:col-span-2">
+              <div className="sm:col-span-2">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {pages.training.accessibilityTitle}
                 </p>
@@ -219,17 +216,20 @@ export default async function FormationPage(
                 <h2 className="text-lg font-semibold">
                   Autres formations en {service.title.toLowerCase()}
                 </h2>
-                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <div className="mt-4 divide-y divide-border border-t border-border">
                   {otherTrainings.map((t) => (
                     <Link
                       key={t.slug}
                       href={`/formations/${service.slug}/${t.slug}`}
-                      className="dyn-card rounded-xl border border-border bg-surface-2 p-4"
+                      className="flex items-center justify-between gap-4 py-4 transition-colors hover:text-accent"
                     >
-                      <p className="font-medium">{t.title}</p>
-                      <p className="mt-1 text-sm text-muted">
-                        {t.duration} · {t.format}
-                      </p>
+                      <div>
+                        <p className="font-medium">{t.title}</p>
+                        <p className="mt-1 text-sm text-muted">
+                          {t.duration} · {t.format}
+                        </p>
+                      </div>
+                      <span aria-hidden="true">→</span>
                     </Link>
                   ))}
                 </div>
