@@ -158,6 +158,8 @@ export type SiteContent = {
     heroSlides: HeroSlide[];
     aboutImage?: string;
     aboutImageAlt?: string;
+    statsBandImage?: string;
+    statsBandImageAlt?: string;
     sections: HomeSection[];
     faq: FaqItem[];
     founderQuote?: {

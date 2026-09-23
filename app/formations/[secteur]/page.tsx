@@ -92,15 +92,17 @@ export default async function SecteurPage(
 
       {/* Pourquoi former vos équipes */}
       <section className="px-6 pb-20">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-6xl border-t border-border pt-16">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-              {pages.sector.whyEyebrow}
-            </p>
-            <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
-              {service.why.title}
-            </h2>
-            <p className="mt-5 max-w-3xl whitespace-pre-line text-muted">{service.why.text}</p>
+            <div className="border-l-4 border-accent pl-6 sm:pl-8">
+              <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+                {pages.sector.whyEyebrow}
+              </p>
+              <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
+                {service.why.title}
+              </h2>
+              <p className="mt-5 max-w-3xl whitespace-pre-line text-muted">{service.why.text}</p>
+            </div>
           </Reveal>
         </div>
       </section>

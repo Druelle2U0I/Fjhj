@@ -658,6 +658,32 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
 
               <Card className="grid gap-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Bande chiffres clés (après le catalogue de formations)
+                </p>
+                <ImageField
+                  label="Photo de fond"
+                  value={content.home.statsBandImage}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, statsBandImage: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Description de la photo (accessibilité)"
+                  value={content.home.statsBandImageAlt ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, statsBandImageAlt: v },
+                    })
+                  }
+                />
+              </Card>
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   Message du patron
                 </p>
                 <Field
