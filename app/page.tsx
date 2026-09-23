@@ -45,8 +45,8 @@ function FormationsSection({ section }: { section: HomeSection }) {
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
     <section id="financement" className="px-6 py-24">
-      <div className="mx-auto max-w-6xl">
-        <Reveal className="dyn-card rounded-3xl border border-border bg-surface p-8 sm:p-12">
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <Reveal>
           {section.eyebrow && (
             <span className="text-sm font-semibold uppercase tracking-wide text-accent">
               {section.eyebrow}
@@ -64,6 +64,18 @@ function FinancementSection({ section }: { section: HomeSection }) {
           >
             Comprendre le financement
           </Link>
+        </Reveal>
+
+        <Reveal delay={0.1} className="grid gap-6 border-t border-border pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+          {funding.points.map((point, i) => (
+            <div key={point.title}>
+              <span className="text-xs font-semibold text-accent">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-1 font-semibold">{point.title}</h3>
+              <p className="mt-1 text-sm text-muted">{point.text}</p>
+            </div>
+          ))}
         </Reveal>
       </div>
     </section>

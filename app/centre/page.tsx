@@ -56,13 +56,14 @@ export default function CentrePage() {
             </h2>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-8 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
             {pillars.map((pillar, i) => (
-              <Reveal key={pillar.title} delay={i * 0.08}>
-                <div className="dyn-card h-full rounded-2xl border border-border bg-background p-6">
-                  <h3 className="text-lg font-semibold">{pillar.title}</h3>
-                  <p className="mt-2 text-sm text-muted">{pillar.text}</p>
-                </div>
+              <Reveal key={pillar.title} delay={i * 0.08} className="lg:px-6 lg:first:pl-0">
+                <span className="text-xs font-semibold text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-2 text-lg font-semibold">{pillar.title}</h3>
+                <p className="mt-2 text-sm text-muted">{pillar.text}</p>
               </Reveal>
             ))}
           </div>
