@@ -2,9 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import AnimatedStat from "@/components/AnimatedStat";
 import HeroCarousel from "@/components/HeroCarousel";
-import { company, home, pages, stats } from "@/lib/data";
+import { company, home, pages } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -61,22 +60,6 @@ export default function Hero() {
               {pages.hero.secondaryButton}
             </Link>
           </motion.div>
-
-          <motion.dl
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="dyn-card mt-16 grid grid-cols-2 gap-8 rounded-3xl border border-border bg-surface p-8 sm:grid-cols-4 lg:grid-cols-2"
-          >
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <dt className="text-2xl font-semibold text-accent sm:text-3xl">
-                  <AnimatedStat value={stat.value} />
-                </dt>
-                <dd className="mt-1 text-sm text-muted">{stat.label}</dd>
-              </div>
-            ))}
-          </motion.dl>
         </div>
 
         <motion.div
