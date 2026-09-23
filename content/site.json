@@ -1275,6 +1275,26 @@
         "title": "Mise en place rapide",
         "text": "Une fois le financement accordé, la session est généralement programmée sous 10 jours ouvrés. En cas d'urgence, nous pouvons exceptionnellement intervenir dès 3 jours ouvrés, selon la disponibilité de nos formateurs."
       }
+    ],
+    "stepsTitle": "Comment se déroule votre formation, de la demande au financement ?",
+    "stepsText": "Quatre étapes, du premier échange jusqu'à la clôture de votre dossier OPCO.",
+    "steps": [
+      {
+        "title": "Échange sur votre projet",
+        "text": "Vous nous présentez votre besoin (formation visée, effectif, contraintes de planning). Nous vous proposons le programme adapté et vérifions l'éligibilité de la formation auprès de votre OPCO."
+      },
+      {
+        "title": "Devis, convention et demande de financement",
+        "text": "Nous vous transmettons le devis, le programme détaillé et la convention de formation. C'est à vous d'adresser la demande de prise en charge à votre OPCO avant le début de la session ; nous vous accompagnons dans le montage du dossier."
+      },
+      {
+        "title": "Réalisation de la formation",
+        "text": "La session se déroule chez vous, sur vos équipements, ou sur notre site de Wingles selon la formation — en intra comme en inter-entreprises, au planning convenu ensemble."
+      },
+      {
+        "title": "Attestations et clôture du dossier",
+        "text": "À l'issue de la formation, nous vous remettons les attestations et justificatifs nécessaires (feuilles de présence, compte-rendu) pour clôturer votre dossier auprès de l'OPCO."
+      }
     ]
   },
   "accessibility": {
