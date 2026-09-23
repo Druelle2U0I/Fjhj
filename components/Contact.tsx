@@ -44,7 +44,7 @@ export default function Contact({
   }
 
   return (
-    <section id="contact" className="bg-surface px-6 py-24">
+    <section id="contact" className="section-soft px-6 py-24">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
         <Reveal>
           <span className="text-sm font-semibold uppercase tracking-wide text-accent">

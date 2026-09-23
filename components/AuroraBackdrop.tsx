@@ -8,7 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 
-// Fond « aurore » fixé derrière la page d'accueil. Il dérive lentement tout
+// Fond « aurore » fixé derrière toutes les pages du site. Il dérive lentement tout
 // seul (animation CSS) et, en plus, se déplace, tourne et change de teinte
 // au fil du défilement. Le ressort lisse le mouvement pour qu'il suive le
 // scroll avec un léger retard, sans à-coups.

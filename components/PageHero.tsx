@@ -19,7 +19,6 @@ export default function PageHero({
 }) {
   return (
     <section className="relative -mt-[86px] overflow-hidden px-6 pt-[128px] pb-14 sm:-mt-[94px] sm:pt-[148px]">
-      <div className="pointer-events-none absolute -top-32 right-[-10%] h-96 w-96 rounded-full bg-accent-soft blur-3xl" />
       <div
         className={`relative mx-auto max-w-6xl ${
           image ? "grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center" : ""

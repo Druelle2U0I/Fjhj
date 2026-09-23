@@ -1,5 +1,4 @@
 import Link from "next/link";
-import AuroraBackdrop from "@/components/AuroraBackdrop";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Reveal from "@/components/Reveal";
@@ -10,7 +9,7 @@ import type { HomeSection } from "@/lib/data";
 
 function FormationsSection({ section }: { section: HomeSection }) {
   return (
-    <section id="formations" className="bg-surface px-6 py-24">
+    <section id="formations" className="section-soft px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           {section.eyebrow && (
@@ -100,7 +99,7 @@ function FaqSection({ section }: { section: HomeSection }) {
 
 function ContactSection({ section }: { section: HomeSection }) {
   return (
-    <section className="bg-surface px-6 py-24">
+    <section className="section-soft px-6 py-24">
       <div className="mx-auto max-w-6xl text-center">
         <Reveal>
           {section.eyebrow && (
@@ -129,7 +128,6 @@ function ContactSection({ section }: { section: HomeSection }) {
 export default function Home() {
   return (
     <>
-      <AuroraBackdrop />
       <Hero />
       {home.sections
         .filter((section) => section.visible)

@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import AuroraBackdrop from "@/components/AuroraBackdrop";
 
 export default function SiteChrome({
   header,
@@ -18,6 +19,7 @@ export default function SiteChrome({
 
   return (
     <>
+      <AuroraBackdrop />
       {header}
       <main className="flex-1">{children}</main>
       {footer}

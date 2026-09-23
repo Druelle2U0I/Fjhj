@@ -198,3 +198,16 @@ h4 {
     margin-top: 0.75rem;
   }
 }
+
+/* Section « surface » translucide dont les bords se fondent dans le fond
+   aurore, au lieu d'un aplat qui crée une coupure nette. */
+.section-soft {
+  --section-soft: color-mix(in srgb, var(--surface) 70%, transparent);
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    var(--section-soft) 160px,
+    var(--section-soft) calc(100% - 160px),
+    transparent 100%
+  );
+}

@@ -55,7 +55,7 @@ export default function CentrePage() {
         </div>
       </section>
 
-      <section className="bg-surface px-6 py-20">
+      <section className="section-soft px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <span className="text-sm font-semibold uppercase tracking-wide text-accent">
@@ -120,7 +120,7 @@ export default function CentrePage() {
         </div>
       </section>
 
-      <section className="bg-surface px-6 py-20">
+      <section className="section-soft px-6 py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">

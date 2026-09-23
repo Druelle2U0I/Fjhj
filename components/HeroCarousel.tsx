@@ -59,6 +59,16 @@ export default function HeroCarousel({ slides: allSlides }: { slides: HeroSlide[
                   {slide.text && (
                     <p className="mt-1 text-xs text-muted">{slide.text}</p>
                   )}
+                  {slide.link && (
+                    <p className="mt-2 text-xs font-semibold text-accent">
+                      {slide.link.split("/").filter(Boolean).length === 2
+                        ? "Voir les formations"
+                        : "Voir la formation"}{" "}
+                      <span aria-hidden className="inline-block transition-transform group-hover:translate-x-1">
+                        →
+                      </span>
+                    </p>
+                  )}
                 </div>
               )}
             </>
