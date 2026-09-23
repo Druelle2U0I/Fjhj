@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import HeroCollage from "@/components/HeroCollage";
-import { company, pages } from "@/lib/data";
+import HeroCarousel from "@/components/HeroCarousel";
+import { company, home, pages } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -67,7 +67,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          <HeroCollage />
+          <HeroCarousel slides={home.heroSlides} />
         </motion.div>
       </div>
     </section>

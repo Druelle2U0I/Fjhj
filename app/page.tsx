@@ -79,8 +79,8 @@ function FormationsSection({ section }: { section: HomeSection }) {
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
     <section id="financement" className="px-6 py-24">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <Reveal>
+      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
+        <Reveal className="flex flex-col justify-center">
           {section.eyebrow && (
             <span className="text-sm font-semibold uppercase tracking-wide text-accent">
               {section.eyebrow}
@@ -94,13 +94,16 @@ function FinancementSection({ section }: { section: HomeSection }) {
           </p>
           <Link
             href="/financement"
-            className="mt-6 inline-flex rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+            className="mt-6 inline-flex w-fit rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
           >
             Comprendre le financement
           </Link>
         </Reveal>
 
-        <Reveal delay={0.1} className="grid gap-5 border-t border-border pt-8 lg:border-l lg:border-t-0 lg:pl-10 lg:pt-0">
+        <Reveal
+          delay={0.1}
+          className="grid gap-6 rounded-3xl bg-surface p-8 sm:p-10 lg:justify-center"
+        >
           {funding.points.map((point) => (
             <div key={point.title} className="flex gap-3">
               <svg
