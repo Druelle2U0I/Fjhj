@@ -1259,23 +1259,7 @@
       "image": "/images/9-2-1790108152816.jpg"
     }
   ],
-  "topTrainings": [
-    {
-      "title": "CACES R489 — conduite de chariots élévateurs",
-      "duration": "2 à 6 demi-journées",
-      "format": "Intra-entreprise"
-    },
-    {
-      "title": "AIPR — intervention à proximité des réseaux",
-      "duration": "2 demi-journées",
-      "format": "Intra-entreprise"
-    },
-    {
-      "title": "Sauveteur secouriste du travail (SST)",
-      "duration": "4 demi-journées",
-      "format": "Intra ou inter-entreprises"
-    }
-  ],
+  "topTrainings": [],
   "funding": {
     "intro": "ENMA Formation est certifié Qualiopi au titre des actions de formation. Cette certification conditionne l'accès aux fonds publics et mutualisés.",
     "points": [
