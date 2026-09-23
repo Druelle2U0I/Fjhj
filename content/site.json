@@ -1458,7 +1458,7 @@
     "accent": "#fff9c7",
     "accentForeground": "#0b032b",
     "headingFont": "fraunces",
-    "auroraIntensity": 25,
+    "auroraIntensity": 0,
     "auroraSpeed": 9,
     "sectorVeil": 48,
     "footerVeil": 84,
