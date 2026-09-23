@@ -22,31 +22,27 @@ export default function CentrePage() {
         imageAlt={home.aboutImageAlt}
       />
 
-      <FranceMap />
-
-      <section className="px-6 py-20">
-        <div className="mx-auto max-w-3xl">
-          <Reveal>
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-              {pages.centre.approachEyebrow}
-            </span>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-              {pages.centre.approachTitle}
-            </h2>
-            <div className="mt-5 grid gap-4 text-muted">
-              <p>{company.about}</p>
-              {pages.centre.approachText
-                .split(/\n\s*\n/)
-                .filter((paragraph) => paragraph.trim())
-                .map((paragraph, i) => (
-                  <p key={i} className="whitespace-pre-line">
-                    {paragraph}
-                  </p>
-                ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <FranceMap>
+        <Reveal>
+          <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            {pages.centre.approachEyebrow}
+          </span>
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+            {pages.centre.approachTitle}
+          </h2>
+          <div className="mt-5 grid gap-4 text-muted">
+            <p>{company.about}</p>
+            {pages.centre.approachText
+              .split(/\n\s*\n/)
+              .filter((paragraph) => paragraph.trim())
+              .map((paragraph, i) => (
+                <p key={i} className="whitespace-pre-line">
+                  {paragraph}
+                </p>
+              ))}
+          </div>
+        </Reveal>
+      </FranceMap>
 
       <section className="section-soft px-6 py-20">
         <div className="mx-auto max-w-6xl">
