@@ -1375,7 +1375,7 @@
       }
     ],
     "aboutImageAlt": "Chariot élévateur en entrepôt, formation CACES",
-    "statsBandImage": "/images/n1-1790111052703.jpg",
+    "statsBandImage": "/images/1-1790207322881.jpg",
     "statsBandImageAlt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
     "sections": [
       {
@@ -1459,13 +1459,15 @@
     "accentForeground": "#0b032b",
     "headingFont": "fraunces",
     "auroraIntensity": 0,
-    "auroraSpeed": 9,
+    "auroraSpeed": 5,
     "sectorVeil": 48,
     "footerVeil": 84,
     "sectionOpacity": 64,
-    "aurora3": "#ff9300",
+    "aurora3": "#11053b",
     "tagBackground": "#2c1376",
-    "tagText": "#d4e3fe"
+    "tagText": "#d4e3fe",
+    "aurora1": "#11053b",
+    "aurora2": "#74a7fe"
   },
   "footerImage": "/images/2048-1790071486997.webp",
   "footerCta": {
