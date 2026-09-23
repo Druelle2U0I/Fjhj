@@ -54,6 +54,46 @@ h4 {
   font-family: var(--font-display), var(--font-sans), sans-serif;
 }
 
+/* Hero background: slow "aurora" of blurred brand colours drifting behind
+   the content. The mask fades it out at the bottom so the section blends
+   into the rest of the page. */
+.hero-aurora {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent);
+  mask-image: linear-gradient(to bottom, #000 65%, transparent);
+}
+
+.hero-aurora__veil {
+  position: absolute;
+  inset: -30%;
+  opacity: 0.55;
+  filter: blur(60px);
+  background:
+    radial-gradient(40% 35% at 25% 30%, rgba(80, 60, 190, 0.75), transparent 70%),
+    radial-gradient(35% 30% at 75% 25%, rgba(255, 249, 199, 0.22), transparent 70%),
+    radial-gradient(45% 40% at 60% 80%, rgba(40, 20, 120, 0.9), transparent 70%);
+  animation: hero-aurora 40s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes hero-aurora {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(12deg) scale(1.1) translateX(4%);
+  }
+  100% {
+    transform: rotate(-8deg) scale(1.05) translateY(-4%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-aurora__veil {
+    animation: none;
+  }
+}
+
 /* Dynamic card: lift, glow border, soft accent shadow on hover/focus */
 .dyn-card {
   transition:
