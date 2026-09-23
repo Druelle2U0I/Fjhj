@@ -236,9 +236,3 @@ h4 {
   background: color-mix(in srgb, var(--background) var(--footer-veil, 68%), transparent);
 }
 
-/* Carte de la page Le centre : ses bords s'effacent en douceur pour
-   qu'elle ne déborde pas sur le texte voisin une fois zoomée. */
-.map-fade {
-  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 72%, transparent 100%);
-  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 72%, transparent 100%);
-}

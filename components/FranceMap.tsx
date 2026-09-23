@@ -53,13 +53,17 @@ export default function FranceMap({ children }: { children?: ReactNode }) {
   const strokeW = useTransform(scrollYProgress, [0, 0.7], [0.012, 0.0035]);
   const pinScale = useTransform(scrollYProgress, [0.65, 0.85], [0, 1]);
   const pinOpacity = useTransform(scrollYProgress, [0.6, 0.8], [0, 1]);
+  // Le reste de la France s'efface pendant le zoom : à la fin, seule la
+  // zone d'intervention reste visible.
+  const otherOpacity = useTransform(scrollYProgress, [0.15, 0.55], [0.5, 0]);
+  const otherStroke = useTransform(scrollYProgress, [0.15, 0.55], [1, 0]);
 
   // Texte (children) à gauche et carte à droite. Sur grand écran, le bloc
   // reste épinglé pendant le défilement, le temps que la carte zoome sur
   // les Hauts-de-France ; sur mobile, la carte passe au-dessus du texte.
   return (
     <section ref={wrapperRef} className="relative px-6 lg:h-[190vh]">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 py-16 lg:sticky lg:top-0 lg:h-screen lg:grid-cols-2 lg:gap-16 lg:pb-8 lg:pt-28">
+      <div className="mx-auto grid max-w-6xl items-start gap-10 pb-16 pt-2 lg:sticky lg:top-24 lg:h-[calc(100vh-6rem)] lg:grid-cols-2 lg:gap-16 lg:pb-8 lg:pt-4">
         <div className="order-2 lg:order-1">{children}</div>
 
         <div className="order-1 flex flex-col items-center lg:order-2">
@@ -69,16 +73,17 @@ export default function FranceMap({ children }: { children?: ReactNode }) {
           <div className="relative mt-4 aspect-square w-full max-w-md">
             <motion.svg
               viewBox={viewBox}
-              className="map-fade h-full w-full overflow-hidden"
+              className="h-full w-full overflow-hidden"
             >
               {depts.map((dept) => (
                 <motion.path
                   key={dept.code}
                   d={dept.path}
                   fill={dept.hdf ? "var(--accent)" : "var(--surface-2)"}
-                  fillOpacity={dept.hdf ? 1 : 0.5}
+                  fillOpacity={dept.hdf ? 1 : otherOpacity}
                   stroke="var(--background)"
                   strokeWidth={strokeW}
+                strokeOpacity={dept.hdf ? 1 : otherStroke}
                   onMouseEnter={() => dept.hdf && setHovered(dept.code)}
                   onMouseLeave={() => setHovered(null)}
                   className={dept.hdf ? "cursor-pointer transition-opacity" : ""}
