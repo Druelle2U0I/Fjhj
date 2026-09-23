@@ -1375,8 +1375,6 @@
       }
     ],
     "aboutImageAlt": "Chariot élévateur en entrepôt, formation CACES",
-    "statsBandImage": "/images/n1-1790111052703.jpg",
-    "statsBandImageAlt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
     "sections": [
       {
         "id": "formations",
@@ -1415,7 +1413,7 @@
       }
     ],
     "founderQuote": {
-      "text": "",
+      "text": "ENMA Formation est un organisme de formation certifié Qualiopi, basé à Wingles, dans le Pas-de-Calais. Nous intervenons dans toute la région Hauts-de-France, directement chez nos clients.",
       "name": "Kenza Kessad",
       "photo": "",
       "photoAlt": "",
@@ -1458,7 +1456,7 @@
     "accent": "#fff9c7",
     "accentForeground": "#0b032b",
     "headingFont": "fraunces",
-    "auroraIntensity": 25,
+    "auroraIntensity": 0,
     "auroraSpeed": 9,
     "sectorVeil": 48,
     "footerVeil": 84,
