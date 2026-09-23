@@ -43,8 +43,8 @@
       "label": "domaines de formation"
     },
     {
-      "value": "100%",
-      "label": "formations éligibles OPCO"
+      "value": "OPCO",
+      "label": "formations éligibles à un financement"
     }
   ],
   "pillars": [
@@ -1264,8 +1264,8 @@
     "intro": "ENMA Formation est certifié Qualiopi au titre des actions de formation. Cette certification conditionne l'accès aux fonds publics et mutualisés.",
     "points": [
       {
-        "title": "Aucune démarche de votre côté",
-        "text": "Nous montons le dossier de financement pour vous : vous n'avez aucune démarche administrative à effectuer."
+        "title": "Un dossier monté avec vous",
+        "text": "La demande de prise en charge doit être adressée par vous à votre OPCO avant le début de la formation. Nous vous fournissons tous les documents nécessaires (devis, programme, convention) pour la constituer."
       },
       {
         "title": "Financement OPCO",
@@ -1290,7 +1290,7 @@
     },
     {
       "name": "Kenza Kessad",
-      "role": "Secrétaire administrative",
+      "role": "Fondatrice & secrétaire administrative",
       "email": "kenza@enma-formation.com",
       "bio": "Votre contact pour le suivi administratif de vos dossiers de formation et de financement."
     }
@@ -1374,7 +1374,7 @@
         "id": "financement",
         "visible": true,
         "eyebrow": "Qualiopi & financement",
-        "title": "Un financement OPCO facilité, sans démarche de votre côté",
+        "title": "Un financement OPCO facilité, nous montons le dossier avec vous",
         "text": ""
       },
       {
@@ -1397,20 +1397,20 @@
       "name": "Kenza Kessad",
       "photo": "",
       "photoAlt": "",
-      "role": "Fondatrice ENMA Formation"
+      "role": "Fondatrice & secrétaire administrative"
     },
     "faq": [
       {
         "question": "Comment se déroulent les formations, avez-vous un centre de formation ?",
-        "answer": "ENMA n'a pas de centre de formation : nous venons directement chez vous, sur vos équipements et à vos horaires. Vos équipes s'entraînent dans les conditions réelles de leur poste de travail, ce qui rend la formation plus concrète et plus efficace."
+        "answer": "Nous disposons d'un site à Wingles, principalement pour vous accueillir et pour certaines formations nécessitant un plateau technique. Mais l'essentiel de nos formations se déroule directement chez vous, sur vos équipements et à vos horaires : vos équipes s'entraînent dans les conditions réelles de leur poste de travail, ce qui rend la formation plus concrète et plus efficace."
       },
       {
         "question": "Vos formations sont-elles finançables par mon OPCO ?",
-        "answer": "Oui. ENMA Formation est un organisme certifié Qualiopi : nos formations sont donc éligibles à une prise en charge par votre OPCO, selon ses critères et votre budget disponible. Nous vous accompagnons dans le montage du dossier de financement, sans démarche administrative supplémentaire de votre côté."
+        "answer": "Oui. ENMA Formation est un organisme certifié Qualiopi : nos formations sont donc éligibles à une prise en charge par votre OPCO, selon ses critères et votre budget disponible. C'est à vous d'adresser la demande de prise en charge à votre OPCO avant le début de la formation, mais nous vous accompagnons dans le montage du dossier et vous fournissons tous les documents nécessaires (devis, programme, convention)."
       },
       {
         "question": "Dans quelles zones intervenez-vous ?",
-        "answer": "Nous intervenons dans toute la région Hauts-de-France, en intra-entreprise. Contactez-nous pour vérifier la faisabilité si votre site se trouve en dehors de cette zone."
+        "answer": "Nous intervenons dans toute la région Hauts-de-France, en intra-entreprise comme en inter-entreprises. Contactez-nous pour vérifier la faisabilité si votre site se trouve en dehors de cette zone."
       },
       {
         "question": "Quel est le délai pour organiser une formation ?",
@@ -1493,7 +1493,7 @@
       "eyebrow": "Le centre",
       "title": "Un organisme de formation certifié Qualiopi, ancré dans les Hauts-de-France",
       "mapEyebrow": "Notre zone d'intervention",
-      "mapText": "Nord, Pas-de-Calais, Somme, Aisne, Oise : nous intervenons dans les 5 départements des Hauts-de-France, en intra-entreprise dans vos locaux.",
+      "mapText": "Nord, Pas-de-Calais, Somme, Aisne, Oise : nous intervenons dans les 5 départements des Hauts-de-France, en intra-entreprise dans vos locaux comme en inter-entreprises.",
       "approachEyebrow": "Notre approche",
       "approachTitle": "Une expertise de terrain au service de vos équipes",
       "approachText": "Nos formateurs interviennent directement dans vos locaux ou sur plateau technique, avec le matériel que vos équipes utilisent au quotidien. Cet ancrage régional nous permet de construire des parcours alignés sur les réalités de votre secteur d'activité, qu'il s'agisse d'une TPE, d'une PME industrielle ou d'une collectivité.\n\nChaque formation est pensée pour un résultat concret : certifier une compétence, répondre à une obligation réglementaire, ou installer durablement une culture de sécurité au sein de vos équipes.",
@@ -1521,8 +1521,8 @@
     },
     "funding": {
       "eyebrow": "Qualiopi & financement",
-      "title": "Un financement OPCO facilité, sans démarche de votre côté",
-      "seoDescription": "ENMA Formation est un organisme certifié Qualiopi. Nos formations sont éligibles à une prise en charge OPCO et nous montons le dossier de financement pour vous."
+      "title": "Un financement OPCO facilité, nous montons le dossier avec vous",
+      "seoDescription": "ENMA Formation est un organisme certifié Qualiopi. Nos formations sont éligibles à une prise en charge OPCO et nous vous accompagnons dans le montage du dossier de financement."
     },
     "allTrainings": {
       "eyebrow": "Toutes les formations",
