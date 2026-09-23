@@ -12,9 +12,6 @@ export default function Hero() {
       id="top"
       className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-24 sm:-mt-[94px] sm:pt-[154px]"
     >
-      <div aria-hidden className="hero-aurora pointer-events-none absolute inset-0">
-        <div className="hero-aurora__veil" />
-      </div>
 
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>

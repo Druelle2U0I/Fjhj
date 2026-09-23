@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AuroraBackdrop from "@/components/AuroraBackdrop";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Reveal from "@/components/Reveal";
@@ -128,6 +129,7 @@ function ContactSection({ section }: { section: HomeSection }) {
 export default function Home() {
   return (
     <>
+      <AuroraBackdrop />
       <Hero />
       {home.sections
         .filter((section) => section.visible)

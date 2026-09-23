@@ -54,15 +54,9 @@ h4 {
   font-family: var(--font-display), var(--font-sans), sans-serif;
 }
 
-/* Hero background: slow "aurora" of blurred brand colours drifting behind
-   the content. The mask fades it out at the bottom so the section blends
-   into the rest of the page. */
-.hero-aurora {
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent);
-  mask-image: linear-gradient(to bottom, #000 80%, transparent);
-}
-
+/* Home background: slow "aurora" of blurred brand colours drifting behind
+   the page (see components/AuroraBackdrop.tsx, which also moves it on
+   scroll). */
 .hero-aurora__veil {
   position: absolute;
   inset: -30%;
@@ -90,6 +84,15 @@ h4 {
   100% {
     transform: rotate(8deg) scale(1.2) translate(3%, 5%);
   }
+}
+
+.hero-aurora__veil--alt {
+  background:
+    radial-gradient(36% 32% at 70% 35%, rgba(60, 150, 230, 0.55), transparent 70%),
+    radial-gradient(30% 26% at 25% 70%, rgba(255, 249, 199, 0.3), transparent 70%),
+    radial-gradient(40% 36% at 45% 20%, rgba(140, 70, 230, 0.7), transparent 70%);
+  animation-duration: 26s;
+  animation-direction: alternate-reverse;
 }
 
 @media (prefers-reduced-motion: reduce) {
