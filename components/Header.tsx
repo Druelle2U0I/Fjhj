@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { company } from "@/lib/data";
+import { company, services } from "@/lib/data";
+
+const trainingCount = services.reduce((n, s) => n + s.trainings.length, 0);
 
 const leftLinks = [
   { href: "/financement", label: "Financement" },
@@ -20,6 +22,19 @@ const rightLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [catalogueOpen, setCatalogueOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Petit délai à la fermeture : la souris peut passer du lien au menu
+  // sans qu'il se referme en chemin.
+  const openCatalogue = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setCatalogueOpen(true);
+  };
+  const closeCatalogue = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setCatalogueOpen(false), 150);
+  };
 
   const linkClass = (href: string) =>
     `transition-colors hover:text-foreground ${
@@ -48,11 +63,97 @@ export default function Header() {
           </Link>
 
           <nav className="z-10 hidden items-center gap-8 text-sm font-medium md:flex">
-            {leftLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={linkClass(link.href)}>
-                {link.label}
-              </Link>
-            ))}
+            {leftLinks.map((link) =>
+              link.href === "/formations" ? (
+                <div
+                  key={link.href}
+                  className="relative"
+                  onMouseEnter={openCatalogue}
+                  onMouseLeave={closeCatalogue}
+                  onFocus={openCatalogue}
+                  onBlur={(e) => {
+                    if (!e.currentTarget.contains(e.relatedTarget)) closeCatalogue();
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setCatalogueOpen(false);
+                  }}
+                >
+                  <Link
+                    href={link.href}
+                    aria-haspopup="true"
+                    aria-expanded={catalogueOpen}
+                    className={`inline-flex items-center gap-1 ${linkClass(link.href)}`}
+                  >
+                    {link.label}
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 12 12"
+                      className={`h-3 w-3 transition-transform duration-300 ${catalogueOpen ? "rotate-180" : ""}`}
+                    >
+                      <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
+
+                  {/* Le padding du haut sert de pont invisible entre le lien
+                      et le panneau, pour que la souris ne le referme pas. */}
+                  <div
+                    className={`absolute left-1/2 top-full w-[22rem] -translate-x-1/2 pt-4 transition-all duration-300 ease-out ${
+                      catalogueOpen
+                        ? "visible translate-y-0 opacity-100"
+                        : "invisible -translate-y-1 opacity-0"
+                    }`}
+                  >
+                    {/* Un clic sur un lien du panneau le referme. */}
+                    <div
+                      onClick={() => setCatalogueOpen(false)}
+                      className="overflow-hidden rounded-2xl border border-white/10 bg-background p-2 shadow-2xl"
+                    >
+                      <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-accent">
+                        Nos domaines
+                      </p>
+                      <ul>
+                        {services.map((service) => (
+                          <li key={service.slug}>
+                            <Link
+                              href={`/formations/${service.slug}`}
+                              className={`flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-surface-2 hover:text-foreground ${
+                                pathname.startsWith(`/formations/${service.slug}`)
+                                  ? "text-foreground"
+                                  : "text-muted"
+                              }`}
+                            >
+                              {service.title}
+                              <span className="shrink-0 text-xs text-muted">
+                                {service.trainings.length}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="mt-2 grid gap-1 border-t border-white/10 pt-2">
+                        <Link
+                          href="/formations/toutes"
+                          className="flex items-center justify-between rounded-xl px-3 py-2 font-semibold text-foreground transition-colors hover:bg-surface-2 hover:text-accent"
+                        >
+                          Toutes les formations ({trainingCount})
+                          <span aria-hidden="true">→</span>
+                        </Link>
+                        <Link
+                          href="/formations"
+                          className="rounded-xl px-3 py-2 text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+                        >
+                          Vue par domaine
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link key={link.href} href={link.href} className={linkClass(link.href)}>
+                  {link.label}
+                </Link>
+              ),
+            )}
           </nav>
 
           <button
@@ -88,14 +189,36 @@ export default function Header() {
         {open && (
           <nav className="grid gap-1 border-t border-white/10 px-4 py-3 text-sm md:hidden">
             {[...leftLinks, ...rightLinks].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={`rounded-xl px-3 py-2.5 ${linkClass(link.href)}`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className={`block rounded-xl px-3 py-2.5 ${linkClass(link.href)}`}
+                >
+                  {link.label}
+                </Link>
+                {link.href === "/formations" && (
+                  <div className="mb-1 ml-3 grid gap-0.5 border-l border-white/10 pl-3">
+                    {services.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/formations/${service.slug}`}
+                        onClick={() => setOpen(false)}
+                        className="rounded-lg px-3 py-1.5 text-muted hover:text-foreground"
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                    <Link
+                      href="/formations/toutes"
+                      onClick={() => setOpen(false)}
+                      className="rounded-lg px-3 py-1.5 font-semibold text-foreground"
+                    >
+                      Toutes les formations ({trainingCount})
+                    </Link>
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
         )}
