@@ -6,6 +6,7 @@ import { activityDeclarationText, company, legal } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Conditions générales de vente",
   description: `Conditions générales de vente des formations professionnelles proposées par ${company.name}.`,
+  alternates: { canonical: "/cgv" },
 };
 
 export default function CgvPage() {

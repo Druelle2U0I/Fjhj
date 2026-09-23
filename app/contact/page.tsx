@@ -5,6 +5,7 @@ import { pages } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Contact",
   description: pages.contact.seoDescription,
+  alternates: { canonical: "/contact" },
 };
 
 export default async function ContactPage(

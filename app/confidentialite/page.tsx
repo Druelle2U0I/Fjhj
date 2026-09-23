@@ -5,6 +5,7 @@ import { company, legal } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
   description: `Comment ${company.name} collecte, utilise et protège vos données personnelles.`,
+  alternates: { canonical: "/confidentialite" },
 };
 
 export default function ConfidentialitePage() {

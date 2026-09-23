@@ -18,9 +18,9 @@ export default function Team() {
           <span className="text-sm font-semibold uppercase tracking-wide text-accent">
             {pages.team.eyebrow}
           </span>
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             {pages.team.title}
-          </h2>
+          </h1>
         </Reveal>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 sm:max-w-2xl">

@@ -40,6 +40,7 @@ export async function generateMetadata(
   return {
     title: training.title,
     description: `${training.intro} ${training.duration}, ${training.format}. Formation ${service.title.toLowerCase()} certifiée Qualiopi, finançable OPCO.`,
+    alternates: { canonical: `/formations/${service.slug}/${training.slug}` },
   };
 }
 
