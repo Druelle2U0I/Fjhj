@@ -23,23 +23,29 @@ export default function Team() {
           </h1>
         </Reveal>
 
-        <div className="mt-12 grid gap-10 border-t border-border pt-10 sm:max-w-2xl sm:grid-cols-2 sm:divide-x sm:divide-border">
+        <div className="mt-14 max-w-3xl divide-y divide-border border-t border-border">
           {team.map((member, i) => (
-            <Reveal key={member.name} delay={i * 0.08} className="sm:px-6 sm:first:pl-0">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-accent-soft text-lg font-semibold text-accent">
+            <Reveal
+              key={member.name}
+              delay={i * 0.08}
+              className="grid grid-cols-[auto_1fr] items-start gap-6 py-10 first:pt-0 sm:gap-10"
+            >
+              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-accent-soft text-2xl font-semibold text-accent">
                 {initials(member.name)}
               </div>
-              <h3 className="mt-4 font-semibold">{member.name}</h3>
-              <p className="mt-1 text-sm font-medium text-accent">
-                {member.role}
-              </p>
-              <p className="mt-2 whitespace-pre-line text-sm text-muted">{member.bio}</p>
-              <a
-                href={`mailto:${member.email}`}
-                className="mt-3 inline-block text-sm text-muted hover:text-accent"
-              >
-                {member.email}
-              </a>
+              <div>
+                <h3 className="text-lg font-semibold">{member.name}</h3>
+                <p className="mt-1 text-sm font-medium text-accent">
+                  {member.role}
+                </p>
+                <p className="mt-3 max-w-xl whitespace-pre-line text-muted">{member.bio}</p>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="mt-4 inline-block text-sm text-muted hover:text-accent"
+                >
+                  {member.email}
+                </a>
+              </div>
             </Reveal>
           ))}
         </div>

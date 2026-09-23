@@ -54,7 +54,7 @@ export default function Funding() {
         avec une couleur de fond différente, sans en introduire une
         nouvelle (accent déjà utilisé sur les boutons) ni saturer
         l'écran d'un aplat plein. */}
-    <section className="bg-accent/10 px-6 py-16 text-center">
+    <section className="bg-accent/25 px-6 py-16 text-center">
       <Reveal className="mx-auto max-w-2xl">
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
           Un projet de formation à financer ?
