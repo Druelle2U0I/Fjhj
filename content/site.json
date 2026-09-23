@@ -24,7 +24,7 @@
     "qualiopiCategory": "actions de formation",
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
-    "accessDelay": "Inter-entreprises : 10 jours ouvrés après l'accord du financeur. Intra-entreprise ou sur mesure : planning prévisionnel établi dans notre proposition, selon vos contraintes.",
+    "accessDelay": "10 jours ouvrés en règle générale après l'accord du financeur. En cas d'urgence, une session peut exceptionnellement être organisée dès 3 jours ouvrés, selon la disponibilité de nos formateurs. En intra-entreprise, le planning est établi avec vous dans notre proposition.",
     "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (taux de satisfaction des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras"
@@ -1289,7 +1289,7 @@
       },
       {
         "title": "Mise en place rapide",
-        "text": "Une fois le dossier validé, les sessions peuvent généralement être programmées sous deux à quatre semaines."
+        "text": "Une fois le financement accordé, la session est généralement programmée sous 10 jours ouvrés. En cas d'urgence, nous pouvons exceptionnellement intervenir dès 3 jours ouvrés, selon la disponibilité de nos formateurs."
       }
     ]
   },
@@ -1425,7 +1425,7 @@
       },
       {
         "question": "Quel est le délai pour organiser une formation ?",
-        "answer": "Le délai dépend de la formation et du nombre de participants, mais nous revenons vers vous sous 24 heures avec une proposition adaptée à votre besoin et vos contraintes de planning."
+        "answer": "Nous revenons vers vous sous 24 heures avec une proposition adaptée. Une fois le financement accordé, comptez en règle générale 10 jours ouvrés avant le début de la formation. En cas d'urgence, une session peut exceptionnellement être organisée dès 3 jours ouvrés, selon la disponibilité de nos formateurs."
       },
       {
         "question": "Combien de personnes peuvent suivre une formation en même temps ?",
@@ -1433,7 +1433,7 @@
       },
       {
         "question": "Qu'est-ce que la certification Qualiopi et que garantit-elle ?",
-        "answer": "Qualiopi est la certification qualité délivrée par l'État français à tous les prestataires d'actions de formation. Elle atteste du sérieux de nos processus pédagogiques et administratifs, et c'est elle qui rend nos formations éligibles aux financements OPCO."
+        "answer": "Qualiopi est la certification qualité nationale des organismes de formation, délivrée par des certificateurs accrédités par le COFRAC sur la base d'un référentiel fixé par l'État. Elle atteste du sérieux de nos processus pédagogiques et administratifs, et c'est elle qui rend nos formations éligibles aux financements OPCO."
       }
     ]
   },
