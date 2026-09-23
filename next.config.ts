@@ -5,16 +5,17 @@ const isDev = process.env.NODE_ENV === "development";
 // CSP sans nonce : le site est presque entièrement généré statiquement
 // (generateStaticParams), et passer par un nonce forcerait un rendu
 // dynamique sur toutes les pages. 'unsafe-inline' reste nécessaire pour
-// le script JSON-LD et l'hydratation React/Next, mais aucun script tiers
-// n'est chargé (pas d'analytics, pas de CDN externe), donc script-src
-// 'self' + 'unsafe-inline' couvre déjà l'essentiel du risque (injection
-// de script externe).
+// le script JSON-LD et l'hydratation React/Next. Le script Vercel
+// Analytics est servi en même origine via /_vercel/insights/script.js
+// (couvert par script-src 'self'), mais l'envoi des mesures passe par
+// vitals.vercel-insights.com, d'où l'ajout à connect-src.
 const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
   img-src 'self' blob: data:;
   font-src 'self';
+  connect-src 'self' https://vitals.vercel-insights.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
