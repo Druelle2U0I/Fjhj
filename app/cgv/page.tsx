@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function CgvPage() {
   const name = legal.legalName || company.name;
   const notice = legal.cancellationNotice || "15 jours";
-  const fee = legal.cancellationFee || "50 % du prix de la formation";
+  const fee = legal.cancellationFee || "la totalité du prix de la formation";
   const payment = legal.paymentTerms || "30 jours";
   const court = legal.court || "Tribunal de commerce d'Arras";
 
@@ -113,8 +113,9 @@ export default function CgvPage() {
           l&apos;annulation ou le report est sans frais.
         </li>
         <li>
-          Moins de {notice} avant le premier jour de formation : {fee} est dû
-          par le client à titre de dédommagement.
+          Moins de {notice} avant le premier jour de formation, dès lors que
+          le devis ou la convention a été signé : {fee} reste due par le
+          client à titre de dédommagement.
         </li>
         <li>
           Toute formation commencée est due en totalité. En cas
