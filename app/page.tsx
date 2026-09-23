@@ -78,9 +78,9 @@ function FormationsSection({ section }: { section: HomeSection }) {
 
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
-    <section id="financement" className="px-6 py-24">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-stretch">
-        <Reveal className="flex flex-col justify-center">
+    <section id="financement" className="py-24">
+      <div className="grid gap-10 px-6 lg:grid-cols-2 lg:items-stretch lg:gap-0 lg:px-0">
+        <Reveal className="flex flex-col justify-center lg:mx-auto lg:w-full lg:max-w-lg lg:pl-6">
           {section.eyebrow && (
             <span className="text-sm font-semibold uppercase tracking-wide text-accent">
               {section.eyebrow}
@@ -100,12 +100,20 @@ function FinancementSection({ section }: { section: HomeSection }) {
           </Link>
         </Reveal>
 
-        <Reveal
-          delay={0.1}
-          className="grid gap-6 rounded-3xl bg-surface p-8 sm:p-10 lg:justify-center"
-        >
-          {funding.points.map((point) => (
-            <div key={point.title} className="flex gap-3">
+        {/* Le panneau touche le bord droit de l'écran ; un second
+            rectangle décalé en dessous fait office d'ombre portée,
+            coins carrés (pas de rounded). */}
+        <div className="relative lg:pl-10">
+          <div
+            aria-hidden="true"
+            className="absolute -right-4 -top-4 hidden h-full w-[calc(100%-2.5rem)] bg-accent/20 lg:block"
+          />
+          <Reveal
+            delay={0.1}
+            className="relative grid gap-6 bg-surface p-8 sm:p-10 lg:h-full lg:pr-16"
+          >
+            {funding.points.map((point) => (
+              <div key={point.title} className="flex gap-3">
               <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"
@@ -122,7 +130,8 @@ function FinancementSection({ section }: { section: HomeSection }) {
               </div>
             </div>
           ))}
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
