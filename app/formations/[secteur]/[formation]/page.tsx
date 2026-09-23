@@ -135,6 +135,48 @@ export default async function FormationPage(
         </div>
       </section>
 
+      {/* Déroulement : sort volontairement de la colonne étroite pour
+          occuper toute la largeur de la page, avec une révélation
+          étape par étape (progressive) au lieu d'un bloc statique. */}
+      {training.programme.length > 0 && (
+        <section className="px-6 pb-16">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                {pages.training.programmeTitle}
+              </h2>
+            </Reveal>
+
+            <Reveal delay={0.05} className="mt-10 hidden items-center sm:flex">
+              {training.programme.map((module, i) => (
+                <div key={module.title} className="flex flex-1 items-center last:flex-none">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-semibold text-accent-foreground">
+                    {i + 1}
+                  </span>
+                  {i < training.programme.length - 1 && (
+                    <div className="mx-3 h-px flex-1 bg-accent" />
+                  )}
+                </div>
+              ))}
+            </Reveal>
+
+            <div className="mt-6 flex flex-col gap-8 sm:mt-4 sm:flex-row sm:gap-6">
+              {training.programme.map((module, i) => (
+                <Reveal key={module.title} delay={0.1 + i * 0.12} className="sm:flex-1">
+                  <span className="text-sm font-semibold text-accent sm:hidden">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="text-base font-semibold sm:mt-0">
+                    {module.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-muted">{module.text}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Contenu + encart latéral */}
       <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
@@ -144,29 +186,6 @@ export default async function FormationPage(
                 <p key={i}>{paragraph}</p>
               ))}
             </Reveal>
-
-            {training.programme.length > 0 && (
-              <Reveal>
-                <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                  {pages.training.programmeTitle}
-                </h2>
-                <ol className="mt-6 divide-y divide-border border-t border-border">
-                  {training.programme.map((module, i) => (
-                    <li key={module.title} className="py-5 first:pt-0">
-                      <div className="flex items-baseline gap-4">
-                        <span className="text-sm font-semibold text-accent">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <h3 className="text-base font-semibold">
-                          {module.title}
-                        </h3>
-                      </div>
-                      <p className="mt-3 text-sm text-muted">{module.text}</p>
-                    </li>
-                  ))}
-                </ol>
-              </Reveal>
-            )}
 
             {/* À partir d'ici, le rythme change volontairement : plus la
                 même grille répétée, chaque information prend une forme
