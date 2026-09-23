@@ -81,7 +81,32 @@ export type Theme = {
   accent: string;
   accentForeground: string;
   headingFont: HeadingFont;
+  // Réglages visuels complémentaires (facultatifs : valeurs par défaut
+  // dans themeStyle).
+  tagBackground?: string;
+  tagText?: string;
+  aurora1?: string;
+  aurora2?: string;
+  aurora3?: string;
+  auroraIntensity?: number;
+  auroraSpeed?: number;
+  sectorVeil?: number;
+  footerVeil?: number;
+  sectionOpacity?: number;
 };
+
+export const THEME_DEFAULTS = {
+  tagBackground: "#0b032b",
+  tagText: "#fff9c7",
+  aurora1: "#6e50f0",
+  aurora2: "#fff9c7",
+  aurora3: "#3c8cdc",
+  auroraIntensity: 90,
+  auroraSpeed: 6,
+  sectorVeil: 60,
+  footerVeil: 68,
+  sectionOpacity: 70,
+} as const;
 
 export type SiteContent = {
   company: {
@@ -229,6 +254,7 @@ export const footerCta = content.footerCta;
 
 /** Variables CSS dérivées du thème, appliquées sur <html>. */
 export function themeStyle(t: Theme): Record<string, string> {
+  const v = { ...THEME_DEFAULTS, ...t };
   return {
     "--background": t.background,
     "--surface": t.surface,
@@ -239,6 +265,17 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--accent": t.accent,
     "--accent-foreground": t.accentForeground,
     "--heading-font": HEADING_FONTS[t.headingFont] ?? HEADING_FONTS.archivo,
+    "--tag-bg": v.tagBackground,
+    "--tag-text": v.tagText,
+    "--aurora-1": v.aurora1,
+    "--aurora-2": v.aurora2,
+    "--aurora-3": v.aurora3,
+    "--aurora-opacity": String(v.auroraIntensity / 100),
+    // Vitesse 1 (très lente) à 10 (rapide) : durée d'un cycle de 40 s à 4 s.
+    "--aurora-duration": `${44 - 4 * v.auroraSpeed}s`,
+    "--sector-veil": String(v.sectorVeil / 100),
+    "--footer-veil": `${v.footerVeil}%`,
+    "--section-alpha": `${v.sectionOpacity}%`,
   };
 }
 

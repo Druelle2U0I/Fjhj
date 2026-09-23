@@ -132,7 +132,7 @@ export default function Footer() {
       {/* Une seule photo de fond, continue sur toute la hauteur du pied de page. */}
       <div className="absolute inset-0">
         <Visual src={footerImage} alt="" sizes="100vw" />
-        <div className="absolute inset-0 bg-background/68" />
+        <div className="footer-veil absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/50" />
       </div>
 

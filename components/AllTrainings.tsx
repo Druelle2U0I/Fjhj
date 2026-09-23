@@ -123,7 +123,7 @@ export default function AllTrainings({
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
                     className="dyn-photo"
                   />
-                  <span className="absolute left-4 top-4 rounded-full border border-white/15 bg-background/75 px-3 py-1 text-xs font-semibold text-accent backdrop-blur">
+                  <span className="domain-tag absolute left-4 top-4 rounded-full border border-white/15 px-3 py-1 text-xs font-semibold backdrop-blur">
                     {item.sectorTitle}
                   </span>
                 </div>

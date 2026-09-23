@@ -1,6 +1,6 @@
 "use client";
 
-import type { HeadingFont, HomeSection, Theme } from "@/lib/data";
+import { THEME_DEFAULTS, type HeadingFont, type HomeSection, type Theme } from "@/lib/data";
 import { Card, ColorField, Field, SmallButton } from "./ui";
 
 const FONTS: { id: HeadingFont; label: string; note: string }[] = [
@@ -19,6 +19,25 @@ const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   { key: "border", label: "Bordures", hint: "Contour des cartes et séparateurs." },
   { key: "accent", label: "Couleur d'accent", hint: "Boutons et éléments mis en avant." },
   { key: "accentForeground", label: "Texte sur l'accent", hint: "Texte à l'intérieur des boutons." },
+];
+
+type ColorKey = "tagBackground" | "tagText" | "aurora1" | "aurora2" | "aurora3";
+type RangeKey = "auroraIntensity" | "auroraSpeed" | "sectorVeil" | "footerVeil" | "sectionOpacity";
+
+const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
+  { key: "tagBackground", label: "Étiquettes — fond", hint: "Étiquette du domaine sur les cartes de « Toutes les formations »." },
+  { key: "tagText", label: "Étiquettes — texte", hint: "Couleur du nom du domaine dans l'étiquette." },
+  { key: "aurora1", label: "Aurore — couleur principale", hint: "La grande lueur (violet par défaut)." },
+  { key: "aurora2", label: "Aurore — reflet clair", hint: "La touche lumineuse (crème par défaut)." },
+  { key: "aurora3", label: "Aurore — couleur secondaire", hint: "La lueur qui apparaît en défilant (bleu par défaut)." },
+];
+
+const RANGES: { key: RangeKey; label: string; hint: string; min: number; max: number; unit: string }[] = [
+  { key: "auroraIntensity", label: "Aurore — intensité", hint: "0 = aurore invisible, 100 = aurore très présente.", min: 0, max: 100, unit: " %" },
+  { key: "auroraSpeed", label: "Aurore — vitesse du mouvement", hint: "1 = très lent, 10 = rapide.", min: 1, max: 10, unit: "" },
+  { key: "sectorVeil", label: "Voile des onglets de domaine fermés", hint: "Page d'accueil : assombrit les photos des domaines non ouverts.", min: 0, max: 90, unit: " %" },
+  { key: "footerVeil", label: "Voile sur la photo du pied de page", hint: "Plus la valeur est haute, plus la photo est assombrie.", min: 0, max: 100, unit: " %" },
+  { key: "sectionOpacity", label: "Opacité des sections à fond", hint: "0 = l'aurore passe entièrement à travers, 100 = fond plein.", min: 0, max: 100, unit: " %" },
 ];
 
 const SECTION_LABELS: Record<HomeSection["id"], string> = {
@@ -112,7 +131,7 @@ export default function DesignEditor({
             Vos équipes méritent le meilleur
           </p>
           <p className="mt-1 text-sm" style={{ color: theme.muted }}>
-            Formations certifiées Qualiopi, financement OPCO pris en charge.
+            Organisme certifié Qualiopi, formations éligibles OPCO.
           </p>
           <span
             className="mt-4 inline-flex rounded-full px-5 py-2 text-sm font-semibold"
@@ -121,6 +140,94 @@ export default function DesignEditor({
             Demander un devis
           </span>
         </div>
+      </Card>
+
+      <Card className="grid gap-5">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+            Effets et étiquettes
+          </p>
+          <p className="mt-1 text-xs text-muted">
+            Couleurs des étiquettes, fond aurore animé et intensité des voiles
+            posés sur les photos.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {EXTRA_COLORS.map((color) => (
+            <ColorField
+              key={color.key}
+              label={color.label}
+              hint={color.hint}
+              value={theme[color.key] ?? THEME_DEFAULTS[color.key]}
+              onChange={(v) => onThemeChange({ ...theme, [color.key]: v })}
+            />
+          ))}
+        </div>
+
+        <div className="rounded-2xl border border-border p-5" style={{ background: theme.surface }}>
+          <p className="text-xs uppercase tracking-wide" style={{ color: theme.muted }}>
+            Aperçu de l&apos;étiquette
+          </p>
+          <span
+            className="mt-3 inline-flex rounded-full border border-white/15 px-3 py-1 text-xs font-semibold"
+            style={{
+              background: theme.tagBackground ?? THEME_DEFAULTS.tagBackground,
+              color: theme.tagText ?? THEME_DEFAULTS.tagText,
+            }}
+          >
+            CACES &amp; habilitations
+          </span>
+          <div
+            className="mt-4 h-16 rounded-xl"
+            style={{
+              background: `linear-gradient(110deg, ${theme.aurora1 ?? THEME_DEFAULTS.aurora1}, ${theme.aurora3 ?? THEME_DEFAULTS.aurora3} 55%, ${theme.aurora2 ?? THEME_DEFAULTS.aurora2})`,
+              opacity: (theme.auroraIntensity ?? THEME_DEFAULTS.auroraIntensity) / 100,
+            }}
+          />
+          <p className="mt-1 text-xs" style={{ color: theme.muted }}>
+            Couleurs de l&apos;aurore
+          </p>
+        </div>
+
+        <div className="grid gap-5">
+          {RANGES.map((range) => {
+            const value = theme[range.key] ?? THEME_DEFAULTS[range.key];
+            return (
+              <label key={range.key} className="block">
+                <span className="flex items-baseline justify-between gap-3 text-xs font-semibold uppercase tracking-wide text-muted">
+                  {range.label}
+                  <span className="font-mono normal-case text-foreground">
+                    {value}
+                    {range.unit}
+                  </span>
+                </span>
+                <input
+                  type="range"
+                  min={range.min}
+                  max={range.max}
+                  value={value}
+                  onChange={(e) =>
+                    onThemeChange({ ...theme, [range.key]: Number(e.target.value) })
+                  }
+                  className="mt-2 w-full accent-[var(--accent)]"
+                />
+                <span className="mt-1 block text-xs text-muted">{range.hint}</span>
+              </label>
+            );
+          })}
+        </div>
+
+        <SmallButton
+          onClick={() =>
+            onThemeChange({
+              ...theme,
+              ...THEME_DEFAULTS,
+            })
+          }
+        >
+          Rétablir les réglages d&apos;origine de cette carte
+        </SmallButton>
       </Card>
 
       <div>

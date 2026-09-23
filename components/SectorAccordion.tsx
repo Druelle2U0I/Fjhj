@@ -60,7 +60,7 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
             <div
-              className={`absolute inset-0 bg-black/60 transition-opacity duration-700 ease-in-out ${
+              className={`sector-veil absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 isActive ? "opacity-0" : "opacity-100"
               }`}
             />
