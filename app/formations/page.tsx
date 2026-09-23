@@ -3,25 +3,20 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
-import { services } from "@/lib/data";
-
-const trainingCount = services.reduce((n, s) => n + s.trainings.length, 0);
-const headline = `${services.length} domaines de formation, ${trainingCount} parcours`;
+import { fillCounts, pages, services } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Nos formations",
-  description: `${headline} proposés par un organisme certifié Qualiopi : ${services
-    .map((s) => s.title.toLowerCase())
-    .join(", ")}.`,
+  description: fillCounts(pages.catalogue.seoDescription),
 };
 
 export default function FormationsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Nos formations"
-        title={headline}
-        description="Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise ou en inter-entreprises dans toute la région Hauts-de-France. Choisissez un domaine pour découvrir le détail des formations."
+        eyebrow={pages.catalogue.eyebrow}
+        title={fillCounts(pages.catalogue.title)}
+        description={fillCounts(pages.catalogue.text)}
       />
 
       <section className="px-6 pb-24">

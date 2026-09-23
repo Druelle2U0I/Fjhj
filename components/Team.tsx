@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import { team } from "@/lib/data";
+import { pages, team } from "@/lib/data";
 
 function initials(name: string) {
   return name
@@ -16,10 +16,10 @@ export default function Team() {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-            Notre équipe
+            {pages.team.eyebrow}
           </span>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Une équipe à votre écoute
+            {pages.team.title}
           </h2>
         </Reveal>
 

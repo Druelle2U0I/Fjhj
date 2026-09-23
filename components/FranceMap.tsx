@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 import mapData from "@/lib/geo/france-departements.json";
+import { pages } from "@/lib/data";
 
 type Dept = { code: string; nom: string; path: string; hdf: boolean };
 
@@ -62,7 +63,7 @@ export default function FranceMap() {
             style={{ opacity: eyebrowOpacity }}
             className="text-sm font-semibold uppercase tracking-wide text-accent"
           >
-            Notre zone d&apos;intervention
+            {pages.centre.mapEyebrow}
           </motion.p>
         </div>
 
@@ -120,9 +121,7 @@ export default function FranceMap() {
           style={{ opacity: detailOpacity }}
           className="mt-6 max-w-md text-center text-sm text-muted"
         >
-          Nord, Pas-de-Calais, Somme, Aisne, Oise : nous intervenons dans les
-          5 départements des Hauts-de-France, en intra-entreprise dans vos
-          locaux.
+          {pages.centre.mapText}
         </motion.p>
       </div>
     </div>

@@ -1464,5 +1464,73 @@
   "trainingInfo": {
     "methods": "Apports théoriques illustrés, démonstrations et mises en situation pratiques, au plus près des conditions réelles de travail. Nos formateurs disposent des habilitations et certifications requises pour les formations réglementées.",
     "evaluation": "Positionnement en début de formation, évaluation des acquis en fin de formation (questionnaire et/ou mise en situation pratique selon la formation), questionnaire de satisfaction. Une attestation de fin de formation est remise à chaque stagiaire."
+  },
+  "pages": {
+    "hero": {
+      "badge": "Organisme de formation professionnelle",
+      "primaryButton": "Découvrir nos formations",
+      "secondaryButton": "Parler à un conseiller"
+    },
+    "catalogue": {
+      "eyebrow": "Nos formations",
+      "title": "{domaines} domaines de formation, {formations} parcours",
+      "text": "Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise ou en inter-entreprises dans toute la région Hauts-de-France. Choisissez un domaine pour découvrir le détail des formations.",
+      "seoDescription": "{domaines} domaines de formation, {formations} parcours proposés par un organisme certifié Qualiopi dans les Hauts-de-France."
+    },
+    "sector": {
+      "whyEyebrow": "Pourquoi former vos équipes",
+      "listTitle": "Formations disponibles",
+      "quoteButton": "Devis",
+      "customTitle": "Une formation absente de cette liste ?",
+      "customText": "Nous construisons également des parcours sur mesure adaptés à vos besoins spécifiques.",
+      "quoteMainButton": "Demander un devis",
+      "catalogueButton": "Voir le catalogue"
+    },
+    "training": {
+      "programmeTitle": "Programme de la formation",
+      "audienceTitle": "Public concerné",
+      "fundingTitle": "Financement",
+      "methodsTitle": "Méthodes pédagogiques",
+      "evaluationTitle": "Modalités d'évaluation",
+      "accessibilityTitle": "Accessibilité aux personnes en situation de handicap",
+      "price": "Sur devis · éligible à une prise en charge OPCO",
+      "quoteButton": "Demander un devis",
+      "questionText": "Une question sur cette formation ?"
+    },
+    "centre": {
+      "eyebrow": "Le centre",
+      "title": "Un organisme de formation certifié Qualiopi, ancré dans les Hauts-de-France",
+      "mapEyebrow": "Notre zone d'intervention",
+      "mapText": "Nord, Pas-de-Calais, Somme, Aisne, Oise : nous intervenons dans les 5 départements des Hauts-de-France, en intra-entreprise dans vos locaux.",
+      "approachEyebrow": "Notre approche",
+      "approachTitle": "Une expertise de terrain au service de vos équipes",
+      "approachText": "Nos formateurs interviennent directement dans vos locaux ou sur plateau technique, avec le matériel que vos équipes utilisent au quotidien. Cet ancrage régional nous permet de construire des parcours alignés sur les réalités de votre secteur d'activité, qu'il s'agisse d'une TPE, d'une PME industrielle ou d'une collectivité.\n\nChaque formation est pensée pour un résultat concret : certifier une compétence, répondre à une obligation réglementaire, ou installer durablement une culture de sécurité au sein de vos équipes.",
+      "whyEyebrow": "Pourquoi choisir ENMA Formation",
+      "whyTitle": "Trois engagements qui structurent chaque formation",
+      "domainsEyebrow": "Nos domaines",
+      "domainsTitle": "{domaines} domaines de formation, du terrain jusqu'au bureau d'études",
+      "ctaTitle": "Un projet de formation pour vos équipes ?",
+      "ctaText": "Décrivez votre besoin : nous revenons vers vous rapidement avec une proposition adaptée et le montage du dossier de financement.",
+      "ctaButton": "Nous contacter",
+      "seoDescription": "ENMA Formation, organisme de formation certifié Qualiopi implanté dans les Hauts-de-France : notre approche, nos engagements, nos domaines de formation."
+    },
+    "team": {
+      "eyebrow": "Notre équipe",
+      "title": "Une équipe à votre écoute",
+      "seoDescription": "Une équipe de formateurs expérimentés, pédagogues et opérationnels, qui se déplacent directement dans vos locaux en Hauts-de-France."
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Parlons de vos besoins en formation",
+      "text": "Vous avez une obligation réglementaire à couvrir, un besoin de montée en compétences ou simplement une question sur le financement ? On revient vers vous sous 24 heures avec une réponse concrète.",
+      "submitButton": "Envoyer le message",
+      "successMessage": "Merci, votre message a bien été envoyé.",
+      "seoDescription": "Décrivez votre besoin de formation, nous revenons vers vous sous 24h avec une proposition adaptée et le montage du dossier OPCO."
+    },
+    "funding": {
+      "eyebrow": "Qualiopi & financement",
+      "title": "Un financement OPCO facilité, sans démarche de votre côté",
+      "seoDescription": "ENMA Formation est un organisme certifié Qualiopi. Nos formations sont éligibles à une prise en charge OPCO et nous montons le dossier de financement pour vous."
+    }
   }
 }

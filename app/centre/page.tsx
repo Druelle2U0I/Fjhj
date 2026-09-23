@@ -4,20 +4,19 @@ import AnimatedStat from "@/components/AnimatedStat";
 import FranceMap from "@/components/FranceMap";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { company, home, pillars, services, stats } from "@/lib/data";
+import { company, fillCounts, home, pages, pillars, services, stats } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Le centre",
-  description:
-    "ENMA Formation, organisme de formation certifié Qualiopi implanté dans les Hauts-de-France : notre approche, nos engagements, nos domaines de formation.",
+  description: pages.centre.seoDescription,
 };
 
 export default function CentrePage() {
   return (
     <>
       <PageHero
-        eyebrow="Le centre"
-        title="Un organisme de formation certifié Qualiopi, ancré dans les Hauts-de-France"
+        eyebrow={pages.centre.eyebrow}
+        title={pages.centre.title}
         description={company.tagline}
         image={home.aboutImage}
         imageAlt={home.aboutImageAlt}
@@ -29,27 +28,21 @@ export default function CentrePage() {
         <div className="mx-auto max-w-3xl">
           <Reveal>
             <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-              Notre approche
+              {pages.centre.approachEyebrow}
             </span>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
-              Une expertise de terrain au service de vos équipes
+              {pages.centre.approachTitle}
             </h2>
             <div className="mt-5 grid gap-4 text-muted">
               <p>{company.about}</p>
-              <p>
-                Nos formateurs interviennent directement dans vos locaux ou
-                sur plateau technique, avec le matériel que vos équipes
-                utilisent au quotidien. Cet ancrage régional nous permet de
-                construire des parcours alignés sur les réalités de votre
-                secteur d&apos;activité, qu&apos;il s&apos;agisse d&apos;une
-                TPE, d&apos;une PME industrielle ou d&apos;une collectivité.
-              </p>
-              <p>
-                Chaque formation est pensée pour un résultat concret :
-                certifier une compétence, répondre à une obligation
-                réglementaire, ou installer durablement une culture de
-                sécurité au sein de vos équipes.
-              </p>
+              {pages.centre.approachText
+                .split(/\n\s*\n/)
+                .filter((paragraph) => paragraph.trim())
+                .map((paragraph, i) => (
+                  <p key={i} className="whitespace-pre-line">
+                    {paragraph}
+                  </p>
+                ))}
             </div>
           </Reveal>
         </div>
@@ -59,10 +52,10 @@ export default function CentrePage() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-              Pourquoi choisir ENMA Formation
+              {pages.centre.whyEyebrow}
             </span>
             <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-              Trois engagements qui structurent chaque formation
+              {pages.centre.whyTitle}
             </h2>
           </Reveal>
 
@@ -94,11 +87,10 @@ export default function CentrePage() {
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-              Nos domaines
+              {pages.centre.domainsEyebrow}
             </span>
             <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-              {services.length} domaines de formation, du terrain jusqu&apos;au bureau
-              d&apos;études
+              {fillCounts(pages.centre.domainsTitle)}
             </h2>
           </Reveal>
 
@@ -124,18 +116,16 @@ export default function CentrePage() {
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-              Un projet de formation pour vos équipes ?
+              {pages.centre.ctaTitle}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-muted">
-              Décrivez votre besoin : nous revenons vers vous rapidement avec
-              une proposition adaptée et le montage du dossier de
-              financement.
+            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-muted">
+              {pages.centre.ctaText}
             </p>
             <Link
               href="/contact"
               className="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
             >
-              Nous contacter
+              {pages.centre.ctaButton}
             </Link>
           </Reveal>
         </div>

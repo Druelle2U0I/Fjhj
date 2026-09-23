@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import type { SiteContent } from "@/lib/data";
 import SectorsEditor from "./SectorsEditor";
 import DesignEditor from "./DesignEditor";
+import PagesEditor from "./PagesEditor";
 import { Card, Field, ImageField, ListEditor } from "./ui";
 
 const SECTIONS = [
@@ -14,6 +15,7 @@ const SECTIONS = [
   { id: "equipe", label: "Équipe" },
   { id: "financement", label: "Qualiopi & financement" },
   { id: "accueil", label: "Page d'accueil" },
+  { id: "pages", label: "Textes des pages" },
   { id: "design", label: "Design & sections" },
   { id: "accessibilite", label: "Accessibilité" },
 ] as const;
@@ -864,6 +866,13 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 />
               </div>
             </>
+          )}
+
+          {section === "pages" && (
+            <PagesEditor
+              pages={content.pages}
+              onChange={(pages) => update({ ...content, pages })}
+            />
           )}
 
           {section === "design" && (

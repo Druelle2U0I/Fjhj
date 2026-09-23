@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Contact from "@/components/Contact";
+import { pages } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Décrivez votre besoin de formation, nous revenons vers vous sous 24h avec une proposition adaptée et le montage du dossier OPCO.",
+  description: pages.contact.seoDescription,
 };
 
 export default async function ContactPage(

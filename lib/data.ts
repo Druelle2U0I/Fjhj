@@ -115,6 +115,7 @@ export type SiteContent = {
     resultsIndicators?: string;
   };
   trainingInfo?: { methods: string; evaluation: string };
+  pages: Pages;
   stats: { value: string; label: string }[];
   pillars: { title: string; text: string }[];
   sectors: Sector[];
@@ -147,10 +148,63 @@ export type SiteContent = {
   };
 };
 
+export type Pages = {
+  hero: { badge: string; primaryButton: string; secondaryButton: string };
+  catalogue: { eyebrow: string; title: string; text: string; seoDescription: string };
+  sector: {
+    quoteMainButton: string;
+    catalogueButton: string;
+    whyEyebrow: string;
+    listTitle: string;
+    quoteButton: string;
+    customTitle: string;
+    customText: string;
+  };
+  training: {
+    programmeTitle: string;
+    audienceTitle: string;
+    fundingTitle: string;
+    methodsTitle: string;
+    evaluationTitle: string;
+    accessibilityTitle: string;
+    price: string;
+    quoteButton: string;
+    questionText: string;
+  };
+  centre: {
+    eyebrow: string;
+    title: string;
+    mapEyebrow: string;
+    mapText: string;
+    approachEyebrow: string;
+    approachTitle: string;
+    approachText: string;
+    whyEyebrow: string;
+    whyTitle: string;
+    domainsEyebrow: string;
+    domainsTitle: string;
+    ctaTitle: string;
+    ctaText: string;
+    ctaButton: string;
+    seoDescription: string;
+  };
+  team: { eyebrow: string; title: string; seoDescription: string };
+  contact: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    submitButton: string;
+    successMessage: string;
+    seoDescription: string;
+  };
+  funding: { eyebrow: string; title: string; seoDescription: string };
+};
+
 const content = site as SiteContent;
 
 export const company = content.company;
 export const legal = content.legal;
+export const pages = content.pages;
 export const trainingInfo = content.trainingInfo ?? { methods: "", evaluation: "" };
 export const stats = content.stats;
 export const pillars = content.pillars;
@@ -200,4 +254,14 @@ export function qualiopiText(): string {
   if (!legal.qualiopiCertificate) return "";
   const category = legal.qualiopiCategory ? ` La certification qualité a été délivrée au titre de la catégorie d'action suivante : ${legal.qualiopiCategory}.` : "";
   return `Organisme certifié Qualiopi, certificat n° ${legal.qualiopiCertificate}.${category}`;
+}
+
+// Remplace {formations} et {domaines} par les chiffres réels du catalogue,
+// pour que les textes modifiés dans l'admin restent justes quand des
+// formations sont ajoutées ou retirées.
+export function fillCounts(text: string): string {
+  const trainings = services.reduce((n, s) => n + s.trainings.length, 0);
+  return text
+    .replaceAll("{formations}", String(trainings))
+    .replaceAll("{domaines}", String(services.length));
 }

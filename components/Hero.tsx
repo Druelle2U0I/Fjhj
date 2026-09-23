@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import AnimatedStat from "@/components/AnimatedStat";
 import HeroCarousel from "@/components/HeroCarousel";
-import { company, home, stats } from "@/lib/data";
+import { company, home, pages, stats } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -21,7 +21,7 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-sm font-medium text-muted"
           >
-            Organisme de formation professionnelle
+            {pages.hero.badge}
           </motion.p>
 
           <motion.h1
@@ -52,13 +52,13 @@ export default function Hero() {
               href="/formations"
               className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
             >
-              Découvrir nos formations
+              {pages.hero.primaryButton}
             </Link>
             <Link
               href="/contact"
               className="rounded-full border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
             >
-              Parler à un conseiller
+              {pages.hero.secondaryButton}
             </Link>
           </motion.div>
 

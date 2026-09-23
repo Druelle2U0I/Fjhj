@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
-import { services } from "@/lib/data";
+import { pages, services } from "@/lib/data";
 
 export async function generateStaticParams() {
   return services.map((service) => ({ secteur: service.slug }));
@@ -36,7 +36,7 @@ export default async function SecteurPage(
           l'en-tête (sticky, semi-transparent) pour que la photo continue
           jusqu'en haut de la page au lieu de s'arrêter net dessous. */}
       <section className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-16 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
-        <div className="absolute inset-0">
+        <div className="hero-photo-fade absolute inset-0">
           <div className="absolute inset-0 scale-110 blur-[7px]">
             <Visual
               src={service.image}
@@ -46,7 +46,7 @@ export default async function SecteurPage(
             />
           </div>
           <div className="absolute inset-0 bg-background/55" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/60" />
         </div>
 
         <div className="relative mx-auto max-w-6xl">
@@ -75,13 +75,13 @@ export default async function SecteurPage(
                   href={`/contact?formation=${encodeURIComponent(service.title)}`}
                   className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
                 >
-                  Demander un devis
+                  {pages.sector.quoteMainButton}
                 </Link>
                 <a
                   href="#catalogue"
                   className="rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
                 >
-                  Voir le catalogue
+                  {pages.sector.catalogueButton}
                 </a>
               </div>
             </div>
@@ -95,7 +95,7 @@ export default async function SecteurPage(
           <Reveal>
             <div className="rounded-3xl border border-border bg-surface p-8 sm:p-12">
               <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-                Pourquoi former vos équipes
+                {pages.sector.whyEyebrow}
               </p>
               <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
                 {service.why.title}
@@ -111,7 +111,7 @@ export default async function SecteurPage(
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-              Formations disponibles
+              {pages.sector.listTitle}
             </h2>
           </Reveal>
 
@@ -153,7 +153,7 @@ export default async function SecteurPage(
                     href={`/contact?formation=${encodeURIComponent(training.title)}`}
                     className="relative z-10 flex items-center justify-between border-t border-border px-6 py-4 text-sm font-semibold transition-colors hover:bg-surface-2 hover:text-accent"
                   >
-                    Devis
+                    {pages.sector.quoteButton}
                     <span aria-hidden="true">→</span>
                   </Link>
                 </article>
@@ -176,12 +176,9 @@ export default async function SecteurPage(
                 <circle cx="12" cy="8" r="0.75" fill="currentColor" stroke="none" />
               </svg>
               <div>
-                <p className="font-semibold">
-                  Une formation absente de cette liste ?
-                </p>
-                <p className="mt-1 text-sm text-muted">
-                  Nous construisons également des parcours sur mesure adaptés
-                  à vos besoins spécifiques.
+                <p className="font-semibold">{pages.sector.customTitle}</p>
+                <p className="mt-1 whitespace-pre-line text-sm text-muted">
+                  {pages.sector.customText}
                 </p>
               </div>
             </div>

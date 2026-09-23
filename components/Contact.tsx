@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
-import { accessibility, company } from "@/lib/data";
+import { accessibility, company, pages } from "@/lib/data";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -48,16 +48,13 @@ export default function Contact({
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
         <Reveal>
           <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-            Contact
+            {pages.contact.eyebrow}
           </span>
           <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-            Parlons de vos besoins en formation
+            {pages.contact.title}
           </h2>
-          <p className="mt-5 max-w-md text-muted">
-            Vous avez une obligation réglementaire à couvrir, un besoin de
-            montée en compétences ou simplement une question sur le
-            financement&nbsp;? On revient vers vous sous 24 heures avec une
-            réponse concrète.
+          <p className="mt-5 max-w-md whitespace-pre-line text-muted">
+            {pages.contact.text}
           </p>
 
           <div className="mt-8 space-y-3 text-sm">
@@ -197,7 +194,7 @@ export default function Contact({
               disabled={status === "sending"}
               className="mt-6 w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.02] disabled:opacity-60"
             >
-              {status === "sending" ? "Envoi en cours..." : "Envoyer le message"}
+              {status === "sending" ? "Envoi en cours..." : pages.contact.submitButton}
             </button>
 
             <p className="mt-4 text-xs text-muted">
@@ -212,7 +209,7 @@ export default function Contact({
 
             {status === "sent" && (
               <p className="mt-4 text-sm text-green-400">
-                Merci, votre message a bien été envoyé.
+                {pages.contact.successMessage}
               </p>
             )}
             {status === "error" && (

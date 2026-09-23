@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Team from "@/components/Team";
+import { pages } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Notre équipe",
-  description:
-    "Une équipe de formateurs expérimentés, pédagogues et opérationnels, qui se déplacent directement dans vos locaux en Hauts-de-France.",
+  description: pages.team.seoDescription,
 };
 
 export default function EquipePage() {

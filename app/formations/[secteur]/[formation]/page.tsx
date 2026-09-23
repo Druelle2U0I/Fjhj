@@ -7,6 +7,7 @@ import {
   accessibility,
   company,
   legal,
+  pages,
   services,
   siteUrl,
   trainingInfo,
@@ -94,7 +95,7 @@ export default async function FormationPage(
           semi-transparent) pour que la photo continue jusqu'en haut de
           la page au lieu de s'arrêter net dessous. */}
       <section className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-16 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
-        <div className="absolute inset-0">
+        <div className="hero-photo-fade absolute inset-0">
           <Visual
             src={training.image ?? service.image}
             alt=""
@@ -102,7 +103,7 @@ export default async function FormationPage(
             priority
           />
           <div className="absolute inset-0 bg-background/75" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background/70" />
         </div>
 
         <div className="relative mx-auto max-w-6xl">
@@ -146,7 +147,7 @@ export default async function FormationPage(
             {training.programme.length > 0 && (
               <Reveal>
                 <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                  Programme de la formation
+                  {pages.training.programmeTitle}
                 </h2>
                 <ol className="mt-6 grid gap-4">
                   {training.programme.map((module, i) => (
@@ -172,20 +173,20 @@ export default async function FormationPage(
             <Reveal className="grid gap-6 sm:grid-cols-2">
               <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                  Public concerné
+                  {pages.training.audienceTitle}
                 </p>
                 <p className="mt-3 text-sm text-muted">{training.audience}</p>
               </div>
               <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                  Financement
+                  {pages.training.fundingTitle}
                 </p>
                 <p className="mt-3 text-sm text-muted">{training.funding}</p>
               </div>
               {trainingInfo.methods && (
                 <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
                   <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                    Méthodes pédagogiques
+                    {pages.training.methodsTitle}
                   </p>
                   <p className="mt-3 text-sm text-muted">{trainingInfo.methods}</p>
                 </div>
@@ -193,14 +194,14 @@ export default async function FormationPage(
               {trainingInfo.evaluation && (
                 <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
                   <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                    Modalités d&apos;évaluation
+                    {pages.training.evaluationTitle}
                   </p>
                   <p className="mt-3 text-sm text-muted">{trainingInfo.evaluation}</p>
                 </div>
               )}
               <div className="dyn-card rounded-2xl border border-border bg-surface p-6 sm:col-span-2">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                  Accessibilité aux personnes en situation de handicap
+                  {pages.training.accessibilityTitle}
                 </p>
                 <p className="mt-3 text-sm text-muted">
                   {accessibility.text} Contact : {accessibility.referent},{" "}
@@ -259,7 +260,7 @@ export default async function FormationPage(
                     Tarif
                   </dt>
                   <dd className="mt-1 text-sm">
-                    Sur devis · éligible à une prise en charge OPCO
+                    {pages.training.price}
                   </dd>
                 </div>
               </dl>
@@ -268,11 +269,11 @@ export default async function FormationPage(
                 href={`/contact?formation=${encodeURIComponent(training.title)}`}
                 className="mt-7 flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
               >
-                Demander un devis
+                {pages.training.quoteButton}
               </Link>
 
               <div className="mt-6 border-t border-border pt-5 text-sm text-muted">
-                <p>Une question sur cette formation ?</p>
+                <p>{pages.training.questionText}</p>
                 <a
                   href={`tel:${company.phone.replace(/\s/g, "")}`}
                   className="mt-2 block font-semibold text-foreground hover:text-accent"

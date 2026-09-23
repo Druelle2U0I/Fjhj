@@ -211,3 +211,11 @@ h4 {
     transparent 100%
   );
 }
+
+/* Grande photo en haut des pages de domaine et des fiches formation :
+   elle s'efface progressivement vers le bas pour laisser apparaître le
+   fond aurore, sans ligne de coupure. */
+.hero-photo-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 45%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
+}

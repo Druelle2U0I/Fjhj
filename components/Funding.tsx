@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import { funding, legal, qualiopiText } from "@/lib/data";
+import { funding, legal, pages, qualiopiText } from "@/lib/data";
 
 export default function Funding() {
   return (
@@ -7,10 +7,10 @@ export default function Funding() {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-            Qualiopi & financement
+            {pages.funding.eyebrow}
           </span>
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            Un financement OPCO facilité, sans démarche de votre côté
+            {pages.funding.title}
           </h2>
           <p className="mt-5 max-w-2xl whitespace-pre-line text-muted">{funding.intro}</p>
         </Reveal>

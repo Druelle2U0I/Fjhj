@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Funding from "@/components/Funding";
+import { pages } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Qualiopi & financement",
-  description:
-    "ENMA Formation est un organisme certifié Qualiopi. Nos formations sont éligibles à une prise en charge OPCO et nous montons le dossier de financement pour vous.",
+  description: pages.funding.seoDescription,
 };
 
 export default function FinancementPage() {
