@@ -168,48 +168,64 @@ export default async function FormationPage(
               </Reveal>
             )}
 
-            <Reveal className="grid gap-6 border-t border-border pt-8 sm:grid-cols-2">
-              <div>
+            {/* À partir d'ici, le rythme change volontairement : plus la
+                même grille répétée, chaque information prend une forme
+                différente selon son importance. */}
+            <div className="border-t border-border pt-10">
+              {/* Public concerné : mis en avant, pleine largeur, plus grand */}
+              <Reveal>
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {pages.training.audienceTitle}
                 </p>
-                <p className="mt-3 text-sm text-muted">{training.audience}</p>
-              </div>
-              <div>
+                <p className="mt-3 max-w-2xl text-lg text-foreground/90">
+                  {training.audience}
+                </p>
+              </Reveal>
+
+              {/* Financement : callout à barre d'accent, pas une grille */}
+              <Reveal delay={0.05} className="mt-10 max-w-2xl border-l-4 border-accent pl-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {pages.training.fundingTitle}
                 </p>
-                <p className="mt-3 text-sm text-muted">{training.funding}</p>
-              </div>
-              {trainingInfo.methods && (
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                    {pages.training.methodsTitle}
-                  </p>
-                  <p className="mt-3 text-sm text-muted">{trainingInfo.methods}</p>
-                </div>
+                <p className="mt-2 text-sm text-muted">{training.funding}</p>
+              </Reveal>
+
+              {/* Méthodes + évaluation : détails plus discrets, en paire */}
+              {(trainingInfo.methods || trainingInfo.evaluation) && (
+                <Reveal delay={0.1} className="mt-10 grid gap-6 text-sm sm:grid-cols-2">
+                  {trainingInfo.methods && (
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+                        {pages.training.methodsTitle}
+                      </p>
+                      <p className="mt-2 text-muted">{trainingInfo.methods}</p>
+                    </div>
+                  )}
+                  {trainingInfo.evaluation && (
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+                        {pages.training.evaluationTitle}
+                      </p>
+                      <p className="mt-2 text-muted">{trainingInfo.evaluation}</p>
+                    </div>
+                  )}
+                </Reveal>
               )}
-              {trainingInfo.evaluation && (
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                    {pages.training.evaluationTitle}
-                  </p>
-                  <p className="mt-3 text-sm text-muted">{trainingInfo.evaluation}</p>
-                </div>
-              )}
-              <div className="sm:col-span-2">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+
+              {/* Accessibilité : simple note en bas, la plus discrète */}
+              <Reveal delay={0.15} className="mt-10 max-w-2xl text-xs text-muted">
+                <p className="font-semibold uppercase tracking-wide text-accent">
                   {pages.training.accessibilityTitle}
                 </p>
-                <p className="mt-3 text-sm text-muted">
+                <p className="mt-2">
                   {accessibility.text} Contact : {accessibility.referent},{" "}
                   <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent">
                     {company.email}
                   </a>
                   .
                 </p>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
 
             {otherTrainings.length > 0 && (
               <Reveal>
