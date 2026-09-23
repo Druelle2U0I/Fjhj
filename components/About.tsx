@@ -14,20 +14,33 @@ function initials(name: string) {
 }
 
 export default function About({ section }: { section: HomeSection }) {
+  const hasImage = Boolean(home.aboutImage);
+
   return (
     <section id="a-propos" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <Reveal className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-3xl border border-border">
-            <Visual
-              src={home.aboutImage}
-              alt={home.aboutImageAlt ?? ""}
-              sizes="(min-width: 1024px) 45vw, 90vw"
-              className="dyn-photo"
-            />
-          </Reveal>
+        <div
+          className={
+            hasImage
+              ? "grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center"
+              : ""
+          }
+        >
+          {/* Tant qu'aucune photo n'est renseignée, on ne réserve pas de
+              case vide à sa place (mieux vaut du texte pleine largeur
+              qu'un cadre gris qui ressemble à une image cassée). */}
+          {hasImage && (
+            <Reveal className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-3xl border border-border">
+              <Visual
+                src={home.aboutImage}
+                alt={home.aboutImageAlt ?? ""}
+                sizes="(min-width: 1024px) 45vw, 90vw"
+                className="dyn-photo"
+              />
+            </Reveal>
+          )}
 
-          <Reveal delay={0.1}>
+          <Reveal delay={0.1} className={hasImage ? "" : "mx-auto max-w-2xl text-center"}>
             {section.eyebrow && (
               <span className="text-sm font-semibold uppercase tracking-wide text-accent">
                 {section.eyebrow}
@@ -43,50 +56,49 @@ export default function About({ section }: { section: HomeSection }) {
         </div>
 
         {home.founderQuote?.text && (
-          <Reveal delay={0.15} className="mt-14">
-            <div className="dyn-card rounded-3xl border border-border bg-surface p-8 sm:p-10">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 32 24"
-                className="h-8 w-10 fill-accent/40"
-              >
-                <path d="M0 24V14.4Q0 7.2 3.6 3.6 7.2 0 14.4 0v4.8Q9.6 4.8 7.2 7.2 4.8 9.6 4.8 14.4H12V24ZM19.2 24V14.4Q19.2 7.2 22.8 3.6 26.4 0 33.6 0v4.8Q28.8 4.8 26.4 7.2 24 9.6 24 14.4h7.2V24Z" />
-              </svg>
-              <p className="mt-4 max-w-3xl whitespace-pre-line text-xs italic leading-relaxed text-foreground sm:text-sm">
-                {home.founderQuote.text}
-              </p>
-              <div className="mt-6 flex items-center gap-4">
-                {home.founderQuote.photo ? (
-                  <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-border">
-                    <Image
-                      src={home.founderQuote.photo}
-                      alt={home.founderQuote.photoAlt || home.founderQuote.name}
-                      fill
-                      sizes="56px"
-                      className="object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-border bg-surface-2 text-sm font-semibold text-accent">
-                    {initials(home.founderQuote.name)}
-                  </div>
-                )}
-                <div>
-                  <p className="font-semibold">{home.founderQuote.name}</p>
-                  <p className="text-sm text-muted">{home.founderQuote.role}</p>
+          <Reveal delay={0.15} className="mx-auto mt-16 max-w-3xl text-center">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 32 24"
+              className="mx-auto h-9 w-11 fill-accent/50"
+            >
+              <path d="M0 24V14.4Q0 7.2 3.6 3.6 7.2 0 14.4 0v4.8Q9.6 4.8 7.2 7.2 4.8 9.6 4.8 14.4H12V24ZM19.2 24V14.4Q19.2 7.2 22.8 3.6 26.4 0 33.6 0v4.8Q28.8 4.8 26.4 7.2 24 9.6 24 14.4h7.2V24Z" />
+            </svg>
+            <p className="mt-5 whitespace-pre-line text-lg font-medium leading-relaxed text-foreground sm:text-xl">
+              {home.founderQuote.text}
+            </p>
+            <div className="mt-6 flex items-center justify-center gap-4">
+              {home.founderQuote.photo ? (
+                <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full border border-border">
+                  <Image
+                    src={home.founderQuote.photo}
+                    alt={home.founderQuote.photoAlt || home.founderQuote.name}
+                    fill
+                    sizes="56px"
+                    className="object-cover"
+                  />
                 </div>
+              ) : (
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-border bg-surface-2 text-sm font-semibold text-accent">
+                  {initials(home.founderQuote.name)}
+                </div>
+              )}
+              <div className="text-left">
+                <p className="font-semibold">{home.founderQuote.name}</p>
+                <p className="text-sm text-muted">{home.founderQuote.role}</p>
               </div>
             </div>
           </Reveal>
         )}
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-8 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
           {pillars.map((pillar, i) => (
-            <Reveal key={pillar.title} delay={i * 0.1}>
-              <div className="dyn-card h-full rounded-2xl border border-border bg-surface p-6">
-                <h3 className="text-lg font-semibold">{pillar.title}</h3>
-                <p className="mt-2 whitespace-pre-line text-sm text-muted">{pillar.text}</p>
-              </div>
+            <Reveal key={pillar.title} delay={i * 0.1} className="lg:px-6 lg:first:pl-0">
+              <span className="text-xs font-semibold text-accent">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-2 text-lg font-semibold">{pillar.title}</h3>
+              <p className="mt-2 whitespace-pre-line text-sm text-muted">{pillar.text}</p>
             </Reveal>
           ))}
         </div>
