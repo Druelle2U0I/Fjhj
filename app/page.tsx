@@ -1,11 +1,43 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import AnimatedStat from "@/components/AnimatedStat";
 import Reveal from "@/components/Reveal";
 import SectorAccordion from "@/components/SectorAccordion";
 import Faq from "@/components/Faq";
-import { services, funding, home } from "@/lib/data";
+import Visual from "@/components/Visual";
+import { services, funding, home, stats } from "@/lib/data";
 import type { HomeSection } from "@/lib/data";
+
+// Bande pleine largeur (photo bord à bord, pas de conteneur à 1200px) qui
+// casse le rythme "carte, carte, carte" entre le catalogue et le financement.
+function StatsBand() {
+  return (
+    <section className="relative overflow-hidden py-24 sm:py-32">
+      <div className="absolute inset-0">
+        <Visual
+          src="/images/n1-1790111052703.jpg"
+          alt=""
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/70" />
+      </div>
+
+      <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 sm:grid-cols-4">
+        {stats.map((stat) => (
+          <Reveal key={stat.label} className="text-center">
+            <p className="text-4xl font-semibold text-accent sm:text-5xl">
+              <AnimatedStat value={stat.value} />
+            </p>
+            <p className="mt-2 text-sm text-muted sm:text-base">{stat.label}</p>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function FormationsSection({ section }: { section: HomeSection }) {
   return (
@@ -148,7 +180,12 @@ export default function Home() {
             case "about":
               return <About key={section.id} section={section} />;
             case "formations":
-              return <FormationsSection key={section.id} section={section} />;
+              return (
+                <Fragment key={section.id}>
+                  <FormationsSection section={section} />
+                  <StatsBand />
+                </Fragment>
+              );
             case "financement":
               return <FinancementSection key={section.id} section={section} />;
             case "contact":

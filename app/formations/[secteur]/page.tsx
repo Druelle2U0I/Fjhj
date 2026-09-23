@@ -69,8 +69,8 @@ export default async function SecteurPage(
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="mt-10 max-w-xl rounded-3xl border border-border bg-surface/80 p-7 backdrop-blur sm:p-8">
-              <p className="whitespace-pre-line text-muted">{service.description}</p>
+            <div className="mt-8 max-w-xl">
+              <p className="whitespace-pre-line text-lg text-foreground/90">{service.description}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href={`/contact?formation=${encodeURIComponent(service.title)}`}
@@ -94,15 +94,13 @@ export default async function SecteurPage(
       <section className="px-6 pb-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <div className="rounded-3xl border border-border bg-surface p-8 sm:p-12">
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-                {pages.sector.whyEyebrow}
-              </p>
-              <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
-                {service.why.title}
-              </h2>
-              <p className="mt-5 max-w-3xl whitespace-pre-line text-muted">{service.why.text}</p>
-            </div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+              {pages.sector.whyEyebrow}
+            </p>
+            <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
+              {service.why.title}
+            </h2>
+            <p className="mt-5 max-w-3xl whitespace-pre-line text-muted">{service.why.text}</p>
           </Reveal>
         </div>
       </section>
@@ -130,7 +128,7 @@ export default async function SecteurPage(
                       </Link>
                     </h3>
 
-                    <p className="mt-3 whitespace-pre-line rounded-xl bg-surface-2 px-4 py-3 text-sm text-muted">
+                    <p className="mt-3 whitespace-pre-line text-sm text-muted">
                       {training.intro}
                     </p>
 
