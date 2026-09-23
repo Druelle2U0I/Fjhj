@@ -59,32 +59,36 @@ h4 {
    into the rest of the page. */
 .hero-aurora {
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent);
-  mask-image: linear-gradient(to bottom, #000 65%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent);
+  mask-image: linear-gradient(to bottom, #000 80%, transparent);
 }
 
 .hero-aurora__veil {
   position: absolute;
   inset: -30%;
-  opacity: 0.55;
-  filter: blur(60px);
+  opacity: 0.9;
+  filter: blur(50px);
   background:
-    radial-gradient(40% 35% at 25% 30%, rgba(80, 60, 190, 0.75), transparent 70%),
-    radial-gradient(35% 30% at 75% 25%, rgba(255, 249, 199, 0.22), transparent 70%),
-    radial-gradient(45% 40% at 60% 80%, rgba(40, 20, 120, 0.9), transparent 70%);
-  animation: hero-aurora 40s ease-in-out infinite alternate;
+    radial-gradient(38% 34% at 22% 28%, rgba(110, 80, 240, 0.85), transparent 70%),
+    radial-gradient(30% 28% at 78% 22%, rgba(255, 249, 199, 0.35), transparent 70%),
+    radial-gradient(34% 30% at 50% 55%, rgba(60, 140, 220, 0.35), transparent 70%),
+    radial-gradient(45% 40% at 65% 85%, rgba(70, 30, 170, 0.95), transparent 70%);
+  animation: hero-aurora 20s ease-in-out infinite alternate;
   will-change: transform;
 }
 
 @keyframes hero-aurora {
   0% {
-    transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1) translate(0, 0);
   }
-  50% {
-    transform: rotate(12deg) scale(1.1) translateX(4%);
+  33% {
+    transform: rotate(20deg) scale(1.15) translate(6%, -3%);
+  }
+  66% {
+    transform: rotate(-12deg) scale(1.05) translate(-5%, 4%);
   }
   100% {
-    transform: rotate(-8deg) scale(1.05) translateY(-4%);
+    transform: rotate(8deg) scale(1.2) translate(3%, 5%);
   }
 }
 
