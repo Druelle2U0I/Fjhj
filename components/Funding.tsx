@@ -1,3 +1,4 @@
+import FundingSteps from "@/components/FundingSteps";
 import Reveal from "@/components/Reveal";
 import { funding, legal, pages, qualiopiText } from "@/lib/data";
 
@@ -25,6 +26,8 @@ export default function Funding() {
             </Reveal>
           ))}
         </div>
+
+        <FundingSteps />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {qualiopiText() && (

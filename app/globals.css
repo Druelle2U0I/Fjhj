@@ -242,3 +242,87 @@ h4 {
   background: color-mix(in srgb, var(--background) var(--footer-veil, 68%), transparent);
 }
 
+/* Curseur du processus de financement (components/FundingSteps.tsx).
+   Chrome/Safari/Edge n'ont pas de pseudo-élément de remplissage : on
+   dessine la portion parcourue avec un dégradé sur l'élément lui-même,
+   piloté par --funding-slider-progress. Firefox ignore ce dégradé pour
+   le rail et utilise son propre ::-moz-range-progress à la place. */
+.funding-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0%,
+    var(--accent) var(--funding-slider-progress, 0%),
+    var(--border) var(--funding-slider-progress, 0%),
+    var(--border) 100%
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.funding-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 4px solid var(--surface);
+  box-shadow:
+    0 0 0 2px var(--accent),
+    0 8px 18px -6px rgba(255, 249, 199, 0.55);
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.funding-slider::-webkit-slider-thumb:hover,
+.funding-slider::-webkit-slider-thumb:active {
+  transform: scale(1.15);
+}
+
+.funding-slider::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--border);
+}
+
+.funding-slider::-moz-range-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.funding-slider::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 4px solid var(--surface);
+  box-shadow:
+    0 0 0 2px var(--accent),
+    0 8px 18px -6px rgba(255, 249, 199, 0.55);
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.funding-slider::-moz-range-thumb:hover,
+.funding-slider::-moz-range-thumb:active {
+  transform: scale(1.15);
+}
+
+.funding-slider:focus-visible::-webkit-slider-thumb {
+  box-shadow:
+    0 0 0 3px var(--surface),
+    0 0 0 5px var(--accent);
+}
+
+.funding-slider:focus-visible::-moz-range-thumb {
+  box-shadow:
+    0 0 0 3px var(--surface),
+    0 0 0 5px var(--accent);
+}
+

@@ -145,7 +145,13 @@ export type SiteContent = {
   pillars: { title: string; text: string }[];
   sectors: Sector[];
   topTrainings: { title: string; duration: string; format: string }[];
-  funding: { intro: string; points: { title: string; text: string }[] };
+  funding: {
+    intro: string;
+    points: { title: string; text: string }[];
+    stepsTitle?: string;
+    stepsText?: string;
+    steps?: { title: string; text: string }[];
+  };
   accessibility: { text: string; referent: string };
   team: { name: string; role: string; email: string; bio: string }[];
   home: {
