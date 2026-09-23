@@ -45,6 +45,15 @@ section[id] {
   scroll-margin-top: 6.5rem;
 }
 
+/* Texte justifié partout. Sans effet sur les lignes uniques (un
+   paragraphe d'une ligne ne s'étire jamais), donc ne touche que les
+   textes de plusieurs lignes. La césure automatique évite les grands
+   blancs disgracieux dans les colonnes étroites du site. */
+p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 h1,
 h2,
 h3 {
