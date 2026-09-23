@@ -7,6 +7,7 @@ import {
   Manrope,
   Fraunces,
 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
@@ -148,6 +149,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteChrome header={<Header />} footer={<Footer />}>
           {children}
         </SiteChrome>
+        <Analytics />
       </body>
     </html>
   );
