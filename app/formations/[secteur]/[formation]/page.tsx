@@ -135,6 +135,44 @@ export default async function FormationPage(
         </div>
       </section>
 
+      {/* Déroulement : sort volontairement de la colonne étroite pour
+          occuper toute la largeur de la page. Reste vertical, mais avec
+          de grands numéros et une révélation étape par étape (progressive)
+          au lieu d'un bloc statique. */}
+      {training.programme.length > 0 && (
+        <section className="px-6 pb-16">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                {pages.training.programmeTitle}
+              </h2>
+            </Reveal>
+
+            <div className="group/programme mt-10 divide-y divide-border border-t border-border">
+              {training.programme.map((module, i) => (
+                <Reveal key={module.title} delay={i * 0.1} className="py-8 first:pt-0">
+                  {/* L'opacité de survol vit sur ce div interne, séparé de
+                      celui que Reveal anime : Framer Motion laisse un style
+                      inline opacity:1 après l'entrée, qui écraserait sinon
+                      cette classe. */}
+                  <div className="grid gap-3 opacity-100 transition-opacity duration-300 hover:!opacity-100 group-hover/programme:opacity-40 sm:grid-cols-[120px_1fr] sm:gap-8">
+                    <span className="text-4xl font-semibold text-accent sm:text-5xl">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-semibold sm:text-xl">
+                        {module.title}
+                      </h3>
+                      <p className="mt-3 max-w-2xl text-muted">{module.text}</p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Contenu + encart latéral */}
       <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
@@ -145,91 +183,84 @@ export default async function FormationPage(
               ))}
             </Reveal>
 
-            {training.programme.length > 0 && (
+            {/* À partir d'ici, le rythme change volontairement : plus la
+                même grille répétée, chaque information prend une forme
+                différente selon son importance. */}
+            <div className="border-t border-border pt-10">
+              {/* Public concerné : mis en avant, pleine largeur, plus grand */}
               <Reveal>
-                <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                  {pages.training.programmeTitle}
-                </h2>
-                <ol className="mt-6 grid gap-4">
-                  {training.programme.map((module, i) => (
-                    <li
-                      key={module.title}
-                      className="dyn-card rounded-2xl border border-border bg-surface p-6"
-                    >
-                      <div className="flex items-baseline gap-4">
-                        <span className="text-sm font-semibold text-accent">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <h3 className="text-base font-semibold">
-                          {module.title}
-                        </h3>
-                      </div>
-                      <p className="mt-3 text-sm text-muted">{module.text}</p>
-                    </li>
-                  ))}
-                </ol>
-              </Reveal>
-            )}
-
-            <Reveal className="grid gap-6 sm:grid-cols-2">
-              <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {pages.training.audienceTitle}
                 </p>
-                <p className="mt-3 text-sm text-muted">{training.audience}</p>
-              </div>
-              <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
+                <p className="mt-3 max-w-2xl text-lg text-foreground/90">
+                  {training.audience}
+                </p>
+              </Reveal>
+
+              {/* Financement : callout à barre d'accent, pas une grille */}
+              <Reveal delay={0.05} className="mt-10 max-w-2xl border-l-4 border-accent pl-6">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {pages.training.fundingTitle}
                 </p>
-                <p className="mt-3 text-sm text-muted">{training.funding}</p>
-              </div>
-              {trainingInfo.methods && (
-                <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                    {pages.training.methodsTitle}
-                  </p>
-                  <p className="mt-3 text-sm text-muted">{trainingInfo.methods}</p>
-                </div>
+                <p className="mt-2 text-sm text-muted">{training.funding}</p>
+              </Reveal>
+
+              {/* Méthodes + évaluation : détails plus discrets, en paire */}
+              {(trainingInfo.methods || trainingInfo.evaluation) && (
+                <Reveal delay={0.1} className="mt-10 grid gap-6 text-sm sm:grid-cols-2">
+                  {trainingInfo.methods && (
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+                        {pages.training.methodsTitle}
+                      </p>
+                      <p className="mt-2 text-muted">{trainingInfo.methods}</p>
+                    </div>
+                  )}
+                  {trainingInfo.evaluation && (
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+                        {pages.training.evaluationTitle}
+                      </p>
+                      <p className="mt-2 text-muted">{trainingInfo.evaluation}</p>
+                    </div>
+                  )}
+                </Reveal>
               )}
-              {trainingInfo.evaluation && (
-                <div className="dyn-card rounded-2xl border border-border bg-surface p-6">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                    {pages.training.evaluationTitle}
-                  </p>
-                  <p className="mt-3 text-sm text-muted">{trainingInfo.evaluation}</p>
-                </div>
-              )}
-              <div className="dyn-card rounded-2xl border border-border bg-surface p-6 sm:col-span-2">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+
+              {/* Accessibilité : simple note en bas, la plus discrète */}
+              <Reveal delay={0.15} className="mt-10 max-w-2xl text-xs text-muted">
+                <p className="font-semibold uppercase tracking-wide text-accent">
                   {pages.training.accessibilityTitle}
                 </p>
-                <p className="mt-3 text-sm text-muted">
+                <p className="mt-2">
                   {accessibility.text} Contact : {accessibility.referent},{" "}
                   <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent">
                     {company.email}
                   </a>
                   .
                 </p>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
 
             {otherTrainings.length > 0 && (
               <Reveal>
                 <h2 className="text-lg font-semibold">
                   Autres formations en {service.title.toLowerCase()}
                 </h2>
-                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                <div className="mt-4 divide-y divide-border border-t border-border">
                   {otherTrainings.map((t) => (
                     <Link
                       key={t.slug}
                       href={`/formations/${service.slug}/${t.slug}`}
-                      className="dyn-card rounded-xl border border-border bg-surface-2 p-4"
+                      className="flex items-center justify-between gap-4 py-4 transition-colors hover:text-accent"
                     >
-                      <p className="font-medium">{t.title}</p>
-                      <p className="mt-1 text-sm text-muted">
-                        {t.duration} · {t.format}
-                      </p>
+                      <div>
+                        <p className="font-medium">{t.title}</p>
+                        <p className="mt-1 text-sm text-muted">
+                          {t.duration} · {t.format}
+                        </p>
+                      </div>
+                      <span aria-hidden="true">→</span>
                     </Link>
                   ))}
                 </div>
