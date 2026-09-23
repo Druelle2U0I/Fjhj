@@ -97,7 +97,8 @@ export default function CentrePage() {
               Nos domaines
             </span>
             <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-              9 domaines de formation, du terrain jusqu&apos;au bureau d&apos;études
+              {services.length} domaines de formation, du terrain jusqu&apos;au bureau
+              d&apos;études
             </h2>
           </Reveal>
 

@@ -3,11 +3,11 @@
     "name": "ENMA Formation",
     "tagline": "Vos équipes méritent le meilleur. \nNous leur donnons les moyens d'y arriver.",
     "description": "Formations sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention des risques, management, qualité : ENMA Formation couvre l'ensemble de vos besoins en formation professionnelle. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO.",
-    "about": "Organisme de formation certifié Qualiopi, implanté dans les Hauts-de-France. Formations en intra-entreprise et en inter-entreprises, partout en Aisne et dans la Somme.",
+    "about": "Organisme de formation certifié Qualiopi, implanté à Wingles (Pas-de-Calais). Formations en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France : Nord, Pas-de-Calais, Aisne, Somme et Oise.",
     "email": "maxence@enma-formation.com",
     "phone": "07 69 35 55 19",
     "address": "24 rue Colmar, 62410 Wingles",
-    "serviceArea": "Hauts-de-France — intervention en Aisne et dans la Somme"
+    "serviceArea": "Hauts-de-France — Nord, Pas-de-Calais, Aisne, Somme et Oise"
   },
   "legal": {
     "activityDeclaration": "32 62 04507 62",
@@ -19,19 +19,19 @@
     "siret": "105 455 620 00010",
     "rcs": "105 455 620 R.C.S. Arras",
     "vat": "FR14105455620",
-    "publicationDirector": "Maxence Druelle",
+    "publicationDirector": "Maxence Druelle Fourniez",
     "activityRegion": "Hauts-de-France",
     "qualiopiCategory": "actions de formation",
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
-    "accessDelay": "2 à 4 semaines après validation du devis et, le cas échéant, de l'accord de financement",
+    "accessDelay": "Inter-entreprises : 10 jours ouvrés après l'accord du financeur. Intra-entreprise ou sur mesure : planning prévisionnel établi dans notre proposition, selon vos contraintes.",
     "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (taux de satisfaction des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras"
   },
   "stats": [
     {
-      "value": "35",
+      "value": "32",
       "label": "formations au catalogue"
     },
     {
@@ -39,7 +39,7 @@
       "label": "départements couverts"
     },
     {
-      "value": "9",
+      "value": "8",
       "label": "domaines de formation"
     },
     {
@@ -1371,8 +1371,8 @@
         "id": "formations",
         "visible": true,
         "eyebrow": "Nos formations",
-        "title": "9 domaines de formation, 35 parcours, un organisme certifié Qualiopi",
-        "text": "Toutes nos formations sont finançables OPCO et proposées en intra-entreprise, partout en Hauts-de-France."
+        "title": "8 domaines de formation, 32 parcours, un organisme certifié Qualiopi",
+        "text": "Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France."
       },
       {
         "id": "about",
@@ -1452,7 +1452,7 @@
   "footerCta": {
     "enabled": true,
     "eyebrow": "Recevez notre catalogue",
-    "title": "Le catalogue complet de nos 35 formations",
+    "title": "Le catalogue complet de nos 32 formations",
     "text": "Laissez votre adresse e-mail : nous vous envoyons le catalogue et nous restons disponibles pour construire un parcours adapté à vos équipes.",
     "buttonLabel": "Recevoir"
   },

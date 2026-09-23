@@ -5,10 +5,14 @@ import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
 import { services } from "@/lib/data";
 
+const trainingCount = services.reduce((n, s) => n + s.trainings.length, 0);
+const headline = `${services.length} domaines de formation, ${trainingCount} parcours`;
+
 export const metadata: Metadata = {
   title: "Nos formations",
-  description:
-    "9 domaines de formation, 35 parcours certifiés Qualiopi : sécurité incendie, secourisme, habilitation électrique, CACES, travail en hauteur, prévention des risques, management, photovoltaïque, collectivités.",
+  description: `${headline} proposés par un organisme certifié Qualiopi : ${services
+    .map((s) => s.title.toLowerCase())
+    .join(", ")}.`,
 };
 
 export default function FormationsPage() {
@@ -16,8 +20,8 @@ export default function FormationsPage() {
     <>
       <PageHero
         eyebrow="Nos formations"
-        title="9 domaines de formation, 35 parcours certifiés Qualiopi"
-        description="Toutes nos formations sont finançables OPCO et proposées en intra-entreprise ou en inter-entreprises, partout en Hauts-de-France. Choisissez un domaine pour découvrir le détail des formations."
+        title={headline}
+        description="Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise ou en inter-entreprises dans toute la région Hauts-de-France. Choisissez un domaine pour découvrir le détail des formations."
       />
 
       <section className="px-6 pb-24">
