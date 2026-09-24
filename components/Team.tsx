@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import StatsPanel from "@/components/StatsPanel";
 import Visual from "@/components/Visual";
 import { pages, team } from "@/lib/data";
 
@@ -17,29 +18,35 @@ export default function Team() {
     .filter((paragraph) => paragraph.trim());
 
   return (
-    <section id="equipe" className="px-6 pb-20 pt-24 sm:pb-24">
-      <div className="mx-auto max-w-6xl">
-        <Reveal>
-          <span className="text-sm font-semibold uppercase tracking-wide text-accent">
-            {pages.team.eyebrow}
-          </span>
-          <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-            {pages.team.title}
-          </h1>
-          {paragraphs.length > 0 && (
-            <div className="mt-6 grid max-w-2xl gap-4 text-lg text-muted">
-              {paragraphs.map((paragraph, i) => (
-                <p key={i} className="whitespace-pre-line">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          )}
-        </Reveal>
+    <div id="equipe">
+      <section className="px-6 pb-12 pt-24">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <span className="text-sm font-semibold text-muted">
+              {pages.team.eyebrow}
+            </span>
+            <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+              {pages.team.title}
+            </h1>
+            {paragraphs.length > 0 && (
+              <div className="mt-6 grid max-w-2xl gap-4 text-lg text-muted">
+                {paragraphs.map((paragraph, i) => (
+                  <p key={i} className="whitespace-pre-line">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            )}
+          </div>
 
-        {/* Membres côte à côte, chacun avec sa photo et son texte au trait
-            d'accent, comme la présentation d'origine. */}
-        <div className="mt-16 grid gap-14 lg:grid-cols-2 lg:gap-10">
+          <StatsPanel />
+        </div>
+      </section>
+
+      {/* Les membres côte à côte : le zigzag plein écran laissait beaucoup
+          de vide dès qu'il n'y a que 2 personnes dans l'équipe. */}
+      <section className="px-6 pb-16 pt-4">
+        <div className="mx-auto grid max-w-5xl gap-14 sm:grid-cols-2 sm:gap-10">
           {team.map((member, i) => (
             <Reveal
               key={member.name}
@@ -51,7 +58,7 @@ export default function Team() {
                   <Visual
                     src={member.photo}
                     alt={member.photoAlt || member.name}
-                    sizes="(min-width: 640px) 192px, 100vw"
+                    sizes="220px"
                     className="dyn-photo"
                   />
                 ) : (
@@ -60,7 +67,7 @@ export default function Team() {
                   </div>
                 )}
               </div>
-              <div className="border-l-4 border-accent pl-6">
+              <div>
                 <h2 className="text-2xl font-semibold">{member.name}</h2>
                 <p className="mt-1 font-medium text-accent">{member.role}</p>
                 <p className="mt-4 max-w-md whitespace-pre-line text-muted">{member.bio}</p>
@@ -74,7 +81,7 @@ export default function Team() {
             </Reveal>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

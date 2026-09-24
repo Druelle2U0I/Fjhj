@@ -15,6 +15,46 @@ const EASE = [0.45, 0, 0.15, 1] as const;
 const HOVER_DELAY = 150;
 
 export default function SectorAccordion({ services }: { services: Service[] }) {
+  return (
+    <>
+      {/* Mobile/tablette : les bandes verticales de l'accordéon deviennent
+          illisibles une fois aplaties à l'horizontale (pas de titre visible).
+          Une simple liste, toujours entièrement lisible, la remplace. */}
+      <div className="grid gap-3 lg:hidden">
+        {services.map((service) => (
+          <Link
+            key={service.slug}
+            href={`/formations/${service.slug}`}
+            className="dyn-card group flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-surface p-3"
+          >
+            <div className="dyn-photo-wrap relative h-20 w-20 shrink-0 overflow-hidden rounded-lg">
+              <Visual
+                src={service.image}
+                alt=""
+                sizes="80px"
+                className="dyn-photo"
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="font-semibold">{service.title}</p>
+              <p className="mt-1 line-clamp-2 text-sm text-muted">{service.description}</p>
+            </div>
+            <span aria-hidden="true" className="shrink-0 text-muted transition-colors group-hover:text-accent">
+              →
+            </span>
+          </Link>
+        ))}
+      </div>
+
+      {/* Bureau : accordéon interactif, une bande active à la fois. */}
+      <div className="hidden lg:flex lg:h-[460px] lg:flex-row lg:gap-3">
+        <DesktopAccordion services={services} />
+      </div>
+    </>
+  );
+}
+
+function DesktopAccordion({ services }: { services: Service[] }) {
   const [active, setActive] = useState(0);
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -30,26 +70,6 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
 
   return (
     <>
-      {/* Téléphone et tablette : grille simple de vignettes avec titre, plus
-          lisible que des onglets devenus de fines bandes. */}
-      <ul className="grid grid-cols-2 gap-3 lg:hidden">
-        {services.map((service) => (
-          <li key={service.slug}>
-            <Link
-              href={`/formations/${service.slug}`}
-              className="group relative flex aspect-[4/3] items-end overflow-hidden rounded-lg border border-border"
-            >
-              <Visual src={service.image} alt="" sizes="50vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
-              <span className="relative p-3 text-sm font-semibold leading-snug text-white">
-                {service.title}
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
-    <div className="hidden h-[460px] flex-row gap-3 lg:flex">
       {services.map((service, i) => {
         const isActive = i === active;
         return (
@@ -117,7 +137,6 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
           </motion.div>
         );
       })}
-    </div>
     </>
   );
 }

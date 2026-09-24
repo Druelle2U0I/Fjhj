@@ -133,7 +133,7 @@ export default async function FormationPage(
 
           {/* Sur grand écran, la colonne de droite reste libre : l'encart
               récapitulatif remonte à cet endroit, à côté du titre. */}
-          <Reveal className="lg:pr-[400px]">
+          <div className="lg:pr-[400px]">
             <div className="flex flex-wrap items-center gap-3">
               <p className="hidden text-sm font-semibold text-accent sm:block">
                 {service.title}
@@ -143,7 +143,7 @@ export default async function FormationPage(
               {training.title}
             </h1>
             <p className="mt-3 max-w-2xl whitespace-pre-line text-base text-muted sm:mt-5 sm:text-lg">{training.intro}</p>
-          </Reveal>
+          </div>
         </div>
       </section>
 

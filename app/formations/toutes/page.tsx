@@ -32,6 +32,7 @@ export default function AllTrainingsPage() {
         eyebrow={pages.allTrainings.eyebrow}
         title={fillCounts(pages.allTrainings.title)}
         description={fillCounts(pages.allTrainings.text)}
+        aside={<KeyFacts />}
         breadcrumb={
           <>
             <Link
@@ -44,7 +45,6 @@ export default function AllTrainingsPage() {
             <span>{pages.allTrainings.eyebrow}</span>
           </>
         }
-        aside={<KeyFacts />}
       />
 
       <section className="page-band px-6 py-20">

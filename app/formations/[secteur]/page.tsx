@@ -109,34 +109,30 @@ export default async function SecteurPage(
             <span>{service.title}</span>
           </div>
 
-          <Reveal>
-            <p className="text-sm font-semibold text-accent">
-              {count} formation{count > 1 ? "s" : ""}
-            </p>
-            <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:mt-3 sm:text-5xl">
-              {service.title}
-            </h1>
-          </Reveal>
+          <p className="text-sm font-semibold text-accent">
+            {count} formation{count > 1 ? "s" : ""}
+          </p>
+          <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:mt-3 sm:text-5xl">
+            {service.title}
+          </h1>
 
-          <Reveal delay={0.1}>
-            <div className="mt-8 max-w-xl">
-              <p className="line-clamp-4 whitespace-pre-line text-base text-foreground/90 sm:line-clamp-none sm:text-lg">{service.description}</p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href={`/contact?formation=${encodeURIComponent(service.title)}`}
-                  className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 text-accent-foreground transition-transform hover:scale-105"
-                >
-                  {pages.sector.quoteMainButton}
-                </Link>
-                <a
-                  href="#catalogue"
-                  className="rounded-lg border border-border px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 transition-colors hover:border-accent hover:text-accent"
-                >
-                  {pages.sector.catalogueButton}
-                </a>
-              </div>
+          <div className="mt-8 max-w-xl">
+            <p className="line-clamp-4 whitespace-pre-line text-base text-foreground/90 sm:line-clamp-none sm:text-lg">{service.description}</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link
+                href={`/contact?formation=${encodeURIComponent(service.title)}`}
+                className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 text-accent-foreground transition-transform hover:scale-105"
+              >
+                {pages.sector.quoteMainButton}
+              </Link>
+              <a
+                href="#catalogue"
+                className="rounded-lg border border-border px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 transition-colors hover:border-accent hover:text-accent"
+              >
+                {pages.sector.catalogueButton}
+              </a>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
@@ -251,10 +247,9 @@ export default async function SecteurPage(
                       {training.intro}
                     </p>
 
-                    <p className="mt-4 text-sm font-medium text-accent">
+                    <p className="mt-auto pt-4 text-sm font-medium text-accent">
                       {training.duration}
                     </p>
-
                   </div>
 
                   <Link

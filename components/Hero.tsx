@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import HeroCarousel from "@/components/HeroCarousel";
 import { company, home, pages } from "@/lib/data";
@@ -13,21 +11,15 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
-          <h1
-            className="max-w-xl whitespace-pre-line text-4xl font-semibold tracking-tight sm:text-5xl"
-          >
+          <h1 className="max-w-xl whitespace-pre-line text-4xl font-semibold tracking-tight sm:text-5xl">
             {company.tagline}
           </h1>
 
-          <p
-            className="mt-4 line-clamp-4 max-w-xl whitespace-pre-line text-base text-muted sm:mt-6 sm:line-clamp-none sm:text-lg"
-          >
+          <p className="mt-4 line-clamp-4 max-w-xl whitespace-pre-line text-base text-muted sm:mt-6 sm:line-clamp-none sm:text-lg">
             {company.description}
           </p>
 
-          <div
-            className="mt-8 flex flex-wrap gap-4"
-          >
+          <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/formations"
               className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
