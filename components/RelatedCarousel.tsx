@@ -8,41 +8,41 @@ import Visual from "@/components/Visual";
 export type RelatedItem = {
   href: string;
   title: string;
+  intro: string;
   duration: string;
-  format: string;
   image?: string;
   imageAlt?: string;
 };
 
-// Nombre de cartes visibles selon la largeur d'écran : 1, 2 ou 3.
+// Nombre de cartes visibles selon la largeur d'écran. La partie décimale
+// laisse dépasser la carte suivante, pour montrer qu'on peut faire défiler.
 function useVisibleCount() {
   return useSyncExternalStore(
     (onChange) => {
       window.addEventListener("resize", onChange);
       return () => window.removeEventListener("resize", onChange);
     },
-    () => (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 640 ? 2 : 1),
-    () => 3,
+    () => (window.innerWidth >= 1024 ? 3.3 : window.innerWidth >= 640 ? 2.2 : 1.15),
+    () => 3.3,
   );
 }
 
-const AUTOPLAY_MS = 5000;
-
-// Carrousel des autres formations du domaine, dans un encart jaune
-// translucide. Les cartes glissent d'un bloc avec une animation amortie
-// (flèches, points, glisser au doigt ou à la souris) et défilent seules
-// toutes les 5 secondes, en pause au survol.
+// Carrousel des autres formations du domaine, en bas des fiches formation :
+// cartes avec photo, titre, courte description et durée, flèches sur les
+// côtés, glisser au doigt ou à la souris, animation amortie.
 export default function RelatedCarousel({
-  title,
+  titleStart,
+  titleHighlight,
   items,
 }: {
-  title: string;
+  titleStart: string;
+  titleHighlight: string;
   items: RelatedItem[];
 }) {
-  const visible = Math.min(useVisibleCount(), items.length);
-  const maxIndex = Math.max(0, items.length - visible);
+  const visible = useVisibleCount();
+  const overflow = Math.max(0, items.length - visible);
+  const maxIndex = Math.ceil(overflow);
   const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
   const reduce = useReducedMotion();
 
   const viewport = useRef<HTMLDivElement>(null);
@@ -58,141 +58,118 @@ export default function RelatedCarousel({
     return () => observer.disconnect();
   }, []);
 
-  const current = Math.min(index, maxIndex);
   const step = width / visible;
+  const current = Math.min(index, maxIndex);
+  // La dernière position cale la dernière carte sur le bord droit.
+  const target = -Math.min(current * step, overflow * step);
 
-  // Glisse vers la carte courante avec un ressort doux.
   useEffect(() => {
-    const controls = animate(x, -current * step, reduce
-      ? { duration: 0 }
-      : { type: "spring", stiffness: 120, damping: 24, mass: 0.9 });
+    const controls = animate(
+      x,
+      target,
+      reduce ? { duration: 0 } : { type: "spring", stiffness: 110, damping: 22, mass: 0.9 },
+    );
     return () => controls.stop();
-  }, [current, step, x, reduce]);
+  }, [target, x, reduce]);
 
   const go = useCallback(
-    (delta: number) =>
-      setIndex((i) => {
-        const next = Math.min(i, maxIndex) + delta;
-        if (next > maxIndex) return 0;
-        if (next < 0) return maxIndex;
-        return next;
-      }),
+    (delta: number) => setIndex((i) => Math.max(0, Math.min(maxIndex, Math.min(i, maxIndex) + delta))),
     [maxIndex],
   );
-
-  useEffect(() => {
-    if (paused || reduce || maxIndex === 0) return;
-    const timer = setInterval(() => go(1), AUTOPLAY_MS);
-    return () => clearInterval(timer);
-  }, [paused, reduce, maxIndex, go]);
 
   const onDragEnd = (_: unknown, info: PanInfo) => {
     const threshold = step * 0.2;
     if (info.offset.x < -threshold || info.velocity.x < -400) go(1);
     else if (info.offset.x > threshold || info.velocity.x > 400) go(-1);
-    else animate(x, -current * step, { type: "spring", stiffness: 160, damping: 26 });
-    // Évite qu'un glisser se termine par l'ouverture d'une fiche.
+    else animate(x, target, { type: "spring", stiffness: 160, damping: 26 });
     setTimeout(() => (dragged.current = false), 0);
   };
 
   if (items.length === 0) return null;
 
-  const arrow =
-    "flex h-11 w-11 items-center justify-center rounded-full border border-accent/30 bg-background/60 text-lg text-foreground backdrop-blur transition-colors hover:border-accent hover:text-accent";
+  const arrow = (disabled: boolean) =>
+    `absolute top-[38%] z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-background/90 text-xl shadow-lg backdrop-blur transition-all hover:border-accent hover:text-accent ${
+      disabled ? "pointer-events-none opacity-0" : "opacity-100"
+    }`;
 
   return (
-    // Encart jaune translucide aligné sur la largeur du contenu : il
-    // regroupe tout le carrousel et marque la fin de la fiche.
-    <section className="px-6 pb-24">
-      <div
-        className="related-band mx-auto max-w-6xl rounded-3xl border p-6 sm:p-10"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onFocus={() => setPaused(true)}
-        onBlur={() => setPaused(false)}
-      >
-        <div className="flex items-end justify-between gap-4">
-          <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">{title}</h2>
-          {maxIndex > 0 && (
-            <div className="flex shrink-0 gap-2">
-              <button type="button" aria-label="Formations précédentes" onClick={() => go(-1)} className={arrow}>
-                ‹
-              </button>
-              <button type="button" aria-label="Formations suivantes" onClick={() => go(1)} className={arrow}>
-                ›
-              </button>
-            </div>
-          )}
-        </div>
+    <div>
+      <h2 className="max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
+        {titleStart} <span className="text-accent">{titleHighlight}</span>
+      </h2>
 
-        {/* Les marges négatives compensent le padding des cartes pour que
-            la première et la dernière soient alignées sur le titre. */}
-        <div ref={viewport} className="-mx-2.5 mt-8 overflow-hidden">
+      <div className="relative mt-10">
+        <div ref={viewport} className="overflow-hidden">
           <motion.ul
             style={{ x }}
             drag={maxIndex > 0 ? "x" : false}
-            dragConstraints={{ left: -maxIndex * step, right: 0 }}
+            dragConstraints={{ left: -overflow * step, right: 0 }}
             dragElastic={0.12}
             onDragStart={() => (dragged.current = true)}
             onDragEnd={onDragEnd}
-            className="flex cursor-grab touch-pan-y active:cursor-grabbing"
+            className="-mx-2.5 flex cursor-grab touch-pan-y active:cursor-grabbing"
           >
-            {items.map((item, i) => (
-              <li
-                key={item.href}
-                className="shrink-0 px-2.5"
-                style={{ width: step || `${100 / visible}%` }}
-                aria-hidden={i < current || i >= current + visible}
-              >
-                <Link
-                  href={item.href}
-                  draggable={false}
-                  tabIndex={i < current || i >= current + visible ? -1 : undefined}
-                  onClick={(e) => dragged.current && e.preventDefault()}
-                  className="group flex h-full select-none flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-accent"
-                >
-                  <div className="dyn-photo-wrap pointer-events-none relative aspect-[16/10] overflow-hidden">
+            {items.map((item) => (
+              <li key={item.href} className="shrink-0 px-2.5" style={{ width: step || `${100 / visible}%` }}>
+                <article className="flex h-full select-none flex-col rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-accent/60">
+                  <div className="pointer-events-none relative aspect-[16/9] overflow-hidden rounded-xl">
                     <Visual
                       src={item.image}
                       alt={item.imageAlt ?? item.title}
-                      sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
-                      className="dyn-photo"
+                      sizes="(min-width: 1024px) 340px, (min-width: 640px) 45vw, 85vw"
                     />
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <p className="font-semibold leading-snug">{item.title}</p>
-                    <p className="mt-auto flex items-center justify-between gap-3 pt-4 text-sm text-muted">
-                      <span>
-                        <span className="font-medium text-accent">{item.duration}</span> · {item.format}
-                      </span>
-                      <span aria-hidden="true" className="text-accent transition-transform group-hover:translate-x-1">
-                        →
-                      </span>
-                    </p>
+                  {/* Trait de couleur sous la photo */}
+                  <div className="mt-2 h-1.5 rounded-full bg-accent/70" />
+
+                  <h3 className="mt-5 text-lg font-semibold leading-snug text-accent">{item.title}</h3>
+                  <p className="mt-3 line-clamp-3 text-sm text-muted">{item.intro}</p>
+
+                  <p className="mt-4 flex items-center gap-2 text-sm text-foreground/90">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" strokeWidth={2}>
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M12 7v5l3 2" strokeLinecap="round" />
+                    </svg>
+                    {item.duration}
+                  </p>
+
+                  <div className="mt-auto pt-5">
+                    <Link
+                      href={item.href}
+                      draggable={false}
+                      onClick={(e) => dragged.current && e.preventDefault()}
+                      className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105"
+                    >
+                      Voir la formation <span aria-hidden="true">→</span>
+                    </Link>
                   </div>
-                </Link>
+                </article>
               </li>
             ))}
           </motion.ul>
         </div>
 
         {maxIndex > 0 && (
-          <div className="mt-6 flex justify-center gap-2">
-            {Array.from({ length: maxIndex + 1 }, (_, i) => (
-              <button
-                key={i}
-                type="button"
-                aria-label={`Aller au groupe ${i + 1}`}
-                aria-current={i === current}
-                onClick={() => setIndex(i)}
-                className={`h-1.5 rounded-full transition-all duration-500 ${
-                  i === current ? "w-6 bg-accent" : "w-2.5 bg-accent/30 hover:bg-accent/60"
-                }`}
-              />
-            ))}
-          </div>
+          <>
+            <button
+              type="button"
+              aria-label="Formations précédentes"
+              onClick={() => go(-1)}
+              className={`${arrow(current === 0)} -left-3 sm:-left-5`}
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              aria-label="Formations suivantes"
+              onClick={() => go(1)}
+              className={`${arrow(current === maxIndex)} -right-3 sm:-right-5`}
+            >
+              ›
+            </button>
+          </>
         )}
       </div>
-    </section>
+    </div>
   );
 }

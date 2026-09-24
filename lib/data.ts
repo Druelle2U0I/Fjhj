@@ -117,8 +117,8 @@ export const THEME_DEFAULTS = {
   footerVeil: 68,
   sectionOpacity: 70,
   panelShadowColor: "#fff9c7",
-  bandColor: "#ffd23f",
-  bandOpacity: 14,
+  bandColor: "#2a2266",
+  bandOpacity: 85,
 } as const;
 
 export type SiteContent = {

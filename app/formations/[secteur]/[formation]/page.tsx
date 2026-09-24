@@ -148,7 +148,7 @@ export default async function FormationPage(
       {/* Déroulement + contenu + encart latéral : un seul bloc en deux
           colonnes, pour que l'encart de contact soit collé (sticky) dès le
           programme au lieu de n'apparaître qu'après le mur de texte. */}
-      <section className="px-6 pb-24">
+      <section className="overflow-x-clip px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
           <div className="grid gap-12">
             {/* Déroulement : de grands numéros et une révélation étape par
@@ -194,7 +194,9 @@ export default async function FormationPage(
             {/* À partir d'ici, le rythme change volontairement : plus la
                 même grille répétée, chaque information prend une forme
                 différente selon son importance. */}
-            <div className="border-t border-border pt-10">
+            {/* Bande de couleur pleine largeur derrière les informations
+                pratiques, pour séparer cette partie du programme. */}
+            <div className="bleed-band py-12">
               {/* Public concerné : mis en avant, pleine largeur, plus grand */}
               <Reveal>
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
@@ -299,17 +301,22 @@ export default async function FormationPage(
       </section>
 
       {otherTrainings.length > 0 && (
-        <RelatedCarousel
-          title={`Autres formations — ${service.title}`}
-          items={otherTrainings.map((t) => ({
-            href: `/formations/${service.slug}/${t.slug}`,
-            title: t.title,
-            duration: t.duration,
-            format: t.format,
-            image: t.image ?? service.image,
-            imageAlt: t.imageAlt,
-          }))}
-        />
+        <section className="page-band px-6 py-20">
+          <div className="mx-auto max-w-6xl">
+            <RelatedCarousel
+              titleStart="Nos autres formations en"
+              titleHighlight={service.title}
+              items={otherTrainings.map((t) => ({
+                href: `/formations/${service.slug}/${t.slug}`,
+                title: t.title,
+                intro: t.intro,
+                duration: t.duration,
+                image: t.image ?? service.image,
+                imageAlt: t.imageAlt,
+              }))}
+            />
+          </div>
+        </section>
       )}
     </>
   );

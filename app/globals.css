@@ -338,8 +338,29 @@ h4 {
 }
 
 
-/* Bande « Autres formations » en bas des fiches formation */
-.related-band {
-  background: color-mix(in srgb, var(--band-color, #ffd23f) var(--band-alpha, 20%), transparent);
-  border-color: color-mix(in srgb, var(--band-color, #ffd23f) 45%, transparent);
+
+/* Bandes de couleur qui séparent les sections d'une page (fiches
+   formation). La couleur et l'opacité se règlent dans l'admin. */
+.page-band {
+  background: color-mix(in srgb, var(--band-color, #1f1a4d) var(--band-alpha, 60%), transparent);
+  border-block: 1px solid var(--border);
+}
+
+/* Même bande, posée derrière un bloc placé dans une colonne : le fond
+   déborde sur toute la largeur de l'écran (la section parente coupe le
+   débordement horizontal). */
+.bleed-band {
+  position: relative;
+}
+
+.bleed-band::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 300vw;
+  transform: translateX(-50%);
+  z-index: -1;
+  background: color-mix(in srgb, var(--band-color, #1f1a4d) var(--band-alpha, 85%), transparent);
+  border-block: 1px solid var(--border);
 }
