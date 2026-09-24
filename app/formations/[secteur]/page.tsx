@@ -32,11 +32,7 @@ function linkifyPath(text: string, codes: Map<string, string>, sectorSlug: strin
   const pattern = new RegExp(`\\b(${tokens.join("|")})\\b`, "g");
   return text.split(pattern).map((part, i) =>
     codes.has(part) ? (
-      <Link
-        key={i}
-        href={`/formations/${sectorSlug}/${codes.get(part)}`}
-        className="text-accent underline decoration-dotted underline-offset-2 hover:text-foreground"
-      >
+      <Link key={i} href={`/formations/${sectorSlug}/${codes.get(part)}`} className="hover:text-foreground">
         {part}
       </Link>
     ) : (
