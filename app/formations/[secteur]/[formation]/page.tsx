@@ -157,7 +157,7 @@ export default async function FormationPage(
 
             <div className="group/programme mt-10 divide-y divide-border border-t border-border">
               {training.programme.map((module, i) => (
-                <Reveal key={module.title} delay={i * 0.1} className="py-8 first:pt-0">
+                <Reveal key={module.title} delay={i * 0.1} className="py-8">
                   {/* L'opacité de survol vit sur ce div interne, séparé de
                       celui que Reveal anime : Framer Motion laisse un style
                       inline opacity:1 après l'entrée, qui écraserait sinon
