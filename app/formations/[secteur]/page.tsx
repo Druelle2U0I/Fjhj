@@ -9,6 +9,42 @@ export async function generateStaticParams() {
   return services.map((service) => ({ secteur: service.slug }));
 }
 
+// Associe à chaque code d'habilitation (« B2V », « HC »…) le slug de sa
+// formation dédiée, en le déduisant du titre (avant le tiret cadratin, ou
+// premier mot si le titre n'en a pas).
+function trainingCodeMap(trainings: { title: string; slug: string }[]) {
+  const map = new Map<string, string>();
+  for (const t of trainings) {
+    const prefix = t.title.includes(" — ") ? t.title.split(" — ")[0] : t.title.split(" ")[0];
+    for (const code of prefix.split(" / ")) {
+      map.set(code.trim(), t.slug);
+    }
+  }
+  return map;
+}
+
+// Rend cliquable, dans un texte de « parcours », chaque code correspondant
+// à une formation dédiée du secteur (les autres mentions, ex. « BT », « HT »,
+// restent du texte simple).
+function linkifyPath(text: string, codes: Map<string, string>, sectorSlug: string) {
+  if (codes.size === 0) return text;
+  const tokens = [...codes.keys()].sort((a, b) => b.length - a.length);
+  const pattern = new RegExp(`\\b(${tokens.join("|")})\\b`, "g");
+  return text.split(pattern).map((part, i) =>
+    codes.has(part) ? (
+      <Link
+        key={i}
+        href={`/formations/${sectorSlug}/${codes.get(part)}`}
+        className="text-accent underline decoration-dotted underline-offset-2 hover:text-foreground"
+      >
+        {part}
+      </Link>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
+  );
+}
+
 export async function generateMetadata(
   props: PageProps<"/formations/[secteur]">,
 ): Promise<Metadata> {
@@ -30,6 +66,7 @@ export default async function SecteurPage(
   if (!service) notFound();
 
   const count = service.trainings.length;
+  const trainingCodes = trainingCodeMap(service.trainings);
 
   return (
     <>
@@ -125,7 +162,7 @@ export default async function SecteurPage(
                   <ul className="mt-4 space-y-3 text-sm text-muted">
                     {service.popularPaths.map((item) => (
                       <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
-                        {item}
+                        {linkifyPath(item, trainingCodes, service.slug)}
                       </li>
                     ))}
                   </ul>
