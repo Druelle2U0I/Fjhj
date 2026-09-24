@@ -82,8 +82,8 @@ export default async function SecteurPage(
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-background/55" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/60" />
+          <div className="absolute inset-0 bg-background/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/20 to-background/35" />
         </div>
 
         <div className="relative mx-auto max-w-6xl">
@@ -170,7 +170,12 @@ export default async function SecteurPage(
               )}
 
               {service.tip && (
-                <Reveal delay={0.05} className="flex items-center gap-6">
+                <Reveal
+                  delay={0.05}
+                  className={`flex items-center gap-6 ${
+                    service.popularPaths && service.popularPaths.length > 0 ? "" : "lg:col-span-2"
+                  }`}
+                >
                   <span
                     aria-hidden="true"
                     className="select-none text-[6rem] font-bold leading-none text-accent/25 sm:text-[8rem]"
@@ -181,7 +186,7 @@ export default async function SecteurPage(
                     <p className="text-sm font-semibold uppercase tracking-wide text-accent">
                       {service.tip.title}
                     </p>
-                    <p className="mt-3 text-xl font-medium leading-snug text-foreground">
+                    <p className="mt-3 max-w-xl text-xl font-medium leading-snug text-foreground">
                       {service.tip.text}
                     </p>
                   </div>
