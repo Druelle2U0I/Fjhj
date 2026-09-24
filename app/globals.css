@@ -116,6 +116,11 @@ h4 {
   }
 }
 
+/* Variante statique : mêmes halos, sans animation ni mouvement au scroll. */
+.hero-aurora__veil--static {
+  animation: none;
+}
+
 /* Dynamic card: lift, glow border, soft accent shadow on hover/focus */
 .dyn-card {
   transition:
