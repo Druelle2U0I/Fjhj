@@ -82,11 +82,11 @@ export default async function SecteurPage(
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-background/35" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/20 to-background/35" />
+          <div className="absolute inset-0 bg-surface/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface/50 via-surface/20 to-surface/35" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl">
+        <div className="on-surface relative mx-auto max-w-6xl">
           {/* Sur téléphone, un simple lien retour remplace le fil d'Ariane. */}
           <Link
             href="/formations"
@@ -185,12 +185,12 @@ export default async function SecteurPage(
                 >
                   <span
                     aria-hidden="true"
-                    className="select-none text-[6rem] font-bold leading-none text-accent/25 sm:text-[8rem]"
+                    className="select-none text-[6rem] font-bold leading-none text-foreground/10 sm:text-[8rem]"
                   >
                     ?
                   </span>
                   <div>
-                    <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-muted">
                       {service.tip.title}
                     </p>
                     <p className="mt-3 max-w-xl text-xl font-medium leading-snug text-foreground">

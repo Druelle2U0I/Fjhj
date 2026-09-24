@@ -18,11 +18,11 @@ export default function StatsBand() {
           alt={home.statsBandImageAlt ?? ""}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-background/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/70" />
+        <div className="absolute inset-0 bg-surface/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-surface/70" />
       </div>
 
-      <div className="relative mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 sm:grid-cols-4">
+      <div className="on-surface relative mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 sm:grid-cols-4">
         {stats.map((stat) => (
           <Reveal key={stat.label} className="text-center">
             <p className="text-3xl font-semibold text-accent sm:text-4xl">

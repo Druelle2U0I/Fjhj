@@ -42,7 +42,7 @@ export default function SocialLinks({ social }: { social: Social }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${n.label} (nouvel onglet)`}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-background/40 text-foreground transition-colors hover:border-accent hover:text-accent"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-surface/40 text-foreground transition-colors hover:border-accent hover:text-accent"
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" className="h-[18px] w-[18px]" fill="currentColor">
               <path d={n.path} />

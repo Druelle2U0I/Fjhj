@@ -85,6 +85,45 @@ h4 {
   transform: scale(1.06);
 }
 
+/* Le fond "surface" (cartes) et les bandes de séparation entre sections
+   restent sombres même quand le fond du site est clair : leur texte doit
+   donc toujours rester clair, indépendamment du texte principal de la
+   page. En redéfinissant --foreground/--muted à l'intérieur, toutes les
+   classes text-foreground/text-muted (et le texte sans classe explicite)
+   héritent automatiquement de la bonne couleur.
+   [class~="…"] cible un token de classe exact (bg-surface, bg-surface/70…) :
+   une variante comme hover:bg-surface-2 est un token Tailwind différent et
+   n'est donc jamais capturée ici (elle ne doit s'appliquer qu'au survol).
+   .on-surface sert pour le texte posé sur une photo voilée (pas de fond
+   "surface" à proprement parler, ex. bandes chiffrées, en-têtes de fiches). */
+[class~="bg-surface"],
+[class~="bg-surface-2"],
+[class~="bg-surface/35"],
+[class~="bg-surface/40"],
+[class~="bg-surface/50"],
+[class~="bg-surface/60"],
+[class~="bg-surface/70"],
+.on-surface,
+.page-band,
+.section-soft,
+.bleed-band {
+  --foreground: var(--surface-foreground, #fffcec);
+  --muted: var(--surface-muted, #b3b3ba);
+  color: var(--foreground);
+}
+
+/* À l'inverse, un élément posé sur le fond principal de la page (ex. une
+   carte claire à l'intérieur d'une bande sombre) doit revenir au texte
+   prévu pour ce fond, même imbriqué dans un bloc sombre ci-dessus. */
+[class~="bg-background"],
+[class~="bg-background/70"],
+[class~="bg-background/90"],
+[class~="bg-background/95"] {
+  --foreground: var(--page-foreground);
+  --muted: var(--page-muted);
+  color: var(--foreground);
+}
+
 /* Texte courant des pages légales */
 .legal-prose {
   color: var(--muted);
@@ -169,8 +208,8 @@ h4 {
    elle s'efface progressivement vers le bas pour laisser apparaître le
    fond aurore, sans ligne de coupure. */
 .hero-photo-fade {
-  -webkit-mask-image: linear-gradient(to bottom, #000 45%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 45%, rgba(0, 0, 0, 0.6) 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 60%, rgba(0, 0, 0, 0.7) 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 60%, rgba(0, 0, 0, 0.7) 85%, transparent 100%);
 }
 
 /* Étiquette de domaine (page Toutes les formations) */
@@ -184,9 +223,10 @@ h4 {
   background: rgb(0 0 0 / var(--sector-veil, 0.6));
 }
 
-/* Voile sur la photo du pied de page */
+/* Voile sur la photo du pied de page : toujours sombre (couleur "surface"),
+   indépendamment du fond du site qui peut être clair ou sombre. */
 .footer-veil {
-  background: color-mix(in srgb, var(--background) var(--footer-veil, 68%), transparent);
+  background: color-mix(in srgb, var(--surface) var(--footer-veil, 68%), transparent);
 }
 
 /* Rectangle décalé derrière le panneau Financement (effet d'ombre) :

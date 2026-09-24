@@ -17,7 +17,7 @@ export default function Team() {
       <section className="px-6 pb-12 pt-24">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <span className="text-sm font-semibold text-accent">
+            <span className="text-sm font-semibold text-muted">
               {pages.team.eyebrow}
             </span>
             <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -68,11 +68,11 @@ export default function Team() {
               </div>
               <div className="border-l-4 border-accent pl-6">
                 <h2 className="text-2xl font-semibold">{member.name}</h2>
-                <p className="mt-1 font-medium text-accent">{member.role}</p>
+                <p className="mt-1 font-medium text-muted">{member.role}</p>
                 <p className="mt-4 max-w-md whitespace-pre-line text-muted">{member.bio}</p>
                 <a
                   href={`mailto:${member.email}`}
-                  className="mt-4 inline-block text-sm text-muted hover:text-accent"
+                  className="mt-4 inline-block text-sm text-muted hover:underline"
                 >
                   {member.email}
                 </a>

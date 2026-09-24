@@ -12,10 +12,10 @@ const FONTS: { id: HeadingFont; label: string; note: string }[] = [
 
 const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   { key: "background", label: "Fond du site", hint: "La couleur dominante." },
-  { key: "surface", label: "Fond des cartes", hint: "Légèrement plus clair que le fond." },
+  { key: "surface", label: "Fond des cartes", hint: "Fond de la plupart des cartes et bandes ; peut être clair ou sombre, indépendamment du fond du site." },
   { key: "surface2", label: "Fond secondaire", hint: "Encadrés à l'intérieur des cartes." },
-  { key: "foreground", label: "Texte principal", hint: "Doit bien ressortir sur le fond." },
-  { key: "muted", label: "Texte secondaire", hint: "Paragraphes et légendes." },
+  { key: "foreground", label: "Texte principal", hint: "Texte sur le fond du site (hors cartes). Doit bien ressortir sur « Fond du site » ci-dessus." },
+  { key: "muted", label: "Texte secondaire", hint: "Paragraphes et légendes sur le fond du site (hors cartes)." },
   { key: "border", label: "Bordures", hint: "Contour des cartes et séparateurs." },
   {
     key: "accent",
@@ -29,20 +29,35 @@ const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   },
 ];
 
-type ColorKey = "tagBackground" | "tagText" | "panelShadowColor" | "bandColor";
-type RangeKey = "sectorVeil" | "footerVeil" | "sectionOpacity" | "bandOpacity";
+type ColorKey =
+  | "tagBackground"
+  | "tagText"
+  | "panelShadowColor"
+  | "bandColor"
+  | "surfaceForeground"
+  | "surfaceMuted";
+type RangeKey = "sectorVeil" | "footerVeil" | "bandOpacity";
 
 const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
   { key: "tagBackground", label: "Étiquettes — fond", hint: "Étiquette du domaine sur les cartes de « Toutes les formations »." },
   { key: "tagText", label: "Étiquettes — texte", hint: "Couleur du nom du domaine dans l'étiquette." },
   { key: "panelShadowColor", label: "Ombre décalée", hint: "Rectangle décalé derrière le panneau Financement de l'accueil. Indépendante de la couleur d'accent." },
   { key: "bandColor", label: "Bandes de section — couleur", hint: "Fond des bandes qui séparent les sections (en bas des fiches formation)." },
+  {
+    key: "surfaceForeground",
+    label: "Texte sur les cartes",
+    hint: "Texte principal sur les cartes et bandes sombres (fond des cartes ci-dessus), indépendant du texte principal de la page.",
+  },
+  {
+    key: "surfaceMuted",
+    label: "Texte secondaire sur les cartes",
+    hint: "Paragraphes et légendes sur les cartes et bandes sombres.",
+  },
 ];
 
 const RANGES: { key: RangeKey; label: string; hint: string; min: number; max: number; unit: string }[] = [
   { key: "sectorVeil", label: "Voile des onglets de domaine fermés", hint: "Page d'accueil : assombrit les photos des domaines non ouverts.", min: 0, max: 90, unit: " %" },
   { key: "footerVeil", label: "Voile sur la photo du pied de page", hint: "Plus la valeur est haute, plus la photo est assombrie.", min: 0, max: 100, unit: " %" },
-  { key: "sectionOpacity", label: "Opacité des sections à fond", hint: "0 = l'aurore passe entièrement à travers, 100 = fond plein.", min: 0, max: 100, unit: " %" },
   { key: "bandOpacity", label: "Bandes de section — opacité", hint: "0 = invisible, 100 = couleur pleine.", min: 0, max: 100, unit: " %" },
 ];
 
@@ -185,11 +200,20 @@ export default function DesignEditor({
         </div>
 
         <div className="rounded-2xl border border-border p-5" style={{ background: theme.surface }}>
-          <p className="text-xs uppercase tracking-wide" style={{ color: theme.muted }}>
-            Aperçu de l&apos;étiquette
+          <p
+            className="text-lg font-bold"
+            style={{ color: theme.surfaceForeground ?? THEME_DEFAULTS.surfaceForeground }}
+          >
+            Aperçu d&apos;une carte
+          </p>
+          <p
+            className="mt-1 text-sm"
+            style={{ color: theme.surfaceMuted ?? THEME_DEFAULTS.surfaceMuted }}
+          >
+            Le texte des cartes utilise ces couleurs, même si le fond du site est clair.
           </p>
           <span
-            className="mt-3 inline-flex rounded-full border border-white/15 px-3 py-1 text-xs font-semibold"
+            className="mt-4 inline-flex rounded-full border border-white/15 px-3 py-1 text-xs font-semibold"
             style={{
               background: theme.tagBackground ?? THEME_DEFAULTS.tagBackground,
               color: theme.tagText ?? THEME_DEFAULTS.tagText,

@@ -104,11 +104,11 @@ export default async function FormationPage(
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-background/50" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/65 via-background/35 to-background/45" />
+          <div className="absolute inset-0 bg-surface/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface/65 via-surface/35 to-surface/45" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl">
+        <div className="on-surface relative mx-auto max-w-6xl">
           {/* Sur téléphone, un simple lien retour remplace le fil d'Ariane. */}
           <Link
             href={`/formations/${service.slug}`}
@@ -171,7 +171,7 @@ export default async function FormationPage(
                           inline opacity:1 après l'entrée, qui écraserait sinon
                           cette classe. */}
                       <div className="grid gap-3 opacity-100 transition-opacity duration-300 hover:!opacity-100 group-hover/programme:opacity-40 sm:grid-cols-[120px_1fr] sm:gap-8">
-                        <span className="text-4xl font-semibold text-accent sm:text-5xl">
+                        <span className="text-4xl font-semibold text-foreground/80 sm:text-5xl">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <div>

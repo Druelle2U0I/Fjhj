@@ -83,7 +83,7 @@ function NewsletterForm() {
       )}
 
       {state === "sent" ? (
-        <p className="mt-8 rounded-lg border border-accent/40 bg-background/60 px-6 py-4 text-sm backdrop-blur">
+        <p className="mt-8 rounded-lg border border-accent/40 bg-surface/60 px-6 py-4 text-sm backdrop-blur">
           Merci, votre demande est bien enregistrée. Nous revenons vers vous
           rapidement.
         </p>
@@ -99,7 +99,7 @@ function NewsletterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Votre adresse e-mail"
-            className="flex-1 rounded-lg border border-white/25 bg-background/50 px-5 py-3 text-sm outline-none backdrop-blur placeholder:text-muted focus:border-accent"
+            className="flex-1 rounded-lg border border-white/25 bg-surface/50 px-5 py-3 text-sm outline-none backdrop-blur placeholder:text-muted focus:border-accent"
           />
           <button
             type="submit"
@@ -136,7 +136,7 @@ export default function Footer() {
       <div className="absolute inset-0">
         <Visual src={footerImage} alt="" sizes="100vw" />
         <div className="footer-veil absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface/20 via-transparent to-surface/50" />
       </div>
 
       <div className="relative">
@@ -222,7 +222,7 @@ export default function Footer() {
             {/* Certification Qualiopi : logo officiel (envoyé depuis l'admin)
                 ou badge texte, avec lien vers le certificat s'il est fourni. */}
             {legal.qualiopiCertificate && (
-              <div className="mt-14 flex flex-col items-center gap-5 rounded-lg border border-white/10 bg-background/40 p-6 text-center backdrop-blur sm:flex-row sm:text-left">
+              <div className="mt-14 flex flex-col items-center gap-5 rounded-lg border border-white/10 bg-surface/40 p-6 text-center backdrop-blur sm:flex-row sm:text-left">
                 {legal.qualiopiLogo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
