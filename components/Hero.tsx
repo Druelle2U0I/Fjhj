@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import HeroCarousel from "@/components/HeroCarousel";
 import { company, home, pages } from "@/lib/data";
 
@@ -14,28 +13,19 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+          <h1
             className="max-w-xl whitespace-pre-line text-4xl font-semibold tracking-tight sm:text-5xl"
           >
             {company.tagline}
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 max-w-xl whitespace-pre-line text-lg text-muted"
+          <p
+            className="mt-4 line-clamp-4 max-w-xl whitespace-pre-line text-base text-muted sm:mt-6 sm:line-clamp-none sm:text-lg"
           >
             {company.description}
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+          <div
             className="mt-8 flex flex-wrap gap-4"
           >
             <Link
@@ -50,16 +40,12 @@ export default function Hero() {
             >
               {pages.hero.secondaryButton}
             </Link>
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-        >
+        <div>
           <HeroCarousel slides={home.heroSlides} />
-        </motion.div>
+        </div>
       </div>
     </section>
   );

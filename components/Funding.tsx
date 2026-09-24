@@ -47,7 +47,7 @@ function QualiopiCard() {
 export default function Funding() {
   return (
     <>
-    <section id="financement" className="px-6 py-24">
+    <section id="financement" className="px-6 py-14 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>

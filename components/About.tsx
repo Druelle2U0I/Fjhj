@@ -17,7 +17,7 @@ export default function About({ section }: { section: HomeSection }) {
   const hasImage = Boolean(home.aboutImage);
 
   return (
-    <section id="a-propos" className="px-6 py-24">
+    <section id="a-propos" className="px-6 py-14 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <div
           className={
@@ -91,7 +91,7 @@ export default function About({ section }: { section: HomeSection }) {
           </Reveal>
         )}
 
-        <div className="mt-16 grid gap-8 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
+        <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-8 border-t border-border pt-8 sm:mt-16 sm:pt-10 lg:grid-cols-4 lg:divide-x lg:divide-border">
           {pillars.map((pillar, i) => (
             <Reveal key={pillar.title} delay={i * 0.1} className="lg:px-6 lg:first:pl-0">
               <span aria-hidden="true" className="block h-1 w-8 bg-accent" />

@@ -33,7 +33,7 @@ export default function HeroCarousel({ slides: allSlides }: { slides: HeroSlide[
     <div className="relative">
       <div
         ref={track}
-        className="flex aspect-[4/5] snap-x snap-mandatory overflow-x-auto overflow-y-hidden rounded-3xl border border-border shadow-2xl [scrollbar-width:none] lg:aspect-[3/4] [&::-webkit-scrollbar]:hidden"
+        className="flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto overflow-y-hidden rounded-3xl border border-border shadow-2xl [scrollbar-width:none] sm:aspect-[4/5] lg:aspect-[3/4] [&::-webkit-scrollbar]:hidden"
       >
         {slides.map((slide, i) => {
           const content = (

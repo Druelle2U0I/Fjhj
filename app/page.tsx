@@ -11,7 +11,7 @@ import type { HomeSection } from "@/lib/data";
 
 function FormationsSection({ section }: { section: HomeSection }) {
   return (
-    <section id="formations" className="px-6 py-24">
+    <section id="formations" className="px-6 py-14 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           {section.eyebrow && (
@@ -46,7 +46,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
 
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
-    <section id="financement" className="bg-accent py-24 text-accent-foreground">
+    <section id="financement" className="bg-accent py-14 sm:py-24 text-accent-foreground">
       <div className="grid gap-10 px-6 lg:grid-cols-2 lg:items-stretch lg:gap-0 lg:px-0">
         <Reveal className="flex flex-col justify-center lg:mx-auto lg:w-full lg:max-w-lg lg:pl-6">
           {section.eyebrow && (
@@ -108,7 +108,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
 function FaqSection({ section }: { section: HomeSection }) {
   if (home.faq.length === 0) return null;
   return (
-    <section className="px-6 py-24">
+    <section className="px-6 py-14 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal className="text-center">
           {section.eyebrow && (
@@ -134,7 +134,7 @@ function FaqSection({ section }: { section: HomeSection }) {
 
 function ContactSection({ section }: { section: HomeSection }) {
   return (
-    <section className="bg-accent px-6 py-24 text-accent-foreground">
+    <section className="bg-accent px-6 py-14 sm:py-24 text-accent-foreground">
       <div className="mx-auto max-w-6xl text-center">
         <Reveal>
           {section.eyebrow && (

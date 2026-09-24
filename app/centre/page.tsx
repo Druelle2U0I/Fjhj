@@ -45,7 +45,7 @@ export default function CentrePage() {
         </Reveal>
       </FranceMap>
 
-      <section className="section-soft px-6 py-20">
+      <section className="section-soft px-6 py-12 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <span className="text-sm font-semibold text-accent">
@@ -79,7 +79,7 @@ export default function CentrePage() {
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-12 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <span className="text-sm font-semibold text-muted">
@@ -108,7 +108,7 @@ export default function CentrePage() {
         </div>
       </section>
 
-      <section className="bg-accent px-6 py-20 text-accent-foreground">
+      <section className="bg-accent px-6 py-12 sm:py-20 text-accent-foreground">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">

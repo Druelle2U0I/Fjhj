@@ -29,7 +29,27 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
   useEffect(() => cancelHover, []);
 
   return (
-    <div className="flex h-[640px] flex-col gap-3 sm:h-[560px] lg:h-[460px] lg:flex-row">
+    <>
+      {/* Téléphone et tablette : grille simple de vignettes avec titre, plus
+          lisible que des onglets devenus de fines bandes. */}
+      <ul className="grid grid-cols-2 gap-3 lg:hidden">
+        {services.map((service) => (
+          <li key={service.slug}>
+            <Link
+              href={`/formations/${service.slug}`}
+              className="group relative flex aspect-[4/3] items-end overflow-hidden rounded-2xl border border-border"
+            >
+              <Visual src={service.image} alt="" sizes="50vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+              <span className="relative p-3 text-sm font-semibold leading-snug text-white">
+                {service.title}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+    <div className="hidden h-[460px] flex-row gap-3 lg:flex">
       {services.map((service, i) => {
         const isActive = i === active;
         return (
@@ -98,5 +118,6 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
         );
       })}
     </div>
+    </>
   );
 }

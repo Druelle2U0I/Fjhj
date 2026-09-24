@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import SocialLinks from "@/components/SocialLinks";
 import Visual from "@/components/Visual";
 import {
@@ -32,12 +33,27 @@ function Column({
   );
 }
 
+// Pages qui se terminent déjà par leur propre appel à l'action (ou pour
+// lesquelles la demande de catalogue n'a pas de sens) : on n'y ajoute
+// pas le bandeau, pour garder un seul appel à l'action avant le pied de
+// page.
+const NO_NEWSLETTER = [
+  "/financement",
+  "/centre",
+  "/contact",
+  "/mentions-legales",
+  "/confidentialite",
+  "/cgv",
+  "/accessibilite",
+];
+
 function NewsletterForm() {
+  const pathname = usePathname();
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "sent">("idle");
   const [error, setError] = useState<string | null>(null);
 
-  if (!footerCta.enabled) return null;
+  if (!footerCta.enabled || NO_NEWSLETTER.includes(pathname)) return null;
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -67,7 +83,7 @@ function NewsletterForm() {
   };
 
   return (
-    <div className="mx-auto max-w-2xl px-6 pb-20 pt-24 text-center sm:pt-28">
+    <div className="mx-auto max-w-2xl px-6 pb-14 pt-16 text-center sm:pb-20 sm:pt-28">
       {footerCta.eyebrow && (
         <p className="text-xs font-semibold text-accent">
           {footerCta.eyebrow}
@@ -142,9 +158,9 @@ export default function Footer() {
       <div className="relative">
         <NewsletterForm />
 
-        <div className="border-t border-white/10 px-6 py-16 text-sm text-muted">
+        <div className="border-t border-white/10 px-6 py-12 text-sm text-muted sm:py-16">
           <div className="mx-auto max-w-6xl">
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto_1fr_1fr] lg:items-start lg:gap-12">
+            <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[1fr_1fr_auto_1fr_1fr] lg:items-start lg:gap-12">
               <Column title="Formations">
                 {mainSectors.map((service) => (
                   <li key={service.slug}>
