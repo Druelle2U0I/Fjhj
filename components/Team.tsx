@@ -11,6 +11,11 @@ function initials(name: string) {
     .toUpperCase();
 }
 
+// Distance entre le bord de l'écran et l'extrémité des bandes : le bloc
+// de chaque personne (48rem) est calé d'un côté d'une zone de 72rem, la
+// bande le dépasse de 3rem de l'autre côté.
+const EDGE = "max(0px, calc(50% - 15rem))";
+
 export default function Team() {
   return (
     <div id="equipe">
@@ -27,19 +32,29 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Une bande par personne, en alternance (bande de couleur / fond
-          normal) ; la photo change de côté d'une personne à l'autre. */}
+      {/* Une bande par personne ; la photo change de côté d'une personne à
+          l'autre. */}
       {team.map((member, i) => {
         const reversed = i % 2 === 1;
         return (
-          <section
-            key={member.name}
-            className={`px-6 py-16 sm:py-20 ${i % 2 === 0 ? "page-band" : ""}`}
-          >
-            <Reveal
-              className={`mx-auto flex max-w-4xl flex-col gap-8 sm:items-center sm:gap-12 ${
-                reversed ? "sm:flex-row-reverse" : "sm:flex-row"
+          <section key={member.name} className="relative px-6 py-16 sm:py-20">
+            {/* Bande collée à un bord de l'écran, qui s'arrête un peu
+                au-delà du contenu : à droite pour une personne, à gauche
+                pour la suivante. */}
+            <div
+              aria-hidden="true"
+              className={`team-band absolute inset-y-4 ${
+                reversed ? "left-0" : "right-0"
               }`}
+              style={reversed ? { right: EDGE } : { left: EDGE }}
+            />
+            <Reveal
+              className="relative mx-auto max-w-6xl"
+            >
+              <div
+                className={`flex flex-col gap-8 sm:max-w-3xl sm:items-center sm:gap-10 ${
+                  reversed ? "sm:mr-auto sm:flex-row-reverse" : "sm:ml-auto sm:flex-row"
+                }`}
             >
               <div className="dyn-photo-wrap relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-3xl sm:w-72">
                 {member.photo ? (
@@ -65,6 +80,7 @@ export default function Team() {
                 >
                   {member.email}
                 </a>
+              </div>
               </div>
             </Reveal>
           </section>
