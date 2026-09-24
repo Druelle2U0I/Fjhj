@@ -199,14 +199,12 @@ export default async function FormationPage(
             {/* Bande de couleur pleine largeur derrière les informations
                 pratiques, pour séparer cette partie du programme. */}
             <div className="bleed-band py-12">
-              {/* Public concerné : mis en avant, pleine largeur, plus grand */}
-              <Reveal>
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+              {/* Public concerné : encadré jaune pour le mettre en avant */}
+              <Reveal className="rounded-lg bg-accent p-6 text-accent-foreground sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent-foreground/70">
                   {pages.training.audienceTitle}
                 </p>
-                <p className="mt-3 max-w-2xl text-lg text-foreground/90">
-                  {training.audience}
-                </p>
+                <p className="mt-3 max-w-2xl text-lg">{training.audience}</p>
               </Reveal>
 
               {/* Financement, méthodes, évaluation, accessibilité : une
