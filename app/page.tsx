@@ -46,23 +46,23 @@ function FormationsSection({ section }: { section: HomeSection }) {
 
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
-    <section id="financement" className="py-24">
+    <section id="financement" className="bg-accent py-24 text-accent-foreground">
       <div className="grid gap-10 px-6 lg:grid-cols-2 lg:items-stretch lg:gap-0 lg:px-0">
         <Reveal className="flex flex-col justify-center lg:mx-auto lg:w-full lg:max-w-lg lg:pl-6">
           {section.eyebrow && (
-            <span className="text-sm font-semibold text-accent">
+            <span className="text-sm font-semibold text-accent-foreground/70">
               {section.eyebrow}
             </span>
           )}
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             {section.title}
           </h2>
-          <p className="mt-5 max-w-2xl whitespace-pre-line text-muted">
+          <p className="mt-5 max-w-2xl whitespace-pre-line text-accent-foreground/80">
             {section.text || funding.intro}
           </p>
           <Link
             href="/financement"
-            className="mt-6 inline-flex w-fit rounded-lg border border-border bg-background px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+            className="mt-6 inline-flex w-fit rounded-lg bg-accent-foreground px-6 py-3 text-sm font-semibold text-accent transition-transform hover:scale-105"
           >
             Comprendre le financement
           </Link>
