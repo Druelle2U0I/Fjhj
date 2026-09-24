@@ -124,9 +124,16 @@ export default async function FormationPage(
           </div>
 
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-              {service.title}
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+                {service.title}
+              </p>
+              {training.category && (
+                <span className="domain-tag rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
+                  {training.category}
+                </span>
+              )}
+            </div>
             <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
               {training.title}
             </h1>
