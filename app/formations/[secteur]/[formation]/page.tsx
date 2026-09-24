@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import RelatedCarousel from "@/components/RelatedCarousel";
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
 import {
@@ -237,30 +238,6 @@ export default async function FormationPage(
               </Reveal>
             </div>
 
-            {otherTrainings.length > 0 && (
-              <Reveal>
-                <h2 className="text-lg font-semibold">
-                  Autres formations en {service.title.toLowerCase()}
-                </h2>
-                <div className="mt-4 divide-y divide-border border-t border-border">
-                  {otherTrainings.map((t) => (
-                    <Link
-                      key={t.slug}
-                      href={`/formations/${service.slug}/${t.slug}`}
-                      className="flex items-center justify-between gap-4 py-4 transition-colors hover:text-accent"
-                    >
-                      <div>
-                        <p className="font-medium">{t.title}</p>
-                        <p className="mt-1 text-sm text-muted">
-                          {t.duration} · {t.format}
-                        </p>
-                      </div>
-                      <span aria-hidden="true">→</span>
-                    </Link>
-                  ))}
-                </div>
-              </Reveal>
-            )}
           </div>
 
           {/* Encart récapitulatif : passe en premier sur mobile (juste après
@@ -320,6 +297,20 @@ export default async function FormationPage(
           </aside>
         </div>
       </section>
+
+      {otherTrainings.length > 0 && (
+        <RelatedCarousel
+          title={`Autres formations — ${service.title}`}
+          items={otherTrainings.map((t) => ({
+            href: `/formations/${service.slug}/${t.slug}`,
+            title: t.title,
+            duration: t.duration,
+            format: t.format,
+            image: t.image ?? service.image,
+            imageAlt: t.imageAlt,
+          }))}
+        />
+      )}
     </>
   );
 }
