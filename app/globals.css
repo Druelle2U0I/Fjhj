@@ -251,6 +251,12 @@ h4 {
   background: color-mix(in srgb, var(--background) var(--footer-veil, 68%), transparent);
 }
 
+/* Rectangle décalé derrière le panneau Financement (effet d'ombre) :
+   couleur réglable séparément dans /admin, indépendante de l'accent. */
+.panel-shadow-veil {
+  background: color-mix(in srgb, var(--panel-shadow, #fff9c7) 20%, transparent);
+}
+
 /* Curseur du processus de financement (components/FundingSteps.tsx).
    Chrome/Safari/Edge n'ont pas de pseudo-élément de remplissage : on
    dessine la portion parcourue avec un dégradé sur l'élément lui-même,

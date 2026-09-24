@@ -21,12 +21,13 @@ const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   { key: "accentForeground", label: "Texte sur l'accent", hint: "Texte à l'intérieur des boutons." },
 ];
 
-type ColorKey = "tagBackground" | "tagText" | "aurora1" | "aurora2" | "aurora3";
+type ColorKey = "tagBackground" | "tagText" | "aurora1" | "aurora2" | "aurora3" | "panelShadowColor";
 type RangeKey = "auroraIntensity" | "auroraSpeed" | "sectorVeil" | "footerVeil" | "sectionOpacity";
 
 const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
   { key: "tagBackground", label: "Étiquettes — fond", hint: "Étiquette du domaine sur les cartes de « Toutes les formations »." },
   { key: "tagText", label: "Étiquettes — texte", hint: "Couleur du nom du domaine dans l'étiquette." },
+  { key: "panelShadowColor", label: "Ombre décalée", hint: "Rectangle décalé derrière le panneau Financement de l'accueil. Indépendante de la couleur d'accent." },
   { key: "aurora1", label: "Aurore — couleur principale", hint: "La grande lueur (violet par défaut)." },
   { key: "aurora2", label: "Aurore — reflet clair", hint: "La touche lumineuse (crème par défaut)." },
   { key: "aurora3", label: "Aurore — couleur secondaire", hint: "La lueur qui apparaît en défilant (bleu par défaut)." },
