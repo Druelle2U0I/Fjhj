@@ -1780,13 +1780,13 @@
     ]
   },
   "theme": {
-    "background": "#05021c",
+    "background": "#ffffff",
     "surface": "#160f3f",
     "surface2": "#1f1a4d",
-    "foreground": "#fffcec",
-    "muted": "#ecf6f8",
+    "foreground": "#08021c",
+    "muted": "#1a0a53",
     "border": "#3c337a",
-    "accent": "#fff9c7",
+    "accent": "#d4e3fe",
     "accentForeground": "#0b032b",
     "headingFont": "fraunces",
     "sectorVeil": 48,
