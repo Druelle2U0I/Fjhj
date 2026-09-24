@@ -78,7 +78,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
           />
           <Reveal
             delay={0.1}
-            className="relative grid gap-6 bg-surface p-8 sm:p-10 lg:h-full lg:pr-16"
+            className="relative grid gap-6 bg-surface p-8 text-foreground sm:p-10 lg:h-full lg:pr-16"
           >
             {funding.points.map((point) => (
               <div key={point.title} className="flex items-center gap-3">

@@ -192,7 +192,7 @@ h4 {
 /* Rectangle décalé derrière le panneau Financement (effet d'ombre) :
    couleur réglable séparément dans /admin, indépendante de l'accent. */
 .panel-shadow-veil {
-  background: color-mix(in srgb, var(--panel-shadow, #fff9c7) 20%, transparent);
+  background: color-mix(in srgb, var(--panel-shadow, #0b032b) 35%, transparent);
 }
 
 /* Curseur du processus de financement (components/FundingSteps.tsx).
