@@ -56,11 +56,13 @@ export default function DesignEditor({
   sections,
   onThemeChange,
   onSectionsChange,
+  part = "all",
 }: {
   theme: Theme;
   sections: HomeSection[];
   onThemeChange: (theme: Theme) => void;
   onSectionsChange: (sections: HomeSection[]) => void;
+  part?: "all" | "theme" | "sections";
 }) {
   const move = (index: number, delta: number) => {
     const target = index + delta;
@@ -75,6 +77,7 @@ export default function DesignEditor({
 
   return (
     <div className="grid gap-5">
+      {part !== "sections" && (<>
       <Card className="grid gap-4">
         <p className="text-xs font-semibold uppercase tracking-wide text-accent">
           Police des titres
@@ -232,7 +235,9 @@ export default function DesignEditor({
           Rétablir les réglages d&apos;origine de cette carte
         </SmallButton>
       </Card>
+      </>)}
 
+      {part !== "theme" && (
       <div>
         <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-accent">
           Sections de la page d&apos;accueil
@@ -302,6 +307,7 @@ export default function DesignEditor({
           ))}
         </div>
       </div>
+      )}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { SiteContent } from "@/lib/data";
@@ -9,15 +9,19 @@ import DesignEditor from "./DesignEditor";
 import PagesEditor from "./PagesEditor";
 import { Card, Field, ImageField, ListEditor } from "./ui";
 
+// Menu par page du site, puis réglages communs à tout le site.
 const SECTIONS = [
-  { id: "entreprise", label: "Entreprise & contact" },
-  { id: "secteurs", label: "Secteurs & formations" },
-  { id: "equipe", label: "Équipe" },
-  { id: "financement", label: "Qualiopi & financement" },
-  { id: "accueil", label: "Page d'accueil" },
-  { id: "pages", label: "Textes des pages" },
-  { id: "design", label: "Design & sections" },
-  { id: "accessibilite", label: "Accessibilité" },
+  { id: "accueil", label: "Accueil", group: "Pages du site" },
+  { id: "catalogue", label: "Catalogue & formations", group: "Pages du site" },
+  { id: "centre", label: "Le centre", group: "Pages du site" },
+  { id: "financement", label: "Qualiopi & financement", group: "Pages du site" },
+  { id: "equipe", label: "Équipe", group: "Pages du site" },
+  { id: "contact", label: "Contact", group: "Pages du site" },
+  { id: "entreprise", label: "Coordonnées", group: "Tout le site" },
+  { id: "pied", label: "Pied de page", group: "Tout le site" },
+  { id: "legal", label: "Mentions légales & Qualiopi", group: "Tout le site" },
+  { id: "accessibilite", label: "Accessibilité & handicap", group: "Tout le site" },
+  { id: "design", label: "Design & couleurs", group: "Tout le site" },
 ] as const;
 
 type SectionId = (typeof SECTIONS)[number]["id"];
@@ -25,7 +29,7 @@ type SectionId = (typeof SECTIONS)[number]["id"];
 export default function AdminApp({ initial }: { initial: SiteContent }) {
   const router = useRouter();
   const [content, setContent] = useState<SiteContent>(initial);
-  const [section, setSection] = useState<SectionId>("entreprise");
+  const [section, setSection] = useState<SectionId>("accueil");
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{
@@ -115,9 +119,14 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
 
       <div className="mx-auto grid max-w-6xl gap-8 px-6 py-8 lg:grid-cols-[220px_1fr] lg:items-start">
         <nav className="flex flex-wrap gap-2 lg:sticky lg:top-28 lg:flex-col">
-          {SECTIONS.map((item) => (
+          {SECTIONS.map((item, i) => (
+            <Fragment key={item.id}>
+            {item.group !== SECTIONS[i - 1]?.group && (
+              <p className={`w-full px-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-accent ${i ? "mt-4" : ""}`}>
+                {item.group}
+              </p>
+            )}
             <button
-              key={item.id}
               type="button"
               onClick={() => setSection(item.id)}
               className={`rounded-xl px-3 py-2 text-left text-sm transition-colors ${
@@ -128,12 +137,509 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
             >
               {item.label}
             </button>
+            </Fragment>
           ))}
         </nav>
 
         <main className="grid gap-5">
+          {section === "accueil" && (
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Page d&apos;accueil</h2>
+                <p className="mt-1 text-sm text-muted">Tout ce qui s&apos;affiche sur la page d&apos;accueil, de haut en bas.</p>
+              </div>
+
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+                  Carrousel de photos (haut de page)
+                </p>
+                <ListEditor
+                  items={content.home.heroSlides}
+                  onChange={(heroSlides) =>
+                    update({ ...content, home: { ...content.home, heroSlides } })
+                  }
+                  createItem={() => ({ image: "", alt: "", title: "", text: "", link: "" })}
+                  addLabel="Ajouter une photo au carrousel"
+                  titleFor={(s, i) => s.title || `Photo ${i + 1}`}
+                  renderItem={(slide, set) => (
+                    <div className="grid gap-4">
+                      <ImageField
+                        label="Photo"
+                        value={slide.image || undefined}
+                        onChange={(v) => set({ ...slide, image: v ?? "" })}
+                      />
+                      <Field
+                        label="Titre affiché sur la photo"
+                        value={slide.title ?? ""}
+                        onChange={(v) => set({ ...slide, title: v })}
+                      />
+                      <Field
+                        label="Sous-titre"
+                        value={slide.text ?? ""}
+                        onChange={(v) => set({ ...slide, text: v })}
+                      />
+                      <Field
+                        label="Lien (optionnel)"
+                        hint="Ex. /formations/caces-habilitations — rend la photo cliquable vers cette page."
+                        value={slide.link ?? ""}
+                        onChange={(v) => set({ ...slide, link: v })}
+                      />
+                      <Field
+                        label="Description de la photo (accessibilité)"
+                        value={slide.alt ?? ""}
+                        onChange={(v) => set({ ...slide, alt: v })}
+                      />
+                    </div>
+                  )}
+                />
+              </div>
+
+              <PagesEditor
+                only={["hero"]}
+                pages={content.pages}
+                onChange={(pages) => update({ ...content, pages })}
+              />
+
+              <DesignEditor
+                part="sections"
+                theme={content.theme}
+                sections={content.home.sections}
+                onThemeChange={(theme) => update({ ...content, theme })}
+                onSectionsChange={(sections) =>
+                  update({ ...content, home: { ...content.home, sections } })
+                }
+              />
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Section « À propos »
+                </p>
+                <ImageField
+                  label="Photo"
+                  value={content.home.aboutImage}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, aboutImage: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Description de la photo (accessibilité)"
+                  value={content.home.aboutImageAlt ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, aboutImageAlt: v },
+                    })
+                  }
+                />
+              </Card>
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Message du patron
+                </p>
+                <Field
+                  label="Citation"
+                  rows={5}
+                  value={content.home.founderQuote?.text ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: {
+                        ...content.home,
+                        founderQuote: {
+                          name: content.home.founderQuote?.name ?? "",
+                          role: content.home.founderQuote?.role ?? "",
+                          photo: content.home.founderQuote?.photo ?? "",
+                          photoAlt: content.home.founderQuote?.photoAlt ?? "",
+                          text: v,
+                        },
+                      },
+                    })
+                  }
+                />
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Field
+                    label="Nom"
+                    value={content.home.founderQuote?.name ?? ""}
+                    onChange={(v) =>
+                      update({
+                        ...content,
+                        home: {
+                          ...content.home,
+                          founderQuote: {
+                            text: content.home.founderQuote?.text ?? "",
+                            role: content.home.founderQuote?.role ?? "",
+                            photo: content.home.founderQuote?.photo ?? "",
+                            photoAlt: content.home.founderQuote?.photoAlt ?? "",
+                            name: v,
+                          },
+                        },
+                      })
+                    }
+                  />
+                  <Field
+                    label="Fonction"
+                    value={content.home.founderQuote?.role ?? ""}
+                    onChange={(v) =>
+                      update({
+                        ...content,
+                        home: {
+                          ...content.home,
+                          founderQuote: {
+                            text: content.home.founderQuote?.text ?? "",
+                            name: content.home.founderQuote?.name ?? "",
+                            photo: content.home.founderQuote?.photo ?? "",
+                            photoAlt: content.home.founderQuote?.photoAlt ?? "",
+                            role: v,
+                          },
+                        },
+                      })
+                    }
+                  />
+                </div>
+                <ImageField
+                  label="Photo"
+                  value={content.home.founderQuote?.photo || undefined}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: {
+                        ...content.home,
+                        founderQuote: {
+                          text: content.home.founderQuote?.text ?? "",
+                          name: content.home.founderQuote?.name ?? "",
+                          role: content.home.founderQuote?.role ?? "",
+                          photoAlt: content.home.founderQuote?.photoAlt ?? "",
+                          photo: v ?? "",
+                        },
+                      },
+                    })
+                  }
+                />
+                <p className="text-xs text-muted">
+                  Sans photo, les initiales du nom sont affichées à la place.
+                </p>
+              </Card>
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Bande chiffres clés (après le catalogue de formations)
+                </p>
+                <ImageField
+                  label="Photo de fond"
+                  value={content.home.statsBandImage}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, statsBandImage: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Description de la photo (accessibilité)"
+                  value={content.home.statsBandImageAlt ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, statsBandImageAlt: v },
+                    })
+                  }
+                />
+              </Card>
+
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+                  Chiffres clés
+                </p>
+                <ListEditor
+                  items={content.stats}
+                  onChange={(stats) => update({ ...content, stats })}
+                  createItem={() => ({ value: "", label: "" })}
+                  addLabel="Ajouter un chiffre"
+                  titleFor={(s) => `${s.value} ${s.label}`}
+                  renderItem={(stat, set) => (
+                    <div className="grid gap-4 sm:grid-cols-[120px_1fr]">
+                      <Field
+                        label="Chiffre"
+                        value={stat.value}
+                        onChange={(v) => set({ ...stat, value: v })}
+                      />
+                      <Field
+                        label="Légende"
+                        value={stat.label}
+                        onChange={(v) => set({ ...stat, label: v })}
+                      />
+                    </div>
+                  )}
+                />
+              </div>
+
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+                  Questions fréquentes (bas de page d&apos;accueil)
+                </p>
+                <ListEditor
+                  items={content.home.faq}
+                  onChange={(faq) =>
+                    update({ ...content, home: { ...content.home, faq } })
+                  }
+                  createItem={() => ({ question: "", answer: "" })}
+                  addLabel="Ajouter une question"
+                  titleFor={(f) => f.question}
+                  renderItem={(item, set) => (
+                    <div className="grid gap-4">
+                      <Field
+                        label="Question"
+                        value={item.question}
+                        onChange={(v) => set({ ...item, question: v })}
+                      />
+                      <Field
+                        label="Réponse"
+                        rows={3}
+                        value={item.answer}
+                        onChange={(v) => set({ ...item, answer: v })}
+                      />
+                    </div>
+                  )}
+                />
+              </div>
+            </>
+          )}
+
+          {section === "catalogue" && (
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Catalogue & formations</h2>
+                <p className="mt-1 text-sm text-muted">Pages Nos formations, Toutes les formations, pages des domaines et fiches formation.</p>
+              </div>
+
+              <PagesEditor
+                only={["catalogue", "allTrainings", "sector", "training"]}
+                pages={content.pages}
+                onChange={(pages) => update({ ...content, pages })}
+              />
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Fiches formation — textes communs
+                </p>
+                <Field
+                  label="Fiches formation — méthodes pédagogiques"
+                  hint="Texte commun affiché sur toutes les fiches formation."
+                  rows={3}
+                  value={content.trainingInfo?.methods ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      trainingInfo: {
+                        methods: v,
+                        evaluation: content.trainingInfo?.evaluation ?? "",
+                      },
+                    })
+                  }
+                />
+                <Field
+                  label="Fiches formation — modalités d'évaluation"
+                  hint="Texte commun affiché sur toutes les fiches formation."
+                  rows={3}
+                  value={content.trainingInfo?.evaluation ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      trainingInfo: {
+                        methods: content.trainingInfo?.methods ?? "",
+                        evaluation: v,
+                      },
+                    })
+                  }
+                />
+              </Card>
+
+            <SectorsEditor
+              sectors={content.sectors}
+              onChange={(sectors) => update({ ...content, sectors })}
+            />
+            </>
+          )}
+
+          {section === "centre" && (
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Le centre</h2>
+              </div>
+
+              <PagesEditor
+                only={["centre"]}
+                pages={content.pages}
+                onChange={(pages) => update({ ...content, pages })}
+              />
+
+              <div>
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+                  Nos atouts
+                </p>
+                <ListEditor
+                  items={content.pillars}
+                  onChange={(pillars) => update({ ...content, pillars })}
+                  createItem={() => ({ title: "", text: "" })}
+                  addLabel="Ajouter un atout"
+                  titleFor={(p) => p.title}
+                  renderItem={(pillar, set) => (
+                    <div className="grid gap-4">
+                      <Field
+                        label="Titre"
+                        value={pillar.title}
+                        onChange={(v) => set({ ...pillar, title: v })}
+                      />
+                      <Field
+                        label="Texte"
+                        rows={3}
+                        value={pillar.text}
+                        onChange={(v) => set({ ...pillar, text: v })}
+                      />
+                    </div>
+                  )}
+                />
+              </div>
+            </>
+          )}
+
+          {section === "financement" && (
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Qualiopi & financement</h2>
+              </div>
+
+              <PagesEditor
+                only={["funding"]}
+                pages={content.pages}
+                onChange={(pages) => update({ ...content, pages })}
+              />
+
+              <Card>
+                <Field
+                  label="Introduction"
+                  rows={4}
+                  value={content.funding.intro}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      funding: { ...content.funding, intro: v },
+                    })
+                  }
+                />
+              </Card>
+              <ListEditor
+                items={content.funding.points}
+                onChange={(points) =>
+                  update({ ...content, funding: { ...content.funding, points } })
+                }
+                createItem={() => ({ title: "", text: "" })}
+                addLabel="Ajouter un argument"
+                titleFor={(p) => p.title}
+                renderItem={(point, set) => (
+                  <div className="grid gap-4">
+                    <Field
+                      label="Titre"
+                      value={point.title}
+                      onChange={(v) => set({ ...point, title: v })}
+                    />
+                    <Field
+                      label="Texte"
+                      rows={3}
+                      value={point.text}
+                      onChange={(v) => set({ ...point, text: v })}
+                    />
+                  </div>
+                )}
+              />
+            </>
+          )}
+
+          {section === "equipe" && (
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Notre équipe</h2>
+                <p className="mt-1 text-sm text-muted">Photos, noms et présentations des membres de l&apos;équipe.</p>
+              </div>
+
+              <PagesEditor
+                only={["team"]}
+                pages={content.pages}
+                onChange={(pages) => update({ ...content, pages })}
+              />
+
+            <ListEditor
+              items={content.team}
+              onChange={(team) => update({ ...content, team })}
+              createItem={() => ({ name: "", role: "", email: "", bio: "", photo: "", photoAlt: "" })}
+              addLabel="Ajouter un membre"
+              titleFor={(m) => m.name}
+              renderItem={(member, set) => (
+                <div className="grid gap-4">
+                  <ImageField
+                    label="Photo"
+                    value={member.photo || undefined}
+                    onChange={(v) => set({ ...member, photo: v ?? "" })}
+                  />
+                  <Field
+                    label="Description de la photo (accessibilité)"
+                    value={member.photoAlt ?? ""}
+                    onChange={(v) => set({ ...member, photoAlt: v })}
+                  />
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <Field
+                      label="Nom"
+                      value={member.name}
+                      onChange={(v) => set({ ...member, name: v })}
+                    />
+                    <Field
+                      label="Fonction"
+                      value={member.role}
+                      onChange={(v) => set({ ...member, role: v })}
+                    />
+                  </div>
+                  <Field
+                    label="E-mail"
+                    value={member.email}
+                    onChange={(v) => set({ ...member, email: v })}
+                  />
+                  <Field
+                    label="Présentation"
+                    rows={3}
+                    value={member.bio}
+                    onChange={(v) => set({ ...member, bio: v })}
+                  />
+                </div>
+              )}
+            />
+            </>
+          )}
+
+          {section === "contact" && (
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Contact</h2>
+              </div>
+
+              <PagesEditor
+                only={["contact"]}
+                pages={content.pages}
+                onChange={(pages) => update({ ...content, pages })}
+              />
+            </>
+          )}
+
           {section === "entreprise" && (
             <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Coordonnées</h2>
+                <p className="mt-1 text-sm text-muted">Nom, slogan, adresse, téléphone : repris sur tout le site.</p>
+              </div>
+
               <Card className="grid gap-4">
                 <Field
                   label="Nom"
@@ -218,6 +724,15 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   />
                 </div>
               </Card>
+            </>
+          )}
+
+          {section === "pied" && (
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Pied de page</h2>
+                <p className="mt-1 text-sm text-muted">Photo de fond et bandeau de demande de catalogue, en bas de toutes les pages.</p>
+              </div>
 
               <Card className="grid gap-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
@@ -300,6 +815,15 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   }
                 />
               </Card>
+            </>
+          )}
+
+          {section === "legal" && (
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Mentions légales & Qualiopi</h2>
+                <p className="mt-1 text-sm text-muted">Informations juridiques, CGV, délai d&apos;accès et indicateurs.</p>
+              </div>
 
               <Card className="grid gap-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
@@ -497,485 +1021,56 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
             </>
           )}
 
-          {section === "secteurs" && (
-            <SectorsEditor
-              sectors={content.sectors}
-              onChange={(sectors) => update({ ...content, sectors })}
-            />
-          )}
-
-          {section === "equipe" && (
-            <ListEditor
-              items={content.team}
-              onChange={(team) => update({ ...content, team })}
-              createItem={() => ({ name: "", role: "", email: "", bio: "", photo: "", photoAlt: "" })}
-              addLabel="Ajouter un membre"
-              titleFor={(m) => m.name}
-              renderItem={(member, set) => (
-                <div className="grid gap-4">
-                  <ImageField
-                    label="Photo"
-                    value={member.photo || undefined}
-                    onChange={(v) => set({ ...member, photo: v ?? "" })}
-                  />
-                  <Field
-                    label="Description de la photo (accessibilité)"
-                    value={member.photoAlt ?? ""}
-                    onChange={(v) => set({ ...member, photoAlt: v })}
-                  />
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    <Field
-                      label="Nom"
-                      value={member.name}
-                      onChange={(v) => set({ ...member, name: v })}
-                    />
-                    <Field
-                      label="Fonction"
-                      value={member.role}
-                      onChange={(v) => set({ ...member, role: v })}
-                    />
-                  </div>
-                  <Field
-                    label="E-mail"
-                    value={member.email}
-                    onChange={(v) => set({ ...member, email: v })}
-                  />
-                  <Field
-                    label="Présentation"
-                    rows={3}
-                    value={member.bio}
-                    onChange={(v) => set({ ...member, bio: v })}
-                  />
-                </div>
-              )}
-            />
-          )}
-
-          {section === "financement" && (
+          {section === "accessibilite" && (
             <>
-              <Card>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Accessibilité & handicap</h2>
+                <p className="mt-1 text-sm text-muted">Texte et référent affichés sur les fiches formation, la page Contact et la page Accessibilité.</p>
+              </div>
+
+              <Card className="grid gap-4">
                 <Field
-                  label="Introduction"
-                  rows={4}
-                  value={content.funding.intro}
+                  label="Texte"
+                  rows={6}
+                  value={content.accessibility.text}
                   onChange={(v) =>
                     update({
                       ...content,
-                      funding: { ...content.funding, intro: v },
+                      accessibility: { ...content.accessibility, text: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Référent handicap"
+                  value={content.accessibility.referent}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      accessibility: { ...content.accessibility, referent: v },
                     })
                   }
                 />
               </Card>
-              <ListEditor
-                items={content.funding.points}
-                onChange={(points) =>
-                  update({ ...content, funding: { ...content.funding, points } })
-                }
-                createItem={() => ({ title: "", text: "" })}
-                addLabel="Ajouter un argument"
-                titleFor={(p) => p.title}
-                renderItem={(point, set) => (
-                  <div className="grid gap-4">
-                    <Field
-                      label="Titre"
-                      value={point.title}
-                      onChange={(v) => set({ ...point, title: v })}
-                    />
-                    <Field
-                      label="Texte"
-                      rows={3}
-                      value={point.text}
-                      onChange={(v) => set({ ...point, text: v })}
-                    />
-                  </div>
-                )}
-              />
             </>
-          )}
-
-          {section === "accueil" && (
-            <>
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Carrousel de photos (haut de page)
-                </p>
-                <ListEditor
-                  items={content.home.heroSlides}
-                  onChange={(heroSlides) =>
-                    update({ ...content, home: { ...content.home, heroSlides } })
-                  }
-                  createItem={() => ({ image: "", alt: "", title: "", text: "", link: "" })}
-                  addLabel="Ajouter une photo au carrousel"
-                  titleFor={(s, i) => s.title || `Photo ${i + 1}`}
-                  renderItem={(slide, set) => (
-                    <div className="grid gap-4">
-                      <ImageField
-                        label="Photo"
-                        value={slide.image || undefined}
-                        onChange={(v) => set({ ...slide, image: v ?? "" })}
-                      />
-                      <Field
-                        label="Titre affiché sur la photo"
-                        value={slide.title ?? ""}
-                        onChange={(v) => set({ ...slide, title: v })}
-                      />
-                      <Field
-                        label="Sous-titre"
-                        value={slide.text ?? ""}
-                        onChange={(v) => set({ ...slide, text: v })}
-                      />
-                      <Field
-                        label="Lien (optionnel)"
-                        hint="Ex. /formations/caces-habilitations — rend la photo cliquable vers cette page."
-                        value={slide.link ?? ""}
-                        onChange={(v) => set({ ...slide, link: v })}
-                      />
-                      <Field
-                        label="Description de la photo (accessibilité)"
-                        value={slide.alt ?? ""}
-                        onChange={(v) => set({ ...slide, alt: v })}
-                      />
-                    </div>
-                  )}
-                />
-              </div>
-
-              <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                  Section « À propos »
-                </p>
-                <ImageField
-                  label="Photo"
-                  value={content.home.aboutImage}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, aboutImage: v },
-                    })
-                  }
-                />
-                <Field
-                  label="Description de la photo (accessibilité)"
-                  value={content.home.aboutImageAlt ?? ""}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, aboutImageAlt: v },
-                    })
-                  }
-                />
-              </Card>
-
-              <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                  Bande chiffres clés (après le catalogue de formations)
-                </p>
-                <ImageField
-                  label="Photo de fond"
-                  value={content.home.statsBandImage}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, statsBandImage: v },
-                    })
-                  }
-                />
-                <Field
-                  label="Description de la photo (accessibilité)"
-                  value={content.home.statsBandImageAlt ?? ""}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, statsBandImageAlt: v },
-                    })
-                  }
-                />
-              </Card>
-
-              <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                  Message du patron
-                </p>
-                <Field
-                  label="Citation"
-                  rows={5}
-                  value={content.home.founderQuote?.text ?? ""}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: {
-                        ...content.home,
-                        founderQuote: {
-                          name: content.home.founderQuote?.name ?? "",
-                          role: content.home.founderQuote?.role ?? "",
-                          photo: content.home.founderQuote?.photo ?? "",
-                          photoAlt: content.home.founderQuote?.photoAlt ?? "",
-                          text: v,
-                        },
-                      },
-                    })
-                  }
-                />
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <Field
-                    label="Nom"
-                    value={content.home.founderQuote?.name ?? ""}
-                    onChange={(v) =>
-                      update({
-                        ...content,
-                        home: {
-                          ...content.home,
-                          founderQuote: {
-                            text: content.home.founderQuote?.text ?? "",
-                            role: content.home.founderQuote?.role ?? "",
-                            photo: content.home.founderQuote?.photo ?? "",
-                            photoAlt: content.home.founderQuote?.photoAlt ?? "",
-                            name: v,
-                          },
-                        },
-                      })
-                    }
-                  />
-                  <Field
-                    label="Fonction"
-                    value={content.home.founderQuote?.role ?? ""}
-                    onChange={(v) =>
-                      update({
-                        ...content,
-                        home: {
-                          ...content.home,
-                          founderQuote: {
-                            text: content.home.founderQuote?.text ?? "",
-                            name: content.home.founderQuote?.name ?? "",
-                            photo: content.home.founderQuote?.photo ?? "",
-                            photoAlt: content.home.founderQuote?.photoAlt ?? "",
-                            role: v,
-                          },
-                        },
-                      })
-                    }
-                  />
-                </div>
-                <ImageField
-                  label="Photo"
-                  value={content.home.founderQuote?.photo || undefined}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: {
-                        ...content.home,
-                        founderQuote: {
-                          text: content.home.founderQuote?.text ?? "",
-                          name: content.home.founderQuote?.name ?? "",
-                          role: content.home.founderQuote?.role ?? "",
-                          photoAlt: content.home.founderQuote?.photoAlt ?? "",
-                          photo: v ?? "",
-                        },
-                      },
-                    })
-                  }
-                />
-                <p className="text-xs text-muted">
-                  Sans photo, les initiales du nom sont affichées à la place.
-                </p>
-              </Card>
-
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Chiffres clés
-                </p>
-                <ListEditor
-                  items={content.stats}
-                  onChange={(stats) => update({ ...content, stats })}
-                  createItem={() => ({ value: "", label: "" })}
-                  addLabel="Ajouter un chiffre"
-                  titleFor={(s) => `${s.value} ${s.label}`}
-                  renderItem={(stat, set) => (
-                    <div className="grid gap-4 sm:grid-cols-[120px_1fr]">
-                      <Field
-                        label="Chiffre"
-                        value={stat.value}
-                        onChange={(v) => set({ ...stat, value: v })}
-                      />
-                      <Field
-                        label="Légende"
-                        value={stat.label}
-                        onChange={(v) => set({ ...stat, label: v })}
-                      />
-                    </div>
-                  )}
-                />
-              </div>
-
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Nos atouts
-                </p>
-                <ListEditor
-                  items={content.pillars}
-                  onChange={(pillars) => update({ ...content, pillars })}
-                  createItem={() => ({ title: "", text: "" })}
-                  addLabel="Ajouter un atout"
-                  titleFor={(p) => p.title}
-                  renderItem={(pillar, set) => (
-                    <div className="grid gap-4">
-                      <Field
-                        label="Titre"
-                        value={pillar.title}
-                        onChange={(v) => set({ ...pillar, title: v })}
-                      />
-                      <Field
-                        label="Texte"
-                        rows={3}
-                        value={pillar.text}
-                        onChange={(v) => set({ ...pillar, text: v })}
-                      />
-                    </div>
-                  )}
-                />
-              </div>
-
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Formations mises en avant
-                </p>
-                <ListEditor
-                  items={content.topTrainings}
-                  onChange={(topTrainings) =>
-                    update({ ...content, topTrainings })
-                  }
-                  createItem={() => ({ title: "", duration: "", format: "" })}
-                  addLabel="Ajouter une formation mise en avant"
-                  titleFor={(t) => t.title}
-                  renderItem={(item, set) => (
-                    <div className="grid gap-4">
-                      <Field
-                        label="Nom"
-                        hint="Doit correspondre exactement au nom d'une formation existante pour que le lien fonctionne."
-                        value={item.title}
-                        onChange={(v) => set({ ...item, title: v })}
-                      />
-                      <div className="grid gap-4 sm:grid-cols-2">
-                        <Field
-                          label="Durée"
-                          value={item.duration}
-                          onChange={(v) => set({ ...item, duration: v })}
-                        />
-                        <Field
-                          label="Modalité"
-                          value={item.format}
-                          onChange={(v) => set({ ...item, format: v })}
-                        />
-                      </div>
-                    </div>
-                  )}
-                />
-              </div>
-
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Questions fréquentes (bas de page d&apos;accueil)
-                </p>
-                <ListEditor
-                  items={content.home.faq}
-                  onChange={(faq) =>
-                    update({ ...content, home: { ...content.home, faq } })
-                  }
-                  createItem={() => ({ question: "", answer: "" })}
-                  addLabel="Ajouter une question"
-                  titleFor={(f) => f.question}
-                  renderItem={(item, set) => (
-                    <div className="grid gap-4">
-                      <Field
-                        label="Question"
-                        value={item.question}
-                        onChange={(v) => set({ ...item, question: v })}
-                      />
-                      <Field
-                        label="Réponse"
-                        rows={3}
-                        value={item.answer}
-                        onChange={(v) => set({ ...item, answer: v })}
-                      />
-                    </div>
-                  )}
-                />
-              </div>
-            </>
-          )}
-
-          {section === "pages" && (
-            <PagesEditor
-              pages={content.pages}
-              onChange={(pages) => update({ ...content, pages })}
-            />
           )}
 
           {section === "design" && (
-            <DesignEditor
-              theme={content.theme}
-              sections={content.home.sections}
-              onThemeChange={(theme) => update({ ...content, theme })}
-              onSectionsChange={(sections) =>
-                update({ ...content, home: { ...content.home, sections } })
-              }
-            />
-          )}
+            <>
+              <div className="border-b border-border pb-3">
+                <h2 className="text-lg font-semibold">Design & couleurs</h2>
+                <p className="mt-1 text-sm text-muted">Police, couleurs, aurore, voiles et bandes : s&apos;appliquent à tout le site.</p>
+              </div>
 
-          {section === "accessibilite" && (
-            <Card className="grid gap-4">
-              <Field
-                label="Texte"
-                rows={6}
-                value={content.accessibility.text}
-                onChange={(v) =>
-                  update({
-                    ...content,
-                    accessibility: { ...content.accessibility, text: v },
-                  })
+              <DesignEditor
+                part="theme"
+                theme={content.theme}
+                sections={content.home.sections}
+                onThemeChange={(theme) => update({ ...content, theme })}
+                onSectionsChange={(sections) =>
+                  update({ ...content, home: { ...content.home, sections } })
                 }
               />
-              <Field
-                label="Référent handicap"
-                value={content.accessibility.referent}
-                onChange={(v) =>
-                  update({
-                    ...content,
-                    accessibility: { ...content.accessibility, referent: v },
-                  })
-                }
-              />
-              <Field
-                label="Fiches formation — méthodes pédagogiques"
-                hint="Texte commun affiché sur toutes les fiches formation."
-                rows={3}
-                value={content.trainingInfo?.methods ?? ""}
-                onChange={(v) =>
-                  update({
-                    ...content,
-                    trainingInfo: {
-                      methods: v,
-                      evaluation: content.trainingInfo?.evaluation ?? "",
-                    },
-                  })
-                }
-              />
-              <Field
-                label="Fiches formation — modalités d'évaluation"
-                hint="Texte commun affiché sur toutes les fiches formation."
-                rows={3}
-                value={content.trainingInfo?.evaluation ?? ""}
-                onChange={(v) =>
-                  update({
-                    ...content,
-                    trainingInfo: {
-                      methods: content.trainingInfo?.methods ?? "",
-                      evaluation: v,
-                    },
-                  })
-                }
-              />
-            </Card>
+            </>
           )}
         </main>
       </div>

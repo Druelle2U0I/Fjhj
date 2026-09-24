@@ -8,7 +8,9 @@ const ALLOWED = new Map([
   ["image/webp", "webp"],
 ]);
 
-const MAX_BYTES = 6 * 1024 * 1024;
+// L'hébergeur (Vercel) refuse les requêtes de plus de 4,5 Mo ; l'admin
+// compresse les photos avant l'envoi pour rester en dessous.
+const MAX_BYTES = 4.5 * 1024 * 1024;
 
 export async function POST(request: Request) {
   if (!(await isAuthenticated())) {
@@ -31,7 +33,7 @@ export async function POST(request: Request) {
 
   if (file.size > MAX_BYTES) {
     return Response.json(
-      { error: "Image trop lourde : 6 Mo maximum." },
+      { error: "Image trop lourde : 4,5 Mo maximum." },
       { status: 400 },
     );
   }

@@ -17,7 +17,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
   {
     key: "hero",
     title: "Accueil — haut de page",
-    hint: "Le slogan et la description se modifient dans « Entreprise & contact ».",
+    hint: "Le slogan et la description se modifient dans « Coordonnées » (Tout le site).",
     fields: [
       { key: "badge", label: "Pastille au-dessus du titre" },
       { key: "primaryButton", label: "Bouton principal" },
@@ -52,7 +52,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
   {
     key: "sector",
     title: "Pages des domaines de formation",
-    hint: "Ces textes sont communs à toutes les pages de domaine. Le titre, la description et le « pourquoi » de chaque domaine se modifient dans « Secteurs & formations ».",
+    hint: "Ces textes sont communs à toutes les pages de domaine. Le titre, la description et le « pourquoi » de chaque domaine se modifient plus bas sur cette page, dans la liste des secteurs.",
     fields: [
       { key: "quoteMainButton", label: "Bouton « Demander un devis »" },
       { key: "catalogueButton", label: "Bouton « Voir le catalogue »" },
@@ -66,7 +66,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
   {
     key: "training",
     title: "Fiches formation",
-    hint: "Titres communs à toutes les fiches. Le contenu de chaque formation se modifie dans « Secteurs & formations ».",
+    hint: "Titres communs à toutes les fiches. Le contenu de chaque formation se modifie plus bas sur cette page, dans la liste des secteurs.",
     fields: [
       { key: "programmeTitle", label: "Titre du programme" },
       { key: "audienceTitle", label: "Titre « Public concerné »" },
@@ -99,7 +99,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
       {
         key: "whyTitle",
         label: "Engagements — titre",
-        hint: "Les cartes (titre et texte de chaque engagement) se modifient dans « Page d'accueil » › Nos atouts. Pensez à accorder le nombre du titre avec le nombre de cartes.",
+        hint: "Les cartes (titre et texte de chaque engagement) se modifient plus bas sur cette page (« Nos atouts »). Pensez à accorder le nombre du titre avec le nombre de cartes.",
       },
       { key: "domainsEyebrow", label: "Domaines — sur-titre" },
       { key: "domainsTitle", label: "Domaines — titre", hint: COUNTS_HINT },
@@ -112,7 +112,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
   {
     key: "team",
     title: "Notre équipe",
-    hint: "Les membres de l'équipe se modifient dans « Équipe ».",
+    hint: "Les photos et présentations des membres sont juste en dessous.",
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre" },
@@ -135,7 +135,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
   {
     key: "funding",
     title: "Qualiopi & financement",
-    hint: "L'introduction et les trois blocs se modifient dans « Qualiopi & financement ».",
+    hint: "L'introduction et les blocs se modifient juste en dessous.",
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre" },
@@ -147,13 +147,15 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
 export default function PagesEditor({
   pages,
   onChange,
+  only,
 }: {
   pages: Pages;
   onChange: (pages: Pages) => void;
+  only?: PageKey[];
 }) {
   return (
     <>
-      {PAGES.map((page) => {
+      {PAGES.filter((page) => !only || only.includes(page.key)).map((page) => {
         const values = (pages[page.key] ?? {}) as Record<string, string>;
         return (
           <Card key={page.key} className="grid gap-4">

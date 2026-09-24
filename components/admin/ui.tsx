@@ -183,20 +183,38 @@ export function ImageField({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const upload = async (file: File) => {
+  // Aperçu local de la dernière image envoyée : le fichier publié n'est
+  // servi par le site qu'après le redéploiement (une à deux minutes).
+  const [preview, setPreview] = useState<{ path: string; url: string } | null>(null);
+
+  const upload = async (original: File) => {
     setBusy(true);
     setError(null);
+    let file = original;
+    try {
+      file = await shrinkImage(original);
+    } catch {
+      // En cas d'échec de la compression, on tente l'envoi du fichier brut.
+    }
     const body = new FormData();
     body.append("file", file);
-    const res = await fetch("/api/admin/upload", { method: "POST", body });
-    const data = await res.json().catch(() => ({}));
+    const res = await fetch("/api/admin/upload", { method: "POST", body }).catch(() => null);
+    const data = res ? await res.json().catch(() => ({})) : {};
     setBusy(false);
-    if (!res.ok) {
-      setError(data.error ?? "Envoi impossible.");
+    if (!res || !res.ok) {
+      setError(
+        data.error ??
+          (res?.status === 413
+            ? "Image trop lourde, même après compression. Essayez une image plus petite."
+            : "Envoi impossible. Vérifiez votre connexion et réessayez."),
+      );
       return;
     }
+    setPreview({ path: data.path, url: URL.createObjectURL(file) });
     onChange(data.path);
   };
+
+  const shown = preview && preview.path === value ? preview.url : value;
 
   return (
     <div>
@@ -205,8 +223,13 @@ export function ImageField({
       </span>
       <div className="mt-2 flex items-center gap-4">
         <div className="relative h-20 w-28 shrink-0 overflow-hidden rounded-xl border border-border bg-surface-2">
-          {value ? (
-            <Image src={value} alt="" fill sizes="112px" className="object-cover" />
+          {shown ? (
+            shown.startsWith("blob:") ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={shown} alt="" className="h-full w-full object-cover" />
+            ) : (
+              <Image src={shown} alt="" fill sizes="112px" className="object-cover" />
+            )
           ) : (
             <span className="flex h-full items-center justify-center text-xs text-muted">
               Aucune
@@ -303,4 +326,31 @@ export function ParagraphsField({
       }
     />
   );
+}
+
+// Réduit une photo à 2400 px de côté maximum et la recompresse en JPEG,
+// pour rester sous la limite d'envoi de l'hébergeur (4,5 Mo). Les petites images restent intactes.
+async function shrinkImage(file: File): Promise<File> {
+  const MAX_SIDE = 2400;
+  const TARGET_BYTES = 3.5 * 1024 * 1024;
+  const bitmap = await createImageBitmap(file);
+  const scale = Math.min(1, MAX_SIDE / Math.max(bitmap.width, bitmap.height));
+  if (scale === 1 && file.size <= TARGET_BYTES) {
+    bitmap.close();
+    return file;
+  }
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  canvas.getContext("2d")?.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  bitmap.close();
+  let quality = 0.85;
+  let blob: Blob | null = null;
+  do {
+    blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/jpeg", quality));
+    quality -= 0.1;
+  } while (blob && blob.size > TARGET_BYTES && quality > 0.4);
+  if (!blob) return file;
+  const name = file.name.replace(/\.[^.]+$/, "") + ".jpg";
+  return new File([blob], name, { type: "image/jpeg" });
 }
