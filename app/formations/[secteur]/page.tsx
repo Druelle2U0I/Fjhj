@@ -144,8 +144,10 @@ export default async function SecteurPage(
         </div>
       </section>
 
-      {/* Parcours les plus vendus : en carte, comme le catalogue. */}
-      {service.popularPaths && service.popularPaths.length > 0 && (
+      {/* Parcours les plus vendus / Le saviez-vous, côte à côte : une
+          carte pour le premier, un gros point d'interrogation en filigrane
+          pour le second (pas une carte de plus). */}
+      {(service.popularPaths?.length || service.tip) && (
         <section className="px-6 pb-20">
           <div className="mx-auto max-w-6xl">
             {service.unlistedNote && (
@@ -154,41 +156,39 @@ export default async function SecteurPage(
               </Reveal>
             )}
 
-            <Reveal className="max-w-2xl rounded-3xl border border-border bg-surface p-6 sm:p-7">
-              <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
-              <ul className="mt-4 space-y-3 text-sm text-muted">
-                {service.popularPaths.map((item) => (
-                  <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
-                    {linkifyPath(item, trainingCodes, service.slug)}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          </div>
-        </section>
-      )}
+            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+              {service.popularPaths && service.popularPaths.length > 0 && (
+                <Reveal className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
+                  <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
+                  <ul className="mt-4 space-y-3 text-sm text-muted">
+                    {service.popularPaths.map((item) => (
+                      <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
+                        {linkifyPath(item, trainingCodes, service.slug)}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              )}
 
-      {/* Le saviez-vous : pas un encart de plus, un gros point
-          d'interrogation en filigrane à côté d'un texte affirmé. */}
-      {service.tip && (
-        <section className="px-6 pb-20">
-          <div className="mx-auto max-w-6xl">
-            <Reveal className="flex items-center gap-6 sm:gap-10">
-              <span
-                aria-hidden="true"
-                className="select-none text-[6rem] font-bold leading-none text-accent/25 sm:text-[9rem]"
-              >
-                ?
-              </span>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-                  {service.tip.title}
-                </p>
-                <p className="mt-3 max-w-xl text-xl font-medium leading-snug text-foreground sm:text-2xl">
-                  {service.tip.text}
-                </p>
-              </div>
-            </Reveal>
+              {service.tip && (
+                <Reveal delay={0.05} className="flex items-center gap-6">
+                  <span
+                    aria-hidden="true"
+                    className="select-none text-[6rem] font-bold leading-none text-accent/25 sm:text-[8rem]"
+                  >
+                    ?
+                  </span>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+                      {service.tip.title}
+                    </p>
+                    <p className="mt-3 text-xl font-medium leading-snug text-foreground">
+                      {service.tip.text}
+                    </p>
+                  </div>
+                </Reveal>
+              )}
+            </div>
           </div>
         </section>
       )}
