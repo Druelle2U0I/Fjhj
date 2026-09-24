@@ -43,7 +43,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 p-3 sm:p-4">
-      <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-surface/70 shadow-lg backdrop-blur-xl sm:rounded-full">
+      <div className="mx-auto max-w-6xl rounded-xl border border-white/10 bg-surface/70 shadow-lg backdrop-blur-xl">
         <div className="relative flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
           {/* Le logo reste toujours au centre exact de la barre, quel que
               soit le poids des groupes de liens de chaque côté. */}
