@@ -114,7 +114,7 @@ export default function AllTrainings({
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="dyn-card group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface"
+                className="dyn-card group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface"
               >
                 <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden">
                   <Visual

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AllTrainings, { type TrainingItem } from "@/components/AllTrainings";
+import KeyFacts from "@/components/KeyFacts";
 import PageHero from "@/components/PageHero";
 import { fillCounts, pages, services } from "@/lib/data";
 
@@ -43,6 +44,7 @@ export default function AllTrainingsPage() {
             <span>{pages.allTrainings.eyebrow}</span>
           </>
         }
+        aside={<KeyFacts />}
       />
 
       <section className="page-band px-6 py-20">

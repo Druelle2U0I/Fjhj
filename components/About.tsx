@@ -30,7 +30,7 @@ export default function About({ section }: { section: HomeSection }) {
               case vide à sa place (mieux vaut du texte pleine largeur
               qu'un cadre gris qui ressemble à une image cassée). */}
           {hasImage && (
-            <Reveal className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
+            <Reveal className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
               <Visual
                 src={home.aboutImage}
                 alt={home.aboutImageAlt ?? ""}

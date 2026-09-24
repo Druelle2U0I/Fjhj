@@ -37,7 +37,7 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
           <li key={service.slug}>
             <Link
               href={`/formations/${service.slug}`}
-              className="group relative flex aspect-[4/3] items-end overflow-hidden rounded-2xl border border-border"
+              className="group relative flex aspect-[4/3] items-end overflow-hidden rounded-lg border border-border"
             >
               <Visual src={service.image} alt="" sizes="50vw" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
@@ -69,7 +69,7 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
             animate={{ flexGrow: isActive ? 7 : 1 }}
             transition={{ duration: 0.9, ease: EASE }}
             style={{ flexBasis: 0 }}
-            className="dyn-card group relative min-h-0 cursor-pointer overflow-hidden rounded-xl border border-border outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="dyn-card group relative min-h-0 cursor-pointer overflow-hidden rounded-lg border border-border outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             <Visual
               src={service.image}

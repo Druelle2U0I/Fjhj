@@ -7,7 +7,7 @@ function QualiopiCard() {
   if (!legal.qualiopiCertificate) return null;
 
   return (
-    <div className="dyn-card rounded-xl border border-border bg-surface p-6 sm:p-8">
+    <div className="dyn-card rounded-lg border border-border bg-surface p-6 sm:p-8">
       {legal.qualiopiLogo ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img

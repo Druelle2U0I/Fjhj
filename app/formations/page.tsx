@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import KeyFacts from "@/components/KeyFacts";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
@@ -18,6 +19,7 @@ export default function FormationsPage() {
         eyebrow={pages.catalogue.eyebrow}
         title={fillCounts(pages.catalogue.title)}
         description={fillCounts(pages.catalogue.text)}
+        aside={<KeyFacts />}
       />
 
       <section className="px-6 pb-8">
@@ -38,7 +40,7 @@ export default function FormationsPage() {
             <Reveal key={service.slug} delay={(i % 3) * 0.05}>
               <Link
                 href={`/formations/${service.slug}`}
-                className="dyn-card group block h-full overflow-hidden rounded-xl border border-border bg-surface"
+                className="dyn-card group block h-full overflow-hidden rounded-lg border border-border bg-surface"
               >
                 <div className="dyn-photo-wrap relative aspect-[4/3] overflow-hidden">
                   <Visual

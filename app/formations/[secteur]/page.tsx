@@ -5,6 +5,13 @@ import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
 import { pages, services } from "@/lib/data";
 
+// Nombre de colonnes sur grand écran (3 ou 4) choisi pour éviter une
+// carte seule sur la dernière ligne (ex. 7 formations → 4 + 3).
+function columnsFor(count: number) {
+  if (count % 3 === 0 || count % 3 === 2 || count < 4) return "lg:grid-cols-3";
+  return "lg:grid-cols-4";
+}
+
 export async function generateStaticParams() {
   return services.map((service) => ({ secteur: service.slug }));
 }
@@ -164,7 +171,7 @@ export default async function SecteurPage(
 
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               {service.popularPaths && service.popularPaths.length > 0 && (
-                <Reveal className="rounded-xl border border-border bg-surface p-6 sm:p-7">
+                <Reveal className="rounded-lg border border-border bg-surface p-6 sm:p-7">
                   <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
                   <ul className="mt-4 space-y-3 text-sm text-muted">
                     {service.popularPaths.map((item) => (
@@ -213,10 +220,18 @@ export default async function SecteurPage(
             </h2>
           </Reveal>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className={`mt-8 grid gap-6 sm:grid-cols-2 ${columnsFor(service.trainings.length)}`}>
             {service.trainings.map((training, i) => (
               <Reveal key={training.slug} delay={(i % 3) * 0.05}>
-                <article className="dyn-card relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface">
+                <article className="dyn-card relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface">
+                  <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden">
+                    <Visual
+                      src={training.image}
+                      alt={training.imageAlt ?? training.title}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                      className="dyn-photo"
+                    />
+                  </div>
                   <div className="flex flex-1 flex-col p-6">
                     {training.category && (
                       <span className="domain-tag mb-3 inline-flex w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
@@ -240,16 +255,6 @@ export default async function SecteurPage(
                       {training.duration}
                     </p>
 
-                    <div className="mt-auto pt-5">
-                      <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden rounded-lg">
-                        <Visual
-                          src={training.image}
-                          alt={training.imageAlt ?? training.title}
-                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
-                          className="dyn-photo"
-                        />
-                      </div>
-                    </div>
                   </div>
 
                   <Link

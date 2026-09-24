@@ -37,6 +37,9 @@ body {
 
 html {
   scroll-behavior: smooth;
+  /* Hauteur du menu fixe : les liens internes (#catalogue…) s'arrêtent
+     sous le menu au lieu d'y cacher le titre de la section. */
+  scroll-padding-top: 7rem;
 }
 
 /* Empêche le menu sticky (~84px sur mobile, ~100px au-delà) de recouvrir
@@ -53,11 +56,8 @@ h3 {
   letter-spacing: -0.015em;
 }
 
-h1,
-h2,
-h3,
 h4 {
-  font-family: var(--font-display), var(--font-sans), sans-serif;
+  font-family: var(--heading-font), var(--font-sans), sans-serif;
 }
 
 /* Dynamic card: lift, glow border, soft accent shadow on hover/focus */

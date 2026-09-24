@@ -112,7 +112,7 @@ export default function RelatedCarousel({
             {items.map((item) => (
               <li key={item.href} className="shrink-0 px-2.5" style={{ width: step || `${100 / visible}%` }}>
                 <article className="flex h-full select-none flex-col rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/60">
-                  <div className="pointer-events-none relative aspect-[16/9] overflow-hidden rounded-xl">
+                  <div className="pointer-events-none relative aspect-[16/9] overflow-hidden rounded-lg">
                     <Visual
                       src={item.image}
                       alt={item.imageAlt ?? item.title}

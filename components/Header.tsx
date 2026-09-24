@@ -43,7 +43,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 p-3 sm:p-4">
-      <div className="mx-auto max-w-6xl rounded-xl border border-white/10 bg-surface/70 shadow-lg backdrop-blur-xl">
+      <div className="mx-auto max-w-6xl rounded-lg border border-white/10 bg-surface/70 shadow-lg backdrop-blur-xl">
         <div className="relative flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
           {/* Le logo reste toujours au centre exact de la barre, quel que
               soit le poids des groupes de liens de chaque côté. */}
@@ -106,7 +106,7 @@ export default function Header() {
                     {/* Un clic sur un lien du panneau le referme. */}
                     <div
                       onClick={() => setCatalogueOpen(false)}
-                      className="overflow-hidden rounded-2xl border border-white/10 bg-background p-2 shadow-2xl"
+                      className="overflow-hidden rounded-lg border border-white/10 bg-background p-2 shadow-2xl"
                     >
                       <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-muted">
                         Nos domaines
@@ -116,7 +116,7 @@ export default function Header() {
                           <li key={service.slug}>
                             <Link
                               href={`/formations/${service.slug}`}
-                              className={`flex items-center justify-between gap-3 rounded-xl px-3 py-2 transition-colors hover:bg-surface-2 hover:text-accent ${
+                              className={`flex items-center justify-between gap-3 rounded-lg px-3 py-2 transition-colors hover:bg-surface-2 hover:text-accent ${
                                 pathname.startsWith(`/formations/${service.slug}`)
                                   ? "text-foreground"
                                   : "text-muted"
@@ -133,14 +133,14 @@ export default function Header() {
                       <div className="mt-2 grid gap-1 border-t border-white/10 pt-2">
                         <Link
                           href="/formations/toutes"
-                          className="flex items-center justify-between rounded-xl px-3 py-2 font-semibold text-foreground transition-colors hover:bg-surface-2 hover:text-accent"
+                          className="flex items-center justify-between rounded-lg px-3 py-2 font-semibold text-foreground transition-colors hover:bg-surface-2 hover:text-accent"
                         >
                           Toutes les formations ({trainingCount})
                           <span aria-hidden="true">→</span>
                         </Link>
                         <Link
                           href="/formations"
-                          className="rounded-xl px-3 py-2 text-muted transition-colors hover:bg-surface-2 hover:text-accent"
+                          className="rounded-lg px-3 py-2 text-muted transition-colors hover:bg-surface-2 hover:text-accent"
                         >
                           Vue par domaine
                         </Link>
@@ -193,7 +193,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`block rounded-xl px-3 py-2.5 ${linkClass(link.href)}`}
+                  className={`block rounded-lg px-3 py-2.5 ${linkClass(link.href)}`}
                 >
                   {link.label}
                 </Link>

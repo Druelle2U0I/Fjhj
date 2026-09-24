@@ -95,7 +95,7 @@ export default function CentrePage() {
               <Reveal key={service.slug} delay={(i % 3) * 0.05}>
                 <Link
                   href={`/formations/${service.slug}`}
-                  className="dyn-card flex items-center justify-between gap-3 rounded-xl border border-border bg-surface px-5 py-4 text-sm font-medium transition-colors hover:border-accent"
+                  className="dyn-card flex items-center justify-between gap-3 rounded-lg border border-border bg-surface px-5 py-4 text-sm font-medium transition-colors hover:border-accent"
                 >
                   {service.title}
                   <span className="shrink-0 text-xs text-muted">

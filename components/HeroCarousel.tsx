@@ -33,7 +33,7 @@ export default function HeroCarousel({ slides: allSlides }: { slides: HeroSlide[
     <div className="relative">
       <div
         ref={track}
-        className="flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto overflow-y-hidden rounded-3xl border border-border shadow-2xl [scrollbar-width:none] sm:aspect-[4/5] lg:aspect-[3/4] [&::-webkit-scrollbar]:hidden"
+        className="flex aspect-[4/3] snap-x snap-mandatory overflow-x-auto overflow-y-hidden rounded-lg border border-border shadow-2xl [scrollbar-width:none] sm:aspect-[4/5] lg:aspect-[3/4] [&::-webkit-scrollbar]:hidden"
       >
         {slides.map((slide, i) => {
           const content = (
@@ -50,7 +50,7 @@ export default function HeroCarousel({ slides: allSlides }: { slides: HeroSlide[
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent" />
               {(slide.title || slide.text) && (
-                <div className="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/10 bg-background/70 p-4 backdrop-blur transition-colors group-hover:border-accent/50">
+                <div className="absolute bottom-5 left-5 right-5 rounded-lg border border-white/10 bg-background/70 p-4 backdrop-blur transition-colors group-hover:border-accent/50">
                   {slide.title && (
                     <p className="text-sm font-medium text-foreground">
                       {slide.title}

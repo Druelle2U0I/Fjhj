@@ -27,7 +27,7 @@ export default function FundingSteps() {
       </Reveal>
 
       {/* Bureau : les 4 étapes côte à côte, toutes visibles en même temps. */}
-      <Reveal delay={0.1} className="mt-10 hidden lg:grid lg:grid-cols-4 lg:divide-x lg:divide-border lg:rounded-xl lg:border lg:border-border lg:bg-surface">
+      <Reveal delay={0.1} className="mt-10 hidden lg:grid lg:grid-cols-4 lg:divide-x lg:divide-border lg:rounded-lg lg:border lg:border-border lg:bg-surface">
         {steps.map((step, i) => (
           <div key={step.title} className="relative overflow-hidden p-6">
             <span
@@ -50,7 +50,7 @@ export default function FundingSteps() {
       {/* Mobile/tablette : une étape à la fois, curseur cliquable (pas de
           défilement automatique). */}
       <Reveal delay={0.1} className="mt-10 lg:hidden">
-        <div className="dyn-card relative overflow-hidden rounded-xl border border-border bg-surface p-6 sm:p-10">
+        <div className="dyn-card relative overflow-hidden rounded-lg border border-border bg-surface p-6 sm:p-10">
           {/* Grand numéro en filigrane, purement décoratif. */}
           <span
             aria-hidden="true"

@@ -9,6 +9,7 @@ export default function PageHero({
   breadcrumb,
   image,
   imageAlt,
+  aside,
 }: {
   eyebrow: string;
   title: string;
@@ -16,12 +17,15 @@ export default function PageHero({
   breadcrumb?: ReactNode;
   image?: string;
   imageAlt?: string;
+  // Contenu libre affiché à droite (chiffres clés, encadré…), à la place
+  // d'une image, pour ne pas laisser la moitié droite vide.
+  aside?: ReactNode;
 }) {
   return (
     <section className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[148px] sm:pb-14">
       <div
         className={`relative mx-auto max-w-6xl ${
-          image ? "grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center" : ""
+          image || aside ? "grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center" : ""
         }`}
       >
         <div>
@@ -46,7 +50,7 @@ export default function PageHero({
         {image && (
           <Reveal
             delay={0.1}
-            className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-xl border border-border"
+            className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-lg border border-border"
           >
             <Image
               src={image}
@@ -57,6 +61,7 @@ export default function PageHero({
             />
           </Reveal>
         )}
+        {!image && aside && <div>{aside}</div>}
       </div>
     </section>
   );
