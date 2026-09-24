@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
-import { accessibility, company } from "@/lib/data";
+import { accessibility, company, legal, qualiopiText } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Accessibilité",
@@ -20,8 +20,7 @@ export default function AccessibilitePage() {
       <h2>Accueil des personnes en situation de handicap</h2>
       <p>{accessibility.text}</p>
       <p>
-        <strong>Référent handicap :</strong> {accessibility.referent} — {mail} —{" "}
-        {company.phone}.
+        <strong>Référent handicap :</strong> {accessibility.referent} — {mail}.
       </p>
 
       <h2>Accessibilité du site</h2>
@@ -43,6 +42,20 @@ export default function AccessibilitePage() {
         </li>
         <li>forts contrastes entre le texte et le fond.</li>
       </ul>
+
+      {qualiopiText() && (
+        <>
+          <h2>Certification Qualiopi</h2>
+          <p>{qualiopiText()}</p>
+        </>
+      )}
+
+      {legal.accessDelay && (
+        <>
+          <h2>Délai d&apos;accès</h2>
+          <p>{legal.accessDelay}</p>
+        </>
+      )}
 
       <h2>Signaler un problème</h2>
       <p>

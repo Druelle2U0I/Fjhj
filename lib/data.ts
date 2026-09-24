@@ -27,6 +27,9 @@ export type Training = {
   description: string[];
   audience: string;
   funding: string;
+  // Étiquette courte affichée près du titre (ex. "Basse tension"),
+  // utile quand un secteur regroupe plusieurs niveaux/variantes.
+  category?: string;
 };
 
 export type Sector = {
@@ -37,6 +40,10 @@ export type Sector = {
   image?: string;
   imageAlt?: string;
   trainings: Training[];
+  // Contenu optionnel, affiché en complément du catalogue.
+  popularPaths?: string[];
+  unlistedNote?: string;
+  tip?: { title: string; text: string };
 };
 
 export type HeroSlide = {

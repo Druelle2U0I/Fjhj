@@ -124,9 +124,16 @@ export default async function FormationPage(
           </div>
 
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
-              {service.title}
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+                {service.title}
+              </p>
+              {training.category && (
+                <span className="domain-tag rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
+                  {training.category}
+                </span>
+              )}
+            </div>
             <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
               {training.title}
             </h1>
@@ -268,8 +275,10 @@ export default async function FormationPage(
             )}
           </div>
 
-          {/* Encart récapitulatif */}
-          <aside className="lg:sticky lg:top-24">
+          {/* Encart récapitulatif : passe en premier sur mobile (juste après
+              le programme) pour ne pas noyer les infos clés sous le mur de
+              texte qui suit ; reprend sa place à droite à partir de lg. */}
+          <aside className="order-first lg:order-none lg:sticky lg:top-24">
             <div className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
               <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                 {service.title}

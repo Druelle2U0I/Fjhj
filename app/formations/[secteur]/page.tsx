@@ -107,6 +107,42 @@ export default async function SecteurPage(
         </div>
       </section>
 
+      {/* Parcours les plus vendus / astuce : contenu optionnel, en cartes
+          courtes plutôt qu'un pavé de texte continu. */}
+      {(service.popularPaths?.length || service.tip) && (
+        <section className="px-6 pb-20">
+          <div className="mx-auto max-w-6xl">
+            {service.unlistedNote && (
+              <Reveal>
+                <p className="mb-6 text-sm text-muted">{service.unlistedNote}</p>
+              </Reveal>
+            )}
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {service.popularPaths && service.popularPaths.length > 0 && (
+                <Reveal className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
+                  <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
+                  <ul className="mt-4 space-y-3 text-sm text-muted">
+                    {service.popularPaths.map((item) => (
+                      <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              )}
+
+              {service.tip && (
+                <Reveal delay={0.05} className="rounded-3xl border-l-4 border-accent bg-accent/10 p-6 sm:p-7">
+                  <h3 className="font-semibold">{service.tip.title}</h3>
+                  <p className="mt-3 text-sm text-muted">{service.tip.text}</p>
+                </Reveal>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Catalogue du secteur */}
       <section id="catalogue" className="scroll-mt-24 px-6 pb-24">
         <div className="mx-auto max-w-6xl">
@@ -121,6 +157,11 @@ export default async function SecteurPage(
               <Reveal key={training.slug} delay={(i % 3) * 0.05}>
                 <article className="dyn-card relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-surface">
                   <div className="flex flex-1 flex-col p-6">
+                    {training.category && (
+                      <span className="domain-tag mb-3 inline-flex w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
+                        {training.category}
+                      </span>
+                    )}
                     <h3 className="text-lg font-semibold leading-snug">
                       <Link
                         href={`/formations/${service.slug}/${training.slug}`}

@@ -6,7 +6,7 @@
     "about": "Organisme de formation certifié Qualiopi, implanté à Wingles (Pas-de-Calais). Formations en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France : Nord, Pas-de-Calais, Aisne, Somme et Oise.",
     "email": "maxence@enma-formation.com",
     "phone": "07 69 35 55 19",
-    "address": "24 rue Colmar, 62410 Wingles",
+    "address": "Rue du Père Avrillon, 62410 Wingles",
     "serviceArea": "Hauts-de-France — Nord, Pas-de-Calais, Aisne, Somme et Oise"
   },
   "legal": {
@@ -24,14 +24,14 @@
     "qualiopiCategory": "actions de formation",
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
-    "accessDelay": "10 jours ouvrés en règle générale après l'accord du financeur. En cas d'urgence, une session peut exceptionnellement être organisée dès 3 jours ouvrés, selon la disponibilité de nos formateurs. En intra-entreprise, le planning est établi avec vous dans notre proposition.",
+    "accessDelay": "Garantie d'organisation rapide de formation sous 14 jours.",
     "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (taux de satisfaction des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras"
   },
   "stats": [
     {
-      "value": "32",
+      "value": "42",
       "label": "formations au catalogue"
     },
     {
@@ -43,8 +43,8 @@
       "label": "domaines de formation"
     },
     {
-      "value": "OPCO",
-      "label": "formations éligibles à un financement"
+      "value": "À venir",
+      "label": "taux de satisfaction"
     }
   ],
   "pillars": [
@@ -349,26 +349,116 @@
         "title": "L'habilitation protège le salarié comme l'employeur",
         "text": "La norme NF C 18-510 conditionne toute intervention à proximité d'une installation électrique à une habilitation délivrée par l'employeur, elle-même adossée à une formation. Nos sessions distinguent le personnel électricien du personnel non électricien, et se terminent par un avis motivé transmis à l'employeur."
       },
+      "popularPaths": [
+        "H0B0 et BS/BE Manœuvre : publics non électriciens, sur 1 à 2 jours.",
+        "B1V-B2V-BR-BC : électriciens BT, sur 3 jours.",
+        "H0V-B1V-B2V-BR-BC-H1V-H2V-HC : électriciens BT/HT, sur 3 à 5 jours."
+      ],
+      "unlistedNote": "Si l'habilitation que vous recherchez n'apparaît pas dans cette liste, pas d'inquiétude : contactez-nous, nous l'organisons aussi.",
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Le recyclage est recommandé tous les 3 ans par la norme. L'habilitation elle-même est délivrée par l'employeur, sur la base de l'avis de formation."
+      },
       "trainings": [
         {
-          "title": "Habilitation électrique — basse tension (NF C 18-510)",
-          "duration": "4 demi-journées",
+          "title": "B1 / B1V — Exécutant électricien basse tension",
+          "category": "Basse tension",
+          "duration": "1 journée",
           "format": "Intra ou inter-entreprises",
-          "intro": "L'habilitation qui autorise vos salariés à intervenir en basse tension en toute légalité.",
+          "intro": "Le premier niveau d'habilitation pour exécuter des travaux électriques basse tension sous les ordres d'un chargé de travaux.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques et cadre de l'habilitation",
+              "text": "Objectif : être capable d'identifier les risques électriques et le rôle de l'exécutant B1/B1V. Effets du courant électrique sur le corps humain, zones et niveaux de tension, rôle et limites de l'exécutant électricien conformes à la norme NF C 18-510."
+            },
+            {
+              "title": "Exécuter des travaux hors tension (B1)",
+              "text": "Objectif : être capable d'exécuter, en sécurité, des travaux hors tension sous les ordres d'un chargé de travaux. Vérification d'absence de tension, port des équipements de protection individuelle, respect des instructions de sécurité reçues."
+            },
+            {
+              "title": "Travailler au voisinage (B1V)",
+              "text": "Objectif : être capable de respecter les distances et zones d'environnement lors de travaux au voisinage de pièces nues sous tension. Zones d'environnement, distances limites de voisinage, conduite à tenir en cas de doute."
+            }
+          ],
+          "description": [
+            "L'habilitation B1/B1V permet à un salarié d'exécuter des travaux électriques basse tension, hors tension ou au voisinage de pièces sous tension, toujours sous les ordres d'un chargé de travaux habilité B2/B2V. C'est le niveau d'entrée pour tout électricien débutant une activité de travaux basse tension.",
+            "Cette formation permet au participant de comprendre les risques électriques, d'exécuter les travaux qui lui sont confiés dans le respect des instructions reçues, et de réagir de manière adaptée en cas de situation imprévue au voisinage d'une installation sous tension."
+          ],
+          "audience": "Cette formation s'adresse aux électriciens débutant une activité de travaux sur des installations basse tension, appelés à exécuter des travaux sous les ordres d'un chargé de travaux. Aucun prérequis n'est exigé, mais une aptitude médicale au poste de travail délivrée par le médecin du travail est nécessaire avant toute habilitation.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Le titre d'habilitation n'est jamais délivré par l'organisme de formation, mais par l'employeur, sur la base des résultats aux évaluations théorique et pratique que nous lui transmettons à l'issue de la session."
+        },
+        {
+          "title": "B2 / B2V — Chargé de travaux électriques basse tension",
+          "category": "Basse tension",
+          "duration": "1 à 2 journées",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Diriger et surveiller des travaux électriques basse tension, hors tension ou au voisinage.",
           "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
           "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
           "programme": [
             {
-              "title": "Risques électriques et niveaux d'habilitation",
-              "text": "Objectif : être capable d'identifier les risques électriques et les mesures de prévention associées à son niveau d'habilitation. Cette séquence aborde les effets du courant électrique sur le corps humain (électrisation, électrocution, brûlures), les zones et niveaux de tension (TBT, BT, HT), ainsi que les niveaux d'habilitation et leurs symboles conformes à la norme NF C 18-510."
+              "title": "Risques électriques et rôle du chargé de travaux",
+              "text": "Objectif : être capable de situer les responsabilités du chargé de travaux B2/B2V vis-à-vis de son équipe et de l'employeur. Effets du courant électrique sur le corps humain, zones et niveaux de tension, responsabilités du chargé de travaux."
             },
             {
               "title": "Travaux hors tension et au voisinage (B2V)",
               "text": "Objectif : être capable de réaliser, en sécurité, des travaux hors tension et au voisinage d'installations basse tension. Mise en œuvre de la procédure de consignation en 4 étapes, respect des distances de voisinage et des zones d'environnement, port des équipements de protection individuelle et collective adaptés."
             },
             {
-              "title": "Interventions générales basse tension (BR)",
-              "text": "Objectif : être capable de réaliser, en sécurité, des interventions générales basse tension (dépannage, raccordement, remplacement). Apprentissage de la procédure d'intervention, rédaction du rapport d'intervention, utilisation du matériel de mesure et de vérification (VAT)."
+              "title": "Diriger et surveiller une équipe",
+              "text": "Objectif : être capable d'organiser et de surveiller l'exécution des travaux confiés à des exécutants B1/B1V. Répartition des tâches, surveillance permanente de l'équipe, consignes de sécurité à transmettre avant le début des travaux."
+            }
+          ],
+          "description": [
+            "L'habilitation B2/B2V permet à un salarié de diriger et surveiller des travaux électriques basse tension, hors tension ou au voisinage, en encadrant le cas échéant des exécutants B1/B1V. Elle engage sa responsabilité dans l'organisation et la sécurité du chantier.",
+            "Cette formation prépare le participant à mettre en œuvre la procédure de consignation, à respecter les distances de voisinage, et à organiser le travail de son équipe dans le respect de la norme NF C 18-510."
+          ],
+          "audience": "Cette formation s'adresse aux électriciens de maintenance, techniciens et agents de travaux amenés à diriger ou surveiller des travaux sur des installations basse tension. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Nous vous remettons l'ensemble des documents nécessaires au montage du dossier : convention de formation, devis détaillé et programme pédagogique."
+        },
+        {
+          "title": "BR — Chargé d'intervention générale basse tension",
+          "category": "Basse tension",
+          "duration": "1 journée",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Réaliser seul des interventions de dépannage, maintenance et raccordement basse tension.",
+          "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques et rôle du BR",
+              "text": "Objectif : être capable de situer le champ d'action et les responsabilités du chargé d'intervention générale. Effets du courant électrique sur le corps humain, domaine d'application de l'intervention générale basse tension."
+            },
+            {
+              "title": "Interventions générales basse tension",
+              "text": "Objectif : être capable de réaliser, en sécurité, des interventions générales basse tension (dépannage, raccordement, remplacement). Apprentissage de la procédure d'intervention, utilisation du matériel de mesure et de vérification (VAT)."
+            },
+            {
+              "title": "Compte rendu et vérification",
+              "text": "Objectif : être capable de rendre compte de son intervention et d'en vérifier la conformité. Rédaction du rapport d'intervention, vérifications à réaliser avant remise en service de l'installation."
+            }
+          ],
+          "description": [
+            "L'habilitation BR permet à un salarié de réaliser seul des interventions générales basse tension : dépannage, raccordement, remplacement de matériel électrique. Contrairement au B2V, le BR intervient sans chargé de travaux, ce qui suppose une bonne autonomie technique.",
+            "Cette formation prépare le participant à réaliser ces interventions en sécurité, à utiliser correctement le matériel de mesure et de vérification, et à rendre compte de son intervention conformément à la norme NF C 18-510."
+          ],
+          "audience": "Cette formation s'adresse aux électriciens de maintenance amenés à intervenir seuls pour du dépannage, du raccordement ou du remplacement de matériel sur des installations basse tension. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+        },
+        {
+          "title": "BC — Chargé de consignation basse tension",
+          "category": "Basse tension",
+          "duration": "1 journée",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Réaliser une consignation basse tension pour le compte d'autrui, en toute sécurité.",
+          "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques et rôle du chargé de consignation",
+              "text": "Objectif : être capable de situer les responsabilités du chargé de consignation vis-à-vis du chargé de travaux. Effets du courant électrique sur le corps humain, place de la consignation dans la prévention du risque électrique."
             },
             {
               "title": "Consignation basse tension pour autrui (BC)",
@@ -376,30 +466,177 @@
             },
             {
               "title": "Mise en situation et évaluation",
-              "text": "Consolidation de l'ensemble des procédures B2V, BR et BC par des mises en situation pratiques encadrées sur plateau technique, suivies d'une évaluation théorique (QCM de 15 questions) et d'une évaluation pratique. Les résultats sont transmis à l'employeur, seul habilité à délivrer le titre."
+              "text": "Mises en situation pratiques encadrées sur plateau technique, suivies d'une évaluation théorique (QCM) et d'une évaluation pratique. Les résultats sont transmis à l'employeur, seul habilité à délivrer le titre."
             }
           ],
           "description": [
-            "L'habilitation électrique n'est pas une option administrative : sans titre valide, toute intervention sur une installation électrique sous tension est interdite par la loi, et engage la responsabilité de l'employeur comme celle du salarié en cas d'accident. Chaque année, l'électrisation reste l'une des causes majeures d'accidents graves et mortels au travail.\n\nCette formation prépare vos électriciens à l'habilitation basse tension B2V-BR-BC, conforme à la norme NF C 18-510, pour intervenir en sécurité sur les installations basse tension de votre entreprise. Elle couvre trois niveaux complémentaires : B2V pour les travaux hors tension et au voisinage, BR pour les interventions générales (dépannage, raccordement, remplacement), et BC pour la consignation. La formation alterne apports théoriques en salle et mises en situation pratiques sur plateau technique basse tension, dans des conditions proches du réel."
+            "L'habilitation BC permet à un salarié de réaliser une consignation électrique basse tension pour le compte d'un chargé de travaux, avant que celui-ci n'engage des travaux hors tension. C'est une étape clé de la prévention du risque électrique : une consignation mal réalisée expose directement l'équipe de travaux.",
+            "Cette formation prépare le participant à appliquer les 4 étapes de la consignation, à communiquer clairement avec le chargé de travaux, et à assumer la responsabilité qui accompagne ce rôle."
           ],
-          "audience": "Cette formation s'adresse au personnel électricien amené à réaliser des travaux ou interventions sur des installations basse tension : électriciens de maintenance, techniciens, agents de travaux. Aucun diplôme n'est exigé, mais une aptitude médicale au poste de travail délivrée par le médecin du travail est nécessaire avant toute habilitation. Elle concerne aussi bien les primo-habilités que les électriciens confirmés en renouvellement — la norme NF C 18-510 ne fixe pas de durée de validité réglementaire, mais recommande un recyclage tous les 3 ans, périodicité que la plupart des employeurs retiennent.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Nous vous remettons l'ensemble des documents nécessaires au montage du dossier : convention de formation, devis détaillé et programme pédagogique. Un point essentiel à connaître : le titre d'habilitation électrique n'est jamais délivré par l'organisme de formation, mais par l'employeur, sur la base des résultats aux évaluations théorique (QCM) et pratique que nous lui transmettons à l'issue de la session."
+          "audience": "Cette formation s'adresse aux électriciens amenés à réaliser des consignations basse tension pour le compte d'autrui, généralement déjà habilités B2V ou BR. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
         },
         {
-          "title": "Habilitation électrique — haute tension (NF C 18-510)",
-          "duration": "4 à 6 demi-journées",
+          "title": "BE Mesurage / Essai / Vérification",
+          "category": "Basse tension",
+          "duration": "1 journée",
           "format": "Intra ou inter-entreprises",
-          "intro": "Intervenir en haute tension avec le niveau d'habilitation exigé par la NF C 18-510.",
+          "intro": "Réaliser des opérations de mesure, d'essai ou de vérification sur des installations basse tension.",
+          "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques et rôle du BE",
+              "text": "Objectif : être capable de situer le champ d'application de l'habilitation BE selon l'opération confiée (mesurage, essai ou vérification). Effets du courant électrique sur le corps humain, distinction entre les trois types d'opérations BE."
+            },
+            {
+              "title": "Réaliser des mesurages, essais ou vérifications",
+              "text": "Objectif : être capable de réaliser en sécurité l'opération de mesurage, d'essai ou de vérification qui lui est confiée sur une installation basse tension. Utilisation des appareils de mesure et de contrôle, précautions spécifiques à chaque type d'opération."
+            },
+            {
+              "title": "Mise en situation et évaluation",
+              "text": "Mises en situation pratiques sur plateau technique, suivies d'une évaluation théorique et pratique. Les résultats sont transmis à l'employeur pour délivrance du titre."
+            }
+          ],
+          "description": [
+            "L'habilitation BE couvre des opérations spécifiques sur des installations basse tension : mesurage, essai ou vérification, selon le profil confié au salarié. Elle concerne souvent du personnel technique qui n'intervient pas directement sur les circuits, mais doit néanmoins connaître les risques électriques liés à son activité.",
+            "Cette formation prépare le participant à réaliser en sécurité l'opération qui lui est confiée, avec le matériel de mesure et de contrôle adapté, dans le respect de la norme NF C 18-510."
+          ],
+          "audience": "Cette formation s'adresse au personnel technique réalisant des opérations de mesure, d'essai ou de vérification sur des installations basse tension : bureaux d'études, contrôle qualité, maintenance. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+        },
+        {
+          "title": "BP — Habilitation photovoltaïque",
+          "category": "Basse tension",
+          "duration": "1 journée",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Intervenir en sécurité sur les installations de production photovoltaïque.",
+          "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques spécifiques au photovoltaïque",
+              "text": "Objectif : être capable d'identifier les risques propres aux installations photovoltaïques. Présence de tension dès l'exposition à la lumière, spécificités du courant continu, impossibilité de mise hors tension complète côté champ photovoltaïque."
+            },
+            {
+              "title": "Intervenir sur une installation photovoltaïque",
+              "text": "Objectif : être capable d'intervenir en sécurité sur une installation photovoltaïque. Procédures adaptées à l'impossibilité de consignation totale, équipements de protection individuelle et collective adaptés au courant continu."
+            },
+            {
+              "title": "Mise en situation et évaluation",
+              "text": "Mises en situation pratiques sur plateau technique, suivies d'une évaluation théorique et pratique. Les résultats sont transmis à l'employeur pour délivrance du titre."
+            }
+          ],
+          "description": [
+            "L'habilitation BP répond à une spécificité des installations photovoltaïques : une partie du circuit reste sous tension dès qu'il y a de la lumière, ce qui interdit toute consignation complète comme sur une installation basse tension classique.",
+            "Cette formation prépare le participant à identifier ces risques spécifiques et à intervenir en sécurité sur les installations de production photovoltaïque, dans le respect de la norme NF C 18-510."
+          ],
+          "audience": "Cette formation s'adresse aux installateurs et techniciens amenés à intervenir sur des installations de production photovoltaïque. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+        },
+        {
+          "title": "H0 / H0V — Non-électricien à proximité d'ouvrages HT",
+          "category": "Haute tension",
+          "duration": "1 journée",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Le niveau pour tout non-électricien amené à travailler ou circuler à proximité d'ouvrages haute tension.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques de la haute tension pour le non-électricien",
+              "text": "Objectif : être capable de situer les risques spécifiques de la haute tension sans connaissance électrique préalable. Effets du courant électrique, spécificités et dangers de la haute tension par rapport à la basse tension."
+            },
+            {
+              "title": "Distances de sécurité et comportements au voisinage HT",
+              "text": "Objectif : être capable de respecter les distances de sécurité et les consignes lors d'une activité à proximité d'ouvrages haute tension. Distances limites de voisinage, zones interdites, signalisation et balisage."
+            },
+            {
+              "title": "Conduite à tenir en cas d'incident",
+              "text": "Objectif : être capable de réagir de manière adaptée en cas d'incident électrique à proximité d'une installation haute tension. Alerte, mise en sécurité, personnes à prévenir."
+            }
+          ],
+          "description": [
+            "L'habilitation H0/H0V s'adresse à toute personne non électricienne amenée à travailler ou circuler à proximité d'ouvrages haute tension, sans jamais intervenir directement sur l'installation électrique elle-même.",
+            "Cette formation permet au participant de comprendre les risques propres à la haute tension, de respecter les distances de sécurité, et de savoir réagir en cas d'incident, sans nécessiter de connaissances électriques préalables."
+          ],
+          "audience": "Cette formation s'adresse au personnel non électricien travaillant ou circulant à proximité d'ouvrages haute tension : agents d'entretien, personnel de chantier, personnel d'exploitation. Aucun prérequis n'est exigé.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+        },
+        {
+          "title": "H1 / H1V — Exécutant électricien haute tension",
+          "category": "Haute tension",
+          "duration": "1 à 2 journées",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Exécuter des travaux électriques haute tension sous les ordres d'un chargé de travaux.",
+          "prerequisites": "Connaissances en électricité, habilitation basse tension recommandée",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques et cadre de l'habilitation HT",
+              "text": "Objectif : être capable d'identifier les risques électriques spécifiques à la haute tension et le rôle de l'exécutant H1/H1V. Effets du courant électrique, distances de voisinage renforcé propres à la haute tension."
+            },
+            {
+              "title": "Exécuter des travaux hors tension et au voisinage (H1V)",
+              "text": "Objectif : être capable d'exécuter, en sécurité, des travaux hors tension et au voisinage renforcé sous les ordres d'un chargé de travaux haute tension. Port des équipements de protection adaptés à la HT, respect strict des instructions reçues."
+            },
+            {
+              "title": "Mise en situation et évaluation",
+              "text": "Mises en situation pratiques sur plateau technique haute tension, suivies d'une évaluation théorique et pratique. Les résultats sont transmis à l'employeur pour délivrance du titre."
+            }
+          ],
+          "description": [
+            "L'habilitation H1/H1V permet à un électricien d'exécuter des travaux haute tension, hors tension ou au voisinage renforcé, sous les ordres d'un chargé de travaux habilité H2/H2V. C'est le niveau d'entrée pour aborder les travaux haute tension.",
+            "Cette formation prépare le participant à exécuter ces travaux dans le respect strict des distances de sécurité renforcées propres à la haute tension et des instructions du chargé de travaux."
+          ],
+          "audience": "Cette formation s'adresse aux électriciens confirmés, généralement déjà habilités en basse tension, amenés à exécuter des travaux sur des installations haute tension sous la direction d'un chargé de travaux. Une aptitude médicale au poste de travail est nécessaire.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+        },
+        {
+          "title": "H2 / H2V — Chargé de travaux haute tension",
+          "category": "Haute tension",
+          "duration": "2 journées",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Diriger des travaux haute tension et réaliser les essais associés (H2V Essai).",
           "prerequisites": "Expérience des travaux électriques et connaissances techniques en haute tension",
           "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
           "programme": [
             {
-              "title": "Risques électriques et niveaux d'habilitation HT",
-              "text": "Objectif : être capable d'identifier les risques électriques spécifiques à la haute tension et les mesures de prévention associées à son niveau d'habilitation. Effets du courant électrique sur le corps humain, spécificités de la haute tension, distances de voisinage renforcé, symboles et limites de l'habilitation H2V-HC."
+              "title": "Risques électriques et responsabilités du chargé de travaux HT",
+              "text": "Objectif : être capable de situer les responsabilités du chargé de travaux H2/H2V. Effets du courant électrique, spécificités de la haute tension, responsabilités vis-à-vis de son équipe."
             },
             {
               "title": "Travaux hors tension et au voisinage renforcé (H2V)",
-              "text": "Objectif : être capable de réaliser, en sécurité, des travaux hors tension et au voisinage renforcé d'installations haute tension. Procédure de consignation en haute tension, distances de voisinage renforcé, équipements de protection individuelle et collective adaptés à la HT."
+              "text": "Objectif : être capable de réaliser, en sécurité, des travaux hors tension et au voisinage renforcé d'installations haute tension. Procédure de consignation en haute tension, distances de voisinage renforcé, équipements de protection adaptés à la HT."
+            },
+            {
+              "title": "Réaliser des essais (H2V Essai)",
+              "text": "Objectif : être capable de réaliser, en sécurité, des essais sur des installations haute tension. Procédures d'essai spécifiques à la haute tension, précautions complémentaires à la consignation."
+            },
+            {
+              "title": "Mise en situation et évaluation",
+              "text": "Mises en situation pratiques encadrées sur plateau technique haute tension, suivies d'une évaluation théorique et pratique. Les résultats sont transmis à l'employeur pour délivrance du titre."
+            }
+          ],
+          "description": [
+            "L'habilitation H2/H2V permet à un électricien confirmé de diriger des travaux haute tension, hors tension ou au voisinage renforcé, et de réaliser des essais (H2V Essai). Elle engage sa responsabilité dans l'organisation et la sécurité du chantier.",
+            "Cette formation prépare le participant à mettre en œuvre la procédure de consignation haute tension, à encadrer une équipe d'exécutants H1/H1V, et à réaliser les essais qui lui sont confiés, dans le respect de la norme NF C 18-510."
+          ],
+          "audience": "Personnel électricien confirmé amené à diriger des travaux sur des installations haute tension, généralement déjà habilité en basse tension. Une expérience préalable sur des installations électriques est fortement recommandée.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Comme pour la basse tension, le titre d'habilitation haute tension est délivré par l'employeur, jamais par l'organisme de formation, sur la base des résultats aux évaluations que nous lui transmettons."
+        },
+        {
+          "title": "HC — Chargé de consignation haute tension",
+          "category": "Haute tension",
+          "duration": "1 journée",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Réaliser une consignation haute tension pour le compte d'autrui, en toute sécurité.",
+          "prerequisites": "Expérience des travaux électriques et connaissances techniques en haute tension",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques et rôle du chargé de consignation HT",
+              "text": "Objectif : être capable de situer les responsabilités du chargé de consignation haute tension vis-à-vis du chargé de travaux. Effets du courant électrique, spécificités de la consignation en haute tension."
             },
             {
               "title": "Consignation haute tension (HC)",
@@ -407,14 +644,44 @@
             },
             {
               "title": "Mise en situation et évaluation",
-              "text": "Mises en situation pratiques encadrées sur plateau technique haute tension, débriefing, puis évaluation théorique (QCM) et pratique. Les résultats sont transmis à l'employeur pour délivrance du titre."
+              "text": "Mises en situation pratiques encadrées sur plateau technique haute tension, suivies d'une évaluation théorique et pratique. Les résultats sont transmis à l'employeur pour délivrance du titre."
             }
           ],
           "description": [
-            "La haute tension ne pardonne pas l'improvisation : sans habilitation valide, toute intervention sur ces installations est interdite par la loi, et les conséquences d'un accident en haute tension sont presque toujours graves, voire mortelles. L'employeur comme le salarié engagent leur responsabilité en cas d'intervention non habilitée.\n\nCette formation prépare le personnel électricien confirmé à l'habilitation haute tension H2V-HC, conforme à la norme NF C 18-510. Elle couvre les travaux hors tension et au voisinage renforcé (H2V) ainsi que la consignation haute tension (HC). La haute tension impose des distances de sécurité plus strictes et une maîtrise technique plus poussée que la basse tension : la formation combine apports théoriques et mises en situation pratiques sur plateau technique haute tension."
+            "L'habilitation HC permet à un salarié de réaliser une consignation électrique haute tension pour le compte d'un chargé de travaux, avant que celui-ci n'engage des travaux hors tension. La consignation haute tension exige une rigueur particulière, les conséquences d'une erreur étant presque toujours graves.",
+            "Cette formation prépare le participant à appliquer les étapes de la consignation haute tension et à communiquer clairement avec le chargé de travaux."
           ],
-          "audience": "Personnel électricien confirmé amené à réaliser des travaux ou des consignations sur des installations haute tension : techniciens et électriciens expérimentés, généralement déjà habilités en basse tension. Une aptitude médicale au poste de travail est requise. Cette habilitation demande une maîtrise technique plus poussée que la basse tension : une expérience préalable sur des installations électriques est fortement recommandée avant d'aborder ce niveau.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Comme pour la basse tension, le titre d'habilitation haute tension est délivré par l'employeur, jamais par l'organisme de formation, sur la base des résultats aux évaluations théorique et pratique que nous lui transmettons. Convention, devis et programme détaillé vous sont remis pour constituer votre dossier."
+          "audience": "Personnel électricien confirmé amené à réaliser des consignations haute tension pour le compte d'autrui, généralement déjà habilité H2/H2V. Une expérience préalable sur des installations électriques est fortement recommandée.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+        },
+        {
+          "title": "HE Manoeuvre / Mesurage / Essai / Vérification",
+          "category": "Haute tension",
+          "duration": "1 journée",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Réaliser des manœuvres, mesurages, essais ou vérifications sur des installations haute tension.",
+          "prerequisites": "Expérience des travaux électriques et connaissances techniques en haute tension",
+          "certification": "Attestation de fin de formation | Grille de compétences | Avis en vue de l'habilitation",
+          "programme": [
+            {
+              "title": "Risques électriques et rôle du HE",
+              "text": "Objectif : être capable de situer le champ d'application de l'habilitation HE selon l'opération confiée (manœuvre, mesurage, essai ou vérification). Effets du courant électrique, spécificités de la haute tension."
+            },
+            {
+              "title": "Réaliser des manœuvres, mesurages, essais ou vérifications",
+              "text": "Objectif : être capable de réaliser en sécurité l'opération qui lui est confiée sur une installation haute tension. Utilisation des appareils de mesure et de contrôle adaptés à la HT, précautions spécifiques à chaque type d'opération."
+            },
+            {
+              "title": "Mise en situation et évaluation",
+              "text": "Mises en situation pratiques sur plateau technique haute tension, suivies d'une évaluation théorique et pratique. Les résultats sont transmis à l'employeur pour délivrance du titre."
+            }
+          ],
+          "description": [
+            "L'habilitation HE couvre des opérations spécifiques sur des installations haute tension : manœuvre, mesurage, essai ou vérification, selon le profil confié au salarié.",
+            "Cette formation prépare le participant à réaliser en sécurité l'opération qui lui est confiée, avec le matériel de mesure et de contrôle adapté à la haute tension, dans le respect de la norme NF C 18-510."
+          ],
+          "audience": "Cette formation s'adresse au personnel technique réalisant des opérations de manœuvre, de mesure, d'essai ou de vérification sur des installations haute tension : exploitation, maintenance. Une expérience préalable en électricité est recommandée.",
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
         }
       ],
       "opco": true,
@@ -426,6 +693,10 @@
       "why": {
         "title": "L'autorisation de conduite engage l'employeur",
         "text": "L'article R4323-55 du Code du travail subordonne la conduite des équipements mobiles à une formation adéquate. Le CACES n'est pas obligatoire en soi, mais c'est le dispositif qui atteste le mieux de cette formation devant l'inspection du travail comme devant l'assurance. Nos tests se déroulent sur plateforme, avec les catégories d'engins de votre parc."
+      },
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "À compléter dans /admin (ex. durée de validité du CACES, ce qui distingue le CACES du simple certificat d'aptitude à la conduite en sécurité...)."
       },
       "image": "/images/7-1790074465812.jpg",
       "imageAlt": "Cariste conduisant un chariot élévateur en entrepôt lors d'une formation CACES",
@@ -839,7 +1110,7 @@
     },
     {
       "title": "Prévention des risques professionnels",
-      "description": "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels — gestes et postures, gestion du stress, prévention de l'absentéisme, premiers secours en santé mentale — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme aide les entreprises de tous secteurs à répondre à leurs obligations de prévention et à construire une démarche de qualité de vie au travail durable.",
+      "description": "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels — gestes et postures, sécurité des entreprises extérieures sur site industriel (Niveaux 1 et 2) — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme aide les entreprises de tous secteurs à répondre à leurs obligations de prévention.",
       "why": {
         "title": "Ce qui se prévient coûte moins cher que ce qui se répare",
         "text": "Les troubles musculo-squelettiques représentent la première cause de maladie professionnelle reconnue en France. L'article L4121-1 du Code du travail fait de la prévention une obligation de l'employeur, pas une option : nos formations partent de vos postes réels, analysés sur place, plutôt que d'un catalogue de bonnes pratiques générales."
@@ -880,107 +1151,6 @@
           "imageAlt": "Salarié aidé à adopter la bonne posture pour soulever une charge"
         },
         {
-          "title": "Gestion du stress",
-          "duration": "2 à 4 demi-journées",
-          "format": "Intra-entreprise",
-          "intro": "Identifier les signaux, comprendre les mécanismes, retrouver des marges de manœuvre.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "Comprendre le stress",
-              "text": "Objectif : être capable d'expliquer les mécanismes physiologiques et psychologiques du stress. Mécanismes physiologiques et psychologiques du stress, distinction entre stress aigu et stress chronique, notion de risques psychosociaux."
-            },
-            {
-              "title": "Identifier ses sources de stress",
-              "text": "Objectif : être capable de repérer les facteurs de stress propres à sa situation de travail. Repérer les facteurs de stress liés à l'organisation, à la charge de travail et aux relations professionnelles."
-            },
-            {
-              "title": "Techniques de gestion du stress",
-              "text": "Objectif : être capable de mobiliser des techniques concrètes de gestion du stress au quotidien. Respiration, gestion du temps et des priorités, techniques de relaxation applicables en situation de travail."
-            },
-            {
-              "title": "Construire son plan d'action personnel",
-              "text": "Objectif : être capable d'élaborer un plan d'action individuel adapté à sa propre situation. Élaboration d'un plan d'action individuel pour mieux gérer son stress au quotidien."
-            }
-          ],
-          "description": [
-            "Le stress chronique au travail impacte autant la santé des salariés que la performance de l'entreprise : troubles du sommeil, irritabilité, baisse de concentration et, à terme, risque d'épuisement professionnel. Les risques psychosociaux font partie intégrante des risques professionnels que l'employeur doit évaluer et prévenir au titre de son obligation générale de sécurité (article L4121-1 du Code du travail), au même titre que les risques physiques ou chimiques.",
-            "Cette formation permet à chaque participant de comprendre les mécanismes physiologiques et psychologiques du stress, d'identifier ses propres sources de stress professionnel, et de mobiliser des techniques concrètes et applicables immédiatement au quotidien. À l'issue de la session, chaque participant repart avec un plan d'action personnel adapté à sa situation de travail."
-          ],
-          "audience": "Cette formation s'adresse à tout salarié exposé au stress professionnel souhaitant développer des techniques de gestion adaptées à sa situation, quel que soit son poste ou son secteur d'activité. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les environnements à forte charge mentale ou relationnelle (relation client, encadrement, urgence) et peut être proposée en complément d'une démarche plus large de prévention des risques psychosociaux au sein de l'entreprise.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention.",
-          "image": "/images/gestion-du-stress.jpg",
-          "imageAlt": "Salariée en situation de stress au travail"
-        },
-        {
-          "title": "Premiers secours en santé mentale (PSSM)",
-          "duration": "4 demi-journées",
-          "format": "Intra-entreprise",
-          "intro": "Repérer un collègue en souffrance psychique et savoir comment l'orienter.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "Comprendre la santé mentale",
-              "text": "Objectif : être capable de distinguer les principaux troubles psychiques et de déconstruire les idées reçues associées. Repères sur les troubles psychiques courants, déconstruction des idées reçues et de la stigmatisation liée à la santé mentale."
-            },
-            {
-              "title": "Repérer les signes de mal-être",
-              "text": "Objectif : être capable d'identifier les signaux d'alerte d'une souffrance psychique ou d'une crise. Identifier les signaux d'alerte d'une souffrance psychique ou d'une crise chez un collègue, un proche ou soi-même."
-            },
-            {
-              "title": "La méthode AÉRER",
-              "text": "Objectif : être capable d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne concernée. Les 5 étapes du plan d'action : Approcher la personne, Écouter activement sans jugement, Réconforter et informer, Encourager à consulter un professionnel, Renseigner sur les ressources disponibles."
-            },
-            {
-              "title": "Mise en pratique",
-              "text": "Objectif : être capable de mobiliser la méthode AÉRER face à des situations concrètes réalistes. Mises en situation à partir de cas concrets pour s'approprier la méthode AÉRER."
-            }
-          ],
-          "description": [
-            "Un collègue en difficulté psychologique ne le montre pas toujours clairement, et l'entourage professionnel se sent souvent démuni face à des signes de souffrance qu'il ne sait pas interpréter. Le programme Premiers Secours en Santé Mentale (PSSM), adaptation française du programme international Mental Health First Aid né en Australie et aujourd'hui déployé dans plus de 25 pays, vise à donner au plus grand nombre les outils pour repérer une souffrance psychique et orienter la personne concernée vers une aide adaptée, sans se substituer à un professionnel de santé.",
-            "À l'issue de la formation, le participant est capable de reconnaître les signes de mal-être ou de crise chez un collègue, un proche ou lui-même, de déconstruire les idées reçues liées à la stigmatisation de la santé mentale, et d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne vers les ressources appropriées."
-          ],
-          "audience": "Cette formation s'adresse à tout salarié, quel que soit son poste ou son niveau hiérarchique, souhaitant être en mesure d'aider un collègue ou un proche traversant une période de souffrance psychique. Aucun prérequis n'est nécessaire, et la formation n'exige aucune compétence préalable en santé mentale. Elle est particulièrement recommandée pour les managers et les représentants du personnel, en première ligne pour repérer les signaux de mal-être au sein des équipes, ainsi que dans le cadre d'une démarche globale de prévention des risques psychosociaux.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large.",
-          "image": "/images/premiers-secours-sante-mentale.jpg",
-          "imageAlt": "Geste de soutien et d'écoute entre deux personnes"
-        },
-        {
-          "title": "Prévention de l'absentéisme",
-          "duration": "2 à 4 demi-journées",
-          "format": "Intra-entreprise",
-          "intro": "Comprendre ce que l'absentéisme dit de votre organisation, puis agir dessus.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "Comprendre l'absentéisme",
-              "text": "Objectif : être capable de définir et de quantifier l'absentéisme au sein de son organisation. Définitions, indicateurs et coûts de l'absentéisme, distinction entre les différentes formes (maladie, désengagement, absences répétées)."
-            },
-            {
-              "title": "Identifier les causes",
-              "text": "Objectif : être capable d'analyser les causes organisationnelles, managériales et individuelles de l'absentéisme. Facteurs organisationnels, managériaux et individuels de l'absentéisme, lien avec les risques psychosociaux et les conditions de travail."
-            },
-            {
-              "title": "Repérer les signaux d'alerte",
-              "text": "Objectif : être capable de repérer les indicateurs précoces d'un absentéisme naissant au sein d'une équipe. Indicateurs précoces d'un absentéisme naissant au sein d'une équipe, rôle de l'encadrement de proximité."
-            },
-            {
-              "title": "Agir et prévenir",
-              "text": "Objectif : être capable de construire un plan de prévention adapté à sa propre équipe. Leviers d'action managériaux, dialogue avec les salariés, construction d'un plan de prévention adapté à son équipe."
-            }
-          ],
-          "description": [
-            "Un absentéisme qui s'installe coûte cher à l'entreprise, en désorganisation comme en charge supplémentaire pour les équipes en place, et révèle souvent un mal-être plus profond que le simple arrêt maladie ne laisse paraître. Détecté tardivement, il devient un phénomène difficile à inverser ; repéré tôt par l'encadrement de proximité, il peut au contraire être traité à la racine, avant qu'il ne s'ancre durablement dans le fonctionnement d'une équipe.",
-            "Cette formation permet de comprendre les causes multiples de l'absentéisme, de repérer les signaux d'alerte précoces au sein d'une équipe, et de mettre en place des actions de prévention adaptées à l'organisation de l'entreprise. À l'issue de la session, chaque participant est capable de distinguer les différentes formes d'absentéisme et de mobiliser les leviers managériaux appropriés à chaque situation."
-          ],
-          "audience": "Cette formation s'adresse aux managers, encadrants et responsables RH souhaitant prévenir et réduire l'absentéisme au sein de leurs équipes. Une première expérience d'encadrement est recommandée, bien qu'aucun prérequis formel ne soit exigé. Elle s'adresse particulièrement aux entreprises confrontées à un taux d'absentéisme en hausse ou souhaitant structurer une démarche de prévention avant que le phénomène ne s'installe durablement.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la prévention. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par une formation à la gestion du stress ou aux risques psychosociaux pour une approche globale de la qualité de vie au travail.",
-          "image": "/images/4-1790108467451.jpg"
-        },
-        {
           "title": "Sécurité des salariés des entreprises extérieures — Niveau 1",
           "duration": "2 demi-journées",
           "format": "Intra-entreprise",
@@ -1012,6 +1182,38 @@
           "audience": "Cette formation s'adresse aux salariés d'entreprises extérieures amenés à intervenir sur un site industriel client, notamment dans les secteurs de la chimie, de la pétrochimie ou de l'industrie lourde. Aucun prérequis technique n'est exigé, mais une bonne compréhension des consignes écrites et orales est nécessaire pour appliquer les règles de sécurité propres à chaque site d'intervention. Cette formation de Niveau 1 constitue le socle minimal avant toute intervention sur un site relevant du référentiel France Chimie DT40.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en amont d'une campagne d'intervention groupée sur un site industriel afin de certifier l'ensemble d'une équipe avant le début des travaux.",
           "image": "/images/5-copie-2-1790108515161.jpg"
+        },
+        {
+          "title": "Sécurité des salariés des entreprises extérieures — Niveau 2",
+          "duration": "1 journée",
+          "format": "Intra-entreprise",
+          "intro": "Le niveau encadrement pour organiser et superviser la sécurité des équipes intervenantes sur site industriel.",
+          "prerequisites": "Avoir suivi la formation Niveau 1, ou justifier d'une expérience équivalente",
+          "certification": "Attestation de fin de formation | Attestation provisoire de réussite au stage",
+          "programme": [
+            {
+              "title": "Rôle et responsabilités de l'encadrant",
+              "text": "Objectif : être capable de définir son rôle et ses responsabilités dans l'organisation de la prévention face à l'entreprise utilisatrice. Responsabilités civile et pénale, relation avec le donneur d'ordre, articulation avec le plan de prévention."
+            },
+            {
+              "title": "Organiser l'intervention de son équipe",
+              "text": "Objectif : être capable de préparer et de coordonner l'intervention de son équipe sur site. Inspection commune préalable, analyse des risques spécifiques à la mission, répartition des tâches et des consignes."
+            },
+            {
+              "title": "Superviser le respect des règles de sécurité",
+              "text": "Objectif : être capable de vérifier et de faire respecter les règles de sécurité du site par son équipe. Contrôle des autorisations de travail, vérification des équipements de protection, suivi du balisage et des accès, remontée des situations à risque."
+            },
+            {
+              "title": "Gérer un évènement ou un incident",
+              "text": "Objectif : être capable de réagir et de rendre compte en cas d'incident ou de situation dégradée. Procédure d'alerte, mise en sécurité de l'équipe, compte-rendu à l'entreprise utilisatrice, retour d'expérience."
+            }
+          ],
+          "description": [
+            "Sur un site industriel, l'encadrant d'une entreprise extérieure porte une responsabilité particulière : il doit non seulement connaître les risques du site, mais aussi organiser et superviser l'intervention de son équipe dans le respect du plan de prévention. Le référentiel France Chimie DT40 distingue ainsi un Niveau 2, destiné aux chefs d'équipe et encadrants, complémentaire du Niveau 1 suivi par l'ensemble des intervenants.",
+            "Cette formation permet à l'encadrant de préparer l'inspection commune préalable, de répartir les tâches et les consignes de sécurité au sein de son équipe, de vérifier le respect des règles du site (autorisations de travail, équipements de protection, balisage) et de savoir réagir face à un incident. Elle s'appuie sur des mises en situation concrètes, proches des interventions réelles sur site industriel."
+          ],
+          "audience": "Cette formation s'adresse aux chefs d'équipe, encadrants et responsables d'intervention d'entreprises extérieures amenés à superviser une équipe sur un site industriel client, notamment dans les secteurs de la chimie, de la pétrochimie ou de l'industrie lourde. Elle est complémentaire de la formation Niveau 1, suivie au préalable par l'ensemble des intervenants qu'ils encadrent.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle est idéalement organisée juste après la formation Niveau 1 de l'équipe encadrée, afin de structurer l'ensemble de la coordination sécurité avant le début d'un chantier ou d'une campagne d'intervention."
         }
       ],
       "opco": true,
@@ -1020,7 +1222,7 @@
     },
     {
       "title": "Management & qualité",
-      "description": "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles et la culture sécurité — gestion des conflits, posture face à l'agressivité, sécurité au quotidien — en intra, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme construit des sessions courtes autour de vos situations réelles pour renforcer durablement les pratiques managériales et la culture sécurité de vos équipes.",
+      "description": "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles, la culture sécurité et la qualité de vie au travail — gestion des conflits, posture face à l'agressivité, sécurité au quotidien, gestion du stress, prévention de l'absentéisme, premiers secours en santé mentale — en intra, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme construit des sessions courtes autour de vos situations réelles pour renforcer durablement les pratiques managériales et la culture sécurité de vos équipes.",
       "why": {
         "title": "On devient encadrant sans y avoir été formé",
         "text": "La promotion vient récompenser une expertise technique, rarement une aptitude à conduire une équipe, et les deux ne s'apprennent pas au même endroit. Nos sessions travaillent sur des situations rapportées par les participants, avec des mises en situation plutôt qu'un exposé de modèles."
@@ -1129,6 +1331,107 @@
           "audience": "Cette formation s'adresse aux managers et encadrants de proximité souhaitant intégrer la sécurité dans leur pratique managériale quotidienne, quel que soit leur secteur d'activité. Aucun prérequis n'est nécessaire, bien qu'une première expérience d'encadrement facilite l'appropriation des concepts abordés. Elle est particulièrement recommandée pour les nouveaux managers découvrant leurs responsabilités en matière de sécurité, ainsi que pour tout encadrant souhaitant structurer sa démarche de prévention.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la sécurité. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à un parcours d'intégration pour tout nouveau manager prenant la responsabilité d'une équipe.",
           "image": "/images/5-19-44-14-1790080659464.jpg"
+        },
+        {
+          "title": "Gestion du stress",
+          "duration": "2 à 4 demi-journées",
+          "format": "Intra-entreprise",
+          "intro": "Identifier les signaux, comprendre les mécanismes, retrouver des marges de manœuvre.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Grille de compétences",
+          "programme": [
+            {
+              "title": "Comprendre le stress",
+              "text": "Objectif : être capable d'expliquer les mécanismes physiologiques et psychologiques du stress. Mécanismes physiologiques et psychologiques du stress, distinction entre stress aigu et stress chronique, notion de risques psychosociaux."
+            },
+            {
+              "title": "Identifier ses sources de stress",
+              "text": "Objectif : être capable de repérer les facteurs de stress propres à sa situation de travail. Repérer les facteurs de stress liés à l'organisation, à la charge de travail et aux relations professionnelles."
+            },
+            {
+              "title": "Techniques de gestion du stress",
+              "text": "Objectif : être capable de mobiliser des techniques concrètes de gestion du stress au quotidien. Respiration, gestion du temps et des priorités, techniques de relaxation applicables en situation de travail."
+            },
+            {
+              "title": "Construire son plan d'action personnel",
+              "text": "Objectif : être capable d'élaborer un plan d'action individuel adapté à sa propre situation. Élaboration d'un plan d'action individuel pour mieux gérer son stress au quotidien."
+            }
+          ],
+          "description": [
+            "Le stress chronique au travail impacte autant la santé des salariés que la performance de l'entreprise : troubles du sommeil, irritabilité, baisse de concentration et, à terme, risque d'épuisement professionnel. Les risques psychosociaux font partie intégrante des risques professionnels que l'employeur doit évaluer et prévenir au titre de son obligation générale de sécurité (article L4121-1 du Code du travail), au même titre que les risques physiques ou chimiques.",
+            "Cette formation permet à chaque participant de comprendre les mécanismes physiologiques et psychologiques du stress, d'identifier ses propres sources de stress professionnel, et de mobiliser des techniques concrètes et applicables immédiatement au quotidien. À l'issue de la session, chaque participant repart avec un plan d'action personnel adapté à sa situation de travail."
+          ],
+          "audience": "Cette formation s'adresse à tout salarié exposé au stress professionnel souhaitant développer des techniques de gestion adaptées à sa situation, quel que soit son poste ou son secteur d'activité. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les environnements à forte charge mentale ou relationnelle (relation client, encadrement, urgence) et peut être proposée en complément d'une démarche plus large de prévention des risques psychosociaux au sein de l'entreprise.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention.",
+          "image": "/images/gestion-du-stress.jpg",
+          "imageAlt": "Salariée en situation de stress au travail"
+        },
+        {
+          "title": "Premiers secours en santé mentale (PSSM)",
+          "duration": "4 demi-journées",
+          "format": "Intra-entreprise",
+          "intro": "Repérer un collègue en souffrance psychique et savoir comment l'orienter.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Grille de compétences",
+          "programme": [
+            {
+              "title": "Comprendre la santé mentale",
+              "text": "Objectif : être capable de distinguer les principaux troubles psychiques et de déconstruire les idées reçues associées. Repères sur les troubles psychiques courants, déconstruction des idées reçues et de la stigmatisation liée à la santé mentale."
+            },
+            {
+              "title": "Repérer les signes de mal-être",
+              "text": "Objectif : être capable d'identifier les signaux d'alerte d'une souffrance psychique ou d'une crise. Identifier les signaux d'alerte d'une souffrance psychique ou d'une crise chez un collègue, un proche ou soi-même."
+            },
+            {
+              "title": "La méthode AÉRER",
+              "text": "Objectif : être capable d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne concernée. Les 5 étapes du plan d'action : Approcher la personne, Écouter activement sans jugement, Réconforter et informer, Encourager à consulter un professionnel, Renseigner sur les ressources disponibles."
+            },
+            {
+              "title": "Mise en pratique",
+              "text": "Objectif : être capable de mobiliser la méthode AÉRER face à des situations concrètes réalistes. Mises en situation à partir de cas concrets pour s'approprier la méthode AÉRER."
+            }
+          ],
+          "description": [
+            "Un collègue en difficulté psychologique ne le montre pas toujours clairement, et l'entourage professionnel se sent souvent démuni face à des signes de souffrance qu'il ne sait pas interpréter. Le programme Premiers Secours en Santé Mentale (PSSM), adaptation française du programme international Mental Health First Aid né en Australie et aujourd'hui déployé dans plus de 25 pays, vise à donner au plus grand nombre les outils pour repérer une souffrance psychique et orienter la personne concernée vers une aide adaptée, sans se substituer à un professionnel de santé.",
+            "À l'issue de la formation, le participant est capable de reconnaître les signes de mal-être ou de crise chez un collègue, un proche ou lui-même, de déconstruire les idées reçues liées à la stigmatisation de la santé mentale, et d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne vers les ressources appropriées."
+          ],
+          "audience": "Cette formation s'adresse à tout salarié, quel que soit son poste ou son niveau hiérarchique, souhaitant être en mesure d'aider un collègue ou un proche traversant une période de souffrance psychique. Aucun prérequis n'est nécessaire, et la formation n'exige aucune compétence préalable en santé mentale. Elle est particulièrement recommandée pour les managers et les représentants du personnel, en première ligne pour repérer les signaux de mal-être au sein des équipes, ainsi que dans le cadre d'une démarche globale de prévention des risques psychosociaux.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large.",
+          "image": "/images/premiers-secours-sante-mentale.jpg",
+          "imageAlt": "Geste de soutien et d'écoute entre deux personnes"
+        },
+        {
+          "title": "Prévention de l'absentéisme",
+          "duration": "2 à 4 demi-journées",
+          "format": "Intra-entreprise",
+          "intro": "Comprendre ce que l'absentéisme dit de votre organisation, puis agir dessus.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Grille de compétences",
+          "programme": [
+            {
+              "title": "Comprendre l'absentéisme",
+              "text": "Objectif : être capable de définir et de quantifier l'absentéisme au sein de son organisation. Définitions, indicateurs et coûts de l'absentéisme, distinction entre les différentes formes (maladie, désengagement, absences répétées)."
+            },
+            {
+              "title": "Identifier les causes",
+              "text": "Objectif : être capable d'analyser les causes organisationnelles, managériales et individuelles de l'absentéisme. Facteurs organisationnels, managériaux et individuels de l'absentéisme, lien avec les risques psychosociaux et les conditions de travail."
+            },
+            {
+              "title": "Repérer les signaux d'alerte",
+              "text": "Objectif : être capable de repérer les indicateurs précoces d'un absentéisme naissant au sein d'une équipe. Indicateurs précoces d'un absentéisme naissant au sein d'une équipe, rôle de l'encadrement de proximité."
+            },
+            {
+              "title": "Agir et prévenir",
+              "text": "Objectif : être capable de construire un plan de prévention adapté à sa propre équipe. Leviers d'action managériaux, dialogue avec les salariés, construction d'un plan de prévention adapté à son équipe."
+            }
+          ],
+          "description": [
+            "Un absentéisme qui s'installe coûte cher à l'entreprise, en désorganisation comme en charge supplémentaire pour les équipes en place, et révèle souvent un mal-être plus profond que le simple arrêt maladie ne laisse paraître. Détecté tardivement, il devient un phénomène difficile à inverser ; repéré tôt par l'encadrement de proximité, il peut au contraire être traité à la racine, avant qu'il ne s'ancre durablement dans le fonctionnement d'une équipe.",
+            "Cette formation permet de comprendre les causes multiples de l'absentéisme, de repérer les signaux d'alerte précoces au sein d'une équipe, et de mettre en place des actions de prévention adaptées à l'organisation de l'entreprise. À l'issue de la session, chaque participant est capable de distinguer les différentes formes d'absentéisme et de mobiliser les leviers managériaux appropriés à chaque situation."
+          ],
+          "audience": "Cette formation s'adresse aux managers, encadrants et responsables RH souhaitant prévenir et réduire l'absentéisme au sein de leurs équipes. Une première expérience d'encadrement est recommandée, bien qu'aucun prérequis formel ne soit exigé. Elle s'adresse particulièrement aux entreprises confrontées à un taux d'absentéisme en hausse ou souhaitant structurer une démarche de prévention avant que le phénomène ne s'installe durablement.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la prévention. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par une formation à la gestion du stress ou aux risques psychosociaux pour une approche globale de la qualité de vie au travail.",
+          "image": "/images/4-1790108467451.jpg"
         }
       ],
       "opco": true,
@@ -1382,7 +1685,7 @@
         "id": "formations",
         "visible": true,
         "eyebrow": "Nos formations",
-        "title": "8 domaines de formation, \n32 parcours,\nUn organisme certifié Qualiopi",
+        "title": "8 domaines de formation, \n42 parcours,\nUn organisme certifié Qualiopi",
         "text": "Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France."
       },
       {
@@ -1473,7 +1776,7 @@
   "footerCta": {
     "enabled": true,
     "eyebrow": "Recevez notre catalogue",
-    "title": "Le catalogue complet de nos 32 formations",
+    "title": "Le catalogue complet de nos 42 formations",
     "text": "Laissez votre adresse e-mail : nous vous envoyons le catalogue et nous restons disponibles pour construire un parcours adapté à vos équipes.",
     "buttonLabel": "Recevoir"
   },
