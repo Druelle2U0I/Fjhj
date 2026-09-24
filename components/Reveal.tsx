@@ -1,13 +1,15 @@
 "use client";
 
-import { motion, useAnimationControls, useReducedMotion } from "framer-motion";
-import { useEffect, useRef, type ReactNode } from "react";
+import { useLayoutEffect, useRef, type ReactNode } from "react";
 
-// Apparition en fondu des sections au défilement.
-// Le contenu est envoyé visible par le serveur : ce qui se trouve déjà à
-// l'écran au chargement s'affiche tout de suite, sans attendre le
-// JavaScript. Seuls les blocs situés plus bas sont masqués après le
-// chargement puis révélés quand on y arrive.
+// Apparition en fondu au défilement, sans clignotement :
+// - au premier chargement, un petit script (layout) marque visibles les
+//   blocs déjà à l'écran avant le premier affichage ; les autres restent
+//   masqués par le CSS jusqu'à ce qu'on y arrive ;
+// - lors d'un changement de page, le même tri est fait ici avant
+//   l'affichage (useLayoutEffect).
+// Le masquage n'est actif que si le script a tourné (classe « reveal-on »
+// sur <html>) : sans JavaScript, tout reste visible.
 export default function Reveal({
   children,
   delay = 0,
@@ -18,30 +20,35 @@ export default function Reveal({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const controls = useAnimationControls();
-  const reduce = useReducedMotion();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const node = ref.current;
-    if (!node || reduce) return;
-    if (node.getBoundingClientRect().top < window.innerHeight) return;
-
-    controls.set({ opacity: 0, y: 24 });
+    if (!node || node.hasAttribute("data-shown")) return;
+    if (node.getBoundingClientRect().top < window.innerHeight) {
+      node.setAttribute("data-shown", "instant");
+      return;
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return;
-        controls.start({ opacity: 1, y: 0, transition: { duration: 0.6, delay, ease: "easeOut" } });
+        node.setAttribute("data-shown", "");
         observer.disconnect();
       },
-      { rootMargin: "0px 0px -80px 0px" },
+      { rootMargin: "0px 0px -60px 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
-  }, [controls, delay, reduce]);
+  }, []);
 
   return (
-    <motion.div ref={ref} initial={false} animate={controls} className={className}>
+    <div
+      ref={ref}
+      data-reveal=""
+      className={className}
+      style={delay ? { transitionDelay: `${delay}s` } : undefined}
+      suppressHydrationWarning
+    >
       {children}
-    </motion.div>
+    </div>
   );
 }

@@ -135,6 +135,7 @@ const organizationJsonLd = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
+      suppressHydrationWarning
       lang="fr"
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} h-full antialiased`}
@@ -150,6 +151,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteChrome header={<Header />} footer={<Footer />}>
           {children}
         </SiteChrome>
+        {/* Avant le premier affichage : les blocs animés déjà à l'écran
+            sont marqués visibles, puis le masquage des autres est activé.
+            Voir components/Reveal.tsx. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var h=innerHeight;document.querySelectorAll("[data-reveal]").forEach(function(e){if(e.getBoundingClientRect().top<h)e.setAttribute("data-shown","instant")});document.documentElement.classList.add("reveal-on")})();`,
+          }}
+        />
         <Analytics />
       </body>
     </html>
