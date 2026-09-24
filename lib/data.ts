@@ -93,6 +93,7 @@ export type Theme = {
   sectorVeil?: number;
   footerVeil?: number;
   sectionOpacity?: number;
+  panelShadowColor?: string;
 };
 
 export const THEME_DEFAULTS = {
@@ -106,6 +107,7 @@ export const THEME_DEFAULTS = {
   sectorVeil: 60,
   footerVeil: 68,
   sectionOpacity: 70,
+  panelShadowColor: "#fff9c7",
 } as const;
 
 export type SiteContent = {
@@ -281,6 +283,7 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--aurora-opacity": String(v.auroraIntensity / 100),
     // Vitesse 1 (très lente) à 10 (rapide) : durée d'un cycle de 40 s à 4 s.
     "--aurora-duration": `${44 - 4 * v.auroraSpeed}s`,
+    "--panel-shadow": v.panelShadowColor,
     "--sector-veil": String(v.sectorVeil / 100),
     "--footer-veil": `${v.footerVeil}%`,
     "--section-alpha": `${v.sectionOpacity}%`,

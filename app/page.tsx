@@ -106,7 +106,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
         <div className="relative lg:pl-10">
           <div
             aria-hidden="true"
-            className="absolute -right-4 -top-4 hidden h-full w-[calc(100%-2.5rem)] bg-accent/20 lg:block"
+            className="panel-shadow-veil absolute -right-4 -top-4 hidden h-full w-[calc(100%-2.5rem)] lg:block"
           />
           <Reveal
             delay={0.1}
