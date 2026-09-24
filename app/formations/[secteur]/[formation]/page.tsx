@@ -248,11 +248,10 @@ export default async function FormationPage(
               le programme) pour ne pas noyer les infos clés sous le mur de
               texte qui suit ; reprend sa place à droite à partir de lg. */}
           <aside className="relative z-10 order-first lg:order-none lg:sticky lg:top-24 lg:-mt-80">
-            {/* Encart « négatif » : fond jaune, textes bleu nuit. */}
-            <div className="rounded-lg bg-accent p-6 text-accent-foreground shadow-xl sm:p-7">
+            <div className="rounded-lg border border-border bg-surface p-6 sm:p-7">
               {/* Sur téléphone, le titre vient d'être lu juste au-dessus. */}
-              <div className="mb-6 hidden border-b border-accent-foreground/15 pb-6 lg:block">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent-foreground/70">
+              <div className="mb-6 hidden border-b border-border pb-6 lg:block">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                   {service.title}
                 </p>
                 <h2 className="mt-2 text-lg font-semibold leading-snug">
@@ -263,14 +262,14 @@ export default async function FormationPage(
               <dl className="grid gap-4">
                 {recap.map((item) => (
                   <div key={item.label}>
-                    <dt className="text-xs font-semibold uppercase tracking-wide text-accent-foreground/60">
+                    <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
                       {item.label}
                     </dt>
                     <dd className="mt-1 text-sm">{item.value}</dd>
                   </div>
                 ))}
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wide text-accent-foreground/60">
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
                     Tarif
                   </dt>
                   <dd className="mt-1 text-sm">
@@ -281,22 +280,22 @@ export default async function FormationPage(
 
               <Link
                 href={`/contact?formation=${encodeURIComponent(training.title)}`}
-                className="mt-7 flex w-full items-center justify-center rounded-full bg-accent-foreground px-6 py-3 text-sm font-semibold text-accent transition-transform hover:scale-[1.03]"
+                className="mt-7 flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
               >
                 {pages.training.quoteButton}
               </Link>
 
-              <div className="mt-6 border-t border-accent-foreground/15 pt-5 text-sm text-accent-foreground/75">
+              <div className="mt-6 border-t border-border pt-5 text-sm text-muted">
                 <p>{pages.training.questionText}</p>
                 <a
                   href={`tel:${company.phone.replace(/\s/g, "")}`}
-                  className="mt-2 block font-semibold text-accent-foreground hover:underline"
+                  className="mt-2 block font-semibold text-foreground hover:text-accent"
                 >
                   {company.phone}
                 </a>
                 <a
                   href={`mailto:${company.email}`}
-                  className="mt-1 block hover:underline"
+                  className="mt-1 block hover:text-accent"
                 >
                   {company.email}
                 </a>
