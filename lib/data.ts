@@ -94,10 +94,14 @@ export type Theme = {
   tagText?: string;
   sectorVeil?: number;
   footerVeil?: number;
-  sectionOpacity?: number;
   panelShadowColor?: string;
   bandColor?: string;
   bandOpacity?: number;
+  // Couleurs de texte utilisées sur les cartes/surfaces (fond "surface"),
+  // indépendantes du texte principal de la page : la surface reste sombre
+  // même quand le fond du site est clair, son texte doit donc rester clair.
+  surfaceForeground?: string;
+  surfaceMuted?: string;
 };
 
 export const THEME_DEFAULTS = {
@@ -105,10 +109,11 @@ export const THEME_DEFAULTS = {
   tagText: "#fff9c7",
   sectorVeil: 60,
   footerVeil: 68,
-  sectionOpacity: 70,
   panelShadowColor: "#0b032b",
   bandColor: "#2a2266",
   bandOpacity: 85,
+  surfaceForeground: "#fffcec",
+  surfaceMuted: "#b3b3ba",
 } as const;
 
 export type SiteContent = {
@@ -291,6 +296,8 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--surface-2": t.surface2,
     "--foreground": t.foreground,
     "--muted": t.muted,
+    "--page-foreground": t.foreground,
+    "--page-muted": t.muted,
     "--border": t.border,
     "--accent": t.accent,
     "--accent-foreground": t.accentForeground,
@@ -300,9 +307,10 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--panel-shadow": v.panelShadowColor,
     "--sector-veil": String(v.sectorVeil / 100),
     "--footer-veil": `${v.footerVeil}%`,
-    "--section-alpha": `${v.sectionOpacity}%`,
     "--band-color": v.bandColor,
     "--band-alpha": `${v.bandOpacity}%`,
+    "--surface-foreground": v.surfaceForeground,
+    "--surface-muted": v.surfaceMuted,
   };
 }
 

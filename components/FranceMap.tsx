@@ -106,7 +106,7 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
             style={isDesktop ? { x: mapX } : undefined}
             className="mx-auto flex w-full max-w-md flex-col items-center lg:w-[40%] lg:max-w-none"
           >
-            <p className="text-sm font-semibold text-accent">
+            <p className="text-sm font-semibold text-muted">
               {pages.centre.mapEyebrow}
             </p>
             <div className="relative mt-4 aspect-square w-full">
@@ -117,7 +117,7 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
                     d={dept.path}
                     fill={dept.hdf ? "var(--accent)" : "var(--surface-2)"}
                     fillOpacity={dept.hdf ? 1 : otherOpacity}
-                    stroke="var(--background)"
+                    stroke="var(--surface)"
                     strokeWidth={strokeW}
                     strokeOpacity={dept.hdf ? 1 : otherStroke}
                     onMouseEnter={() => dept.hdf && setHovered(dept.code)}
@@ -132,13 +132,13 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
                 ))}
 
                 <motion.g style={{ opacity: pinOpacity, scale: pinScale }}>
-                  <circle cx={wingles.x} cy={wingles.y} r={0.055} fill="var(--background)" />
+                  <circle cx={wingles.x} cy={wingles.y} r={0.055} fill="var(--surface)" />
                   <circle
                     cx={wingles.x}
                     cy={wingles.y}
                     r={0.028}
                     fill="var(--accent)"
-                    stroke="var(--background)"
+                    stroke="var(--surface)"
                     strokeWidth={0.008}
                   />
                 </motion.g>

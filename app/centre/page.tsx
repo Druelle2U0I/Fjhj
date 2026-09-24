@@ -25,7 +25,7 @@ export default function CentrePage() {
 
       <FranceMap>
         <Reveal>
-          <span className="text-sm font-semibold text-accent">
+          <span className="text-sm font-semibold text-muted">
             {pages.centre.approachEyebrow}
           </span>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -82,7 +82,7 @@ export default function CentrePage() {
       <section className="px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <span className="text-sm font-semibold text-accent">
+            <span className="text-sm font-semibold text-muted">
               {pages.centre.domainsEyebrow}
             </span>
             <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">

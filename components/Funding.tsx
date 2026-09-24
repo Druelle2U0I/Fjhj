@@ -10,7 +10,7 @@ export default function Funding() {
     <section id="financement" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <span className="text-sm font-semibold text-accent">
+          <span className="text-sm font-semibold text-muted">
             {pages.funding.eyebrow}
           </span>
           <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">

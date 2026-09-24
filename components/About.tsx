@@ -42,7 +42,7 @@ export default function About({ section }: { section: HomeSection }) {
 
           <Reveal delay={0.1} className={hasImage ? "" : "mx-auto max-w-2xl text-center"}>
             {section.eyebrow && (
-              <span className="text-sm font-semibold text-accent">
+              <span className="text-sm font-semibold text-muted">
                 {section.eyebrow}
               </span>
             )}

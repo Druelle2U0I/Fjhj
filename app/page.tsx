@@ -15,7 +15,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           {section.eyebrow && (
-            <span className="text-sm font-semibold text-accent">
+            <span className="text-sm font-semibold text-muted">
               {section.eyebrow}
             </span>
           )}
@@ -78,7 +78,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
           />
           <Reveal
             delay={0.1}
-            className="relative grid gap-6 bg-surface p-8 text-foreground sm:p-10 lg:h-full lg:pr-16"
+            className="relative grid gap-6 bg-surface p-8 sm:p-10 lg:h-full lg:pr-16"
           >
             {funding.points.map((point) => (
               <div key={point.title} className="flex items-center gap-3">
@@ -112,7 +112,7 @@ function FaqSection({ section }: { section: HomeSection }) {
       <div className="mx-auto max-w-6xl">
         <Reveal className="text-center">
           {section.eyebrow && (
-            <span className="text-sm font-semibold text-accent">
+            <span className="text-sm font-semibold text-muted">
               {section.eyebrow}
             </span>
           )}

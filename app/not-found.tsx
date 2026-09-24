@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <section className="relative -mt-[86px] px-6 pt-[128px] pb-24 text-center sm:-mt-[94px] sm:pt-[148px]">
       <div className="mx-auto max-w-xl">
-        <span className="text-sm font-semibold text-accent">
+        <span className="text-sm font-semibold text-muted">
           Erreur 404
         </span>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
