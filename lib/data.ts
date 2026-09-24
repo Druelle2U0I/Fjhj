@@ -118,7 +118,7 @@ export const THEME_DEFAULTS = {
   sectionOpacity: 70,
   panelShadowColor: "#fff9c7",
   bandColor: "#ffd23f",
-  bandOpacity: 20,
+  bandOpacity: 14,
 } as const;
 
 export type SiteContent = {

@@ -28,8 +28,8 @@ function useVisibleCount() {
 
 const AUTOPLAY_MS = 5000;
 
-// Carrousel des autres formations du domaine, dans une bande jaune
-// translucide pleine largeur. Les cartes glissent d'un bloc avec une animation amortie
+// Carrousel des autres formations du domaine, dans un encart jaune
+// translucide. Les cartes glissent d'un bloc avec une animation amortie
 // (flèches, points, glisser au doigt ou à la souris) et défilent seules
 // toutes les 5 secondes, en pause au survol.
 export default function RelatedCarousel({
@@ -101,11 +101,11 @@ export default function RelatedCarousel({
     "flex h-11 w-11 items-center justify-center rounded-full border border-accent/30 bg-background/60 text-lg text-foreground backdrop-blur transition-colors hover:border-accent hover:text-accent";
 
   return (
-    // Bande jaune translucide sur toute la largeur : elle marque la fin de
-    // la fiche et sépare nettement le carrousel du contenu au-dessus.
-    <section className="related-band mb-24 border-y px-6 py-14 sm:py-16">
+    // Encart jaune translucide aligné sur la largeur du contenu : il
+    // regroupe tout le carrousel et marque la fin de la fiche.
+    <section className="px-6 pb-24">
       <div
-        className="mx-auto max-w-6xl"
+        className="related-band mx-auto max-w-6xl rounded-3xl border p-6 sm:p-10"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocus={() => setPaused(true)}
