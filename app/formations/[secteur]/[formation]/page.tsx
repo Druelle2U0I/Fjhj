@@ -148,7 +148,7 @@ export default async function FormationPage(
       {/* Déroulement + contenu + encart latéral : un seul bloc en deux
           colonnes, pour que l'encart de contact soit collé (sticky) dès le
           programme au lieu de n'apparaître qu'après le mur de texte. */}
-      <section className="overflow-x-clip px-6 pb-24">
+      <section className="overflow-x-clip px-6 pb-20">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
           <div className="grid gap-12">
             {/* Déroulement : de grands numéros et une révélation étape par
@@ -301,7 +301,7 @@ export default async function FormationPage(
       </section>
 
       {otherTrainings.length > 0 && (
-        <section className="page-band px-6 py-20">
+        <section className="px-6 pb-24 pt-4">
           <div className="mx-auto max-w-6xl">
             <RelatedCarousel
               titleStart="Nos autres formations en"
