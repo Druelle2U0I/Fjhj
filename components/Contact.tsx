@@ -47,7 +47,7 @@ export default function Contact({
     <section id="contact" className="section-soft px-6 py-24">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
         <Reveal>
-          <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+          <span className="text-sm font-semibold text-accent">
             {pages.contact.eyebrow}
           </span>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -89,7 +89,7 @@ export default function Contact({
         <Reveal delay={0.1}>
           <form
             onSubmit={handleSubmit}
-            className="dyn-card rounded-2xl border border-border bg-background p-6 sm:p-8"
+            className="dyn-card rounded-lg border border-border bg-background p-6 sm:p-8"
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="sm:col-span-1">
@@ -192,7 +192,7 @@ export default function Contact({
             <button
               type="submit"
               disabled={status === "sending"}
-              className="mt-6 w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.02] disabled:opacity-60"
+              className="mt-6 w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.02] disabled:opacity-60"
             >
               {status === "sending" ? "Envoi en cours..." : pages.contact.submitButton}
             </button>

@@ -43,7 +43,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 p-3 sm:p-4">
-      <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-background/70 shadow-lg backdrop-blur-xl sm:rounded-full">
+      <div className="mx-auto max-w-6xl rounded-xl border border-white/10 bg-background/95 shadow-lg backdrop-blur-sm">
         <div className="relative flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
           {/* Le logo reste toujours au centre exact de la barre, quel que
               soit le poids des groupes de liens de chaque côté. */}
@@ -106,7 +106,7 @@ export default function Header() {
                     {/* Un clic sur un lien du panneau le referme. */}
                     <div
                       onClick={() => setCatalogueOpen(false)}
-                      className="overflow-hidden rounded-2xl border border-white/10 bg-background p-2 shadow-2xl"
+                      className="overflow-hidden rounded-xl border border-white/10 bg-background p-2 shadow-2xl"
                     >
                       <p className="px-3 pb-1 pt-2 text-xs font-semibold uppercase tracking-wide text-accent">
                         Nos domaines
@@ -179,7 +179,7 @@ export default function Header() {
             </nav>
             <Link
               href="/contact"
-              className="rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105 sm:px-5 sm:text-sm"
+              className="rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105 sm:px-5 sm:text-sm"
             >
               Devis
             </Link>

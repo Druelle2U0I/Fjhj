@@ -135,7 +135,7 @@ export default async function FormationPage(
               récapitulatif remonte à cet endroit, à côté du titre. */}
           <Reveal className="lg:pr-[400px]">
             <div className="flex flex-wrap items-center gap-3">
-              <p className="hidden text-sm font-semibold uppercase tracking-wide text-accent sm:block">
+              <p className="hidden text-sm font-semibold text-accent sm:block">
                 {service.title}
               </p>
             </div>
@@ -248,7 +248,7 @@ export default async function FormationPage(
               le programme) pour ne pas noyer les infos clés sous le mur de
               texte qui suit ; reprend sa place à droite à partir de lg. */}
           <aside className="relative z-10 order-first lg:order-none lg:sticky lg:top-24 lg:-mt-80">
-            <div className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
+            <div className="rounded-xl border border-border bg-surface p-6 sm:p-7">
               {/* Sur téléphone, le titre vient d'être lu juste au-dessus. */}
               <div className="mb-6 hidden border-b border-border pb-6 lg:block">
                 <p className="text-xs font-semibold uppercase tracking-wide text-accent">
@@ -280,7 +280,7 @@ export default async function FormationPage(
 
               <Link
                 href={`/contact?formation=${encodeURIComponent(training.title)}`}
-                className="mt-7 flex w-full items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
+                className="mt-7 flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03]"
               >
                 {pages.training.quoteButton}
               </Link>

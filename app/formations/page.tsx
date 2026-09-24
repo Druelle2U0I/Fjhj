@@ -24,7 +24,7 @@ export default function FormationsPage() {
         <div className="mx-auto max-w-6xl">
           <Link
             href="/formations/toutes"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
           >
             {pages.allTrainings.linkLabel} ({fillCounts("{formations}")})
             <span aria-hidden="true">→</span>
@@ -38,7 +38,7 @@ export default function FormationsPage() {
             <Reveal key={service.slug} delay={(i % 3) * 0.05}>
               <Link
                 href={`/formations/${service.slug}`}
-                className="dyn-card group block h-full overflow-hidden rounded-3xl border border-border bg-surface"
+                className="dyn-card group block h-full overflow-hidden rounded-xl border border-border bg-surface"
               >
                 <div className="dyn-photo-wrap relative aspect-[4/3] overflow-hidden">
                   <Visual

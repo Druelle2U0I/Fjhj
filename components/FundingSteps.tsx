@@ -45,7 +45,7 @@ export default function FundingSteps() {
 
       <Reveal delay={0.1} className="mt-10">
         <div
-          className="dyn-card relative overflow-hidden rounded-3xl border border-border bg-surface p-6 sm:p-10"
+          className="dyn-card relative overflow-hidden rounded-xl border border-border bg-surface p-6 sm:p-10"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >

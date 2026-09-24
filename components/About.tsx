@@ -30,7 +30,7 @@ export default function About({ section }: { section: HomeSection }) {
               case vide à sa place (mieux vaut du texte pleine largeur
               qu'un cadre gris qui ressemble à une image cassée). */}
           {hasImage && (
-            <Reveal className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-3xl border border-border">
+            <Reveal className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-xl border border-border">
               <Visual
                 src={home.aboutImage}
                 alt={home.aboutImageAlt ?? ""}
@@ -42,7 +42,7 @@ export default function About({ section }: { section: HomeSection }) {
 
           <Reveal delay={0.1} className={hasImage ? "" : "mx-auto max-w-2xl text-center"}>
             {section.eyebrow && (
-              <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+              <span className="text-sm font-semibold text-accent">
                 {section.eyebrow}
               </span>
             )}
@@ -94,10 +94,8 @@ export default function About({ section }: { section: HomeSection }) {
         <div className="mt-16 grid gap-8 border-t border-border pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
           {pillars.map((pillar, i) => (
             <Reveal key={pillar.title} delay={i * 0.1} className="lg:px-6 lg:first:pl-0">
-              <span className="text-xs font-semibold text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-2 text-lg font-semibold">{pillar.title}</h3>
+              <span aria-hidden="true" className="block h-1 w-8 bg-accent" />
+              <h3 className="mt-3 text-lg font-semibold">{pillar.title}</h3>
               <p className="mt-2 whitespace-pre-line text-sm text-muted">{pillar.text}</p>
             </Reveal>
           ))}

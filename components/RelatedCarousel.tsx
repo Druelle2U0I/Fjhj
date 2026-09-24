@@ -111,7 +111,7 @@ export default function RelatedCarousel({
           >
             {items.map((item) => (
               <li key={item.href} className="shrink-0 px-2.5" style={{ width: step || `${100 / visible}%` }}>
-                <article className="flex h-full select-none flex-col rounded-2xl border border-border bg-surface p-4 transition-colors hover:border-accent/60">
+                <article className="flex h-full select-none flex-col rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/60">
                   <div className="pointer-events-none relative aspect-[16/9] overflow-hidden rounded-xl">
                     <Visual
                       src={item.image}
@@ -138,7 +138,7 @@ export default function RelatedCarousel({
                       href={item.href}
                       draggable={false}
                       onClick={(e) => dragged.current && e.preventDefault()}
-                      className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105"
+                      className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105"
                     >
                       Voir la formation <span aria-hidden="true">→</span>
                     </Link>

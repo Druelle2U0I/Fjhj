@@ -49,7 +49,7 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
             animate={{ flexGrow: isActive ? 7 : 1 }}
             transition={{ duration: 0.9, ease: EASE }}
             style={{ flexBasis: 0 }}
-            className="dyn-card group relative min-h-0 cursor-pointer overflow-hidden rounded-2xl border border-border outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            className="dyn-card group relative min-h-0 cursor-pointer overflow-hidden rounded-xl border border-border outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             <Visual
               src={service.image}
@@ -86,7 +86,7 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
                     <Link
                       href={`/formations/${service.slug}`}
                       onClick={(e) => e.stopPropagation()}
-                      className="mt-4 inline-flex rounded-full bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+                      className="mt-4 inline-flex rounded-lg bg-accent px-5 py-2 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
                     >
                       Voir les formations
                     </Link>

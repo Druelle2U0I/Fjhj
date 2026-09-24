@@ -92,11 +92,6 @@ export type Theme = {
   // dans themeStyle).
   tagBackground?: string;
   tagText?: string;
-  aurora1?: string;
-  aurora2?: string;
-  aurora3?: string;
-  auroraIntensity?: number;
-  auroraSpeed?: number;
   sectorVeil?: number;
   footerVeil?: number;
   sectionOpacity?: number;
@@ -108,11 +103,6 @@ export type Theme = {
 export const THEME_DEFAULTS = {
   tagBackground: "#0b032b",
   tagText: "#fff9c7",
-  aurora1: "#6e50f0",
-  aurora2: "#fff9c7",
-  aurora3: "#3c8cdc",
-  auroraIntensity: 90,
-  auroraSpeed: 6,
   sectorVeil: 60,
   footerVeil: 68,
   sectionOpacity: 70,
@@ -307,12 +297,6 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--heading-font": HEADING_FONTS[t.headingFont] ?? HEADING_FONTS.archivo,
     "--tag-bg": v.tagBackground,
     "--tag-text": v.tagText,
-    "--aurora-1": v.aurora1,
-    "--aurora-2": v.aurora2,
-    "--aurora-3": v.aurora3,
-    "--aurora-opacity": String(v.auroraIntensity / 100),
-    // Vitesse 1 (très lente) à 10 (rapide) : durée d'un cycle de 40 s à 4 s.
-    "--aurora-duration": `${44 - 4 * v.auroraSpeed}s`,
     "--panel-shadow": v.panelShadowColor,
     "--sector-veil": String(v.sectorVeil / 100),
     "--footer-veil": `${v.footerVeil}%`,
