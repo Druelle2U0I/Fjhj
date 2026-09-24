@@ -106,7 +106,7 @@ export const THEME_DEFAULTS = {
   sectorVeil: 60,
   footerVeil: 68,
   sectionOpacity: 70,
-  panelShadowColor: "#fff9c7",
+  panelShadowColor: "#0b032b",
   bandColor: "#2a2266",
   bandOpacity: 85,
 } as const;
