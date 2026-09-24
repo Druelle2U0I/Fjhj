@@ -20,6 +20,9 @@ function trainingCodeMap(trainings: { title: string; slug: string }[]) {
       map.set(code.trim(), t.slug);
     }
   }
+  // « H0B0 » (non-électricien HT + BT) n'a pas de formation dédiée : il
+  // pointe vers H0/H0V, la plus proche.
+  if (map.has("H0")) map.set("H0B0", map.get("H0")!);
   return map;
 }
 
