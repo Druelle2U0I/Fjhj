@@ -1794,7 +1794,9 @@
     "tagBackground": "#2c1376",
     "tagText": "#dcfafe",
     "aurora1": "#11053b",
-    "aurora2": "#74a7fe"
+    "aurora2": "#74a7fe",
+    "bandColor": "#ffffff",
+    "bandOpacity": 60
   },
   "footerImage": "/images/2048-1790071486997.webp",
   "footerCta": {
