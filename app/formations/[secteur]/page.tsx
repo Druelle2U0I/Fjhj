@@ -127,7 +127,7 @@ export default async function SecteurPage(
       </section>
 
       {/* Pourquoi former vos équipes */}
-      <section className="px-6 pb-20">
+      <section className="page-band px-6 py-20">
         <div className="mx-auto max-w-6xl border-t border-border pt-16">
           <Reveal>
             <div className="border-l-4 border-accent pl-6 sm:pl-8">
@@ -147,7 +147,7 @@ export default async function SecteurPage(
           carte pour le premier, un gros point d'interrogation en filigrane
           pour le second (pas une carte de plus). */}
       {(service.popularPaths?.length || service.tip) && (
-        <section className="px-6 pb-20">
+        <section className="px-6 pt-20">
           <div className="mx-auto max-w-6xl">
             {service.unlistedNote && (
               <Reveal>
@@ -198,7 +198,7 @@ export default async function SecteurPage(
       )}
 
       {/* Catalogue du secteur */}
-      <section id="catalogue" className="scroll-mt-24 px-6 pb-24">
+      <section id="catalogue" className="scroll-mt-24 px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">

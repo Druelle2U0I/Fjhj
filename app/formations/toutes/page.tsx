@@ -45,7 +45,7 @@ export default function AllTrainingsPage() {
         }
       />
 
-      <section className="px-6 pb-24">
+      <section className="page-band px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <AllTrainings
             items={items}

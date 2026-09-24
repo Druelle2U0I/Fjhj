@@ -213,14 +213,8 @@ h4 {
 /* Section « surface » translucide dont les bords se fondent dans le fond
    aurore, au lieu d'un aplat qui crée une coupure nette. */
 .section-soft {
-  --section-soft: color-mix(in srgb, var(--surface) var(--section-alpha, 70%), transparent);
-  background: linear-gradient(
-    to bottom,
-    transparent 0,
-    var(--section-soft) 160px,
-    var(--section-soft) calc(100% - 160px),
-    transparent 100%
-  );
+  background: color-mix(in srgb, var(--band-color, #2a2266) var(--band-alpha, 85%), transparent);
+  border-block: 1px solid var(--border);
 }
 
 /* Grande photo en haut des pages de domaine et des fiches formation :

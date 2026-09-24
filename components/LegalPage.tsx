@@ -17,7 +17,7 @@ export default function LegalPage({
   return (
     <>
       <PageHero eyebrow="Informations légales" title={title} description={description} />
-      <section className="px-6 pb-24">
+      <section className="page-band px-6 py-16">
         <div className="legal-prose mx-auto max-w-3xl">
           {children}
           <p className="mt-12 border-t border-border pt-6 text-sm text-muted">

@@ -13,7 +13,7 @@ function initials(name: string) {
 
 export default function Team() {
   return (
-    <section id="equipe" className="px-6 py-24">
+    <section id="equipe" className="page-band px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <span className="text-sm font-semibold uppercase tracking-wide text-accent">

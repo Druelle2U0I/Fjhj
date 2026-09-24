@@ -32,7 +32,7 @@ export default function FormationsPage() {
         </div>
       </section>
 
-      <section className="px-6 pb-24">
+      <section className="page-band px-6 py-20">
         <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.slug} delay={(i % 3) * 0.05}>

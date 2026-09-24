@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -11,7 +11,7 @@ import type { HomeSection } from "@/lib/data";
 
 function FormationsSection({ section }: { section: HomeSection }) {
   return (
-    <section id="formations" className="section-soft px-6 py-24">
+    <section id="formations" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           {section.eyebrow && (
@@ -134,7 +134,7 @@ function FaqSection({ section }: { section: HomeSection }) {
 
 function ContactSection({ section }: { section: HomeSection }) {
   return (
-    <section className="section-soft px-6 py-24">
+    <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl text-center">
         <Reveal>
           {section.eyebrow && (
@@ -166,23 +166,33 @@ export default function Home() {
       <Hero />
       {home.sections
         .filter((section) => section.visible)
-        .map((section) => {
+        .map((section, i) => {
+          // Une section sur deux passe sur une bande de couleur pleine
+          // largeur, quel que soit l'ordre choisi dans l'admin.
+          const band = (node: ReactNode) =>
+            i % 2 === 0 ? (
+              <div key={section.id} className="page-band">
+                {node}
+              </div>
+            ) : (
+              <Fragment key={section.id}>{node}</Fragment>
+            );
           switch (section.id) {
             case "about":
-              return <About key={section.id} section={section} />;
+              return band(<About section={section} />);
             case "formations":
               return (
                 <Fragment key={section.id}>
-                  <FormationsSection section={section} />
+                  {band(<FormationsSection section={section} />)}
                   <StatsBand />
                 </Fragment>
               );
             case "financement":
-              return <FinancementSection key={section.id} section={section} />;
+              return band(<FinancementSection section={section} />);
             case "contact":
-              return <ContactSection key={section.id} section={section} />;
+              return band(<ContactSection section={section} />);
             case "faq":
-              return <FaqSection key={section.id} section={section} />;
+              return band(<FaqSection section={section} />);
           }
         })}
     </>
