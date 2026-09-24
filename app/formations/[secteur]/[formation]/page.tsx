@@ -96,7 +96,7 @@ export default async function FormationPage(
       {/* Hero : grande photo de fond. Remonte sous l'en-tête (sticky,
           semi-transparent) pour que la photo continue jusqu'en haut de
           la page au lieu de s'arrêter net dessous. */}
-      <section className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-16 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
+      <section className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
         <div className="hero-photo-fade absolute inset-0">
           <Visual
             src={training.image ?? service.image}
@@ -109,7 +109,14 @@ export default async function FormationPage(
         </div>
 
         <div className="relative mx-auto max-w-6xl">
-          <div className="mb-6 text-sm text-muted">
+          {/* Sur téléphone, un simple lien retour remplace le fil d'Ariane. */}
+          <Link
+            href={`/formations/${service.slug}`}
+            className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent sm:hidden"
+          >
+            <span aria-hidden="true">←</span> {service.title}
+          </Link>
+          <div className="mb-6 hidden text-sm text-muted sm:block">
             <Link href="/formations" className="underline decoration-dotted underline-offset-2 hover:text-accent">
               Formations
             </Link>
@@ -128,19 +135,14 @@ export default async function FormationPage(
               récapitulatif remonte à cet endroit, à côté du titre. */}
           <Reveal className="lg:pr-[400px]">
             <div className="flex flex-wrap items-center gap-3">
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+              <p className="hidden text-sm font-semibold uppercase tracking-wide text-accent sm:block">
                 {service.title}
               </p>
-              {training.category && (
-                <span className="domain-tag rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
-                  {training.category}
-                </span>
-              )}
             </div>
-            <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
+            <h1 className="mt-3 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:text-5xl">
               {training.title}
             </h1>
-            <p className="mt-5 max-w-2xl whitespace-pre-line text-lg text-muted">{training.intro}</p>
+            <p className="mt-3 max-w-2xl whitespace-pre-line text-base text-muted sm:mt-5 sm:text-lg">{training.intro}</p>
           </Reveal>
         </div>
       </section>
@@ -247,14 +249,17 @@ export default async function FormationPage(
               texte qui suit ; reprend sa place à droite à partir de lg. */}
           <aside className="relative z-10 order-first lg:order-none lg:sticky lg:top-24 lg:-mt-80">
             <div className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
-              <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                {service.title}
-              </p>
-              <h2 className="mt-2 text-lg font-semibold leading-snug">
-                {training.title}
-              </h2>
+              {/* Sur téléphone, le titre vient d'être lu juste au-dessus. */}
+              <div className="mb-6 hidden border-b border-border pb-6 lg:block">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  {service.title}
+                </p>
+                <h2 className="mt-2 text-lg font-semibold leading-snug">
+                  {training.title}
+                </h2>
+              </div>
 
-              <dl className="mt-6 grid gap-4 border-t border-border pt-6">
+              <dl className="grid gap-4">
                 {recap.map((item) => (
                   <div key={item.label}>
                     <dt className="text-xs font-semibold uppercase tracking-wide text-muted">

@@ -72,7 +72,7 @@ export default async function SecteurPage(
       {/* Hero : grande photo de fond floutée, voilée. Remonte sous
           l'en-tête (sticky, semi-transparent) pour que la photo continue
           jusqu'en haut de la page au lieu de s'arrêter net dessous. */}
-      <section className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-16 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
+      <section className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
         <div className="hero-photo-fade absolute inset-0">
           <div className="absolute inset-0 scale-110 blur-[7px]">
             <Visual
@@ -87,7 +87,14 @@ export default async function SecteurPage(
         </div>
 
         <div className="relative mx-auto max-w-6xl">
-          <div className="mb-6 text-sm text-muted">
+          {/* Sur téléphone, un simple lien retour remplace le fil d'Ariane. */}
+          <Link
+            href="/formations"
+            className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent sm:hidden"
+          >
+            <span aria-hidden="true">←</span> Formations
+          </Link>
+          <div className="mb-6 hidden text-sm text-muted sm:block">
             <Link href="/formations" className="underline decoration-dotted underline-offset-2 hover:text-accent">
               Formations
             </Link>
@@ -99,24 +106,24 @@ export default async function SecteurPage(
             <p className="text-sm font-semibold uppercase tracking-wide text-accent">
               {count} formation{count > 1 ? "s" : ""}
             </p>
-            <h1 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight sm:text-5xl">
+            <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:mt-3 sm:text-5xl">
               {service.title}
             </h1>
           </Reveal>
 
           <Reveal delay={0.1}>
             <div className="mt-8 max-w-xl">
-              <p className="whitespace-pre-line text-lg text-foreground/90">{service.description}</p>
+              <p className="line-clamp-4 whitespace-pre-line text-base text-foreground/90 sm:line-clamp-none sm:text-lg">{service.description}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href={`/contact?formation=${encodeURIComponent(service.title)}`}
-                  className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+                  className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 text-accent-foreground transition-transform hover:scale-105"
                 >
                   {pages.sector.quoteMainButton}
                 </Link>
                 <a
                   href="#catalogue"
-                  className="rounded-full border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+                  className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 transition-colors hover:border-accent hover:text-accent"
                 >
                   {pages.sector.catalogueButton}
                 </a>
@@ -127,8 +134,8 @@ export default async function SecteurPage(
       </section>
 
       {/* Pourquoi former vos équipes */}
-      <section className="page-band px-6 py-20">
-        <div className="mx-auto max-w-6xl border-t border-border pt-16">
+      <section className="page-band px-6 py-14 sm:py-20">
+        <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="border-l-4 border-accent pl-6 sm:pl-8">
               <p className="text-sm font-semibold uppercase tracking-wide text-accent">
