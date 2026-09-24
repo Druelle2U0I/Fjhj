@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FundingSteps from "@/components/FundingSteps";
 import Reveal from "@/components/Reveal";
+import StatsBand from "@/components/StatsBand";
 import { funding, legal, pages, qualiopiText } from "@/lib/data";
 
 export default function Funding() {
@@ -49,6 +50,8 @@ export default function Funding() {
         </div>
       </div>
     </section>
+
+    <StatsBand />
 
     {/* Bande pleine largeur, teinte douce : rompt le rythme de la page
         avec une couleur de fond différente, sans en introduire une
