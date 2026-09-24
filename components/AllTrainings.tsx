@@ -105,7 +105,7 @@ export default function AllTrainings({
       </p>
 
       {visible.length === 0 ? (
-        <p className="mt-6 rounded-2xl border border-border bg-surface/70 p-6 text-muted">
+        <p className="mt-6 rounded-lg border border-border bg-surface/70 p-6 text-muted">
           {emptyText}
         </p>
       ) : (
@@ -114,7 +114,7 @@ export default function AllTrainings({
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="dyn-card group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-surface"
+                className="dyn-card group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface"
               >
                 <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden">
                   <Visual

@@ -17,7 +17,7 @@ export default function Team() {
       <section className="px-6 pb-12 pt-24">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="text-sm font-semibold text-accent">
               {pages.team.eyebrow}
             </span>
             <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -52,7 +52,7 @@ export default function Team() {
                   reversed ? "sm:mr-auto sm:flex-row-reverse" : "sm:ml-auto sm:flex-row"
                 }`}
             >
-              <div className="dyn-photo-wrap relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-2xl sm:w-48">
+              <div className="dyn-photo-wrap relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-xl sm:w-48">
                 {member.photo ? (
                   <Visual
                     src={member.photo}

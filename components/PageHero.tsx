@@ -29,7 +29,7 @@ export default function PageHero({
             <div className="mb-6 hidden text-sm text-muted sm:block">{breadcrumb}</div>
           )}
           <Reveal>
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="text-sm font-semibold text-accent">
               {eyebrow}
             </span>
             <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:mt-3 sm:text-4xl md:text-5xl">
@@ -46,7 +46,7 @@ export default function PageHero({
         {image && (
           <Reveal
             delay={0.1}
-            className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-3xl border border-border"
+            className="dyn-photo-wrap dyn-card relative aspect-[4/3] overflow-hidden rounded-xl border border-border"
           >
             <Image
               src={image}

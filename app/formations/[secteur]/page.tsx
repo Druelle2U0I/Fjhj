@@ -103,7 +103,7 @@ export default async function SecteurPage(
           </div>
 
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <p className="text-sm font-semibold text-accent">
               {count} formation{count > 1 ? "s" : ""}
             </p>
             <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:mt-3 sm:text-5xl">
@@ -117,13 +117,13 @@ export default async function SecteurPage(
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link
                   href={`/contact?formation=${encodeURIComponent(service.title)}`}
-                  className="rounded-full bg-accent px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 text-accent-foreground transition-transform hover:scale-105"
+                  className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 text-accent-foreground transition-transform hover:scale-105"
                 >
                   {pages.sector.quoteMainButton}
                 </Link>
                 <a
                   href="#catalogue"
-                  className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 transition-colors hover:border-accent hover:text-accent"
+                  className="rounded-lg border border-border px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 transition-colors hover:border-accent hover:text-accent"
                 >
                   {pages.sector.catalogueButton}
                 </a>
@@ -138,7 +138,7 @@ export default async function SecteurPage(
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="border-l-4 border-accent pl-6 sm:pl-8">
-              <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+              <p className="text-sm font-semibold text-accent">
                 {pages.sector.whyEyebrow}
               </p>
               <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -164,7 +164,7 @@ export default async function SecteurPage(
 
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               {service.popularPaths && service.popularPaths.length > 0 && (
-                <Reveal className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
+                <Reveal className="rounded-xl border border-border bg-surface p-6 sm:p-7">
                   <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
                   <ul className="mt-4 space-y-3 text-sm text-muted">
                     {service.popularPaths.map((item) => (
@@ -216,7 +216,7 @@ export default async function SecteurPage(
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {service.trainings.map((training, i) => (
               <Reveal key={training.slug} delay={(i % 3) * 0.05}>
-                <article className="dyn-card relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-surface">
+                <article className="dyn-card relative flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface">
                   <div className="flex flex-1 flex-col p-6">
                     {training.category && (
                       <span className="domain-tag mb-3 inline-flex w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
@@ -241,7 +241,7 @@ export default async function SecteurPage(
                     </p>
 
                     <div className="mt-auto pt-5">
-                      <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden rounded-2xl">
+                      <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden rounded-lg">
                         <Visual
                           src={training.image}
                           alt={training.imageAlt ?? training.title}
@@ -265,7 +265,7 @@ export default async function SecteurPage(
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-8 flex items-start gap-4 rounded-2xl border-l-4 border-accent bg-accent/10 p-6">
+            <div className="mt-8 flex items-start gap-4 rounded-lg border-l-4 border-accent bg-accent/10 p-6">
               <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"

@@ -16,7 +16,7 @@ export default function Faq({ items }: { items: FaqItem[] }) {
         return (
           <div
             key={item.question}
-            className="dyn-card overflow-hidden rounded-2xl border border-border bg-surface"
+            className="dyn-card overflow-hidden rounded-lg border border-border bg-surface"
           >
             <button
               type="button"

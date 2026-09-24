@@ -69,7 +69,7 @@ function NewsletterForm() {
   return (
     <div className="mx-auto max-w-2xl px-6 pb-20 pt-24 text-center sm:pt-28">
       {footerCta.eyebrow && (
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+        <p className="text-xs font-semibold text-accent">
           {footerCta.eyebrow}
         </p>
       )}
@@ -83,7 +83,7 @@ function NewsletterForm() {
       )}
 
       {state === "sent" ? (
-        <p className="mt-8 rounded-2xl border border-accent/40 bg-background/60 px-6 py-4 text-sm backdrop-blur">
+        <p className="mt-8 rounded-lg border border-accent/40 bg-background/60 px-6 py-4 text-sm backdrop-blur">
           Merci, votre demande est bien enregistrée. Nous revenons vers vous
           rapidement.
         </p>
@@ -99,12 +99,12 @@ function NewsletterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Votre adresse e-mail"
-            className="flex-1 rounded-full border border-white/25 bg-background/50 px-5 py-3 text-sm outline-none backdrop-blur placeholder:text-muted focus:border-accent"
+            className="flex-1 rounded-lg border border-white/25 bg-background/50 px-5 py-3 text-sm outline-none backdrop-blur placeholder:text-muted focus:border-accent"
           />
           <button
             type="submit"
             disabled={state === "sending"}
-            className="rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
+            className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
           >
             {state === "sending" ? "Envoi…" : footerCta.buttonLabel}
           </button>
@@ -222,7 +222,7 @@ export default function Footer() {
             {/* Certification Qualiopi : logo officiel (envoyé depuis l'admin)
                 ou badge texte, avec lien vers le certificat s'il est fourni. */}
             {legal.qualiopiCertificate && (
-              <div className="mt-14 flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-background/40 p-6 text-center backdrop-blur sm:flex-row sm:text-left">
+              <div className="mt-14 flex flex-col items-center gap-5 rounded-lg border border-white/10 bg-background/40 p-6 text-center backdrop-blur sm:flex-row sm:text-left">
                 {legal.qualiopiLogo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img

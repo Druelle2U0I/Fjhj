@@ -2,7 +2,6 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, type ReactNode } from "react";
-import BackgroundTexture from "@/components/BackgroundTexture";
 
 export default function SiteChrome({
   header,
@@ -28,7 +27,6 @@ export default function SiteChrome({
 
   return (
     <>
-      <BackgroundTexture />
       {header}
       <main className="flex-1">{children}</main>
       {footer}

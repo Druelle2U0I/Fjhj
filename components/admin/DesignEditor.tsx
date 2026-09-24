@@ -21,22 +21,17 @@ const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   { key: "accentForeground", label: "Texte sur l'accent", hint: "Texte à l'intérieur des boutons." },
 ];
 
-type ColorKey = "tagBackground" | "tagText" | "aurora1" | "aurora2" | "aurora3" | "panelShadowColor" | "bandColor";
-type RangeKey = "auroraIntensity" | "auroraSpeed" | "sectorVeil" | "footerVeil" | "sectionOpacity" | "bandOpacity";
+type ColorKey = "tagBackground" | "tagText" | "panelShadowColor" | "bandColor";
+type RangeKey = "sectorVeil" | "footerVeil" | "sectionOpacity" | "bandOpacity";
 
 const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
   { key: "tagBackground", label: "Étiquettes — fond", hint: "Étiquette du domaine sur les cartes de « Toutes les formations »." },
   { key: "tagText", label: "Étiquettes — texte", hint: "Couleur du nom du domaine dans l'étiquette." },
   { key: "panelShadowColor", label: "Ombre décalée", hint: "Rectangle décalé derrière le panneau Financement de l'accueil. Indépendante de la couleur d'accent." },
-  { key: "aurora1", label: "Aurore — couleur principale", hint: "La grande lueur (violet par défaut)." },
-  { key: "aurora2", label: "Aurore — reflet clair", hint: "La touche lumineuse (crème par défaut)." },
-  { key: "aurora3", label: "Aurore — couleur secondaire", hint: "La lueur qui apparaît en défilant (bleu par défaut)." },
   { key: "bandColor", label: "Bandes de section — couleur", hint: "Fond des bandes qui séparent les sections (en bas des fiches formation)." },
 ];
 
 const RANGES: { key: RangeKey; label: string; hint: string; min: number; max: number; unit: string }[] = [
-  { key: "auroraIntensity", label: "Aurore — intensité", hint: "0 = aurore invisible, 100 = aurore très présente.", min: 0, max: 100, unit: " %" },
-  { key: "auroraSpeed", label: "Aurore — vitesse du mouvement", hint: "1 = très lent, 10 = rapide.", min: 1, max: 10, unit: "" },
   { key: "sectorVeil", label: "Voile des onglets de domaine fermés", hint: "Page d'accueil : assombrit les photos des domaines non ouverts.", min: 0, max: 90, unit: " %" },
   { key: "footerVeil", label: "Voile sur la photo du pied de page", hint: "Plus la valeur est haute, plus la photo est assombrie.", min: 0, max: 100, unit: " %" },
   { key: "sectionOpacity", label: "Opacité des sections à fond", hint: "0 = l'aurore passe entièrement à travers, 100 = fond plein.", min: 0, max: 100, unit: " %" },
@@ -154,8 +149,8 @@ export default function DesignEditor({
             Effets et étiquettes
           </p>
           <p className="mt-1 text-xs text-muted">
-            Couleurs des étiquettes, fond aurore animé et intensité des voiles
-            posés sur les photos.
+            Couleurs des étiquettes et intensité des voiles posés sur les
+            photos.
           </p>
         </div>
 
@@ -184,16 +179,6 @@ export default function DesignEditor({
           >
             CACES &amp; habilitations
           </span>
-          <div
-            className="mt-4 h-16 rounded-xl"
-            style={{
-              background: `linear-gradient(110deg, ${theme.aurora1 ?? THEME_DEFAULTS.aurora1}, ${theme.aurora3 ?? THEME_DEFAULTS.aurora3} 55%, ${theme.aurora2 ?? THEME_DEFAULTS.aurora2})`,
-              opacity: (theme.auroraIntensity ?? THEME_DEFAULTS.auroraIntensity) / 100,
-            }}
-          />
-          <p className="mt-1 text-xs" style={{ color: theme.muted }}>
-            Couleurs de l&apos;aurore
-          </p>
         </div>
 
         <div className="grid gap-5">

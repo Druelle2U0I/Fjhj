@@ -25,7 +25,7 @@ export default function CentrePage() {
 
       <FranceMap>
         <Reveal>
-          <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+          <span className="text-sm font-semibold text-accent">
             {pages.centre.approachEyebrow}
           </span>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -48,7 +48,7 @@ export default function CentrePage() {
       <section className="section-soft px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="text-sm font-semibold text-accent">
               {pages.centre.whyEyebrow}
             </span>
             <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -59,10 +59,8 @@ export default function CentrePage() {
           <div className="mt-10 grid gap-8 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
             {pillars.map((pillar, i) => (
               <Reveal key={pillar.title} delay={i * 0.08} className="lg:px-6 lg:first:pl-0">
-                <span className="text-xs font-semibold text-accent">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-2 text-lg font-semibold">{pillar.title}</h3>
+                <span aria-hidden="true" className="block h-1 w-8 bg-accent" />
+                <h3 className="mt-3 text-lg font-semibold">{pillar.title}</h3>
                 <p className="mt-2 text-sm text-muted">{pillar.text}</p>
               </Reveal>
             ))}
@@ -84,7 +82,7 @@ export default function CentrePage() {
       <section className="px-6 py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="text-sm font-semibold text-accent">
               {pages.centre.domainsEyebrow}
             </span>
             <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -121,7 +119,7 @@ export default function CentrePage() {
             </p>
             <Link
               href="/contact"
-              className="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+              className="mt-8 inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
             >
               {pages.centre.ctaButton}
             </Link>

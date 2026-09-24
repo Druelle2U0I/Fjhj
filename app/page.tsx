@@ -15,7 +15,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           {section.eyebrow && (
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="text-sm font-semibold text-accent">
               {section.eyebrow}
             </span>
           )}
@@ -34,7 +34,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
         <Reveal delay={0.2} className="mt-10 text-center">
           <Link
             href="/formations"
-            className="inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            className="inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
           >
             Voir toutes nos formations
           </Link>
@@ -50,7 +50,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
       <div className="grid gap-10 px-6 lg:grid-cols-2 lg:items-stretch lg:gap-0 lg:px-0">
         <Reveal className="flex flex-col justify-center lg:mx-auto lg:w-full lg:max-w-lg lg:pl-6">
           {section.eyebrow && (
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="text-sm font-semibold text-accent">
               {section.eyebrow}
             </span>
           )}
@@ -62,7 +62,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
           </p>
           <Link
             href="/financement"
-            className="mt-6 inline-flex w-fit rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+            className="mt-6 inline-flex w-fit rounded-lg border border-border bg-background px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
           >
             Comprendre le financement
           </Link>
@@ -112,7 +112,7 @@ function FaqSection({ section }: { section: HomeSection }) {
       <div className="mx-auto max-w-6xl">
         <Reveal className="text-center">
           {section.eyebrow && (
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="text-sm font-semibold text-accent">
               {section.eyebrow}
             </span>
           )}
@@ -138,7 +138,7 @@ function ContactSection({ section }: { section: HomeSection }) {
       <div className="mx-auto max-w-6xl text-center">
         <Reveal>
           {section.eyebrow && (
-            <span className="text-sm font-semibold uppercase tracking-wide text-accent">
+            <span className="text-sm font-semibold text-accent">
               {section.eyebrow}
             </span>
           )}
@@ -150,7 +150,7 @@ function ContactSection({ section }: { section: HomeSection }) {
           )}
           <Link
             href="/contact"
-            className="mt-8 inline-flex rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            className="mt-8 inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
           >
             Nous contacter
           </Link>
