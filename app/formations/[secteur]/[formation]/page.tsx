@@ -103,8 +103,8 @@ export default async function FormationPage(
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-background/75" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/60 to-background/70" />
+          <div className="absolute inset-0 bg-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/65 via-background/35 to-background/45" />
         </div>
 
         <div className="relative mx-auto max-w-6xl">
@@ -142,48 +142,46 @@ export default async function FormationPage(
         </div>
       </section>
 
-      {/* Déroulement : sort volontairement de la colonne étroite pour
-          occuper toute la largeur de la page. Reste vertical, mais avec
-          de grands numéros et une révélation étape par étape (progressive)
-          au lieu d'un bloc statique. */}
-      {training.programme.length > 0 && (
-        <section className="px-6 pb-16">
-          <div className="mx-auto max-w-6xl">
-            <Reveal>
-              <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
-                {pages.training.programmeTitle}
-              </h2>
-            </Reveal>
-
-            <div className="group/programme mt-10 divide-y divide-border border-t border-border">
-              {training.programme.map((module, i) => (
-                <Reveal key={module.title} delay={i * 0.1} className="py-8">
-                  {/* L'opacité de survol vit sur ce div interne, séparé de
-                      celui que Reveal anime : Framer Motion laisse un style
-                      inline opacity:1 après l'entrée, qui écraserait sinon
-                      cette classe. */}
-                  <div className="grid gap-3 opacity-100 transition-opacity duration-300 hover:!opacity-100 group-hover/programme:opacity-40 sm:grid-cols-[120px_1fr] sm:gap-8">
-                    <span className="text-4xl font-semibold text-accent sm:text-5xl">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-semibold sm:text-xl">
-                        {module.title}
-                      </h3>
-                      <p className="mt-3 max-w-2xl text-muted">{module.text}</p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Contenu + encart latéral */}
+      {/* Déroulement + contenu + encart latéral : un seul bloc en deux
+          colonnes, pour que l'encart de contact soit collé (sticky) dès le
+          programme au lieu de n'apparaître qu'après le mur de texte. */}
       <section className="px-6 pb-24">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
           <div className="grid gap-12">
+            {/* Déroulement : de grands numéros et une révélation étape par
+                étape (progressive) au lieu d'un bloc statique. */}
+            {training.programme.length > 0 && (
+              <div>
+                <Reveal>
+                  <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                    {pages.training.programmeTitle}
+                  </h2>
+                </Reveal>
+
+                <div className="group/programme mt-10 divide-y divide-border border-t border-border">
+                  {training.programme.map((module, i) => (
+                    <Reveal key={module.title} delay={i * 0.1} className="py-8">
+                      {/* L'opacité de survol vit sur ce div interne, séparé de
+                          celui que Reveal anime : Framer Motion laisse un style
+                          inline opacity:1 après l'entrée, qui écraserait sinon
+                          cette classe. */}
+                      <div className="grid gap-3 opacity-100 transition-opacity duration-300 hover:!opacity-100 group-hover/programme:opacity-40 sm:grid-cols-[120px_1fr] sm:gap-8">
+                        <span className="text-4xl font-semibold text-accent sm:text-5xl">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <div>
+                          <h3 className="text-lg font-semibold sm:text-xl">
+                            {module.title}
+                          </h3>
+                          <p className="mt-3 max-w-2xl text-muted">{module.text}</p>
+                        </div>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <Reveal className="space-y-4 text-muted">
               {training.description.map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>

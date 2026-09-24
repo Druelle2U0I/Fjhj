@@ -73,6 +73,10 @@
         "title": "Une obligation réglementaire, un réflexe à installer",
         "text": "L'article R4227-39 du Code du travail impose un exercice d'évacuation tous les six mois. Au-delà du texte, c'est la répétition qui fait la différence : nos formations placent vos équipes en situation, avec le matériel que vous utilisez au quotidien."
       },
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Le guide-file et le serre-file sont désignés par l'employeur, pas par l'organisme de formation : ce sont des rôles internes à l'entreprise, qui doivent être connus de tous avant qu'une alarme ne retentisse."
+      },
       "trainings": [
         {
           "title": "Exercice d'évacuation",
@@ -202,6 +206,10 @@
       "why": {
         "title": "Les premières minutes décident du reste",
         "text": "Le Code du travail impose la présence d'un membre du personnel formé aux premiers secours dans chaque atelier où sont effectués des travaux dangereux. Nos formations SST sont conformes au référentiel INRS et donnent lieu à un certificat national."
+      },
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Le certificat SST se maintient par un recyclage (MAC SST) tous les 24 mois. Au-delà de la validité administrative, c'est ce qui permet de rester à jour : les gestes qui sauvent évoluent, notamment sur la réanimation cardio-pulmonaire."
       },
       "trainings": [
         {
@@ -696,7 +704,7 @@
       },
       "tip": {
         "title": "Le saviez-vous ?",
-        "text": "À compléter dans /admin (ex. durée de validité du CACES, ce qui distingue le CACES du simple certificat d'aptitude à la conduite en sécurité...)."
+        "text": "Le CACES atteste d'une évaluation des connaissances et savoir-faire ; il ne remplace pas l'autorisation de conduite, document distinct que l'employeur doit délivrer en complément, sur la base de cette évaluation."
       },
       "image": "/images/7-1790074465812.jpg",
       "imageAlt": "Cariste conduisant un chariot élévateur en entrepôt lors d'une formation CACES",
@@ -963,6 +971,10 @@
         "title": "La chute de hauteur reste la deuxième cause d'accident mortel au travail",
         "text": "L'article R4323-69 du Code du travail impose une formation adéquate à l'utilisation des équipements de protection individuelle contre les chutes. Un harnais mal ajusté ou mal ancré donne un sentiment de sécurité sans en offrir la réalité : nos formations se déroulent sur structure, avec mise en situation de suspension et de récupération."
       },
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Le port du harnais n'est obligatoire qu'en dernier recours : la réglementation impose de privilégier les protections collectives (garde-corps, filets) avant tout équipement de protection individuelle."
+      },
       "trainings": [
         {
           "title": "Montage, démontage et utilisation des échafaudages de pied (R408)",
@@ -1115,6 +1127,10 @@
         "title": "Ce qui se prévient coûte moins cher que ce qui se répare",
         "text": "Les troubles musculo-squelettiques représentent la première cause de maladie professionnelle reconnue en France. L'article L4121-1 du Code du travail fait de la prévention une obligation de l'employeur, pas une option : nos formations partent de vos postes réels, analysés sur place, plutôt que d'un catalogue de bonnes pratiques générales."
       },
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Le référentiel France Chimie DT40 distingue deux niveaux : le Niveau 1, suivi par tout salarié d'entreprise extérieure intervenant sur un site industriel, et le Niveau 2, réservé aux chefs d'équipe et encadrants qui organisent et supervisent cette intervention."
+      },
       "trainings": [
         {
           "title": "Gestes et postures",
@@ -1226,6 +1242,10 @@
       "why": {
         "title": "On devient encadrant sans y avoir été formé",
         "text": "La promotion vient récompenser une expertise technique, rarement une aptitude à conduire une équipe, et les deux ne s'apprennent pas au même endroit. Nos sessions travaillent sur des situations rapportées par les participants, avec des mises en situation plutôt qu'un exposé de modèles."
+      },
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Les violences externes, provenant de personnes extérieures à l'entreprise, sont un risque professionnel à part entière reconnu par l'INRS, au même titre que les violences internes entre salariés."
       },
       "trainings": [
         {
@@ -1444,6 +1464,10 @@
       "why": {
         "title": "La filière photovoltaïque exige une expertise technique pointue",
         "text": "Un projet mal dimensionné ou mal chiffré peut coûter des années de rentabilité, et les compétences internes des entreprises d'installation photovoltaïque ne suivent pas toujours le rythme d'un marché en forte croissance. Nos formations techniques couvrent l'ensemble de la chaîne, du dimensionnement au contrôle qualité par électroluminescence, pour sécuriser vos projets et fiabiliser votre expertise en interne plutôt que de dépendre systématiquement d'un bureau d'études externe."
+      },
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Une installation photovoltaïque reste sous tension côté champ dès qu'elle est exposée à la lumière, même déconnectée du réseau : c'est pourquoi son entretien nécessite une habilitation électrique spécifique (BP), et non une simple habilitation basse tension classique."
       },
       "trainings": [
         {
