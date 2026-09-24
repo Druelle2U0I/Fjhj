@@ -17,8 +17,16 @@ const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   { key: "foreground", label: "Texte principal", hint: "Doit bien ressortir sur le fond." },
   { key: "muted", label: "Texte secondaire", hint: "Paragraphes et légendes." },
   { key: "border", label: "Bordures", hint: "Contour des cartes et séparateurs." },
-  { key: "accent", label: "Couleur d'accent", hint: "Boutons et éléments mis en avant." },
-  { key: "accentForeground", label: "Texte sur l'accent", hint: "Texte à l'intérieur des boutons." },
+  {
+    key: "accent",
+    label: "Couleur d'accent",
+    hint: "Boutons, éléments mis en avant et fond des bandes d'appel à contact (accueil, financement).",
+  },
+  {
+    key: "accentForeground",
+    label: "Texte sur l'accent",
+    hint: "Texte à l'intérieur des boutons et sur les bandes en couleur d'accent : gardez un bon contraste avec la couleur d'accent ci-dessus.",
+  },
 ];
 
 type ColorKey = "tagBackground" | "tagText" | "panelShadowColor" | "bandColor";
@@ -140,6 +148,16 @@ export default function DesignEditor({
           >
             Demander un devis
           </span>
+        </div>
+
+        <div
+          className="rounded-2xl p-5 text-center"
+          style={{ background: theme.accent, color: theme.accentForeground }}
+        >
+          <p className="text-xs" style={{ color: theme.accentForeground, opacity: 0.7 }}>
+            Aperçu d&apos;une bande en couleur d&apos;accent
+          </p>
+          <p className="mt-2 font-semibold">Un projet de formation à financer ?</p>
         </div>
       </Card>
 

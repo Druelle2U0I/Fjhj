@@ -134,11 +134,11 @@ function FaqSection({ section }: { section: HomeSection }) {
 
 function ContactSection({ section }: { section: HomeSection }) {
   return (
-    <section className="px-6 py-24">
+    <section className="bg-accent px-6 py-24 text-accent-foreground">
       <div className="mx-auto max-w-6xl text-center">
         <Reveal>
           {section.eyebrow && (
-            <span className="text-sm font-semibold text-accent">
+            <span className="text-sm font-semibold text-accent-foreground/70">
               {section.eyebrow}
             </span>
           )}
@@ -146,11 +146,11 @@ function ContactSection({ section }: { section: HomeSection }) {
             {section.title}
           </h2>
           {section.text && (
-            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-muted">{section.text}</p>
+            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-accent-foreground/80">{section.text}</p>
           )}
           <Link
             href="/contact"
-            className="mt-8 inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            className="mt-8 inline-flex rounded-lg bg-accent-foreground px-6 py-3 text-sm font-semibold text-accent transition-transform hover:scale-105"
           >
             Nous contacter
           </Link>
