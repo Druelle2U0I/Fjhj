@@ -28,6 +28,18 @@ export default function Team() {
             <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
               {pages.team.title}
             </h1>
+            {pages.team.text && (
+              <div className="mt-6 grid max-w-2xl gap-4 text-lg text-muted">
+                {pages.team.text
+                  .split(/\n\s*\n/)
+                  .filter((paragraph) => paragraph.trim())
+                  .map((paragraph, i) => (
+                    <p key={i} className="whitespace-pre-line">
+                      {paragraph}
+                    </p>
+                  ))}
+              </div>
+            )}
           </Reveal>
         </div>
       </section>

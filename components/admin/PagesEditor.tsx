@@ -116,6 +116,12 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre" },
+      {
+        key: "text",
+        label: "Texte de présentation de l'équipe",
+        rows: 6,
+        hint: "Affiché sous le titre. Laissez une ligne vide entre deux paragraphes.",
+      },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
