@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import Reveal from "@/components/Reveal";
 import Link from "next/link";
 import { accessibility, company, pages } from "@/lib/data";
 
@@ -58,7 +57,7 @@ export default function Contact({
   return (
     <section id="contact" className="section-soft px-6 py-14 sm:py-24">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
-        <Reveal>
+        <div>
           <span className="text-sm font-semibold text-accent">
             {pages.contact.eyebrow}
           </span>
@@ -96,9 +95,9 @@ export default function Contact({
               {company.email}
             </a>
           </p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={0.1}>
+        <div>
           <form
             onSubmit={handleSubmit}
             className="dyn-card rounded-lg border border-border bg-background p-6 sm:p-8"
@@ -228,7 +227,7 @@ export default function Contact({
               <p className="mt-4 text-sm text-red-400">{error}</p>
             )}
           </form>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

@@ -179,7 +179,7 @@ export default function Header() {
             </nav>
             <Link
               href="/contact"
-              className="rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105 sm:px-5 sm:text-sm"
+              className="rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105 sm:px-5 sm:text-sm"
             >
               Devis
             </Link>

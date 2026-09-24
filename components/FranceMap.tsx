@@ -99,7 +99,7 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
   const textX = useTransform(scrollYProgress, [0, 0.6, 0.78, 1], [-32, -32, 0, 0]);
 
   return (
-    <section ref={wrapperRef} className="relative px-6 lg:-mt-12 lg:h-[200vh]">
+    <section ref={wrapperRef} className="relative px-6 lg:-mt-12 lg:h-[160vh]">
       <div className="mx-auto max-w-6xl lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-start lg:pt-24">
         <div className="relative w-full">
           <motion.div
