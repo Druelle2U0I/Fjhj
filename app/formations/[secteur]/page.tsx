@@ -265,14 +265,14 @@ export default async function SecteurPage(
           </div>
 
           <Reveal delay={0.1}>
-            <div className="mt-8 flex items-start gap-4 rounded-lg border-l-4 border-accent bg-accent/10 p-6">
+            <div className="mt-8 flex items-start gap-4 rounded-lg bg-accent p-6 text-accent-foreground">
               <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={1.5}
-                className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                className="mt-0.5 h-5 w-5 shrink-0"
               >
                 <circle cx="12" cy="12" r="9" />
                 <path strokeLinecap="round" d="M12 11v5" />
@@ -280,7 +280,7 @@ export default async function SecteurPage(
               </svg>
               <div>
                 <p className="font-semibold">{pages.sector.customTitle}</p>
-                <p className="mt-1 whitespace-pre-line text-sm text-muted">
+                <p className="mt-1 whitespace-pre-line text-sm text-accent-foreground/80">
                   {pages.sector.customText}
                 </p>
               </div>

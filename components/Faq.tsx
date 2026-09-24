@@ -16,7 +16,7 @@ export default function Faq({ items }: { items: FaqItem[] }) {
         return (
           <div
             key={item.question}
-            className="dyn-card overflow-hidden rounded-lg border border-border bg-surface"
+            className="dyn-card overflow-hidden rounded-lg bg-accent text-accent-foreground"
           >
             <button
               type="button"
@@ -28,7 +28,7 @@ export default function Faq({ items }: { items: FaqItem[] }) {
               <motion.span
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="shrink-0 text-2xl leading-none text-accent"
+                className="shrink-0 text-2xl leading-none"
               >
                 +
               </motion.span>
@@ -42,7 +42,7 @@ export default function Faq({ items }: { items: FaqItem[] }) {
                   transition={{ duration: 0.25 }}
                   className="overflow-hidden"
                 >
-                  <p className="px-6 pb-5 text-muted">{item.answer}</p>
+                  <p className="px-6 pb-5 text-accent-foreground/80">{item.answer}</p>
                 </motion.div>
               )}
             </AnimatePresence>
