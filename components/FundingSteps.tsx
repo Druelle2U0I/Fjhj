@@ -1,34 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import { funding } from "@/lib/data";
-
-const AUTOPLAY_MS = 4000;
 
 export default function FundingSteps() {
   const steps = funding.steps ?? [];
   const n = steps.length;
   const [active, setActive] = useState(0);
-  const [autoplay, setAutoplay] = useState(true);
-  const [hovered, setHovered] = useState(false);
-
-  useEffect(() => {
-    if (!autoplay || hovered || n === 0) return;
-    const id = setInterval(() => {
-      setActive((i) => (i + 1) % n);
-    }, AUTOPLAY_MS);
-    return () => clearInterval(id);
-  }, [autoplay, hovered, n]);
 
   if (n === 0) return null;
 
   const progress = n > 1 ? (active / (n - 1)) * 100 : 0;
-
-  function select(i: number) {
-    setActive(i);
-    setAutoplay(false);
-  }
 
   return (
     <div className="mt-20">
@@ -43,12 +26,31 @@ export default function FundingSteps() {
         )}
       </Reveal>
 
-      <Reveal delay={0.1} className="mt-10">
-        <div
-          className="dyn-card relative overflow-hidden rounded-xl border border-border bg-surface p-6 sm:p-10"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
-        >
+      {/* Bureau : les 4 étapes côte à côte, toutes visibles en même temps. */}
+      <Reveal delay={0.1} className="mt-10 hidden lg:grid lg:grid-cols-4 lg:divide-x lg:divide-border lg:rounded-xl lg:border lg:border-border lg:bg-surface">
+        {steps.map((step, i) => (
+          <div key={step.title} className="relative overflow-hidden p-6">
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute -right-3 -top-6 select-none text-[6rem] font-bold leading-none text-accent/[0.08]"
+            >
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <p className="relative text-xs font-semibold uppercase tracking-wide text-accent">
+              Étape {i + 1} sur {n}
+            </p>
+            <h3 className="relative mt-2 text-lg font-semibold tracking-tight">
+              {step.title}
+            </h3>
+            <p className="relative mt-3 text-sm text-muted">{step.text}</p>
+          </div>
+        ))}
+      </Reveal>
+
+      {/* Mobile/tablette : une étape à la fois, curseur cliquable (pas de
+          défilement automatique). */}
+      <Reveal delay={0.1} className="mt-10 lg:hidden">
+        <div className="dyn-card relative overflow-hidden rounded-xl border border-border bg-surface p-6 sm:p-10">
           {/* Grand numéro en filigrane, purement décoratif. */}
           <span
             aria-hidden="true"
@@ -60,13 +62,13 @@ export default function FundingSteps() {
           {/* Contenu de l'étape active : toutes les étapes restent dans le
               DOM (empilées dans la même cellule de grille) pour rester
               lisibles sans JavaScript et par les moteurs de recherche ;
-              seule l'opacité/position change pour le fondu. */}
+              seule l'opacité/position change. */}
           <div className="relative grid">
             {steps.map((step, i) => (
               <div
                 key={step.title}
                 aria-hidden={i !== active}
-                className={`col-start-1 row-start-1 transition-all duration-500 ease-out ${
+                className={`col-start-1 row-start-1 transition-all duration-300 ease-out ${
                   i === active
                     ? "translate-y-0 opacity-100"
                     : "pointer-events-none -translate-y-2 opacity-0"
@@ -84,7 +86,7 @@ export default function FundingSteps() {
           </div>
 
           {/* Curseur : un vrai slider, glissable à la souris, au doigt ou
-              au clavier (flèches). */}
+              au clavier (flèches). N'avance jamais tout seul. */}
           <div className="relative mt-10 sm:mt-12">
             <input
               type="range"
@@ -92,7 +94,7 @@ export default function FundingSteps() {
               max={n - 1}
               step={1}
               value={active}
-              onChange={(e) => select(Number(e.target.value))}
+              onChange={(e) => setActive(Number(e.target.value))}
               aria-label="Étape du processus de financement"
               aria-valuetext={steps[active].title}
               className="funding-slider w-full"
@@ -103,7 +105,7 @@ export default function FundingSteps() {
                 <button
                   key={step.title}
                   type="button"
-                  onClick={() => select(i)}
+                  onClick={() => setActive(i)}
                   aria-current={i === active}
                   className={`text-xs font-medium transition-colors ${
                     i === active ? "text-foreground" : "text-muted hover:text-foreground"
