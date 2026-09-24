@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import BackgroundTexture from "@/components/BackgroundTexture";
 
 export default function SiteChrome({
@@ -13,7 +13,16 @@ export default function SiteChrome({
   footer: ReactNode;
   children: ReactNode;
 }) {
-  const isAdmin = usePathname().startsWith("/admin");
+  const pathname = usePathname();
+  const isAdmin = pathname.startsWith("/admin");
+
+  // À chaque changement de page, on repart tout en haut, instantanément
+  // (sauf lien vers une ancre, ex. « Voir le catalogue »). Next ne le fait
+  // pas toujours à cause de l'en-tête collant et du défilement doux.
+  useEffect(() => {
+    if (window.location.hash) return;
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
 
   if (isAdmin) return <main className="flex-1">{children}</main>;
 
