@@ -144,9 +144,8 @@ export default async function SecteurPage(
         </div>
       </section>
 
-      {/* Parcours les plus vendus / astuce : contenu optionnel, en cartes
-          courtes plutôt qu'un pavé de texte continu. */}
-      {(service.popularPaths?.length || service.tip) && (
+      {/* Parcours les plus vendus : en carte, comme le catalogue. */}
+      {service.popularPaths && service.popularPaths.length > 0 && (
         <section className="px-6 pb-20">
           <div className="mx-auto max-w-6xl">
             {service.unlistedNote && (
@@ -155,27 +154,41 @@ export default async function SecteurPage(
               </Reveal>
             )}
 
-            <div className="grid gap-6 lg:grid-cols-2">
-              {service.popularPaths && service.popularPaths.length > 0 && (
-                <Reveal className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
-                  <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
-                  <ul className="mt-4 space-y-3 text-sm text-muted">
-                    {service.popularPaths.map((item) => (
-                      <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
-                        {linkifyPath(item, trainingCodes, service.slug)}
-                      </li>
-                    ))}
-                  </ul>
-                </Reveal>
-              )}
+            <Reveal className="max-w-2xl rounded-3xl border border-border bg-surface p-6 sm:p-7">
+              <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
+              <ul className="mt-4 space-y-3 text-sm text-muted">
+                {service.popularPaths.map((item) => (
+                  <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
+                    {linkifyPath(item, trainingCodes, service.slug)}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
-              {service.tip && (
-                <Reveal delay={0.05} className="rounded-3xl border-l-4 border-accent bg-accent/10 p-6 sm:p-7">
-                  <h3 className="font-semibold">{service.tip.title}</h3>
-                  <p className="mt-3 text-sm text-muted">{service.tip.text}</p>
-                </Reveal>
-              )}
-            </div>
+      {/* Le saviez-vous : pas un encart de plus, un gros point
+          d'interrogation en filigrane à côté d'un texte affirmé. */}
+      {service.tip && (
+        <section className="px-6 pb-20">
+          <div className="mx-auto max-w-6xl">
+            <Reveal className="flex items-center gap-6 sm:gap-10">
+              <span
+                aria-hidden="true"
+                className="select-none text-[6rem] font-bold leading-none text-accent/25 sm:text-[9rem]"
+              >
+                ?
+              </span>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-accent">
+                  {service.tip.title}
+                </p>
+                <p className="mt-3 max-w-xl text-xl font-medium leading-snug text-foreground sm:text-2xl">
+                  {service.tip.text}
+                </p>
+              </div>
+            </Reveal>
           </div>
         </section>
       )}

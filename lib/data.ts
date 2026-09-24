@@ -162,7 +162,14 @@ export type SiteContent = {
     steps?: { title: string; text: string }[];
   };
   accessibility: { text: string; referent: string };
-  team: { name: string; role: string; email: string; bio: string }[];
+  team: {
+    name: string;
+    role: string;
+    email: string;
+    bio: string;
+    photo?: string;
+    photoAlt?: string;
+  }[];
   home: {
     heroSlides: HeroSlide[];
     aboutImage?: string;

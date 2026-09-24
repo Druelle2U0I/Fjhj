@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Visual from "@/components/Visual";
 import { pages, team } from "@/lib/data";
 
 function initials(name: string) {
@@ -23,31 +24,48 @@ export default function Team() {
           </h1>
         </Reveal>
 
-        <div className="mt-14 max-w-3xl divide-y divide-border border-t border-border">
-          {team.map((member, i) => (
-            <Reveal
-              key={member.name}
-              delay={i * 0.08}
-              className="grid grid-cols-[auto_1fr] items-start gap-6 py-10 first:pt-0 sm:gap-10"
-            >
-              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-accent-soft text-2xl font-semibold text-accent">
-                {initials(member.name)}
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold">{member.name}</h3>
-                <p className="mt-1 text-sm font-medium text-accent">
-                  {member.role}
-                </p>
-                <p className="mt-3 max-w-xl whitespace-pre-line text-muted">{member.bio}</p>
-                <a
-                  href={`mailto:${member.email}`}
-                  className="mt-4 inline-block text-sm text-muted hover:text-accent"
-                >
-                  {member.email}
-                </a>
-              </div>
-            </Reveal>
-          ))}
+        {/* Pas de liste alignée sur une seule colonne : chaque membre
+            alterne de côté, la photo la plus proche du centre, comme si
+            l'équipe se faisait face d'un profil à l'autre. */}
+        <div className="mt-16 grid gap-16 sm:gap-20">
+          {team.map((member, i) => {
+            const reversed = i % 2 === 1;
+            return (
+              <Reveal
+                key={member.name}
+                delay={i * 0.08}
+                className={`flex flex-col gap-8 sm:max-w-3xl sm:items-center sm:gap-10 ${
+                  reversed ? "sm:mr-auto sm:flex-row-reverse" : "sm:ml-auto sm:flex-row"
+                }`}
+              >
+                <div className="dyn-photo-wrap relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-3xl sm:w-72">
+                  {member.photo ? (
+                    <Visual
+                      src={member.photo}
+                      alt={member.photoAlt || member.name}
+                      sizes="(min-width: 640px) 288px, 100vw"
+                      className="dyn-photo"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-accent-soft text-5xl font-semibold text-accent">
+                      {initials(member.name)}
+                    </div>
+                  )}
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold">{member.name}</h3>
+                  <p className="mt-1 font-medium text-accent">{member.role}</p>
+                  <p className="mt-4 max-w-md whitespace-pre-line text-muted">{member.bio}</p>
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="mt-4 inline-block text-sm text-muted hover:text-accent"
+                  >
+                    {member.email}
+                  </a>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

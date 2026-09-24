@@ -508,11 +508,21 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
             <ListEditor
               items={content.team}
               onChange={(team) => update({ ...content, team })}
-              createItem={() => ({ name: "", role: "", email: "", bio: "" })}
+              createItem={() => ({ name: "", role: "", email: "", bio: "", photo: "", photoAlt: "" })}
               addLabel="Ajouter un membre"
               titleFor={(m) => m.name}
               renderItem={(member, set) => (
                 <div className="grid gap-4">
+                  <ImageField
+                    label="Photo"
+                    value={member.photo || undefined}
+                    onChange={(v) => set({ ...member, photo: v ?? "" })}
+                  />
+                  <Field
+                    label="Description de la photo (accessibilité)"
+                    value={member.photoAlt ?? ""}
+                    onChange={(v) => set({ ...member, photoAlt: v })}
+                  />
                   <div className="grid gap-4 sm:grid-cols-2">
                     <Field
                       label="Nom"
