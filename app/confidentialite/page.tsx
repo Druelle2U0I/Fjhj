@@ -77,7 +77,8 @@ export default function ConfidentialitePage() {
       </p>
       <ul>
         <li>
-          <strong>Vercel Inc.</strong> (États-Unis) — hébergement du site ;
+          <strong>Vercel Inc.</strong> (États-Unis) — hébergement du site et
+          statistiques de fréquentation anonymes ;
         </li>
         <li>
           <strong>Resend</strong> (États-Unis) — acheminement des messages
@@ -98,10 +99,17 @@ export default function ConfidentialitePage() {
 
       <h2>Cookies</h2>
       <p>
-        Ce site n&apos;utilise aucun cookie publicitaire, ni outil de mesure
-        d&apos;audience, ni traceur de réseaux sociaux. Seul un cookie
-        technique, strictement nécessaire, est déposé lors de la connexion à
-        l&apos;espace d&apos;administration réservé à notre équipe. Aucun
+        Ce site n&apos;utilise aucun cookie publicitaire ni traceur de réseaux
+        sociaux. Seul un cookie technique, strictement nécessaire, est déposé
+        lors de la connexion à l&apos;espace d&apos;administration réservé à
+        notre équipe.
+      </p>
+      <p>
+        Pour connaître la fréquentation du site, nous utilisons Vercel Web
+        Analytics, un outil de mesure d&apos;audience sans cookie : il produit
+        uniquement des statistiques anonymes et agrégées (pages consultées,
+        site de provenance, pays, type d&apos;appareil), sans identifier les
+        visiteurs ni les suivre d&apos;un site à l&apos;autre. Aucun
         consentement n&apos;est donc requis.
       </p>
 

@@ -123,7 +123,9 @@ export default async function FormationPage(
             <span>{training.title}</span>
           </div>
 
-          <Reveal>
+          {/* Sur grand écran, la colonne de droite reste libre : l'encart
+              récapitulatif remonte à cet endroit, à côté du titre. */}
+          <Reveal className="lg:pr-[400px]">
             <div className="flex flex-wrap items-center gap-3">
               <p className="text-sm font-semibold uppercase tracking-wide text-accent">
                 {service.title}
@@ -202,48 +204,36 @@ export default async function FormationPage(
                 </p>
               </Reveal>
 
-              {/* Financement : callout à barre d'accent, pas une grille */}
-              <Reveal delay={0.05} className="mt-10 max-w-2xl border-l-4 border-accent pl-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
-                  {pages.training.fundingTitle}
-                </p>
-                <p className="mt-2 text-sm text-muted">{training.funding}</p>
-              </Reveal>
-
-              {/* Méthodes + évaluation : détails plus discrets, en paire */}
-              {(trainingInfo.methods || trainingInfo.evaluation) && (
-                <Reveal delay={0.1} className="mt-10 grid gap-6 text-sm sm:grid-cols-2">
-                  {trainingInfo.methods && (
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-muted">
-                        {pages.training.methodsTitle}
-                      </p>
-                      <p className="mt-2 text-muted">{trainingInfo.methods}</p>
-                    </div>
-                  )}
-                  {trainingInfo.evaluation && (
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-muted">
-                        {pages.training.evaluationTitle}
-                      </p>
-                      <p className="mt-2 text-muted">{trainingInfo.evaluation}</p>
-                    </div>
-                  )}
-                </Reveal>
-              )}
-
-              {/* Accessibilité : simple note en bas, la plus discrète */}
-              <Reveal delay={0.15} className="mt-10 max-w-2xl text-xs text-muted">
-                <p className="font-semibold uppercase tracking-wide text-accent">
-                  {pages.training.accessibilityTitle}
-                </p>
-                <p className="mt-2">
-                  {accessibility.text} Contact : {accessibility.referent},{" "}
-                  <a href={`mailto:${company.email}`} className="text-foreground hover:text-accent">
-                    {company.email}
-                  </a>
-                  .
-                </p>
+              {/* Financement, méthodes, évaluation, accessibilité : une
+                  seule liste verticale, chaque ligne avec son pictogramme,
+                  pour qu'on lise les informations dans l'ordre. */}
+              <Reveal delay={0.05} className="mt-10 max-w-2xl">
+                <ul className="divide-y divide-border border-y border-border">
+                  {[
+                    { icon: "funding", title: pages.training.fundingTitle, text: training.funding },
+                    { icon: "methods", title: pages.training.methodsTitle, text: trainingInfo.methods },
+                    { icon: "evaluation", title: pages.training.evaluationTitle, text: trainingInfo.evaluation },
+                    {
+                      icon: "accessibility",
+                      title: pages.training.accessibilityTitle,
+                      text: `${accessibility.text} Contact : ${accessibility.referent}, ${company.email}.`,
+                    },
+                  ]
+                    .filter((row) => row.text)
+                    .map((row) => (
+                      <li key={row.icon} className="flex gap-5 py-6">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
+                          <InfoIcon name={row.icon} />
+                        </span>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                            {row.title}
+                          </p>
+                          <p className="mt-2 text-sm text-muted">{row.text}</p>
+                        </div>
+                      </li>
+                    ))}
+                </ul>
               </Reveal>
             </div>
 
@@ -276,7 +266,7 @@ export default async function FormationPage(
           {/* Encart récapitulatif : passe en premier sur mobile (juste après
               le programme) pour ne pas noyer les infos clés sous le mur de
               texte qui suit ; reprend sa place à droite à partir de lg. */}
-          <aside className="order-first lg:order-none lg:sticky lg:top-24">
+          <aside className="relative z-10 order-first lg:order-none lg:sticky lg:top-24 lg:-mt-80">
             <div className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
               <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                 {service.title}
@@ -332,4 +322,48 @@ export default async function FormationPage(
       </section>
     </>
   );
+}
+
+// Pictogrammes de la liste d'informations pratiques d'une fiche formation.
+function InfoIcon({ name }: { name: string }) {
+  const common = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.6,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    className: "h-5 w-5",
+    "aria-hidden": true,
+  };
+  switch (name) {
+    case "funding":
+      return (
+        <svg {...common}>
+          <path d="M17 6.5A6.5 6.5 0 1 0 17 17.5" />
+          <path d="M4 10.5h9M4 13.5h9" />
+        </svg>
+      );
+    case "methods":
+      return (
+        <svg {...common}>
+          <rect x="3" y="4" width="18" height="12" rx="2" />
+          <path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4" />
+        </svg>
+      );
+    case "evaluation":
+      return (
+        <svg {...common}>
+          <rect x="5" y="3.5" width="14" height="17" rx="2" />
+          <path d="M9 3.5h6v3H9zM8.5 12l2 2 4-4.5M8.5 17h7" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="4.5" r="1.5" />
+          <path d="M6 8.5h12M12 8.5v5M12 13.5l-3 6.5M12 13.5l3 6.5" />
+        </svg>
+      );
+  }
 }

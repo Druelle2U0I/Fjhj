@@ -96,8 +96,8 @@ export default function MentionsLegalesPage() {
         Le traitement des données transmises via les formulaires du site est
         détaillé dans notre{" "}
         <Link href="/confidentialite">politique de confidentialité</Link>. Ce
-        site n&apos;utilise aucun cookie publicitaire ni outil de mesure
-        d&apos;audience.
+        site n&apos;utilise aucun cookie publicitaire ; la fréquentation est
+        mesurée de façon anonyme et sans cookie.
       </p>
 
       <h2>Responsabilité</h2>
