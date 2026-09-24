@@ -2,14 +2,17 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
 import Visual from "@/components/Visual";
 import {
   activityDeclarationText,
   company,
   footerCta,
   footerImage,
+  legal,
   qualiopiText,
   services,
+  social,
 } from "@/lib/data";
 
 function Column({
@@ -203,6 +206,11 @@ export default function Footer() {
                     {company.email}
                   </a>
                 </li>
+                {Object.values(social).some((v) => v?.trim()) && (
+                  <li className="pt-2">
+                    <SocialLinks social={social} />
+                  </li>
+                )}
               </Column>
 
               <Column title="Zone d'intervention">
@@ -211,7 +219,48 @@ export default function Footer() {
               </Column>
             </div>
 
-            <div className="mt-14 grid gap-4 border-t border-white/10 pt-6 text-xs">
+            {/* Certification Qualiopi : logo officiel (envoyé depuis l'admin)
+                ou badge texte, avec lien vers le certificat s'il est fourni. */}
+            {legal.qualiopiCertificate && (
+              <div className="mt-14 flex flex-col items-center gap-5 rounded-2xl border border-white/10 bg-background/40 p-6 text-center backdrop-blur sm:flex-row sm:text-left">
+                {legal.qualiopiLogo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={legal.qualiopiLogo}
+                    alt="Logo Qualiopi — processus certifié, République française"
+                    className="h-20 w-auto shrink-0 rounded-lg bg-white p-2"
+                  />
+                ) : (
+                  <span className="flex h-20 shrink-0 flex-col items-center justify-center rounded-lg bg-white px-5 font-bold text-[#0b032b]">
+                    <span className="text-xl tracking-tight">Qualiopi</span>
+                    <span className="text-[10px] font-semibold uppercase tracking-wider">processus certifié</span>
+                  </span>
+                )}
+                <div className="grid gap-1.5 text-sm">
+                  <p className="font-semibold text-foreground">
+                    Organisme certifié Qualiopi — certificat n° {legal.qualiopiCertificate}
+                  </p>
+                  {legal.qualiopiCategory && (
+                    <p className="text-xs text-muted">
+                      La certification qualité a été délivrée au titre de la catégorie
+                      d&apos;action suivante : {legal.qualiopiCategory}.
+                    </p>
+                  )}
+                  {legal.qualiopiCertificateUrl && (
+                    <a
+                      href={legal.qualiopiCertificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-accent underline underline-offset-2"
+                    >
+                      Voir notre certificat Qualiopi
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
+
+            <div className="mt-10 grid gap-4 border-t border-white/10 pt-6 text-xs">
               <nav
                 aria-label="Informations légales"
                 className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-start"
@@ -229,9 +278,9 @@ export default function Footer() {
                   Accessibilité
                 </Link>
               </nav>
-              {(activityDeclarationText() || qualiopiText()) && (
+              {(activityDeclarationText() || (!legal.qualiopiCertificate && qualiopiText())) && (
                 <p className="text-center sm:text-left">
-                  {activityDeclarationText()} {qualiopiText()}
+                  {activityDeclarationText()} {legal.qualiopiCertificate ? "" : qualiopiText()}
                 </p>
               )}
               <p className="text-center sm:text-left">

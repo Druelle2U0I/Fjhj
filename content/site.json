@@ -27,7 +27,9 @@
     "accessDelay": "Garantie d'organisation rapide de formation sous 14 jours.",
     "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (taux de satisfaction des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
     "cancellationFee": "la totalité du prix de la formation",
-    "court": "Tribunal de commerce d'Arras"
+    "court": "Tribunal de commerce d'Arras",
+    "qualiopiLogo": "",
+    "qualiopiCertificateUrl": ""
   },
   "stats": [
     {
@@ -1890,5 +1892,12 @@
       "emptyText": "Aucune formation ne correspond à votre recherche. Contactez-nous : nous construisons aussi des parcours sur mesure.",
       "seoDescription": "Les {formations} formations d'ENMA Formation sur une seule page : sécurité, secourisme, CACES, habilitation électrique, travail en hauteur, management et photovoltaïque."
     }
+  },
+  "social": {
+    "linkedin": "",
+    "facebook": "",
+    "instagram": "",
+    "youtube": "",
+    "tiktok": ""
   }
 }

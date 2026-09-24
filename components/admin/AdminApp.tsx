@@ -815,6 +815,85 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   }
                 />
               </Card>
+
+              <Card className="grid gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                    Réseaux sociaux
+                  </p>
+                  <p className="mt-1 text-xs text-muted">
+                    Collez l&apos;adresse complète de chaque page (https://…). Les
+                    réseaux laissés vides ne s&apos;affichent pas.
+                  </p>
+                </div>
+                <Field
+                  label="LinkedIn"
+                  placeholder="https://www.linkedin.com/…"
+                  value={content.social?.linkedin ?? ""}
+                  onChange={(v) =>
+                    update({ ...content, social: { ...content.social, linkedin: v } })
+                  }
+                />
+                <Field
+                  label="Facebook"
+                  placeholder="https://www.facebook.com/…"
+                  value={content.social?.facebook ?? ""}
+                  onChange={(v) =>
+                    update({ ...content, social: { ...content.social, facebook: v } })
+                  }
+                />
+                <Field
+                  label="Instagram"
+                  placeholder="https://www.instagram.com/…"
+                  value={content.social?.instagram ?? ""}
+                  onChange={(v) =>
+                    update({ ...content, social: { ...content.social, instagram: v } })
+                  }
+                />
+                <Field
+                  label="YouTube"
+                  placeholder="https://www.youtube.com/…"
+                  value={content.social?.youtube ?? ""}
+                  onChange={(v) =>
+                    update({ ...content, social: { ...content.social, youtube: v } })
+                  }
+                />
+                <Field
+                  label="TikTok"
+                  placeholder="https://www.tiktok.com/…"
+                  value={content.social?.tiktok ?? ""}
+                  onChange={(v) =>
+                    update({ ...content, social: { ...content.social, tiktok: v } })
+                  }
+                />
+              </Card>
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  Certification Qualiopi (bas de page)
+                </p>
+                <ImageField
+                  label="Logo Qualiopi officiel"
+                  value={content.legal.qualiopiLogo || undefined}
+                  onChange={(v) =>
+                    update({ ...content, legal: { ...content.legal, qualiopiLogo: v ?? "" } })
+                  }
+                />
+                <p className="text-xs text-muted">
+                  Utilisez le logo fourni par votre certificateur (avec la mention
+                  « République française »), sans le modifier. Sans logo, un badge
+                  texte s&apos;affiche à la place.
+                </p>
+                <Field
+                  label="Lien vers le certificat (facultatif)"
+                  placeholder="https://…"
+                  hint="Adresse du certificat en ligne ou d'un PDF partagé. Le numéro de certificat se modifie dans « Mentions légales & Qualiopi »."
+                  value={content.legal.qualiopiCertificateUrl ?? ""}
+                  onChange={(v) =>
+                    update({ ...content, legal: { ...content.legal, qualiopiCertificateUrl: v } })
+                  }
+                />
+              </Card>
             </>
           )}
 

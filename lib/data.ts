@@ -151,7 +151,10 @@ export type SiteContent = {
     court?: string;
     accessDelay?: string;
     resultsIndicators?: string;
+    qualiopiLogo?: string;
+    qualiopiCertificateUrl?: string;
   };
+  social?: Social;
   trainingInfo?: { methods: string; evaluation: string };
   pages: Pages;
   stats: { value: string; label: string }[];
@@ -199,6 +202,14 @@ export type SiteContent = {
     text: string;
     buttonLabel: string;
   };
+};
+
+export type Social = {
+  linkedin?: string;
+  facebook?: string;
+  instagram?: string;
+  youtube?: string;
+  tiktok?: string;
 };
 
 export type Pages = {
@@ -267,6 +278,7 @@ const content = site as SiteContent;
 
 export const company = content.company;
 export const legal = content.legal;
+export const social: Social = content.social ?? {};
 export const pages = content.pages;
 export const trainingInfo = content.trainingInfo ?? { methods: "", evaluation: "" };
 export const stats = content.stats;

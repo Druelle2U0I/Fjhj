@@ -359,8 +359,3 @@ h4 {
   border-block: 1px solid var(--border);
 }
 
-/* Bandes de la page Équipe : même couleur que les bandes de section */
-.team-band {
-  background: color-mix(in srgb, var(--band-color, #2a2266) var(--band-alpha, 85%), transparent);
-  border: 1px solid var(--border);
-}
