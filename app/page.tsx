@@ -81,14 +81,14 @@ function FinancementSection({ section }: { section: HomeSection }) {
             className="relative grid gap-6 bg-surface p-8 sm:p-10 lg:h-full lg:pr-16"
           >
             {funding.points.map((point) => (
-              <div key={point.title} className="flex gap-3">
+              <div key={point.title} className="flex items-center gap-3">
               <svg
                 aria-hidden="true"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
-                className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                className="h-5 w-5 shrink-0 text-accent"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="m5 13 4 4L19 7" />
               </svg>

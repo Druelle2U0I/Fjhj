@@ -268,8 +268,10 @@ export default async function FormationPage(
             )}
           </div>
 
-          {/* Encart récapitulatif */}
-          <aside className="lg:sticky lg:top-24">
+          {/* Encart récapitulatif : passe en premier sur mobile (juste après
+              le programme) pour ne pas noyer les infos clés sous le mur de
+              texte qui suit ; reprend sa place à droite à partir de lg. */}
+          <aside className="order-first lg:order-none lg:sticky lg:top-24">
             <div className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
               <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                 {service.title}

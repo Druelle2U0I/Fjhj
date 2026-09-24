@@ -37,6 +37,13 @@ export type Sector = {
   image?: string;
   imageAlt?: string;
   trainings: Training[];
+  // Contenu optionnel : détail des habilitations/niveaux du secteur,
+  // affiché en complément du catalogue pour éviter un mur de texte
+  // (voir app/formations/[secteur]/page.tsx).
+  variantGroups?: { title: string; items: string[] }[];
+  popularPaths?: string[];
+  unlistedNote?: string;
+  tip?: { title: string; text: string };
 };
 
 export type HeroSlide = {

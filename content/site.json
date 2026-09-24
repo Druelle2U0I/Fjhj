@@ -6,7 +6,7 @@
     "about": "Organisme de formation certifié Qualiopi, implanté à Wingles (Pas-de-Calais). Formations en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France : Nord, Pas-de-Calais, Aisne, Somme et Oise.",
     "email": "maxence@enma-formation.com",
     "phone": "07 69 35 55 19",
-    "address": "24 rue Colmar, 62410 Wingles",
+    "address": "Rue du Père Avrillon, 62410 Wingles",
     "serviceArea": "Hauts-de-France — Nord, Pas-de-Calais, Aisne, Somme et Oise"
   },
   "legal": {
@@ -24,14 +24,14 @@
     "qualiopiCategory": "actions de formation",
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
-    "accessDelay": "10 jours ouvrés en règle générale après l'accord du financeur. En cas d'urgence, une session peut exceptionnellement être organisée dès 3 jours ouvrés, selon la disponibilité de nos formateurs. En intra-entreprise, le planning est établi avec vous dans notre proposition.",
+    "accessDelay": "Garantie d'organisation rapide de formation sous 14 jours.",
     "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (taux de satisfaction des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras"
   },
   "stats": [
     {
-      "value": "32",
+      "value": "33",
       "label": "formations au catalogue"
     },
     {
@@ -43,8 +43,8 @@
       "label": "domaines de formation"
     },
     {
-      "value": "OPCO",
-      "label": "formations éligibles à un financement"
+      "value": "À venir",
+      "label": "taux de satisfaction"
     }
   ],
   "pillars": [
@@ -349,6 +349,39 @@
         "title": "L'habilitation protège le salarié comme l'employeur",
         "text": "La norme NF C 18-510 conditionne toute intervention à proximité d'une installation électrique à une habilitation délivrée par l'employeur, elle-même adossée à une formation. Nos sessions distinguent le personnel électricien du personnel non électricien, et se terminent par un avis motivé transmis à l'employeur."
       },
+      "variantGroups": [
+        {
+          "title": "Basse tension (BT)",
+          "items": [
+            "B1 / B1V : exécutant de travaux électriques, hors tension (B1) ou au voisinage (B1V).",
+            "B2 / B2V : chargé de travaux électriques. B2V Essai pour les essais.",
+            "BR : chargé d'intervention générale (dépannage, maintenance, raccordement).",
+            "BC : chargé de consignation.",
+            "BE Mesurage / Essai / Vérification : opérations spécifiques de mesure, d'essai ou de contrôle.",
+            "BP : interventions sur installations photovoltaïques."
+          ]
+        },
+        {
+          "title": "Haute tension (HT)",
+          "items": [
+            "H0 / H0V : non-électricien travaillant à proximité d'ouvrages HT.",
+            "H1 / H1V : exécutant de travaux électriques HT.",
+            "H2 / H2V : chargé de travaux HT, avec H2V Essai.",
+            "HC : chargé de consignation HT.",
+            "HE Manœuvre / Mesurage / Essai / Vérification : opérations spécifiques HT."
+          ]
+        }
+      ],
+      "popularPaths": [
+        "H0B0 et BS/BE Manœuvre : publics non électriciens, sur 1 à 2 jours.",
+        "B1V-B2V-BR-BC : électriciens BT, sur 3 jours.",
+        "H0V-B1V-B2V-BR-BC-H1V-H2V-HC : électriciens BT/HT, sur 3 à 5 jours."
+      ],
+      "unlistedNote": "Si l'habilitation que vous recherchez n'apparaît pas dans cette liste, pas d'inquiétude : contactez-nous, nous l'organisons aussi.",
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Le recyclage est recommandé tous les 3 ans par la norme. L'habilitation elle-même est délivrée par l'employeur, sur la base de l'avis de formation."
+      },
       "trainings": [
         {
           "title": "Habilitation électrique — basse tension (NF C 18-510)",
@@ -426,6 +459,10 @@
       "why": {
         "title": "L'autorisation de conduite engage l'employeur",
         "text": "L'article R4323-55 du Code du travail subordonne la conduite des équipements mobiles à une formation adéquate. Le CACES n'est pas obligatoire en soi, mais c'est le dispositif qui atteste le mieux de cette formation devant l'inspection du travail comme devant l'assurance. Nos tests se déroulent sur plateforme, avec les catégories d'engins de votre parc."
+      },
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "À compléter dans /admin (ex. durée de validité du CACES, ce qui distingue le CACES du simple certificat d'aptitude à la conduite en sécurité...)."
       },
       "image": "/images/7-1790074465812.jpg",
       "imageAlt": "Cariste conduisant un chariot élévateur en entrepôt lors d'une formation CACES",
@@ -839,7 +876,7 @@
     },
     {
       "title": "Prévention des risques professionnels",
-      "description": "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels — gestes et postures, gestion du stress, prévention de l'absentéisme, premiers secours en santé mentale — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme aide les entreprises de tous secteurs à répondre à leurs obligations de prévention et à construire une démarche de qualité de vie au travail durable.",
+      "description": "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels — gestes et postures, sécurité des entreprises extérieures sur site industriel (Niveaux 1 et 2) — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme aide les entreprises de tous secteurs à répondre à leurs obligations de prévention.",
       "why": {
         "title": "Ce qui se prévient coûte moins cher que ce qui se répare",
         "text": "Les troubles musculo-squelettiques représentent la première cause de maladie professionnelle reconnue en France. L'article L4121-1 du Code du travail fait de la prévention une obligation de l'employeur, pas une option : nos formations partent de vos postes réels, analysés sur place, plutôt que d'un catalogue de bonnes pratiques générales."
@@ -880,107 +917,6 @@
           "imageAlt": "Salarié aidé à adopter la bonne posture pour soulever une charge"
         },
         {
-          "title": "Gestion du stress",
-          "duration": "2 à 4 demi-journées",
-          "format": "Intra-entreprise",
-          "intro": "Identifier les signaux, comprendre les mécanismes, retrouver des marges de manœuvre.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "Comprendre le stress",
-              "text": "Objectif : être capable d'expliquer les mécanismes physiologiques et psychologiques du stress. Mécanismes physiologiques et psychologiques du stress, distinction entre stress aigu et stress chronique, notion de risques psychosociaux."
-            },
-            {
-              "title": "Identifier ses sources de stress",
-              "text": "Objectif : être capable de repérer les facteurs de stress propres à sa situation de travail. Repérer les facteurs de stress liés à l'organisation, à la charge de travail et aux relations professionnelles."
-            },
-            {
-              "title": "Techniques de gestion du stress",
-              "text": "Objectif : être capable de mobiliser des techniques concrètes de gestion du stress au quotidien. Respiration, gestion du temps et des priorités, techniques de relaxation applicables en situation de travail."
-            },
-            {
-              "title": "Construire son plan d'action personnel",
-              "text": "Objectif : être capable d'élaborer un plan d'action individuel adapté à sa propre situation. Élaboration d'un plan d'action individuel pour mieux gérer son stress au quotidien."
-            }
-          ],
-          "description": [
-            "Le stress chronique au travail impacte autant la santé des salariés que la performance de l'entreprise : troubles du sommeil, irritabilité, baisse de concentration et, à terme, risque d'épuisement professionnel. Les risques psychosociaux font partie intégrante des risques professionnels que l'employeur doit évaluer et prévenir au titre de son obligation générale de sécurité (article L4121-1 du Code du travail), au même titre que les risques physiques ou chimiques.",
-            "Cette formation permet à chaque participant de comprendre les mécanismes physiologiques et psychologiques du stress, d'identifier ses propres sources de stress professionnel, et de mobiliser des techniques concrètes et applicables immédiatement au quotidien. À l'issue de la session, chaque participant repart avec un plan d'action personnel adapté à sa situation de travail."
-          ],
-          "audience": "Cette formation s'adresse à tout salarié exposé au stress professionnel souhaitant développer des techniques de gestion adaptées à sa situation, quel que soit son poste ou son secteur d'activité. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les environnements à forte charge mentale ou relationnelle (relation client, encadrement, urgence) et peut être proposée en complément d'une démarche plus large de prévention des risques psychosociaux au sein de l'entreprise.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention.",
-          "image": "/images/gestion-du-stress.jpg",
-          "imageAlt": "Salariée en situation de stress au travail"
-        },
-        {
-          "title": "Premiers secours en santé mentale (PSSM)",
-          "duration": "4 demi-journées",
-          "format": "Intra-entreprise",
-          "intro": "Repérer un collègue en souffrance psychique et savoir comment l'orienter.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "Comprendre la santé mentale",
-              "text": "Objectif : être capable de distinguer les principaux troubles psychiques et de déconstruire les idées reçues associées. Repères sur les troubles psychiques courants, déconstruction des idées reçues et de la stigmatisation liée à la santé mentale."
-            },
-            {
-              "title": "Repérer les signes de mal-être",
-              "text": "Objectif : être capable d'identifier les signaux d'alerte d'une souffrance psychique ou d'une crise. Identifier les signaux d'alerte d'une souffrance psychique ou d'une crise chez un collègue, un proche ou soi-même."
-            },
-            {
-              "title": "La méthode AÉRER",
-              "text": "Objectif : être capable d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne concernée. Les 5 étapes du plan d'action : Approcher la personne, Écouter activement sans jugement, Réconforter et informer, Encourager à consulter un professionnel, Renseigner sur les ressources disponibles."
-            },
-            {
-              "title": "Mise en pratique",
-              "text": "Objectif : être capable de mobiliser la méthode AÉRER face à des situations concrètes réalistes. Mises en situation à partir de cas concrets pour s'approprier la méthode AÉRER."
-            }
-          ],
-          "description": [
-            "Un collègue en difficulté psychologique ne le montre pas toujours clairement, et l'entourage professionnel se sent souvent démuni face à des signes de souffrance qu'il ne sait pas interpréter. Le programme Premiers Secours en Santé Mentale (PSSM), adaptation française du programme international Mental Health First Aid né en Australie et aujourd'hui déployé dans plus de 25 pays, vise à donner au plus grand nombre les outils pour repérer une souffrance psychique et orienter la personne concernée vers une aide adaptée, sans se substituer à un professionnel de santé.",
-            "À l'issue de la formation, le participant est capable de reconnaître les signes de mal-être ou de crise chez un collègue, un proche ou lui-même, de déconstruire les idées reçues liées à la stigmatisation de la santé mentale, et d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne vers les ressources appropriées."
-          ],
-          "audience": "Cette formation s'adresse à tout salarié, quel que soit son poste ou son niveau hiérarchique, souhaitant être en mesure d'aider un collègue ou un proche traversant une période de souffrance psychique. Aucun prérequis n'est nécessaire, et la formation n'exige aucune compétence préalable en santé mentale. Elle est particulièrement recommandée pour les managers et les représentants du personnel, en première ligne pour repérer les signaux de mal-être au sein des équipes, ainsi que dans le cadre d'une démarche globale de prévention des risques psychosociaux.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large.",
-          "image": "/images/premiers-secours-sante-mentale.jpg",
-          "imageAlt": "Geste de soutien et d'écoute entre deux personnes"
-        },
-        {
-          "title": "Prévention de l'absentéisme",
-          "duration": "2 à 4 demi-journées",
-          "format": "Intra-entreprise",
-          "intro": "Comprendre ce que l'absentéisme dit de votre organisation, puis agir dessus.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Grille de compétences",
-          "programme": [
-            {
-              "title": "Comprendre l'absentéisme",
-              "text": "Objectif : être capable de définir et de quantifier l'absentéisme au sein de son organisation. Définitions, indicateurs et coûts de l'absentéisme, distinction entre les différentes formes (maladie, désengagement, absences répétées)."
-            },
-            {
-              "title": "Identifier les causes",
-              "text": "Objectif : être capable d'analyser les causes organisationnelles, managériales et individuelles de l'absentéisme. Facteurs organisationnels, managériaux et individuels de l'absentéisme, lien avec les risques psychosociaux et les conditions de travail."
-            },
-            {
-              "title": "Repérer les signaux d'alerte",
-              "text": "Objectif : être capable de repérer les indicateurs précoces d'un absentéisme naissant au sein d'une équipe. Indicateurs précoces d'un absentéisme naissant au sein d'une équipe, rôle de l'encadrement de proximité."
-            },
-            {
-              "title": "Agir et prévenir",
-              "text": "Objectif : être capable de construire un plan de prévention adapté à sa propre équipe. Leviers d'action managériaux, dialogue avec les salariés, construction d'un plan de prévention adapté à son équipe."
-            }
-          ],
-          "description": [
-            "Un absentéisme qui s'installe coûte cher à l'entreprise, en désorganisation comme en charge supplémentaire pour les équipes en place, et révèle souvent un mal-être plus profond que le simple arrêt maladie ne laisse paraître. Détecté tardivement, il devient un phénomène difficile à inverser ; repéré tôt par l'encadrement de proximité, il peut au contraire être traité à la racine, avant qu'il ne s'ancre durablement dans le fonctionnement d'une équipe.",
-            "Cette formation permet de comprendre les causes multiples de l'absentéisme, de repérer les signaux d'alerte précoces au sein d'une équipe, et de mettre en place des actions de prévention adaptées à l'organisation de l'entreprise. À l'issue de la session, chaque participant est capable de distinguer les différentes formes d'absentéisme et de mobiliser les leviers managériaux appropriés à chaque situation."
-          ],
-          "audience": "Cette formation s'adresse aux managers, encadrants et responsables RH souhaitant prévenir et réduire l'absentéisme au sein de leurs équipes. Une première expérience d'encadrement est recommandée, bien qu'aucun prérequis formel ne soit exigé. Elle s'adresse particulièrement aux entreprises confrontées à un taux d'absentéisme en hausse ou souhaitant structurer une démarche de prévention avant que le phénomène ne s'installe durablement.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la prévention. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par une formation à la gestion du stress ou aux risques psychosociaux pour une approche globale de la qualité de vie au travail.",
-          "image": "/images/4-1790108467451.jpg"
-        },
-        {
           "title": "Sécurité des salariés des entreprises extérieures — Niveau 1",
           "duration": "2 demi-journées",
           "format": "Intra-entreprise",
@@ -1012,6 +948,38 @@
           "audience": "Cette formation s'adresse aux salariés d'entreprises extérieures amenés à intervenir sur un site industriel client, notamment dans les secteurs de la chimie, de la pétrochimie ou de l'industrie lourde. Aucun prérequis technique n'est exigé, mais une bonne compréhension des consignes écrites et orales est nécessaire pour appliquer les règles de sécurité propres à chaque site d'intervention. Cette formation de Niveau 1 constitue le socle minimal avant toute intervention sur un site relevant du référentiel France Chimie DT40.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en amont d'une campagne d'intervention groupée sur un site industriel afin de certifier l'ensemble d'une équipe avant le début des travaux.",
           "image": "/images/5-copie-2-1790108515161.jpg"
+        },
+        {
+          "title": "Sécurité des salariés des entreprises extérieures — Niveau 2",
+          "duration": "1 journée",
+          "format": "Intra-entreprise",
+          "intro": "Le niveau encadrement pour organiser et superviser la sécurité des équipes intervenantes sur site industriel.",
+          "prerequisites": "Avoir suivi la formation Niveau 1, ou justifier d'une expérience équivalente",
+          "certification": "Attestation de fin de formation | Attestation provisoire de réussite au stage",
+          "programme": [
+            {
+              "title": "Rôle et responsabilités de l'encadrant",
+              "text": "Objectif : être capable de définir son rôle et ses responsabilités dans l'organisation de la prévention face à l'entreprise utilisatrice. Responsabilités civile et pénale, relation avec le donneur d'ordre, articulation avec le plan de prévention."
+            },
+            {
+              "title": "Organiser l'intervention de son équipe",
+              "text": "Objectif : être capable de préparer et de coordonner l'intervention de son équipe sur site. Inspection commune préalable, analyse des risques spécifiques à la mission, répartition des tâches et des consignes."
+            },
+            {
+              "title": "Superviser le respect des règles de sécurité",
+              "text": "Objectif : être capable de vérifier et de faire respecter les règles de sécurité du site par son équipe. Contrôle des autorisations de travail, vérification des équipements de protection, suivi du balisage et des accès, remontée des situations à risque."
+            },
+            {
+              "title": "Gérer un évènement ou un incident",
+              "text": "Objectif : être capable de réagir et de rendre compte en cas d'incident ou de situation dégradée. Procédure d'alerte, mise en sécurité de l'équipe, compte-rendu à l'entreprise utilisatrice, retour d'expérience."
+            }
+          ],
+          "description": [
+            "Sur un site industriel, l'encadrant d'une entreprise extérieure porte une responsabilité particulière : il doit non seulement connaître les risques du site, mais aussi organiser et superviser l'intervention de son équipe dans le respect du plan de prévention. Le référentiel France Chimie DT40 distingue ainsi un Niveau 2, destiné aux chefs d'équipe et encadrants, complémentaire du Niveau 1 suivi par l'ensemble des intervenants.",
+            "Cette formation permet à l'encadrant de préparer l'inspection commune préalable, de répartir les tâches et les consignes de sécurité au sein de son équipe, de vérifier le respect des règles du site (autorisations de travail, équipements de protection, balisage) et de savoir réagir face à un incident. Elle s'appuie sur des mises en situation concrètes, proches des interventions réelles sur site industriel."
+          ],
+          "audience": "Cette formation s'adresse aux chefs d'équipe, encadrants et responsables d'intervention d'entreprises extérieures amenés à superviser une équipe sur un site industriel client, notamment dans les secteurs de la chimie, de la pétrochimie ou de l'industrie lourde. Elle est complémentaire de la formation Niveau 1, suivie au préalable par l'ensemble des intervenants qu'ils encadrent.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle est idéalement organisée juste après la formation Niveau 1 de l'équipe encadrée, afin de structurer l'ensemble de la coordination sécurité avant le début d'un chantier ou d'une campagne d'intervention."
         }
       ],
       "opco": true,
@@ -1020,7 +988,7 @@
     },
     {
       "title": "Management & qualité",
-      "description": "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles et la culture sécurité — gestion des conflits, posture face à l'agressivité, sécurité au quotidien — en intra, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme construit des sessions courtes autour de vos situations réelles pour renforcer durablement les pratiques managériales et la culture sécurité de vos équipes.",
+      "description": "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles, la culture sécurité et la qualité de vie au travail — gestion des conflits, posture face à l'agressivité, sécurité au quotidien, gestion du stress, prévention de l'absentéisme, premiers secours en santé mentale — en intra, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme construit des sessions courtes autour de vos situations réelles pour renforcer durablement les pratiques managériales et la culture sécurité de vos équipes.",
       "why": {
         "title": "On devient encadrant sans y avoir été formé",
         "text": "La promotion vient récompenser une expertise technique, rarement une aptitude à conduire une équipe, et les deux ne s'apprennent pas au même endroit. Nos sessions travaillent sur des situations rapportées par les participants, avec des mises en situation plutôt qu'un exposé de modèles."
@@ -1129,6 +1097,107 @@
           "audience": "Cette formation s'adresse aux managers et encadrants de proximité souhaitant intégrer la sécurité dans leur pratique managériale quotidienne, quel que soit leur secteur d'activité. Aucun prérequis n'est nécessaire, bien qu'une première expérience d'encadrement facilite l'appropriation des concepts abordés. Elle est particulièrement recommandée pour les nouveaux managers découvrant leurs responsabilités en matière de sécurité, ainsi que pour tout encadrant souhaitant structurer sa démarche de prévention.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la sécurité. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à un parcours d'intégration pour tout nouveau manager prenant la responsabilité d'une équipe.",
           "image": "/images/5-19-44-14-1790080659464.jpg"
+        },
+        {
+          "title": "Gestion du stress",
+          "duration": "2 à 4 demi-journées",
+          "format": "Intra-entreprise",
+          "intro": "Identifier les signaux, comprendre les mécanismes, retrouver des marges de manœuvre.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Grille de compétences",
+          "programme": [
+            {
+              "title": "Comprendre le stress",
+              "text": "Objectif : être capable d'expliquer les mécanismes physiologiques et psychologiques du stress. Mécanismes physiologiques et psychologiques du stress, distinction entre stress aigu et stress chronique, notion de risques psychosociaux."
+            },
+            {
+              "title": "Identifier ses sources de stress",
+              "text": "Objectif : être capable de repérer les facteurs de stress propres à sa situation de travail. Repérer les facteurs de stress liés à l'organisation, à la charge de travail et aux relations professionnelles."
+            },
+            {
+              "title": "Techniques de gestion du stress",
+              "text": "Objectif : être capable de mobiliser des techniques concrètes de gestion du stress au quotidien. Respiration, gestion du temps et des priorités, techniques de relaxation applicables en situation de travail."
+            },
+            {
+              "title": "Construire son plan d'action personnel",
+              "text": "Objectif : être capable d'élaborer un plan d'action individuel adapté à sa propre situation. Élaboration d'un plan d'action individuel pour mieux gérer son stress au quotidien."
+            }
+          ],
+          "description": [
+            "Le stress chronique au travail impacte autant la santé des salariés que la performance de l'entreprise : troubles du sommeil, irritabilité, baisse de concentration et, à terme, risque d'épuisement professionnel. Les risques psychosociaux font partie intégrante des risques professionnels que l'employeur doit évaluer et prévenir au titre de son obligation générale de sécurité (article L4121-1 du Code du travail), au même titre que les risques physiques ou chimiques.",
+            "Cette formation permet à chaque participant de comprendre les mécanismes physiologiques et psychologiques du stress, d'identifier ses propres sources de stress professionnel, et de mobiliser des techniques concrètes et applicables immédiatement au quotidien. À l'issue de la session, chaque participant repart avec un plan d'action personnel adapté à sa situation de travail."
+          ],
+          "audience": "Cette formation s'adresse à tout salarié exposé au stress professionnel souhaitant développer des techniques de gestion adaptées à sa situation, quel que soit son poste ou son secteur d'activité. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les environnements à forte charge mentale ou relationnelle (relation client, encadrement, urgence) et peut être proposée en complément d'une démarche plus large de prévention des risques psychosociaux au sein de l'entreprise.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention.",
+          "image": "/images/gestion-du-stress.jpg",
+          "imageAlt": "Salariée en situation de stress au travail"
+        },
+        {
+          "title": "Premiers secours en santé mentale (PSSM)",
+          "duration": "4 demi-journées",
+          "format": "Intra-entreprise",
+          "intro": "Repérer un collègue en souffrance psychique et savoir comment l'orienter.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Grille de compétences",
+          "programme": [
+            {
+              "title": "Comprendre la santé mentale",
+              "text": "Objectif : être capable de distinguer les principaux troubles psychiques et de déconstruire les idées reçues associées. Repères sur les troubles psychiques courants, déconstruction des idées reçues et de la stigmatisation liée à la santé mentale."
+            },
+            {
+              "title": "Repérer les signes de mal-être",
+              "text": "Objectif : être capable d'identifier les signaux d'alerte d'une souffrance psychique ou d'une crise. Identifier les signaux d'alerte d'une souffrance psychique ou d'une crise chez un collègue, un proche ou soi-même."
+            },
+            {
+              "title": "La méthode AÉRER",
+              "text": "Objectif : être capable d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne concernée. Les 5 étapes du plan d'action : Approcher la personne, Écouter activement sans jugement, Réconforter et informer, Encourager à consulter un professionnel, Renseigner sur les ressources disponibles."
+            },
+            {
+              "title": "Mise en pratique",
+              "text": "Objectif : être capable de mobiliser la méthode AÉRER face à des situations concrètes réalistes. Mises en situation à partir de cas concrets pour s'approprier la méthode AÉRER."
+            }
+          ],
+          "description": [
+            "Un collègue en difficulté psychologique ne le montre pas toujours clairement, et l'entourage professionnel se sent souvent démuni face à des signes de souffrance qu'il ne sait pas interpréter. Le programme Premiers Secours en Santé Mentale (PSSM), adaptation française du programme international Mental Health First Aid né en Australie et aujourd'hui déployé dans plus de 25 pays, vise à donner au plus grand nombre les outils pour repérer une souffrance psychique et orienter la personne concernée vers une aide adaptée, sans se substituer à un professionnel de santé.",
+            "À l'issue de la formation, le participant est capable de reconnaître les signes de mal-être ou de crise chez un collègue, un proche ou lui-même, de déconstruire les idées reçues liées à la stigmatisation de la santé mentale, et d'appliquer la méthode AÉRER pour engager un dialogue bienveillant et orienter la personne vers les ressources appropriées."
+          ],
+          "audience": "Cette formation s'adresse à tout salarié, quel que soit son poste ou son niveau hiérarchique, souhaitant être en mesure d'aider un collègue ou un proche traversant une période de souffrance psychique. Aucun prérequis n'est nécessaire, et la formation n'exige aucune compétence préalable en santé mentale. Elle est particulièrement recommandée pour les managers et les représentants du personnel, en première ligne pour repérer les signaux de mal-être au sein des équipes, ainsi que dans le cadre d'une démarche globale de prévention des risques psychosociaux.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large.",
+          "image": "/images/premiers-secours-sante-mentale.jpg",
+          "imageAlt": "Geste de soutien et d'écoute entre deux personnes"
+        },
+        {
+          "title": "Prévention de l'absentéisme",
+          "duration": "2 à 4 demi-journées",
+          "format": "Intra-entreprise",
+          "intro": "Comprendre ce que l'absentéisme dit de votre organisation, puis agir dessus.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Grille de compétences",
+          "programme": [
+            {
+              "title": "Comprendre l'absentéisme",
+              "text": "Objectif : être capable de définir et de quantifier l'absentéisme au sein de son organisation. Définitions, indicateurs et coûts de l'absentéisme, distinction entre les différentes formes (maladie, désengagement, absences répétées)."
+            },
+            {
+              "title": "Identifier les causes",
+              "text": "Objectif : être capable d'analyser les causes organisationnelles, managériales et individuelles de l'absentéisme. Facteurs organisationnels, managériaux et individuels de l'absentéisme, lien avec les risques psychosociaux et les conditions de travail."
+            },
+            {
+              "title": "Repérer les signaux d'alerte",
+              "text": "Objectif : être capable de repérer les indicateurs précoces d'un absentéisme naissant au sein d'une équipe. Indicateurs précoces d'un absentéisme naissant au sein d'une équipe, rôle de l'encadrement de proximité."
+            },
+            {
+              "title": "Agir et prévenir",
+              "text": "Objectif : être capable de construire un plan de prévention adapté à sa propre équipe. Leviers d'action managériaux, dialogue avec les salariés, construction d'un plan de prévention adapté à son équipe."
+            }
+          ],
+          "description": [
+            "Un absentéisme qui s'installe coûte cher à l'entreprise, en désorganisation comme en charge supplémentaire pour les équipes en place, et révèle souvent un mal-être plus profond que le simple arrêt maladie ne laisse paraître. Détecté tardivement, il devient un phénomène difficile à inverser ; repéré tôt par l'encadrement de proximité, il peut au contraire être traité à la racine, avant qu'il ne s'ancre durablement dans le fonctionnement d'une équipe.",
+            "Cette formation permet de comprendre les causes multiples de l'absentéisme, de repérer les signaux d'alerte précoces au sein d'une équipe, et de mettre en place des actions de prévention adaptées à l'organisation de l'entreprise. À l'issue de la session, chaque participant est capable de distinguer les différentes formes d'absentéisme et de mobiliser les leviers managériaux appropriés à chaque situation."
+          ],
+          "audience": "Cette formation s'adresse aux managers, encadrants et responsables RH souhaitant prévenir et réduire l'absentéisme au sein de leurs équipes. Une première expérience d'encadrement est recommandée, bien qu'aucun prérequis formel ne soit exigé. Elle s'adresse particulièrement aux entreprises confrontées à un taux d'absentéisme en hausse ou souhaitant structurer une démarche de prévention avant que le phénomène ne s'installe durablement.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la prévention. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par une formation à la gestion du stress ou aux risques psychosociaux pour une approche globale de la qualité de vie au travail.",
+          "image": "/images/4-1790108467451.jpg"
         }
       ],
       "opco": true,
@@ -1382,7 +1451,7 @@
         "id": "formations",
         "visible": true,
         "eyebrow": "Nos formations",
-        "title": "8 domaines de formation, \n32 parcours,\nUn organisme certifié Qualiopi",
+        "title": "8 domaines de formation, \n33 parcours,\nUn organisme certifié Qualiopi",
         "text": "Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France."
       },
       {
@@ -1473,7 +1542,7 @@
   "footerCta": {
     "enabled": true,
     "eyebrow": "Recevez notre catalogue",
-    "title": "Le catalogue complet de nos 32 formations",
+    "title": "Le catalogue complet de nos 33 formations",
     "text": "Laissez votre adresse e-mail : nous vous envoyons le catalogue et nous restons disponibles pour construire un parcours adapté à vos équipes.",
     "buttonLabel": "Recevoir"
   },

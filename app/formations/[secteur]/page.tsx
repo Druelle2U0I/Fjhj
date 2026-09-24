@@ -107,6 +107,78 @@ export default async function SecteurPage(
         </div>
       </section>
 
+      {/* Détail des habilitations/niveaux du secteur : des cartes courtes
+          plutôt qu'un pavé de texte continu. */}
+      {service.variantGroups && service.variantGroups.length > 0 && (
+        <section className="px-6 pb-20">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                Le détail des habilitations
+              </h2>
+            </Reveal>
+
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {service.variantGroups.map((group, i) => (
+                <Reveal key={group.title} delay={i * 0.08} className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
+                  <h3 className="font-semibold text-accent">{group.title}</h3>
+                  <ul className="mt-4 space-y-3 text-sm text-muted">
+                    {group.items.map((item) => (
+                      <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              ))}
+            </div>
+
+            {service.unlistedNote && (
+              <Reveal delay={0.1}>
+                <p className="mt-6 text-sm text-muted">{service.unlistedNote}</p>
+              </Reveal>
+            )}
+
+            {(service.popularPaths?.length || service.tip) && (
+              <div className="mt-10 grid gap-6 lg:grid-cols-2">
+                {service.popularPaths && service.popularPaths.length > 0 && (
+                  <Reveal className="rounded-3xl border border-border bg-surface p-6 sm:p-7">
+                    <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
+                    <ul className="mt-4 space-y-3 text-sm text-muted">
+                      {service.popularPaths.map((item) => (
+                        <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                )}
+
+                {service.tip && (
+                  <Reveal delay={0.05} className="rounded-3xl border-l-4 border-accent bg-accent/10 p-6 sm:p-7">
+                    <h3 className="font-semibold">{service.tip.title}</h3>
+                    <p className="mt-3 text-sm text-muted">{service.tip.text}</p>
+                  </Reveal>
+                )}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Astuce seule, quand il n'y a pas de détail d'habilitations à côté
+          (ex. CACES). */}
+      {!service.variantGroups && service.tip && (
+        <section className="px-6 pb-20">
+          <div className="mx-auto max-w-6xl">
+            <Reveal className="rounded-3xl border-l-4 border-accent bg-accent/10 p-6 sm:p-7">
+              <h3 className="font-semibold">{service.tip.title}</h3>
+              <p className="mt-3 text-sm text-muted">{service.tip.text}</p>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
       {/* Catalogue du secteur */}
       <section id="catalogue" className="scroll-mt-24 px-6 pb-24">
         <div className="mx-auto max-w-6xl">

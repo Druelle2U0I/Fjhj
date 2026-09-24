@@ -56,8 +56,6 @@ export default function MentionsLegalesPage() {
             <dd>{legal.publicationDirector}</dd>
           </>
         )}
-        <dt>Téléphone</dt>
-        <dd>{company.phone}</dd>
         <dt>E-mail</dt>
         <dd>
           <a href={`mailto:${company.email}`}>{company.email}</a>
