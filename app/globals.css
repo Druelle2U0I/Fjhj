@@ -337,3 +337,9 @@ h4 {
     0 0 0 5px var(--accent);
 }
 
+
+/* Bande « Autres formations » en bas des fiches formation */
+.related-band {
+  background: color-mix(in srgb, var(--band-color, #ffd23f) var(--band-alpha, 20%), transparent);
+  border-color: color-mix(in srgb, var(--band-color, #ffd23f) 45%, transparent);
+}

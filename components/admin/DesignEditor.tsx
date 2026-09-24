@@ -21,8 +21,8 @@ const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   { key: "accentForeground", label: "Texte sur l'accent", hint: "Texte à l'intérieur des boutons." },
 ];
 
-type ColorKey = "tagBackground" | "tagText" | "aurora1" | "aurora2" | "aurora3" | "panelShadowColor";
-type RangeKey = "auroraIntensity" | "auroraSpeed" | "sectorVeil" | "footerVeil" | "sectionOpacity";
+type ColorKey = "tagBackground" | "tagText" | "aurora1" | "aurora2" | "aurora3" | "panelShadowColor" | "bandColor";
+type RangeKey = "auroraIntensity" | "auroraSpeed" | "sectorVeil" | "footerVeil" | "sectionOpacity" | "bandOpacity";
 
 const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
   { key: "tagBackground", label: "Étiquettes — fond", hint: "Étiquette du domaine sur les cartes de « Toutes les formations »." },
@@ -31,6 +31,7 @@ const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
   { key: "aurora1", label: "Aurore — couleur principale", hint: "La grande lueur (violet par défaut)." },
   { key: "aurora2", label: "Aurore — reflet clair", hint: "La touche lumineuse (crème par défaut)." },
   { key: "aurora3", label: "Aurore — couleur secondaire", hint: "La lueur qui apparaît en défilant (bleu par défaut)." },
+  { key: "bandColor", label: "Bande « Autres formations » — couleur", hint: "Bande en bas des fiches formation (jaune par défaut)." },
 ];
 
 const RANGES: { key: RangeKey; label: string; hint: string; min: number; max: number; unit: string }[] = [
@@ -39,6 +40,7 @@ const RANGES: { key: RangeKey; label: string; hint: string; min: number; max: nu
   { key: "sectorVeil", label: "Voile des onglets de domaine fermés", hint: "Page d'accueil : assombrit les photos des domaines non ouverts.", min: 0, max: 90, unit: " %" },
   { key: "footerVeil", label: "Voile sur la photo du pied de page", hint: "Plus la valeur est haute, plus la photo est assombrie.", min: 0, max: 100, unit: " %" },
   { key: "sectionOpacity", label: "Opacité des sections à fond", hint: "0 = l'aurore passe entièrement à travers, 100 = fond plein.", min: 0, max: 100, unit: " %" },
+  { key: "bandOpacity", label: "Bande « Autres formations » — opacité", hint: "Intensité de la couleur de la bande en bas des fiches formation.", min: 0, max: 60, unit: " %" },
 ];
 
 const SECTION_LABELS: Record<HomeSection["id"], string> = {

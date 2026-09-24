@@ -101,6 +101,8 @@ export type Theme = {
   footerVeil?: number;
   sectionOpacity?: number;
   panelShadowColor?: string;
+  bandColor?: string;
+  bandOpacity?: number;
 };
 
 export const THEME_DEFAULTS = {
@@ -115,6 +117,8 @@ export const THEME_DEFAULTS = {
   footerVeil: 68,
   sectionOpacity: 70,
   panelShadowColor: "#fff9c7",
+  bandColor: "#ffd23f",
+  bandOpacity: 20,
 } as const;
 
 export type SiteContent = {
@@ -301,6 +305,8 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--sector-veil": String(v.sectorVeil / 100),
     "--footer-veil": `${v.footerVeil}%`,
     "--section-alpha": `${v.sectionOpacity}%`,
+    "--band-color": v.bandColor,
+    "--band-alpha": `${v.bandOpacity}%`,
   };
 }
 
