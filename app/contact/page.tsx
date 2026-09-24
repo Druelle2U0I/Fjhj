@@ -8,18 +8,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default async function ContactPage(
-  props: PageProps<"/contact">,
-) {
-  const searchParams = await props.searchParams;
-  const formation =
-    typeof searchParams.formation === "string"
-      ? searchParams.formation
-      : undefined;
-
+export default function ContactPage() {
   return (
     <div className="pt-12">
-      <Contact defaultTraining={formation} />
+      <Contact />
     </div>
   );
 }

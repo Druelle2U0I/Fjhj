@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, type ReactNode } from "react";
+import NavProgress from "@/components/NavProgress";
 
 export default function SiteChrome({
   header,
@@ -27,6 +28,7 @@ export default function SiteChrome({
 
   return (
     <>
+      <NavProgress />
       {header}
       <main className="flex-1">{children}</main>
       {footer}

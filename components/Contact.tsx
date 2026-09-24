@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
 import { accessibility, company, pages } from "@/lib/data";
@@ -14,6 +14,18 @@ export default function Contact({
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
+  const trainingInput = useRef<HTMLInputElement>(null);
+
+  // La formation choisie (lien « Demander un devis ») est lue dans l'adresse
+  // côté navigateur : la page Contact peut ainsi être préparée à l'avance
+  // et s'afficher instantanément.
+  useEffect(() => {
+    const fromUrl = new URLSearchParams(window.location.search).get("formation");
+    const value = defaultTraining ?? fromUrl;
+    if (value && trainingInput.current && !trainingInput.current.value) {
+      trainingInput.current.value = value;
+    }
+  }, [defaultTraining]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -143,7 +155,7 @@ export default function Contact({
                 <input
                   id="training"
                   name="training"
-                  defaultValue={defaultTraining}
+                  ref={trainingInput}
                   placeholder="Ex : CACES R489, SST..."
                   className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
                 />
