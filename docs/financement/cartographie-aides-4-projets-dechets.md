@@ -163,3 +163,38 @@ Le **programme ADVENIR** (financé par les CEE) aide les bornes de recharge pour
 - [Guide des aides Région Hauts-de-France](https://guide-aides.hautsdefrance.fr/)
 - [Douaisis Agglo – aides financières](https://www.douaisis-agglo.com/professionnels/aides-a-la-creation/les-aides-financieres)
 - [Carte des GAL LEADER 2023-2027](https://leaderfrance.fr/en/interactive-map-of-french-lags-2023-2027/)
+
+---
+
+## Annexe (26/09/2026) – Agences et opérateurs de l'État, fonds européens
+
+### Agences et opérateurs de l'État
+
+| Acteur | Rôle pour le porteur | Projets concernés | Intérêt |
+|--------|----------------------|-------------------|---------|
+| **ADEME** | Subventions ORMAT, centres de tri DAE, biodéchets ; opère aussi des AAP France 2030 | 1, 2, 3 | ★★★ |
+| **Agence de l'eau Artois-Picardie** | Subventions et avances remboursables (économies et réutilisation de l'eau, pollution) | 3 | ★★★ |
+| **Bpifrance** | Prêt vert, garanties, opérateur France 2030, relais InvestEU | 1, 2, 3, 4 | ★★★ |
+| **Banque des Territoires (CDC)** | Fonds propres ou quasi-fonds propres dans une société de projet (infrastructures déchets, méthanisation), surtout avec une collectivité | 2 (voire 1) | ★★ |
+| **ANCT – Territoires d'industrie** | Pas de guichet de subvention direct pour les entreprises. Le Douaisis fait partie du territoire d'industrie **Cambrésis – Douaisis – Valenciennois** : chef de projet, accès facilité aux financeurs, projet inscrit dans la feuille de route, aide pour accélérer les procédures | 1, 2, 3 | ★★ (levier d'accélération) |
+| **ANCT / Préfecture – CRTE (contrats pour la réussite de la transition écologique)** | Inscription du projet dans le contrat de territoire de Douaisis Agglo, pour sa visibilité auprès de l'État | 1, 2, 3 | ★ |
+| **EPF Hauts-de-France / Fonds vert « friches »** | Portage foncier et recyclage de friches, si le site est une friche (les porteurs privés sont possibles sous conditions) | 1, 2, 3 si friche | ★ à ★★ |
+| **SGPI – France 2030** | AAP ponctuels (recyclage, décarbonation), opérés par l'ADEME et Bpifrance. À surveiller, rien de ciblé ouvert à ce jour sur ces projets | 1, 2 | ★ |
+| **DREAL / Préfecture** | Pas de financement, mais les autorisations ICPE conditionnent le calendrier. Un projet autorisé est plus facile à financer | 1, 2, 3 | Critique |
+| **OPCO, France Travail, FNE-Formation** | Formation et recrutement pour les nouvelles lignes et les conducteurs de poids lourds électriques (synergie ENMA Formation) | 1, 2, 3, 4 | ★★ |
+| Hors État : **éco-organismes (REP)** | Soutiens au tri et au maillage : REP PMCB (déchets du bâtiment), emballages industriels et commerciaux | 1 | ★★ |
+
+### Fonds européens
+
+| Fonds | Gestionnaire | Projets | Verdict |
+|-------|--------------|---------|---------|
+| **FTJ – Fonds pour une Transition Juste** | Région HDF (228 M€, Nord et Pas-de-Calais, **dépôt au fil de l'eau** jusqu'en 2027) | 1, 2, 3 (4 à tester) | ★★★ priorité n°1 |
+| **FEDER Hauts-de-France 2021-2027** | Région HDF | 1, 2, 3 | ★★★ |
+| **FSE+** | Région, État (DREETS), Département du Nord | Formation liée aux projets | ★★ |
+| **InvestEU** | BEI, Bpifrance, banques partenaires | 1 (et 2) | ★★ (prêts et garanties) |
+| **LIFE – Économie circulaire** | Commission (CINEA) | 2 ou 3 uniquement si c'est une démonstration innovante | ★ (appel 2026 clos le 22/09 ; prochain en 2027) |
+| **Innovation Fund** | Commission | Réservé aux technologies de rupture bas carbone | ★ |
+| **Interreg France-Wallonie-Vlaanderen** | Programme transfrontalier | R&D avec un partenaire belge (Crossroads : ≤ 250 k€, 50 %) | ★ |
+| **CEF-AFIF** | Commission | Bornes poids lourds ouvertes au public sur le réseau RTE-T | ★ (4, seulement si la recharge est ouverte au public) |
+| **Horizon Europe** | Commission | R&D pure | ✗ |
+| **LEADER (FEADER)** | GAL | Zones rurales, petits montants | ✗ |
