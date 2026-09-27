@@ -19,7 +19,7 @@ export function Field({
   placeholder?: string;
 }) {
   const shared =
-    "mt-1.5 w-full rounded-xl border border-border bg-surface-2 px-3 py-2 text-sm text-foreground outline-none focus:border-accent";
+    "mt-1.5 w-full rounded-xl border border-border bg-surface-2 px-3 py-2 text-sm text-foreground outline-none focus:border-surface-accent";
   return (
     <label className="block">
       <span className="text-xs font-semibold uppercase tracking-wide text-muted">
@@ -292,7 +292,7 @@ export function ColorField({
         <input
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full rounded-xl border border-border bg-surface-2 px-3 py-2 font-mono text-sm outline-none focus:border-accent"
+          className="w-full rounded-xl border border-border bg-surface-2 px-3 py-2 font-mono text-sm outline-none focus:border-surface-accent"
         />
       </div>
       {hint && <span className="mt-1 block text-xs text-muted">{hint}</span>}

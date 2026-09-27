@@ -62,7 +62,7 @@ export default function Team() {
                     className="dyn-photo"
                   />
                 ) : (
-                  <div className="dyn-photo flex h-full w-full items-center justify-center bg-accent-soft text-4xl font-semibold text-accent">
+                  <div className="dyn-photo flex h-full w-full items-center justify-center bg-accent-soft text-4xl font-semibold text-surface-accent">
                     {initials(member.name)}
                   </div>
                 )}

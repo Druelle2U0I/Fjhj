@@ -4,7 +4,7 @@ import { pages } from "@/lib/data";
 export default function UnlistedTrainingNote({ delay = 0.1 }: { delay?: number }) {
   return (
     <Reveal delay={delay}>
-      <div className="mt-8 flex items-start gap-4 rounded-lg bg-accent p-6 text-accent-foreground">
+      <div className="mt-8 flex items-start gap-4 rounded-lg bg-highlight p-6 text-highlight-foreground">
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ export default function UnlistedTrainingNote({ delay = 0.1 }: { delay?: number }
         </svg>
         <div>
           <p className="font-semibold">{pages.sector.customTitle}</p>
-          <p className="mt-1 whitespace-pre-line text-sm text-accent-foreground/80">
+          <p className="mt-1 whitespace-pre-line text-sm text-highlight-foreground/80">
             {pages.sector.customText}
           </p>
         </div>

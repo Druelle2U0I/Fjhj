@@ -135,7 +135,7 @@ export default async function FormationPage(
               récapitulatif remonte à cet endroit, à côté du titre. */}
           <div className="lg:pr-[400px]">
             <div className="flex flex-wrap items-center gap-3">
-              <p className="hidden text-sm font-semibold text-accent sm:block">
+              <p className="hidden text-sm font-semibold text-surface-accent sm:block">
                 {service.title}
               </p>
             </div>
@@ -199,9 +199,9 @@ export default async function FormationPage(
             {/* Bande de couleur pleine largeur derrière les informations
                 pratiques, pour séparer cette partie du programme. */}
             <div className="bleed-band py-12">
-              {/* Public concerné : encadré jaune pour le mettre en avant */}
-              <Reveal className="rounded-lg bg-accent p-6 text-accent-foreground sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent-foreground/70">
+              {/* Public concerné : encadré mis en avant */}
+              <Reveal className="rounded-lg bg-highlight p-6 text-highlight-foreground sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-wide text-highlight-foreground/70">
                   {pages.training.audienceTitle}
                 </p>
                 <p className="mt-3 max-w-2xl text-lg">{training.audience}</p>
@@ -225,11 +225,11 @@ export default async function FormationPage(
                     .filter((row) => row.text)
                     .map((row) => (
                       <li key={row.icon} className="flex gap-5 py-6">
-                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-surface-accent/30 bg-surface-accent/10 text-surface-accent">
                           <InfoIcon name={row.icon} />
                         </span>
                         <div>
-                          <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                          <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                             {row.title}
                           </p>
                           <p className="mt-2 text-sm text-muted">{row.text}</p>

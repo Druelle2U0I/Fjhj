@@ -46,23 +46,23 @@ function FormationsSection({ section }: { section: HomeSection }) {
 
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
-    <section id="financement" className="bg-accent py-14 sm:py-24 text-accent-foreground">
+    <section id="financement" className="bg-highlight py-14 sm:py-24 text-highlight-foreground">
       <div className="grid gap-10 px-6 lg:grid-cols-2 lg:items-stretch lg:gap-0 lg:px-0">
         <Reveal className="flex flex-col justify-center lg:mx-auto lg:w-full lg:max-w-lg lg:pl-6">
           {section.eyebrow && (
-            <span className="text-sm font-semibold text-accent-foreground/70">
+            <span className="text-sm font-semibold text-highlight-foreground/70">
               {section.eyebrow}
             </span>
           )}
           <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
             {section.title}
           </h2>
-          <p className="mt-5 max-w-2xl whitespace-pre-line text-accent-foreground/80">
+          <p className="mt-5 max-w-2xl whitespace-pre-line text-highlight-foreground/80">
             {section.text || funding.intro}
           </p>
           <Link
             href="/financement"
-            className="mt-6 inline-flex w-fit rounded-lg bg-accent-foreground px-6 py-3 text-sm font-semibold text-accent transition-transform hover:scale-105"
+            className="mt-6 inline-flex w-fit rounded-lg bg-highlight-foreground px-6 py-3 text-sm font-semibold text-highlight transition-transform hover:scale-105"
           >
             Comprendre le financement
           </Link>
@@ -88,7 +88,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
-                className="h-5 w-5 shrink-0 text-accent"
+                className="h-5 w-5 shrink-0 text-surface-accent"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="m5 13 4 4L19 7" />
               </svg>
@@ -134,11 +134,11 @@ function FaqSection({ section }: { section: HomeSection }) {
 
 function ContactSection({ section }: { section: HomeSection }) {
   return (
-    <section className="bg-accent px-6 py-14 sm:py-24 text-accent-foreground">
+    <section className="bg-highlight px-6 py-14 sm:py-24 text-highlight-foreground">
       <div className="mx-auto max-w-6xl text-center">
         <Reveal>
           {section.eyebrow && (
-            <span className="text-sm font-semibold text-accent-foreground/70">
+            <span className="text-sm font-semibold text-highlight-foreground/70">
               {section.eyebrow}
             </span>
           )}
@@ -146,11 +146,11 @@ function ContactSection({ section }: { section: HomeSection }) {
             {section.title}
           </h2>
           {section.text && (
-            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-accent-foreground/80">{section.text}</p>
+            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-highlight-foreground/80">{section.text}</p>
           )}
           <Link
             href="/contact"
-            className="mt-8 inline-flex rounded-lg bg-accent-foreground px-6 py-3 text-sm font-semibold text-accent transition-transform hover:scale-105"
+            className="mt-8 inline-flex rounded-lg bg-highlight-foreground px-6 py-3 text-sm font-semibold text-highlight transition-transform hover:scale-105"
           >
             Nous contacter
           </Link>

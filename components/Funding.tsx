@@ -35,7 +35,7 @@ function QualiopiCard() {
           href={legal.qualiopiCertificateUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-4 inline-block text-sm font-semibold text-accent underline underline-offset-2"
+          className="mt-4 inline-block text-sm font-semibold text-surface-accent underline underline-offset-2"
         >
           Voir notre certificat Qualiopi
         </a>
@@ -89,17 +89,17 @@ export default function Funding() {
     {/* Bande pleine largeur en couleur d'accent : rompt le rythme de la
         page et rappelle la couleur de marque sans en introduire une
         nouvelle. */}
-    <section className="bg-accent px-6 py-16 text-center text-accent-foreground">
+    <section className="bg-highlight px-6 py-16 text-center text-highlight-foreground">
       <Reveal className="mx-auto max-w-2xl">
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
           Un projet de formation à financer ?
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-accent-foreground/80">
+        <p className="mx-auto mt-3 max-w-xl text-highlight-foreground/80">
           Décrivez-nous votre besoin, on s&apos;occupe du reste : devis, éligibilité OPCO et montage du dossier.
         </p>
         <Link
           href="/contact"
-          className="mt-7 inline-flex rounded-lg bg-accent-foreground px-6 py-3 text-sm font-semibold text-accent transition-transform hover:scale-105"
+          className="mt-7 inline-flex rounded-lg bg-highlight-foreground px-6 py-3 text-sm font-semibold text-highlight transition-transform hover:scale-105"
         >
           Nous contacter
         </Link>

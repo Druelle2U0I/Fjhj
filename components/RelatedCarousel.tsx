@@ -111,7 +111,7 @@ export default function RelatedCarousel({
           >
             {items.map((item) => (
               <li key={item.href} className="shrink-0 px-2.5" style={{ width: step || `${100 / visible}%` }}>
-                <article className="flex h-full select-none flex-col rounded-lg border border-border bg-surface p-4 transition-colors hover:border-accent/60">
+                <article className="flex h-full select-none flex-col rounded-lg border border-border bg-surface p-4 transition-colors hover:border-surface-accent/60">
                   <div className="pointer-events-none relative aspect-[16/9] overflow-hidden rounded-lg">
                     <Visual
                       src={item.image}
@@ -122,11 +122,11 @@ export default function RelatedCarousel({
                   {/* Trait de couleur sous la photo */}
                   <div className="mt-2 h-1.5 rounded-full bg-accent/70" />
 
-                  <h3 className="mt-5 text-lg font-semibold leading-snug text-accent">{item.title}</h3>
+                  <h3 className="mt-5 text-lg font-semibold leading-snug text-surface-accent">{item.title}</h3>
                   <p className="mt-3 line-clamp-3 text-sm text-muted">{item.intro}</p>
 
                   <p className="mt-4 flex items-center gap-2 text-sm text-foreground/90">
-                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 shrink-0 text-accent" fill="none" stroke="currentColor" strokeWidth={2}>
+                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 shrink-0 text-surface-accent" fill="none" stroke="currentColor" strokeWidth={2}>
                       <circle cx="12" cy="12" r="9" />
                       <path d="M12 7v5l3 2" strokeLinecap="round" />
                     </svg>

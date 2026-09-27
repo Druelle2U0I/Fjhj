@@ -85,7 +85,7 @@ function NewsletterForm() {
   return (
     <div className="mx-auto max-w-2xl px-6 pb-14 pt-16 text-center sm:pb-20 sm:pt-28">
       {footerCta.eyebrow && (
-        <p className="text-xs font-semibold text-accent">
+        <p className="text-xs font-semibold text-surface-accent">
           {footerCta.eyebrow}
         </p>
       )}
@@ -99,7 +99,7 @@ function NewsletterForm() {
       )}
 
       {state === "sent" ? (
-        <p className="mt-8 rounded-lg border border-accent/40 bg-surface/60 px-6 py-4 text-sm backdrop-blur">
+        <p className="mt-8 rounded-lg border border-surface-accent/40 bg-surface/60 px-6 py-4 text-sm backdrop-blur">
           Merci, votre demande est bien enregistrée. Nous revenons vers vous
           rapidement.
         </p>
@@ -115,7 +115,7 @@ function NewsletterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Votre adresse e-mail"
-            className="flex-1 rounded-lg border border-white/25 bg-surface/50 px-5 py-3 text-sm outline-none backdrop-blur placeholder:text-muted focus:border-accent"
+            className="flex-1 rounded-lg border border-white/25 bg-surface/50 px-5 py-3 text-sm outline-none backdrop-blur placeholder:text-muted focus:border-surface-accent"
           />
           <button
             type="submit"
@@ -134,7 +134,7 @@ function NewsletterForm() {
           Votre adresse sert à vous envoyer le catalogue et, ponctuellement, des
           informations sur nos formations. Vous pouvez vous y opposer à tout
           moment par simple e-mail.{" "}
-          <Link href="/confidentialite" className="underline hover:text-accent">
+          <Link href="/confidentialite" className="underline hover:text-surface-accent">
             En savoir plus
           </Link>
         </p>
@@ -147,7 +147,7 @@ export default function Footer() {
   const mainSectors = services.slice(0, 4);
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10">
+    <footer className="on-surface relative overflow-hidden border-t border-white/10">
       {/* Une seule photo de fond, continue sur toute la hauteur du pied de page. */}
       <div className="absolute inset-0">
         <Visual src={footerImage} alt="" sizes="100vw" />
@@ -166,14 +166,14 @@ export default function Footer() {
                   <li key={service.slug}>
                     <Link
                       href={`/formations/${service.slug}`}
-                      className="hover:text-accent"
+                      className="hover:text-surface-accent"
                     >
                       {service.title}
                     </Link>
                   </li>
                 ))}
                 <li>
-                  <Link href="/formations/toutes" className="hover:text-accent">
+                  <Link href="/formations/toutes" className="hover:text-surface-accent">
                     Toutes les formations
                   </Link>
                 </li>
@@ -181,22 +181,22 @@ export default function Footer() {
 
               <Column title="L'organisme">
                 <li>
-                  <Link href="/centre" className="hover:text-accent">
+                  <Link href="/centre" className="hover:text-surface-accent">
                     Le centre
                   </Link>
                 </li>
                 <li>
-                  <Link href="/financement" className="hover:text-accent">
+                  <Link href="/financement" className="hover:text-surface-accent">
                     Qualiopi &amp; financement
                   </Link>
                 </li>
                 <li>
-                  <Link href="/equipe" className="hover:text-accent">
+                  <Link href="/equipe" className="hover:text-surface-accent">
                     Notre équipe
                   </Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="hover:text-accent">
+                  <Link href="/contact" className="hover:text-surface-accent">
                     Contact
                   </Link>
                 </li>
@@ -209,7 +209,7 @@ export default function Footer() {
                 <li>
                   <a
                     href={`tel:${company.phone.replace(/\s/g, "")}`}
-                    className="hover:text-accent"
+                    className="hover:text-surface-accent"
                   >
                     {company.phone}
                   </a>
@@ -217,7 +217,7 @@ export default function Footer() {
                 <li>
                   <a
                     href={`mailto:${company.email}`}
-                    className="hover:text-accent"
+                    className="hover:text-surface-accent"
                   >
                     {company.email}
                   </a>
@@ -267,7 +267,7 @@ export default function Footer() {
                       href={legal.qualiopiCertificateUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-semibold text-accent underline underline-offset-2"
+                      className="text-xs font-semibold text-surface-accent underline underline-offset-2"
                     >
                       Voir notre certificat Qualiopi
                     </a>
@@ -281,16 +281,16 @@ export default function Footer() {
                 aria-label="Informations légales"
                 className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-start"
               >
-                <Link href="/mentions-legales" className="hover:text-accent">
+                <Link href="/mentions-legales" className="hover:text-surface-accent">
                   Mentions légales
                 </Link>
-                <Link href="/confidentialite" className="hover:text-accent">
+                <Link href="/confidentialite" className="hover:text-surface-accent">
                   Confidentialité
                 </Link>
-                <Link href="/cgv" className="hover:text-accent">
+                <Link href="/cgv" className="hover:text-surface-accent">
                   CGV
                 </Link>
-                <Link href="/accessibilite" className="hover:text-accent">
+                <Link href="/accessibilite" className="hover:text-surface-accent">
                   Accessibilité
                 </Link>
               </nav>

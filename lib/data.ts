@@ -102,6 +102,15 @@ export type Theme = {
   // même quand le fond du site est clair, son texte doit donc rester clair.
   surfaceForeground?: string;
   surfaceMuted?: string;
+  // Couleur des petits éléments d'accent (coches, chiffres clés, badges…)
+  // posés sur une carte ou une photo voilée, toujours sombre : indépendante
+  // de la couleur d'accent principale, qui peut elle-même devenir sombre.
+  surfaceAccent?: string;
+  // Fond/texte des grands encarts mis en avant (financement, Qualiopi,
+  // "formation absente de la liste"…), indépendants des boutons et liens
+  // qui utilisent la couleur d'accent.
+  highlightBackground?: string;
+  highlightForeground?: string;
 };
 
 export const THEME_DEFAULTS = {
@@ -114,6 +123,9 @@ export const THEME_DEFAULTS = {
   bandOpacity: 85,
   surfaceForeground: "#fffcec",
   surfaceMuted: "#b3b3ba",
+  surfaceAccent: "#fff9c7",
+  highlightBackground: "#fff9c7",
+  highlightForeground: "#0b032b",
 } as const;
 
 export type SiteContent = {
@@ -311,6 +323,9 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--band-alpha": `${v.bandOpacity}%`,
     "--surface-foreground": v.surfaceForeground,
     "--surface-muted": v.surfaceMuted,
+    "--surface-accent": v.surfaceAccent,
+    "--highlight": v.highlightBackground,
+    "--highlight-foreground": v.highlightForeground,
   };
 }
 

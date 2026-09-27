@@ -15,7 +15,7 @@ export default function KeyFacts() {
         <div key={fact.label} className="bg-surface p-5 sm:p-6">
           <dt className="sr-only">{fact.label}</dt>
           <dd>
-            <span className="block text-2xl font-semibold text-accent sm:text-3xl">{fact.value}</span>
+            <span className="block text-2xl font-semibold text-surface-accent sm:text-3xl">{fact.value}</span>
             <span className="mt-1 block text-sm text-muted">{fact.label}</span>
           </dd>
         </div>
