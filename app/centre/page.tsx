@@ -44,10 +44,10 @@ export default function CentrePage() {
         </Reveal>
       </FranceMap>
 
-      <section className="section-soft px-6 py-12 sm:py-20">
+      <section className="px-6 py-12 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <span className="text-sm font-semibold text-surface-accent">
+            <span className="text-sm font-semibold text-accent">
               {pages.centre.whyEyebrow}
             </span>
             <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -68,7 +68,7 @@ export default function CentrePage() {
           <Reveal delay={0.2} className="mt-14 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center sm:text-left">
-                <p className="text-3xl font-semibold text-surface-accent">
+                <p className="text-3xl font-semibold text-accent">
                   <AnimatedStat value={stat.value} />
                 </p>
                 <p className="mt-1 text-sm text-muted">{stat.label}</p>
@@ -107,18 +107,18 @@ export default function CentrePage() {
         </div>
       </section>
 
-      <section className="bg-highlight px-6 py-12 sm:py-20 text-highlight-foreground">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="px-6 py-12 sm:py-20">
+        <div className="mx-auto max-w-3xl rounded-lg border border-border bg-surface p-10 text-center sm:p-14">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               {pages.centre.ctaTitle}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-highlight-foreground/80">
+            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-muted">
               {pages.centre.ctaText}
             </p>
             <Link
               href="/contact"
-              className="mt-8 inline-flex rounded-lg bg-highlight-foreground px-6 py-3 text-sm font-semibold text-highlight transition-transform hover:scale-105"
+              className="mt-8 inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
             >
               {pages.centre.ctaButton}
             </Link>

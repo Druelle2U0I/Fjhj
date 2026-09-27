@@ -94,20 +94,17 @@ export default function Funding() {
       </div>
     </section>
 
-    {/* Bande pleine largeur en couleur d'accent : rompt le rythme de la
-        page et rappelle la couleur de marque sans en introduire une
-        nouvelle. */}
-    <section className="bg-highlight px-6 py-16 text-center text-highlight-foreground">
-      <Reveal className="mx-auto max-w-2xl">
+    <section className="px-6 py-16 text-center">
+      <Reveal className="mx-auto max-w-2xl rounded-lg border border-border bg-surface p-10 sm:p-14">
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
           Un projet de formation à financer ?
         </h2>
-        <p className="mx-auto mt-3 max-w-xl text-highlight-foreground/80">
+        <p className="mx-auto mt-3 max-w-xl text-muted">
           Décrivez-nous votre besoin, on s&apos;occupe du reste : devis, éligibilité OPCO et montage du dossier.
         </p>
         <Link
           href="/contact"
-          className="mt-7 inline-flex rounded-lg bg-highlight-foreground px-6 py-3 text-sm font-semibold text-highlight transition-transform hover:scale-105"
+          className="mt-7 inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
         >
           Nous contacter
         </Link>

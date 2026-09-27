@@ -138,11 +138,11 @@ export default async function SecteurPage(
       </section>
 
       {/* Pourquoi former vos équipes */}
-      <section className="page-band px-6 py-14 sm:py-20">
+      <section className="px-6 py-14 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <div className="border-l-4 border-surface-accent pl-6 sm:pl-8">
-              <p className="text-sm font-semibold text-surface-accent">
+            <div className="border-l-4 border-accent pl-6 sm:pl-8">
+              <p className="text-sm font-semibold text-accent">
                 {pages.sector.whyEyebrow}
               </p>
               <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
