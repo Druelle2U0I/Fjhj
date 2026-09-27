@@ -119,7 +119,7 @@ export default async function SecteurPage(
 
           <div className="mt-8 max-w-xl">
             <p className="line-clamp-4 whitespace-pre-line text-base text-foreground/90 sm:line-clamp-none sm:text-lg">{service.description}</p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-7 flex flex-wrap items-center gap-6">
               <Link
                 href={`/contact?formation=${encodeURIComponent(service.title)}`}
                 className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 text-accent-foreground transition-transform hover:scale-105"
@@ -128,7 +128,7 @@ export default async function SecteurPage(
               </Link>
               <a
                 href="#catalogue"
-                className="rounded-lg border border-border px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 transition-colors hover:border-surface-accent hover:text-surface-accent"
+                className="text-sm font-semibold underline underline-offset-4 transition-colors hover:text-surface-accent"
               >
                 {pages.sector.catalogueButton}
               </a>
