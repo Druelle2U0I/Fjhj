@@ -1794,7 +1794,7 @@
     "tagBackground": "#371a94",
     "tagText": "#dcfafe",
     "bandColor": "#0b0c31",
-    "bandOpacity": 70,
+    "bandOpacity": 100,
     "panelShadowColor": "#ffffff"
   },
   "footerImage": "/images/2048-1790071486997.webp",
