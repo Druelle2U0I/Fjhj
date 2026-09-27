@@ -30,9 +30,9 @@ export default function SplitPhotoBand({
 
         <Reveal
           delay={0.1}
-          className="flex flex-col justify-center px-6 py-14 sm:py-20 lg:px-16"
+          className="flex flex-col justify-center px-6 py-14 text-center sm:py-20 lg:px-16"
         >
-          <div className="max-w-md">{children}</div>
+          <div className="mx-auto max-w-md">{children}</div>
         </Reveal>
       </div>
     </section>
