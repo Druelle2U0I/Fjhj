@@ -3,6 +3,7 @@ import Link from "next/link";
 import AllTrainings, { type TrainingItem } from "@/components/AllTrainings";
 import KeyFacts from "@/components/KeyFacts";
 import PageHero from "@/components/PageHero";
+import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import { fillCounts, pages, services } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -56,6 +57,8 @@ export default function AllTrainingsPage() {
             searchPlaceholder={pages.allTrainings.searchPlaceholder}
             emptyText={pages.allTrainings.emptyText}
           />
+
+          <UnlistedTrainingNote />
         </div>
       </section>
     </>
