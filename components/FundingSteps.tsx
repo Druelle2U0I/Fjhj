@@ -72,7 +72,7 @@ export default function FundingSteps() {
                     : "pointer-events-none -translate-y-2 opacity-0"
                 }`}
               >
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Étape {i + 1} sur {n}
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">

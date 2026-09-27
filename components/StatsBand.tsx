@@ -25,7 +25,7 @@ export default function StatsBand() {
       <div className="on-surface relative mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 sm:grid-cols-4">
         {stats.map((stat) => (
           <Reveal key={stat.label} className="text-center">
-            <p className="text-3xl font-semibold text-accent sm:text-4xl">
+            <p className="text-3xl font-semibold text-surface-accent sm:text-4xl">
               <AnimatedStat value={stat.value} />
             </p>
             <p className="mt-1 text-xs text-muted sm:text-sm">{stat.label}</p>

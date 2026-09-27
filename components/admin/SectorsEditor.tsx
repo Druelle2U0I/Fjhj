@@ -272,7 +272,7 @@ export default function SectorsEditor({
                 )}
 
                 <div className="grid gap-4 rounded-2xl border border-border bg-surface-2 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                     Pourquoi former vos équipes
                   </p>
                   <Field
@@ -398,7 +398,7 @@ export default function SectorsEditor({
                         });
                         setOpenTraining(sector.trainings.length);
                       }}
-                      className="rounded-2xl border border-dashed border-border px-4 py-3 text-sm font-semibold text-muted transition-colors hover:border-accent hover:text-accent"
+                      className="rounded-2xl border border-dashed border-border px-4 py-3 text-sm font-semibold text-muted transition-colors hover:border-surface-accent hover:text-surface-accent"
                     >
                       + Ajouter une formation
                     </button>

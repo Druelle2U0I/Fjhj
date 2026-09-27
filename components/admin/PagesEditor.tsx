@@ -166,7 +166,7 @@ export default function PagesEditor({
         return (
           <Card key={page.key} className="grid gap-4">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+              <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                 {page.title}
               </p>
               {page.hint && <p className="mt-1 text-xs text-muted">{page.hint}</p>}

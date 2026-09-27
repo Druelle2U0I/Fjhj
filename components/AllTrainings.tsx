@@ -53,7 +53,7 @@ export default function AllTrainings({
     `shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
       active
         ? "border-accent bg-accent text-accent-foreground"
-        : "border-border bg-surface/70 text-muted hover:border-accent hover:text-foreground"
+        : "border-border bg-surface/70 text-muted hover:border-surface-accent hover:text-foreground"
     }`;
 
   return (
@@ -68,7 +68,7 @@ export default function AllTrainings({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={searchPlaceholder}
-          className="w-full rounded-full border border-border bg-surface/70 px-5 py-3 text-sm outline-none backdrop-blur placeholder:text-muted focus:border-accent sm:max-w-md"
+          className="w-full rounded-full border border-border bg-surface/70 px-5 py-3 text-sm outline-none backdrop-blur placeholder:text-muted focus:border-surface-accent sm:max-w-md"
         />
         <div
           className="-mx-6 flex gap-2 overflow-x-auto px-6 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
@@ -130,7 +130,7 @@ export default function AllTrainings({
                 <div className="flex flex-1 flex-col p-6">
                   <h2 className="text-lg font-semibold leading-snug">{item.title}</h2>
                   <p className="mt-2 line-clamp-3 text-sm text-muted">{item.intro}</p>
-                  <p className="mt-auto pt-4 text-sm font-medium text-accent">
+                  <p className="mt-auto pt-4 text-sm font-medium text-surface-accent">
                     {item.duration}
                     <span className="text-muted"> · {item.format}</span>
                   </p>

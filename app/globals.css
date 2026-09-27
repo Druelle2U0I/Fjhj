@@ -11,6 +11,9 @@
   --accent-foreground: #0b032b;
   --accent-soft: #3a331a;
   --gold: #dbdbdb;
+  --surface-accent: #fff9c7;
+  --highlight: #fff9c7;
+  --highlight-foreground: #0b032b;
 }
 
 @theme inline {
@@ -24,6 +27,9 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-soft: var(--accent-soft);
   --color-gold: var(--gold);
+  --color-surface-accent: var(--surface-accent);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-archivo);

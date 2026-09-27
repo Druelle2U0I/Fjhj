@@ -79,7 +79,7 @@ export default function About({ section }: { section: HomeSection }) {
                   />
                 </div>
               ) : (
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-border bg-surface-2 text-sm font-semibold text-accent">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-border bg-surface-2 text-sm font-semibold text-surface-accent">
                   {initials(home.founderQuote.name)}
                 </div>
               )}

@@ -28,7 +28,7 @@ export default function Faq({ items }: { items: FaqItem[] }) {
               <motion.span
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="shrink-0 text-2xl leading-none text-accent"
+                className="shrink-0 text-2xl leading-none text-surface-accent"
               >
                 +
               </motion.span>

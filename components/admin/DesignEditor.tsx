@@ -20,7 +20,7 @@ const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   {
     key: "accent",
     label: "Couleur d'accent",
-    hint: "Boutons, éléments mis en avant et fond des bandes d'appel à contact (accueil, financement).",
+    hint: "Boutons et liens mis en avant. Les grands encarts colorés (Financement, Qualiopi…) se règlent plus bas, indépendamment.",
   },
   {
     key: "accentForeground",
@@ -35,7 +35,8 @@ type ColorKey =
   | "panelShadowColor"
   | "bandColor"
   | "surfaceForeground"
-  | "surfaceMuted";
+  | "surfaceMuted"
+  | "surfaceAccent";
 type RangeKey = "sectorVeil" | "footerVeil" | "bandOpacity";
 
 const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
@@ -52,6 +53,26 @@ const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
     key: "surfaceMuted",
     label: "Texte secondaire sur les cartes",
     hint: "Paragraphes et légendes sur les cartes et bandes sombres.",
+  },
+  {
+    key: "surfaceAccent",
+    label: "Accent sur les cartes",
+    hint: "Coches, chiffres clés et badges posés sur une carte ou une photo (toujours sombres) : indépendant de la couleur d'accent, qui peut elle-même devenir sombre.",
+  },
+];
+
+type HighlightKey = "highlightBackground" | "highlightForeground";
+
+const HIGHLIGHT_COLORS: { key: HighlightKey; label: string; hint: string }[] = [
+  {
+    key: "highlightBackground",
+    label: "Encart mis en avant — fond",
+    hint: "Fond du bandeau Financement (accueil), des bandes d'appel à contact (Le centre, page Financement) et des encarts « Public concerné » / « Formation absente de la liste ». Indépendant des boutons.",
+  },
+  {
+    key: "highlightForeground",
+    label: "Encart mis en avant — texte",
+    hint: "Texte à l'intérieur de ces encarts : gardez un bon contraste avec la couleur ci-dessus.",
   },
 ];
 
@@ -97,7 +118,7 @@ export default function DesignEditor({
     <div className="grid gap-5">
       {part !== "sections" && (<>
       <Card className="grid gap-4">
-        <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+        <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
           Police des titres
         </p>
         <div className="grid gap-3 sm:grid-cols-2">
@@ -126,7 +147,7 @@ export default function DesignEditor({
 
       <Card className="grid gap-5">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+          <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
             Couleurs
           </p>
           <p className="mt-1 text-xs text-muted">
@@ -164,13 +185,45 @@ export default function DesignEditor({
             Demander un devis
           </span>
         </div>
+      </Card>
+
+      <Card className="grid gap-5">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+            Encarts mis en avant
+          </p>
+          <p className="mt-1 text-xs text-muted">
+            Couleurs des grands encarts colorés (bandeau Financement de
+            l&apos;accueil, bandes d&apos;appel à contact, encarts « Public
+            concerné » et « Formation absente de la liste »), séparées de la
+            couleur d&apos;accent des boutons.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          {HIGHLIGHT_COLORS.map((color) => (
+            <ColorField
+              key={color.key}
+              label={color.label}
+              hint={color.hint}
+              value={theme[color.key] ?? THEME_DEFAULTS[color.key]}
+              onChange={(v) => onThemeChange({ ...theme, [color.key]: v })}
+            />
+          ))}
+        </div>
 
         <div
           className="rounded-2xl p-5 text-center"
-          style={{ background: theme.accent, color: theme.accentForeground }}
+          style={{
+            background: theme.highlightBackground ?? THEME_DEFAULTS.highlightBackground,
+            color: theme.highlightForeground ?? THEME_DEFAULTS.highlightForeground,
+          }}
         >
-          <p className="text-xs" style={{ color: theme.accentForeground, opacity: 0.7 }}>
-            Aperçu d&apos;une bande en couleur d&apos;accent
+          <p
+            className="text-xs"
+            style={{ color: theme.highlightForeground ?? THEME_DEFAULTS.highlightForeground, opacity: 0.7 }}
+          >
+            Aperçu d&apos;un encart mis en avant
           </p>
           <p className="mt-2 font-semibold">Un projet de formation à financer ?</p>
         </div>
@@ -178,7 +231,7 @@ export default function DesignEditor({
 
       <Card className="grid gap-5">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+          <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
             Effets et étiquettes
           </p>
           <p className="mt-1 text-xs text-muted">
@@ -211,6 +264,12 @@ export default function DesignEditor({
             style={{ color: theme.surfaceMuted ?? THEME_DEFAULTS.surfaceMuted }}
           >
             Le texte des cartes utilise ces couleurs, même si le fond du site est clair.
+          </p>
+          <p
+            className="mt-2 text-sm font-semibold"
+            style={{ color: theme.surfaceAccent ?? THEME_DEFAULTS.surfaceAccent }}
+          >
+            ✓ Financement OPCO
           </p>
           <span
             className="mt-4 inline-flex rounded-full border border-white/15 px-3 py-1 text-xs font-semibold"

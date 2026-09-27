@@ -98,19 +98,19 @@ export default async function SecteurPage(
           {/* Sur téléphone, un simple lien retour remplace le fil d'Ariane. */}
           <Link
             href="/formations"
-            className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent sm:hidden"
+            className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-surface-accent sm:hidden"
           >
             <span aria-hidden="true">←</span> Formations
           </Link>
           <div className="mb-6 hidden text-sm text-muted sm:block">
-            <Link href="/formations" className="underline decoration-dotted underline-offset-2 hover:text-accent">
+            <Link href="/formations" className="underline decoration-dotted underline-offset-2 hover:text-surface-accent">
               Formations
             </Link>
             <span className="mx-2">/</span>
             <span>{service.title}</span>
           </div>
 
-          <p className="text-sm font-semibold text-accent">
+          <p className="text-sm font-semibold text-surface-accent">
             {count} formation{count > 1 ? "s" : ""}
           </p>
           <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:mt-3 sm:text-5xl">
@@ -128,7 +128,7 @@ export default async function SecteurPage(
               </Link>
               <a
                 href="#catalogue"
-                className="rounded-lg border border-border px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 transition-colors hover:border-accent hover:text-accent"
+                className="rounded-lg border border-border px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 transition-colors hover:border-surface-accent hover:text-surface-accent"
               >
                 {pages.sector.catalogueButton}
               </a>
@@ -141,8 +141,8 @@ export default async function SecteurPage(
       <section className="page-band px-6 py-14 sm:py-20">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <div className="border-l-4 border-accent pl-6 sm:pl-8">
-              <p className="text-sm font-semibold text-accent">
+            <div className="border-l-4 border-surface-accent pl-6 sm:pl-8">
+              <p className="text-sm font-semibold text-surface-accent">
                 {pages.sector.whyEyebrow}
               </p>
               <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -248,14 +248,14 @@ export default async function SecteurPage(
                       {training.intro}
                     </p>
 
-                    <p className="mt-auto pt-4 text-sm font-medium text-accent">
+                    <p className="mt-auto pt-4 text-sm font-medium text-surface-accent">
                       {training.duration}
                     </p>
                   </div>
 
                   <Link
                     href={`/contact?formation=${encodeURIComponent(training.title)}`}
-                    className="relative z-10 flex items-center justify-between border-t border-border px-6 py-4 text-sm font-semibold transition-colors hover:bg-surface-2 hover:text-accent"
+                    className="relative z-10 flex items-center justify-between border-t border-border px-6 py-4 text-sm font-semibold transition-colors hover:bg-surface-2 hover:text-surface-accent"
                   >
                     {pages.sector.quoteButton}
                     <span aria-hidden="true">→</span>

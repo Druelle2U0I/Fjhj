@@ -111,7 +111,7 @@ export default function Contact({
                   id="name"
                   name="name"
                   required
-                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-surface-accent"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -123,7 +123,7 @@ export default function Contact({
                   name="email"
                   type="email"
                   required
-                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-surface-accent"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -133,7 +133,7 @@ export default function Contact({
                 <input
                   id="company"
                   name="company"
-                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-surface-accent"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -144,7 +144,7 @@ export default function Contact({
                   id="phone"
                   name="phone"
                   type="tel"
-                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-surface-accent"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -156,7 +156,7 @@ export default function Contact({
                   name="training"
                   ref={trainingInput}
                   placeholder="Ex : CACES R489, SST..."
-                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-surface-accent"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -168,7 +168,7 @@ export default function Contact({
                   name="trainees"
                   type="number"
                   min={1}
-                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-surface-accent"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -179,7 +179,7 @@ export default function Contact({
                   id="format"
                   name="format"
                   defaultValue="Intra-entreprise"
-                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-surface-accent"
                 >
                   <option>Intra-entreprise</option>
                   <option>Inter-entreprises</option>
@@ -195,7 +195,7 @@ export default function Contact({
                   name="message"
                   rows={4}
                   required
-                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-accent"
+                  className="mt-1.5 w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm outline-none transition-colors focus:border-surface-accent"
                 />
               </div>
             </div>

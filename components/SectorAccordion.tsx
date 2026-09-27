@@ -39,7 +39,7 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
               <p className="font-semibold">{service.title}</p>
               <p className="mt-1 line-clamp-2 text-sm text-muted">{service.description}</p>
             </div>
-            <span aria-hidden="true" className="shrink-0 text-muted transition-colors group-hover:text-accent">
+            <span aria-hidden="true" className="shrink-0 text-muted transition-colors group-hover:text-surface-accent">
               →
             </span>
           </Link>
