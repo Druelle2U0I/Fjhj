@@ -256,7 +256,7 @@ export default async function SecteurPage(
 
                   <Link
                     href={`/contact?formation=${encodeURIComponent(training.title)}`}
-                    className="relative z-10 flex items-center justify-between border-t border-border bg-surface px-6 py-4 text-sm font-semibold transition-colors hover:bg-surface-2 hover:text-surface-accent"
+                    className="absolute bottom-5 right-5 z-10 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100"
                   >
                     {pages.sector.quoteButton}
                     <span aria-hidden="true">→</span>

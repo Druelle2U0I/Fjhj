@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Visual from "@/components/Visual";
+import { pages } from "@/lib/data";
 
 export type TrainingItem = {
   title: string;
@@ -111,10 +112,10 @@ export default function AllTrainings({
       ) : (
         <ul className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item) => (
-            <li key={item.href}>
+            <li key={item.href} className="group relative">
               <Link
                 href={item.href}
-                className="dyn-card group relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-lg"
+                className="dyn-card relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-lg"
               >
                 <Visual
                   src={item.image}
@@ -134,6 +135,13 @@ export default function AllTrainings({
                     <span className="text-white/70"> · {item.format}</span>
                   </p>
                 </div>
+              </Link>
+              <Link
+                href={`/contact?formation=${encodeURIComponent(item.title)}`}
+                className="absolute bottom-5 right-5 z-10 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100"
+              >
+                {pages.sector.quoteButton}
+                <span aria-hidden="true">→</span>
               </Link>
             </li>
           ))}
