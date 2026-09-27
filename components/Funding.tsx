@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FundingSteps from "@/components/FundingSteps";
+import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import Reveal from "@/components/Reveal";
 import { funding, legal, pages } from "@/lib/data";
 
@@ -47,8 +48,11 @@ function QualiopiCard() {
 export default function Funding() {
   return (
     <>
-    <section id="financement" className="px-6 py-14 sm:py-24">
-      <div className="mx-auto max-w-6xl">
+    <section id="financement" className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[148px] sm:pb-14">
+      {pages.funding.heroImage && (
+        <HeroBackgroundPhoto src={pages.funding.heroImage} alt={pages.funding.title} />
+      )}
+      <div className={`relative mx-auto max-w-6xl ${pages.funding.heroImage ? "on-surface" : ""}`}>
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <span className="text-sm font-semibold text-muted">
@@ -62,8 +66,12 @@ export default function Funding() {
 
           <QualiopiCard />
         </div>
+      </div>
+    </section>
 
-        <div className="mt-16 grid gap-8 border-t border-border pt-10 sm:grid-cols-3 lg:divide-x lg:divide-border">
+    <section className="px-6 py-14 sm:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-8 sm:grid-cols-3 lg:divide-x lg:divide-border">
           {funding.points.map((point, i) => (
             <Reveal key={point.title} delay={i * 0.1} className="lg:px-6 lg:first:pl-0">
               <span aria-hidden="true" className="block h-1 w-8 bg-accent" />

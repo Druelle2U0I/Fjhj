@@ -9,9 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function FinancementPage() {
-  return (
-    <div className="pt-12">
-      <Funding />
-    </div>
-  );
+  return <Funding />;
 }

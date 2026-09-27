@@ -34,6 +34,7 @@ export default function AllTrainingsPage() {
         title={fillCounts(pages.allTrainings.title)}
         description={fillCounts(pages.allTrainings.text)}
         aside={<KeyFacts />}
+        backgroundImage={pages.allTrainings.heroImage}
         breadcrumb={
           <>
             <Link

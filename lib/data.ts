@@ -186,6 +186,8 @@ export type SiteContent = {
   }[];
   home: {
     heroSlides: HeroSlide[];
+    heroBackgroundImage?: string;
+    heroBackgroundImageAlt?: string;
     aboutImage?: string;
     aboutImageAlt?: string;
     statsBandImage?: string;
@@ -221,7 +223,7 @@ export type Social = {
 
 export type Pages = {
   hero: { badge: string; primaryButton: string; secondaryButton: string };
-  catalogue: { eyebrow: string; title: string; text: string; seoDescription: string };
+  catalogue: { eyebrow: string; title: string; text: string; seoDescription: string; heroImage?: string };
   allTrainings: {
     eyebrow: string;
     title: string;
@@ -231,6 +233,7 @@ export type Pages = {
     searchPlaceholder: string;
     emptyText: string;
     seoDescription: string;
+    heroImage?: string;
   };
   sector: {
     quoteMainButton: string;
@@ -269,7 +272,7 @@ export type Pages = {
     ctaButton: string;
     seoDescription: string;
   };
-  team: { eyebrow: string; title: string; text?: string; seoDescription: string };
+  team: { eyebrow: string; title: string; text?: string; seoDescription: string; heroImage?: string };
   contact: {
     eyebrow: string;
     title: string;
@@ -277,8 +280,9 @@ export type Pages = {
     submitButton: string;
     successMessage: string;
     seoDescription: string;
+    heroImage?: string;
   };
-  funding: { eyebrow: string; title: string; seoDescription: string };
+  funding: { eyebrow: string; title: string; seoDescription: string; heroImage?: string };
 };
 
 const content = site as SiteContent;

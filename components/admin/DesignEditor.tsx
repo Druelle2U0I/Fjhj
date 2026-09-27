@@ -129,8 +129,8 @@ export default function DesignEditor({
               onClick={() => onThemeChange({ ...theme, headingFont: font.id })}
               className={`rounded-2xl border px-4 py-3 text-left transition-colors ${
                 theme.headingFont === font.id
-                  ? "border-accent bg-surface-2"
-                  : "border-border hover:border-accent"
+                  ? "border-surface-accent bg-surface-2"
+                  : "border-border hover:border-surface-accent"
               }`}
             >
               <span

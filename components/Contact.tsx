@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
+import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import { accessibility, company, pages } from "@/lib/data";
 
 type Status = "idle" | "sending" | "sent" | "error";
@@ -54,11 +55,21 @@ export default function Contact({
     }
   }
 
+  const hasPhoto = Boolean(pages.contact.heroImage);
+
   return (
-    <section id="contact" className="section-soft px-6 py-14 sm:py-24">
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2">
+    <section
+      id="contact"
+      className={`relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-14 sm:-mt-[94px] sm:pt-[148px] sm:pb-24 ${
+        hasPhoto ? "" : "section-soft"
+      }`}
+    >
+      {hasPhoto && (
+        <HeroBackgroundPhoto src={pages.contact.heroImage!} alt={pages.contact.title} />
+      )}
+      <div className={`relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 ${hasPhoto ? "on-surface" : ""}`}>
         <div>
-          <span className="text-sm font-semibold text-accent">
+          <span className="text-sm font-semibold text-surface-accent">
             {pages.contact.eyebrow}
           </span>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">

@@ -1,11 +1,20 @@
 "use client";
 
 import type { Pages } from "@/lib/data";
-import { Card, Field } from "./ui";
+import { Card, Field, ImageField } from "./ui";
 
 type PageKey = keyof Pages;
 
-type FieldSpec = { key: string; label: string; rows?: number; hint?: string };
+type FieldSpec = {
+  key: string;
+  label: string;
+  rows?: number;
+  hint?: string;
+  type?: "image";
+};
+
+const HERO_IMAGE_HINT =
+  "Grande photo affichée en fond du haut de page, sous le menu. Laissez vide pour garder le fond uni.";
 
 const COUNTS_HINT =
   "{formations} et {domaines} sont remplacés automatiquement par les chiffres du catalogue.";
@@ -31,6 +40,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre", hint: COUNTS_HINT },
       { key: "text", label: "Texte d'introduction", rows: 3, hint: COUNTS_HINT },
+      { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -46,6 +56,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
       { key: "allFilter", label: "Filtre « tous les domaines »" },
       { key: "searchPlaceholder", label: "Texte du champ de recherche" },
       { key: "emptyText", label: "Message si aucun résultat", rows: 2 },
+      { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -122,6 +133,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
         rows: 6,
         hint: "Affiché sous le titre. Laissez une ligne vide entre deux paragraphes.",
       },
+      { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -135,6 +147,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
       { key: "text", label: "Texte d'introduction", rows: 3 },
       { key: "submitButton", label: "Bouton d'envoi du formulaire" },
       { key: "successMessage", label: "Message après envoi" },
+      { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -145,6 +158,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre" },
+      { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -171,21 +185,35 @@ export default function PagesEditor({
               </p>
               {page.hint && <p className="mt-1 text-xs text-muted">{page.hint}</p>}
             </div>
-            {page.fields.map((field) => (
-              <Field
-                key={field.key}
-                label={field.label}
-                rows={field.rows}
-                hint={field.hint}
-                value={values[field.key] ?? ""}
-                onChange={(v) =>
-                  onChange({
-                    ...pages,
-                    [page.key]: { ...values, [field.key]: v },
-                  } as Pages)
-                }
-              />
-            ))}
+            {page.fields.map((field) =>
+              field.type === "image" ? (
+                <ImageField
+                  key={field.key}
+                  label={field.label}
+                  value={values[field.key] || undefined}
+                  onChange={(v) =>
+                    onChange({
+                      ...pages,
+                      [page.key]: { ...values, [field.key]: v ?? "" },
+                    } as Pages)
+                  }
+                />
+              ) : (
+                <Field
+                  key={field.key}
+                  label={field.label}
+                  rows={field.rows}
+                  hint={field.hint}
+                  value={values[field.key] ?? ""}
+                  onChange={(v) =>
+                    onChange({
+                      ...pages,
+                      [page.key]: { ...values, [field.key]: v },
+                    } as Pages)
+                  }
+                />
+              ),
+            )}
           </Card>
         );
       })}
