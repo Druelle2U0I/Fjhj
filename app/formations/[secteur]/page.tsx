@@ -113,7 +113,7 @@ export default async function SecteurPage(
           <p className="text-sm font-semibold text-surface-accent">
             {count} formation{count > 1 ? "s" : ""}
           </p>
-          <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:mt-3 sm:text-5xl">
+          <h1 className="mt-2 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:mt-3 sm:text-6xl">
             {service.title}
           </h1>
 
@@ -220,42 +220,43 @@ export default async function SecteurPage(
           <div className={`mt-8 grid gap-6 sm:grid-cols-2 ${columnsFor(service.trainings.length)}`}>
             {service.trainings.map((training, i) => (
               <Reveal key={training.slug} delay={(i % 3) * 0.05}>
-                <article className="dyn-card relative flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface">
-                  <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden">
+                <article className="dyn-card group relative flex h-full flex-col overflow-hidden rounded-lg">
+                  <div className="relative flex aspect-[4/5] flex-col justify-end overflow-hidden">
                     <Visual
                       src={training.image}
                       alt={training.imageAlt ?? training.title}
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
-                      className="dyn-photo"
+                      className="transition-transform duration-700 group-hover:scale-105"
                     />
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    {training.category && (
-                      <span className="domain-tag mb-3 inline-flex w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
-                        {training.category}
-                      </span>
-                    )}
-                    <h3 className="text-lg font-semibold leading-snug">
-                      <Link
-                        href={`/formations/${service.slug}/${training.slug}`}
-                        className="after:absolute after:inset-0 after:content-['']"
-                      >
-                        {training.title}
-                      </Link>
-                    </h3>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+                    <div className="relative p-6">
+                      {training.category && (
+                        <span className="domain-tag mb-3 inline-flex w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
+                          {training.category}
+                        </span>
+                      )}
+                      <h3 className="text-lg font-semibold leading-snug text-white">
+                        <Link
+                          href={`/formations/${service.slug}/${training.slug}`}
+                          className="after:absolute after:inset-0 after:content-['']"
+                        >
+                          {training.title}
+                        </Link>
+                      </h3>
 
-                    <p className="mt-3 whitespace-pre-line text-sm text-muted">
-                      {training.intro}
-                    </p>
+                      <p className="mt-3 line-clamp-2 whitespace-pre-line text-sm text-white/80">
+                        {training.intro}
+                      </p>
 
-                    <p className="mt-auto pt-4 text-sm font-medium text-surface-accent">
-                      {training.duration}
-                    </p>
+                      <p className="mt-3 text-sm font-medium text-white">
+                        {training.duration}
+                      </p>
+                    </div>
                   </div>
 
                   <Link
                     href={`/contact?formation=${encodeURIComponent(training.title)}`}
-                    className="relative z-10 flex items-center justify-between border-t border-border px-6 py-4 text-sm font-semibold transition-colors hover:bg-surface-2 hover:text-surface-accent"
+                    className="relative z-10 flex items-center justify-between border-t border-border bg-surface px-6 py-4 text-sm font-semibold transition-colors hover:bg-surface-2 hover:text-surface-accent"
                   >
                     {pages.sector.quoteButton}
                     <span aria-hidden="true">→</span>

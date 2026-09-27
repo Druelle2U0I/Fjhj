@@ -42,21 +42,20 @@ export default function FormationsPage() {
             <Reveal key={service.slug} delay={(i % 3) * 0.05}>
               <Link
                 href={`/formations/${service.slug}`}
-                className="dyn-card group block h-full overflow-hidden rounded-lg border border-border bg-surface"
+                className="dyn-card group relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-lg"
               >
-                <div className="dyn-photo-wrap relative aspect-[4/3] overflow-hidden">
-                  <Visual
-                    src={service.image}
-                    alt={service.imageAlt ?? service.title}
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
-                    className="dyn-photo"
-                  />
-                </div>
-                <div className="flex items-center justify-between gap-3 border-t border-border px-6 py-5">
-                  <h2 className="text-lg font-semibold leading-snug">
+                <Visual
+                  src={service.image}
+                  alt={service.imageAlt ?? service.title}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                  className="transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+                <div className="relative flex items-end justify-between gap-3 p-6">
+                  <h2 className="text-xl font-semibold leading-snug text-white">
                     {service.title}
                   </h2>
-                  <span className="shrink-0 text-sm text-muted">
+                  <span className="shrink-0 text-sm text-white/80">
                     {service.trainings.length} formation
                     {service.trainings.length > 1 ? "s" : ""}
                   </span>

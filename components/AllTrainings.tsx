@@ -114,25 +114,24 @@ export default function AllTrainings({
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="dyn-card group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-surface"
+                className="dyn-card group relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-lg"
               >
-                <div className="dyn-photo-wrap relative aspect-[16/10] overflow-hidden">
-                  <Visual
-                    src={item.image}
-                    alt={item.imageAlt ?? item.title}
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
-                    className="dyn-photo"
-                  />
-                  <span className="domain-tag absolute left-4 top-4 rounded-full border border-white/15 px-3 py-1 text-xs font-semibold backdrop-blur">
-                    {item.sectorTitle}
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h2 className="text-lg font-semibold leading-snug">{item.title}</h2>
-                  <p className="mt-2 line-clamp-3 text-sm text-muted">{item.intro}</p>
-                  <p className="mt-auto pt-4 text-sm font-medium text-surface-accent">
+                <Visual
+                  src={item.image}
+                  alt={item.imageAlt ?? item.title}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                  className="transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+                <span className="domain-tag absolute left-4 top-4 rounded-full border border-white/15 px-3 py-1 text-xs font-semibold backdrop-blur">
+                  {item.sectorTitle}
+                </span>
+                <div className="relative p-5">
+                  <h2 className="text-lg font-semibold leading-snug text-white">{item.title}</h2>
+                  <p className="mt-2 line-clamp-2 text-sm text-white/80">{item.intro}</p>
+                  <p className="mt-3 text-sm font-medium text-white">
                     {item.duration}
-                    <span className="text-muted"> · {item.format}</span>
+                    <span className="text-white/70"> · {item.format}</span>
                   </p>
                 </div>
               </Link>

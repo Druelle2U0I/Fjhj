@@ -271,6 +271,7 @@ export type Pages = {
     ctaText: string;
     ctaButton: string;
     seoDescription: string;
+    heroImage?: string;
   };
   team: { eyebrow: string; title: string; text?: string; seoDescription: string; heroImage?: string };
   contact: {

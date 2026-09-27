@@ -42,7 +42,7 @@ export default function PageHero({
           <span className="text-sm font-semibold text-muted">
             {eyebrow}
           </span>
-          <h1 className="mt-2 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:mt-3 sm:text-4xl md:text-5xl">
+          <h1 className="mt-2 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:mt-3 sm:text-5xl md:text-6xl">
             {title}
           </h1>
           {description && (
