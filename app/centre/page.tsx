@@ -3,8 +3,9 @@ import Link from "next/link";
 import AnimatedStat from "@/components/AnimatedStat";
 import FranceMap from "@/components/FranceMap";
 import PageHero from "@/components/PageHero";
+import PillarsGrid from "@/components/PillarsGrid";
 import Reveal from "@/components/Reveal";
-import { company, fillCounts, pages, pillars, services, stats } from "@/lib/data";
+import { company, fillCounts, pages, services, stats } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Le centre",
@@ -55,15 +56,7 @@ export default function CentrePage() {
             </h2>
           </Reveal>
 
-          <div className="mt-10 grid gap-8 border-t border-border pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:divide-x lg:divide-border">
-            {pillars.map((pillar, i) => (
-              <Reveal key={pillar.title} delay={i * 0.08} className="lg:px-6 lg:first:pl-0">
-                <span aria-hidden="true" className="block h-1 w-8 bg-accent" />
-                <h3 className="mt-3 text-lg font-semibold">{pillar.title}</h3>
-                <p className="mt-2 text-sm text-muted">{pillar.text}</p>
-              </Reveal>
-            ))}
-          </div>
+          <PillarsGrid className="mt-10 border-t border-border pt-8" />
 
           <Reveal delay={0.2} className="mt-14 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-4">
             {stats.map((stat) => (
@@ -108,8 +101,11 @@ export default function CentrePage() {
       </section>
 
       <section className="px-6 py-12 sm:py-20">
-        <div className="mx-auto max-w-3xl rounded-lg border border-border bg-surface p-10 text-center sm:p-14">
-          <Reveal>
+        <Reveal className="relative mx-auto max-w-3xl">
+          <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 rotate-3 items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-lg">
+            Réponse sous 24h
+          </span>
+          <div className="rounded-lg border border-border bg-surface p-10 pt-12 text-center shadow-xl shadow-black/5 sm:p-14 sm:pt-16">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               {pages.centre.ctaTitle}
             </h2>
@@ -122,8 +118,8 @@ export default function CentrePage() {
             >
               {pages.centre.ctaButton}
             </Link>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </section>
     </>
   );

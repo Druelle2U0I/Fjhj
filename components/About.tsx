@@ -1,7 +1,8 @@
 import Image from "next/image";
+import PillarsGrid from "@/components/PillarsGrid";
 import Reveal from "@/components/Reveal";
 import SplitPhotoBand from "@/components/SplitPhotoBand";
-import { company, home, pillars } from "@/lib/data";
+import { company, home } from "@/lib/data";
 import type { HomeSection } from "@/lib/data";
 
 function initials(name: string) {
@@ -80,15 +81,7 @@ export default function About({ section }: { section: HomeSection }) {
             </Reveal>
           )}
 
-          <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-8 border-t border-border pt-8 sm:mt-16 sm:pt-10 lg:grid-cols-4 lg:divide-x lg:divide-border">
-            {pillars.map((pillar, i) => (
-              <Reveal key={pillar.title} delay={i * 0.1} className="lg:px-6 lg:first:pl-0">
-                <span aria-hidden="true" className="block h-1 w-8 bg-accent" />
-                <h3 className="mt-3 text-lg font-semibold">{pillar.title}</h3>
-                <p className="mt-2 whitespace-pre-line text-sm text-muted">{pillar.text}</p>
-              </Reveal>
-            ))}
-          </div>
+          <PillarsGrid className="mt-10 border-t border-border pt-8 sm:mt-16 sm:pt-10" />
         </div>
       </div>
     </div>

@@ -95,19 +95,24 @@ export default function Funding() {
     </section>
 
     <section className="px-6 py-16 text-center">
-      <Reveal className="mx-auto max-w-2xl rounded-lg border border-border bg-surface p-10 sm:p-14">
-        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-          Un projet de formation à financer ?
-        </h2>
-        <p className="mx-auto mt-3 max-w-xl text-muted">
-          Décrivez-nous votre besoin, on s&apos;occupe du reste : devis, éligibilité OPCO et montage du dossier.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-7 inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
-        >
-          Nous contacter
-        </Link>
+      <Reveal className="relative mx-auto max-w-2xl">
+        <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 -rotate-3 items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-lg">
+          Sans engagement
+        </span>
+        <div className="rounded-lg border border-border bg-surface p-10 pt-12 shadow-xl shadow-black/5 sm:p-14 sm:pt-16">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            Un projet de formation à financer ?
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-muted">
+            Décrivez-nous votre besoin, on s&apos;occupe du reste : devis, éligibilité OPCO et montage du dossier.
+          </p>
+          <Link
+            href="/contact"
+            className="mt-7 inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+          >
+            Nous contacter
+          </Link>
+        </div>
       </Reveal>
     </section>
     </>
