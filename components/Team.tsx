@@ -33,7 +33,7 @@ export default function Team() {
             <span className="text-sm font-semibold text-muted">
               {pages.team.eyebrow}
             </span>
-            <h1 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
               {pages.team.title}
             </h1>
             {paragraphs.length > 0 && (

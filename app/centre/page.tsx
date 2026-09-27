@@ -4,7 +4,7 @@ import AnimatedStat from "@/components/AnimatedStat";
 import FranceMap from "@/components/FranceMap";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { company, fillCounts, home, pages, pillars, services, stats } from "@/lib/data";
+import { company, fillCounts, pages, pillars, services, stats } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Le centre",
@@ -19,8 +19,7 @@ export default function CentrePage() {
         eyebrow={pages.centre.eyebrow}
         title={pages.centre.title}
         description={company.tagline}
-        image={home.aboutImage}
-        imageAlt={home.aboutImageAlt}
+        backgroundImage={pages.centre.heroImage}
       />
 
       <FranceMap>

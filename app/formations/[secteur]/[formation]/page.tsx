@@ -139,7 +139,7 @@ export default async function FormationPage(
                 {service.title}
               </p>
             </div>
-            <h1 className="mt-3 max-w-3xl text-2xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            <h1 className="mt-3 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-6xl">
               {training.title}
             </h1>
             <p className="mt-3 max-w-2xl whitespace-pre-line text-base text-muted sm:mt-5 sm:text-lg">{training.intro}</p>

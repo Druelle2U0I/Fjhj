@@ -72,7 +72,7 @@ export default function Contact({
           <span className="text-sm font-semibold text-surface-accent">
             {pages.contact.eyebrow}
           </span>
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
             {pages.contact.title}
           </h1>
           <p className="mt-5 max-w-md whitespace-pre-line text-muted">
