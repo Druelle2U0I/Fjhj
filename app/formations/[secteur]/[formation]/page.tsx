@@ -196,9 +196,7 @@ export default async function FormationPage(
             {/* À partir d'ici, le rythme change volontairement : plus la
                 même grille répétée, chaque information prend une forme
                 différente selon son importance. */}
-            {/* Bande de couleur pleine largeur derrière les informations
-                pratiques, pour séparer cette partie du programme. */}
-            <div className="bleed-band py-12">
+            <div className="py-12">
               {/* Public concerné : encadré mis en avant */}
               <Reveal className="rounded-lg bg-highlight p-6 text-highlight-foreground sm:p-8">
                 <p className="text-xs font-semibold uppercase tracking-wide text-highlight-foreground/70">
@@ -225,11 +223,11 @@ export default async function FormationPage(
                     .filter((row) => row.text)
                     .map((row) => (
                       <li key={row.icon} className="flex gap-5 py-6">
-                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-surface-accent/30 bg-surface-accent/10 text-surface-accent">
+                        <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-accent">
                           <InfoIcon name={row.icon} />
                         </span>
                         <div>
-                          <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+                          <p className="text-xs font-semibold uppercase tracking-wide text-accent">
                             {row.title}
                           </p>
                           <p className="mt-2 text-sm text-muted">{row.text}</p>

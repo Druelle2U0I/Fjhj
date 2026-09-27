@@ -60,16 +60,14 @@ export default function Contact({
   return (
     <section
       id="contact"
-      className={`relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-14 sm:-mt-[94px] sm:pt-[148px] sm:pb-24 ${
-        hasPhoto ? "" : "section-soft"
-      }`}
+      className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-14 sm:-mt-[94px] sm:pt-[148px] sm:pb-24"
     >
       {hasPhoto && (
         <HeroBackgroundPhoto src={pages.contact.heroImage!} alt={pages.contact.title} />
       )}
       <div className={`relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 ${hasPhoto ? "on-surface" : ""}`}>
         <div>
-          <span className="text-sm font-semibold text-surface-accent">
+          <span className={`text-sm font-semibold ${hasPhoto ? "text-surface-accent" : "text-accent"}`}>
             {pages.contact.eyebrow}
           </span>
           <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
