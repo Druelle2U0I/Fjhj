@@ -121,7 +121,7 @@ export default function AllTrainings({
                   src={item.image}
                   alt={item.imageAlt ?? item.title}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
-                  className="transition-transform duration-700 group-hover:scale-105"
+                  className="transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:duration-[6000ms]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
                 <span className="domain-tag absolute left-4 top-4 rounded-full border border-white/15 px-3 py-1 text-xs font-semibold backdrop-blur">
