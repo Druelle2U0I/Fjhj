@@ -24,7 +24,7 @@ export default function Hero() {
         }`}
       >
         <div>
-          <h1 className="max-w-xl whitespace-pre-line text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="max-w-xl whitespace-pre-line text-5xl font-bold tracking-tight sm:text-6xl">
             {company.tagline}
           </h1>
 
@@ -32,7 +32,7 @@ export default function Hero() {
             {company.description}
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-6">
             <Link
               href="/formations"
               className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
@@ -41,7 +41,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="rounded-lg border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-surface-accent hover:text-surface-accent"
+              className="text-sm font-semibold underline underline-offset-4 transition-colors hover:text-surface-accent"
             >
               {pages.hero.secondaryButton}
             </Link>
