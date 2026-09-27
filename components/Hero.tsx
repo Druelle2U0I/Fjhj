@@ -1,15 +1,28 @@
 import Link from "next/link";
+import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import HeroCarousel from "@/components/HeroCarousel";
 import { company, home, pages } from "@/lib/data";
 
 export default function Hero() {
+  const hasPhoto = Boolean(home.heroBackgroundImage);
+
   return (
     <section
       id="top"
       className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-24 sm:-mt-[94px] sm:pt-[154px]"
     >
+      {hasPhoto && (
+        <HeroBackgroundPhoto
+          src={home.heroBackgroundImage!}
+          alt={home.heroBackgroundImageAlt ?? ""}
+        />
+      )}
 
-      <div className="relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <div
+        className={`relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center ${
+          hasPhoto ? "on-surface" : ""
+        }`}
+      >
         <div>
           <h1 className="max-w-xl whitespace-pre-line text-4xl font-semibold tracking-tight sm:text-5xl">
             {company.tagline}
@@ -28,7 +41,7 @@ export default function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="rounded-lg border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-accent hover:text-accent"
+              className="rounded-lg border border-border bg-surface px-6 py-3 text-sm font-semibold transition-colors hover:border-surface-accent hover:text-surface-accent"
             >
               {pages.hero.secondaryButton}
             </Link>

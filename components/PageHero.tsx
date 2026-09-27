@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
+import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 
 export default function PageHero({
   eyebrow,
@@ -9,6 +10,7 @@ export default function PageHero({
   image,
   imageAlt,
   aside,
+  backgroundImage,
 }: {
   eyebrow: string;
   title: string;
@@ -19,13 +21,17 @@ export default function PageHero({
   // Contenu libre affiché à droite (chiffres clés, encadré…), à la place
   // d'une image, pour ne pas laisser la moitié droite vide.
   aside?: ReactNode;
+  // Grande photo plein cadre en fond de l'en-tête (indépendante de
+  // `image`, qui reste une photo cadrée à droite du titre).
+  backgroundImage?: string;
 }) {
   const hasRightColumn = Boolean(image || aside);
 
   return (
     <section className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[148px] sm:pb-14">
+      {backgroundImage && <HeroBackgroundPhoto src={backgroundImage} alt={imageAlt ?? title} />}
       <div
-        className={`relative mx-auto max-w-6xl ${
+        className={`relative mx-auto max-w-6xl ${backgroundImage ? "on-surface" : ""} ${
           hasRightColumn ? "grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center" : ""
         }`}
       >

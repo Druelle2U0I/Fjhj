@@ -21,6 +21,7 @@ export default function FormationsPage() {
         title={fillCounts(pages.catalogue.title)}
         description={fillCounts(pages.catalogue.text)}
         aside={<KeyFacts />}
+        backgroundImage={pages.catalogue.heroImage}
       />
 
       <section className="px-6 pb-8">

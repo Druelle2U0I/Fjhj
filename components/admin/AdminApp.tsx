@@ -149,6 +149,32 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 <p className="mt-1 text-sm text-muted">Tout ce qui s&apos;affiche sur la page d&apos;accueil, de haut en bas.</p>
               </div>
 
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+                  Grande photo de fond (haut de page)
+                </p>
+                <p className="text-xs text-muted">
+                  Affichée en fond, derrière le titre et le carrousel. Laissez vide pour garder le fond uni.
+                </p>
+                <ImageField
+                  label="Photo"
+                  value={content.home.heroBackgroundImage || undefined}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      home: { ...content.home, heroBackgroundImage: v ?? "" },
+                    })
+                  }
+                />
+                <Field
+                  label="Description de la photo (accessibilité)"
+                  value={content.home.heroBackgroundImageAlt ?? ""}
+                  onChange={(v) =>
+                    update({ ...content, home: { ...content.home, heroBackgroundImageAlt: v } })
+                  }
+                />
+              </Card>
+
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
                   Carrousel de photos (haut de page)
@@ -211,7 +237,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               />
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Section « À propos »
                 </p>
                 <ImageField
@@ -237,7 +263,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               </Card>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Message du patron
                 </p>
                 <Field
@@ -325,7 +351,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               </Card>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Bande chiffres clés (après le catalogue de formations)
                 </p>
                 <ImageField
@@ -423,7 +449,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               />
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Fiches formation — textes communs
                 </p>
                 <Field
@@ -735,7 +761,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               </div>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Pied de page
                 </p>
                 <ImageField
@@ -751,7 +777,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
 
               <Card className="grid gap-4">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                     Bandeau de demande de catalogue
                   </p>
                   <label className="flex items-center gap-2 text-xs">
@@ -818,7 +844,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
 
               <Card className="grid gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                     Réseaux sociaux
                   </p>
                   <p className="mt-1 text-xs text-muted">
@@ -869,7 +895,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               </Card>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Certification Qualiopi (bas de page)
                 </p>
                 <ImageField
@@ -905,7 +931,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               </div>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Mentions réglementaires
                 </p>
                 <Field

@@ -1,3 +1,4 @@
+import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import Reveal from "@/components/Reveal";
 import StatsPanel from "@/components/StatsPanel";
 import Visual from "@/components/Visual";
@@ -19,8 +20,15 @@ export default function Team() {
 
   return (
     <div id="equipe">
-      <section className="px-6 pb-12 pt-24">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section className="relative -mt-[86px] overflow-hidden px-6 pb-12 pt-[112px] sm:-mt-[94px] sm:pt-[148px]">
+        {pages.team.heroImage && (
+          <HeroBackgroundPhoto src={pages.team.heroImage} alt={pages.team.title} />
+        )}
+        <div
+          className={`relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center ${
+            pages.team.heroImage ? "on-surface" : ""
+          }`}
+        >
           <div>
             <span className="text-sm font-semibold text-muted">
               {pages.team.eyebrow}
