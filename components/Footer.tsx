@@ -244,7 +244,7 @@ export default function Footer() {
                   <img
                     src={legal.qualiopiLogo}
                     alt="Logo Qualiopi — processus certifié, République française"
-                    className="h-20 w-auto shrink-0 rounded-lg bg-white p-2"
+                    className="h-28 w-auto shrink-0 bg-white p-2"
                   />
                 ) : (
                   <span className="flex h-20 shrink-0 flex-col items-center justify-center rounded-lg bg-white px-5 font-bold text-[#0b032b]">
@@ -259,7 +259,8 @@ export default function Footer() {
                   {legal.qualiopiCategory && (
                     <p className="text-xs text-muted">
                       La certification qualité a été délivrée au titre de la catégorie
-                      d&apos;action suivante : {legal.qualiopiCategory}.
+                      d&apos;action suivante :{" "}
+                      <span className="font-semibold text-foreground">{legal.qualiopiCategory}</span>.
                     </p>
                   )}
                   {legal.qualiopiCertificateUrl && (

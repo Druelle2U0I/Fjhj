@@ -14,7 +14,7 @@ function QualiopiCard() {
         <img
           src={legal.qualiopiLogo}
           alt="Logo Qualiopi — processus certifié, République française"
-          className="h-16 w-auto rounded-lg bg-white p-2"
+          className="h-28 w-auto bg-white p-2"
         />
       ) : (
         <span className="flex h-16 w-fit flex-col items-center justify-center rounded-lg bg-white px-5 font-bold text-[#0b032b]">
@@ -28,7 +28,7 @@ function QualiopiCard() {
       {legal.qualiopiCategory && (
         <p className="mt-2 text-sm text-muted">
           Délivré au titre de la catégorie d&apos;action suivante :{" "}
-          {legal.qualiopiCategory}.
+          <span className="font-semibold text-foreground">{legal.qualiopiCategory}</span>.
         </p>
       )}
       {legal.qualiopiCertificateUrl && (
