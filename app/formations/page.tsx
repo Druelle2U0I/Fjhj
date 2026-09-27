@@ -3,6 +3,7 @@ import Link from "next/link";
 import KeyFacts from "@/components/KeyFacts";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import Visual from "@/components/Visual";
 import { fillCounts, pages, services } from "@/lib/data";
 
@@ -62,6 +63,10 @@ export default function FormationsPage() {
               </Link>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mx-auto max-w-6xl">
+          <UnlistedTrainingNote />
         </div>
       </section>
     </>
