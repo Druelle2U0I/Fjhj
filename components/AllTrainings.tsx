@@ -41,8 +41,6 @@ export default function AllTrainings({
 }) {
   const [sector, setSector] = useState<string | null>(null);
   const [query, setQuery] = useState("");
-  // Vue en cartes (photos) ou en liste compacte, beaucoup plus courte.
-  const [view, setView] = useState<"cards" | "list">("cards");
 
   const visible = useMemo(() => {
     const q = normalize(query.trim());
@@ -104,49 +102,14 @@ export default function AllTrainings({
         </div>
       </div>
 
-      <div className="mt-6 flex items-center justify-between gap-4">
-        <p className="text-sm text-muted" aria-live="polite">
-          {visible.length} formation{visible.length > 1 ? "s" : ""}
-        </p>
-        <div role="group" aria-label="Affichage" className="flex overflow-hidden rounded-sm border border-foreground/30 text-sm">
-          {(["cards", "list"] as const).map((v) => (
-            <button
-              key={v}
-              type="button"
-              aria-pressed={view === v}
-              onClick={() => setView(v)}
-              className={`px-3 py-1.5 font-medium transition-colors ${
-                view === v ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-foreground/5"
-              }`}
-            >
-              {v === "cards" ? "Cartes" : "Liste"}
-            </button>
-          ))}
-        </div>
-      </div>
+      <p className="mt-6 text-sm text-muted" aria-live="polite">
+        {visible.length} formation{visible.length > 1 ? "s" : ""}
+      </p>
 
       {visible.length === 0 ? (
         <p className="mt-6 rounded-lg border border-border bg-surface/70 p-6 text-muted">
           {emptyText}
         </p>
-      ) : view === "list" ? (
-        <ul className="mt-4 border-t border-foreground/15">
-          {visible.map((item) => (
-            <li
-              key={item.href}
-              className="group relative grid gap-x-6 gap-y-1 border-b border-foreground/15 py-4 sm:grid-cols-[1fr_14rem_10rem] sm:items-baseline"
-            >
-              <Link
-                href={item.href}
-                className="font-semibold text-foreground transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-accent"
-              >
-                {item.title}
-              </Link>
-              <p className="text-sm text-muted">{item.sectorTitle}</p>
-              <p className="text-sm text-foreground">{item.duration}</p>
-            </li>
-          ))}
-        </ul>
       ) : (
         <ul className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item) => (

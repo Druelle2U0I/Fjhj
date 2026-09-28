@@ -6,16 +6,11 @@ import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import Visual from "@/components/Visual";
 import { pages, services } from "@/lib/data";
 
-// Sépare le code d'une formation de son intitulé (« B1 / B1V — Exécutant
-// électricien… » → « B1 / B1V » + « Exécutant électricien… ») ; pas de code
-// si le début du titre est trop long pour en être un.
-function splitCode(title: string) {
-  const [prefix, ...rest] = title.split(" — ");
-  if (rest.length > 0 && prefix.length <= 12) return { code: prefix, name: rest.join(" — ") };
-  // Titres sans tiret, ex. « BE Mesurage / Essai / Vérification ».
-  const short = title.match(/^([A-Z]{1,2}\d?[A-Z]?) (\p{Lu}.+)$/u);
-  if (short) return { code: short[1], name: short[2] };
-  return { code: "", name: title };
+// Nombre de colonnes sur grand écran (3 ou 4) choisi pour éviter une
+// carte seule sur la dernière ligne (ex. 7 formations → 4 + 3).
+function columnsFor(count: number) {
+  if (count % 3 === 0 || count % 3 === 2 || count < 4) return "lg:grid-cols-3";
+  return "lg:grid-cols-4";
 }
 
 export async function generateStaticParams() {
@@ -80,16 +75,6 @@ export default async function SecteurPage(
   if (!service) notFound();
 
   const count = service.trainings.length;
-  // Formations regroupées par catégorie (Basse tension, Haute tension…),
-  // dans l'ordre d'apparition ; un seul groupe sans titre sinon.
-  const hasCodes = service.trainings.some((t) => splitCode(t.title).code);
-  const groups: { name?: string; trainings: typeof service.trainings }[] = [];
-  for (const training of service.trainings) {
-    const name = training.category || undefined;
-    const group = groups.find((g) => g.name === name);
-    if (group) group.trainings.push(training);
-    else groups.push({ name, trainings: [training] });
-  }
   const trainingCodes = trainingCodeMap(service.trainings);
 
   return (
@@ -223,46 +208,55 @@ export default async function SecteurPage(
             </h2>
           </Reveal>
 
-          {groups.map((group) => (
-            <div key={group.name || "all"} className="mt-10">
-              {group.name && (
-                <h3 className="text-lg font-semibold tracking-tight">{group.name}</h3>
-              )}
-              <ul className={`${group.name ? "mt-3" : ""} border-t border-foreground/15`}>
-                {group.trainings.map((training) => {
-                  const { code, name } = splitCode(training.title);
-                  return (
-                    <li
-                      key={training.slug}
-                      className={`group relative grid gap-x-6 gap-y-2 border-b border-foreground/15 py-5 sm:items-baseline ${
-                        hasCodes ? "sm:grid-cols-[7rem_1fr_11rem_auto]" : "sm:grid-cols-[1fr_11rem_auto]"
-                      }`}
-                    >
-                      {hasCodes && <p className="text-sm font-bold text-foreground">{code}</p>}
-                      <div>
+          <div className={`mt-8 grid gap-6 sm:grid-cols-2 ${columnsFor(service.trainings.length)}`}>
+            {service.trainings.map((training, i) => (
+              <Reveal key={training.slug} delay={(i % 3) * 0.05}>
+                <article className="dyn-card group relative flex h-full flex-col overflow-hidden rounded-lg">
+                  <div className="relative flex aspect-[4/5] flex-col justify-end overflow-hidden">
+                    <Visual
+                      src={training.image}
+                      alt={training.imageAlt ?? training.title}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                      className="transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:duration-[6000ms]"
+                      objectPosition={training.imagePosition}
+                    />
+                    <div className="card-veil absolute inset-0" />
+                    <div className="relative p-6">
+                      {training.category && (
+                        <span className="domain-tag mb-3 inline-flex w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
+                          {training.category}
+                        </span>
+                      )}
+                      <h3 className="text-lg font-semibold leading-snug text-white">
                         <Link
                           href={`/formations/${service.slug}/${training.slug}`}
-                          className="font-semibold text-foreground transition-colors after:absolute after:inset-0 after:content-[''] group-hover:text-accent"
+                          className="after:absolute after:inset-0 after:content-['']"
                         >
-                          {name}
+                          {training.title}
                         </Link>
-                        {training.intro && (
-                          <p className="mt-1 text-sm text-muted">{training.intro}</p>
-                        )}
-                      </div>
-                      <p className="text-sm text-foreground">{training.duration}</p>
-                      <Link
-                        href={`/contact?formation=${encodeURIComponent(training.title)}`}
-                        className="relative z-10 w-fit rounded-sm border border-border px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:border-foreground"
-                      >
-                        {pages.sector.quoteButton}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+                      </h3>
+
+                      <p className="mt-3 line-clamp-2 whitespace-pre-line text-sm text-white/80">
+                        {training.intro}
+                      </p>
+
+                      <p className="mt-3 text-sm font-medium text-white">
+                        {training.duration}
+                      </p>
+                    </div>
+                  </div>
+
+                  <Link
+                    href={`/contact?formation=${encodeURIComponent(training.title)}`}
+                    className="absolute bottom-5 right-5 z-10 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100"
+                  >
+                    {pages.sector.quoteButton}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                </article>
+              </Reveal>
+            ))}
+          </div>
 
           <UnlistedTrainingNote />
         </div>
