@@ -44,7 +44,9 @@ export async function fetchRecommendation(): Promise<{ percent: number; count: n
     const base = `https://graph.microsoft.com/v1.0/drives/${source.driveId}/items/${source.itemId}/workbook`;
     const headers = { Authorization: `Bearer ${token}` };
 
-    // Cellule précise (ex. Feuil1!C3) qui contient déjà le pourcentage.
+    // Cellule ou plage précise (ex. Feuil1!C3:D3) contenant des
+    // pourcentages : leurs valeurs sont additionnées (part des 10 + part
+    // des 9).
     if (source.cell && source.sheet) {
       const res = await fetch(
         `${base}/worksheets('${encodeURIComponent(source.sheet)}')/range(address='${encodeURIComponent(source.cell)}')?$select=values`,
@@ -52,11 +54,13 @@ export async function fetchRecommendation(): Promise<{ percent: number; count: n
       );
       if (!res.ok) return null;
       const { values } = (await res.json()) as { values: unknown[][] };
-      const raw = values?.[0]?.[0];
-      const n = typeof raw === "number" ? raw : Number(String(raw).replace("%", "").replace(",", "."));
-      if (!Number.isFinite(n)) return null;
+      const numbers = (values ?? []).flat().map((raw) =>
+        typeof raw === "number" ? raw : Number(String(raw).replace("%", "").replace(",", ".")),
+      );
+      if (numbers.length === 0 || numbers.some((n) => !Number.isFinite(n))) return null;
       // Excel renvoie 0,6875 pour une cellule affichée « 68,75 % ».
-      return { percent: n <= 1 ? n * 100 : n, count: 0 };
+      const total = numbers.reduce((sum, n) => sum + (n <= 1 ? n * 100 : n), 0);
+      return { percent: Math.min(100, total), count: 0 };
     }
     let sheet = source.sheet;
     if (!sheet) {

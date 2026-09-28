@@ -45,7 +45,7 @@
       "label": "domaines de formation"
     },
     {
-      "value": "69 %",
+      "value": "81 %",
       "label": "de nos apprenants nous recommandent",
       "source": "recommendation"
     }
@@ -1914,7 +1914,7 @@
     "driveId": "b!XQbitKSa2UaRfVKI8xKmSPZa2QFX95xJpy0LvY0j5h1ZQuJTYEE4TqFwl-lTqvG9",
     "itemId": "01KAVFK7PRY32ZUBXHHJEKB5RJZKC6GSUI",
     "sheet": "Feuil1",
-    "cell": "C3",
+    "cell": "C3:D3",
     "file": "Documentation Formation/Excel et Forms/Excel/Évaluer la session !.xlsx"
   }
 }
