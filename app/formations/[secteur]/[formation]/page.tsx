@@ -143,7 +143,7 @@ export default async function FormationPage(
             <h1 className="mt-3 max-w-3xl text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
               {training.title}
             </h1>
-            <p className="mt-3 max-w-2xl whitespace-pre-line text-base text-muted sm:mt-5 sm:text-lg">{training.intro}</p>
+            <p className="page-intro mt-5 max-w-xl whitespace-pre-line text-muted">{training.intro}</p>
           </div>
         </div>
       </section>

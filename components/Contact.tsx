@@ -73,7 +73,7 @@ export default function Contact({
           <h1 className="mt-3 text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
             {pages.contact.title}
           </h1>
-          <p className="page-intro mt-5 max-w-md whitespace-pre-line text-muted">
+          <p className="page-intro mt-5 max-w-xl whitespace-pre-line text-muted">
             {pages.contact.text}
           </p>
 

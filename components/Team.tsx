@@ -26,7 +26,7 @@ export default function Team() {
               {pages.team.title}
             </h1>
             {paragraphs.length > 0 && (
-              <div className="page-intro mt-6 grid max-w-2xl gap-4 text-lg text-muted">
+              <div className="page-intro mt-5 grid max-w-xl gap-4 text-muted">
                 {paragraphs.map((paragraph, i) => (
                   <p key={i} className="whitespace-pre-line">
                     {paragraph}

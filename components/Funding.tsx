@@ -68,7 +68,7 @@ export default async function Funding() {
             <h1 className="mt-3 max-w-2xl text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
               {pages.funding.title}
             </h1>
-            <p className="page-intro mt-5 max-w-2xl whitespace-pre-line text-muted">{funding.intro}</p>
+            <p className="page-intro mt-5 max-w-xl whitespace-pre-line text-muted">{funding.intro}</p>
           </div>
 
           <QualiopiCard />

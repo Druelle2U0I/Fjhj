@@ -42,11 +42,11 @@ export default function PageHero({
           <span className="eyebrow block text-muted">
             {eyebrow}
           </span>
-          <h1 className="mt-2 max-w-3xl sm:mt-3 text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
+          <h1 className="mt-3 max-w-3xl text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
             {title}
           </h1>
           {description && (
-            <p className="page-intro mt-3 max-w-2xl text-base text-muted sm:mt-5 sm:text-lg">
+            <p className="page-intro mt-5 max-w-xl text-muted">
               {description}
             </p>
           )}

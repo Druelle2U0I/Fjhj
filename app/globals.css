@@ -537,3 +537,21 @@ h4,
 [style*="--intro-color"] .page-hero .page-intro {
   color: var(--intro-color);
 }
+
+/* En-têtes de page : texte d'introduction identique sur toutes les pages
+   (même taille que sous le titre de l'accueil). */
+.page-intro {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+@media (min-width: 640px) {
+  .page-intro {
+    font-size: 1.125rem;
+  }
+}
+/* Même hauteur minimale d'en-tête d'une page à l'autre. */
+@media (min-width: 1024px) {
+  .page-hero {
+    min-height: 34rem;
+  }
+}

@@ -76,15 +76,15 @@ export default async function SecteurPage(
             <span>{service.title}</span>
           </div>
 
-          <p className="text-sm font-semibold text-surface-accent">
+          <p className="eyebrow block text-muted">
             {count} formation{count > 1 ? "s" : ""}
           </p>
-          <h1 className="mt-2 max-w-3xl sm:mt-3 text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
+          <h1 className="mt-3 max-w-3xl text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
             {service.title}
           </h1>
 
           <div className="mt-8 max-w-xl">
-            <p className="line-clamp-4 whitespace-pre-line text-base text-foreground/90 sm:line-clamp-none sm:text-lg">{service.description}</p>
+            <p className="page-intro line-clamp-4 whitespace-pre-line text-muted sm:line-clamp-none">{service.description}</p>
             <div className="mt-7 flex flex-wrap items-center gap-6">
               <Link
                 href={`/contact?formation=${encodeURIComponent(service.title)}`}
