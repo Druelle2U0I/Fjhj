@@ -3,9 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import TipPopover from "@/components/TipPopover";
-import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import Visual from "@/components/Visual";
-import { pages, services } from "@/lib/data";
+import { company, pages, services, telHref } from "@/lib/data";
 
 // Nombre de colonnes sur grand écran (3 ou 4) choisi pour éviter une
 // carte seule sur la dernière ligne (ex. 7 formations → 4 + 3).
@@ -121,9 +120,6 @@ export default async function SecteurPage(
         </div>
       </section>
 
-      {/* « Le saviez-vous ? » flotte en bas à droite de l'écran (TipPopover). */}
-      {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
-
       {/* Catalogue du secteur */}
       <section id="catalogue" className="scroll-mt-24 px-6 py-20">
         <div className="mx-auto max-w-6xl">
@@ -183,9 +179,45 @@ export default async function SecteurPage(
             ))}
           </div>
 
-          <UnlistedTrainingNote note={service.unlistedNote} />
         </div>
       </section>
+
+      {/* Bande pleine largeur, photo du domaine voilée : formation absente
+          de la liste, parcours sur mesure. */}
+      <section className="relative mb-16 overflow-hidden px-6 py-20 sm:mb-24 sm:py-28">
+        <div className="absolute inset-0">
+          <Visual src={service.image} alt={service.imageAlt || service.title} sizes="100vw" />
+          <div className="absolute inset-0 bg-surface/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-surface/70" />
+        </div>
+        <Reveal className="on-surface relative mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold text-surface-accent">{pages.sector.customTitle}</p>
+          <h2 className="mt-4 text-2xl font-bold leading-tight tracking-tight sm:text-4xl">
+            {service.unlistedNote || pages.sector.customText}
+          </h2>
+          {service.unlistedNote && (
+            <p className="mx-auto mt-4 max-w-xl text-muted">{pages.sector.customText}</p>
+          )}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href={`/contact?formation=${encodeURIComponent(service.title)}`}
+              className="rounded-lg bg-highlight px-6 py-3 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
+            >
+              Nous contacter
+            </Link>
+            <a
+              href={telHref(company.phone)}
+              className="rounded-lg border border-current/40 px-6 py-3 text-sm font-semibold transition-colors hover:border-current hover:bg-white/10"
+            >
+              {company.phone}
+            </a>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* « Le saviez-vous ? » : flotte en bas à droite, s'arrête au pied de
+          page (doit rester le dernier élément de la page). */}
+      {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
     </>
   );
 }
