@@ -481,9 +481,51 @@ export function VideoField({
             )}
           </div>
           {value && <p className="text-xs text-muted">{value}</p>}
-          {error && <p className="text-xs text-red-400">{error}</p>}
+          {error && (
+            <>
+              <p className="text-xs text-red-400">{error}</p>
+              <PingTest />
+            </>
+          )}
         </div>
       </div>
+    </div>
+  );
+}
+
+// Diagnostic affiché seulement après un échec d'envoi vidéo : vérifie
+// qu'une requête authentifiée toute simple, sans rapport avec Vercel
+// Blob, aboutit bien. Permet de savoir si le blocage est propre à
+// l'envoi vidéo ou plus général (machine, réseau).
+function PingTest() {
+  const [state, setState] = useState<"idle" | "busy" | "ok" | "error">("idle");
+  const [elapsed, setElapsed] = useState(0);
+
+  useEffect(() => {
+    if (state !== "busy") return;
+    const start = Date.now();
+    const id = setInterval(() => setElapsed(Math.floor((Date.now() - start) / 1000)), 1000);
+    return () => clearInterval(id);
+  }, [state]);
+
+  const run = async () => {
+    setState("busy");
+    setElapsed(0);
+    try {
+      const res = await fetch("/api/admin/ping", { method: "POST" });
+      setState(res.ok ? "ok" : "error");
+    } catch {
+      setState("error");
+    }
+  };
+
+  return (
+    <div className="mt-2 flex items-center gap-2">
+      <SmallButton onClick={run} disabled={state === "busy"}>
+        {state === "busy" ? `Test… (${elapsed} s)` : "Tester la connexion au serveur"}
+      </SmallButton>
+      {state === "ok" && <span className="text-xs text-emerald-400">Réponse reçue, tout va bien.</span>}
+      {state === "error" && <span className="text-xs text-red-400">Bloqué aussi, même sans vidéo.</span>}
     </div>
   );
 }
