@@ -1871,7 +1871,8 @@
       "text": "ENMA Formation, c'est d'abord une équipe à taille humaine, installée dans le Pas-de-Calais. Du premier appel jusqu'à la remise des attestations, vous avez des interlocuteurs qui vous connaissent : on construit votre parcours avec vous, on monte le dossier de financement et on reste disponibles tout au long de la formation.\n\nNos formateurs, tous habilités dans leur domaine, viennent du terrain : ils connaissent vos métiers, vos contraintes et vos équipements.",
       "heroImage": "/images/pexels-plato-terentev-3804555-5917555-1790609332883.jpg",
       "theme": {
-        "border": "#2b2459"
+        "border": "#2b2459",
+        "muted": "#aaaaaa"
       }
     },
     "contact": {
