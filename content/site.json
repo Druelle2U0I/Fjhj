@@ -1836,7 +1836,8 @@
     "tagText": "#dcfafe",
     "bandColor": "#0b0c31",
     "bandOpacity": 74,
-    "panelShadowColor": "#ffffff"
+    "panelShadowColor": "#ffffff",
+    "surfaceMuted": "#d6d6d6"
   },
   "footerImage": "/images/2048-1790071486997.webp",
   "footerCta": {
@@ -1861,7 +1862,10 @@
       "title": "Notre catalogue de formations",
       "text": "Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise ou en inter-entreprises dans toute la région Hauts-de-France. Choisissez un domaine pour découvrir le détail des formations.",
       "seoDescription": "{domaines} domaines de formation, {formations} parcours proposés par un organisme certifié Qualiopi dans les Hauts-de-France.",
-      "heroImage": "/images/management-equipe.jpg"
+      "heroImage": "/images/management-equipe.jpg",
+      "theme": {
+        "highlightBackground": "#3c337a"
+      }
     },
     "sector": {
       "whyEyebrow": "Pourquoi former vos équipes",
