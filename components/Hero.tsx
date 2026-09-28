@@ -1,21 +1,27 @@
 import Link from "next/link";
 import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
+import HeroBackgroundVideo from "@/components/HeroBackgroundVideo";
 import HeroCarousel from "@/components/HeroCarousel";
 import { company, home, pages } from "@/lib/data";
 
 export default function Hero() {
-  const hasPhoto = Boolean(home.heroBackgroundImage);
+  const hasVideo = Boolean(home.heroVideo);
+  const hasPhoto = hasVideo || Boolean(home.heroBackgroundImage);
 
   return (
     <section
       id="top"
       className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-24 sm:-mt-[94px] sm:pt-[154px]"
     >
-      {hasPhoto && (
-        <HeroBackgroundPhoto
-          src={home.heroBackgroundImage!}
-          alt={home.heroBackgroundImageAlt ?? ""}
-        />
+      {hasVideo ? (
+        <HeroBackgroundVideo src={home.heroVideo!} poster={home.heroBackgroundImage} />
+      ) : (
+        hasPhoto && (
+          <HeroBackgroundPhoto
+            src={home.heroBackgroundImage!}
+            alt={home.heroBackgroundImageAlt ?? ""}
+          />
+        )
       )}
 
       <div

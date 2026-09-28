@@ -266,6 +266,92 @@ export function ImageField({
   );
 }
 
+export function VideoField({
+  label,
+  value,
+  onChange,
+  hint,
+}: {
+  label: string;
+  value?: string;
+  onChange: (value: string | undefined) => void;
+  hint?: string;
+}) {
+  const input = useRef<HTMLInputElement>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Aperçu local de la dernière vidéo envoyée : le fichier publié n'est
+  // servi par le site qu'après le redéploiement (une à deux minutes).
+  const [preview, setPreview] = useState<{ path: string; url: string } | null>(null);
+
+  const upload = async (file: File) => {
+    setBusy(true);
+    setError(null);
+    const body = new FormData();
+    body.append("file", file);
+    const res = await fetch("/api/admin/upload", { method: "POST", body }).catch(() => null);
+    const data = res ? await res.json().catch(() => ({})) : {};
+    setBusy(false);
+    if (!res || !res.ok) {
+      setError(
+        data.error ??
+          (res?.status === 413
+            ? "Vidéo trop lourde. Compressez-la davantage (courte boucle, sans son)."
+            : "Envoi impossible. Vérifiez votre connexion et réessayez."),
+      );
+      return;
+    }
+    setPreview({ path: data.path, url: URL.createObjectURL(file) });
+    onChange(data.path);
+  };
+
+  const shown = preview && preview.path === value ? preview.url : value;
+
+  return (
+    <div>
+      <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+        {label}
+      </span>
+      {hint && <p className="mt-1 text-xs text-muted">{hint}</p>}
+      <div className="mt-2 flex items-center gap-4">
+        <div className="relative flex h-20 w-28 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-border bg-surface-2">
+          {shown ? (
+            <video src={shown} muted className="h-full w-full object-cover" />
+          ) : (
+            <span className="text-xs text-muted">Aucune</span>
+          )}
+        </div>
+        <div className="grid gap-2">
+          <input
+            ref={input}
+            type="file"
+            accept="video/mp4,video/webm"
+            className="hidden"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) upload(file);
+              e.target.value = "";
+            }}
+          />
+          <div className="flex gap-2">
+            <SmallButton onClick={() => input.current?.click()} disabled={busy}>
+              {busy ? "Envoi…" : "Choisir une vidéo"}
+            </SmallButton>
+            {value && (
+              <SmallButton tone="danger" onClick={() => onChange(undefined)}>
+                Retirer
+              </SmallButton>
+            )}
+          </div>
+          {value && <p className="text-xs text-muted">{value}</p>}
+          {error && <p className="text-xs text-red-400">{error}</p>}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function ColorField({
   label,
   value,
