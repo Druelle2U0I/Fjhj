@@ -93,7 +93,7 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
   const detailOpacity = useTransform(scrollYProgress, [0, 0.8 * zoomEnd, zoomEnd, 1], [0, 0, 1, 1]);
 
   return (
-    <section ref={wrapperRef} className="relative px-6 lg:-mt-12 lg:h-[115vh]">
+    <section ref={wrapperRef} className="relative px-6 pt-10 sm:pt-14 lg:-mt-12 lg:h-[115vh] lg:pt-0">
       <div className="mx-auto max-w-6xl lg:sticky lg:top-0 lg:flex lg:h-[88vh] lg:items-start lg:pt-24">
         <div className="relative w-full">
           <motion.div
