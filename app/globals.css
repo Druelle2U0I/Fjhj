@@ -21,9 +21,13 @@
   /* Petits textes un peu plus grands que la taille Tailwind par défaut
      (12 et 14 px) : Figtree paraît petite à ces tailles. */
   --text-xs: 0.8125rem;
-  --text-xs--line-height: 1.5;
+  --text-xs--line-height: 1.4;
   --text-sm: 0.9375rem;
-  --text-sm--line-height: 1.55;
+  --text-sm--line-height: 1.45;
+  --text-base--line-height: 1.5;
+  --text-lg--line-height: 1.5;
+  /* Interlignes resserrés sur tout le site. */
+  --leading-relaxed: 1.5;
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
@@ -542,7 +546,7 @@ h4,
    (même taille que sous le titre de l'accueil). */
 .page-intro {
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.5;
 }
 @media (min-width: 640px) {
   .page-intro {

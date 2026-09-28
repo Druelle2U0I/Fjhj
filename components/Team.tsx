@@ -53,7 +53,7 @@ export default function Team() {
               align={i % 2 === 0 ? "right" : "left"}
             >
               <p className="eyebrow text-muted">{member.role}</p>
-              <div className="mt-3">
+              <div className="mt-2">
                 <StoryTitle>{member.name.replace(/(\p{L})-(?=\p{L})/gu, "$1\u2011")}</StoryTitle>
               </div>
               {member.bio && <StoryText>{member.bio}</StoryText>}

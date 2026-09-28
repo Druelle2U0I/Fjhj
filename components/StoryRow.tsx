@@ -63,12 +63,12 @@ export function StoryTitle({ children }: { children: ReactNode }) {
 }
 
 export function StoryText({ children }: { children: ReactNode }) {
-  return <p className="mt-5 whitespace-pre-line text-[15px] leading-relaxed text-foreground/85">{children}</p>;
+  return <p className="mt-3 whitespace-pre-line text-[15px] leading-relaxed text-foreground/85">{children}</p>;
 }
 
 export function StoryLink({ href, children }: { href: string; children: ReactNode }) {
   const className =
-    "underline-link mt-6 inline-block border-b pb-0.5 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-70";
+    "underline-link mt-3 inline-block border-b pb-0.5 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-70";
   // Adresse e-mail ou téléphone : simple lien, sans navigation interne.
   if (/^(mailto|tel):/.test(href)) {
     return (
