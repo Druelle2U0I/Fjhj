@@ -1,7 +1,6 @@
 import Image from "next/image";
 import PillarsGrid from "@/components/PillarsGrid";
 import Reveal from "@/components/Reveal";
-import SplitPhotoBand from "@/components/SplitPhotoBand";
 import { company, home } from "@/lib/data";
 import type { HomeSection } from "@/lib/data";
 
@@ -22,8 +21,9 @@ export default function About({ section }: { section: HomeSection }) {
       {section.eyebrow && (
         <span className="text-sm font-semibold text-muted">{section.eyebrow}</span>
       )}
-      <h2 className="mt-3 max-w-2xl whitespace-pre-line text-4xl font-bold tracking-tight sm:text-5xl">
-        {section.title}
+      {/* Traits d'union insécables : « Hauts-de-France » ne se coupe pas. */}
+      <h2 className="mt-3 max-w-2xl whitespace-pre-line text-3xl font-bold tracking-tight sm:text-4xl">
+        {section.title.replace(/(\p{L})-(?=\p{L})/gu, "$1\u2011")}
       </h2>
       <p className="mt-5 max-w-2xl whitespace-pre-line text-muted">
         {section.text || company.about}
@@ -33,15 +33,24 @@ export default function About({ section }: { section: HomeSection }) {
 
   return (
     <div id="a-propos">
-      {hasImage ? (
-        <SplitPhotoBand image={home.aboutImage!} imageAlt={home.aboutImageAlt}>
-          {title}
-        </SplitPhotoBand>
-      ) : (
-        <section className="px-6 py-14 sm:py-24">
-          <Reveal className="mx-auto max-w-2xl text-center">{title}</Reveal>
-        </section>
-      )}
+      <section className="px-6 py-14 sm:py-24">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center lg:gap-16">
+          {hasImage && (
+            <Reveal className="relative flex aspect-[4/3] items-center justify-center rounded-sm border border-border bg-white p-10 sm:p-14">
+              <div className="relative h-full w-full">
+                <Image
+                  src={home.aboutImage!}
+                  alt={home.aboutImageAlt || company.name}
+                  fill
+                  sizes="(min-width: 1024px) 480px, 90vw"
+                  className="object-contain"
+                />
+              </div>
+            </Reveal>
+          )}
+          <Reveal delay={0.1}>{title}</Reveal>
+        </div>
+      </section>
 
       <div className="px-6 pb-14 sm:pb-24">
         <div className="mx-auto max-w-6xl">

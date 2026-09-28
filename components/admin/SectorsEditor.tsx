@@ -253,6 +253,15 @@ export default function SectorsEditor({
                     updateSector(index, { ...sector, description: v })
                   }
                 />
+                <Field
+                  label="Résumé pour l'accueil"
+                  rows={2}
+                  hint="Deux lignes maximum, affichées sur la carte du domaine en page d'accueil."
+                  value={sector.summary ?? ""}
+                  onChange={(v) =>
+                    updateSector(index, { ...sector, summary: v || undefined })
+                  }
+                />
                 <label className="flex items-center gap-3 text-sm">
                   <input
                     type="checkbox"

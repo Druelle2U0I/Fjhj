@@ -192,6 +192,37 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 />
               </Card>
 
+              <Card className="grid gap-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+                  Mise en page
+                </p>
+                <label className="flex items-center gap-3 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={content.home.showMarquee === true}
+                    onChange={(e) =>
+                      update({ ...content, home: { ...content.home, showMarquee: e.target.checked } })
+                    }
+                    className="h-4 w-4 accent-[color:var(--accent)]"
+                  />
+                  Afficher la bande défilante « Nos formations sur le terrain »
+                </label>
+                <label className="flex items-center gap-3 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={content.home.sectorsLayout === "accordion"}
+                    onChange={(e) =>
+                      update({
+                        ...content,
+                        home: { ...content.home, sectorsLayout: e.target.checked ? "accordion" : "grid" },
+                      })
+                    }
+                    className="h-4 w-4 accent-[color:var(--accent)]"
+                  />
+                  Domaines en accordéon (sinon : grille des 8 domaines)
+                </label>
+              </Card>
+
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
                   Bande défilante « Nos formations sur le terrain »

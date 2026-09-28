@@ -39,6 +39,8 @@ export type Training = {
 export type Sector = {
   title: string;
   description: string;
+  // Deux lignes rédigées pour les cartes des domaines de l'accueil.
+  summary?: string;
   why: { title: string; text: string };
   opco: boolean;
   image?: string;
@@ -224,6 +226,10 @@ export type SiteContent = {
     heroBackgroundImage?: string;
     heroBackgroundImageAlt?: string;
     heroVideo?: string;
+    // Bande défilante de photos sous le haut de page (masquée si false).
+    showMarquee?: boolean;
+    // Présentation des domaines : grille (par défaut) ou accordéon.
+    sectorsLayout?: "grid" | "accordion";
     theme?: PageColorOverride;
     aboutImage?: string;
     aboutImageAlt?: string;

@@ -1,7 +1,7 @@
 {
   "company": {
     "name": "ENMA Formation",
-    "tagline": "Vos équipes méritent le meilleur. \nNous leur donnons les moyens d'y arriver.",
+    "tagline": "La compétence se forme sur le terrain.",
     "description": "Formations sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention des risques, management, qualité : ENMA Formation couvre l'ensemble de vos besoins en formation professionnelle. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO.",
     "about": "Organisme de formation certifié Qualiopi, implanté à Wingles (Pas-de-Calais). Formations en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France : Nord, Pas-de-Calais, Aisne, Somme et Oise.",
     "email": "maxence@enma-formation.com",
@@ -72,6 +72,7 @@
     {
       "title": "Sécurité incendie & évacuation",
       "description": "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation — équipier de première intervention, guide et serre-file, exercice d'évacuation — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises et les établissements recevant du public dans le respect de leurs obligations réglementaires de prévention incendie et la construction d'une véritable culture de sécurité au sein de leurs équipes.",
+      "summary": "Manipuler un extincteur, guider une évacuation, réagir dans les premières minutes : EPI, guide et serre-file, exercices.",
       "why": {
         "title": "Une obligation réglementaire, un réflexe à installer",
         "text": "L'article R4227-39 du Code du travail impose un exercice d'évacuation tous les six mois. Au-delà du texte, c'est la répétition qui fait la différence : nos formations placent vos équipes en situation, avec le matériel que vous utilisez au quotidien."
@@ -206,6 +207,7 @@
     {
       "title": "Secours & premiers soins",
       "description": "ENMA Formation forme vos équipes aux gestes de premiers secours — SST, PSC1, gestes qui sauvent, premiers secours en santé mentale — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises de tous secteurs dans le respect de leurs obligations réglementaires de secourisme et la diffusion d'une culture du secours au sein de leurs équipes.",
+      "summary": "SST et son recyclage, PSC 1, gestes qui sauvent : savoir protéger, alerter et secourir un collègue.",
       "why": {
         "title": "Les premières minutes décident du reste",
         "text": "Le Code du travail impose la présence d'un membre du personnel formé aux premiers secours dans chaque atelier où sont effectués des travaux dangereux. Nos formations SST sont conformes au référentiel INRS et donnent lieu à un certificat national."
@@ -356,6 +358,7 @@
     {
       "title": "Habilitation électrique",
       "description": "ENMA Formation prépare vos salariés électriciens et non électriciens à l'habilitation électrique selon la norme NF C 18-510, en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises de l'industrie, du bâtiment et de la maintenance pour répondre à leurs obligations réglementaires en matière de sécurité électrique et délivrer un avis d'habilitation fiable à l'employeur.",
+      "summary": "Électriciens ou non, basse et haute tension : de H0 à BC et HC, selon la norme NF C 18-510.",
       "why": {
         "title": "L'habilitation protège le salarié comme l'employeur",
         "text": "La norme NF C 18-510 conditionne toute intervention à proximité d'une installation électrique à une habilitation délivrée par l'employeur, elle-même adossée à une formation. Nos sessions distinguent le personnel électricien du personnel non électricien, et se terminent par un avis motivé transmis à l'employeur."
@@ -701,6 +704,7 @@
     {
       "title": "CACES & habilitations",
       "description": "ENMA Formation forme vos conducteurs d'engins et de chariots à la conduite en sécurité — CACES R482, R485, R486, R489, R490, pont roulant R484, AIPR — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises du BTP, de la logistique et de l'industrie pour répondre à leurs obligations réglementaires de conduite d'engins et sécuriser durablement leurs chantiers et entrepôts.",
+      "summary": "Chariots R489, nacelles R486, engins de chantier R482, pont roulant, grue de chargement et AIPR.",
       "why": {
         "title": "L'autorisation de conduite engage l'employeur",
         "text": "L'article R4323-55 du Code du travail subordonne la conduite des équipements mobiles à une formation adéquate. Le CACES n'est pas obligatoire en soi, mais c'est le dispositif qui atteste le mieux de cette formation devant l'inspection du travail comme devant l'assurance. Nos tests se déroulent sur plateforme, avec les catégories d'engins de votre parc."
@@ -970,6 +974,7 @@
     {
       "title": "Travail en hauteur & échafaudages",
       "description": "ENMA Formation forme vos équipes au travail en hauteur, au port du harnais et à l'utilisation sécurisée des échafaudages, en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises du BTP, de l'industrie et de la maintenance pour répondre à leurs obligations réglementaires en matière de prévention des chutes de hauteur et construire une culture de sécurité durable au sein de leurs équipes.",
+      "summary": "Harnais, échafaudages de pied et roulants (R408, R457) et leur vérification, pour travailler en hauteur en sécurité.",
       "why": {
         "title": "La chute de hauteur reste la deuxième cause d'accident mortel au travail",
         "text": "L'article R4323-69 du Code du travail impose une formation adéquate à l'utilisation des équipements de protection individuelle contre les chutes. Un harnais mal ajusté ou mal ancré donne un sentiment de sécurité sans en offrir la réalité : nos formations se déroulent sur structure, avec mise en situation de suspension et de récupération."
@@ -1126,6 +1131,7 @@
     {
       "title": "Prévention des risques professionnels",
       "description": "ENMA Formation accompagne vos équipes dans la prévention des risques professionnels — gestes et postures, sécurité des entreprises extérieures sur site industriel (Niveaux 1 et 2) — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme aide les entreprises de tous secteurs à répondre à leurs obligations de prévention.",
+      "summary": "Gestes et postures, sécurité des entreprises extérieures sur site industriel (niveaux 1 et 2).",
       "why": {
         "title": "Ce qui se prévient coûte moins cher que ce qui se répare",
         "text": "Les troubles musculo-squelettiques représentent la première cause de maladie professionnelle reconnue en France. L'article L4121-1 du Code du travail fait de la prévention une obligation de l'employeur, pas une option : nos formations partent de vos postes réels, analysés sur place, plutôt que d'un catalogue de bonnes pratiques générales."
@@ -1242,6 +1248,7 @@
     {
       "title": "Management & qualité",
       "description": "ENMA Formation accompagne vos managers et vos équipes sur les compétences relationnelles, la culture sécurité et la qualité de vie au travail — gestion des conflits, posture face à l'agressivité, sécurité au quotidien, gestion du stress, prévention de l'absentéisme, premiers secours en santé mentale — en intra, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme construit des sessions courtes autour de vos situations réelles pour renforcer durablement les pratiques managériales et la culture sécurité de vos équipes.",
+      "summary": "Conflits, agressivité, stress, absentéisme, santé mentale : des outils concrets pour vos managers et vos équipes.",
       "why": {
         "title": "On devient encadrant sans y avoir été formé",
         "text": "La promotion vient récompenser une expertise technique, rarement une aptitude à conduire une équipe, et les deux ne s'apprennent pas au même endroit. Nos sessions travaillent sur des situations rapportées par les participants, avec des mises en situation plutôt qu'un exposé de modèles."
@@ -1464,6 +1471,7 @@
     {
       "title": "Photovoltaïque",
       "description": "ENMA Formation forme les professionnels du solaire aux compétences techniques du photovoltaïque — bureau d'études, chiffrage et dimensionnement, contrôle qualité par électroluminescence — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises d'installation photovoltaïque pour fiabiliser leurs projets, de l'étude technique jusqu'au contrôle qualité des modules posés.",
+      "summary": "Bureau d'études, chiffrage et dimensionnement, contrôle par électroluminescence : les métiers techniques du solaire.",
       "why": {
         "title": "La filière photovoltaïque exige une expertise technique pointue",
         "text": "Un projet mal dimensionné ou mal chiffré peut coûter des années de rentabilité, et les compétences internes des entreprises d'installation photovoltaïque ne suivent pas toujours le rythme d'un marché en forte croissance. Nos formations techniques couvrent l'ensemble de la chaîne, du dimensionnement au contrôle qualité par électroluminescence, pour sécuriser vos projets et fiabiliser votre expertise en interne plutôt que de dépendre systématiquement d'un bureau d'études externe."
@@ -1714,20 +1722,20 @@
         "id": "formations",
         "visible": true,
         "eyebrow": "Nos formations",
-        "title": "8 domaines de formation, \n42 parcours,\nUn organisme certifié Qualiopi",
+        "title": "8 domaines de formation,\nun seul interlocuteur",
         "text": "Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France."
       },
       {
         "id": "about",
         "visible": true,
         "eyebrow": "À propos",
-        "title": "Un organisme de formation certifié Qualiopi, ancré dans les Hauts-de-France",
-        "text": ""
+        "title": "Un organisme ancré dans les Hauts-de-France",
+        "text": "Implanté à Wingles (Pas-de-Calais), ENMA Formation forme les équipes des entreprises de la région, dans leurs locaux ou sur notre plateau technique."
       },
       {
         "id": "financement",
         "visible": true,
-        "eyebrow": "Qualiopi & financement",
+        "eyebrow": "Financement",
         "title": "Un financement OPCO facilité, nous montons le dossier avec vous",
         "text": ""
       },

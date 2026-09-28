@@ -6,9 +6,6 @@ import { company, home, legal, pages } from "@/lib/data";
 export default function Hero() {
   const hasVideo = Boolean(home.heroVideo);
   const hasPhoto = hasVideo || Boolean(home.heroBackgroundImage);
-  // Le slogan garde son retour à la ligne entre les deux phrases.
-  const [lead, ...rest] = company.tagline.split("\n");
-  const follow = rest.join("\n").trim();
 
   return (
     <section
@@ -33,25 +30,24 @@ export default function Hero() {
         <p className="mb-5 text-xs uppercase tracking-[0.22em] opacity-80">
           Organisme de formation · {legal.activityRegion || "Hauts-de-France"}
         </p>
-        <h1 className="max-w-3xl whitespace-pre-line text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl">
-          <span className="block font-bold">{lead.trim()}</span>
-          {follow && <span className="mt-2 block font-bold">{follow}</span>}
+        <h1 className="max-w-3xl whitespace-pre-line text-[2.6rem] font-bold leading-[1.05] tracking-tight sm:text-6xl">
+          {company.tagline}
         </h1>
 
-        <p className="font-ui mt-4 line-clamp-4 max-w-xl whitespace-pre-line text-base text-muted sm:mt-6 sm:line-clamp-none sm:text-lg">
+        <p className="mt-4 line-clamp-4 max-w-xl whitespace-pre-line text-base text-muted sm:mt-6 sm:line-clamp-none sm:text-lg">
           {company.description}
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-6">
+        <div className="mt-8 flex flex-wrap items-center gap-3">
           <Link
             href="/formations"
-            className="rounded-sm bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-transform hover:scale-105"
+            className="rounded-sm border border-accent bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
           >
             {pages.hero.primaryButton}
           </Link>
           <Link
             href="/contact"
-            className="text-sm font-semibold underline underline-offset-4 transition-colors hover:text-surface-accent"
+            className="rounded-sm border border-current/40 px-6 py-3 text-sm font-semibold transition-colors hover:border-current hover:bg-white/10"
           >
             {pages.hero.secondaryButton}
           </Link>

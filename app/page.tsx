@@ -6,6 +6,7 @@ import FormationsMarquee from "@/components/FormationsMarquee";
 import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
 import SectorAccordion from "@/components/SectorAccordion";
+import SectorGrid from "@/components/SectorGrid";
 import Faq from "@/components/Faq";
 import StatsBand from "@/components/StatsBand";
 import { services, funding, home } from "@/lib/data";
@@ -30,7 +31,11 @@ function FormationsSection({ section }: { section: HomeSection }) {
         </Reveal>
 
         <Reveal delay={0.1} className="mt-12">
-          <SectorAccordion services={services} />
+          {home.sectorsLayout === "accordion" ? (
+            <SectorAccordion services={services} />
+          ) : (
+            <SectorGrid services={services} />
+          )}
         </Reveal>
 
         <Reveal delay={0.2} className="mt-10 text-center">
@@ -154,11 +159,13 @@ export default function Home() {
   return (
     <PageThemeScope overrides={home.theme}>
       <Hero />
-      <FormationsMarquee
-        eyebrow="En images"
-        title="Nos formations sur le terrain"
-        slides={home.heroSlides}
-      />
+      {home.showMarquee && (
+        <FormationsMarquee
+          eyebrow="En images"
+          title="Nos formations sur le terrain"
+          slides={home.heroSlides}
+        />
+      )}
       {home.sections
         .filter((section) => section.visible)
         .map((section) => {

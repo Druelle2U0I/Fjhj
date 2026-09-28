@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import {
-  Geist,
-  Geist_Mono,
   Archivo,
   Space_Grotesk,
   Manrope,
@@ -14,16 +12,6 @@ import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
 import { company, legal, siteUrl, theme, themeStyle } from "@/lib/data";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -160,7 +148,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       lang="fr"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} ${dejavu.variable} ${caladea.variable} h-full antialiased`}
+      className={`${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} ${dejavu.variable} ${caladea.variable} h-full antialiased`}
       style={themeStyle(theme) as React.CSSProperties}
     >
       <head>

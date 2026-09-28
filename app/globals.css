@@ -32,8 +32,8 @@
   --color-highlight: var(--highlight);
   --color-highlight-foreground: var(--highlight-foreground);
   --font-sans: var(--font-caladea), Georgia, serif;
-  --font-ui: var(--font-dejavu), var(--font-geist-sans), sans-serif;
-  --font-mono: var(--font-geist-mono);
+  --font-ui: var(--font-dejavu), "DejaVu Sans Condensed", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-display: var(--font-archivo);
 }
 
