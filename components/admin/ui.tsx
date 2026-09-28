@@ -360,8 +360,6 @@ export function VideoField({
 }) {
   const input = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
-  const [progress, setProgress] = useState<number | null>(null);
-  const [loadedBytes, setLoadedBytes] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [elapsed, setElapsed] = useState(0);
   const cancelRef = useRef<(() => void) | null>(null);
@@ -378,26 +376,28 @@ export function VideoField({
   const upload = async (file: File) => {
     setBusy(true);
     setError(null);
-    setProgress(0);
-    setLoadedBytes(0);
     setElapsed(0);
 
-    // Sans ce garde-fou, un envoi qui ne démarre jamais (réseau qui bloque
-    // silencieusement les gros envois : proxy d'entreprise, antivirus,
-    // certains boxs 4G) tourne indéfiniment sans jamais afficher d'erreur.
-    // On réarme ce délai à chaque progression : seule une vraie panne,
-    // sans aucun octet transféré pendant 30 s, déclenche l'abandon.
+    // La progression (onUploadProgress) fait basculer la librairie sur un
+    // envoi « en flux » (fetch en streaming, duplex half) plutôt que la
+    // méthode classique XHR — une API récente et moins universellement
+    // fiable, qui peut rester bloquée en silence selon les intermédiaires
+    // réseau (identique sur Safari et Chrome, observé en production). On
+    // s'en passe pour retomber sur la méthode d'envoi la plus robuste,
+    // au prix de ne plus afficher de pourcentage précis pendant l'envoi.
     const controller = new AbortController();
     let manualCancel = false;
     cancelRef.current = () => {
       manualCancel = true;
       controller.abort();
     };
-    let stallTimer: ReturnType<typeof setTimeout> = setTimeout(() => controller.abort(), 30_000);
-    const armStallTimer = () => {
-      clearTimeout(stallTimer);
-      stallTimer = setTimeout(() => controller.abort(), 30_000);
-    };
+    // Sans limite, un envoi qui ne démarre jamais (réseau qui bloque
+    // silencieusement les gros envois) tournerait indéfiniment sans
+    // jamais afficher d'erreur. Le délai est calculé sur la taille du
+    // fichier (débit minimal supposé de 300 Ko/s) plutôt qu'une valeur
+    // fixe, pour ne pas couper un envoi réel mais lent.
+    const timeoutMs = Math.max(30_000, (file.size / (300 * 1024)) * 1000 + 15_000);
+    const stallTimer = setTimeout(() => controller.abort(), timeoutMs);
 
     try {
       // Envoi direct au stockage (Vercel Blob), en plusieurs morceaux
@@ -410,11 +410,6 @@ export function VideoField({
         handleUploadUrl: "/api/admin/video-upload",
         multipart: true,
         abortSignal: controller.signal,
-        onUploadProgress: ({ percentage, loaded }) => {
-          armStallTimer();
-          setProgress(percentage);
-          setLoadedBytes(loaded);
-        },
       });
       onChange(blob.url);
     } catch (err) {
@@ -422,7 +417,7 @@ export function VideoField({
         manualCancel
           ? "Envoi annulé."
           : controller.signal.aborted
-            ? "Envoi annulé : au-delà de 30 secondes sans aucune donnée transférée, votre connexion (Wi-Fi, proxy d'entreprise, antivirus) bloque probablement l'envoi de gros fichiers. Essayez avec un autre réseau (partage de connexion 4G par exemple) ou contactez votre service informatique."
+            ? `Envoi annulé après ${Math.round(timeoutMs / 1000)} secondes sans réponse. Réessayez, ou contactez votre service informatique si ça persiste.`
             : err instanceof Error && err.message
               ? err.message
               : "Envoi impossible. Vérifiez votre connexion et réessayez.",
@@ -431,7 +426,6 @@ export function VideoField({
       clearTimeout(stallTimer);
       cancelRef.current = null;
       setBusy(false);
-      setProgress(null);
     }
   };
 
@@ -465,9 +459,7 @@ export function VideoField({
           />
           <div className="flex gap-2">
             <SmallButton onClick={() => input.current?.click()} disabled={busy}>
-              {busy
-                ? `Envoi… ${Math.round(progress ?? 0)} % · ${(loadedBytes / 1024 / 1024).toFixed(1)} Mo · ${elapsed} s`
-                : "Choisir une vidéo"}
+              {busy ? `Envoi… ${elapsed} s` : "Choisir une vidéo"}
             </SmallButton>
             {busy && (
               <SmallButton tone="danger" onClick={() => cancelRef.current?.()}>
