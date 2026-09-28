@@ -2,7 +2,7 @@
 
 import { upload as uploadToBlob } from "@vercel/blob/client";
 import Image from "next/image";
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function Field({
   label,
@@ -362,11 +362,22 @@ export function VideoField({
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [elapsed, setElapsed] = useState(0);
+
+  // Repère visible sans outils de développeur : permet de savoir combien
+  // de temps un envoi bloqué est réellement resté figé.
+  useEffect(() => {
+    if (!busy) return;
+    const start = Date.now();
+    const id = setInterval(() => setElapsed(Math.floor((Date.now() - start) / 1000)), 1000);
+    return () => clearInterval(id);
+  }, [busy]);
 
   const upload = async (file: File) => {
     setBusy(true);
     setError(null);
     setProgress(0);
+    setElapsed(0);
 
     // Sans ce garde-fou, un envoi qui ne démarre jamais (réseau qui bloque
     // silencieusement les gros envois : proxy d'entreprise, antivirus,
@@ -439,7 +450,7 @@ export function VideoField({
           />
           <div className="flex gap-2">
             <SmallButton onClick={() => input.current?.click()} disabled={busy}>
-              {busy ? `Envoi… ${Math.round(progress ?? 0)} %` : "Choisir une vidéo"}
+              {busy ? `Envoi… ${Math.round(progress ?? 0)} % (${elapsed} s)` : "Choisir une vidéo"}
             </SmallButton>
             {value && (
               <SmallButton tone="danger" onClick={() => onChange(undefined)}>
