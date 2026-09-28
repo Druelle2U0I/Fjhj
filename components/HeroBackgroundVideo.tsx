@@ -10,9 +10,11 @@ import { useEffect, useRef, useState } from "react";
 export default function HeroBackgroundVideo({
   src,
   poster,
+  posterAlt,
 }: {
   src: string;
   poster?: string;
+  posterAlt?: string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -30,7 +32,7 @@ export default function HeroBackgroundVideo({
       {/* Image affichée tout de suite, pendant que la vidéo se charge. */}
       {poster && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+        <img src={poster} alt={posterAlt ?? ""} className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
       )}
       <video
         ref={ref}

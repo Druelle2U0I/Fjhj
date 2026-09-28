@@ -30,10 +30,18 @@ export default async function StatsBand() {
             <p className="text-3xl font-semibold text-surface-accent sm:text-4xl">
               <AnimatedStat value={stat.value} />
             </p>
-            <p className="mt-1 text-xs text-muted sm:text-sm">{stat.label}</p>
+            <p className="mt-1 text-xs text-muted sm:text-sm">
+              {stat.label}
+              {stat.source === "recommendation" && home.statsNote && <span aria-hidden="true"> *</span>}
+            </p>
           </Reveal>
         ))}
       </div>
+      {home.statsNote && stats.some((stat) => stat.source === "recommendation") && (
+        <p className="on-surface relative mx-auto mt-8 max-w-3xl px-6 text-center text-xs text-muted">
+          * {home.statsNote}
+        </p>
+      )}
     </section>
   );
 }

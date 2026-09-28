@@ -85,7 +85,7 @@ export default async function SecteurPage(
           <div className="absolute inset-0 scale-110 blur-[7px]">
             <Visual
               src={service.image}
-              alt=""
+              alt={service.imageAlt || service.title}
               sizes="100vw"
               priority
             />

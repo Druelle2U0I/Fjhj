@@ -36,7 +36,11 @@ export default function FormationsMarquee({
       )}
 
       <div className="marquee-mask relative">
-        <div className="marquee-track flex w-max gap-5 px-6">
+        <div
+          className="marquee-track flex w-max gap-5 px-6"
+          // Vitesse constante quel que soit le nombre de cartes (~6 s chacune).
+          style={{ animationDuration: `${Math.max(45, slides.length * 6)}s` }}
+        >
           {track.map((slide, i) => {
             const card = (
               <>

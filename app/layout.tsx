@@ -10,7 +10,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
-import { company, legal, siteUrl, theme, themeStyle } from "@/lib/data";
+import { company, legal, siteUrl, telHref, theme, themeStyle } from "@/lib/data";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -125,7 +125,7 @@ const organizationJsonLd = {
   logo: `${siteUrl}/brand/logo-wordmark.png`,
   image: `${siteUrl}/opengraph-image`,
   description: company.description,
-  telephone: company.phone,
+  telephone: telHref(company.phone).slice(4),
   email: company.email,
   address: {
     "@type": "PostalAddress",

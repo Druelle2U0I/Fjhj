@@ -199,13 +199,27 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 <label className="flex items-center gap-3 text-sm">
                   <input
                     type="checkbox"
-                    checked={content.home.showMarquee === true}
+                    checked={content.home.showMarquee !== false}
                     onChange={(e) =>
                       update({ ...content, home: { ...content.home, showMarquee: e.target.checked } })
                     }
                     className="h-4 w-4 accent-[color:var(--accent)]"
                   />
                   Afficher la bande défilante « Nos formations sur le terrain »
+                </label>
+                <label className="flex items-center gap-3 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={content.home.marqueeSource === "slides"}
+                    onChange={(e) =>
+                      update({
+                        ...content,
+                        home: { ...content.home, marqueeSource: e.target.checked ? "slides" : "trainings" },
+                      })
+                    }
+                    className="h-4 w-4 accent-[color:var(--accent)]"
+                  />
+                  Bande défilante : utiliser les photos choisies ci-dessous (sinon : toutes les formations, une par une)
                 </label>
                 <label className="flex items-center gap-3 text-sm">
                   <input
@@ -420,6 +434,15 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                       ...content,
                       home: { ...content.home, statsBandImageAlt: v },
                     })
+                  }
+                />
+                <Field
+                  label="Source du pourcentage de recommandation"
+                  rows={2}
+                  hint="Affichée en petit sous les chiffres, avec un astérisque sur le chiffre concerné. Précisez l'enquête et la période."
+                  value={content.home.statsNote ?? ""}
+                  onChange={(v) =>
+                    update({ ...content, home: { ...content.home, statsNote: v } })
                   }
                 />
               </Card>

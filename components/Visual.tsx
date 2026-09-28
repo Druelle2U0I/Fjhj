@@ -41,7 +41,7 @@ export default function Visual({
     >
       <Image
         src="/brand/logo-icon.png"
-        alt=""
+        alt={alt || "ENMA Formation"}
         width={160}
         height={160}
         className="w-1/3 max-w-[160px] opacity-[0.14]"

@@ -11,6 +11,7 @@ import {
   pages,
   services,
   siteUrl,
+  telHref,
   trainingInfo,
 } from "@/lib/data";
 
@@ -100,7 +101,7 @@ export default async function FormationPage(
         <div className="hero-photo-fade absolute inset-0">
           <Visual
             src={training.image ?? service.image}
-            alt=""
+            alt={training.title}
             sizes="100vw"
             priority
           />
@@ -284,7 +285,7 @@ export default async function FormationPage(
               <div className="mt-6 border-t border-border pt-5 text-sm text-muted">
                 <p>{pages.training.questionText}</p>
                 <a
-                  href={`tel:${company.phone.replace(/\s/g, "")}`}
+                  href={telHref(company.phone)}
                   className="mt-2 block font-semibold text-foreground hover:text-accent"
                 >
                   {company.phone}

@@ -228,6 +228,12 @@ export type SiteContent = {
     heroVideo?: string;
     // Bande défilante de photos sous le haut de page (masquée si false).
     showMarquee?: boolean;
+    // Source affichée sous les chiffres clés (pour le pourcentage de
+    // recommandation), précédée d'un astérisque.
+    statsNote?: string;
+    // Contenu de la bande : toutes les formations (par défaut) ou les
+    // photos choisies à la main.
+    marqueeSource?: "trainings" | "slides";
     // Présentation des domaines : grille (par défaut) ou accordéon.
     sectorsLayout?: "grid" | "accordion";
     theme?: PageColorOverride;
@@ -431,6 +437,12 @@ export const services = content.sectors.map((sector) => ({
     slug: slugify(training.title),
   })),
 }));
+
+/** Lien tel: au format international (07 69 35 55 19 → +33769355519). */
+export function telHref(phone: string): string {
+  const digits = phone.replace(/[^\d+]/g, "");
+  return `tel:${digits.startsWith("0") ? `+33${digits.slice(1)}` : digits}`;
+}
 
 // Formule imposée par l'article L6352-12 du Code du travail dès que le
 // numéro de déclaration d'activité est affiché.

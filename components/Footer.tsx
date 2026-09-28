@@ -14,6 +14,7 @@ import {
   qualiopiText,
   services,
   social,
+  telHref,
 } from "@/lib/data";
 
 function Column({
@@ -150,7 +151,7 @@ export default function Footer() {
     <footer className="on-surface relative overflow-hidden border-t border-white/10">
       {/* Une seule photo de fond, continue sur toute la hauteur du pied de page. */}
       <div className="absolute inset-0">
-        <Visual src={footerImage} alt="" sizes="100vw" />
+        <Visual src={footerImage} alt="Formation ENMA Formation sur le terrain" sizes="100vw" />
         <div className="footer-veil absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-surface/20 via-transparent to-surface/50" />
       </div>
@@ -208,7 +209,7 @@ export default function Footer() {
                 <li>{company.address}</li>
                 <li>
                   <a
-                    href={`tel:${company.phone.replace(/\s/g, "")}`}
+                    href={telHref(company.phone)}
                     className="hover:text-surface-accent"
                   >
                     {company.phone}

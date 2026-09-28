@@ -2,9 +2,9 @@
   "company": {
     "name": "ENMA Formation",
     "tagline": "La compétence se forme sur le terrain.",
-    "description": "Formations sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention des risques, management, qualité : ENMA Formation couvre l'ensemble de vos besoins en formation professionnelle. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO.",
+    "description": "Sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention, management : des formations pratiques, chez vous ou sur notre plateau technique de Wingles.",
     "about": "Organisme de formation certifié Qualiopi, implanté à Wingles (Pas-de-Calais). Formations en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France : Nord, Pas-de-Calais, Aisne, Somme et Oise.",
-    "email": "maxence@enma-formation.com",
+    "email": "contact@enma-formation.com",
     "phone": "07 69 35 55 19",
     "address": "Rue du Père Avrillon, 62410 Wingles",
     "serviceArea": "Hauts-de-France — Nord, Pas-de-Calais, Aisne, Somme et Oise"
@@ -52,20 +52,20 @@
   ],
   "pillars": [
     {
-      "title": "Expertise de terrain",
-      "text": "Nos intervenants connaissent les réalités des entreprises des Hauts-de-France et s'adaptent à chaque contexte."
+      "title": "Un plateau technique à Wingles",
+      "text": "Pour les formations qui demandent un équipement dédié, nous accueillons vos équipes sur notre site du Pas-de-Calais."
     },
     {
-      "title": "Ancrage régional",
-      "text": "Des formations sur mesure, alignées sur les réalités du marché du travail local."
+      "title": "Sur vos équipements",
+      "text": "La plupart des sessions ont lieu chez vous, sur vos machines et à vos horaires, dans les conditions réelles du poste."
     },
     {
-      "title": "Qualité Qualiopi",
-      "text": "Des formations structurées, évaluées et en amélioration continue pour garantir la qualité."
+      "title": "Une session sous 14 jours",
+      "text": "Nous garantissons l'organisation d'une formation dans les 14 jours qui suivent votre accord."
     },
     {
-      "title": "Accompagnement complet",
-      "text": "Nous gérons toute la conformité administrative et réglementaire, vous vous concentrez sur votre activité."
+      "title": "Une réponse sous 24 heures",
+      "text": "Devis, programme et montage du dossier de financement : nous revenons vers vous dès le lendemain."
     }
   ],
   "sectors": [
@@ -1717,6 +1717,7 @@
     "aboutImageAlt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
     "statsBandImage": "/images/pexels-plato-terentev-3804555-5917555-1790611883873.jpg",
     "statsBandImageAlt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
+    "statsNote": "Part des stagiaires qui recommandent ENMA Formation, d'après le questionnaire « Évaluer la session ! » rempli à la fin de chaque formation depuis 2026. Chiffre mis à jour automatiquement.",
     "sections": [
       {
         "id": "formations",

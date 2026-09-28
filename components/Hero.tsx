@@ -16,6 +16,7 @@ export default function Hero() {
         <HeroBackgroundVideo
           src={home.heroVideo!}
           poster={home.heroBackgroundImage || home.heroSlides.find((s) => s.image)?.image}
+          posterAlt={home.heroBackgroundImageAlt}
         />
       ) : (
         hasPhoto && (

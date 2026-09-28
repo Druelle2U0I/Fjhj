@@ -10,7 +10,27 @@ import SectorGrid from "@/components/SectorGrid";
 import Faq from "@/components/Faq";
 import StatsBand from "@/components/StatsBand";
 import { services, funding, home } from "@/lib/data";
-import type { HomeSection } from "@/lib/data";
+import type { HeroSlide, HomeSection } from "@/lib/data";
+
+// Bande défilante : les formations une par une (et non les domaines,
+// présentés juste en dessous), en alternant les domaines d'une carte à
+// l'autre. Photo de la formation, ou à défaut celle de son domaine.
+function trainingSlides(): HeroSlide[] {
+  const queues = services.map((service) =>
+    service.trainings.map((training) => ({
+      image: training.image || service.image || "",
+      alt: training.title,
+      title: training.title,
+      text: [training.duration, service.title].filter(Boolean).join(" · "),
+      link: `/formations/${service.slug}/${training.slug}`,
+    })),
+  );
+  const slides: HeroSlide[] = [];
+  for (let i = 0; queues.some((q) => i < q.length); i++) {
+    for (const queue of queues) if (queue[i]) slides.push(queue[i]);
+  }
+  return slides;
+}
 
 function FormationsSection({ section }: { section: HomeSection }) {
   return (
@@ -159,11 +179,11 @@ export default function Home() {
   return (
     <PageThemeScope overrides={home.theme}>
       <Hero />
-      {home.showMarquee && (
+      {home.showMarquee !== false && (
         <FormationsMarquee
           eyebrow="En images"
           title="Nos formations sur le terrain"
-          slides={home.heroSlides}
+          slides={home.marqueeSource === "slides" ? home.heroSlides : trainingSlides()}
         />
       )}
       {home.sections

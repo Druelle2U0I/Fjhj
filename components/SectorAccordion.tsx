@@ -27,7 +27,7 @@ export default function SectorAccordion({ services }: { services: Service[] }) {
             href={`/formations/${service.slug}`}
             className="group relative flex h-[420px] w-[80vw] max-w-[340px] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-lg border border-border"
           >
-            <Visual src={service.image} alt="" sizes="80vw" />
+            <Visual src={service.image} alt={service.imageAlt || service.title} sizes="80vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/5" />
             <div className="relative p-5">
               <p className="text-xl font-semibold text-white">{service.title}</p>
@@ -88,7 +88,7 @@ function DesktopAccordion({ services }: { services: Service[] }) {
           >
             <Visual
               src={service.image}
-              alt=""
+              alt={service.imageAlt || service.title}
               sizes="(min-width: 1024px) 60vw, 100vw"
               priority={i === 0}
               className="transition-transform duration-700 group-hover:scale-105"

@@ -4,27 +4,24 @@ import { pillars } from "@/lib/data";
 // Quatre pictogrammes fixes (par position, pas par texte : le contenu
 // reste modifiable depuis l'admin sans casser l'association icône/pilier).
 const ICONS = [
-  // Expertise de terrain (viseur)
-  <>
-    <circle cx="12" cy="12" r="7.5" />
-    <circle cx="12" cy="12" r="2" />
-    <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
-  </>,
-  // Ancrage régional (repère de carte)
+  // Plateau technique (repère de carte)
   <>
     <path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 1 1 13 0c0 5.3-6.5 11-6.5 11Z" />
     <circle cx="12" cy="10" r="2.3" />
   </>,
-  // Qualité Qualiopi (badge)
+  // Sur vos équipements (clé)
   <>
-    <path d="M12 3.5 15 5l3.5.5-1 3.4 1 3.4L15 13l-3 1.5-3-1.5-3.5.7 1-3.4-1-3.4L9 5Z" />
-    <path d="M9 15.5 8 20.5l4-2 4 2-1-5" />
+    <path d="M14.5 5.5a4 4 0 0 0 4.9 4.9L20 11l-9 9a2.1 2.1 0 0 1-3-3l9-9 .6.6a4 4 0 0 0-4.9-4.9l2.3 2.3-1.8 1.8Z" />
   </>,
-  // Accompagnement complet (deux personnes)
+  // Session sous 14 jours (calendrier)
   <>
-    <circle cx="8.5" cy="8" r="2.5" />
-    <circle cx="16" cy="9" r="2" />
-    <path d="M3.5 19c.6-3 2.4-4.5 5-4.5s4.4 1.5 5 4.5M14.5 19c.4-2.2 1.7-3.5 4-3.5" />
+    <rect x="3.5" y="5" width="17" height="15.5" rx="1.5" />
+    <path d="M3.5 9.5h17M8 3v4M16 3v4" />
+  </>,
+  // Réponse sous 24 heures (horloge)
+  <>
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M12 7.5V12l3 2" />
   </>,
 ];
 
