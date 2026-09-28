@@ -112,7 +112,7 @@ export default async function SecteurPage(
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <div className="border-l-4 border-surface-accent pl-6 sm:pl-8">
-              <p className="text-sm font-semibold text-surface-accent">
+              <p className="eyebrow block text-surface-accent">
                 {pages.sector.whyEyebrow}
               </p>
               <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">

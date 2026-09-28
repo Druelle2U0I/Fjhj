@@ -86,7 +86,7 @@ function NewsletterForm() {
   return (
     <div className="footer-cta mx-auto max-w-2xl px-6 pb-10 pt-12 text-center sm:pb-14 sm:pt-16">
       {footerCta.eyebrow && (
-        <p className="text-xs font-semibold text-surface-accent">
+        <p className="eyebrow block text-surface-accent">
           {footerCta.eyebrow}
         </p>
       )}
@@ -148,7 +148,7 @@ export default function Footer() {
   const mainSectors = services.slice(0, 4);
 
   return (
-    <footer className="on-surface relative overflow-hidden border-t border-white/10">
+    <footer className="on-surface relative overflow-hidden">
       {/* Une seule photo de fond, continue sur toute la hauteur du pied de page. */}
       <div className="absolute inset-0">
         <Visual src={footerImage} alt="Formation ENMA Formation sur le terrain" sizes="100vw" />

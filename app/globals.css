@@ -513,3 +513,12 @@ h4 {
   color: var(--link-color, var(--foreground));
   border-color: var(--link-color, var(--foreground));
 }
+
+/* Sur-titres (au-dessus des titres) : petites capitales espacées, comme
+   « Organisme de formation · Hauts-de-France » sur l'accueil. */
+.eyebrow {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}

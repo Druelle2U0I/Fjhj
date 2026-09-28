@@ -16,9 +16,17 @@ export default function PageThemeScope({
     return <>{children}</>;
   }
 
-  return (
-    <div style={{ display: "contents", ...pageThemeStyle(overrides) } as CSSProperties}>
-      {children}
-    </div>
-  );
+  // Fond propre à la page : il faut une vraie boîte pour le peindre
+  // (sinon le fond du site reste visible derrière un texte prévu pour ce
+  // fond). Sans fond propre, aucune boîte n'est ajoutée.
+  const style = pageThemeStyle(overrides);
+  if (overrides.background) {
+    return (
+      <div style={{ ...style, background: "var(--background)", color: "var(--foreground)" } as CSSProperties}>
+        {children}
+      </div>
+    );
+  }
+
+  return <div style={{ display: "contents", ...style } as CSSProperties}>{children}</div>;
 }

@@ -103,7 +103,7 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
             style={isDesktop ? { x: "62.5%" } : undefined}
             className="mx-auto flex w-full max-w-md flex-col items-center lg:w-[40%] lg:max-w-none"
           >
-            <p className="text-sm font-semibold text-muted">
+            <p className="eyebrow block text-muted">
               {pages.centre.mapEyebrow}
             </p>
             <div className="relative mt-4 aspect-square w-full">

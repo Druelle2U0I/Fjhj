@@ -26,7 +26,7 @@ export default function FormationsMarquee({
     <section className="on-surface overflow-hidden bg-surface pb-12 pt-4 sm:pb-16 sm:pt-6">
       {(eyebrow || title) && (
         <div className="mx-auto mb-8 max-w-6xl px-6">
-          {eyebrow && <span className="text-sm font-semibold text-muted">{eyebrow}</span>}
+          {eyebrow && <span className="eyebrow block text-muted">{eyebrow}</span>}
           {title && (
             <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
               {title}

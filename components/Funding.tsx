@@ -62,7 +62,7 @@ export default async function Funding() {
       <div className={`relative mx-auto max-w-6xl ${pages.funding.heroImage ? "on-surface" : ""}`}>
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <span className="text-sm font-semibold text-muted">
+            <span className="eyebrow block text-muted">
               {pages.funding.eyebrow}
             </span>
             <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">

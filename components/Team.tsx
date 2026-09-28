@@ -29,7 +29,7 @@ export default function Team() {
           }`}
         >
           <div>
-            <span className="text-sm font-semibold text-muted">
+            <span className="eyebrow block text-muted">
               {pages.team.eyebrow}
             </span>
             <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">

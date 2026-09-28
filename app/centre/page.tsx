@@ -40,7 +40,7 @@ export default function CentrePage() {
 
       <FranceMap>
         <Reveal>
-          <span className="text-sm font-semibold text-muted">
+          <span className="eyebrow block text-muted">
             {pages.centre.approachEyebrow}
           </span>
           <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -66,7 +66,7 @@ export default function CentrePage() {
       <section className="px-6 py-12 sm:py-12">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <span className="text-sm font-semibold text-muted">{pages.centre.accessEyebrow}</span>
+            <span className="eyebrow block text-muted">{pages.centre.accessEyebrow}</span>
             <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
               {pages.centre.accessTitle}
             </h2>
@@ -112,7 +112,7 @@ export default function CentrePage() {
 
       <section className="px-6 py-12 sm:py-12">
         <div className="mx-auto max-w-6xl">
-          <span className="text-sm font-semibold text-muted">{pages.centre.domainsEyebrow}</span>
+          <span className="eyebrow block text-muted">{pages.centre.domainsEyebrow}</span>
           <div className="mt-3">
             <RelatedCarousel
               titleStart={domainsTitle[0]}

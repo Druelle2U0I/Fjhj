@@ -24,7 +24,7 @@ export default function About({ section }: { section: HomeSection }) {
         <div className="mx-auto max-w-[780px]">
           <Reveal className="mx-auto max-w-lg text-center">
             {section.eyebrow && (
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted">{section.eyebrow}</p>
+              <p className="eyebrow text-muted">{section.eyebrow}</p>
             )}
             <h2 className="mt-3 text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-3xl">
               {section.title.replace(/(\p{L})-(?=\p{L})/gu, "$1\u2011")}

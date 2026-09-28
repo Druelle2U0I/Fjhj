@@ -66,8 +66,8 @@ export default function Contact({
         <HeroBackgroundPhoto src={pages.contact.heroImage!} alt={pages.contact.title} />
       )}
       <div className={`relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 ${hasPhoto ? "on-surface" : ""}`}>
-        <div>
-          <span className={`text-sm font-semibold ${hasPhoto ? "text-surface-accent" : "text-accent"}`}>
+        <div className="flex flex-col">
+          <span className="eyebrow block">
             {pages.contact.eyebrow}
           </span>
           <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
@@ -99,9 +99,13 @@ export default function Contact({
           </div>
 
           {/* Référent handicap (Qualiopi, indicateur 26) : encadré lisible. */}
-          <div className="mt-8 max-w-md rounded-sm border border-current/30 p-5">
+          {/* Collé en bas de la colonne : finit à la même hauteur que le formulaire. */}
+          <div className="mt-8 max-w-md rounded-sm border border-current/30 p-5 lg:mt-auto">
             <p className="font-semibold text-foreground">Accessibilité et situation de handicap</p>
-            <p className="mt-2 text-sm text-foreground/90">{accessibility.text}</p>
+            <p className="mt-2 text-sm text-foreground/90">
+              Nous adaptons la formation à chaque situation (durée, pauses, supports, accès). Prévenez-nous avant
+              l&apos;inscription.
+            </p>
             <p className="mt-3 text-sm text-foreground">
               Référent handicap : {accessibility.referent} —{" "}
               <a href={`mailto:${company.email}`} className="underline underline-offset-2 hover:text-surface-accent">
@@ -125,7 +129,7 @@ export default function Contact({
                   id="name"
                   name="name"
                   required
-                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-foreground"
+                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-[#0b0c31] outline-none transition-colors placeholder:text-[#636a77] focus:border-foreground"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -137,7 +141,7 @@ export default function Contact({
                   name="email"
                   type="email"
                   required
-                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-foreground"
+                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-[#0b0c31] outline-none transition-colors placeholder:text-[#636a77] focus:border-foreground"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -147,7 +151,7 @@ export default function Contact({
                 <input
                   id="company"
                   name="company"
-                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-foreground"
+                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-[#0b0c31] outline-none transition-colors placeholder:text-[#636a77] focus:border-foreground"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -158,7 +162,7 @@ export default function Contact({
                   id="phone"
                   name="phone"
                   type="tel"
-                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-foreground"
+                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-[#0b0c31] outline-none transition-colors placeholder:text-[#636a77] focus:border-foreground"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -170,7 +174,7 @@ export default function Contact({
                   name="training"
                   ref={trainingInput}
                   placeholder="Ex : CACES R489, SST..."
-                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-foreground"
+                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-[#0b0c31] outline-none transition-colors placeholder:text-[#636a77] focus:border-foreground"
                 />
               </div>
               <div className="sm:col-span-1">
@@ -182,7 +186,7 @@ export default function Contact({
                   name="trainees"
                   type="number"
                   min={1}
-                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-foreground"
+                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-[#0b0c31] outline-none transition-colors placeholder:text-[#636a77] focus:border-foreground"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -193,7 +197,7 @@ export default function Contact({
                   id="format"
                   name="format"
                   defaultValue="Intra-entreprise"
-                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-foreground"
+                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-[#0b0c31] outline-none transition-colors placeholder:text-[#636a77] focus:border-foreground"
                 >
                   <option>Intra-entreprise</option>
                   <option>Inter-entreprises</option>
@@ -209,7 +213,7 @@ export default function Contact({
                   name="message"
                   rows={4}
                   required
-                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-foreground outline-none transition-colors placeholder:text-muted focus:border-foreground"
+                  className="mt-1.5 w-full rounded-sm border border-foreground/25 bg-white px-3 py-2 text-sm text-[#0b0c31] outline-none transition-colors placeholder:text-[#636a77] focus:border-foreground"
                 />
               </div>
             </div>
