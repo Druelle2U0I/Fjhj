@@ -31,37 +31,64 @@ export default function FundingSteps() {
   }
 
   return (
-    <div className="mt-20">
+    // Présentation comme « À propos » sur l'accueil : le texte d'un côté,
+    // une grande carte des étapes de l'autre.
+    <div className="mt-14 grid items-center gap-8 lg:grid-cols-[1fr_1.35fr] lg:gap-14">
       <Reveal>
         {funding.stepsTitle && (
-          <h2 className="max-w-2xl font-semibold tracking-tight text-xl sm:text-2xl">
-            {funding.stepsTitle}
-          </h2>
+          <h2 className="max-w-md text-xl sm:text-2xl">{funding.stepsTitle}</h2>
         )}
         {funding.stepsText && (
-          <p className="mt-3 max-w-2xl text-muted">{funding.stepsText}</p>
+          <p className="mt-4 max-w-md text-base text-muted sm:text-lg">
+            {funding.stepsText}
+          </p>
         )}
+        {/* Sommaire des étapes, cliquable. */}
+        <ol className="mt-8 max-w-md border-t border-foreground/20">
+          {steps.map((step, i) => (
+            <li key={step.title} className="border-b border-foreground/20">
+              <button
+                type="button"
+                onClick={() => select(i)}
+                aria-current={i === active}
+                className={`flex w-full items-baseline gap-4 py-3 text-left transition-colors ${
+                  i === active
+                    ? "text-foreground"
+                    : "text-muted hover:text-foreground"
+                }`}
+              >
+                <span className="font-heading text-sm">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span
+                  className={`text-base ${i === active ? "font-semibold" : ""}`}
+                >
+                  {step.title}
+                </span>
+              </button>
+            </li>
+          ))}
+        </ol>
       </Reveal>
 
-      <Reveal delay={0.1} className="mt-10">
+      <Reveal delay={0.1}>
         <div
-          className="dyn-card relative overflow-hidden rounded-xl border border-border bg-surface p-6 sm:p-10"
+          className="dyn-card on-surface relative flex min-h-[26rem] flex-col justify-between overflow-hidden rounded-2xl bg-surface p-7 sm:min-h-[30rem] sm:p-10"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          {/* Grand numéro en filigrane, purement décoratif. */}
+          {/* Grand numéro de l'étape, en partie coupé par le bord de la carte. */}
           <span
             aria-hidden="true"
-            className="pointer-events-none absolute -right-4 -top-10 select-none text-[10rem] font-bold leading-none text-accent/[0.06] sm:text-[13rem]"
+            className="font-heading pointer-events-none absolute -right-6 -top-12 select-none text-[11rem] leading-none text-surface-accent/15 sm:-top-16 sm:text-[15rem]"
           >
             {String(active + 1).padStart(2, "0")}
           </span>
 
-          {/* Contenu de l'étape active : toutes les étapes restent dans le
-              DOM (empilées dans la même cellule de grille) pour rester
-              lisibles sans JavaScript et par les moteurs de recherche ;
-              seule l'opacité/position change pour le fondu. */}
-          <div className="relative grid">
+          {/* Toutes les étapes restent dans le DOM (empilées dans la même
+              cellule) pour rester lisibles sans JavaScript ; seule
+              l'opacité change pour le fondu. */}
+          <div className="relative mt-16 grid sm:mt-24">
             {steps.map((step, i) => (
               <div
                 key={step.title}
@@ -72,20 +99,19 @@ export default function FundingSteps() {
                     : "pointer-events-none -translate-y-2 opacity-0"
                 }`}
               >
-                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+                <p className="eyebrow block text-surface-accent">
                   Étape {i + 1} sur {n}
                 </p>
-                <h3 className="mt-2 text-2xl font-semibold tracking-tight sm:text-3xl">
-                  {step.title}
-                </h3>
-                <p className="mt-3 max-w-xl text-muted">{step.text}</p>
+                <h3 className="mt-3 text-2xl sm:text-3xl">{step.title}</h3>
+                <p className="mt-4 max-w-xl text-base text-muted sm:text-lg">
+                  {step.text}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* Curseur : un vrai slider, glissable à la souris, au doigt ou
-              au clavier (flèches). */}
-          <div className="relative mt-10 sm:mt-12">
+          {/* Curseur : glissable à la souris, au doigt ou au clavier. */}
+          <div className="relative mt-10">
             <input
               type="range"
               min={0}
@@ -96,23 +122,12 @@ export default function FundingSteps() {
               aria-label="Étape du processus de financement"
               aria-valuetext={steps[active].title}
               className="funding-slider w-full"
-              style={{ "--funding-slider-progress": `${progress}%` } as React.CSSProperties}
+              style={
+                {
+                  "--funding-slider-progress": `${progress}%`,
+                } as React.CSSProperties
+              }
             />
-            <div className="mt-3 flex justify-between">
-              {steps.map((step, i) => (
-                <button
-                  key={step.title}
-                  type="button"
-                  onClick={() => select(i)}
-                  aria-current={i === active}
-                  className={`text-xs font-medium transition-colors ${
-                    i === active ? "text-foreground" : "text-muted hover:text-foreground"
-                  } ${i === 0 ? "text-left" : i === n - 1 ? "text-right" : "hidden sm:block"}`}
-                >
-                  {step.title}
-                </button>
-              ))}
-            </div>
           </div>
         </div>
       </Reveal>

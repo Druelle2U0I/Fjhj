@@ -3,25 +3,47 @@
 import { THEME_DEFAULTS, type PageColorOverride, type Theme } from "@/lib/data";
 import { OptionalColorField } from "./ui";
 
-const FIELDS: { key: keyof PageColorOverride; label: string }[] = [
-  { key: "eyebrowColor", label: "Haut de page — sur-titre (ex. « CONTACT »)" },
-  { key: "titleColor", label: "Haut de page — titre" },
-  { key: "introColor", label: "Haut de page — texte sous le titre" },
-  { key: "background", label: "Fond de la page" },
-  { key: "surface", label: "Fond des cartes" },
-  { key: "surface2", label: "Fond secondaire (encadrés dans les cartes)" },
-  { key: "foreground", label: "Texte principal — sur fond clair" },
-  { key: "muted", label: "Texte secondaire — sur fond clair" },
-  { key: "surfaceForeground", label: "Texte principal — sur fond sombre (photos, fondus, cartes)" },
-  { key: "surfaceMuted", label: "Texte secondaire — sur fond sombre (photos, fondus, cartes)" },
-  { key: "border", label: "Bordures" },
-  { key: "accent", label: "Couleur d'accent (boutons, liens)" },
-  { key: "accentForeground", label: "Texte sur l'accent" },
-  { key: "linkColor", label: "Liens soulignés (« Voir toutes nos formations », « Le centre »…)" },
-  { key: "surfaceAccent", label: "Détails sur fond sombre (photos, cartes)" },
-  { key: "cardVeil", label: "Fondu sur les photos de formation" },
-  { key: "highlightBackground", label: "Fond des encarts mis en avant" },
-  { key: "highlightForeground", label: "Texte des encarts mis en avant" },
+// Réglages regroupés par zone de la page, avec des exemples concrets pour
+// savoir ce que chaque couleur change.
+const GROUPS: { title: string; fields: { key: keyof PageColorOverride; label: string }[] }[] = [
+  {
+    title: "Haut de page (sur la photo)",
+    fields: [
+      { key: "eyebrowColor", label: "Petit texte au-dessus du titre (ex. « CONTACT »)" },
+      { key: "titleColor", label: "Grand titre" },
+      { key: "introColor", label: "Texte sous le titre" },
+    ],
+  },
+  {
+    title: "Fond clair de la page (crème)",
+    fields: [
+      { key: "background", label: "Couleur du fond" },
+      { key: "foreground", label: "Titres et textes principaux" },
+      { key: "muted", label: "Textes secondaires (paragraphes, légendes)" },
+      { key: "linkColor", label: "Liens soulignés (« Voir toutes nos formations », « Le centre »…)" },
+      { key: "border", label: "Traits de séparation et contours" },
+    ],
+  },
+  {
+    title: "Bandes et cartes foncées (bleu)",
+    fields: [
+      { key: "surface", label: "Couleur des bandes et cartes foncées" },
+      { key: "surface2", label: "Encadrés à l'intérieur des cartes foncées" },
+      { key: "surfaceForeground", label: "Titres et textes principaux sur le foncé" },
+      { key: "surfaceMuted", label: "Textes secondaires sur le foncé" },
+      { key: "surfaceAccent", label: "Petits détails colorés sur le foncé (« Étape 1 sur 4 », chiffres…)" },
+      { key: "cardVeil", label: "Assombrissement des photos de formation" },
+    ],
+  },
+  {
+    title: "Boutons et encarts",
+    fields: [
+      { key: "accent", label: "Fond des boutons principaux (« Demander un devis »…)" },
+      { key: "accentForeground", label: "Texte des boutons principaux" },
+      { key: "highlightBackground", label: "Fond des boutons et encarts clairs (« Itinéraire »…)" },
+      { key: "highlightForeground", label: "Texte des boutons et encarts clairs" },
+    ],
+  },
 ];
 
 // Couleurs propres à une seule page, par-dessus le thème global du site
@@ -57,18 +79,25 @@ export default function PageColorsEditor({
           (réglées dans Design).
         </p>
       </div>
-      {FIELDS.map(({ key, label }) => (
-        <OptionalColorField
-          key={key}
-          label={label}
-          value={current[key]}
-          fallback={
-            siteTheme[key] ??
-            (THEME_DEFAULTS as unknown as Record<string, string>)[key] ??
-            (key === "eyebrowColor" || key === "titleColor" || key === "introColor" ? siteTheme.foreground : "#000000")
-          }
-          onChange={(next) => set(key, next)}
-        />
+      {GROUPS.map((group) => (
+        <div key={group.title} className="grid gap-3 rounded-xl border border-border p-4">
+          <p className="text-sm font-semibold">{group.title}</p>
+          {group.fields.map(({ key, label }) => (
+            <OptionalColorField
+              key={key}
+              label={label}
+              value={current[key]}
+              fallback={
+                siteTheme[key] ??
+                (THEME_DEFAULTS as unknown as Record<string, string>)[key] ??
+                (key === "eyebrowColor" || key === "titleColor" || key === "introColor"
+                  ? siteTheme.foreground
+                  : "#000000")
+              }
+              onChange={(next) => set(key, next)}
+            />
+          ))}
+        </div>
       ))}
     </div>
   );
