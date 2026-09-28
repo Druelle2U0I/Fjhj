@@ -1914,7 +1914,8 @@
         "accent": "#1f1a4d",
         "eyebrowColor": "#fffbb9",
         "titleColor": "#f8fadb",
-        "introColor": "#fbffda"
+        "introColor": "#fbffda",
+        "surfaceForeground": "#fffbb9"
       }
     },
     "team": {
