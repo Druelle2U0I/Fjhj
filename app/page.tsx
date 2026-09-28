@@ -34,7 +34,7 @@ function trainingSlides(): HeroSlide[] {
 }
 
 // Domaines en rangée de grandes cartes portrait (titre à gauche, flèches,
-// cartes qui défilent), puis le lien vers le catalogue complet. La bande
+// cartes qui défilent) avec le lien vers le catalogue sous le titre. La bande
 // des chiffres clés (photo pleine largeur) suit juste après.
 function FormationsSection({ section }: { section: HomeSection }) {
   return (
@@ -52,7 +52,15 @@ function FormationsSection({ section }: { section: HomeSection }) {
         ) : (
           <Reveal>
             <CardRail
-              title={section.eyebrow || section.title}
+              title={`${services.length} secteurs\nde formation`}
+              action={
+                <Link
+                  href="/formations"
+                  className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105"
+                >
+                  Voir toutes nos formations <span aria-hidden="true">→</span>
+                </Link>
+              }
               cards={services.map((service) => ({
                 title: service.title,
                 href: `/formations/${service.slug}`,
@@ -65,14 +73,6 @@ function FormationsSection({ section }: { section: HomeSection }) {
           </Reveal>
         )}
 
-        <Reveal className="text-center">
-          <Link
-            href="/formations"
-            className="inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
-          >
-            Voir toutes nos formations
-          </Link>
-        </Reveal>
       </div>
     </section>
   );

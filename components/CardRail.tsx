@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import Link from "next/link";
 import Visual from "@/components/Visual";
 
@@ -19,7 +19,16 @@ export type RailCard = {
 // Rangée de grandes cartes portrait : titre de la rangée à gauche avec des
 // flèches, cartes à droite qui défilent horizontalement (au doigt, à la
 // molette ou avec les flèches). Titre de chaque carte en capitales en haut.
-export default function CardRail({ title, cards }: { title: string; cards: RailCard[] }) {
+export default function CardRail({
+  title,
+  cards,
+  action,
+}: {
+  title: string;
+  cards: RailCard[];
+  // Élément affiché sous le titre (ex. bouton vers le catalogue).
+  action?: ReactNode;
+}) {
   const rail = useRef<HTMLUListElement>(null);
 
   const scroll = (direction: number) => {
@@ -34,11 +43,14 @@ export default function CardRail({ title, cards }: { title: string; cards: RailC
     "flex h-9 w-9 items-center justify-center rounded-md text-lg text-foreground transition-colors hover:bg-foreground hover:text-background";
 
   return (
-    <div className="grid gap-6 md:grid-cols-[12rem_1fr] md:gap-8">
-      <div className="flex items-end justify-between gap-4 md:block">
-        <h2 className="whitespace-pre-line text-2xl font-bold uppercase leading-[1.05] tracking-tight sm:text-3xl">
-          {title}
-        </h2>
+    <div className="grid gap-6 md:grid-cols-[14rem_1fr] md:gap-8">
+      <div className="flex flex-wrap items-end justify-between gap-4 md:block">
+        <div>
+          <h2 className="whitespace-pre-line text-2xl font-bold uppercase leading-[1.05] tracking-tight sm:text-3xl">
+            {title}
+          </h2>
+          {action && <div className="mt-5">{action}</div>}
+        </div>
         <div className="flex gap-1 md:mt-8">
           <button type="button" aria-label="Précédent" onClick={() => scroll(-1)} className={arrow}>
             ←
