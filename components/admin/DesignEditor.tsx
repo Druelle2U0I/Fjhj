@@ -4,6 +4,7 @@ import { THEME_DEFAULTS, type HeadingFont, type HomeSection, type Theme } from "
 import { Card, ColorField, Field, SmallButton } from "./ui";
 
 const FONTS: { id: HeadingFont; label: string; note: string }[] = [
+  { id: "archivo-expanded", label: "Archivo Expanded", note: "Large, esprit affiche, pour les titres (texte courant en Figtree)" },
   { id: "figtree", label: "Figtree", note: "Géométrique et moderne, titres comme texte" },
   { id: "dejavu", label: "DejaVu Sans Condensed", note: "Condensée et technique, avec texte courant en Caladea" },
   { id: "archivo", label: "Archivo", note: "Grotesque nette et affirmée" },

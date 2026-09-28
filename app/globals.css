@@ -68,10 +68,13 @@ html {
 h1,
 h2,
 h3,
-h4 {
+h4,
+.font-heading {
   font-family: var(--heading-font), var(--font-ui);
-  font-weight: 700;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  font-stretch: var(--heading-stretch, 100%);
+  /* Espacement des lettres resserré (police des titres élargie). */
+  letter-spacing: -0.02em;
 }
 
 /* Dynamic card: lift, glow border, soft accent shadow on hover/focus */

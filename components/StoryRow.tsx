@@ -89,7 +89,7 @@ export function StoryLink({ href, children }: { href: string; children: ReactNod
 export function StoryFact({ title, children }: { title: string; children: ReactNode }) {
   return (
     <div className="mt-8 max-w-[17rem] border-t border-foreground/70 pt-3 [.text-right_&]:ml-auto">
-      <p className="text-base font-bold uppercase leading-snug tracking-tight">{title}</p>
+      <p className="font-heading text-base uppercase leading-snug">{title}</p>
       <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">{children}</p>
     </div>
   );

@@ -79,6 +79,7 @@ export type FaqItem = {
 };
 
 export const HEADING_FONTS = {
+  "archivo-expanded": "var(--font-archivo)",
   figtree: "var(--font-figtree)",
   dejavu: "var(--font-dejavu)",
   archivo: "var(--font-archivo)",
@@ -432,6 +433,7 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--accent": t.accent,
     "--accent-foreground": t.accentForeground,
     "--heading-font": HEADING_FONTS[t.headingFont] ?? HEADING_FONTS.archivo,
+    "--heading-stretch": t.headingFont === "archivo-expanded" ? "125%" : "100%",
     "--tag-bg": v.tagBackground,
     "--tag-text": v.tagText,
     "--panel-shadow": v.panelShadowColor,

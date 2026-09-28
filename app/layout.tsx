@@ -14,12 +14,13 @@ import SiteChrome from "@/components/SiteChrome";
 import { company, legal, siteUrl, telHref, theme, themeStyle } from "@/lib/data";
 import "./globals.css";
 
+// Archivo en police variable avec l'axe de largeur : sert aussi aux
+// titres en version élargie (« Archivo Expanded »).
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  axes: ["wdth"],
   display: "swap",
-  preload: false,
 });
 
 const grotesk = Space_Grotesk({

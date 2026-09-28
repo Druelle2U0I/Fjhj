@@ -82,7 +82,7 @@ export default function CardRail({
                 </>
               )}
               <div className="relative p-4">
-                <p className={`text-lg font-semibold uppercase leading-tight ${photo ? "text-white" : "text-[#0b0c31]"}`}>
+                <p className={`font-heading text-lg uppercase leading-tight ${photo ? "text-white" : "text-[#0b0c31]"}`}>
                   {card.title}
                 </p>
                 {card.subtitle && (
