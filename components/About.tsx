@@ -40,6 +40,7 @@ export default function About({ section }: { section: HomeSection }) {
               imageAlt={home.aboutImageAlt || company.name}
               imageBg="#090329"
               side="left"
+              align="right"
             >
               <StoryTitle>{pages.centre.approachTitle}</StoryTitle>
               {approach && <StoryText>{approach}</StoryText>}
