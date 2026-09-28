@@ -25,7 +25,7 @@
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
     "accessDelay": "Garantie d'organisation rapide de formation sous 14 jours.",
-    "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (part de stagiaires qui nous recommandent, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
+    "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (taux de satisfaction des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras",
     "qualiopiLogo": "/images/action-formations-qualiopi-1790260002712.png",
@@ -45,9 +45,8 @@
       "label": "domaines de formation"
     },
     {
-      "value": "81 %",
-      "label": "de nos apprenants nous recommandent",
-      "source": "recommendation"
+      "value": "À venir",
+      "label": "taux de satisfaction"
     }
   ],
   "pillars": [
@@ -1650,7 +1649,7 @@
   "home": {
     "heroSlides": [
       {
-        "image": "/images/5-1790612448250.jpg",
+        "image": "/images/6-1790067937290.jpg",
         "alt": "Engins de chantier sur un site industriel",
         "title": "CACES, engins de chantier, travail en hauteur",
         "text": "Formations pratiques, sur site ou sur plateau technique",
@@ -1664,42 +1663,42 @@
         "link": "/formations/caces-habilitations/caces-r489-conduite-de-chariots-elevateurs"
       },
       {
-        "image": "/images/7-1790612490412.jpg",
+        "image": "/images/3-1790110354277.jpg",
         "alt": "Chantier à proximité de réseaux enterrés",
-        "title": "Prévention des risques professionnels",
-        "text": "Gestes et postures ",
-        "link": "/formations/prevention-des-risques-professionnels/gestes-et-postures"
+        "title": "Intervention à proximité des réseaux",
+        "text": "AIPR, pour travailler sans provoquer l'accident",
+        "link": "/formations/caces-habilitations/aipr-intervention-a-proximite-des-reseaux"
       },
       {
-        "image": "/images/capture-d-ecran-2026-09-28-a-14-46-44-1790612276828.png",
+        "image": "/images/1-1790110367959.jpg",
         "alt": "Engins de chantier sur une route",
         "title": "Sécurité sur chantier",
         "text": "Prévention des risques et travail en hauteur",
         "link": "/formations/travail-en-hauteur-echafaudages"
       },
       {
-        "image": "/images/4-1790612295436.jpg",
+        "image": "/images/9-1790074290755.jpg",
         "alt": "Technicien casqué fixant un panneau solaire sur une toiture",
         "title": "Photovoltaïque",
         "text": "Chiffrage et dimensionnement",
         "link": "/formations/photovoltaique/chiffrage-et-dimensionnement"
       },
       {
-        "image": "/images/2-copie-2-1790611790193.jpg",
+        "image": "/images/2-1790110393319.jpg",
         "alt": "Équipe réunie autour d'une table de travail, mains posées les unes sur les autres",
         "title": "Management & qualité",
         "text": "Gestion des conflits",
         "link": "/formations/management-qualite/gestion-des-conflits"
       },
       {
-        "image": "/images/4-1790612591776.jpg",
+        "image": "/images/4-1790110514323.jpg",
         "alt": "Massage cardiaque pratiqué sur un mannequin de secourisme",
         "title": "Secours & premiers soins",
         "text": "Sauveteur Secouriste du travail",
         "link": "/formations/secours-premiers-soins/sauveteur-secouriste-du-travail"
       },
       {
-        "image": "/images/6-1790612609992.jpg",
+        "image": "/images/n1-1790111052703.jpg",
         "alt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
         "title": "Prévention des risques professionnels",
         "text": "Sécurité des salariés des entreprises extérieures - N1",
@@ -1707,7 +1706,7 @@
       }
     ],
     "aboutImageAlt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
-    "statsBandImage": "/images/pexels-plato-terentev-3804555-5917555-1790611883873.jpg",
+    "statsBandImage": "/images/1-1790207322881.jpg",
     "statsBandImageAlt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
     "sections": [
       {
@@ -1779,7 +1778,7 @@
         "answer": "Qualiopi est la certification qualité nationale des organismes de formation, délivrée par des certificateurs accrédités par le COFRAC sur la base d'un référentiel fixé par l'État. Elle atteste du sérieux de nos processus pédagogiques et administratifs, et c'est elle qui rend nos formations éligibles aux financements OPCO."
       }
     ],
-    "heroBackgroundImage": "",
+    "heroBackgroundImage": "/images/capture-d-ecran-2026-09-28-a-18-19-12-1790612816322.png",
     "heroBackgroundImageAlt": "",
     "aboutImage": "/images/enma-logo-jpg-1790597170463.jpg",
     "heroVideo": "https://he61u75bwwrjpmk6.public.blob.vercel-storage.com/vrai%20video-14qRz792XOPqazc2FCvwwOZSUwPX4R.mp4"
@@ -1909,12 +1908,5 @@
     "instagram": "",
     "youtube": "",
     "tiktok": ""
-  },
-  "recommendation": {
-    "driveId": "b!XQbitKSa2UaRfVKI8xKmSPZa2QFX95xJpy0LvY0j5h1ZQuJTYEE4TqFwl-lTqvG9",
-    "itemId": "01KAVFK7PRY32ZUBXHHJEKB5RJZKC6GSUI",
-    "sheet": "Feuil1",
-    "cell": "C3:D3",
-    "file": "Documentation Formation/Excel et Forms/Excel/Évaluer la session !.xlsx"
   }
 }
