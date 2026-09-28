@@ -17,37 +17,32 @@ const HOVER_DELAY = 150;
 export default function SectorAccordion({ services }: { services: Service[] }) {
   return (
     <>
-      {/* Mobile/tablette : les bandes verticales de l'accordéon deviennent
-          illisibles une fois aplaties à l'horizontale (pas de titre visible).
-          Une simple liste, toujours entièrement lisible, la remplace. */}
-      <div className="grid gap-3 lg:hidden">
+      {/* Téléphone : carrousel de grandes cartes photo à faire glisser,
+          dans l'esprit de l'accordéon (photo, titre, texte, bouton). La
+          carte suivante dépasse pour inviter à faire défiler. */}
+      <div className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 [scroll-padding-inline:1.5rem] [scrollbar-width:none] md:hidden [&::-webkit-scrollbar]:hidden">
         {services.map((service) => (
           <Link
             key={service.slug}
             href={`/formations/${service.slug}`}
-            className="dyn-card group flex items-center gap-4 overflow-hidden rounded-xl border border-border bg-surface p-3"
+            className="group relative flex h-[420px] w-[80vw] max-w-[340px] shrink-0 snap-start flex-col justify-end overflow-hidden rounded-lg border border-border"
           >
-            <div className="dyn-photo-wrap relative h-20 w-20 shrink-0 overflow-hidden rounded-lg">
-              <Visual
-                src={service.image}
-                alt=""
-                sizes="80px"
-                className="dyn-photo"
-              />
+            <Visual src={service.image} alt="" sizes="80vw" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/5" />
+            <div className="relative p-5">
+              <p className="text-xl font-semibold text-white">{service.title}</p>
+              <p className="mt-2 line-clamp-3 text-sm text-white/80">{service.description}</p>
+              <span className="mt-4 inline-flex rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground">
+                Voir les formations
+              </span>
             </div>
-            <div className="min-w-0 flex-1">
-              <p className="font-semibold">{service.title}</p>
-              <p className="mt-1 line-clamp-2 text-sm text-muted">{service.description}</p>
-            </div>
-            <span aria-hidden="true" className="shrink-0 text-muted transition-colors group-hover:text-surface-accent">
-              →
-            </span>
           </Link>
         ))}
       </div>
 
-      {/* Bureau : accordéon interactif, une bande active à la fois. */}
-      <div className="hidden lg:flex lg:h-[460px] lg:flex-row lg:gap-3">
+      {/* Tablette et ordinateur : accordéon interactif, une bande active à
+          la fois. */}
+      <div className="hidden md:flex md:h-[420px] md:flex-row md:gap-2 lg:h-[460px] lg:gap-3">
         <DesktopAccordion services={services} />
       </div>
     </>
