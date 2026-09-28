@@ -82,7 +82,9 @@ function MapScene({
     target: wrapperRef,
     // Sur téléphone aussi, la carte reste fixée à l'écran pendant qu'on fait
     // défiler : le zoom se voit en entier au lieu de passer en un éclair.
-    offset: ["start start", "end end"],
+    // Grand écran : pas de carte épinglée (elle laissait un grand vide) ;
+    // le zoom suit simplement le passage de la carte à l'écran.
+    offset: isDesktop ? ["start 0.85", "end 0.6"] : ["start start", "end end"],
   });
 
   // Zoom : l'essentiel du défilement, puis un temps d'arrêt sur la région.
@@ -140,9 +142,9 @@ function MapScene({
     <>
       <section
         ref={wrapperRef}
-        className="relative h-[190vh] px-6 lg:-mt-12 lg:h-[112vh]"
+        className="relative h-[190vh] px-6 lg:h-auto lg:pt-12 lg:pb-10"
       >
-        <div className="sticky top-0 mx-auto flex h-[100svh] max-w-6xl items-center pt-20 lg:h-[86vh] lg:items-start lg:pt-24">
+        <div className="sticky top-0 mx-auto flex h-[100svh] max-w-6xl items-center pt-20 lg:static lg:h-auto lg:items-start lg:pt-0">
           <div className="relative w-full">
             <motion.div
               // Sur grand écran, la carte reste dans la moitié droite (40 % de
