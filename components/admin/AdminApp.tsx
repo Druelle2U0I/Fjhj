@@ -188,6 +188,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 <PageColorsEditor
                   siteTheme={content.theme}
                   value={content.home.theme}
+                  showHeroButton
                   onChange={(next) => update({ ...content, home: { ...content.home, theme: next } })}
                 />
               </Card>

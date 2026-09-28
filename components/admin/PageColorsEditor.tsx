@@ -5,11 +5,17 @@ import { OptionalColorField } from "./ui";
 
 // Réglages regroupés par zone de la page, avec des exemples concrets pour
 // savoir ce que chaque couleur change.
-const GROUPS: { title: string; fields: { key: keyof PageColorOverride; label: string }[] }[] = [
+const GROUPS: {
+  title: string;
+  fields: { key: keyof PageColorOverride; label: string }[];
+}[] = [
   {
     title: "Haut de page (sur la photo)",
     fields: [
-      { key: "eyebrowColor", label: "Petit texte au-dessus du titre (ex. « CONTACT »)" },
+      {
+        key: "eyebrowColor",
+        label: "Petit texte au-dessus du titre (ex. « CONTACT »)",
+      },
       { key: "titleColor", label: "Grand titre" },
       { key: "introColor", label: "Texte sous le titre" },
     ],
@@ -20,7 +26,11 @@ const GROUPS: { title: string; fields: { key: keyof PageColorOverride; label: st
       { key: "background", label: "Couleur du fond" },
       { key: "foreground", label: "Titres et textes principaux" },
       { key: "muted", label: "Textes secondaires (paragraphes, légendes)" },
-      { key: "linkColor", label: "Liens soulignés (« Voir toutes nos formations », « Le centre »…)" },
+      {
+        key: "linkColor",
+        label:
+          "Liens soulignés (« Voir toutes nos formations », « Le centre »…)",
+      },
       { key: "border", label: "Traits de séparation et contours" },
     ],
   },
@@ -29,19 +39,43 @@ const GROUPS: { title: string; fields: { key: keyof PageColorOverride; label: st
     fields: [
       { key: "surface", label: "Couleur des bandes et cartes foncées" },
       { key: "surface2", label: "Encadrés à l'intérieur des cartes foncées" },
-      { key: "surfaceForeground", label: "Titres et textes principaux sur le foncé" },
+      {
+        key: "surfaceForeground",
+        label: "Titres et textes principaux sur le foncé",
+      },
       { key: "surfaceMuted", label: "Textes secondaires sur le foncé" },
-      { key: "surfaceAccent", label: "Petits détails colorés sur le foncé (« Étape 1 sur 4 », chiffres…)" },
+      {
+        key: "surfaceAccent",
+        label:
+          "Petits détails colorés sur le foncé (« Étape 1 sur 4 », chiffres…)",
+      },
       { key: "cardVeil", label: "Assombrissement des photos de formation" },
     ],
   },
   {
     title: "Boutons et encarts",
     fields: [
-      { key: "accent", label: "Fond des boutons principaux (« Demander un devis »…)" },
+      {
+        key: "heroButtonBackground",
+        label: "Accueil — fond du bouton « Découvrir nos formations »",
+      },
+      {
+        key: "heroButtonForeground",
+        label: "Accueil — texte du bouton « Découvrir nos formations »",
+      },
+      {
+        key: "accent",
+        label: "Fond des boutons principaux (« Demander un devis »…)",
+      },
       { key: "accentForeground", label: "Texte des boutons principaux" },
-      { key: "highlightBackground", label: "Fond des boutons et encarts clairs (« Itinéraire »…)" },
-      { key: "highlightForeground", label: "Texte des boutons et encarts clairs" },
+      {
+        key: "highlightBackground",
+        label: "Fond des boutons et encarts clairs (« Itinéraire »…)",
+      },
+      {
+        key: "highlightForeground",
+        label: "Texte des boutons et encarts clairs",
+      },
     ],
   },
 ];
@@ -54,7 +88,10 @@ export default function PageColorsEditor({
   value,
   onChange,
   className = "",
+  showHeroButton = false,
 }: {
+  // Réglages du bouton « Découvrir nos formations » : accueil seulement.
+  showHeroButton?: boolean;
   siteTheme: Theme;
   value?: PageColorOverride;
   onChange: (value: PageColorOverride | undefined) => void;
@@ -75,28 +112,37 @@ export default function PageColorsEditor({
           Couleurs de cette page
         </p>
         <p className="mt-1 text-xs text-muted">
-          Ne s&apos;applique qu&apos;ici. Laissez telles quelles pour garder les couleurs du site
-          (réglées dans Design).
+          Ne s&apos;applique qu&apos;ici. Laissez telles quelles pour garder les
+          couleurs du site (réglées dans Design).
         </p>
       </div>
       {GROUPS.map((group) => (
-        <div key={group.title} className="grid gap-3 rounded-xl border border-border p-4">
+        <div
+          key={group.title}
+          className="grid gap-3 rounded-xl border border-border p-4"
+        >
           <p className="text-sm font-semibold">{group.title}</p>
-          {group.fields.map(({ key, label }) => (
-            <OptionalColorField
-              key={key}
-              label={label}
-              value={current[key]}
-              fallback={
-                siteTheme[key] ??
-                (THEME_DEFAULTS as unknown as Record<string, string>)[key] ??
-                (key === "eyebrowColor" || key === "titleColor" || key === "introColor"
-                  ? siteTheme.foreground
-                  : "#000000")
-              }
-              onChange={(next) => set(key, next)}
-            />
-          ))}
+          {group.fields
+            .filter(
+              ({ key }) => showHeroButton || !key.startsWith("heroButton"),
+            )
+            .map(({ key, label }) => (
+              <OptionalColorField
+                key={key}
+                label={label}
+                value={current[key]}
+                fallback={
+                  siteTheme[key] ??
+                  (THEME_DEFAULTS as unknown as Record<string, string>)[key] ??
+                  (key === "eyebrowColor" ||
+                  key === "titleColor" ||
+                  key === "introColor"
+                    ? siteTheme.foreground
+                    : "#000000")
+                }
+                onChange={(next) => set(key, next)}
+              />
+            ))}
         </div>
       ))}
     </div>

@@ -42,7 +42,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <Link
             href="/formations"
-            className="rounded-sm border border-accent bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            className="rounded-sm border border-[var(--hero-btn-bg,var(--accent))] bg-[var(--hero-btn-bg,var(--accent))] px-6 py-3 text-sm font-semibold text-[var(--hero-btn-fg,var(--accent-foreground))] transition-transform hover:scale-105"
           >
             {pages.hero.primaryButton}
           </Link>

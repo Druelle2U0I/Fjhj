@@ -132,6 +132,9 @@ export type Theme = {
   linkColor?: string;
   // Couleurs du haut de page (sur-titre, titre, texte d'introduction),
   // réglables page par page.
+  // Bouton principal du haut de l'accueil (« Découvrir nos formations »).
+  heroButtonBackground?: string;
+  heroButtonForeground?: string;
   eyebrowColor?: string;
   titleColor?: string;
   introColor?: string;
@@ -158,6 +161,8 @@ export type PageColorOverride = Partial<
     | "highlightForeground"
     | "cardVeil"
     | "linkColor"
+    | "heroButtonBackground"
+    | "heroButtonForeground"
     | "eyebrowColor"
     | "titleColor"
     | "introColor"
@@ -450,6 +455,8 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--link-color": v.linkColor,
     // Seulement si réglées : sinon le haut de page garde ses couleurs.
     ...(t.eyebrowColor ? { "--eyebrow-color": t.eyebrowColor } : {}),
+    ...(t.heroButtonBackground ? { "--hero-btn-bg": t.heroButtonBackground } : {}),
+    ...(t.heroButtonForeground ? { "--hero-btn-fg": t.heroButtonForeground } : {}),
     ...(t.titleColor ? { "--title-color": t.titleColor } : {}),
     ...(t.introColor ? { "--intro-color": t.introColor } : {}),
   };
