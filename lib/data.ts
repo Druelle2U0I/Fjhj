@@ -134,6 +134,8 @@ export type PageColorOverride = Partial<
     | "surface2"
     | "foreground"
     | "muted"
+    | "surfaceForeground"
+    | "surfaceMuted"
     | "border"
     | "accent"
     | "accentForeground"

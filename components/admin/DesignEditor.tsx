@@ -16,7 +16,7 @@ const COLORS: { key: keyof Theme; label: string; hint: string }[] = [
   { key: "surface", label: "Fond des cartes", hint: "Fond de la plupart des cartes et bandes ; peut être clair ou sombre, indépendamment du fond du site." },
   { key: "surface2", label: "Fond secondaire", hint: "Encadrés à l'intérieur des cartes." },
   { key: "foreground", label: "Texte principal", hint: "Texte sur le fond du site (hors cartes). Doit bien ressortir sur « Fond du site » ci-dessus." },
-  { key: "muted", label: "Texte secondaire", hint: "Paragraphes et légendes sur le fond du site (hors cartes)." },
+  { key: "muted", label: "Texte secondaire — sur fond clair", hint: "Paragraphes et légendes posés directement sur le fond du site. Pour le texte sur les photos, fondus et cartes sombres, voir « Texte secondaire sur fond sombre » plus bas." },
   { key: "border", label: "Bordures", hint: "Contour des cartes et séparateurs." },
   {
     key: "accent",
@@ -48,13 +48,13 @@ const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
   { key: "bandColor", label: "Bandes de section — couleur", hint: "Fond des bandes qui séparent les sections (en bas des fiches formation)." },
   {
     key: "surfaceForeground",
-    label: "Texte sur les cartes",
+    label: "Texte principal — sur fond sombre",
     hint: "Texte principal sur les cartes et bandes sombres (fond des cartes ci-dessus), indépendant du texte principal de la page.",
   },
   {
     key: "surfaceMuted",
-    label: "Texte secondaire sur les cartes",
-    hint: "Paragraphes et légendes sur les cartes et bandes sombres.",
+    label: "Texte secondaire — sur fond sombre",
+    hint: "Paragraphes et légendes sur les photos, fondus foncés, cartes et bandes sombres.",
   },
   {
     key: "surfaceAccent",

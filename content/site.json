@@ -1784,7 +1784,7 @@
     "aboutImage": "/images/enma-logo-jpg-1790597170463.jpg",
     "heroVideo": "https://he61u75bwwrjpmk6.public.blob.vercel-storage.com/vrai%20video-14qRz792XOPqazc2FCvwwOZSUwPX4R.mp4",
     "theme": {
-      "muted": "#c0c0c0"
+      "surfaceMuted": "#c0c0c0"
     }
   },
   "theme": {
