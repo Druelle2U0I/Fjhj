@@ -33,54 +33,28 @@ export default function FundingSteps() {
   return (
     // Présentation comme « À propos » sur l'accueil : le texte d'un côté,
     // une grande carte des étapes de l'autre.
-    <div className="mt-14 grid items-center gap-8 lg:grid-cols-[1fr_1.35fr] lg:gap-14">
-      <Reveal>
+    <div className="mt-14 grid items-center gap-8 sm:grid-cols-[1fr_1.25fr] sm:gap-10 lg:gap-14">
+      <Reveal className="text-center sm:text-left">
         {funding.stepsTitle && (
-          <h2 className="max-w-md text-xl sm:text-2xl">{funding.stepsTitle}</h2>
+          <h2 className="mx-auto max-w-md text-xl sm:mx-0 sm:text-2xl">{funding.stepsTitle}</h2>
         )}
         {funding.stepsText && (
-          <p className="mt-4 max-w-md text-base text-muted sm:text-lg">
+          <p className="mx-auto mt-4 max-w-md text-base text-muted sm:mx-0 sm:text-lg">
             {funding.stepsText}
           </p>
         )}
-        {/* Sommaire des étapes, cliquable. */}
-        <ol className="mt-8 max-w-md border-t border-foreground/20">
-          {steps.map((step, i) => (
-            <li key={step.title} className="border-b border-foreground/20">
-              <button
-                type="button"
-                onClick={() => select(i)}
-                aria-current={i === active}
-                className={`flex w-full items-baseline gap-4 py-3 text-left transition-colors ${
-                  i === active
-                    ? "text-foreground"
-                    : "text-muted hover:text-foreground"
-                }`}
-              >
-                <span className="font-heading text-sm">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span
-                  className={`text-base ${i === active ? "font-semibold" : ""}`}
-                >
-                  {step.title}
-                </span>
-              </button>
-            </li>
-          ))}
-        </ol>
       </Reveal>
 
       <Reveal delay={0.1}>
         <div
-          className="dyn-card on-surface relative flex min-h-[26rem] flex-col justify-between overflow-hidden rounded-2xl bg-surface p-7 sm:min-h-[30rem] sm:p-10"
+          className="dyn-card on-surface relative flex aspect-[10/13] flex-col justify-between overflow-hidden rounded-2xl bg-surface p-7 sm:p-10"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
           {/* Grand numéro de l'étape, en partie coupé par le bord de la carte. */}
           <span
             aria-hidden="true"
-            className="font-heading pointer-events-none absolute -right-6 -top-12 select-none text-[11rem] leading-none text-surface-accent/15 sm:-top-16 sm:text-[15rem]"
+            className="font-heading pointer-events-none absolute -right-6 -top-12 select-none text-[13rem] leading-none text-surface-accent/15 sm:-top-20 sm:text-[20rem]"
           >
             {String(active + 1).padStart(2, "0")}
           </span>
@@ -88,7 +62,7 @@ export default function FundingSteps() {
           {/* Toutes les étapes restent dans le DOM (empilées dans la même
               cellule) pour rester lisibles sans JavaScript ; seule
               l'opacité change pour le fondu. */}
-          <div className="relative mt-16 grid sm:mt-24">
+          <div className="relative mt-auto grid">
             {steps.map((step, i) => (
               <div
                 key={step.title}

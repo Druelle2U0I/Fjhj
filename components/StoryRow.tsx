@@ -46,7 +46,7 @@ export default function StoryRow({
       </Reveal>
       <Reveal
         delay={0.1}
-        className={`mx-auto w-full max-w-sm px-2 ${align === "center" ? "text-center" : align === "right" ? "text-right" : ""} ${right ? "sm:order-1" : ""}`}
+        className={`mx-auto w-full max-w-sm px-2 text-center ${align === "center" ? "" : align === "right" ? "sm:text-right" : "sm:text-left"} ${right ? "sm:order-1" : ""}`}
       >
         {children}
       </Reveal>
@@ -88,7 +88,7 @@ export function StoryLink({ href, children }: { href: string; children: ReactNod
 // explication (remplace les listes à coches).
 export function StoryFact({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="mt-8 max-w-[17rem] border-t border-foreground/70 pt-3 [.text-right_&]:ml-auto">
+    <div className="mt-8 max-w-[17rem] border-t border-foreground/70 pt-3 mx-auto sm:[.sm\:text-right_&]:mr-0 sm:[.sm\:text-right_&]:ml-auto sm:[.sm\:text-left_&]:ml-0">
       <p className="font-heading text-base uppercase leading-snug">{title}</p>
       <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">{children}</p>
     </div>
