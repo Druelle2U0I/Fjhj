@@ -184,7 +184,7 @@ export default async function SecteurPage(
 
       {/* Bande pleine largeur, photo du domaine voilée : formation absente
           de la liste, parcours sur mesure. */}
-      <section className="relative mb-16 overflow-hidden px-6 py-20 sm:mb-24 sm:py-28">
+      <section className="relative mb-16 overflow-hidden px-6 py-12 sm:mb-24 sm:py-16">
         <div className="absolute inset-0">
           <Visual src={service.image} alt={service.imageAlt || service.title} sizes="100vw" />
           <div className="absolute inset-0 bg-surface/80" />
@@ -192,13 +192,13 @@ export default async function SecteurPage(
         </div>
         <Reveal className="on-surface relative mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold text-surface-accent">{pages.sector.customTitle}</p>
-          <h2 className="mt-4 text-2xl font-bold leading-tight tracking-tight sm:text-4xl">
+          <h2 className="mt-3 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
             {service.unlistedNote || pages.sector.customText}
           </h2>
           {service.unlistedNote && (
-            <p className="mx-auto mt-4 max-w-xl text-muted">{pages.sector.customText}</p>
+            <p className="mx-auto mt-3 max-w-xl text-muted">{pages.sector.customText}</p>
           )}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               href={`/contact?formation=${encodeURIComponent(service.title)}`}
               className="rounded-lg bg-highlight px-6 py-3 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
