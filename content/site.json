@@ -1933,7 +1933,8 @@
         "accentForeground": "#fefcdd",
         "highlightBackground": "#160f3f",
         "highlightForeground": "#fefcdd",
-        "background": "#160f3f"
+        "background": "#160f3f",
+        "foreground": "#fbffda"
       }
     },
     "funding": {
