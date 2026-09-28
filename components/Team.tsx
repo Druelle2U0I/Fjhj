@@ -9,7 +9,7 @@ export default function Team() {
 
   return (
     <div id="equipe">
-      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pb-12 pt-[112px] sm:-mt-[94px] sm:pt-[148px]">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pb-12 pt-[112px] sm:-mt-[98px] sm:pt-[148px]">
         {pages.team.heroImage && (
           <HeroBackgroundPhoto src={pages.team.heroImage} alt={pages.team.title} />
         )}

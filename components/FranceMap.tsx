@@ -78,7 +78,7 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
   });
 
   // Zoom : première moitié du défilement (tout le parcours sur mobile).
-  const zoomEnd = isDesktop ? 0.7 : 1;
+  const zoomEnd = isDesktop ? 0.85 : 1;
   const vx = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[0], HDF_VIEW[0]]);
   const vy = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[1], HDF_VIEW[1]]);
   const vw = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[2], HDF_VIEW[2]]);
@@ -93,8 +93,8 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
   const detailOpacity = useTransform(scrollYProgress, [0, 0.8 * zoomEnd, zoomEnd, 1], [0, 0, 1, 1]);
 
   return (
-    <section ref={wrapperRef} className="relative px-6 lg:-mt-12 lg:h-[160vh]">
-      <div className="mx-auto max-w-6xl lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-start lg:pt-24">
+    <section ref={wrapperRef} className="relative px-6 lg:-mt-12 lg:h-[115vh]">
+      <div className="mx-auto max-w-6xl lg:sticky lg:top-0 lg:flex lg:h-[88vh] lg:items-start lg:pt-24">
         <div className="relative w-full">
           <motion.div
             // Sur grand écran, la carte reste dans la moitié droite (40 % de

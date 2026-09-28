@@ -55,7 +55,7 @@ export default async function Funding() {
 
   return (
     <>
-    <section id="financement" className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[148px] sm:pb-14">
+    <section id="financement" className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[98px] sm:pt-[148px] sm:pb-14">
       {pages.funding.heroImage && (
         <HeroBackgroundPhoto src={pages.funding.heroImage} alt={pages.funding.title} />
       )}

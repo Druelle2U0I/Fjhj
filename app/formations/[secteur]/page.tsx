@@ -47,7 +47,7 @@ export default async function SecteurPage(
           voilée surtout à gauche, côté texte. Remonte sous
           l'en-tête (sticky, semi-transparent) pour que la photo continue
           jusqu'en haut de la page au lieu de s'arrêter net dessous. */}
-      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-16">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[98px] sm:pt-[154px] sm:pb-16">
         {/* Sur grand écran, la photo occupe la moitié droite (format proche
             de celui des cartes, donc peu recadrée) et se fond vers la gauche,
             côté texte ; sur mobile, elle reste en fond plein cadre. */}

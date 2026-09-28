@@ -60,10 +60,10 @@ export default function CentrePage() {
         </Reveal>
       </FranceMap>
 
-      {/* Accès au centre : l'adresse et les boutons à gauche, les
+      {/* Accès au centre, en bande foncée pleine largeur (couleurs inversées) : l'adresse et les boutons à gauche, les
           informations pratiques (« Libellé : texte », une par paragraphe
           dans l'admin) en lignes séparées par des filets à droite. */}
-      <section className="px-6 py-12 sm:py-12">
+      <section className="on-surface bg-surface px-6 py-12 sm:py-16">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <span className="eyebrow block text-muted">{pages.centre.accessEyebrow}</span>
@@ -82,13 +82,13 @@ export default function CentrePage() {
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+                className="rounded-lg bg-highlight px-6 py-3 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
               >
                 Itinéraire
               </a>
               <a
                 href={telHref(company.phone)}
-                className="rounded-lg border border-foreground/30 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-foreground"
+                className="rounded-lg border border-current/40 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-current"
               >
                 {company.phone}
               </a>

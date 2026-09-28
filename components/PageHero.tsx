@@ -28,7 +28,7 @@ export default function PageHero({
   const hasRightColumn = Boolean(image || aside);
 
   return (
-    <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[148px] sm:pb-14">
+    <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[98px] sm:pt-[148px] sm:pb-14">
       {backgroundImage && <HeroBackgroundPhoto src={backgroundImage} alt={imageAlt ?? title} />}
       <div
         className={`relative mx-auto max-w-6xl ${backgroundImage ? "on-surface" : ""} ${

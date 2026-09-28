@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative -mt-[86px] overflow-hidden bg-surface px-6 pt-[126px] pb-24 sm:-mt-[94px] sm:pt-[154px]"
+      className="relative -mt-[86px] overflow-hidden bg-surface px-6 pt-[126px] pb-24 sm:-mt-[98px] sm:pt-[154px]"
     >
       {hasVideo ? (
         <HeroBackgroundVideo
@@ -31,7 +31,7 @@ export default function Hero() {
         <p className="mb-5 text-xs uppercase tracking-[0.22em] opacity-80">
           Organisme de formation · {legal.activityRegion || "Hauts-de-France"}
         </p>
-        <h1 className="max-w-3xl whitespace-pre-line text-[2.6rem] font-bold leading-[1.05] tracking-tight sm:text-6xl">
+        <h1 className="max-w-3xl whitespace-pre-line text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
           {company.tagline}
         </h1>
 
