@@ -268,6 +268,8 @@ export type RecommendationSource = {
   itemId: string;
   sheet?: string;
   column?: string;
+  // Note minimale (sur 10) pour compter un répondant comme recommandant.
+  minScore?: number;
 };
 
 export type Pages = {

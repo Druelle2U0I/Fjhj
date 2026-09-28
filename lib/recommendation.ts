@@ -32,9 +32,10 @@ async function graphToken(): Promise<string | null> {
   return data.access_token ?? null;
 }
 
-// Moyenne des notes de la colonne dont l'en-tête contient le libellé
-// configuré (« Recommandation » par défaut).
-export async function fetchRecommendation(): Promise<{ average: number; count: number } | null> {
+// Part des répondants qui recommandent (note ≥ seuil, 9 par défaut, comme
+// les « promoteurs » du Net Promoter Score), lue dans la colonne dont
+// l'en-tête correspond au libellé configuré (« Recommandation »).
+export async function fetchRecommendation(): Promise<{ percent: number; count: number } | null> {
   const source = recommendationSource;
   if (!source?.driveId || !source.itemId) return null;
   try {
@@ -75,16 +76,16 @@ export async function fetchRecommendation(): Promise<{ average: number; count: n
       notes.push(n);
     }
     if (notes.length === 0) return null;
-    const average = notes.reduce((a, b) => a + b, 0) / notes.length;
-    return { average, count: notes.length };
+    const threshold = source.minScore ?? 9;
+    const recommending = notes.filter((n) => n >= threshold).length;
+    return { percent: (recommending / notes.length) * 100, count: notes.length };
   } catch {
     return null;
   }
 }
 
-function format(average: number) {
-  const rounded = Math.round(average * 10) / 10;
-  return `${rounded.toLocaleString("fr-FR")}/10`;
+function format(percent: number) {
+  return `${Math.round(percent)} %`;
 }
 
 // Chiffres clés, avec la note de recommandation à jour quand elle est
@@ -93,5 +94,5 @@ export async function getStats(): Promise<Stat[]> {
   if (!stats.some((s) => s.source === "recommendation")) return stats;
   const reco = await fetchRecommendation();
   if (!reco) return stats;
-  return stats.map((s) => (s.source === "recommendation" ? { ...s, value: format(reco.average) } : s));
+  return stats.map((s) => (s.source === "recommendation" ? { ...s, value: format(reco.percent) } : s));
 }
