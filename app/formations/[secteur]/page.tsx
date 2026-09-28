@@ -184,7 +184,7 @@ export default async function SecteurPage(
 
       {/* Bande pleine largeur, photo du domaine voilée : formation absente
           de la liste, parcours sur mesure. */}
-      <section className="relative mb-16 overflow-hidden px-6 py-12 sm:mb-24 sm:py-16">
+      <section className="relative overflow-hidden px-6 py-12 sm:py-16">
         <div className="absolute inset-0">
           <Visual src={service.image} alt={service.imageAlt || service.title} sizes="100vw" />
           <div className="absolute inset-0 bg-surface/80" />
