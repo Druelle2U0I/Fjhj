@@ -376,6 +376,42 @@ h4 {
   }
 }
 
+/* Bande défilante en continu (components/FormationsMarquee.tsx) */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee-scroll 45s linear infinite;
+}
+
+.marquee-mask:hover .marquee-track,
+.marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  overflow-x: hidden;
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+  .marquee-mask {
+    overflow-x: auto;
+  }
+}
+
 /* Barre de chargement entre deux pages (components/NavProgress.tsx) */
 .nav-progress {
   opacity: 0;

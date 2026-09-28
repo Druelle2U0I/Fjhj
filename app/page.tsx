@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import FormationsMarquee from "@/components/FormationsMarquee";
 import Reveal from "@/components/Reveal";
 import SectorAccordion from "@/components/SectorAccordion";
 import Faq from "@/components/Faq";
@@ -152,6 +153,11 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <FormationsMarquee
+        eyebrow="En images"
+        title="Nos formations sur le terrain"
+        slides={home.heroSlides}
+      />
       {home.sections
         .filter((section) => section.visible)
         .map((section) => {
