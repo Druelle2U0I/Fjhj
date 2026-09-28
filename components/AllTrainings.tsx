@@ -13,6 +13,7 @@ export type TrainingItem = {
   format: string;
   image?: string;
   imageAlt?: string;
+  imagePosition?: string;
   sectorTitle: string;
   sectorSlug: string;
 };
@@ -122,8 +123,9 @@ export default function AllTrainings({
                   alt={item.imageAlt ?? item.title}
                   sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
                   className="transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:duration-[6000ms]"
+                  objectPosition={item.imagePosition}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+                <div className="card-veil absolute inset-0" />
                 <span className="domain-tag absolute left-4 top-4 rounded-full border border-white/15 px-3 py-1 text-xs font-semibold backdrop-blur">
                   {item.sectorTitle}
                 </span>

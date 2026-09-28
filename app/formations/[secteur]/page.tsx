@@ -227,8 +227,9 @@ export default async function SecteurPage(
                       alt={training.imageAlt ?? training.title}
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
                       className="transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:duration-[6000ms]"
+                      objectPosition={training.imagePosition}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+                    <div className="card-veil absolute inset-0" />
                     <div className="relative p-6">
                       {training.category && (
                         <span className="domain-tag mb-3 inline-flex w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">

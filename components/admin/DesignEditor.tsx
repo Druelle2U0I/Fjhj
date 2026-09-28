@@ -36,7 +36,8 @@ type ColorKey =
   | "bandColor"
   | "surfaceForeground"
   | "surfaceMuted"
-  | "surfaceAccent";
+  | "surfaceAccent"
+  | "cardVeil";
 type RangeKey = "sectorVeil" | "footerVeil" | "bandOpacity";
 
 const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
@@ -58,6 +59,11 @@ const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
     key: "surfaceAccent",
     label: "Accent sur les cartes",
     hint: "Coches, chiffres clés et badges posés sur une carte ou une photo (toujours sombres) : indépendant de la couleur d'accent, qui peut elle-même devenir sombre.",
+  },
+  {
+    key: "cardVeil",
+    label: "Fondu sur les photos de formation",
+    hint: "Dégradé posé sur les photos des cartes de formation (catalogue, toutes les formations, accueil) pour que le texte reste lisible. Noir par défaut.",
   },
 ];
 

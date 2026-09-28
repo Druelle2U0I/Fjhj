@@ -6,6 +6,7 @@ import {
   Card,
   Field,
   ImageField,
+  ImagePositionField,
   ListEditor,
   ParagraphsField,
   SmallButton,
@@ -94,11 +95,19 @@ function TrainingEditor({
         onChange={(v) => onChange({ ...training, image: v })}
       />
       {training.image && (
-        <Field
-          label="Description de la photo (accessibilité)"
-          value={training.imageAlt ?? ""}
-          onChange={(v) => set("imageAlt", v || undefined)}
-        />
+        <>
+          <Field
+            label="Description de la photo (accessibilité)"
+            value={training.imageAlt ?? ""}
+            onChange={(v) => set("imageAlt", v || undefined)}
+          />
+          <ImagePositionField
+            label="Cadrage de la photo"
+            src={training.image}
+            value={training.imagePosition}
+            onChange={(v) => set("imagePosition", v)}
+          />
+        </>
       )}
 
       <ParagraphsField
@@ -262,13 +271,22 @@ export default function SectorsEditor({
                   onChange={(v) => updateSector(index, { ...sector, image: v })}
                 />
                 {sector.image && (
-                  <Field
-                    label="Description de la photo (accessibilité)"
-                    value={sector.imageAlt ?? ""}
-                    onChange={(v) =>
-                      updateSector(index, { ...sector, imageAlt: v || undefined })
-                    }
-                  />
+                  <>
+                    <Field
+                      label="Description de la photo (accessibilité)"
+                      value={sector.imageAlt ?? ""}
+                      onChange={(v) =>
+                        updateSector(index, { ...sector, imageAlt: v || undefined })
+                      }
+                    />
+                    <ImagePositionField
+                      label="Cadrage de la photo"
+                      hint="S'applique aux cartes du domaine (catalogue, accueil). Choisissez la partie de la photo à garder visible, utile si la photo est plus large que haute."
+                      src={sector.image}
+                      value={sector.imagePosition}
+                      onChange={(v) => updateSector(index, { ...sector, imagePosition: v })}
+                    />
+                  </>
                 )}
 
                 <div className="grid gap-4 rounded-2xl border border-border bg-surface-2 p-4">

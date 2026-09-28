@@ -267,6 +267,86 @@ export function ImageField({
   );
 }
 
+const CROP_PRESETS: { value: string; label: string }[] = [
+  { value: "left top", label: "Haut gauche" },
+  { value: "center top", label: "Haut centre" },
+  { value: "right top", label: "Haut droite" },
+  { value: "left center", label: "Centre gauche" },
+  { value: "center center", label: "Centre" },
+  { value: "right center", label: "Centre droite" },
+  { value: "left bottom", label: "Bas gauche" },
+  { value: "center bottom", label: "Bas centre" },
+  { value: "right bottom", label: "Bas droite" },
+];
+
+// Choix du cadrage d'une photo dans un cadre plus étroit qu'elle (ex. une
+// photo au format paysage affichée dans une carte au format portrait) :
+// neuf cadrages prédéfinis, avec aperçu au format réellement utilisé sur
+// le site. N'affiche rien tant qu'aucune photo n'est choisie.
+export function ImagePositionField({
+  label,
+  src,
+  value,
+  onChange,
+  aspect = "aspect-[4/5]",
+  hint,
+}: {
+  label: string;
+  src?: string;
+  value?: string;
+  onChange: (value: string | undefined) => void;
+  aspect?: string;
+  hint?: string;
+}) {
+  if (!src) return null;
+  const current = value || "center center";
+
+  return (
+    <div>
+      <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+        {label}
+      </span>
+      <p className="mt-1 text-xs text-muted">
+        {hint ?? "Choisissez la partie de la photo à garder visible dans la carte, utile si la photo est plus large que haute."}
+      </p>
+      <div className="mt-2 flex items-start gap-4">
+        <div
+          className={`relative w-28 shrink-0 overflow-hidden rounded-xl border border-border bg-surface-2 ${aspect}`}
+        >
+          {/* Aperçu brut (pas next/image) : suffisant pour un cadrage, et
+              évite les soucis de domaine/optimisation sur un aperçu local. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={src}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: current }}
+          />
+        </div>
+        <div className="grid grid-cols-3 gap-1.5">
+          {CROP_PRESETS.map((preset) => (
+            <button
+              key={preset.value}
+              type="button"
+              title={preset.label}
+              aria-label={preset.label}
+              aria-pressed={current === preset.value}
+              onClick={() => onChange(preset.value === "center center" ? undefined : preset.value)}
+              className={`flex h-8 w-8 items-center justify-center rounded-lg border transition-colors ${
+                current === preset.value
+                  ? "border-accent bg-accent text-accent-foreground"
+                  : "border-border bg-surface-2 text-muted hover:border-surface-accent"
+              }`}
+            >
+              <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-current" />
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function VideoField({
   label,
   value,
@@ -291,13 +371,9 @@ export function VideoField({
       // Envoi direct au stockage (Vercel Blob), sans passer par une
       // fonction serverless : les vidéos sont trop lourdes pour la
       // limite de 4,5 Mo imposée aux requêtes par l'hébergeur.
-      // En plusieurs morceaux envoyés en parallèle (et automatiquement
-      // ré-essayés en cas d'échec d'un morceau) : plus fiable pour les
-      // gros fichiers et les connexions lentes qu'un envoi en un bloc.
       const blob = await uploadToBlob(file.name, file, {
         access: "public",
         handleUploadUrl: "/api/admin/video-upload",
-        multipart: true,
         onUploadProgress: ({ percentage }) => setProgress(percentage),
       });
       onChange(blob.url);

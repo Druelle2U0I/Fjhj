@@ -4,9 +4,16 @@ import { THEME_DEFAULTS, type PageColorOverride, type Theme } from "@/lib/data";
 import { OptionalColorField } from "./ui";
 
 const FIELDS: { key: keyof PageColorOverride; label: string }[] = [
+  { key: "background", label: "Fond de la page" },
+  { key: "surface", label: "Fond des cartes" },
+  { key: "surface2", label: "Fond secondaire (encadrés dans les cartes)" },
+  { key: "foreground", label: "Texte principal" },
+  { key: "muted", label: "Texte secondaire" },
+  { key: "border", label: "Bordures" },
   { key: "accent", label: "Couleur d'accent (boutons, liens)" },
   { key: "accentForeground", label: "Texte sur l'accent" },
   { key: "surfaceAccent", label: "Détails sur fond sombre (photos, cartes)" },
+  { key: "cardVeil", label: "Fondu sur les photos de formation" },
   { key: "highlightBackground", label: "Fond des encarts mis en avant" },
   { key: "highlightForeground", label: "Texte des encarts mis en avant" },
 ];
