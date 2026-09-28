@@ -157,9 +157,10 @@ export default async function SecteurPage(
         </div>
       </section>
 
-      {/* Parcours les plus demandés / Le saviez-vous, côte à côte : une
-          carte pour le premier, un gros « ? » qui ouvre une bulle pour le second. */}
-      {(service.popularPaths?.length || service.tip) && (
+      {/* « Le saviez-vous ? » flotte en bas à droite de l'écran (TipPopover). */}
+      {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
+
+      {(service.popularPaths?.length || service.unlistedNote) && (
         <section className="px-6 pt-20">
           <div className="mx-auto max-w-6xl">
             {service.unlistedNote && (
@@ -168,7 +169,7 @@ export default async function SecteurPage(
               </Reveal>
             )}
 
-            <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div className="max-w-2xl">
               {service.popularPaths && service.popularPaths.length > 0 && (
                 <Reveal className="rounded-lg border border-border bg-surface p-6 sm:p-7">
                   <h3 className="font-semibold">Parcours les plus demandés</h3>
@@ -179,17 +180,6 @@ export default async function SecteurPage(
                       </li>
                     ))}
                   </ul>
-                </Reveal>
-              )}
-
-              {service.tip && (
-                <Reveal
-                  delay={0.05}
-                  className={`${
-                    service.popularPaths && service.popularPaths.length > 0 ? "" : "lg:col-span-2"
-                  }`}
-                >
-                  <TipPopover title={service.tip.title} text={service.tip.text} />
                 </Reveal>
               )}
             </div>
