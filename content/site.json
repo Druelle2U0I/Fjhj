@@ -1818,8 +1818,7 @@
     "heroVideo": "https://he61u75bwwrjpmk6.public.blob.vercel-storage.com/vrai%20video-14qRz792XOPqazc2FCvwwOZSUwPX4R.mp4",
     "theme": {
       "surfaceMuted": "#c0c0c0",
-      "accentForeground": "#fefcdd",
-      "highlightForeground": "#0b062a"
+      "highlightBackground": "#0b062a"
     }
   },
   "theme": {
@@ -1831,7 +1830,7 @@
     "border": "#3c337a",
     "accent": "#160f3f",
     "accentForeground": "#fffbb9",
-    "headingFont": "figtree",
+    "headingFont": "dejavu",
     "sectorVeil": 56,
     "footerVeil": 84,
     "tagBackground": "#371a94",
