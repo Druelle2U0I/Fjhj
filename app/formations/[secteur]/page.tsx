@@ -124,16 +124,6 @@ export default async function SecteurPage(
       {/* « Le saviez-vous ? » flotte en bas à droite de l'écran (TipPopover). */}
       {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
 
-      {service.unlistedNote && (
-        <section className="px-6 pt-20">
-          <div className="mx-auto max-w-6xl">
-            <Reveal>
-              <p className="text-sm text-muted">{service.unlistedNote}</p>
-            </Reveal>
-          </div>
-        </section>
-      )}
-
       {/* Catalogue du secteur */}
       <section id="catalogue" className="scroll-mt-24 px-6 py-20">
         <div className="mx-auto max-w-6xl">
@@ -193,7 +183,7 @@ export default async function SecteurPage(
             ))}
           </div>
 
-          <UnlistedTrainingNote />
+          <UnlistedTrainingNote note={service.unlistedNote} />
         </div>
       </section>
     </>
