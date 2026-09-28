@@ -20,7 +20,7 @@ export default function StoryRow({
   // Couleur de fond du cadre quand l'image (un logo) est montrée entière.
   imageBg?: string;
   side?: "left" | "right";
-  align?: "center" | "left";
+  align?: "center" | "left" | "right";
   children: ReactNode;
 }) {
   const right = side === "right";
@@ -42,7 +42,7 @@ export default function StoryRow({
       </Reveal>
       <Reveal
         delay={0.1}
-        className={`px-2 sm:px-6 ${align === "center" ? "text-center" : ""} ${right ? "sm:order-1" : ""}`}
+        className={`px-2 sm:px-6 ${align === "center" ? "text-center" : align === "right" ? "text-right" : ""} ${right ? "sm:order-1" : ""}`}
       >
         {children}
       </Reveal>
@@ -84,7 +84,7 @@ export function StoryLink({ href, children }: { href: string; children: ReactNod
 // explication (remplace les listes à coches).
 export function StoryFact({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="mt-8 max-w-[17rem] border-t border-foreground/70 pt-3">
+    <div className="mt-8 max-w-[17rem] border-t border-foreground/70 pt-3 [.text-right_&]:ml-auto">
       <p className="text-base font-bold uppercase leading-snug tracking-tight">{title}</p>
       <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">{children}</p>
     </div>

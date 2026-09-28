@@ -50,7 +50,7 @@ export default function Team() {
               image={member.photo || undefined}
               imageAlt={member.photoAlt || member.name}
               side={i % 2 === 0 ? "left" : "right"}
-              align="left"
+              align={i % 2 === 0 ? "right" : "left"}
             >
               <p className="eyebrow text-muted">{member.role}</p>
               <div className="mt-3">
