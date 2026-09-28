@@ -1935,7 +1935,8 @@
         "highlightForeground": "#fefcdd",
         "background": "#160f3f",
         "foreground": "#fbffda",
-        "surface": "#1f1a4d"
+        "surface": "#1f1a4d",
+        "accent": "#1f1a4d"
       }
     },
     "funding": {
