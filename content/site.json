@@ -1650,7 +1650,7 @@
   "home": {
     "heroSlides": [
       {
-        "image": "/images/8-1790611742250.jpg",
+        "image": "/images/5-1790612448250.jpg",
         "alt": "Engins de chantier sur un site industriel",
         "title": "CACES, engins de chantier, travail en hauteur",
         "text": "Formations pratiques, sur site ou sur plateau technique",
@@ -1664,11 +1664,11 @@
         "link": "/formations/caces-habilitations/caces-r489-conduite-de-chariots-elevateurs"
       },
       {
-        "image": "/images/5-copie-2-1790611844976.jpg",
+        "image": "/images/7-1790612490412.jpg",
         "alt": "Chantier à proximité de réseaux enterrés",
-        "title": "Intervention à proximité des réseaux",
-        "text": "AIPR, pour travailler sans provoquer l'accident",
-        "link": "/formations/caces-habilitations/aipr-intervention-a-proximite-des-reseaux"
+        "title": "Prévention des risques professionnels",
+        "text": "Gestes et postures ",
+        "link": "/formations/prevention-des-risques-professionnels/gestes-et-postures"
       },
       {
         "image": "/images/capture-d-ecran-2026-09-28-a-14-46-44-1790612276828.png",
@@ -1692,14 +1692,14 @@
         "link": "/formations/management-qualite/gestion-des-conflits"
       },
       {
-        "image": "/images/4-1790612317194.jpg",
+        "image": "/images/4-1790612591776.jpg",
         "alt": "Massage cardiaque pratiqué sur un mannequin de secourisme",
         "title": "Secours & premiers soins",
         "text": "Sauveteur Secouriste du travail",
         "link": "/formations/secours-premiers-soins/sauveteur-secouriste-du-travail"
       },
       {
-        "image": "/images/5-19-44-14-1790611856181.jpg",
+        "image": "/images/6-1790612609992.jpg",
         "alt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
         "title": "Prévention des risques professionnels",
         "text": "Sécurité des salariés des entreprises extérieures - N1",
@@ -1779,8 +1779,8 @@
         "answer": "Qualiopi est la certification qualité nationale des organismes de formation, délivrée par des certificateurs accrédités par le COFRAC sur la base d'un référentiel fixé par l'État. Elle atteste du sérieux de nos processus pédagogiques et administratifs, et c'est elle qui rend nos formations éligibles aux financements OPCO."
       }
     ],
-    "heroBackgroundImage": "/images/accueil-chantier-coucher-soleil.webp",
-    "heroBackgroundImageAlt": "Silhouette d'une technicienne casquée sur un chantier au coucher du soleil",
+    "heroBackgroundImage": "",
+    "heroBackgroundImageAlt": "",
     "aboutImage": "/images/enma-logo-jpg-1790597170463.jpg",
     "heroVideo": "https://he61u75bwwrjpmk6.public.blob.vercel-storage.com/vrai%20video-14qRz792XOPqazc2FCvwwOZSUwPX4R.mp4"
   },
