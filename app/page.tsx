@@ -109,7 +109,7 @@ function FaqSection({ section }: { section: HomeSection }) {
   if (home.faq.length === 0) return null;
   return (
     <section className="px-6 py-10 sm:py-14">
-      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr_2fr] md:gap-16">
+      <div className="mx-auto grid max-w-6xl gap-8 border-t border-foreground/20 pt-10 md:grid-cols-[1fr_2fr] md:gap-16 md:pt-12">
         <Reveal className="md:sticky md:top-28 md:self-start">
           <h2 className="font-bold tracking-tight text-xl sm:text-2xl">FAQ</h2>
           {section.title && (
