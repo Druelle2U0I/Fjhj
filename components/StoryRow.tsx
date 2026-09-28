@@ -3,8 +3,8 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
 
-// Rangée « photo + texte » de l'accueil : colonne étroite centrée, deux
-// moitiés égales, photo portrait arrondie d'un côté, texte de l'autre.
+// Rangée « photo + texte » : pleine largeur du contenu, photo plus large
+// que le texte (environ 55 / 45), photo portrait arrondie d'un côté, texte de l'autre.
 // Les rangées s'enchaînent presque sans espace, en alternant le côté de la
 // photo, pour une lecture rythmée.
 export default function StoryRow({
@@ -25,7 +25,11 @@ export default function StoryRow({
 }) {
   const right = side === "right";
   return (
-    <div className="grid items-center gap-6 sm:grid-cols-2 sm:gap-6">
+    <div
+      className={`grid items-center gap-6 sm:gap-10 ${
+        right ? "sm:grid-cols-[1fr_1.25fr]" : "sm:grid-cols-[1.25fr_1fr]"
+      }`}
+    >
       <Reveal className={right ? "sm:order-2" : undefined}>
         <div
           className="relative mx-auto aspect-[10/13] w-full max-w-[20rem] overflow-hidden rounded-2xl sm:max-w-none"
@@ -33,16 +37,16 @@ export default function StoryRow({
         >
         {imageBg ? (
           <div className="absolute inset-x-5 inset-y-0">
-            <Visual src={image} alt={imageAlt ?? ""} sizes="(min-width: 640px) 400px, 90vw" className="!object-contain" />
+            <Visual src={image} alt={imageAlt ?? ""} sizes="(min-width: 640px) 640px, 90vw" className="!object-contain" />
           </div>
         ) : (
-          <Visual src={image} alt={imageAlt ?? ""} sizes="(min-width: 640px) 400px, 90vw" />
+          <Visual src={image} alt={imageAlt ?? ""} sizes="(min-width: 640px) 640px, 90vw" />
         )}
         </div>
       </Reveal>
       <Reveal
         delay={0.1}
-        className={`px-2 sm:px-6 ${align === "center" ? "text-center" : align === "right" ? "text-right" : ""} ${right ? "sm:order-1" : ""}`}
+        className={`mx-auto w-full max-w-sm px-2 ${align === "center" ? "text-center" : align === "right" ? "text-right" : ""} ${right ? "sm:order-1" : ""}`}
       >
         {children}
       </Reveal>

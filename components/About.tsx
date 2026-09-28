@@ -21,7 +21,7 @@ export default function About({ section }: { section: HomeSection }) {
       {/* Présentation au format « histoire » : intro centrée puis rangées
           photo / texte (la suite est dans le bloc Financement). */}
       <section className="px-6 pb-4 pt-12 sm:pt-16">
-        <div className="mx-auto max-w-[780px]">
+        <div className="mx-auto max-w-6xl">
           <Reveal className="mx-auto max-w-lg text-center">
             {section.eyebrow && (
               <p className="eyebrow text-muted">{section.eyebrow}</p>

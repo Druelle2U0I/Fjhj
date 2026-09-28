@@ -83,7 +83,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
     <section id="financement" className="px-6 pb-12 pt-4 sm:pb-16">
-      <div className="mx-auto max-w-[780px]">
+      <div className="mx-auto max-w-6xl">
         <StoryRow
           image={home.fundingImage || pages.funding.heroImage}
           imageAlt={section.title}

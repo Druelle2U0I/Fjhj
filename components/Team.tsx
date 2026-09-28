@@ -43,7 +43,7 @@ export default function Team() {
           Financement sur l'accueil : grande photo portrait, texte à côté,
           côté alterné d'une personne à l'autre. */}
       <section className="px-6 pb-12 pt-10 sm:pb-16">
-        <div className="mx-auto grid max-w-[780px] gap-10 sm:gap-6">
+        <div className="mx-auto grid max-w-6xl gap-10 sm:gap-6">
           {team.map((member, i) => (
             <StoryRow
               key={member.name}
