@@ -1934,7 +1934,8 @@
         "highlightBackground": "#160f3f",
         "highlightForeground": "#fefcdd",
         "background": "#160f3f",
-        "foreground": "#fbffda"
+        "foreground": "#fbffda",
+        "surface": "#1f1a4d"
       }
     },
     "funding": {
