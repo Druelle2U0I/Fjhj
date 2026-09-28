@@ -1832,7 +1832,7 @@
     "border": "#3c337a",
     "accent": "#160f3f",
     "accentForeground": "#fffbb9",
-    "headingFont": "archivo-expanded",
+    "headingFont": "dejavu",
     "sectorVeil": 56,
     "footerVeil": 84,
     "tagBackground": "#371a94",
@@ -1908,7 +1908,12 @@
       "ctaText": "Décrivez votre besoin : nous vous répondons sous 24 heures avec une proposition adaptée et le montage du dossier de financement.",
       "ctaButton": "Nous contacter",
       "seoDescription": "ENMA Formation, organisme de formation certifié Qualiopi implanté dans les Hauts-de-France : notre approche, nos engagements, nos domaines de formation.",
-      "heroImage": "/images/incendie-temoin-1790071012662.jpg"
+      "heroImage": "/images/incendie-temoin-1790071012662.jpg",
+      "theme": {
+        "linkColor": "#444444",
+        "accentForeground": "#fefcdd",
+        "accent": "#1f1a4d"
+      }
     },
     "team": {
       "eyebrow": "Notre équipe",
