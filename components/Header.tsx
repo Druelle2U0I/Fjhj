@@ -62,7 +62,7 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="z-10 hidden items-center gap-8 text-sm font-medium md:flex">
+          <nav className="z-10 hidden items-center gap-8 text-base font-medium md:flex">
             {leftLinks.map((link) =>
               link.href === "/formations" ? (
                 <div
@@ -169,7 +169,7 @@ export default function Header() {
             </span>
           </button>
 
-          <div className="z-10 ml-auto flex items-center gap-8 text-sm font-medium">
+          <div className="z-10 ml-auto flex items-center gap-8 text-base font-medium">
             <nav className="hidden items-center gap-8 md:flex">
               {rightLinks.map((link) => (
                 <Link key={link.href} href={link.href} className={linkClass(link.href)}>

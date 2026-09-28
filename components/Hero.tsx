@@ -55,7 +55,7 @@ export default function Hero() {
         </div>
 
         {/* Bandeau d'informations en bas du bandeau d'accueil */}
-        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-2 border-t border-current/20 pt-5 text-[11px] uppercase tracking-[0.18em] opacity-80">
+        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-2 border-t border-current/20 pt-5 text-xs uppercase tracking-[0.18em] opacity-80">
           {legal.qualiopiCertificate && <li>Certifié Qualiopi n° {legal.qualiopiCertificate}</li>}
           <li>Prise en charge OPCO</li>
           <li>Nord · Pas-de-Calais · Aisne · Somme · Oise</li>

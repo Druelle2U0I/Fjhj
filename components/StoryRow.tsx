@@ -59,14 +59,14 @@ export function StoryTitle({ children }: { children: ReactNode }) {
 }
 
 export function StoryText({ children }: { children: ReactNode }) {
-  return <p className="mt-5 whitespace-pre-line text-[13px] leading-relaxed text-foreground/85">{children}</p>;
+  return <p className="mt-5 whitespace-pre-line text-[15px] leading-relaxed text-foreground/85">{children}</p>;
 }
 
 export function StoryLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
-      className="mt-6 inline-block border-b border-foreground pb-0.5 text-[11px] font-bold uppercase tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent"
+      className="mt-6 inline-block border-b border-foreground pb-0.5 text-xs font-bold uppercase tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent"
     >
       {children}
     </Link>
@@ -77,9 +77,9 @@ export function StoryLink({ href, children }: { href: string; children: ReactNod
 // explication (remplace les listes à coches).
 export function StoryFact({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="mt-8 max-w-[15rem] border-t border-foreground/70 pt-3">
+    <div className="mt-8 max-w-[17rem] border-t border-foreground/70 pt-3">
       <p className="text-base font-bold uppercase leading-snug tracking-tight">{title}</p>
-      <p className="mt-1.5 text-[11px] leading-relaxed text-foreground/80">{children}</p>
+      <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">{children}</p>
     </div>
   );
 }

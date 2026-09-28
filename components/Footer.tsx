@@ -250,7 +250,7 @@ export default function Footer() {
                 ) : (
                   <span className="flex h-20 shrink-0 flex-col items-center justify-center rounded-lg bg-white px-5 font-bold text-[#0b032b]">
                     <span className="text-xl tracking-tight">Qualiopi</span>
-                    <span className="text-[10px] font-semibold uppercase tracking-wider">processus certifié</span>
+                    <span className="text-[11px] font-semibold uppercase tracking-wider">processus certifié</span>
                   </span>
                 )}
                 <div className="grid gap-1.5 text-sm">
