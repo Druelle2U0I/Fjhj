@@ -1819,7 +1819,8 @@
     "theme": {
       "surfaceMuted": "#c0c0c0",
       "highlightBackground": "#fefcdd",
-      "surfaceForeground": "#fbffda"
+      "surfaceForeground": "#fbffda",
+      "linkColor": "#444444"
     }
   },
   "theme": {
