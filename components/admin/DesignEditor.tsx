@@ -68,11 +68,6 @@ const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
     label: "Fondu sur les photos de formation",
     hint: "Dégradé posé sur les photos des cartes de formation (catalogue, toutes les formations, accueil) pour que le texte reste lisible. Noir par défaut.",
   },
-  {
-    key: "linkColor",
-    label: "Liens soulignés",
-    hint: "Texte et trait des liens soulignés en petites capitales : « Voir toutes nos formations », « Le centre », « Comprendre le financement », « Une autre question ? ».",
-  },
 ];
 
 type HighlightKey = "highlightBackground" | "highlightForeground";
@@ -180,6 +175,15 @@ export default function DesignEditor({
               onChange={(v) => onThemeChange({ ...theme, [color.key]: v })}
             />
           ))}
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <ColorField
+            label="Liens soulignés"
+            hint="« Voir toutes nos formations », « Le centre », « Comprendre le financement », « Une autre question ? » : texte et trait de soulignement. N'agit sur rien d'autre."
+            value={theme.linkColor ?? THEME_DEFAULTS.linkColor}
+            onChange={(v) => onThemeChange({ ...theme, linkColor: v })}
+          />
         </div>
 
         <div className="rounded-2xl border border-border p-5" style={{ background: theme.background }}>
