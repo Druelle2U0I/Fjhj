@@ -188,6 +188,7 @@ export type SiteContent = {
     heroSlides: HeroSlide[];
     heroBackgroundImage?: string;
     heroBackgroundImageAlt?: string;
+    heroVideo?: string;
     aboutImage?: string;
     aboutImageAlt?: string;
     statsBandImage?: string;

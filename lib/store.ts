@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const API = "https://api.github.com";
@@ -65,7 +65,9 @@ export async function commitFile(
   message: string,
 ) {
   if (process.env.NODE_ENV !== "production") {
-    await writeFile(path.join(process.cwd(), filePath), content);
+    const target = path.join(process.cwd(), filePath);
+    await mkdir(path.dirname(target), { recursive: true });
+    await writeFile(target, content);
     return { mode: "local" as const };
   }
 

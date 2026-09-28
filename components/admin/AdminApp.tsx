@@ -7,7 +7,7 @@ import type { SiteContent } from "@/lib/data";
 import SectorsEditor from "./SectorsEditor";
 import DesignEditor from "./DesignEditor";
 import PagesEditor from "./PagesEditor";
-import { Card, Field, ImageField, ListEditor } from "./ui";
+import { Card, Field, ImageField, ListEditor, VideoField } from "./ui";
 
 // Menu par page du site, puis réglages communs à tout le site.
 const SECTIONS = [
@@ -151,7 +151,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
 
               <Card className="grid gap-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
-                  Grande photo de fond (haut de page)
+                  Grande photo ou vidéo de fond (haut de page)
                 </p>
                 <p className="text-xs text-muted">
                   Affichée en fond, derrière le titre et le carrousel. Laissez vide pour garder le fond uni.
@@ -171,6 +171,14 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   value={content.home.heroBackgroundImageAlt ?? ""}
                   onChange={(v) =>
                     update({ ...content, home: { ...content.home, heroBackgroundImageAlt: v } })
+                  }
+                />
+                <VideoField
+                  label="Vidéo (remplace la photo, se lance et boucle automatiquement)"
+                  hint="Courte boucle sans son, déjà compressée : 4,5 Mo maximum (quelques secondes suffisent). La photo ci-dessus reste utilisée comme image de secours pendant le chargement."
+                  value={content.home.heroVideo || undefined}
+                  onChange={(v) =>
+                    update({ ...content, home: { ...content.home, heroVideo: v ?? "" } })
                   }
                 />
               </Card>
