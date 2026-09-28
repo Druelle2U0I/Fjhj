@@ -295,6 +295,13 @@ export default function SectorsEditor({
                       value={sector.imagePosition}
                       onChange={(v) => updateSector(index, { ...sector, imagePosition: v })}
                     />
+                    <ImagePositionField
+                      label="Cadrage de la photo en haut de la page du domaine"
+                      hint="La photo y est affichée en grand et en largeur : choisissez la partie à garder visible. Sans réglage, le cadrage des cartes est repris."
+                      src={sector.image}
+                      value={sector.heroImagePosition}
+                      onChange={(v) => updateSector(index, { ...sector, heroImagePosition: v })}
+                    />
                   </>
                 )}
 

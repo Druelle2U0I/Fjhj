@@ -46,6 +46,8 @@ export type Sector = {
   image?: string;
   imageAlt?: string;
   imagePosition?: string;
+  // Cadrage de la même photo en grand, en haut de la page du domaine.
+  heroImagePosition?: string;
   trainings: Training[];
   // Contenu optionnel, affiché en complément du catalogue.
   popularPaths?: string[];

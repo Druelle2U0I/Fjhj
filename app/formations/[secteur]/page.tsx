@@ -43,21 +43,24 @@ export default async function SecteurPage(
 
   return (
     <>
-      {/* Hero : grande photo de fond floutée, voilée. Remonte sous
+      {/* Hero : grande photo de fond nette (cadrage réglable dans l'admin),
+          voilée surtout à gauche, côté texte. Remonte sous
           l'en-tête (sticky, semi-transparent) pour que la photo continue
           jusqu'en haut de la page au lieu de s'arrêter net dessous. */}
       <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-16">
-        <div className="hero-photo-fade absolute inset-0">
-          <div className="absolute inset-0 scale-110 blur-[7px]">
-            <Visual
-              src={service.image}
-              alt={service.imageAlt || service.title}
-              sizes="100vw"
-              priority
-            />
-          </div>
-          <div className="absolute inset-0 bg-surface/35" />
-          <div className="absolute inset-0 bg-gradient-to-b from-surface/50 via-surface/20 to-surface/35" />
+        {/* Sur grand écran, la photo occupe la moitié droite (format proche
+            de celui des cartes, donc peu recadrée) et se fond vers la gauche,
+            côté texte ; sur mobile, elle reste en fond plein cadre. */}
+        <div className="hero-photo-fade absolute inset-0 lg:left-[42%]">
+          <Visual
+            src={service.image}
+            alt={service.imageAlt || service.title}
+            sizes="(min-width: 1024px) 60vw, 100vw"
+            priority
+            objectPosition={service.heroImagePosition || service.imagePosition || "center"}
+          />
+          <div className="absolute inset-0 bg-surface/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-surface lg:via-surface/30 lg:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface/40 via-transparent to-transparent" />
         </div>
 
         <div className="on-surface relative mx-auto max-w-6xl">
@@ -88,7 +91,7 @@ export default async function SecteurPage(
             <div className="mt-7 flex flex-wrap items-center gap-6">
               <Link
                 href={`/contact?formation=${encodeURIComponent(service.title)}`}
-                className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold sm:px-6 sm:py-3 text-accent-foreground transition-transform hover:scale-105"
+                className="rounded-lg bg-highlight px-5 py-2.5 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105 sm:px-6 sm:py-3"
               >
                 {pages.sector.quoteMainButton}
               </Link>
