@@ -1864,7 +1864,8 @@
       "seoDescription": "{domaines} domaines de formation, {formations} parcours proposés par un organisme certifié Qualiopi dans les Hauts-de-France.",
       "heroImage": "/images/management-equipe.jpg",
       "theme": {
-        "highlightBackground": "#3c337a"
+        "highlightBackground": "#160f3f",
+        "highlightForeground": "#fff9c7"
       }
     },
     "sector": {
