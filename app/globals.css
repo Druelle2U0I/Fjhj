@@ -58,13 +58,6 @@ textarea,
   font-family: var(--font-ui);
 }
 
-/* Accent éditorial : italique serif au milieu d'un titre. */
-.serif-accent {
-  font-family: var(--font-sans);
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
 
 html {
   scroll-behavior: smooth;
@@ -480,10 +473,3 @@ h4 {
   }
 }
 
-/* Mot mis en valeur dans les titres de section : italique serif. */
-h1 span.text-accent,
-h2 span.text-accent {
-  font-family: var(--font-sans);
-  font-style: italic;
-  font-weight: 400;
-}

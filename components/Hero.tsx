@@ -6,7 +6,7 @@ import { company, home, legal, pages } from "@/lib/data";
 export default function Hero() {
   const hasVideo = Boolean(home.heroVideo);
   const hasPhoto = hasVideo || Boolean(home.heroBackgroundImage);
-  // Première ligne du slogan en police des titres, la suite en italique serif.
+  // Le slogan garde son retour à la ligne entre les deux phrases.
   const [lead, ...rest] = company.tagline.split("\n");
   const follow = rest.join("\n").trim();
 
@@ -35,10 +35,10 @@ export default function Hero() {
         </p>
         <h1 className="max-w-3xl whitespace-pre-line text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl">
           <span className="block font-bold">{lead.trim()}</span>
-          {follow && <span className="serif-accent mt-2 block">{follow}</span>}
+          {follow && <span className="mt-2 block font-bold">{follow}</span>}
         </h1>
 
-        <p className="mt-4 line-clamp-4 max-w-xl whitespace-pre-line text-base text-muted sm:mt-6 sm:line-clamp-none sm:text-lg">
+        <p className="font-ui mt-4 line-clamp-4 max-w-xl whitespace-pre-line text-base text-muted sm:mt-6 sm:line-clamp-none sm:text-lg">
           {company.description}
         </p>
 
