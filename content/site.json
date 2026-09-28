@@ -1966,8 +1966,9 @@
         "titleColor": "#f8fadb",
         "introColor": "#f4f2d4",
         "accent": "#fefcdd",
-        "highlightForeground": "#1f1a4d",
-        "linkColor": "#7a7a7a"
+        "highlightForeground": "#fff9c7",
+        "linkColor": "#7a7a7a",
+        "highlightBackground": "#1f1a4d"
       }
     },
     "allTrainings": {
