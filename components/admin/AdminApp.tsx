@@ -185,7 +185,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
 
               <div>
                 <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Carrousel de photos (haut de page)
+                  Bande défilante « Nos formations sur le terrain »
                 </p>
                 <ListEditor
                   items={content.home.heroSlides}
