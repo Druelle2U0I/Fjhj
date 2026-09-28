@@ -1924,7 +1924,10 @@
       "theme": {
         "border": "#2b2459",
         "surfaceMuted": "#aaaaaa",
-        "linkColor": "#7a7a7a"
+        "linkColor": "#7a7a7a",
+        "eyebrowColor": "#fffbb9",
+        "titleColor": "#f8fadb",
+        "introColor": "#fbffda"
       }
     },
     "contact": {
