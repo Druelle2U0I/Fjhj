@@ -31,7 +31,8 @@
   --color-surface-accent: var(--surface-accent);
   --color-highlight: var(--highlight);
   --color-highlight-foreground: var(--highlight-foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-caladea), Georgia, serif;
+  --font-ui: var(--font-dejavu), var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-archivo);
 }
@@ -39,7 +40,30 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+/* Menus, boutons, étiquettes et textes en gras : police condensée des
+   titres ; le texte courant reste en Caladea. */
+nav,
+button,
+label,
+input,
+select,
+textarea,
+.uppercase,
+.font-semibold,
+.font-bold,
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+/* Accent éditorial : italique serif au milieu d'un titre. */
+.serif-accent {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 html {
@@ -60,7 +84,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--heading-font), var(--font-sans), sans-serif;
+  font-family: var(--heading-font), var(--font-ui);
   font-weight: 700;
   letter-spacing: -0.015em;
 }
@@ -454,4 +478,12 @@ h4 {
   to {
     transform: scaleX(0.85);
   }
+}
+
+/* Mot mis en valeur dans les titres de section : italique serif. */
+h1 span.text-accent,
+h2 span.text-accent {
+  font-family: var(--font-sans);
+  font-style: italic;
+  font-weight: 400;
 }

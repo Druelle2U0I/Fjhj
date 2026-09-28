@@ -75,6 +75,7 @@ export type FaqItem = {
 };
 
 export const HEADING_FONTS = {
+  dejavu: "var(--font-dejavu)",
   archivo: "var(--font-archivo)",
   grotesk: "var(--font-grotesk)",
   manrope: "var(--font-manrope)",

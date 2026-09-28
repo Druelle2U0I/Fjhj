@@ -4,6 +4,7 @@ import { THEME_DEFAULTS, type HeadingFont, type HomeSection, type Theme } from "
 import { Card, ColorField, Field, SmallButton } from "./ui";
 
 const FONTS: { id: HeadingFont; label: string; note: string }[] = [
+  { id: "dejavu", label: "DejaVu Sans Condensed", note: "Condensée et technique, avec texte courant en Caladea" },
   { id: "archivo", label: "Archivo", note: "Grotesque nette et affirmée" },
   { id: "grotesk", label: "Space Grotesk", note: "Technique, un peu anguleuse" },
   { id: "manrope", label: "Manrope", note: "Douce et moderne" },

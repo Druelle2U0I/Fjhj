@@ -8,6 +8,7 @@ import {
   Manrope,
   Fraunces,
 } from "next/font/google";
+import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
@@ -54,6 +55,27 @@ const fraunces = Fraunces({
   weight: ["600", "700"],
   display: "swap",
   preload: false,
+});
+
+// Polices de l'identité : DejaVu Sans Condensed (titres, menus, boutons,
+// étiquettes) et Caladea (texte courant, accents en italique).
+const dejavu = localFont({
+  variable: "--font-dejavu",
+  src: [
+    { path: "./fonts/dejavu-sans-condensed.woff2", weight: "400" },
+    { path: "./fonts/dejavu-sans-condensed-bold.woff2", weight: "700" },
+  ],
+  display: "swap",
+});
+
+const caladea = localFont({
+  variable: "--font-caladea",
+  src: [
+    { path: "./fonts/caladea-400.woff2", weight: "400" },
+    { path: "./fonts/caladea-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/caladea-700.woff2", weight: "700" },
+  ],
+  display: "swap",
 });
 
 const siteTitle =
@@ -138,7 +160,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       lang="fr"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} ${dejavu.variable} ${caladea.variable} h-full antialiased`}
       style={themeStyle(theme) as React.CSSProperties}
     >
       <head>

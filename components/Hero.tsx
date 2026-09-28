@@ -1,11 +1,14 @@
 import Link from "next/link";
 import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import HeroBackgroundVideo from "@/components/HeroBackgroundVideo";
-import { company, home, pages } from "@/lib/data";
+import { company, home, legal, pages } from "@/lib/data";
 
 export default function Hero() {
   const hasVideo = Boolean(home.heroVideo);
   const hasPhoto = hasVideo || Boolean(home.heroBackgroundImage);
+  // Première ligne du slogan en police des titres, la suite en italique serif.
+  const [lead, ...rest] = company.tagline.split("\n");
+  const follow = rest.join("\n").trim();
 
   return (
     <section
@@ -27,8 +30,12 @@ export default function Hero() {
       )}
 
       <div className={`relative mx-auto max-w-6xl ${hasPhoto ? "on-surface" : ""}`}>
-        <h1 className="max-w-2xl whitespace-pre-line text-5xl font-bold tracking-tight sm:text-6xl">
-          {company.tagline}
+        <p className="mb-5 text-xs uppercase tracking-[0.22em] opacity-80">
+          Organisme de formation · {legal.activityRegion || "Hauts-de-France"}
+        </p>
+        <h1 className="max-w-3xl whitespace-pre-line text-[2.6rem] leading-[1.05] tracking-tight sm:text-6xl">
+          <span className="block font-bold">{lead.trim()}</span>
+          {follow && <span className="serif-accent mt-2 block">{follow}</span>}
         </h1>
 
         <p className="mt-4 line-clamp-4 max-w-xl whitespace-pre-line text-base text-muted sm:mt-6 sm:line-clamp-none sm:text-lg">
@@ -38,7 +45,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap items-center gap-6">
           <Link
             href="/formations"
-            className="rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            className="rounded-sm bg-accent px-6 py-3 text-sm font-semibold uppercase tracking-wider text-accent-foreground transition-transform hover:scale-105"
           >
             {pages.hero.primaryButton}
           </Link>
@@ -49,6 +56,13 @@ export default function Hero() {
             {pages.hero.secondaryButton}
           </Link>
         </div>
+
+        {/* Bandeau d'informations en bas du bandeau d'accueil */}
+        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-2 border-t border-current/20 pt-5 text-[11px] uppercase tracking-[0.18em] opacity-80">
+          {legal.qualiopiCertificate && <li>Certifié Qualiopi n° {legal.qualiopiCertificate}</li>}
+          <li>Prise en charge OPCO</li>
+          <li>Nord · Pas-de-Calais · Aisne · Somme · Oise</li>
+        </ul>
       </div>
     </section>
   );
