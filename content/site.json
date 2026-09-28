@@ -1910,9 +1910,12 @@
       "seoDescription": "ENMA Formation, organisme de formation certifié Qualiopi implanté dans les Hauts-de-France : notre approche, nos engagements, nos domaines de formation.",
       "heroImage": "/images/incendie-temoin-1790071012662.jpg",
       "theme": {
-        "linkColor": "#444444",
+        "linkColor": "#7a7a7a",
         "accentForeground": "#fefcdd",
-        "accent": "#1f1a4d"
+        "accent": "#1f1a4d",
+        "eyebrowColor": "#fffbb9",
+        "titleColor": "#f8fadb",
+        "introColor": "#fbffda"
       }
     },
     "team": {
