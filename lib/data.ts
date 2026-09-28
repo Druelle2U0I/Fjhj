@@ -341,8 +341,11 @@ export type Pages = {
     approachEyebrow: string;
     approachTitle: string;
     approachText: string;
-    whyEyebrow: string;
-    whyTitle: string;
+    text?: string;
+    accessEyebrow: string;
+    accessTitle: string;
+    // Stationnement, accessibilité, horaires… (paragraphes séparés par une ligne vide).
+    accessText?: string;
     domainsEyebrow: string;
     domainsTitle: string;
     ctaTitle: string;

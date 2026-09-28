@@ -48,7 +48,7 @@ function QualiopiCard() {
 export default function Funding() {
   return (
     <>
-    <section id="financement" className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[148px] sm:pb-14">
+    <section id="financement" className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[148px] sm:pb-14">
       {pages.funding.heroImage && (
         <HeroBackgroundPhoto src={pages.funding.heroImage} alt={pages.funding.title} />
       )}
@@ -104,7 +104,7 @@ export default function Funding() {
             Un projet de formation à financer ?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-muted">
-            Décrivez-nous votre besoin, on s&apos;occupe du reste : devis, éligibilité OPCO et montage du dossier.
+            Décrivez-nous votre besoin : nous établissons le devis, vérifions l&apos;éligibilité OPCO et montons le dossier avec vous.
           </p>
           <Link
             href="/contact"

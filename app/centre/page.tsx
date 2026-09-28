@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import AnimatedStat from "@/components/AnimatedStat";
 import FranceMap from "@/components/FranceMap";
 import PageHero from "@/components/PageHero";
 import PageThemeScope from "@/components/PageThemeScope";
-import PillarsGrid from "@/components/PillarsGrid";
 import Reveal from "@/components/Reveal";
-import { company, fillCounts, pages, services } from "@/lib/data";
-import { getStats } from "@/lib/recommendation";
+import { company, fillCounts, pages, services, telHref } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Le centre",
@@ -15,14 +12,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/centre" },
 };
 
-export default async function CentrePage() {
-  const stats = await getStats();
+export default function CentrePage() {
   return (
     <PageThemeScope overrides={pages.centre.theme}>
       <PageHero
         eyebrow={pages.centre.eyebrow}
         title={pages.centre.title}
-        description={company.tagline}
+        description={pages.centre.text}
         backgroundImage={pages.centre.heroImage}
       />
 
@@ -48,28 +44,42 @@ export default async function CentrePage() {
         </Reveal>
       </FranceMap>
 
+      {/* Accès au centre : adresse, itinéraire et informations pratiques
+          (stationnement, accessibilité, horaires) saisies dans l'admin. */}
       <section className="px-6 py-12 sm:py-20">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto grid max-w-6xl gap-10 border-t border-border pt-10 lg:grid-cols-[1fr_1.2fr]">
           <Reveal>
-            <span className="text-sm font-semibold text-accent">
-              {pages.centre.whyEyebrow}
-            </span>
-            <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
-              {pages.centre.whyTitle}
+            <span className="text-sm font-semibold text-muted">{pages.centre.accessEyebrow}</span>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+              {pages.centre.accessTitle}
             </h2>
           </Reveal>
-
-          <PillarsGrid className="mt-10 border-t border-border pt-8" />
-
-          <Reveal delay={0.2} className="mt-14 grid grid-cols-2 gap-8 border-t border-border pt-10 sm:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center sm:text-left">
-                <p className="text-3xl font-semibold text-accent">
-                  <AnimatedStat value={stat.value} />
+          <Reveal delay={0.1} className="grid gap-5 text-muted">
+            <p className="text-lg text-foreground">{company.address}</p>
+            {pages.centre.accessText
+              ?.split(/\n\s*\n/)
+              .filter((paragraph) => paragraph.trim())
+              .map((paragraph, i) => (
+                <p key={i} className="whitespace-pre-line">
+                  {paragraph}
                 </p>
-                <p className="mt-1 text-sm text-muted">{stat.label}</p>
-              </div>
-            ))}
+              ))}
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-sm bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+              >
+                Itinéraire
+              </a>
+              <a
+                href={telHref(company.phone)}
+                className="rounded-sm border border-border px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-foreground"
+              >
+                {company.phone}
+              </a>
+            </div>
           </Reveal>
         </div>
       </section>

@@ -38,23 +38,23 @@ export default function FormationsPage() {
       </section>
 
       <section className="px-6 py-20">
-        <div className="mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, i) => (
-            <Reveal key={service.slug} delay={(i % 3) * 0.05}>
+            <Reveal key={service.slug} delay={(i % 4) * 0.05}>
               <Link
                 href={`/formations/${service.slug}`}
-                className="dyn-card group relative flex aspect-[4/5] w-full flex-col justify-end overflow-hidden rounded-lg"
+                className="dyn-card group relative flex aspect-[3/4] w-full flex-col justify-end overflow-hidden rounded-lg"
               >
                 <Visual
                   src={service.image}
                   alt={service.imageAlt ?? service.title}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
                   className="transition-transform duration-700 group-hover:scale-105"
                   objectPosition={service.imagePosition}
                 />
                 <div className="card-veil absolute inset-0" />
                 <div className="relative flex items-end justify-between gap-3 p-6">
-                  <h2 className="text-xl font-semibold leading-snug text-white">
+                  <h2 className="text-lg font-semibold leading-snug text-white">
                     {service.title}
                   </h2>
                   <span className="shrink-0 text-sm text-white/80">

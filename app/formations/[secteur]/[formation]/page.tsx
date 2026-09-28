@@ -97,7 +97,7 @@ export default async function FormationPage(
       {/* Hero : grande photo de fond. Remonte sous l'en-tête (sticky,
           semi-transparent) pour que la photo continue jusqu'en haut de
           la page au lieu de s'arrêter net dessous. */}
-      <section className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
         <div className="hero-photo-fade absolute inset-0">
           <Visual
             src={training.image ?? service.image}

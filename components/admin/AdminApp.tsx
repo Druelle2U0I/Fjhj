@@ -587,33 +587,6 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 onChange={(pages) => update({ ...content, pages })}
               />
 
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Nos atouts
-                </p>
-                <ListEditor
-                  items={content.pillars}
-                  onChange={(pillars) => update({ ...content, pillars })}
-                  createItem={() => ({ title: "", text: "" })}
-                  addLabel="Ajouter un atout"
-                  titleFor={(p) => p.title}
-                  renderItem={(pillar, set) => (
-                    <div className="grid gap-4">
-                      <Field
-                        label="Titre"
-                        value={pillar.title}
-                        onChange={(v) => set({ ...pillar, title: v })}
-                      />
-                      <Field
-                        label="Texte"
-                        rows={3}
-                        value={pillar.text}
-                        onChange={(v) => set({ ...pillar, text: v })}
-                      />
-                    </div>
-                  )}
-                />
-              </div>
             </>
           )}
 

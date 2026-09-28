@@ -473,3 +473,16 @@ h4 {
   }
 }
 
+
+/* En-têtes des pages internes : sur la photo voilée, le paragraphe
+   d'introduction passe en texte plein (le gris secondaire se lisait mal
+   sur le dégradé vers le fond de page), et l'en-tête descend un peu plus
+   bas pour que le texte reste sur la partie sombre de la photo. */
+.page-hero .on-surface {
+  --muted: color-mix(in srgb, var(--surface-foreground, #fffcec) 88%, transparent);
+}
+@media (min-width: 640px) {
+  .page-hero:has(.hero-photo-fade) {
+    padding-bottom: 6rem;
+  }
+}

@@ -86,7 +86,7 @@
           "title": "Exercice d'évacuation",
           "duration": "1 demi-journée",
           "format": "Intra ou inter-entreprises",
-          "intro": "Alarme déclenchée, chronomètre en main : vérifier que votre plan d'évacuation tient debout en conditions réelles.",
+          "intro": "Exercice chronométré en conditions réelles, pour éprouver votre plan d'évacuation et ajuster les consignes.",
           "prerequisites": "Aucun",
           "certification": "Compte-rendu détaillé | Notification au registre de sécurité",
           "programme": [
@@ -154,7 +154,7 @@
             },
             {
               "title": "Consignes et cheminement d'évacuation",
-              "text": "Objectif : être capable de guider les occupants vers les issues de secours en respectant le cheminement défini. Lecture des plans d'évacuation et des itinéraires balisés, gestion des points de rassemblement, prise en charge des personnes en situation de handicap ou à mobilité réduite, vérification de l'évacuation complète des locaux dont on a la charge."
+              "text": "Objectif : être capable de guider les occupants vers les issues de secours en respectant le cheminement défini. Lecture des plans d'évacuation et des itinéraires balisés, gestion des points de rassemblement, prise en charge des personnes en situation de handicap ou à mobilité réduite, vérification de l'évacuation complète des locaux dont il a la charge."
             },
             {
               "title": "Exercice pratique d'évacuation",
@@ -368,7 +368,7 @@
         "B1V-B2V-BR-BC : électriciens BT, sur 3 jours.",
         "H0V-B1V-B2V-BR-BC-H1V-H2V-HC : électriciens BT/HT, sur 3 à 5 jours."
       ],
-      "unlistedNote": "Si l'habilitation que vous recherchez n'apparaît pas dans cette liste, pas d'inquiétude : contactez-nous, nous l'organisons aussi.",
+      "unlistedNote": "Si l'habilitation que vous recherchez n'apparaît pas dans cette liste, contactez-nous : nous pouvons également l'organiser.",
       "tip": {
         "title": "Le saviez-vous ?",
         "text": "Le recyclage est recommandé tous les 3 ans par la norme. L'habilitation elle-même est délivrée par l'employeur, sur la base de l'avis de formation."
@@ -1834,7 +1834,7 @@
     },
     "catalogue": {
       "eyebrow": "Nos formations",
-      "title": "{domaines} domaines de formation, {formations} parcours",
+      "title": "Notre catalogue de formations",
       "text": "Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise ou en inter-entreprises dans toute la région Hauts-de-France. Choisissez un domaine pour découvrir le détail des formations.",
       "seoDescription": "{domaines} domaines de formation, {formations} parcours proposés par un organisme certifié Qualiopi dans les Hauts-de-France.",
       "heroImage": "/images/management-equipe.jpg"
@@ -1861,27 +1861,29 @@
     },
     "centre": {
       "eyebrow": "Le centre",
-      "title": "Un organisme de formation certifié Qualiopi, ancré dans les Hauts-de-France",
+      "title": "Le centre de formation de Wingles",
       "mapEyebrow": "Notre zone d'intervention",
       "mapText": "Nord, Pas-de-Calais, Somme, Aisne, Oise : nous intervenons dans les 5 départements des Hauts-de-France, en intra-entreprise dans vos locaux comme en inter-entreprises.",
       "approachEyebrow": "Notre approche",
       "approachTitle": "Une expertise de terrain au service de vos équipes",
       "approachText": "Nos formateurs interviennent directement dans vos locaux ou sur plateau technique, avec le matériel que vos équipes utilisent au quotidien. Cet ancrage régional nous permet de construire des parcours alignés sur les réalités de votre secteur d'activité, qu'il s'agisse d'une TPE, d'une PME industrielle ou d'une collectivité.\n\nChaque formation est pensée pour un résultat concret : certifier une compétence, répondre à une obligation réglementaire, ou installer durablement une culture de sécurité au sein de vos équipes.",
-      "whyEyebrow": "Pourquoi choisir ENMA Formation",
-      "whyTitle": "Quatre engagements qui structurent chaque formation",
+      "accessEyebrow": "Accès",
+      "accessTitle": "Venir au centre",
+      "accessText": "",
       "domainsEyebrow": "Nos domaines",
       "domainsTitle": "{domaines} domaines de formation, du terrain jusqu'au bureau d'études",
       "ctaTitle": "Un projet de formation pour vos équipes ?",
-      "ctaText": "Décrivez votre besoin : nous revenons vers vous rapidement avec une proposition adaptée et le montage du dossier de financement.",
+      "ctaText": "Décrivez votre besoin : nous vous répondons sous 24 heures avec une proposition adaptée et le montage du dossier de financement.",
       "ctaButton": "Nous contacter",
       "seoDescription": "ENMA Formation, organisme de formation certifié Qualiopi implanté dans les Hauts-de-France : notre approche, nos engagements, nos domaines de formation.",
-      "heroImage": "/images/incendie-temoin-1790071012662.jpg"
+      "heroImage": "/images/incendie-temoin-1790071012662.jpg",
+      "text": "Notre site de Wingles, dans le Pas-de-Calais, accueille les formations qui demandent un plateau technique. Les autres se déroulent directement dans vos locaux."
     },
     "team": {
       "eyebrow": "Notre équipe",
       "title": "Une équipe à votre écoute",
       "seoDescription": "Une équipe de formateurs expérimentés, pédagogues et opérationnels, qui se déplacent directement dans vos locaux en Hauts-de-France.",
-      "text": "ENMA Formation, c'est d'abord une équipe à taille humaine, installée dans le Pas-de-Calais. Du premier appel jusqu'à la remise des attestations, vous avez des interlocuteurs qui vous connaissent : on construit votre parcours avec vous, on monte le dossier de financement et on reste disponibles tout au long de la formation.",
+      "text": "ENMA Formation est une équipe à taille humaine, installée dans le Pas-de-Calais. Du premier échange jusqu'à la remise des attestations, vous gardez les mêmes interlocuteurs : nous construisons votre parcours avec vous, montons le dossier de financement et restons disponibles tout au long de la formation.",
       "heroImage": "/images/pexels-plato-terentev-3804555-5917555-1790609332883.jpg",
       "theme": {
         "border": "#2b2459",
@@ -1891,10 +1893,10 @@
     "contact": {
       "eyebrow": "Contact",
       "title": "Parlons de vos besoins en formation",
-      "text": "Vous avez une obligation réglementaire à couvrir, un besoin de montée en compétences ou simplement une question sur le financement ? On revient vers vous sous 24 heures avec une réponse concrète.",
+      "text": "Vous avez une obligation réglementaire à couvrir, un besoin de montée en compétences ou une question sur le financement ? Nous vous répondons sous 24 heures avec une proposition précise.",
       "submitButton": "Envoyer le message",
       "successMessage": "Merci, votre message a bien été envoyé.",
-      "seoDescription": "Décrivez votre besoin de formation, nous revenons vers vous sous 24h avec une proposition adaptée et le montage du dossier OPCO.",
+      "seoDescription": "Décrivez votre besoin de formation : nous vous répondons sous 24 heures avec une proposition adaptée et le montage du dossier OPCO.",
       "heroImage": "/images/secteur-electrique-1790073151718.jpg"
     },
     "funding": {

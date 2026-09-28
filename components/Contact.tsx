@@ -60,7 +60,7 @@ export default function Contact({
   return (
     <section
       id="contact"
-      className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-14 sm:-mt-[94px] sm:pt-[148px] sm:pb-24"
+      className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-14 sm:-mt-[94px] sm:pt-[148px] sm:pb-24"
     >
       {hasPhoto && (
         <HeroBackgroundPhoto src={pages.contact.heroImage!} alt={pages.contact.title} />

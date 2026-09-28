@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AllTrainings, { type TrainingItem } from "@/components/AllTrainings";
-import KeyFacts from "@/components/KeyFacts";
 import PageHero from "@/components/PageHero";
 import PageThemeScope from "@/components/PageThemeScope";
 import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
@@ -35,7 +34,6 @@ export default function AllTrainingsPage() {
         eyebrow={pages.allTrainings.eyebrow}
         title={fillCounts(pages.allTrainings.title)}
         description={fillCounts(pages.allTrainings.text)}
-        aside={<KeyFacts />}
         backgroundImage={pages.allTrainings.heroImage}
         breadcrumb={
           <>

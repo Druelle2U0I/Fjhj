@@ -1,6 +1,5 @@
 import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import Reveal from "@/components/Reveal";
-import StatsPanel from "@/components/StatsPanel";
 import Visual from "@/components/Visual";
 import { pages, team } from "@/lib/data";
 
@@ -20,12 +19,12 @@ export default function Team() {
 
   return (
     <div id="equipe">
-      <section className="relative -mt-[86px] overflow-hidden px-6 pb-12 pt-[112px] sm:-mt-[94px] sm:pt-[148px]">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pb-12 pt-[112px] sm:-mt-[94px] sm:pt-[148px]">
         {pages.team.heroImage && (
           <HeroBackgroundPhoto src={pages.team.heroImage} alt={pages.team.title} />
         )}
         <div
-          className={`relative mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center ${
+          className={`relative mx-auto max-w-6xl ${
             pages.team.heroImage ? "on-surface" : ""
           }`}
         >
@@ -47,7 +46,6 @@ export default function Team() {
             )}
           </div>
 
-          <StatsPanel />
         </div>
       </section>
 

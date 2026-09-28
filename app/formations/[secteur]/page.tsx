@@ -80,7 +80,7 @@ export default async function SecteurPage(
       {/* Hero : grande photo de fond floutée, voilée. Remonte sous
           l'en-tête (sticky, semi-transparent) pour que la photo continue
           jusqu'en haut de la page au lieu de s'arrêter net dessous. */}
-      <section className="relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
         <div className="hero-photo-fade absolute inset-0">
           <div className="absolute inset-0 scale-110 blur-[7px]">
             <Visual
@@ -169,7 +169,7 @@ export default async function SecteurPage(
             <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
               {service.popularPaths && service.popularPaths.length > 0 && (
                 <Reveal className="rounded-lg border border-border bg-surface p-6 sm:p-7">
-                  <h3 className="font-semibold">Parcours les plus vendus en formation</h3>
+                  <h3 className="font-semibold">Parcours les plus demandés</h3>
                   <ul className="mt-4 space-y-3 text-sm text-muted">
                     {service.popularPaths.map((item) => (
                       <li key={item} className="border-t border-border pt-3 first:border-t-0 first:pt-0">
