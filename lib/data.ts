@@ -129,6 +129,11 @@ export type Theme = {
   // Liens soulignés en petites capitales (« Voir toutes nos formations »,
   // « Le centre », « Une autre question ? »…).
   linkColor?: string;
+  // Couleurs du haut de page (sur-titre, titre, texte d'introduction),
+  // réglables page par page.
+  eyebrowColor?: string;
+  titleColor?: string;
+  introColor?: string;
 };
 
 // Couleurs qu'une page peut personnaliser indépendamment du thème
@@ -152,6 +157,9 @@ export type PageColorOverride = Partial<
     | "highlightForeground"
     | "cardVeil"
     | "linkColor"
+    | "eyebrowColor"
+    | "titleColor"
+    | "introColor"
   >
 >;
 
@@ -438,6 +446,10 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--highlight-foreground": v.highlightForeground,
     "--card-veil": v.cardVeil,
     "--link-color": v.linkColor,
+    // Seulement si réglées : sinon le haut de page garde ses couleurs.
+    ...(t.eyebrowColor ? { "--eyebrow-color": t.eyebrowColor } : {}),
+    ...(t.titleColor ? { "--title-color": t.titleColor } : {}),
+    ...(t.introColor ? { "--intro-color": t.introColor } : {}),
   };
 }
 

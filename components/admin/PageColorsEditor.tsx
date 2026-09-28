@@ -4,6 +4,9 @@ import { THEME_DEFAULTS, type PageColorOverride, type Theme } from "@/lib/data";
 import { OptionalColorField } from "./ui";
 
 const FIELDS: { key: keyof PageColorOverride; label: string }[] = [
+  { key: "eyebrowColor", label: "Haut de page — sur-titre (ex. « CONTACT »)" },
+  { key: "titleColor", label: "Haut de page — titre" },
+  { key: "introColor", label: "Haut de page — texte sous le titre" },
   { key: "background", label: "Fond de la page" },
   { key: "surface", label: "Fond des cartes" },
   { key: "surface2", label: "Fond secondaire (encadrés dans les cartes)" },
@@ -59,7 +62,11 @@ export default function PageColorsEditor({
           key={key}
           label={label}
           value={current[key]}
-          fallback={siteTheme[key] ?? (THEME_DEFAULTS as unknown as Record<string, string>)[key] ?? "#000000"}
+          fallback={
+            siteTheme[key] ??
+            (THEME_DEFAULTS as unknown as Record<string, string>)[key] ??
+            (key === "eyebrowColor" || key === "titleColor" || key === "introColor" ? siteTheme.foreground : "#000000")
+          }
           onChange={(next) => set(key, next)}
         />
       ))}

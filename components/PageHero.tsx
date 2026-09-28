@@ -46,7 +46,7 @@ export default function PageHero({
             {title}
           </h1>
           {description && (
-            <p className="mt-3 max-w-2xl text-base text-muted sm:mt-5 sm:text-lg">
+            <p className="page-intro mt-3 max-w-2xl text-base text-muted sm:mt-5 sm:text-lg">
               {description}
             </p>
           )}
