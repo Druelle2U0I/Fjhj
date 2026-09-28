@@ -1927,7 +1927,8 @@
       "seoDescription": "Décrivez votre besoin de formation : nous vous répondons sous 24 heures avec une proposition adaptée et le montage du dossier OPCO.",
       "heroImage": "/images/secteur-electrique-1790073151718.jpg",
       "theme": {
-        "accentForeground": "#fefcdd"
+        "accentForeground": "#fefcdd",
+        "highlightBackground": "#160f3f"
       }
     },
     "funding": {
