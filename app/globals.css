@@ -489,3 +489,14 @@ h4 {
 .compact-footer .footer-cta-text {
   display: none;
 }
+
+/* Rangées de cartes (accueil) : sur grand écran, les cartes débordent
+   jusqu'au bord droit de l'écran au lieu de s'arrêter au conteneur. */
+@media (min-width: 768px) {
+  .rail-bleed {
+    margin-left: 0;
+    padding-left: 0;
+    margin-right: calc(-1 * max(1.5rem, (100vw - 72rem) / 2));
+    padding-right: max(1.5rem, (100vw - 72rem) / 2);
+  }
+}

@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -6,10 +5,10 @@ import FormationsMarquee from "@/components/FormationsMarquee";
 import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
 import SectorAccordion from "@/components/SectorAccordion";
-import SectorGrid from "@/components/SectorGrid";
 import Faq from "@/components/Faq";
-import StatsBand from "@/components/StatsBand";
-import ZigzagRow from "@/components/ZigzagRow";
+import CardRail, { type RailCard } from "@/components/CardRail";
+import { getStats } from "@/lib/recommendation";
+import StoryRow, { StoryFact, StoryLink, StoryText, StoryTitle } from "@/components/StoryRow";
 import { services, funding, home, pages } from "@/lib/data";
 import type { HeroSlide, HomeSection } from "@/lib/data";
 
@@ -33,33 +32,61 @@ function trainingSlides(): HeroSlide[] {
   return slides;
 }
 
-function FormationsSection({ section }: { section: HomeSection }) {
+// Domaines puis chiffres clés, en rangées de grandes cartes portrait (titre
+// à gauche, flèches, cartes qui défilent), enchaînées, puis le lien vers le
+// catalogue complet.
+async function FormationsSection({ section }: { section: HomeSection }) {
+  const stats = await getStats();
+  // Photos des chiffres clés : celles des formations (différentes des
+  // photos de domaine déjà montrées juste au-dessus).
+  const sectorImages = new Set(services.map((s) => s.image));
+  const statImages = [
+    home.statsBandImage,
+    ...services.flatMap((s) => s.trainings.map((t) => t.image)).filter((img) => img && !sectorImages.has(img)),
+  ].filter(Boolean) as string[];
+  const figures: RailCard[] = stats.map((stat, i) =>
+    stat.source === "recommendation"
+      ? { title: `${stat.value} ${stat.label}`, text: home.statsNote }
+      : {
+          title: `${stat.value} ${stat.label}`,
+          image: statImages[(i * 7) % Math.max(1, statImages.length)],
+          imageAlt: stat.label,
+        },
+  );
+
   return (
     <section id="formations" className="px-6 py-10 sm:py-14">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto grid max-w-6xl gap-12 sm:gap-16">
+        {home.sectorsLayout === "accordion" ? (
+          <Reveal>
+            <h2 className="max-w-2xl whitespace-pre-line text-3xl font-semibold tracking-tight sm:text-4xl">
+              {section.title}
+            </h2>
+            <div className="mt-8">
+              <SectorAccordion services={services} />
+            </div>
+          </Reveal>
+        ) : (
+          <Reveal>
+            <CardRail
+              title={section.eyebrow || section.title}
+              cards={services.map((service) => ({
+                title: service.title,
+                href: `/formations/${service.slug}`,
+                image: service.image,
+                imageAlt: service.imageAlt || service.title,
+                subtitle: `${service.trainings.length} formation${service.trainings.length > 1 ? "s" : ""}`,
+                text: service.summary,
+              }))}
+            />
+          </Reveal>
+        )}
+
         <Reveal>
-          {section.eyebrow && (
-            <span className="text-sm font-semibold text-muted">
-              {section.eyebrow}
-            </span>
-          )}
-          <h2 className="mt-3 max-w-2xl whitespace-pre-line text-3xl font-semibold tracking-tight sm:text-4xl">
-            {section.title}
-          </h2>
-          {section.text && (
-            <p className="mt-4 max-w-2xl whitespace-pre-line text-muted">{section.text}</p>
-          )}
+          <CardRail title={"Quelques\nchiffres clés"} cards={figures} />
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-8">
-          {home.sectorsLayout === "accordion" ? (
-            <SectorAccordion services={services} />
-          ) : (
-            <SectorGrid services={services} />
-          )}
-        </Reveal>
-
-        <Reveal delay={0.2} className="mt-10 text-center">
+        <Reveal className="text-center">
           <Link
             href="/formations"
             className="inline-flex rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
@@ -72,48 +99,29 @@ function FormationsSection({ section }: { section: HomeSection }) {
   );
 }
 
+// Suite des rangées de l'accueil (après À propos) : texte à gauche avec les
+// faits clés du financement sous un filet, photo à droite.
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
-    <div id="financement">
-      <ZigzagRow
-        image={home.fundingImage || pages.funding.heroImage}
-        imageAlt={section.title}
-        side="right"
-      >
-        {section.eyebrow && (
-          <span className="text-sm font-semibold text-muted">{section.eyebrow}</span>
-        )}
-        <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
-          {section.title}
-        </h2>
-        <p className="mt-5 max-w-xl whitespace-pre-line text-muted">
-          {section.text || funding.intro}
-        </p>
-        <ul className="mt-6 grid gap-3">
-          {funding.points.map((point) => (
-            <li key={point.title} className="flex items-center gap-3 font-semibold">
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                className="h-5 w-5 shrink-0"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="m5 13 4 4L19 7" />
-              </svg>
-              {point.title}
-            </li>
-          ))}
-        </ul>
-        <Link
-          href="/financement"
-          className="mt-8 inline-flex w-fit rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+    <section id="financement" className="px-6 pb-12 pt-4 sm:pb-16">
+      <div className="mx-auto max-w-[780px]">
+        <StoryRow
+          image={home.fundingImage || pages.funding.heroImage}
+          imageAlt={section.title}
+          side="right"
+          align="left"
         >
-          Comprendre le financement
-        </Link>
-      </ZigzagRow>
-    </div>
+          <StoryTitle>{section.title}</StoryTitle>
+          <StoryText>{section.text || funding.intro}</StoryText>
+          {funding.points.map((point) => (
+            <StoryFact key={point.title} title={point.title}>
+              {point.text.split(/(?<=\.)\s/)[0]}
+            </StoryFact>
+          ))}
+          <StoryLink href="/financement">Comprendre le financement</StoryLink>
+        </StoryRow>
+      </div>
+    </section>
   );
 }
 
@@ -195,10 +203,7 @@ export default function Home() {
               return <About key={section.id} section={section} />;
             case "formations":
               return (
-                <Fragment key={section.id}>
-                  <FormationsSection section={section} />
-                  <StatsBand />
-                </Fragment>
+                <FormationsSection key={section.id} section={section} />
               );
             case "financement":
               return <FinancementSection key={section.id} section={section} />;

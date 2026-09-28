@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import ZigzagRow from "@/components/ZigzagRow";
-import { company, home } from "@/lib/data";
+import StoryRow, { StoryLink, StoryText, StoryTitle } from "@/components/StoryRow";
+import { company, home, pages } from "@/lib/data";
 import type { HomeSection } from "@/lib/data";
 
 function initials(name: string) {
@@ -14,42 +14,40 @@ function initials(name: string) {
 }
 
 export default function About({ section }: { section: HomeSection }) {
-  const hasImage = Boolean(home.aboutImage);
-
-  const title = (
-    <>
-      {section.eyebrow && (
-        <span className="text-sm font-semibold text-muted">
-          {section.eyebrow}
-        </span>
-      )}
-      {/* Traits d'union insécables : « Hauts-de-France » ne se coupe pas. */}
-      <h2 className="mt-3 max-w-2xl whitespace-pre-line text-3xl font-bold tracking-tight sm:text-4xl">
-        {section.title.replace(/(\p{L})-(?=\p{L})/gu, "$1\u2011")}
-      </h2>
-      <p className="mt-5 max-w-2xl whitespace-pre-line text-muted">
-        {section.text || company.about}
-      </p>
-    </>
-  );
+  const approach = pages.centre.approachText.split(/\n\s*\n/)[0]?.trim();
 
   return (
     <div id="a-propos">
-      {hasImage ? (
-        <ZigzagRow
-          image={home.aboutImage!}
-          imageAlt={home.aboutImageAlt || company.name}
-          side="left"
-          contain
-        >
-          {title}
-        </ZigzagRow>
-      ) : (
-        <section className="px-6 py-10 sm:py-14">
-          <Reveal className="mx-auto max-w-6xl">{title}</Reveal>
-        </section>
-      )}
+      {/* Présentation au format « histoire » : intro centrée puis rangées
+          photo / texte (la suite est dans le bloc Financement). */}
+      <section className="px-6 pb-4 pt-12 sm:pt-16">
+        <div className="mx-auto max-w-[780px]">
+          <Reveal className="mx-auto max-w-lg text-center">
+            {section.eyebrow && (
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">{section.eyebrow}</p>
+            )}
+            <h2 className="mt-3 text-2xl font-bold uppercase leading-tight tracking-tight sm:text-3xl">
+              {section.title.replace(/(\p{L})-(?=\p{L})/gu, "$1\u2011")}
+            </h2>
+            <p className="mt-4 whitespace-pre-line text-[13px] leading-relaxed text-foreground/85">
+              {section.text || company.about}
+            </p>
+          </Reveal>
 
+          <div className="mt-10">
+            <StoryRow
+              image={home.aboutImage}
+              imageAlt={home.aboutImageAlt || company.name}
+              imageBg="#090329"
+              side="left"
+            >
+              <StoryTitle>{pages.centre.approachTitle}</StoryTitle>
+              {approach && <StoryText>{approach}</StoryText>}
+              <StoryLink href="/centre">Le centre</StoryLink>
+            </StoryRow>
+          </div>
+        </div>
+      </section>
       {home.founderQuote?.text && (
         <div className="px-6 pb-14 sm:pb-24">
           <div className="mx-auto max-w-6xl">
