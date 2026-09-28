@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -6,8 +7,8 @@ import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
 import SectorAccordion from "@/components/SectorAccordion";
 import Faq from "@/components/Faq";
-import CardRail, { type RailCard } from "@/components/CardRail";
-import { getStats } from "@/lib/recommendation";
+import CardRail from "@/components/CardRail";
+import StatsBand from "@/components/StatsBand";
 import StoryRow, { StoryFact, StoryLink, StoryText, StoryTitle } from "@/components/StoryRow";
 import { services, funding, home, pages } from "@/lib/data";
 import type { HeroSlide, HomeSection } from "@/lib/data";
@@ -32,28 +33,10 @@ function trainingSlides(): HeroSlide[] {
   return slides;
 }
 
-// Domaines puis chiffres clés, en rangées de grandes cartes portrait (titre
-// à gauche, flèches, cartes qui défilent), enchaînées, puis le lien vers le
-// catalogue complet.
-async function FormationsSection({ section }: { section: HomeSection }) {
-  const stats = await getStats();
-  // Photos des chiffres clés : celles des formations (différentes des
-  // photos de domaine déjà montrées juste au-dessus).
-  const sectorImages = new Set(services.map((s) => s.image));
-  const statImages = [
-    home.statsBandImage,
-    ...services.flatMap((s) => s.trainings.map((t) => t.image)).filter((img) => img && !sectorImages.has(img)),
-  ].filter(Boolean) as string[];
-  const figures: RailCard[] = stats.map((stat, i) =>
-    stat.source === "recommendation"
-      ? { title: `${stat.value} ${stat.label}`, text: home.statsNote }
-      : {
-          title: `${stat.value} ${stat.label}`,
-          image: statImages[(i * 7) % Math.max(1, statImages.length)],
-          imageAlt: stat.label,
-        },
-  );
-
+// Domaines en rangée de grandes cartes portrait (titre à gauche, flèches,
+// cartes qui défilent), puis le lien vers le catalogue complet. La bande
+// des chiffres clés (photo pleine largeur) suit juste après.
+function FormationsSection({ section }: { section: HomeSection }) {
   return (
     <section id="formations" className="px-6 py-10 sm:py-14">
       <div className="mx-auto grid max-w-6xl gap-12 sm:gap-16">
@@ -81,10 +64,6 @@ async function FormationsSection({ section }: { section: HomeSection }) {
             />
           </Reveal>
         )}
-
-        <Reveal>
-          <CardRail title={"Quelques\nchiffres clés"} cards={figures} />
-        </Reveal>
 
         <Reveal className="text-center">
           <Link
@@ -203,7 +182,10 @@ export default function Home() {
               return <About key={section.id} section={section} />;
             case "formations":
               return (
-                <FormationsSection key={section.id} section={section} />
+                <Fragment key={section.id}>
+                  <FormationsSection section={section} />
+                  <StatsBand />
+                </Fragment>
               );
             case "financement":
               return <FinancementSection key={section.id} section={section} />;
