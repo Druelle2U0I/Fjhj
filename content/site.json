@@ -1887,7 +1887,7 @@
       "heroImage": "/images/pexels-plato-terentev-3804555-5917555-1790609332883.jpg",
       "theme": {
         "border": "#2b2459",
-        "muted": "#aaaaaa"
+        "surfaceMuted": "#aaaaaa"
       }
     },
     "contact": {

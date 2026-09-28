@@ -31,7 +31,7 @@
   --color-surface-accent: var(--surface-accent);
   --color-highlight: var(--highlight);
   --color-highlight-foreground: var(--highlight-foreground);
-  --font-sans: var(--font-caladea), Georgia, serif;
+  --font-sans: var(--font-dejavu), "DejaVu Sans Condensed", Arial, sans-serif;
   --font-ui: var(--font-dejavu), "DejaVu Sans Condensed", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-display: var(--font-archivo);
@@ -43,20 +43,6 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Menus, boutons, étiquettes et textes en gras : police condensée des
-   titres ; le texte courant reste en Caladea. */
-nav,
-button,
-label,
-input,
-select,
-textarea,
-.uppercase,
-.font-semibold,
-.font-bold,
-.font-ui {
-  font-family: var(--font-ui);
-}
 
 
 html {

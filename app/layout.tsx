@@ -45,8 +45,8 @@ const fraunces = Fraunces({
   preload: false,
 });
 
-// Polices de l'identité : DejaVu Sans Condensed (titres, menus, boutons,
-// étiquettes) et Caladea (texte courant, accents en italique).
+// Police de l'identité : DejaVu Sans Condensed, pour les titres comme pour
+// le texte courant.
 const dejavu = localFont({
   variable: "--font-dejavu",
   src: [
@@ -56,15 +56,6 @@ const dejavu = localFont({
   display: "swap",
 });
 
-const caladea = localFont({
-  variable: "--font-caladea",
-  src: [
-    { path: "./fonts/caladea-400.woff2", weight: "400" },
-    { path: "./fonts/caladea-400-italic.woff2", weight: "400", style: "italic" },
-    { path: "./fonts/caladea-700.woff2", weight: "700" },
-  ],
-  display: "swap",
-});
 
 const siteTitle =
   "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
@@ -148,7 +139,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       lang="fr"
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} ${dejavu.variable} ${caladea.variable} h-full antialiased`}
+      className={`${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} ${dejavu.variable} h-full antialiased`}
       style={themeStyle(theme) as React.CSSProperties}
     >
       <head>
