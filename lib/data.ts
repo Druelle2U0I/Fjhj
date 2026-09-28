@@ -151,6 +151,7 @@ export type PageColorOverride = Partial<
     | "highlightBackground"
     | "highlightForeground"
     | "cardVeil"
+    | "linkColor"
   >
 >;
 

@@ -14,6 +14,7 @@ const FIELDS: { key: keyof PageColorOverride; label: string }[] = [
   { key: "border", label: "Bordures" },
   { key: "accent", label: "Couleur d'accent (boutons, liens)" },
   { key: "accentForeground", label: "Texte sur l'accent" },
+  { key: "linkColor", label: "Liens soulignés (« Voir toutes nos formations », « Le centre »…)" },
   { key: "surfaceAccent", label: "Détails sur fond sombre (photos, cartes)" },
   { key: "cardVeil", label: "Fondu sur les photos de formation" },
   { key: "highlightBackground", label: "Fond des encarts mis en avant" },
