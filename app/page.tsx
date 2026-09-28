@@ -110,7 +110,6 @@ function FinancementSection({ section }: { section: HomeSection }) {
               </svg>
               <div>
                 <h3 className="font-semibold">{point.title}</h3>
-                <p className="mt-1 text-sm text-muted">{point.text}</p>
               </div>
             </div>
           ))}

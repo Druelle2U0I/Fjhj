@@ -83,6 +83,34 @@ export default function Funding() {
 
         <FundingSteps />
 
+        {funding.opcos && funding.opcos.length > 0 && (
+          <Reveal className="mt-16 border-t border-border pt-10">
+            <h3 className="text-lg font-semibold">{funding.opcosTitle}</h3>
+            {funding.opcosText && (
+              <p className="mt-2 max-w-2xl whitespace-pre-line text-sm text-muted">{funding.opcosText}</p>
+            )}
+            <ul className="mt-6 border-t border-foreground/15">
+              {funding.opcos.map((opco) => (
+                <li key={opco.name} className="border-b border-foreground/15">
+                  <a
+                    href={opco.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group grid gap-1 py-4 sm:grid-cols-[12rem_1fr_auto] sm:items-baseline sm:gap-6"
+                  >
+                    <span className="font-semibold text-foreground group-hover:text-accent">{opco.name}</span>
+                    <span className="text-sm text-muted">{opco.sectors}</span>
+                    <span className="text-sm text-foreground">
+                      {opco.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}{" "}
+                      <span aria-hidden="true">↗</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        )}
+
         {legal.resultsIndicators && (
           <Reveal className="mt-16 border-t border-border pt-10">
             <h3 className="text-lg font-semibold">Nos indicateurs de résultats</h3>

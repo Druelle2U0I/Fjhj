@@ -640,6 +640,41 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                   </div>
                 )}
               />
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+                  Liens vers les OPCO (page Financement)
+                </p>
+                <Field
+                  label="Titre"
+                  value={content.funding.opcosTitle ?? ""}
+                  onChange={(v) => update({ ...content, funding: { ...content.funding, opcosTitle: v } })}
+                />
+                <Field
+                  label="Texte"
+                  rows={2}
+                  value={content.funding.opcosText ?? ""}
+                  onChange={(v) => update({ ...content, funding: { ...content.funding, opcosText: v } })}
+                />
+              </Card>
+              <ListEditor
+                items={content.funding.opcos ?? []}
+                onChange={(opcos) => update({ ...content, funding: { ...content.funding, opcos } })}
+                createItem={() => ({ name: "", sectors: "", url: "https://" })}
+                addLabel="Ajouter un OPCO"
+                titleFor={(o) => o.name}
+                renderItem={(opco, set) => (
+                  <div className="grid gap-4">
+                    <Field label="Nom" value={opco.name} onChange={(v) => set({ ...opco, name: v })} />
+                    <Field
+                      label="Secteurs concernés"
+                      value={opco.sectors}
+                      onChange={(v) => set({ ...opco, sectors: v })}
+                    />
+                    <Field label="Adresse du site" value={opco.url} onChange={(v) => set({ ...opco, url: v })} />
+                  </div>
+                )}
+              />
             </>
           )}
 

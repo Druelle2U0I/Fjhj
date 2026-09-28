@@ -207,6 +207,10 @@ export type SiteContent = {
   topTrainings: { title: string; duration: string; format: string }[];
   funding: {
     intro: string;
+    // Liens vers les principaux OPCO des clients (page Financement).
+    opcosTitle?: string;
+    opcosText?: string;
+    opcos?: { name: string; sectors: string; url: string }[];
     points: { title: string; text: string }[];
     stepsTitle?: string;
     stepsText?: string;

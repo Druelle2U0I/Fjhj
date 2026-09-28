@@ -41,7 +41,7 @@ export async function generateMetadata(
   const { service, training } = found;
   return {
     title: training.title,
-    description: `${training.intro} ${training.duration}, ${training.format}. Formation ${service.title.toLowerCase()} certifiée Qualiopi, finançable OPCO.`,
+    description: `${training.intro} ${training.duration}, ${training.format}. Formation ${service.title} certifiée Qualiopi, finançable OPCO.`,
     alternates: { canonical: `/formations/${service.slug}/${training.slug}` },
   };
 }
@@ -248,12 +248,11 @@ export default async function FormationPage(
             <div className="rounded-lg border border-border bg-surface-2 p-6 sm:p-7">
               {/* Sur téléphone, le titre vient d'être lu juste au-dessus. */}
               <div className="mb-6 hidden border-b border-border pb-6 lg:block">
-                <p className="text-xs font-semibold uppercase tracking-wide text-accent">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   {service.title}
                 </p>
-                <h2 className="mt-2 text-lg font-semibold leading-snug">
-                  {training.title}
-                </h2>
+                {/* Simple rappel du titre de la page (pas un titre de section). */}
+                <p className="mt-2 text-lg font-semibold leading-snug">{training.title}</p>
               </div>
 
               <dl className="grid gap-4">

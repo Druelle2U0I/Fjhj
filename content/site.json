@@ -1633,6 +1633,30 @@
         "title": "Attestations et clôture du dossier",
         "text": "À l'issue de la formation, nous vous remettons les attestations et justificatifs nécessaires (feuilles de présence, compte-rendu) pour clôturer votre dossier auprès de l'OPCO."
       }
+    ],
+    "opcosTitle": "Les principaux OPCO de nos clients",
+    "opcosText": "Votre OPCO dépend de la convention collective de votre entreprise. Voici ceux dont relèvent le plus souvent nos clients.",
+    "opcos": [
+      {
+        "name": "AKTO",
+        "sectors": "Services à forte intensité de main-d'œuvre : propreté, sécurité privée, transport, hôtellerie-restauration…",
+        "url": "https://www.akto.fr"
+      },
+      {
+        "name": "OPCO 2i",
+        "sectors": "Industrie : métallurgie, chimie, plasturgie, énergie…",
+        "url": "https://www.opco2i.fr"
+      },
+      {
+        "name": "Constructys",
+        "sectors": "Bâtiment et travaux publics",
+        "url": "https://www.constructys.fr"
+      },
+      {
+        "name": "OPCO EP",
+        "sectors": "Entreprises de proximité : artisanat, commerce de proximité, professions libérales",
+        "url": "https://www.opcoep.fr"
+      }
     ]
   },
   "accessibility": {
@@ -1738,7 +1762,7 @@
         "visible": true,
         "eyebrow": "Financement",
         "title": "Un financement OPCO facilité, nous montons le dossier avec vous",
-        "text": ""
+        "text": "La plupart de nos formations peuvent être prises en charge par votre OPCO. Nous préparons avec vous les documents de la demande."
       },
       {
         "id": "contact",
@@ -1901,7 +1925,7 @@
     },
     "funding": {
       "eyebrow": "Qualiopi & financement",
-      "title": "Un financement OPCO facilité, nous montons le dossier avec vous",
+      "title": "Financer votre formation avec votre OPCO",
       "seoDescription": "ENMA Formation est un organisme certifié Qualiopi. Nos formations sont éligibles à une prise en charge OPCO et nous vous accompagnons dans le montage du dossier de financement.",
       "heroImage": "/images/7-1790074465812.jpg"
     },

@@ -15,6 +15,8 @@ export default function SiteChrome({
 }) {
   const pathname = usePathname();
   const isAdmin = pathname.startsWith("/admin");
+  // Pages légales : bloc « Recevez notre catalogue » en version réduite.
+  const compactFooter = ["/mentions-legales", "/cgv", "/confidentialite", "/accessibilite"].includes(pathname);
 
   // À chaque changement de page, on repart tout en haut, instantanément
   // (sauf lien vers une ancre, ex. « Voir le catalogue »). Next ne le fait
@@ -31,7 +33,7 @@ export default function SiteChrome({
       <NavProgress />
       {header}
       <main className="flex-1">{children}</main>
-      {footer}
+      <div className={compactFooter ? "compact-footer" : undefined}>{footer}</div>
     </>
   );
 }

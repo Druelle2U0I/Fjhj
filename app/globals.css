@@ -472,3 +472,15 @@ h4 {
     padding-bottom: 6rem;
   }
 }
+
+/* Pages légales : bloc catalogue du pied de page réduit. */
+.compact-footer .footer-cta {
+  padding-top: 3rem;
+  padding-bottom: 2.5rem;
+}
+.compact-footer .footer-cta h2 {
+  font-size: 1.25rem;
+}
+.compact-footer .footer-cta-text {
+  display: none;
+}

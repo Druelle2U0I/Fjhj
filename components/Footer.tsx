@@ -84,7 +84,7 @@ function NewsletterForm() {
   };
 
   return (
-    <div className="mx-auto max-w-2xl px-6 pb-14 pt-16 text-center sm:pb-20 sm:pt-28">
+    <div className="footer-cta mx-auto max-w-2xl px-6 pb-14 pt-16 text-center sm:pb-20 sm:pt-28">
       {footerCta.eyebrow && (
         <p className="text-xs font-semibold text-surface-accent">
           {footerCta.eyebrow}
@@ -94,7 +94,7 @@ function NewsletterForm() {
         {footerCta.title}
       </h2>
       {footerCta.text && (
-        <p className="mt-4 whitespace-pre-line text-sm text-muted sm:text-base">
+        <p className="footer-cta-text mt-4 whitespace-pre-line text-sm text-muted sm:text-base">
           {footerCta.text}
         </p>
       )}
