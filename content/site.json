@@ -1968,7 +1968,8 @@
         "accent": "#fefcdd",
         "highlightForeground": "#fff9c7",
         "linkColor": "#7a7a7a",
-        "highlightBackground": "#1f1a4d"
+        "highlightBackground": "#1f1a4d",
+        "surfaceForeground": "#fffbb9"
       }
     },
     "allTrainings": {
