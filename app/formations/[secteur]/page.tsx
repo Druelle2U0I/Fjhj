@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
+import TipPopover from "@/components/TipPopover";
 import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import Visual from "@/components/Visual";
 import { pages, services } from "@/lib/data";
@@ -157,7 +158,7 @@ export default async function SecteurPage(
       </section>
 
       {/* Parcours les plus demandés / Le saviez-vous, côte à côte : une
-          carte pour le premier, un simple filet pour le second. */}
+          carte pour le premier, un gros « ? » qui ouvre une bulle pour le second. */}
       {(service.popularPaths?.length || service.tip) && (
         <section className="px-6 pt-20">
           <div className="mx-auto max-w-6xl">
@@ -184,14 +185,11 @@ export default async function SecteurPage(
               {service.tip && (
                 <Reveal
                   delay={0.05}
-                  className={`border-l-2 border-foreground/20 pl-6 ${
+                  className={`${
                     service.popularPaths && service.popularPaths.length > 0 ? "" : "lg:col-span-2"
                   }`}
                 >
-                  <p className="text-sm font-semibold text-muted">{service.tip.title}</p>
-                  <p className="mt-3 max-w-xl text-lg leading-snug text-foreground">
-                    {service.tip.text}
-                  </p>
+                  <TipPopover title={service.tip.title} text={service.tip.text} />
                 </Reveal>
               )}
             </div>
