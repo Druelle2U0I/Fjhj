@@ -182,42 +182,42 @@ export default async function SecteurPage(
         </div>
       </section>
 
+      {/* « Le saviez-vous ? » : flotte en bas à droite pendant le défilement
+          et s'arrête avant la bande de contact (placé juste avant elle). */}
+      {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
+
       {/* Bande pleine largeur, photo du domaine voilée : formation absente
           de la liste, parcours sur mesure. */}
-      <section className="relative overflow-hidden px-6 py-12 sm:py-16">
+      <section className="relative overflow-hidden px-6 py-10 sm:py-12">
         <div className="absolute inset-0">
           <Visual src={service.image} alt={service.imageAlt || service.title} sizes="100vw" />
           <div className="absolute inset-0 bg-surface/80" />
           <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-surface/70" />
         </div>
-        <Reveal className="on-surface relative mx-auto max-w-3xl text-center">
+        <Reveal className="on-surface relative mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold text-surface-accent">{pages.sector.customTitle}</p>
-          <h2 className="mt-3 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
+          <h2 className="mt-2 text-lg font-bold leading-snug tracking-tight sm:text-xl">
             {service.unlistedNote || pages.sector.customText}
           </h2>
           {service.unlistedNote && (
-            <p className="mx-auto mt-3 max-w-xl text-muted">{pages.sector.customText}</p>
+            <p className="mx-auto mt-2 max-w-xl text-sm text-muted">{pages.sector.customText}</p>
           )}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
             <Link
               href={`/contact?formation=${encodeURIComponent(service.title)}`}
-              className="rounded-lg bg-highlight px-6 py-3 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
+              className="rounded-lg bg-highlight px-5 py-2.5 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
             >
               Nous contacter
             </Link>
             <a
               href={telHref(company.phone)}
-              className="rounded-lg border border-current/40 px-6 py-3 text-sm font-semibold transition-colors hover:border-current hover:bg-white/10"
+              className="rounded-lg border border-current/40 px-5 py-2.5 text-sm font-semibold transition-colors hover:border-current hover:bg-white/10"
             >
               {company.phone}
             </a>
           </div>
         </Reveal>
       </section>
-
-      {/* « Le saviez-vous ? » : flotte en bas à droite, s'arrête au pied de
-          page (doit rester le dernier élément de la page). */}
-      {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
     </>
   );
 }
