@@ -90,7 +90,7 @@ function NewsletterForm() {
           {footerCta.eyebrow}
         </p>
       )}
-      <h2 className="mt-4 whitespace-pre-line text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 className="mt-4 whitespace-pre-line font-semibold tracking-tight text-xl sm:text-2xl">
         {footerCta.title}
       </h2>
       {footerCta.text && (

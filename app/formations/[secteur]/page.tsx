@@ -115,7 +115,7 @@ export default async function SecteurPage(
               <p className="eyebrow block text-surface-accent">
                 {pages.sector.whyEyebrow}
               </p>
-              <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
+              <h2 className="mt-4 max-w-3xl font-semibold tracking-tight text-xl sm:text-2xl">
                 {service.why.title}
               </h2>
               <p className="mt-5 max-w-3xl whitespace-pre-line text-muted">{service.why.text}</p>
@@ -128,7 +128,7 @@ export default async function SecteurPage(
       <section id="catalogue" className="scroll-mt-24 px-6 py-12">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+            <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">
               {pages.sector.listTitle}
             </h2>
           </Reveal>

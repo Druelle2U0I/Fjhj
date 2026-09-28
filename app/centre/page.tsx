@@ -43,7 +43,7 @@ export default function CentrePage() {
           <span className="eyebrow block text-muted">
             {pages.centre.approachEyebrow}
           </span>
-          <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="mt-3 font-semibold tracking-tight text-xl sm:text-2xl">
             {pages.centre.approachTitle}
           </h2>
           <div className="mt-5 grid gap-4 text-muted">
@@ -67,7 +67,7 @@ export default function CentrePage() {
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <span className="eyebrow block text-muted">{pages.centre.accessEyebrow}</span>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="mt-3 font-semibold tracking-tight text-xl sm:text-2xl">
               {pages.centre.accessTitle}
             </h2>
             <p className="mt-6 text-xl font-semibold leading-snug text-foreground sm:text-2xl">
@@ -138,7 +138,7 @@ export default function CentrePage() {
             Réponse sous 24h
           </span>
           <div className="rounded-lg border border-border bg-surface p-10 pt-12 text-center shadow-xl shadow-black/5 sm:p-14 sm:pt-16">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">
               {pages.centre.ctaTitle}
             </h2>
             <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-muted">

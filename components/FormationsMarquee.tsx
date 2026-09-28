@@ -28,7 +28,7 @@ export default function FormationsMarquee({
         <div className="mx-auto mb-8 max-w-6xl px-6">
           {eyebrow && <span className="eyebrow block text-muted">{eyebrow}</span>}
           {title && (
-            <h2 className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="mt-3 max-w-2xl font-semibold tracking-tight text-xl sm:text-2xl">
               {title}
             </h2>
           )}

@@ -34,7 +34,7 @@ export default function FundingSteps() {
     <div className="mt-20">
       <Reveal>
         {funding.stepsTitle && (
-          <h2 className="max-w-2xl text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="max-w-2xl font-semibold tracking-tight text-xl sm:text-2xl">
             {funding.stepsTitle}
           </h2>
         )}

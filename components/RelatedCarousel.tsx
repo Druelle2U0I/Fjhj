@@ -99,7 +99,7 @@ export default function RelatedCarousel({
 
   return (
     <div>
-      <h2 className="max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
+      <h2 className="max-w-3xl font-semibold tracking-tight text-xl sm:text-2xl">
         {titleStart} <span className="text-accent">{titleHighlight}</span>
       </h2>
 

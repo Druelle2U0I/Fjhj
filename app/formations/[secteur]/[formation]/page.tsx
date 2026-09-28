@@ -159,7 +159,7 @@ export default async function FormationPage(
             {training.programme.length > 0 && (
               <div>
                 <Reveal>
-                  <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">
+                  <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">
                     {pages.training.programmeTitle}
                   </h2>
                 </Reveal>

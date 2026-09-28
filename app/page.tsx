@@ -42,7 +42,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
       <div className="mx-auto grid max-w-6xl gap-12 sm:gap-16">
         {home.sectorsLayout === "accordion" ? (
           <Reveal>
-            <h2 className="max-w-2xl whitespace-pre-line text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="max-w-2xl whitespace-pre-line font-semibold tracking-tight text-xl sm:text-2xl">
               {section.title}
             </h2>
             <div className="mt-8">
@@ -111,7 +111,7 @@ function FaqSection({ section }: { section: HomeSection }) {
     <section className="px-6 py-10 sm:py-14">
       <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[1fr_2fr] md:gap-16">
         <Reveal className="md:sticky md:top-28 md:self-start">
-          <h2 className="text-4xl font-bold tracking-tight">FAQ</h2>
+          <h2 className="font-bold tracking-tight text-xl sm:text-2xl">FAQ</h2>
           {section.title && (
             <p className="mt-4 max-w-xs whitespace-pre-line text-muted">{section.title}</p>
           )}
@@ -144,7 +144,7 @@ function ContactSection({ section }: { section: HomeSection }) {
               {section.eyebrow}
             </span>
           )}
-          <h2 className="mt-4 whitespace-pre-line text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-4 whitespace-pre-line font-semibold tracking-tight text-xl sm:text-2xl">
             {section.title}
           </h2>
           {section.text && (

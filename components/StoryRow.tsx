@@ -58,7 +58,7 @@ export default function StoryRow({
 // resserré, lien souligné en petites capitales).
 export function StoryTitle({ children }: { children: ReactNode }) {
   return (
-    <h2 className="text-xl font-extrabold uppercase leading-[1.1] tracking-tight sm:text-2xl">{children}</h2>
+    <h2 className="font-extrabold uppercase leading-[1.1] tracking-tight text-xl sm:text-2xl">{children}</h2>
   );
 }
 

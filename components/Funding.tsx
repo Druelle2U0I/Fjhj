@@ -135,7 +135,7 @@ export default async function Funding() {
           Sans engagement
         </span>
         <div className="rounded-lg border border-border bg-surface p-10 pt-12 shadow-xl shadow-black/5 sm:p-14 sm:pt-16">
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">
             Un projet de formation à financer ?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-muted">
