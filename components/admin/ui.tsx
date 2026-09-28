@@ -361,8 +361,10 @@ export function VideoField({
   const input = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState<number | null>(null);
+  const [loadedBytes, setLoadedBytes] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [elapsed, setElapsed] = useState(0);
+  const cancelRef = useRef<(() => void) | null>(null);
 
   // Repère visible sans outils de développeur : permet de savoir combien
   // de temps un envoi bloqué est réellement resté figé.
@@ -377,6 +379,7 @@ export function VideoField({
     setBusy(true);
     setError(null);
     setProgress(0);
+    setLoadedBytes(0);
     setElapsed(0);
 
     // Sans ce garde-fou, un envoi qui ne démarre jamais (réseau qui bloque
@@ -385,6 +388,11 @@ export function VideoField({
     // On réarme ce délai à chaque progression : seule une vraie panne,
     // sans aucun octet transféré pendant 30 s, déclenche l'abandon.
     const controller = new AbortController();
+    let manualCancel = false;
+    cancelRef.current = () => {
+      manualCancel = true;
+      controller.abort();
+    };
     let stallTimer: ReturnType<typeof setTimeout> = setTimeout(() => controller.abort(), 30_000);
     const armStallTimer = () => {
       clearTimeout(stallTimer);
@@ -392,29 +400,36 @@ export function VideoField({
     };
 
     try {
-      // Envoi direct au stockage (Vercel Blob), sans passer par une
-      // fonction serverless : les vidéos sont trop lourdes pour la
-      // limite de 4,5 Mo imposée aux requêtes par l'hébergeur.
+      // Envoi direct au stockage (Vercel Blob), en plusieurs morceaux
+      // envoyés en parallèle (un morceau en échec est automatiquement
+      // ré-essayé) : ni l'un ni l'autre ne passe par une fonction
+      // serverless — les vidéos sont trop lourdes pour la limite de
+      // 4,5 Mo imposée aux requêtes par l'hébergeur.
       const blob = await uploadToBlob(file.name, file, {
         access: "public",
         handleUploadUrl: "/api/admin/video-upload",
+        multipart: true,
         abortSignal: controller.signal,
-        onUploadProgress: ({ percentage }) => {
+        onUploadProgress: ({ percentage, loaded }) => {
           armStallTimer();
           setProgress(percentage);
+          setLoadedBytes(loaded);
         },
       });
       onChange(blob.url);
     } catch (err) {
       setError(
-        controller.signal.aborted
-          ? "L'envoi ne démarre pas depuis 30 secondes : votre connexion (Wi-Fi, proxy d'entreprise, antivirus) bloque probablement l'envoi de gros fichiers. Essayez avec un autre réseau (partage de connexion 4G par exemple) ou contactez votre service informatique."
-          : err instanceof Error && err.message
-            ? err.message
-            : "Envoi impossible. Vérifiez votre connexion et réessayez.",
+        manualCancel
+          ? "Envoi annulé."
+          : controller.signal.aborted
+            ? "Envoi annulé : au-delà de 30 secondes sans aucune donnée transférée, votre connexion (Wi-Fi, proxy d'entreprise, antivirus) bloque probablement l'envoi de gros fichiers. Essayez avec un autre réseau (partage de connexion 4G par exemple) ou contactez votre service informatique."
+            : err instanceof Error && err.message
+              ? err.message
+              : "Envoi impossible. Vérifiez votre connexion et réessayez.",
       );
     } finally {
       clearTimeout(stallTimer);
+      cancelRef.current = null;
       setBusy(false);
       setProgress(null);
     }
@@ -450,9 +465,16 @@ export function VideoField({
           />
           <div className="flex gap-2">
             <SmallButton onClick={() => input.current?.click()} disabled={busy}>
-              {busy ? `Envoi… ${Math.round(progress ?? 0)} % (${elapsed} s)` : "Choisir une vidéo"}
+              {busy
+                ? `Envoi… ${Math.round(progress ?? 0)} % · ${(loadedBytes / 1024 / 1024).toFixed(1)} Mo · ${elapsed} s`
+                : "Choisir une vidéo"}
             </SmallButton>
-            {value && (
+            {busy && (
+              <SmallButton tone="danger" onClick={() => cancelRef.current?.()}>
+                Annuler
+              </SmallButton>
+            )}
+            {!busy && value && (
               <SmallButton tone="danger" onClick={() => onChange(undefined)}>
                 Retirer
               </SmallButton>
