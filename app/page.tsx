@@ -9,7 +9,7 @@ import SectorAccordion from "@/components/SectorAccordion";
 import Faq from "@/components/Faq";
 import CardRail from "@/components/CardRail";
 import StatsBand from "@/components/StatsBand";
-import StoryRow, { StoryFact, StoryLink, StoryText, StoryTitle } from "@/components/StoryRow";
+import StoryRow, { StoryFact, StoryLink, StoryTitle } from "@/components/StoryRow";
 import { services, funding, home, pages } from "@/lib/data";
 import type { HeroSlide, HomeSection } from "@/lib/data";
 
@@ -91,7 +91,6 @@ function FinancementSection({ section }: { section: HomeSection }) {
           align="left"
         >
           <StoryTitle>{section.title}</StoryTitle>
-          <StoryText>{section.text || funding.intro}</StoryText>
           {funding.points.map((point) => (
             <StoryFact key={point.title} title={point.title}>
               {point.text.split(/(?<=\.)\s/)[0]}
