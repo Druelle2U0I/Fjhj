@@ -1207,7 +1207,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 />
                 <Field
                   label="Indicateurs de résultats"
-                  hint="Affichés sur la page Qualiopi & financement."
+                  hint="Affichés sur la page Qualiopi & financement. {recommandation} est remplacé par le pourcentage à jour du questionnaire de fin de session."
                   rows={4}
                   value={content.legal.resultsIndicators ?? ""}
                   onChange={(v) =>

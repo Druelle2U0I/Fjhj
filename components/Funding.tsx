@@ -3,6 +3,7 @@ import FundingSteps from "@/components/FundingSteps";
 import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import Reveal from "@/components/Reveal";
 import { funding, legal, pages } from "@/lib/data";
+import { getStats } from "@/lib/recommendation";
 
 function QualiopiCard() {
   if (!legal.qualiopiCertificate) return null;
@@ -45,7 +46,13 @@ function QualiopiCard() {
   );
 }
 
-export default function Funding() {
+export default async function Funding() {
+  // {recommandation} est remplacé par le pourcentage lu dans le
+  // questionnaire de fin de session (même chiffre que l'accueil).
+  const stats = await getStats();
+  const recommendation = stats.find((stat) => stat.source === "recommendation")?.value ?? "";
+  const indicators = legal.resultsIndicators?.replace("{recommandation}", recommendation);
+
   return (
     <>
     <section id="financement" className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[148px] sm:pb-14">
@@ -111,11 +118,11 @@ export default function Funding() {
           </Reveal>
         )}
 
-        {legal.resultsIndicators && (
+        {indicators && (
           <Reveal className="mt-16 border-t border-border pt-10">
             <h3 className="text-lg font-semibold">Nos indicateurs de résultats</h3>
             <p className="mt-2 max-w-2xl whitespace-pre-line text-sm text-muted">
-              {legal.resultsIndicators}
+              {indicators}
             </p>
           </Reveal>
         )}

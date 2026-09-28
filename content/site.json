@@ -19,13 +19,13 @@
     "siret": "105 455 620 00010",
     "rcs": "105 455 620 R.C.S. Arras",
     "vat": "FR14105455620",
-    "publicationDirector": "Maxence Druelle Fourniez",
+    "publicationDirector": "Maxence Druelle-Fourniez",
     "activityRegion": "Hauts-de-France",
     "qualiopiCategory": "actions de formation",
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
-    "accessDelay": "Garantie d'organisation rapide de formation sous 14 jours.",
-    "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (part de stagiaires qui nous recommandent, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
+    "accessDelay": "Une fois le financement accordé, la session est programmée sous 10 jours ouvrés, et dès 3 jours ouvrés en cas d'urgence.",
+    "resultsIndicators": "Taux de recommandation : {recommandation} des stagiaires recommandent ENMA Formation, d'après le questionnaire « Évaluer la session ! » rempli à la fin de chaque formation depuis 2026. Ce chiffre est mis à jour automatiquement. Les taux de réussite aux certifications seront publiés dès que le nombre de sessions sera suffisant.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras",
     "qualiopiLogo": "/images/action-formations-qualiopi-1790260002712.png",
@@ -60,8 +60,8 @@
       "text": "La plupart des sessions ont lieu chez vous, sur vos machines et à vos horaires, dans les conditions réelles du poste."
     },
     {
-      "title": "Une session sous 14 jours",
-      "text": "Nous garantissons l'organisation d'une formation dans les 14 jours qui suivent votre accord."
+      "title": "Une session sous 10 jours ouvrés",
+      "text": "Une fois le financement accordé, la session est programmée sous 10 jours ouvrés, et dès 3 jours ouvrés en cas d'urgence."
     },
     {
       "title": "Une réponse sous 24 heures",
@@ -1661,11 +1661,11 @@
   },
   "accessibility": {
     "text": "ENMA Formation s'engage à rechercher, en lien avec chaque client, des solutions d'adaptation pour favoriser l'accueil des personnes en situation de handicap (allongement des sessions, pauses plus fréquentes, supports adaptés, salles accessibles). Les demandes d'aménagement sont à formuler avant l'inscription auprès de notre référent handicap.",
-    "referent": "Maxence Druelle, référent handicap"
+    "referent": "Maxence Druelle-Fourniez, référent handicap"
   },
   "team": [
     {
-      "name": "Maxence Druelle",
+      "name": "Maxence Druelle-Fourniez",
       "role": "Fondateur & Conseiller formation",
       "email": "maxence@enma-formation.com",
       "bio": "Votre interlocuteur pour construire le parcours de formation adapté à vos besoins et à votre financement OPCO.",
@@ -1673,7 +1673,7 @@
     },
     {
       "name": "Kenza Kessad",
-      "role": "Fondatrice & directrice administrative",
+      "role": "Directrice administrative",
       "email": "kenza@enma-formation.com",
       "bio": "Votre contact pour le suivi administratif de vos dossiers de formation et de financement.",
       "photo": "/images/c36a7117-c143-4995-bca6-0c8dec01a4a4-1790258743037.jpg"
@@ -1784,7 +1784,7 @@
       "name": "Kenza Kessad",
       "photo": "",
       "photoAlt": "",
-      "role": "Fondatrice & secrétaire administrative"
+      "role": "Directrice administrative"
     },
     "faq": [
       {
