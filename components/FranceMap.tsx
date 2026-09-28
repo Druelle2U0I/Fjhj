@@ -140,9 +140,9 @@ function MapScene({
     <>
       <section
         ref={wrapperRef}
-        className="relative h-[190vh] px-6 lg:-mt-12 lg:h-[115vh]"
+        className="relative h-[190vh] px-6 lg:-mt-12 lg:h-[112vh]"
       >
-        <div className="sticky top-0 mx-auto flex h-[100svh] max-w-6xl items-center pt-20 lg:h-[88vh] lg:items-start lg:pt-24">
+        <div className="sticky top-0 mx-auto flex h-[100svh] max-w-6xl items-center pt-20 lg:h-[86vh] lg:items-start lg:pt-24">
           <div className="relative w-full">
             <motion.div
               // Sur grand écran, la carte reste dans la moitié droite (40 % de
@@ -154,7 +154,7 @@ function MapScene({
               <p className="eyebrow block text-muted">
                 {pages.centre.mapEyebrow}
               </p>
-              <div className="relative mt-4 aspect-square w-full">
+              <div className="relative mt-4 aspect-square w-full max-w-[min(100%,58vh)] lg:max-w-[min(100%,52vh)]">
                 <motion.svg
                   viewBox={viewBox}
                   className="h-full w-full overflow-hidden"
@@ -163,7 +163,7 @@ function MapScene({
                     <motion.path
                       key={dept.code}
                       d={dept.path}
-                      fill={dept.hdf ? "var(--accent)" : "var(--surface-2)"}
+                      fill={dept.hdf ? "var(--accent)" : "#c9c6b6"}
                       fillOpacity={dept.hdf ? 1 : otherOpacity}
                       stroke="var(--surface)"
                       strokeWidth={strokeW}
@@ -217,7 +217,7 @@ function MapScene({
             </motion.div>
 
             {children && isDesktop && (
-              <div className="lg:absolute lg:left-0 lg:top-1/2 lg:w-[46%] lg:-translate-y-1/2">
+              <div className="lg:absolute lg:left-0 lg:top-0 lg:w-[46%]">
                 {children}
               </div>
             )}

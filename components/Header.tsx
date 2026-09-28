@@ -116,7 +116,7 @@ export default function Header() {
                           <li key={service.slug}>
                             <Link
                               href={`/formations/${service.slug}`}
-                              className={`flex items-center justify-between gap-3 rounded-lg px-3 py-2 transition-colors hover:bg-surface-2 hover:text-accent ${
+                              className={`flex items-center justify-between gap-3 rounded-lg px-3 py-2 transition-colors hover:bg-foreground/10 hover:text-foreground ${
                                 pathname.startsWith(`/formations/${service.slug}`)
                                   ? "text-foreground"
                                   : "text-muted"
@@ -133,14 +133,14 @@ export default function Header() {
                       <div className="mt-2 grid gap-1 border-t border-white/10 pt-2">
                         <Link
                           href="/formations/toutes"
-                          className="flex items-center justify-between rounded-lg px-3 py-2 font-semibold text-foreground transition-colors hover:bg-surface-2 hover:text-accent"
+                          className="flex items-center justify-between rounded-lg px-3 py-2 font-semibold text-foreground transition-colors hover:bg-foreground/10 hover:text-foreground"
                         >
                           Toutes les formations ({trainingCount})
                           <span aria-hidden="true">→</span>
                         </Link>
                         <Link
                           href="/formations"
-                          className="rounded-lg px-3 py-2 text-muted transition-colors hover:bg-surface-2 hover:text-accent"
+                          className="rounded-lg px-3 py-2 text-muted transition-colors hover:bg-foreground/10 hover:text-foreground"
                         >
                           Vue par domaine
                         </Link>
