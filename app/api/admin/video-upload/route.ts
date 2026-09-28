@@ -6,6 +6,21 @@ import { isAuthenticated } from "@/lib/admin-auth";
 // serverless, limitée à 4,5 Mo par l'hébergeur, bien trop juste pour une
 // vidéo. Cette route ne fait que délivrer un jeton d'envoi temporaire ;
 // le fichier ne passe jamais par le serveur.
+//
+// Si ce store doit être recréé un jour (Storage → Blob → Create) :
+// - Choisir « Public » à la création (Vercel : « The access mode cannot
+//   be changed after creation »). Un store « Private » fait échouer tout
+//   envoi avec "Cannot use public access on a private store", puisque
+//   les vidéos doivent être visibles par n'importe quel visiteur du
+//   site, sans authentification.
+// - Copier son BLOB_READ_WRITE_TOKEN (onglet .env.local du store) dans
+//   Project Settings → Environment Variables → Production, sous le nom
+//   exact BLOB_READ_WRITE_TOKEN (sans le préfixe que Vercel ajoute
+//   parfois automatiquement au nom du store).
+// - Le domaine vercel.com (API de contrôle) et *.public.blob.vercel-
+//   storage.com (lecture de la vidéo) doivent rester autorisés dans la
+//   CSP (next.config.ts) : sans ça, l'envoi reste bloqué en silence par
+//   le navigateur, sans jamais afficher d'erreur claire.
 const MAX_BYTES = 100 * 1024 * 1024;
 
 // La génération du jeton appelle l'API Vercel Blob : si les identifiants
