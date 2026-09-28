@@ -1928,7 +1928,8 @@
       "heroImage": "/images/secteur-electrique-1790073151718.jpg",
       "theme": {
         "accentForeground": "#fefcdd",
-        "highlightBackground": "#160f3f"
+        "highlightBackground": "#160f3f",
+        "highlightForeground": "#fefcdd"
       }
     },
     "funding": {
