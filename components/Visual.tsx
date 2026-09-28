@@ -27,6 +27,7 @@ export default function Visual({
         alt={alt}
         fill
         sizes={sizes}
+        quality={90}
         priority={priority}
         className={`object-cover ${className}`}
         style={objectPosition ? { objectPosition } : undefined}

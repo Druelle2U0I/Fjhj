@@ -13,7 +13,10 @@ export default function Hero() {
       className="relative -mt-[86px] overflow-hidden px-6 pt-[126px] pb-24 sm:-mt-[94px] sm:pt-[154px]"
     >
       {hasVideo ? (
-        <HeroBackgroundVideo src={home.heroVideo!} poster={home.heroBackgroundImage} />
+        <HeroBackgroundVideo
+          src={home.heroVideo!}
+          poster={home.heroBackgroundImage || home.heroSlides.find((s) => s.image)?.image}
+        />
       ) : (
         hasPhoto && (
           <HeroBackgroundPhoto

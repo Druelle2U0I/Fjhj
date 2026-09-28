@@ -43,7 +43,9 @@ export default function FormationsMarquee({
                 <Visual
                   src={slide.image}
                   alt={slide.alt ?? ""}
-                  sizes="320px"
+                  // Carte de 288-320 px, agrandie ×1,15 au survol : on
+                  // demande une image assez grande pour rester nette.
+                  sizes="(min-width: 640px) 400px, 360px"
                   className="transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:duration-[6000ms]"
                 />
                 <div className="card-veil-soft absolute inset-0" />

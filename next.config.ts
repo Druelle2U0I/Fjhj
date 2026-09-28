@@ -38,6 +38,12 @@ const cspHeader = `
   .trim();
 
 const nextConfig: NextConfig = {
+  images: {
+    // 90 pour les photos (meilleur rendu que le 75 par défaut, fichiers
+    // encore légers) ; 75 reste disponible.
+    qualities: [75, 90],
+    formats: ["image/avif", "image/webp"],
+  },
   async headers() {
     return [
       {

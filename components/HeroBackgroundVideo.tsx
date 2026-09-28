@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Même traitement que HeroBackgroundPhoto (voile + dégradé pour la
 // lisibilité du texte posé dessus), mais avec une vidéo qui se lance et
@@ -15,6 +15,7 @@ export default function HeroBackgroundVideo({
   poster?: string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     const video = ref.current;
@@ -26,9 +27,17 @@ export default function HeroBackgroundVideo({
 
   return (
     <div className="hero-photo-fade absolute inset-0">
+      {/* Image affichée tout de suite, pendant que la vidéo se charge. */}
+      {poster && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={poster} alt="" className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+      )}
       <video
         ref={ref}
-        className="absolute inset-0 h-full w-full object-cover"
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+          playing || !poster ? "opacity-100" : "opacity-0"
+        }`}
+        onPlaying={() => setPlaying(true)}
         src={src}
         poster={poster}
         autoPlay
