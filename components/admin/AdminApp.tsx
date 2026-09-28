@@ -415,6 +415,17 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                         value={stat.label}
                         onChange={(v) => set({ ...stat, label: v })}
                       />
+                      <label className="flex items-center gap-2 text-xs text-muted sm:col-span-2">
+                        <input
+                          type="checkbox"
+                          checked={stat.source === "recommendation"}
+                          onChange={(e) =>
+                            set({ ...stat, source: e.target.checked ? "recommendation" : undefined })
+                          }
+                        />
+                        Mettre à jour automatiquement avec la note de recommandation du
+                        fichier Excel (le chiffre ci-dessus sert en attendant)
+                      </label>
                     </div>
                   )}
                 />

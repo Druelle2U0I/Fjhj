@@ -1,14 +1,16 @@
 import AnimatedStat from "@/components/AnimatedStat";
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
-import { home, stats } from "@/lib/data";
+import { home } from "@/lib/data";
+import { getStats } from "@/lib/recommendation";
 
 // Bande pleine largeur (photo bord à bord, pas de conteneur à 1200px) qui
 // casse le rythme "carte, carte, carte" en intercalant une photo et les
 // chiffres clés. Réutilisée sur plusieurs pages pour garder un rythme
 // cohérent d'une page à l'autre.
-export default function StatsBand() {
+export default async function StatsBand() {
   if (!home.statsBandImage) return null;
+  const stats = await getStats();
 
   return (
     <section className="relative overflow-hidden py-12 sm:py-16">

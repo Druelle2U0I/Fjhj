@@ -25,7 +25,7 @@
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
     "accessDelay": "Garantie d'organisation rapide de formation sous 14 jours.",
-    "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (taux de satisfaction des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
+    "resultsIndicators": "ENMA Formation a été créé en 2026. Nos premiers indicateurs de résultats (note de recommandation des stagiaires, taux de réussite aux certifications) seront publiés ici à l'issue des premières sessions.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras",
     "qualiopiLogo": "/images/action-formations-qualiopi-1790260002712.png",
@@ -45,8 +45,9 @@
       "label": "domaines de formation"
     },
     {
-      "value": "À venir",
-      "label": "taux de satisfaction"
+      "value": "10/10",
+      "label": "note de recommandation",
+      "source": "recommendation"
     }
   ],
   "pillars": [
@@ -1908,5 +1909,10 @@
     "instagram": "",
     "youtube": "",
     "tiktok": ""
+  },
+  "recommendation": {
+    "driveId": "b!XQbitKSa2UaRfVKI8xKmSPZa2QFX95xJpy0LvY0j5h1ZQuJTYEE4TqFwl-lTqvG9",
+    "itemId": "01KAVFK7M3K4KEEUXPABA2HB7TZ7IBWFNR",
+    "column": "Recommandation"
   }
 }

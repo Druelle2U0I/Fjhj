@@ -195,7 +195,8 @@ export type SiteContent = {
   social?: Social;
   trainingInfo?: { methods: string; evaluation: string };
   pages: Pages;
-  stats: { value: string; label: string }[];
+  stats: Stat[];
+  recommendation?: RecommendationSource;
   pillars: { title: string; text: string }[];
   sectors: Sector[];
   topTrainings: { title: string; duration: string; format: string }[];
@@ -252,6 +253,21 @@ export type Social = {
   instagram?: string;
   youtube?: string;
   tiktok?: string;
+};
+
+export type Stat = {
+  value: string;
+  label: string;
+  // « recommendation » : valeur lue dans le fichier Excel des
+  // questionnaires (voir lib/recommendation.ts), « value » sert de secours.
+  source?: "recommendation";
+};
+
+export type RecommendationSource = {
+  driveId: string;
+  itemId: string;
+  sheet?: string;
+  column?: string;
 };
 
 export type Pages = {
@@ -344,6 +360,7 @@ export const social: Social = content.social ?? {};
 export const pages = content.pages;
 export const trainingInfo = content.trainingInfo ?? { methods: "", evaluation: "" };
 export const stats = content.stats;
+export const recommendationSource = content.recommendation;
 export const pillars = content.pillars;
 export const topTrainings = content.topTrainings;
 export const funding = content.funding;

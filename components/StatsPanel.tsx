@@ -1,9 +1,10 @@
-import { stats } from "@/lib/data";
+import { getStats } from "@/lib/recommendation";
 
 // Encart de chiffres clés réutilisé à côté des titres de page qui,
 // sinon, laissent la moitié droite de l'écran vide (Formations, Toutes
 // les formations, Équipe).
-export default function StatsPanel() {
+export default async function StatsPanel() {
+  const stats = await getStats();
   return (
     <div className="dyn-card grid grid-cols-2 gap-6 rounded-xl border border-border bg-surface p-6 sm:p-8">
       {stats.map((stat) => (

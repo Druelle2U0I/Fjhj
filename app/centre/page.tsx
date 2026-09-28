@@ -6,7 +6,8 @@ import PageHero from "@/components/PageHero";
 import PageThemeScope from "@/components/PageThemeScope";
 import PillarsGrid from "@/components/PillarsGrid";
 import Reveal from "@/components/Reveal";
-import { company, fillCounts, pages, services, stats } from "@/lib/data";
+import { company, fillCounts, pages, services } from "@/lib/data";
+import { getStats } from "@/lib/recommendation";
 
 export const metadata: Metadata = {
   title: "Le centre",
@@ -14,7 +15,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/centre" },
 };
 
-export default function CentrePage() {
+export default async function CentrePage() {
+  const stats = await getStats();
   return (
     <PageThemeScope overrides={pages.centre.theme}>
       <PageHero
