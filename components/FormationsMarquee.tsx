@@ -46,7 +46,7 @@ export default function FormationsMarquee({
                   sizes="320px"
                   className="transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:duration-[6000ms]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="card-veil-soft absolute inset-0" />
                 {(slide.title || slide.text) && (
                   <div className="relative p-4">
                     {slide.title && (

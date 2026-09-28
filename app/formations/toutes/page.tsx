@@ -23,6 +23,7 @@ export default function AllTrainingsPage() {
       format: training.format,
       image: training.image ?? service.image,
       imageAlt: training.imageAlt,
+      imagePosition: training.image ? training.imagePosition : service.imagePosition,
       sectorTitle: service.title,
       sectorSlug: service.slug,
     })),

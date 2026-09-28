@@ -97,8 +97,9 @@ function DesktopAccordion({ services }: { services: Service[] }) {
               sizes="(min-width: 1024px) 60vw, 100vw"
               priority={i === 0}
               className="transition-transform duration-700 group-hover:scale-105"
+              objectPosition={service.imagePosition}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+            <div className="card-veil absolute inset-0" />
             <div
               className={`sector-veil absolute inset-0 transition-opacity duration-700 ease-in-out ${
                 isActive ? "opacity-0" : "opacity-100"

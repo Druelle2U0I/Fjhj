@@ -6,6 +6,10 @@ type Props = {
   sizes?: string;
   priority?: boolean;
   className?: string;
+  // Partie de la photo à garder visible dans le cadre (ex. "center top"),
+  // réglable dans l'admin quand le cadre est plus étroit que la photo.
+  // "center" (recadrage automatique) si absent.
+  objectPosition?: string;
 };
 
 export default function Visual({
@@ -14,6 +18,7 @@ export default function Visual({
   sizes = "100vw",
   priority,
   className = "",
+  objectPosition,
 }: Props) {
   if (src) {
     return (
@@ -24,6 +29,7 @@ export default function Visual({
         sizes={sizes}
         priority={priority}
         className={`object-cover ${className}`}
+        style={objectPosition ? { objectPosition } : undefined}
       />
     );
   }

@@ -24,6 +24,10 @@ export type Training = {
   programme: Module[];
   image?: string;
   imageAlt?: string;
+  // Partie de la photo à garder visible dans les cartes (portrait) :
+  // utile quand la photo d'origine est au format paysage. Voir
+  // components/admin/ui.tsx (ImagePositionField).
+  imagePosition?: string;
   description: string[];
   audience: string;
   funding: string;
@@ -39,6 +43,7 @@ export type Sector = {
   opco: boolean;
   image?: string;
   imageAlt?: string;
+  imagePosition?: string;
   trainings: Training[];
   // Contenu optionnel, affiché en complément du catalogue.
   popularPaths?: string[];
@@ -111,13 +116,31 @@ export type Theme = {
   // qui utilisent la couleur d'accent.
   highlightBackground?: string;
   highlightForeground?: string;
+  // Fondu sombre posé sur les photos de formation (cartes plein cadre),
+  // pour que le texte reste lisible. Noir par défaut, indépendant des
+  // autres couleurs du site.
+  cardVeil?: string;
 };
 
 // Couleurs qu'une page peut personnaliser indépendamment du thème
 // global (réglé dans Design) : de quoi lui donner sa propre identité
 // sans revoir tout le site à chaque fois.
 export type PageColorOverride = Partial<
-  Pick<Theme, "accent" | "accentForeground" | "surfaceAccent" | "highlightBackground" | "highlightForeground">
+  Pick<
+    Theme,
+    | "background"
+    | "surface"
+    | "surface2"
+    | "foreground"
+    | "muted"
+    | "border"
+    | "accent"
+    | "accentForeground"
+    | "surfaceAccent"
+    | "highlightBackground"
+    | "highlightForeground"
+    | "cardVeil"
+  >
 >;
 
 export const THEME_DEFAULTS = {
@@ -133,6 +156,7 @@ export const THEME_DEFAULTS = {
   surfaceAccent: "#fff9c7",
   highlightBackground: "#fff9c7",
   highlightForeground: "#0b032b",
+  cardVeil: "#000000",
 } as const;
 
 export type SiteContent = {
@@ -357,6 +381,7 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--surface-accent": v.surfaceAccent,
     "--highlight": v.highlightBackground,
     "--highlight-foreground": v.highlightForeground,
+    "--card-veil": v.cardVeil,
   };
 }
 
