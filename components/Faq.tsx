@@ -29,7 +29,7 @@ export default function Faq({ items }: { items: FaqItem[] }) {
                 aria-hidden="true"
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-highlight text-lg leading-none text-highlight-foreground"
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent text-lg leading-none text-accent-foreground"
               >
                 +
               </motion.span>
