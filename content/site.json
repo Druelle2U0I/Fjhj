@@ -1819,13 +1819,11 @@
     "theme": {
       "surfaceMuted": "#c0c0c0",
       "highlightBackground": "#fefcdd",
-      "surfaceForeground": "#1f1a4d",
       "linkColor": "#444444",
       "eyebrowColor": "#fffbb9",
       "titleColor": "#fbffda",
       "introColor": "#f4f2d4",
       "accent": "#0e0a29",
-      "surface2": "#fefcdd",
       "highlightForeground": "#1f1a4d"
     }
   },
