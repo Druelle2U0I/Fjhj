@@ -9,13 +9,25 @@ const isDev = process.env.NODE_ENV === "development";
 // Analytics est servi en même origine via /_vercel/insights/script.js
 // (couvert par script-src 'self'), mais l'envoi des mesures passe par
 // vitals.vercel-insights.com, d'où l'ajout à connect-src.
+//
+// vercel.com est nécessaire à connect-src : l'envoi de vidéo depuis
+// l'admin (Vercel Blob) passe, après le jeton généré par notre propre
+// route, par des appels direct-browser vers vercel.com/api/blob — sans
+// cette autorisation, le navigateur les bloque silencieusement (aucune
+// requête réseau visible, juste une violation CSP dans la console),
+// et la librairie interprète ce blocage comme une erreur réseau
+// passagère qu'elle retente en boucle : d'où un envoi qui semblait
+// bloqué indéfiniment sans jamais afficher d'erreur claire. Le
+// domaine de stockage (*.public.blob.vercel-storage.com) sert à lire
+// la vidéo une fois envoyée (balise <video>, gouvernée par media-src).
 const cspHeader = `
   default-src 'self';
   script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
   img-src 'self' blob: data:;
   font-src 'self';
-  connect-src 'self' https://vitals.vercel-insights.com;
+  media-src 'self' blob: https://*.public.blob.vercel-storage.com;
+  connect-src 'self' https://vitals.vercel-insights.com https://vercel.com https://*.public.blob.vercel-storage.com;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
