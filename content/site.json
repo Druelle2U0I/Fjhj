@@ -1778,7 +1778,8 @@
     ],
     "heroBackgroundImage": "",
     "heroBackgroundImageAlt": "",
-    "aboutImage": "/images/enma-logo-jpg-1790597170463.jpg"
+    "aboutImage": "/images/enma-logo-jpg-1790597170463.jpg",
+    "heroVideo": "https://he61u75bwwrjpmk6.public.blob.vercel-storage.com/vrai%20video-14qRz792XOPqazc2FCvwwOZSUwPX4R.mp4"
   },
   "theme": {
     "background": "#f4f2d4",
