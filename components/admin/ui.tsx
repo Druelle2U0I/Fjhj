@@ -280,18 +280,25 @@ export function VideoField({
 }) {
   const input = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
+  const [progress, setProgress] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const upload = async (file: File) => {
     setBusy(true);
     setError(null);
+    setProgress(0);
     try {
       // Envoi direct au stockage (Vercel Blob), sans passer par une
       // fonction serverless : les vidéos sont trop lourdes pour la
       // limite de 4,5 Mo imposée aux requêtes par l'hébergeur.
+      // En plusieurs morceaux envoyés en parallèle (et automatiquement
+      // ré-essayés en cas d'échec d'un morceau) : plus fiable pour les
+      // gros fichiers et les connexions lentes qu'un envoi en un bloc.
       const blob = await uploadToBlob(file.name, file, {
         access: "public",
         handleUploadUrl: "/api/admin/video-upload",
+        multipart: true,
+        onUploadProgress: ({ percentage }) => setProgress(percentage),
       });
       onChange(blob.url);
     } catch (err) {
@@ -302,6 +309,7 @@ export function VideoField({
       );
     } finally {
       setBusy(false);
+      setProgress(null);
     }
   };
 
@@ -335,7 +343,7 @@ export function VideoField({
           />
           <div className="flex gap-2">
             <SmallButton onClick={() => input.current?.click()} disabled={busy}>
-              {busy ? "Envoi…" : "Choisir une vidéo"}
+              {busy ? `Envoi… ${Math.round(progress ?? 0)} %` : "Choisir une vidéo"}
             </SmallButton>
             {value && (
               <SmallButton tone="danger" onClick={() => onChange(undefined)}>
