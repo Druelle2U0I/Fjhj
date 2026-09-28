@@ -31,8 +31,8 @@
   --color-surface-accent: var(--surface-accent);
   --color-highlight: var(--highlight);
   --color-highlight-foreground: var(--highlight-foreground);
-  --font-sans: var(--font-dejavu), "DejaVu Sans Condensed", Arial, sans-serif;
-  --font-ui: var(--font-dejavu), "DejaVu Sans Condensed", Arial, sans-serif;
+  --font-sans: var(--font-figtree), Arial, sans-serif;
+  --font-ui: var(--font-figtree), Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-display: var(--font-archivo);
 }

@@ -26,7 +26,7 @@ export default function About({ section }: { section: HomeSection }) {
             {section.eyebrow && (
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-muted">{section.eyebrow}</p>
             )}
-            <h2 className="mt-3 text-2xl font-bold uppercase leading-tight tracking-tight sm:text-3xl">
+            <h2 className="mt-3 text-2xl font-extrabold uppercase leading-tight tracking-tight sm:text-3xl">
               {section.title.replace(/(\p{L})-(?=\p{L})/gu, "$1\u2011")}
             </h2>
             <p className="mt-4 whitespace-pre-line text-[13px] leading-relaxed text-foreground/85">

@@ -5,6 +5,7 @@ import {
   Space_Grotesk,
   Manrope,
   Fraunces,
+  Figtree,
 } from "next/font/google";
 import localFont from "next/font/local";
 import Header from "@/components/Header";
@@ -56,6 +57,14 @@ const dejavu = localFont({
   display: "swap",
 });
 
+
+// Police géométrique des titres et du texte courant.
+const figtree = Figtree({
+  variable: "--font-figtree",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
 
 const siteTitle =
   "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
@@ -139,7 +148,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       lang="fr"
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} ${dejavu.variable} h-full antialiased`}
+      className={`${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} ${figtree.variable} ${dejavu.variable} h-full antialiased`}
       style={themeStyle(theme) as React.CSSProperties}
     >
       <head>

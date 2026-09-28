@@ -56,9 +56,9 @@ function FormationsSection({ section }: { section: HomeSection }) {
               action={
                 <Link
                   href="/formations"
-                  className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground transition-transform hover:scale-105"
+                  className="inline-block whitespace-nowrap border-b border-foreground pb-0.5 text-xs font-bold uppercase tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent"
                 >
-                  Voir toutes nos formations <span aria-hidden="true">→</span>
+                  Voir toutes nos formations
                 </Link>
               }
               cards={services.map((service) => ({

@@ -46,7 +46,7 @@ export default function CardRail({
     <div className="grid gap-6 md:grid-cols-[14rem_1fr] md:gap-8">
       <div className="flex flex-wrap items-end justify-between gap-4 md:block">
         <div>
-          <h2 className="whitespace-pre-line text-2xl font-bold uppercase leading-[1.05] tracking-tight sm:text-3xl">
+          <h2 className="whitespace-pre-line text-2xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-3xl">
             {title}
           </h2>
           {action && <div className="mt-5">{action}</div>}
@@ -82,7 +82,7 @@ export default function CardRail({
                 </>
               )}
               <div className="relative p-4">
-                <p className={`text-lg font-bold uppercase leading-tight ${photo ? "text-white" : "text-[#0b0c31]"}`}>
+                <p className={`text-lg font-extrabold uppercase leading-tight ${photo ? "text-white" : "text-[#0b0c31]"}`}>
                   {card.title}
                 </p>
                 {card.subtitle && (
