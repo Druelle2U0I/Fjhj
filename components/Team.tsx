@@ -1,16 +1,6 @@
 import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
-import Reveal from "@/components/Reveal";
-import Visual from "@/components/Visual";
+import StoryRow, { StoryLink, StoryText, StoryTitle } from "@/components/StoryRow";
 import { pages, team } from "@/lib/data";
-
-function initials(name: string) {
-  return name
-    .split(" ")
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-}
 
 export default function Team() {
   const paragraphs = (pages.team.text ?? "")
@@ -49,42 +39,26 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Les membres côte à côte : le zigzag plein écran laissait beaucoup
-          de vide dès qu'il n'y a que 2 personnes dans l'équipe. */}
-      <section className="px-6 pb-10 pt-4">
-        <div className="mx-auto grid max-w-5xl gap-14 sm:grid-cols-2 sm:gap-10">
+      {/* Les membres en rangées photo / texte, comme À propos et
+          Financement sur l'accueil : grande photo portrait, texte à côté,
+          côté alterné d'une personne à l'autre. */}
+      <section className="px-6 pb-12 pt-10 sm:pb-16">
+        <div className="mx-auto grid max-w-[780px] gap-10 sm:gap-6">
           {team.map((member, i) => (
-            <Reveal
+            <StoryRow
               key={member.name}
-              delay={i * 0.08}
-              className="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8"
+              image={member.photo || undefined}
+              imageAlt={member.photoAlt || member.name}
+              side={i % 2 === 0 ? "left" : "right"}
+              align={i % 2 === 0 ? "center" : "left"}
             >
-              <div className="dyn-photo-wrap relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-lg sm:w-48">
-                {member.photo ? (
-                  <Visual
-                    src={member.photo}
-                    alt={member.photoAlt || member.name}
-                    sizes="220px"
-                    className="dyn-photo"
-                  />
-                ) : (
-                  <div className="dyn-photo flex h-full w-full items-center justify-center bg-accent-soft text-4xl font-semibold text-surface-accent">
-                    {initials(member.name)}
-                  </div>
-                )}
+              <p className="eyebrow text-muted">{member.role}</p>
+              <div className="mt-3">
+                <StoryTitle>{member.name.replace(/(\p{L})-(?=\p{L})/gu, "$1\u2011")}</StoryTitle>
               </div>
-              <div>
-                <h2 className="text-2xl font-semibold">{member.name}</h2>
-                <p className="mt-1 font-medium text-accent">{member.role}</p>
-                <p className="mt-4 max-w-md whitespace-pre-line text-muted">{member.bio}</p>
-                <a
-                  href={`mailto:${member.email}`}
-                  className="mt-4 inline-block text-sm text-muted hover:text-accent"
-                >
-                  {member.email}
-                </a>
-              </div>
-            </Reveal>
+              {member.bio && <StoryText>{member.bio}</StoryText>}
+              {member.email && <StoryLink href={`mailto:${member.email}`}>{member.email}</StoryLink>}
+            </StoryRow>
           ))}
         </div>
       </section>

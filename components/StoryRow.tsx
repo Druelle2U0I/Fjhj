@@ -63,11 +63,18 @@ export function StoryText({ children }: { children: ReactNode }) {
 }
 
 export function StoryLink({ href, children }: { href: string; children: ReactNode }) {
+  const className =
+    "underline-link mt-6 inline-block border-b pb-0.5 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-70";
+  // Adresse e-mail ou téléphone : simple lien, sans navigation interne.
+  if (/^(mailto|tel):/.test(href)) {
+    return (
+      <a href={href} className={className}>
+        {children}
+      </a>
+    );
+  }
   return (
-    <Link
-      href={href}
-      className="underline-link mt-6 inline-block border-b pb-0.5 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-70"
-    >
+    <Link href={href} className={className}>
       {children}
     </Link>
   );
