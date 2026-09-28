@@ -4,8 +4,10 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { FaqItem } from "@/lib/data";
 
-export default function Faq({ items }: { items: FaqItem[] }) {
+export default function Faq({ items: allItems }: { items: FaqItem[] }) {
   const [open, setOpen] = useState(0);
+  // Questions laissées vides dans l'admin : ignorées.
+  const items = allItems.filter((item) => item.question.trim());
 
   if (items.length === 0) return null;
 

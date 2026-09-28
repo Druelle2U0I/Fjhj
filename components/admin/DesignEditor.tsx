@@ -39,7 +39,8 @@ type ColorKey =
   | "surfaceForeground"
   | "surfaceMuted"
   | "surfaceAccent"
-  | "cardVeil";
+  | "cardVeil"
+  | "linkColor";
 type RangeKey = "sectorVeil" | "footerVeil" | "bandOpacity";
 
 const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
@@ -66,6 +67,11 @@ const EXTRA_COLORS: { key: ColorKey; label: string; hint: string }[] = [
     key: "cardVeil",
     label: "Fondu sur les photos de formation",
     hint: "Dégradé posé sur les photos des cartes de formation (catalogue, toutes les formations, accueil) pour que le texte reste lisible. Noir par défaut.",
+  },
+  {
+    key: "linkColor",
+    label: "Liens soulignés",
+    hint: "Texte et trait des liens soulignés en petites capitales : « Voir toutes nos formations », « Le centre », « Comprendre le financement », « Une autre question ? ».",
   },
 ];
 

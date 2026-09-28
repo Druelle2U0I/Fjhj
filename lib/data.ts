@@ -126,6 +126,9 @@ export type Theme = {
   // pour que le texte reste lisible. Noir par défaut, indépendant des
   // autres couleurs du site.
   cardVeil?: string;
+  // Liens soulignés en petites capitales (« Voir toutes nos formations »,
+  // « Le centre », « Une autre question ? »…).
+  linkColor?: string;
 };
 
 // Couleurs qu'une page peut personnaliser indépendamment du thème
@@ -165,6 +168,7 @@ export const THEME_DEFAULTS = {
   highlightBackground: "#fff9c7",
   highlightForeground: "#0b032b",
   cardVeil: "#000000",
+  linkColor: "#0b0c31",
 } as const;
 
 export type SiteContent = {
@@ -432,6 +436,7 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--highlight": v.highlightBackground,
     "--highlight-foreground": v.highlightForeground,
     "--card-veil": v.cardVeil,
+    "--link-color": v.linkColor,
   };
 }
 

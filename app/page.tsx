@@ -56,7 +56,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
               action={
                 <Link
                   href="/formations"
-                  className="inline-block whitespace-nowrap border-b border-foreground pb-0.5 text-xs font-bold uppercase tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent"
+                  className="underline-link inline-block whitespace-nowrap border-b pb-0.5 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-70"
                 >
                   Voir toutes nos formations
                 </Link>
@@ -121,7 +121,7 @@ function FaqSection({ section }: { section: HomeSection }) {
           )}
           <Link
             href="/contact"
-            className="mt-6 inline-block border-b border-foreground pb-0.5 text-xs font-semibold uppercase tracking-[0.14em] text-foreground transition-colors hover:border-accent hover:text-accent"
+            className="underline-link mt-6 inline-block border-b pb-0.5 text-xs font-semibold uppercase tracking-[0.14em] transition-opacity hover:opacity-70"
           >
             Une autre question ?
           </Link>
