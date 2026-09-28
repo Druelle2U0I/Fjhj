@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageThemeScope from "@/components/PageThemeScope";
 import Team from "@/components/Team";
 import { pages } from "@/lib/data";
 
@@ -9,5 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function EquipePage() {
-  return <Team />;
+  return (
+    <PageThemeScope overrides={pages.team.theme}>
+      <Team />
+    </PageThemeScope>
+  );
 }

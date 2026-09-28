@@ -3,6 +3,7 @@ import Link from "next/link";
 import AllTrainings, { type TrainingItem } from "@/components/AllTrainings";
 import KeyFacts from "@/components/KeyFacts";
 import PageHero from "@/components/PageHero";
+import PageThemeScope from "@/components/PageThemeScope";
 import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import { fillCounts, pages, services } from "@/lib/data";
 
@@ -28,7 +29,7 @@ export default function AllTrainingsPage() {
   );
 
   return (
-    <>
+    <PageThemeScope overrides={pages.allTrainings.theme}>
       <PageHero
         eyebrow={pages.allTrainings.eyebrow}
         title={fillCounts(pages.allTrainings.title)}
@@ -62,6 +63,6 @@ export default function AllTrainingsPage() {
           <UnlistedTrainingNote />
         </div>
       </section>
-    </>
+    </PageThemeScope>
   );
 }

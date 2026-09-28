@@ -3,6 +3,7 @@ import Link from "next/link";
 import AnimatedStat from "@/components/AnimatedStat";
 import FranceMap from "@/components/FranceMap";
 import PageHero from "@/components/PageHero";
+import PageThemeScope from "@/components/PageThemeScope";
 import PillarsGrid from "@/components/PillarsGrid";
 import Reveal from "@/components/Reveal";
 import { company, fillCounts, pages, services, stats } from "@/lib/data";
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function CentrePage() {
   return (
-    <>
+    <PageThemeScope overrides={pages.centre.theme}>
       <PageHero
         eyebrow={pages.centre.eyebrow}
         title={pages.centre.title}
@@ -121,6 +122,6 @@ export default function CentrePage() {
           </div>
         </Reveal>
       </section>
-    </>
+    </PageThemeScope>
   );
 }

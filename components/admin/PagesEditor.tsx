@@ -1,6 +1,7 @@
 "use client";
 
-import type { Pages } from "@/lib/data";
+import type { PageColorOverride, Pages, Theme } from "@/lib/data";
+import PageColorsEditor from "./PageColorsEditor";
 import { Card, Field, ImageField } from "./ui";
 
 type PageKey = keyof Pages;
@@ -22,7 +23,10 @@ const SEO_HINT =
   "Texte affiché par Google sous le titre de la page. Idéalement 150 caractères environ.";
 
 // Chaque bloc correspond à une page (ou à un modèle de page) du site.
-const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }[] = [
+// `colors: true` ajoute un réglage de couleurs propre à cette page (sur
+// les pages qui correspondent à une seule adresse du site — pas les
+// modèles partagés par plusieurs pages comme « sector » ou « training »).
+const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; colors?: boolean }[] = [
   {
     key: "hero",
     title: "Accueil — haut de page",
@@ -36,6 +40,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
   {
     key: "catalogue",
     title: "Catalogue (Nos formations)",
+    colors: true,
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre", hint: COUNTS_HINT },
@@ -48,6 +53,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
     key: "allTrainings",
     title: "Toutes les formations",
     hint: "Page accessible depuis le catalogue, qui liste toutes les formations avec leur domaine.",
+    colors: true,
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre", hint: COUNTS_HINT },
@@ -93,6 +99,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
   {
     key: "centre",
     title: "Le centre",
+    colors: true,
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
@@ -125,6 +132,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
     key: "team",
     title: "Notre équipe",
     hint: "Les photos et présentations des membres sont juste en dessous.",
+    colors: true,
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre" },
@@ -142,6 +150,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
     key: "contact",
     title: "Contact",
     hint: "Aussi utilisé en bas de la page d'accueil si la section Contact y est affichée.",
+    colors: true,
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre" },
@@ -156,6 +165,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[] }
     key: "funding",
     title: "Qualiopi & financement",
     hint: "L'introduction et les blocs se modifient juste en dessous.",
+    colors: true,
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre" },
@@ -169,15 +179,21 @@ export default function PagesEditor({
   pages,
   onChange,
   only,
+  theme,
 }: {
   pages: Pages;
   onChange: (pages: Pages) => void;
   only?: PageKey[];
+  // Nécessaire seulement pour les pages avec `colors: true` (aperçu des
+  // couleurs du site tant qu'aucune couleur propre à la page n'est réglée).
+  theme?: Theme;
 }) {
   return (
     <>
       {PAGES.filter((page) => !only || only.includes(page.key)).map((page) => {
-        const values = (pages[page.key] ?? {}) as Record<string, string>;
+        const raw = pages[page.key] ?? {};
+        const values = raw as Record<string, string>;
+        const pageTheme = (raw as { theme?: PageColorOverride }).theme;
         return (
           <Card key={page.key} className="grid gap-4">
             <div>
@@ -214,6 +230,19 @@ export default function PagesEditor({
                   }
                 />
               ),
+            )}
+            {page.colors && theme && (
+              <PageColorsEditor
+                className="border-t border-border pt-4"
+                siteTheme={theme}
+                value={pageTheme}
+                onChange={(next) =>
+                  onChange({
+                    ...pages,
+                    [page.key]: { ...raw, theme: next },
+                  } as Pages)
+                }
+              />
             )}
           </Card>
         );
