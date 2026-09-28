@@ -234,6 +234,8 @@ export type SiteContent = {
     heroVideo?: string;
     // Bande défilante de photos sous le haut de page (masquée si false).
     showMarquee?: boolean;
+    // Photo du bloc Financement de l'accueil (sinon : photo de la page Financement).
+    fundingImage?: string;
     // Source affichée sous les chiffres clés (pour le pourcentage de
     // recommandation), précédée d'un astérisque.
     statsNote?: string;

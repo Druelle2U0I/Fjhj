@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import SplitPhotoBand from "@/components/SplitPhotoBand";
+import ZigzagRow from "@/components/ZigzagRow";
 import { company, home } from "@/lib/data";
 import type { HomeSection } from "@/lib/data";
 
@@ -36,12 +36,14 @@ export default function About({ section }: { section: HomeSection }) {
   return (
     <div id="a-propos">
       {hasImage ? (
-        <SplitPhotoBand
+        <ZigzagRow
           image={home.aboutImage!}
           imageAlt={home.aboutImageAlt || company.name}
+          side="left"
+          contain
         >
           {title}
-        </SplitPhotoBand>
+        </ZigzagRow>
       ) : (
         <section className="px-6 py-10 sm:py-14">
           <Reveal className="mx-auto max-w-6xl">{title}</Reveal>

@@ -192,6 +192,19 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 />
               </Card>
 
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+                  Photo du bloc Financement
+                </p>
+                <ImageField
+                  label="Photo (à droite du texte ; vide = photo de la page Financement)"
+                  value={content.home.fundingImage || undefined}
+                  onChange={(v) =>
+                    update({ ...content, home: { ...content.home, fundingImage: v ?? "" } })
+                  }
+                />
+              </Card>
+
               <Card className="grid gap-3">
                 <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Mise en page

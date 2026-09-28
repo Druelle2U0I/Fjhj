@@ -10,13 +10,13 @@ export default function Faq({ items }: { items: FaqItem[] }) {
   if (items.length === 0) return null;
 
   return (
-    <div className="mx-auto mt-8 max-w-3xl border-t border-foreground/15 sm:mt-12">
+    <div className="border-t border-foreground/20">
       {items.map((item, index) => {
         const isOpen = index === open;
         return (
           <div
             key={item.question}
-            className="overflow-hidden border-b border-foreground/15"
+            className="overflow-hidden border-b border-foreground/20"
           >
             <button
               type="button"
@@ -24,11 +24,12 @@ export default function Faq({ items }: { items: FaqItem[] }) {
               aria-expanded={isOpen}
               className="flex w-full items-center justify-between gap-4 py-5 text-left"
             >
-              <span className="font-semibold">{item.question}</span>
+              <span className="text-sm font-semibold sm:text-base">{item.question}</span>
               <motion.span
+                aria-hidden="true"
                 animate={{ rotate: isOpen ? 45 : 0 }}
                 transition={{ duration: 0.2 }}
-                className="shrink-0 text-2xl leading-none text-foreground"
+                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-highlight text-lg leading-none text-highlight-foreground"
               >
                 +
               </motion.span>
