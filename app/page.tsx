@@ -3,6 +3,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import FormationsMarquee from "@/components/FormationsMarquee";
+import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
 import SectorAccordion from "@/components/SectorAccordion";
 import Faq from "@/components/Faq";
@@ -151,7 +152,7 @@ function ContactSection({ section }: { section: HomeSection }) {
 
 export default function Home() {
   return (
-    <>
+    <PageThemeScope overrides={home.theme}>
       <Hero />
       <FormationsMarquee
         eyebrow="En images"
@@ -179,6 +180,6 @@ export default function Home() {
               return <FaqSection key={section.id} section={section} />;
           }
         })}
-    </>
+    </PageThemeScope>
   );
 }

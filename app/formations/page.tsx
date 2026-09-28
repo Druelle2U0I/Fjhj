@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import KeyFacts from "@/components/KeyFacts";
 import PageHero from "@/components/PageHero";
+import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
 import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import Visual from "@/components/Visual";
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function FormationsPage() {
   return (
-    <>
+    <PageThemeScope overrides={pages.catalogue.theme}>
       <PageHero
         eyebrow={pages.catalogue.eyebrow}
         title={fillCounts(pages.catalogue.title)}
@@ -69,6 +70,6 @@ export default function FormationsPage() {
           <UnlistedTrainingNote />
         </div>
       </section>
-    </>
+    </PageThemeScope>
   );
 }

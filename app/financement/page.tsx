@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Funding from "@/components/Funding";
+import PageThemeScope from "@/components/PageThemeScope";
 import { pages } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -9,5 +10,9 @@ export const metadata: Metadata = {
 };
 
 export default function FinancementPage() {
-  return <Funding />;
+  return (
+    <PageThemeScope overrides={pages.funding.theme}>
+      <Funding />
+    </PageThemeScope>
+  );
 }

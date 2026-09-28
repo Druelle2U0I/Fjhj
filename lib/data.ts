@@ -113,6 +113,13 @@ export type Theme = {
   highlightForeground?: string;
 };
 
+// Couleurs qu'une page peut personnaliser indépendamment du thème
+// global (réglé dans Design) : de quoi lui donner sa propre identité
+// sans revoir tout le site à chaque fois.
+export type PageColorOverride = Partial<
+  Pick<Theme, "accent" | "accentForeground" | "surfaceAccent" | "highlightBackground" | "highlightForeground">
+>;
+
 export const THEME_DEFAULTS = {
   tagBackground: "#0b032b",
   tagText: "#fff9c7",
@@ -189,6 +196,7 @@ export type SiteContent = {
     heroBackgroundImage?: string;
     heroBackgroundImageAlt?: string;
     heroVideo?: string;
+    theme?: PageColorOverride;
     aboutImage?: string;
     aboutImageAlt?: string;
     statsBandImage?: string;
@@ -224,7 +232,14 @@ export type Social = {
 
 export type Pages = {
   hero: { badge: string; primaryButton: string; secondaryButton: string };
-  catalogue: { eyebrow: string; title: string; text: string; seoDescription: string; heroImage?: string };
+  catalogue: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    seoDescription: string;
+    heroImage?: string;
+    theme?: PageColorOverride;
+  };
   allTrainings: {
     eyebrow: string;
     title: string;
@@ -235,6 +250,7 @@ export type Pages = {
     emptyText: string;
     seoDescription: string;
     heroImage?: string;
+    theme?: PageColorOverride;
   };
   sector: {
     quoteMainButton: string;
@@ -273,8 +289,16 @@ export type Pages = {
     ctaButton: string;
     seoDescription: string;
     heroImage?: string;
+    theme?: PageColorOverride;
   };
-  team: { eyebrow: string; title: string; text?: string; seoDescription: string; heroImage?: string };
+  team: {
+    eyebrow: string;
+    title: string;
+    text?: string;
+    seoDescription: string;
+    heroImage?: string;
+    theme?: PageColorOverride;
+  };
   contact: {
     eyebrow: string;
     title: string;
@@ -283,8 +307,9 @@ export type Pages = {
     successMessage: string;
     seoDescription: string;
     heroImage?: string;
+    theme?: PageColorOverride;
   };
-  funding: { eyebrow: string; title: string; seoDescription: string; heroImage?: string };
+  funding: { eyebrow: string; title: string; seoDescription: string; heroImage?: string; theme?: PageColorOverride };
 };
 
 const content = site as SiteContent;
@@ -333,6 +358,12 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--highlight": v.highlightBackground,
     "--highlight-foreground": v.highlightForeground,
   };
+}
+
+/** Variables CSS du thème global, avec les couleurs propres à une page
+ *  (si elle en a) appliquées par-dessus. Voir components/PageThemeScope.tsx. */
+export function pageThemeStyle(overrides?: PageColorOverride): Record<string, string> {
+  return themeStyle({ ...theme, ...overrides });
 }
 
 export const services = content.sectors.map((sector) => ({

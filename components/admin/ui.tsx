@@ -1,5 +1,6 @@
 "use client";
 
+import { upload as uploadToBlob } from "@vercel/blob/client";
 import Image from "next/image";
 import { useRef, useState, type ReactNode } from "react";
 
@@ -281,32 +282,30 @@ export function VideoField({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Aperçu local de la dernière vidéo envoyée : le fichier publié n'est
-  // servi par le site qu'après le redéploiement (une à deux minutes).
-  const [preview, setPreview] = useState<{ path: string; url: string } | null>(null);
-
   const upload = async (file: File) => {
     setBusy(true);
     setError(null);
-    const body = new FormData();
-    body.append("file", file);
-    const res = await fetch("/api/admin/upload", { method: "POST", body }).catch(() => null);
-    const data = res ? await res.json().catch(() => ({})) : {};
-    setBusy(false);
-    if (!res || !res.ok) {
+    try {
+      // Envoi direct au stockage (Vercel Blob), sans passer par une
+      // fonction serverless : les vidéos sont trop lourdes pour la
+      // limite de 4,5 Mo imposée aux requêtes par l'hébergeur.
+      const blob = await uploadToBlob(file.name, file, {
+        access: "public",
+        handleUploadUrl: "/api/admin/video-upload",
+      });
+      onChange(blob.url);
+    } catch (err) {
       setError(
-        data.error ??
-          (res?.status === 413
-            ? "Vidéo trop lourde. Compressez-la davantage (courte boucle, sans son)."
-            : "Envoi impossible. Vérifiez votre connexion et réessayez."),
+        err instanceof Error && err.message
+          ? err.message
+          : "Envoi impossible. Vérifiez votre connexion et réessayez.",
       );
-      return;
+    } finally {
+      setBusy(false);
     }
-    setPreview({ path: data.path, url: URL.createObjectURL(file) });
-    onChange(data.path);
   };
 
-  const shown = preview && preview.path === value ? preview.url : value;
+  const shown = value;
 
   return (
     <div>
@@ -348,6 +347,59 @@ export function VideoField({
           {error && <p className="text-xs text-red-400">{error}</p>}
         </div>
       </div>
+    </div>
+  );
+}
+
+// Comme ColorField, mais la couleur est facultative : tant qu'elle n'est
+// pas définie, la page utilise la couleur du site (affichée en aperçu),
+// et un bouton permet d'y revenir à tout moment.
+export function OptionalColorField({
+  label,
+  value,
+  fallback,
+  onChange,
+}: {
+  label: string;
+  value?: string;
+  fallback: string;
+  onChange: (value: string | undefined) => void;
+}) {
+  const shown = value || fallback;
+  return (
+    <div>
+      <div className="flex items-center justify-between gap-2">
+        <span className="text-xs font-semibold uppercase tracking-wide text-muted">
+          {label}
+        </span>
+        {value && (
+          <button
+            type="button"
+            onClick={() => onChange(undefined)}
+            className="shrink-0 text-xs font-semibold text-muted underline decoration-dotted underline-offset-2 hover:text-accent"
+          >
+            Réinitialiser
+          </button>
+        )}
+      </div>
+      <div className="mt-1.5 flex items-center gap-3">
+        <input
+          type="color"
+          value={shown}
+          onChange={(e) => onChange(e.target.value)}
+          className="h-10 w-12 shrink-0 cursor-pointer rounded-lg border border-border bg-surface-2"
+        />
+        <input
+          value={shown}
+          onChange={(e) => onChange(e.target.value)}
+          className="w-full rounded-xl border border-border bg-surface-2 px-3 py-2 font-mono text-sm outline-none focus:border-surface-accent"
+        />
+      </div>
+      {!value && (
+        <span className="mt-1 block text-xs text-muted">
+          Couleur du site pour l&apos;instant ({fallback}).
+        </span>
+      )}
     </div>
   );
 }

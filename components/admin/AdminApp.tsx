@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import type { SiteContent } from "@/lib/data";
 import SectorsEditor from "./SectorsEditor";
 import DesignEditor from "./DesignEditor";
+import PageColorsEditor from "./PageColorsEditor";
 import PagesEditor from "./PagesEditor";
 import { Card, Field, ImageField, ListEditor, VideoField } from "./ui";
 
@@ -175,11 +176,19 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 />
                 <VideoField
                   label="Vidéo (remplace la photo, se lance et boucle automatiquement)"
-                  hint="Courte boucle sans son, déjà compressée : 4,5 Mo maximum (quelques secondes suffisent). La photo ci-dessus reste utilisée comme image de secours pendant le chargement."
+                  hint="Idéalement une courte boucle sans son (quelques secondes), pour un chargement rapide : 100 Mo maximum. La photo ci-dessus reste utilisée comme image de secours pendant le chargement."
                   value={content.home.heroVideo || undefined}
                   onChange={(v) =>
                     update({ ...content, home: { ...content.home, heroVideo: v ?? "" } })
                   }
+                />
+              </Card>
+
+              <Card className="grid gap-4">
+                <PageColorsEditor
+                  siteTheme={content.theme}
+                  value={content.home.theme}
+                  onChange={(next) => update({ ...content, home: { ...content.home, theme: next } })}
                 />
               </Card>
 
@@ -453,6 +462,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               <PagesEditor
                 only={["catalogue", "allTrainings", "sector", "training"]}
                 pages={content.pages}
+                theme={content.theme}
                 onChange={(pages) => update({ ...content, pages })}
               />
 
@@ -508,6 +518,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               <PagesEditor
                 only={["centre"]}
                 pages={content.pages}
+                theme={content.theme}
                 onChange={(pages) => update({ ...content, pages })}
               />
 
@@ -550,6 +561,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               <PagesEditor
                 only={["funding"]}
                 pages={content.pages}
+                theme={content.theme}
                 onChange={(pages) => update({ ...content, pages })}
               />
 
@@ -603,6 +615,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               <PagesEditor
                 only={["team"]}
                 pages={content.pages}
+                theme={content.theme}
                 onChange={(pages) => update({ ...content, pages })}
               />
 
@@ -662,6 +675,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
               <PagesEditor
                 only={["contact"]}
                 pages={content.pages}
+                theme={content.theme}
                 onChange={(pages) => update({ ...content, pages })}
               />
             </>
