@@ -3,7 +3,7 @@
 import { Fragment, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { SiteContent } from "@/lib/data";
+import type { SiteContent, Stat } from "@/lib/data";
 import SectorsEditor from "./SectorsEditor";
 import DesignEditor from "./DesignEditor";
 import PageColorsEditor from "./PageColorsEditor";
@@ -400,7 +400,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
                 <ListEditor
                   items={content.stats}
                   onChange={(stats) => update({ ...content, stats })}
-                  createItem={() => ({ value: "", label: "" })}
+                  createItem={(): Stat => ({ value: "", label: "" })}
                   addLabel="Ajouter un chiffre"
                   titleFor={(s) => `${s.value} ${s.label}`}
                   renderItem={(stat, set) => (
