@@ -43,6 +43,21 @@ export async function fetchRecommendation(): Promise<{ percent: number; count: n
     if (!token) return null;
     const base = `https://graph.microsoft.com/v1.0/drives/${source.driveId}/items/${source.itemId}/workbook`;
     const headers = { Authorization: `Bearer ${token}` };
+
+    // Cellule précise (ex. Feuil1!C3) qui contient déjà le pourcentage.
+    if (source.cell && source.sheet) {
+      const res = await fetch(
+        `${base}/worksheets('${encodeURIComponent(source.sheet)}')/range(address='${encodeURIComponent(source.cell)}')?$select=values`,
+        { headers, next: { revalidate: REFRESH_SECONDS } },
+      );
+      if (!res.ok) return null;
+      const { values } = (await res.json()) as { values: unknown[][] };
+      const raw = values?.[0]?.[0];
+      const n = typeof raw === "number" ? raw : Number(String(raw).replace("%", "").replace(",", "."));
+      if (!Number.isFinite(n)) return null;
+      // Excel renvoie 0,6875 pour une cellule affichée « 68,75 % ».
+      return { percent: n <= 1 ? n * 100 : n, count: 0 };
+    }
     let sheet = source.sheet;
     if (!sheet) {
       const list = await fetch(`${base}/worksheets?$select=name`, { headers, next: { revalidate: REFRESH_SECONDS } });

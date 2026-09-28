@@ -270,6 +270,10 @@ export type RecommendationSource = {
   column?: string;
   // Note minimale (sur 10) pour compter un répondant comme recommandant.
   minScore?: number;
+  // Cellule qui contient directement le pourcentage (prioritaire).
+  cell?: string;
+  // Emplacement du fichier, pour mémoire (non utilisé par le code).
+  file?: string;
 };
 
 export type Pages = {

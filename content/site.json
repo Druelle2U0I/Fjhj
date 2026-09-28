@@ -45,7 +45,7 @@
       "label": "domaines de formation"
     },
     {
-      "value": "100 %",
+      "value": "69 %",
       "label": "de nos apprenants nous recommandent",
       "source": "recommendation"
     }
@@ -1912,8 +1912,9 @@
   },
   "recommendation": {
     "driveId": "b!XQbitKSa2UaRfVKI8xKmSPZa2QFX95xJpy0LvY0j5h1ZQuJTYEE4TqFwl-lTqvG9",
-    "itemId": "01KAVFK7M3K4KEEUXPABA2HB7TZ7IBWFNR",
-    "column": "Recommandation",
-    "minScore": 9
+    "itemId": "01KAVFK7PRY32ZUBXHHJEKB5RJZKC6GSUI",
+    "sheet": "Feuil1",
+    "cell": "C3",
+    "file": "Documentation Formation/Excel et Forms/Excel/Évaluer la session !.xlsx"
   }
 }
