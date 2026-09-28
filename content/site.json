@@ -1779,8 +1779,8 @@
         "answer": "Qualiopi est la certification qualité nationale des organismes de formation, délivrée par des certificateurs accrédités par le COFRAC sur la base d'un référentiel fixé par l'État. Elle atteste du sérieux de nos processus pédagogiques et administratifs, et c'est elle qui rend nos formations éligibles aux financements OPCO."
       }
     ],
-    "heroBackgroundImage": "",
-    "heroBackgroundImageAlt": "",
+    "heroBackgroundImage": "/images/accueil-chantier-coucher-soleil.webp",
+    "heroBackgroundImageAlt": "Silhouette d'une technicienne casquée sur un chantier au coucher du soleil",
     "aboutImage": "/images/enma-logo-jpg-1790597170463.jpg",
     "heroVideo": "https://he61u75bwwrjpmk6.public.blob.vercel-storage.com/vrai%20video-14qRz792XOPqazc2FCvwwOZSUwPX4R.mp4"
   },
