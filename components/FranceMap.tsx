@@ -53,6 +53,9 @@ function useIsDesktop() {
 // 2. elle zoome sur les Hauts-de-France et le reste du pays s'efface ;
 // 3. sur grand écran, elle glisse vers la droite et le texte (children)
 //    apparaît à sa gauche. Sur mobile, le texte suit sous la carte.
+// Repère de Wingles sur la carte : jaune, pour ressortir sur la région.
+const WINGLES_YELLOW = "#f5c518";
+
 export default function FranceMap({ children }: { children?: ReactNode }) {
   const isDesktop = useIsDesktop();
   // La scène est reconstruite quand on passe du mode mobile au mode grand
@@ -75,7 +78,7 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
   });
 
   // Zoom : première moitié du défilement (tout le parcours sur mobile).
-  const zoomEnd = isDesktop ? 0.5 : 1;
+  const zoomEnd = isDesktop ? 0.7 : 1;
   const vx = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[0], HDF_VIEW[0]]);
   const vy = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[1], HDF_VIEW[1]]);
   const vw = useTransform(scrollYProgress, [0, zoomEnd], [FRANCE_VIEW[2], HDF_VIEW[2]]);
@@ -89,21 +92,15 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
   const pinOpacity = useTransform(scrollYProgress, [0, 0.8 * zoomEnd, zoomEnd, 1], [0, 0, 1, 1]);
   const detailOpacity = useTransform(scrollYProgress, [0, 0.8 * zoomEnd, zoomEnd, 1], [0, 0, 1, 1]);
 
-  // Glissement de la carte vers la droite puis apparition du texte.
-  // Les valeurs sont données sur tout le parcours (0 → 1) : sans cela,
-  // l'animation accélérée par le navigateur continuait au-delà de la fin.
-  // La carte occupe 40 % de la largeur : 62,5 % de sa largeur la place au
-  // centre de la moitié droite.
-  const mapX = useTransform(scrollYProgress, [0, 0.52, 0.72, 1], ["0%", "0%", "62.5%", "62.5%"]);
-  const textOpacity = useTransform(scrollYProgress, [0, 0.6, 0.78, 1], [0, 0, 1, 1]);
-  const textX = useTransform(scrollYProgress, [0, 0.6, 0.78, 1], [-32, -32, 0, 0]);
-
   return (
     <section ref={wrapperRef} className="relative px-6 lg:-mt-12 lg:h-[160vh]">
       <div className="mx-auto max-w-6xl lg:sticky lg:top-0 lg:flex lg:h-screen lg:items-start lg:pt-24">
         <div className="relative w-full">
           <motion.div
-            style={isDesktop ? { x: mapX } : undefined}
+            // Sur grand écran, la carte reste dans la moitié droite (40 % de
+            // large, décalée de 62,5 % de sa largeur) et le texte à gauche
+            // est visible dès l'arrivée ; seul le zoom suit le défilement.
+            style={isDesktop ? { x: "62.5%" } : undefined}
             className="mx-auto flex w-full max-w-md flex-col items-center lg:w-[40%] lg:max-w-none"
           >
             <p className="text-sm font-semibold text-muted">
@@ -132,12 +129,12 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
                 ))}
 
                 <motion.g style={{ opacity: pinOpacity, scale: pinScale }}>
-                  <circle cx={wingles.x} cy={wingles.y} r={0.055} fill="var(--surface)" />
+                  <circle cx={wingles.x} cy={wingles.y} r={0.07} fill={WINGLES_YELLOW} fillOpacity={0.35} />
                   <circle
                     cx={wingles.x}
                     cy={wingles.y}
-                    r={0.028}
-                    fill="var(--accent)"
+                    r={0.036}
+                    fill={WINGLES_YELLOW}
                     stroke="var(--surface)"
                     strokeWidth={0.008}
                   />
@@ -161,12 +158,9 @@ function MapScene({ children, isDesktop }: { children?: ReactNode; isDesktop: bo
           </motion.div>
 
           {children && (
-            <motion.div
-              style={isDesktop ? { opacity: textOpacity, x: textX } : undefined}
-              className="pb-16 pt-10 lg:absolute lg:left-0 lg:top-1/2 lg:w-[46%] lg:-translate-y-1/2 lg:p-0"
-            >
+            <div className="pb-16 pt-10 lg:absolute lg:left-0 lg:top-1/2 lg:w-[46%] lg:-translate-y-1/2 lg:p-0">
               {children}
-            </motion.div>
+            </div>
           )}
         </div>
       </div>

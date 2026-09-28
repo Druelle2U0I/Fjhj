@@ -18,7 +18,7 @@ export default function CentrePage() {
       <PageHero
         eyebrow={pages.centre.eyebrow}
         title={pages.centre.title}
-        description={pages.centre.text}
+        description={company.tagline}
         backgroundImage={pages.centre.heroImage}
       />
 

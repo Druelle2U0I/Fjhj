@@ -104,7 +104,6 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
       { key: "eyebrow", label: "Sur-titre" },
       { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
       { key: "title", label: "Titre de la page", rows: 2 },
-      { key: "text", label: "Texte sous le titre", rows: 2 },
       { key: "mapEyebrow", label: "Carte — sur-titre" },
       { key: "mapText", label: "Carte — texte", rows: 2 },
       { key: "approachEyebrow", label: "Notre approche — sur-titre" },
