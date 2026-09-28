@@ -367,6 +367,19 @@ export function VideoField({
     setBusy(true);
     setError(null);
     setProgress(0);
+
+    // Sans ce garde-fou, un envoi qui ne démarre jamais (réseau qui bloque
+    // silencieusement les gros envois : proxy d'entreprise, antivirus,
+    // certains boxs 4G) tourne indéfiniment sans jamais afficher d'erreur.
+    // On réarme ce délai à chaque progression : seule une vraie panne,
+    // sans aucun octet transféré pendant 30 s, déclenche l'abandon.
+    const controller = new AbortController();
+    let stallTimer: ReturnType<typeof setTimeout> = setTimeout(() => controller.abort(), 30_000);
+    const armStallTimer = () => {
+      clearTimeout(stallTimer);
+      stallTimer = setTimeout(() => controller.abort(), 30_000);
+    };
+
     try {
       // Envoi direct au stockage (Vercel Blob), sans passer par une
       // fonction serverless : les vidéos sont trop lourdes pour la
@@ -374,16 +387,23 @@ export function VideoField({
       const blob = await uploadToBlob(file.name, file, {
         access: "public",
         handleUploadUrl: "/api/admin/video-upload",
-        onUploadProgress: ({ percentage }) => setProgress(percentage),
+        abortSignal: controller.signal,
+        onUploadProgress: ({ percentage }) => {
+          armStallTimer();
+          setProgress(percentage);
+        },
       });
       onChange(blob.url);
     } catch (err) {
       setError(
-        err instanceof Error && err.message
-          ? err.message
-          : "Envoi impossible. Vérifiez votre connexion et réessayez.",
+        controller.signal.aborted
+          ? "L'envoi ne démarre pas depuis 30 secondes : votre connexion (Wi-Fi, proxy d'entreprise, antivirus) bloque probablement l'envoi de gros fichiers. Essayez avec un autre réseau (partage de connexion 4G par exemple) ou contactez votre service informatique."
+          : err instanceof Error && err.message
+            ? err.message
+            : "Envoi impossible. Vérifiez votre connexion et réessayez.",
       );
     } finally {
+      clearTimeout(stallTimer);
       setBusy(false);
       setProgress(null);
     }
