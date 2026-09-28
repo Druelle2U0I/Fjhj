@@ -1937,7 +1937,8 @@
         "foreground": "#7a7a7a",
         "surface": "#1f1a4d",
         "accent": "#1f1a4d",
-        "muted": "#7a7a7a"
+        "muted": "#7a7a7a",
+        "surfaceForeground": "#fffbb9"
       }
     },
     "funding": {
