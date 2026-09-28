@@ -1803,7 +1803,8 @@
     "tagText": "#dcfafe",
     "bandColor": "#0b0c31",
     "bandOpacity": 74,
-    "panelShadowColor": "#ffffff"
+    "panelShadowColor": "#ffffff",
+    "surfaceMuted": "#d6d6d6"
   },
   "footerImage": "/images/2048-1790071486997.webp",
   "footerCta": {
@@ -1830,8 +1831,7 @@
       "seoDescription": "{domaines} domaines de formation, {formations} parcours proposés par un organisme certifié Qualiopi dans les Hauts-de-France.",
       "heroImage": "/images/management-equipe.jpg",
       "theme": {
-        "highlightBackground": "#3c337a",
-        "highlightForeground": "#eae9cd"
+        "highlightBackground": "#3c337a"
       }
     },
     "sector": {
