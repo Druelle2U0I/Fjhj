@@ -25,11 +25,11 @@ export default function FormationsPage() {
         backgroundImage={pages.catalogue.heroImage}
       />
 
-      <section className="px-6 pb-8">
+      <section className="on-surface bg-surface px-6 pb-12">
         <div className="mx-auto max-w-6xl">
           <Link
             href="/formations/toutes"
-            className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-lg border border-current/40 px-6 py-3 text-sm font-semibold transition-colors hover:border-current hover:bg-white/10"
           >
             {pages.allTrainings.linkLabel} ({fillCounts("{formations}")})
             <span aria-hidden="true">→</span>
@@ -37,7 +37,7 @@ export default function FormationsPage() {
         </div>
       </section>
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-12">
         <div className="mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, i) => (
             <Reveal key={service.slug} delay={(i % 4) * 0.05}>

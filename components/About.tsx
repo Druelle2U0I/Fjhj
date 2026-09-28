@@ -43,7 +43,7 @@ export default function About({ section }: { section: HomeSection }) {
           {title}
         </SplitPhotoBand>
       ) : (
-        <section className="px-6 py-14 sm:py-24">
+        <section className="px-6 py-10 sm:py-14">
           <Reveal className="mx-auto max-w-6xl">{title}</Reveal>
         </section>
       )}

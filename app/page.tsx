@@ -34,7 +34,7 @@ function trainingSlides(): HeroSlide[] {
 
 function FormationsSection({ section }: { section: HomeSection }) {
   return (
-    <section id="formations" className="px-6 py-14 sm:py-24">
+    <section id="formations" className="px-6 py-10 sm:py-14">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           {section.eyebrow && (
@@ -50,7 +50,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
           )}
         </Reveal>
 
-        <Reveal delay={0.1} className="mt-12">
+        <Reveal delay={0.1} className="mt-8">
           {home.sectorsLayout === "accordion" ? (
             <SectorAccordion services={services} />
           ) : (
@@ -73,7 +73,7 @@ function FormationsSection({ section }: { section: HomeSection }) {
 
 function FinancementSection({ section }: { section: HomeSection }) {
   return (
-    <section id="financement" className="px-6 py-14 sm:py-24">
+    <section id="financement" className="px-6 py-10 sm:py-14">
       <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
         <Reveal className="flex flex-col justify-center">
           {section.eyebrow && (
@@ -122,7 +122,7 @@ function FinancementSection({ section }: { section: HomeSection }) {
 function FaqSection({ section }: { section: HomeSection }) {
   if (home.faq.length === 0) return null;
   return (
-    <section className="px-6 py-14 sm:py-24">
+    <section className="px-6 py-10 sm:py-14">
       <div className="mx-auto max-w-6xl">
         <Reveal className="text-center">
           {section.eyebrow && (
@@ -148,7 +148,7 @@ function FaqSection({ section }: { section: HomeSection }) {
 
 function ContactSection({ section }: { section: HomeSection }) {
   return (
-    <section className="px-6 py-14 sm:py-24">
+    <section className="px-6 py-10 sm:py-14">
       <div className="mx-auto max-w-6xl rounded-lg border border-border bg-surface p-10 text-center sm:p-16">
         <Reveal>
           {section.eyebrow && (

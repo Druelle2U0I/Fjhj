@@ -23,7 +23,7 @@ export default function FormationsMarquee({
   const track = slides.length > 1 ? [...slides, ...slides] : slides;
 
   return (
-    <section className="overflow-hidden py-14 sm:py-20">
+    <section className="on-surface overflow-hidden bg-surface pb-12 pt-4 sm:pb-16 sm:pt-6">
       {(eyebrow || title) && (
         <div className="mx-auto mb-8 max-w-6xl px-6">
           {eyebrow && <span className="text-sm font-semibold text-muted">{eyebrow}</span>}

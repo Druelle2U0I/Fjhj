@@ -76,7 +76,7 @@ export default async function Funding() {
       </div>
     </section>
 
-    <section className="px-6 py-14 sm:py-24">
+    <section className="px-6 py-10 sm:py-14">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-8 sm:grid-cols-3 lg:divide-x lg:divide-border">
           {funding.points.map((point, i) => (
@@ -91,7 +91,7 @@ export default async function Funding() {
         <FundingSteps />
 
         {funding.opcos && funding.opcos.length > 0 && (
-          <Reveal className="mt-16 border-t border-border pt-10">
+          <Reveal className="mt-10 border-t border-border pt-8">
             <h3 className="text-lg font-semibold">{funding.opcosTitle}</h3>
             {funding.opcosText && (
               <p className="mt-2 max-w-2xl whitespace-pre-line text-sm text-muted">{funding.opcosText}</p>
@@ -119,7 +119,7 @@ export default async function Funding() {
         )}
 
         {indicators && (
-          <Reveal className="mt-16 border-t border-border pt-10">
+          <Reveal className="mt-10 border-t border-border pt-8">
             <h3 className="text-lg font-semibold">Nos indicateurs de résultats</h3>
             <p className="mt-2 max-w-2xl whitespace-pre-line text-sm text-muted">
               {indicators}
@@ -129,7 +129,7 @@ export default async function Funding() {
       </div>
     </section>
 
-    <section className="px-6 py-16 text-center">
+    <section className="px-6 py-10 text-center">
       <Reveal className="relative mx-auto max-w-2xl">
         <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 -rotate-3 items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-lg">
           Sans engagement

@@ -467,9 +467,14 @@ h4 {
 .page-hero .on-surface {
   --muted: color-mix(in srgb, var(--surface-foreground, #fffcec) 88%, transparent);
 }
+/* Le fondu de la photo d'en-tête part vers le foncé (fond des cartes) et
+   non vers le fond clair de la page : l'en-tête se termine en bande foncée. */
+.page-hero:has(.hero-photo-fade) {
+  background: var(--surface);
+}
 @media (min-width: 640px) {
   .page-hero:has(.hero-photo-fade) {
-    padding-bottom: 6rem;
+    padding-bottom: 4.5rem;
   }
 }
 

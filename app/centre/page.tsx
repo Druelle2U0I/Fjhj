@@ -63,7 +63,7 @@ export default function CentrePage() {
       {/* Accès au centre : l'adresse et les boutons à gauche, les
           informations pratiques (« Libellé : texte », une par paragraphe
           dans l'admin) en lignes séparées par des filets à droite. */}
-      <section className="px-6 py-12 sm:py-20">
+      <section className="px-6 py-12 sm:py-12">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <span className="text-sm font-semibold text-muted">{pages.centre.accessEyebrow}</span>
@@ -110,7 +110,7 @@ export default function CentrePage() {
         </div>
       </section>
 
-      <section className="px-6 py-12 sm:py-20">
+      <section className="px-6 py-12 sm:py-12">
         <div className="mx-auto max-w-6xl">
           <span className="text-sm font-semibold text-muted">{pages.centre.domainsEyebrow}</span>
           <div className="mt-3">
@@ -132,7 +132,7 @@ export default function CentrePage() {
         </div>
       </section>
 
-      <section className="px-6 py-12 sm:py-20">
+      <section className="px-6 py-12 sm:py-12">
         <Reveal className="relative mx-auto max-w-3xl">
           <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 rotate-3 items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-lg">
             Réponse sous 24h

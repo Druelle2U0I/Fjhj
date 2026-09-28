@@ -46,7 +46,7 @@ export default async function SecteurPage(
       {/* Hero : grande photo de fond floutée, voilée. Remonte sous
           l'en-tête (sticky, semi-transparent) pour que la photo continue
           jusqu'en haut de la page au lieu de s'arrêter net dessous. */}
-      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-24">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[94px] sm:pt-[154px] sm:pb-16">
         <div className="hero-photo-fade absolute inset-0">
           <div className="absolute inset-0 scale-110 blur-[7px]">
             <Visual
@@ -103,12 +103,13 @@ export default async function SecteurPage(
         </div>
       </section>
 
-      {/* Pourquoi former vos équipes */}
-      <section className="px-6 py-14 sm:py-20">
+      {/* Pourquoi former vos équipes : bande foncée pleine largeur, dans le
+          prolongement du fondu foncé de la photo d'en-tête. */}
+      <section className="on-surface bg-surface px-6 pb-12 pt-2 sm:pb-16">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <div className="border-l-4 border-accent pl-6 sm:pl-8">
-              <p className="text-sm font-semibold text-accent">
+            <div className="border-l-4 border-surface-accent pl-6 sm:pl-8">
+              <p className="text-sm font-semibold text-surface-accent">
                 {pages.sector.whyEyebrow}
               </p>
               <h2 className="mt-4 max-w-3xl text-2xl font-semibold tracking-tight sm:text-3xl">
@@ -121,7 +122,7 @@ export default async function SecteurPage(
       </section>
 
       {/* Catalogue du secteur */}
-      <section id="catalogue" className="scroll-mt-24 px-6 py-20">
+      <section id="catalogue" className="scroll-mt-24 px-6 py-12">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <h2 className="text-xl font-semibold tracking-tight sm:text-2xl">

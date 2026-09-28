@@ -84,7 +84,7 @@ function NewsletterForm() {
   };
 
   return (
-    <div className="footer-cta mx-auto max-w-2xl px-6 pb-14 pt-16 text-center sm:pb-20 sm:pt-28">
+    <div className="footer-cta mx-auto max-w-2xl px-6 pb-10 pt-12 text-center sm:pb-14 sm:pt-16">
       {footerCta.eyebrow && (
         <p className="text-xs font-semibold text-surface-accent">
           {footerCta.eyebrow}
@@ -159,7 +159,7 @@ export default function Footer() {
       <div className="relative">
         <NewsletterForm />
 
-        <div className="px-6 py-12 text-sm text-muted sm:py-16">
+        <div className="px-6 py-10 text-sm text-muted sm:py-12">
           <div className="mx-auto max-w-6xl">
             <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[1fr_1fr_auto_1fr_1fr] lg:items-start lg:gap-12">
               <Column title="Formations">
@@ -239,7 +239,7 @@ export default function Footer() {
             {/* Certification Qualiopi : logo officiel (envoyé depuis l'admin)
                 ou badge texte, avec lien vers le certificat s'il est fourni. */}
             {legal.qualiopiCertificate && (
-              <div className="mt-14 flex flex-col items-center gap-5 rounded-lg border border-white/10 bg-surface/40 p-6 text-center backdrop-blur sm:flex-row sm:text-left">
+              <div className="mt-10 flex flex-col items-center gap-5 rounded-lg border border-white/10 bg-surface/40 p-6 text-center backdrop-blur sm:flex-row sm:text-left">
                 {legal.qualiopiLogo ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img

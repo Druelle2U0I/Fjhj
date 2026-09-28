@@ -51,7 +51,7 @@ export default function Team() {
 
       {/* Les membres côte à côte : le zigzag plein écran laissait beaucoup
           de vide dès qu'il n'y a que 2 personnes dans l'équipe. */}
-      <section className="px-6 pb-16 pt-4">
+      <section className="px-6 pb-10 pt-4">
         <div className="mx-auto grid max-w-5xl gap-14 sm:grid-cols-2 sm:gap-10">
           {team.map((member, i) => (
             <Reveal

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="page-hero relative -mt-[86px] px-6 pt-[128px] pb-24 text-center sm:-mt-[94px] sm:pt-[148px]">
+    <section className="page-hero relative -mt-[86px] px-6 pt-[128px] pb-14 text-center sm:-mt-[94px] sm:pt-[148px]">
       <div className="mx-auto max-w-xl">
         <span className="text-sm font-semibold text-muted">
           Erreur 404
