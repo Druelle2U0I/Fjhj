@@ -1932,7 +1932,8 @@
       "theme": {
         "accentForeground": "#fefcdd",
         "highlightBackground": "#160f3f",
-        "highlightForeground": "#fefcdd"
+        "highlightForeground": "#fefcdd",
+        "background": "#160f3f"
       }
     },
     "funding": {
