@@ -1965,11 +1965,12 @@
         "eyebrowColor": "#fffbb9",
         "titleColor": "#f8fadb",
         "introColor": "#f4f2d4",
-        "accent": "#fefcdd",
+        "accent": "#1f1a4d",
         "highlightForeground": "#fff9c7",
         "linkColor": "#7a7a7a",
         "highlightBackground": "#1f1a4d",
-        "surfaceForeground": "#fffbb9"
+        "surfaceForeground": "#fffbb9",
+        "accentForeground": "#fff9c7"
       }
     },
     "allTrainings": {
