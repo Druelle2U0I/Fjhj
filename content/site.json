@@ -1925,7 +1925,10 @@
       "submitButton": "Envoyer le message",
       "successMessage": "Merci, votre message a bien été envoyé.",
       "seoDescription": "Décrivez votre besoin de formation : nous vous répondons sous 24 heures avec une proposition adaptée et le montage du dossier OPCO.",
-      "heroImage": "/images/secteur-electrique-1790073151718.jpg"
+      "heroImage": "/images/secteur-electrique-1790073151718.jpg",
+      "theme": {
+        "accentForeground": "#fefcdd"
+      }
     },
     "funding": {
       "eyebrow": "Qualiopi & financement",
