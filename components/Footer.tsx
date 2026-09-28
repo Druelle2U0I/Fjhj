@@ -159,7 +159,7 @@ export default function Footer() {
       <div className="relative">
         <NewsletterForm />
 
-        <div className="border-t border-white/10 px-6 py-12 text-sm text-muted sm:py-16">
+        <div className="px-6 py-12 text-sm text-muted sm:py-16">
           <div className="mx-auto max-w-6xl">
             <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[1fr_1fr_auto_1fr_1fr] lg:items-start lg:gap-12">
               <Column title="Formations">

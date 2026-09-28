@@ -191,8 +191,15 @@ export default async function SecteurPage(
       <section className="relative overflow-hidden px-6 py-10 sm:py-12">
         <div className="absolute inset-0">
           <Visual src={service.image} alt={service.imageAlt || service.title} sizes="100vw" />
-          <div className="absolute inset-0 bg-surface/80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-surface/70" />
+          {/* Voile noir (couleur « Fondu sur les photos de formation » de
+              l'admin) plutôt que marine : la bande se distingue du pied de page. */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to top, color-mix(in srgb, var(--card-veil, #000) 88%, transparent), color-mix(in srgb, var(--card-veil, #000) 62%, transparent))",
+            }}
+          />
         </div>
         <Reveal className="on-surface relative mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold text-surface-accent">{pages.sector.customTitle}</p>
