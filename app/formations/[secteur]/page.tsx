@@ -43,24 +43,21 @@ export default async function SecteurPage(
 
   return (
     <>
-      {/* Hero : grande photo de fond nette (cadrage réglable dans l'admin),
-          voilée surtout à gauche, côté texte. Remonte sous
+      {/* Hero : même en-tête que l'accueil, photo plein cadre voilée
+          (cadrage réglable dans l'admin). Remonte sous
           l'en-tête (sticky, semi-transparent) pour que la photo continue
           jusqu'en haut de la page au lieu de s'arrêter net dessous. */}
-      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[98px] sm:pt-[154px] sm:pb-16">
-        {/* Sur grand écran, la photo occupe la moitié droite (format proche
-            de celui des cartes, donc peu recadrée) et se fond vers la gauche,
-            côté texte ; sur mobile, elle reste en fond plein cadre. */}
-        <div className="hero-photo-fade absolute inset-0 lg:left-[42%]">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[154px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
+        <div className="hero-photo-fade absolute inset-0">
           <Visual
             src={service.image}
             alt={service.imageAlt || service.title}
-            sizes="(min-width: 1024px) 60vw, 100vw"
+            sizes="100vw"
             priority
             objectPosition={service.heroImagePosition || service.imagePosition || "center"}
           />
-          <div className="absolute inset-0 bg-surface/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-surface lg:via-surface/30 lg:to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-b from-surface/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-surface/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-surface/65 via-surface/35 to-surface/45" />
         </div>
 
         <div className="on-surface relative mx-auto max-w-6xl">
@@ -82,7 +79,7 @@ export default async function SecteurPage(
           <p className="text-sm font-semibold text-surface-accent">
             {count} formation{count > 1 ? "s" : ""}
           </p>
-          <h1 className="mt-2 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:mt-3 sm:text-6xl">
+          <h1 className="mt-2 max-w-3xl sm:mt-3 text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
             {service.title}
           </h1>
 

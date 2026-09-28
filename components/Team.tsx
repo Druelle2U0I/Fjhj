@@ -9,7 +9,7 @@ export default function Team() {
 
   return (
     <div id="equipe">
-      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pb-12 pt-[112px] sm:-mt-[98px] sm:pt-[148px]">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[148px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
         {pages.team.heroImage && (
           <HeroBackgroundPhoto src={pages.team.heroImage} alt={pages.team.title} />
         )}
@@ -22,7 +22,7 @@ export default function Team() {
             <span className="eyebrow block text-muted">
               {pages.team.eyebrow}
             </span>
-            <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="mt-3 max-w-2xl text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
               {pages.team.title}
             </h1>
             {paragraphs.length > 0 && (

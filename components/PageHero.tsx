@@ -28,7 +28,7 @@ export default function PageHero({
   const hasRightColumn = Boolean(image || aside);
 
   return (
-    <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[98px] sm:pt-[148px] sm:pb-14">
+    <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[148px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
       {backgroundImage && <HeroBackgroundPhoto src={backgroundImage} alt={imageAlt ?? title} />}
       <div
         className={`relative mx-auto max-w-6xl ${backgroundImage ? "on-surface" : ""} ${
@@ -42,7 +42,7 @@ export default function PageHero({
           <span className="eyebrow block text-muted">
             {eyebrow}
           </span>
-          <h1 className="mt-2 max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:mt-3 sm:text-5xl md:text-6xl">
+          <h1 className="mt-2 max-w-3xl sm:mt-3 text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
             {title}
           </h1>
           {description && (

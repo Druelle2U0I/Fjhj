@@ -3,9 +3,9 @@ import Link from "next/link";
 import FranceMap from "@/components/FranceMap";
 import PageHero from "@/components/PageHero";
 import PageThemeScope from "@/components/PageThemeScope";
-import RelatedCarousel from "@/components/RelatedCarousel";
+import CardRail from "@/components/CardRail";
 import Reveal from "@/components/Reveal";
-import { company, fillCounts, pages, services, telHref } from "@/lib/data";
+import { company, pages, services, telHref } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Le centre",
@@ -14,9 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default function CentrePage() {
-  // « 8 domaines de formation, du terrain… » : la fin du titre est mise en
-  // valeur dans le carrousel, comme en bas des fiches formation.
-  const [titleStart, ...titleEnd] = fillCounts(pages.centre.domainsTitle).split(", ");
   const accessInfo = (pages.centre.accessText ?? "")
     .split(/\n\s*\n/)
     .map((paragraph) => paragraph.trim())
@@ -28,7 +25,6 @@ export default function CentrePage() {
         ? { label, text: text.charAt(0).toUpperCase() + text.slice(1) }
         : { label: "", text: paragraph };
     });
-  const domainsTitle = [titleEnd.length ? `${titleStart},` : titleStart, titleEnd.join(", ")];
   return (
     <PageThemeScope overrides={pages.centre.theme}>
       <PageHero
@@ -63,7 +59,7 @@ export default function CentrePage() {
       {/* Accès au centre, en bande foncée pleine largeur (couleurs inversées) : l'adresse et les boutons à gauche, les
           informations pratiques (« Libellé : texte », une par paragraphe
           dans l'admin) en lignes séparées par des filets à droite. */}
-      <section className="on-surface bg-surface px-6 py-12 sm:py-16">
+      <section className="on-surface bg-surface px-6 py-8 sm:py-10">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <span className="eyebrow block text-muted">{pages.centre.accessEyebrow}</span>
@@ -112,23 +108,25 @@ export default function CentrePage() {
 
       <section className="px-6 py-12 sm:py-12">
         <div className="mx-auto max-w-6xl">
-          <span className="eyebrow block text-muted">{pages.centre.domainsEyebrow}</span>
-          <div className="mt-3">
-            <RelatedCarousel
-              titleStart={domainsTitle[0]}
-              titleHighlight={domainsTitle[1]}
-              buttonLabel="Voir les formations"
-              clockIcon={false}
-              items={services.map((service) => ({
-                href: `/formations/${service.slug}`,
-                title: service.title,
-                intro: service.summary ?? service.why.title,
-                duration: `${service.trainings.length} formation${service.trainings.length > 1 ? "s" : ""}`,
-                image: service.image,
-                imageAlt: service.imageAlt || service.title,
-              }))}
-            />
-          </div>
+          <CardRail
+            title={`${services.length} secteurs\nde formation`}
+            action={
+              <Link
+                href="/formations"
+                className="underline-link inline-block whitespace-nowrap border-b pb-0.5 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-70"
+              >
+                Voir toutes nos formations
+              </Link>
+            }
+            cards={services.map((service) => ({
+              title: service.title,
+              href: `/formations/${service.slug}`,
+              image: service.image,
+              imageAlt: service.imageAlt || service.title,
+              subtitle: `${service.trainings.length} formation${service.trainings.length > 1 ? "s" : ""}`,
+              text: service.summary,
+            }))}
+          />
         </div>
       </section>
 

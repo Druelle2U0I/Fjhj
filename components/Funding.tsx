@@ -55,7 +55,7 @@ export default async function Funding() {
 
   return (
     <>
-    <section id="financement" className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] pb-10 sm:-mt-[98px] sm:pt-[148px] sm:pb-14">
+    <section id="financement" className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[148px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
       {pages.funding.heroImage && (
         <HeroBackgroundPhoto src={pages.funding.heroImage} alt={pages.funding.title} />
       )}
@@ -65,7 +65,7 @@ export default async function Funding() {
             <span className="eyebrow block text-muted">
               {pages.funding.eyebrow}
             </span>
-            <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="mt-3 max-w-2xl text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
               {pages.funding.title}
             </h1>
             <p className="page-intro mt-5 max-w-2xl whitespace-pre-line text-muted">{funding.intro}</p>

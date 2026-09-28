@@ -8,12 +8,12 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="page-hero relative -mt-[86px] px-6 pt-[128px] pb-14 text-center sm:-mt-[98px] sm:pt-[148px]">
+    <section className="page-hero relative -mt-[86px] px-6 pt-[128px] text-center sm:-mt-[98px] sm:pt-[148px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
       <div className="mx-auto max-w-xl">
         <span className="text-sm font-semibold text-muted">
           Erreur 404
         </span>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+        <h1 className="mt-3 text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
           Cette page n&apos;existe pas
         </h1>
         <p className="mt-5 text-muted">
