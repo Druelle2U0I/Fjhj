@@ -63,7 +63,7 @@ export default function CardRail({
 
       <ul
         ref={rail}
-        className="rail-bleed -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="rail-bleed -mx-6 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 md:scroll-px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {cards.map((card) => {
           const photo = Boolean(card.image);
