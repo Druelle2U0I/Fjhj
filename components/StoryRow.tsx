@@ -46,7 +46,7 @@ export default function StoryRow({
       </Reveal>
       <Reveal
         delay={0.1}
-        className={`mx-auto w-full max-w-sm px-2 text-center ${right ? "sm:order-1" : ""}`}
+        className={`mx-auto w-full max-w-md px-2 text-center ${right ? "sm:order-1" : ""}`}
       >
         {children}
       </Reveal>
@@ -58,21 +58,25 @@ export default function StoryRow({
 // resserré, lien souligné en petites capitales).
 export function StoryTitle({ children }: { children: ReactNode }) {
   return (
-    <h2 className="font-extrabold uppercase leading-[1.1] tracking-tight text-xl sm:text-2xl">{children}</h2>
+    <h2 className="font-extrabold uppercase leading-[1.1] tracking-tight text-2xl sm:text-[1.75rem]">{children}</h2>
   );
 }
 
 export function StoryText({ children }: { children: ReactNode }) {
-  return <p className="mt-3 whitespace-pre-line text-[15px] leading-relaxed text-foreground/85">{children}</p>;
+  return <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-foreground/85 sm:text-[17px]">{children}</p>;
 }
 
 export function StoryLink({ href, children }: { href: string; children: ReactNode }) {
   const className =
-    "underline-link mt-3 inline-block border-b pb-0.5 text-xs font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-70";
+    "underline-link mt-4 inline-block border-b pb-0.5 text-sm font-bold uppercase tracking-[0.12em] transition-opacity hover:opacity-70";
   // Adresse e-mail ou téléphone : simple lien, sans navigation interne.
   if (/^(mailto|tel):/.test(href)) {
     return (
-      <a href={href} className={className}>
+      <a
+        href={href}
+        // Adresse e-mail : en minuscules, comme on l'écrit.
+        className="underline-link mt-4 inline-block border-b pb-0.5 text-[15px] font-semibold tracking-normal transition-opacity hover:opacity-70"
+      >
         {children}
       </a>
     );
@@ -88,9 +92,9 @@ export function StoryLink({ href, children }: { href: string; children: ReactNod
 // explication (remplace les listes à coches).
 export function StoryFact({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <div className="mt-8 max-w-[17rem] border-t border-foreground/70 pt-3 mx-auto">
-      <p className="font-heading text-base uppercase leading-snug">{title}</p>
-      <p className="mt-1.5 text-sm leading-relaxed text-foreground/80">{children}</p>
+    <div className="mt-8 max-w-[19rem] border-t border-foreground/70 pt-3 mx-auto">
+      <p className="font-heading text-lg uppercase leading-snug">{title}</p>
+      <p className="mt-1.5 text-[15px] leading-relaxed text-foreground/80">{children}</p>
     </div>
   );
 }
