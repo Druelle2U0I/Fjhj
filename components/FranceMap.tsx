@@ -167,7 +167,8 @@ function MapScene({
                       d={dept.path}
                       fill={dept.hdf ? "var(--accent)" : "#c9c6b6"}
                       fillOpacity={dept.hdf ? 1 : otherOpacity}
-                      stroke="var(--surface)"
+                      // Contours blancs entre départements (et autour de la région).
+                      stroke="#ffffff"
                       strokeWidth={strokeW}
                       strokeOpacity={dept.hdf ? 1 : otherStroke}
                       onMouseEnter={() => dept.hdf && setHovered(dept.code)}
