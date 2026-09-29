@@ -83,8 +83,8 @@ function MapScene({
     // Sur téléphone aussi, la carte reste fixée à l'écran pendant qu'on fait
     // défiler : le zoom se voit en entier au lieu de passer en un éclair.
     // Grand écran : pas de carte épinglée (elle laissait un grand vide) ;
-    // le zoom suit simplement le passage de la carte à l'écran.
-    offset: isDesktop ? ["start 0.85", "end 0.6"] : ["start start", "end end"],
+    // le zoom se termine dès que la carte est entièrement à l'écran.
+    offset: isDesktop ? ["start 0.95", "start 0.3"] : ["start start", "end end"],
   });
 
   // Zoom : l'essentiel du défilement, puis un temps d'arrêt sur la région.
