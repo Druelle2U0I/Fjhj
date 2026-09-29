@@ -146,7 +146,6 @@ function NewsletterForm() {
 }
 
 export default function Footer() {
-  const mainSectors = services.slice(0, 4);
 
   return (
     <footer className="on-surface relative overflow-hidden">
@@ -164,7 +163,7 @@ export default function Footer() {
           <div className="mx-auto max-w-6xl">
             <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-[1fr_1fr_auto_1fr_1fr] lg:items-start lg:gap-12">
               <Column title="Formations">
-                {mainSectors.map((service) => (
+                {services.map((service) => (
                   <li key={service.slug}>
                     <Link
                       href={`/formations/${service.slug}`}
@@ -175,8 +174,11 @@ export default function Footer() {
                   </li>
                 ))}
                 <li>
-                  <Link href="/formations/toutes" className="hover:text-surface-accent">
-                    Toutes les formations
+                  <Link
+                    href="/formations/toutes"
+                    className="font-semibold text-foreground underline underline-offset-4 hover:text-surface-accent"
+                  >
+                    Voir toutes les formations
                   </Link>
                 </li>
               </Column>
