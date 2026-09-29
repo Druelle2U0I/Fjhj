@@ -114,7 +114,7 @@ export default function AllTrainings({
           {emptyText}
         </p>
       ) : (
-        <ul className="spotlight mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="spotlight mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((item) => (
             <li key={item.href}>
               <TrainingCard
@@ -128,7 +128,7 @@ export default function AllTrainings({
                 imagePosition={item.imagePosition}
                 quoteHref={`/contact?formation=${encodeURIComponent(item.title)}`}
                 quoteLabel={pages.sector.quoteButton}
-                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
               />
             </li>
           ))}
