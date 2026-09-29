@@ -23,9 +23,12 @@ export default function CardRail({
   title,
   cards,
   action,
+  end,
 }: {
   title: string;
   cards: RailCard[];
+  // Dernière carte, libre (ex. encart « formation absente »).
+  end?: ReactNode;
   // Élément affiché sous le titre (ex. bouton vers le catalogue).
   action?: ReactNode;
 }) {
@@ -123,6 +126,9 @@ export default function CardRail({
             </li>
           );
         })}
+        {end && (
+          <li className="aspect-[3/5] w-[56vw] max-w-[240px] shrink-0 snap-start sm:w-[240px]">{end}</li>
+        )}
       </ul>
     </div>
   );
