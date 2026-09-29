@@ -267,6 +267,77 @@ export function ImageField({
   );
 }
 
+// Envoi d'un document PDF (ex. certificat Qualiopi), publié dans
+// public/documents et accessible à l'adresse renvoyée.
+export function PdfField({
+  label,
+  hint,
+  value,
+  onChange,
+}: {
+  label: string;
+  hint?: string;
+  value?: string;
+  onChange: (value: string | undefined) => void;
+}) {
+  const input = useRef<HTMLInputElement>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const upload = async (file: File) => {
+    setBusy(true);
+    setError(null);
+    const body = new FormData();
+    body.append("file", file);
+    const res = await fetch("/api/admin/upload", { method: "POST", body }).catch(() => null);
+    const data = res ? await res.json().catch(() => ({})) : {};
+    setBusy(false);
+    if (!res || !res.ok) {
+      setError(data.error ?? "Envoi impossible. Vérifiez votre connexion et réessayez.");
+      return;
+    }
+    onChange(data.path);
+  };
+
+  return (
+    <div>
+      <span className="text-xs font-semibold uppercase tracking-wide text-muted">{label}</span>
+      {hint && <p className="mt-1 text-xs text-muted">{hint}</p>}
+      <div className="mt-2 grid gap-2">
+        <input
+          ref={input}
+          type="file"
+          accept="application/pdf"
+          className="hidden"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) upload(file);
+            e.target.value = "";
+          }}
+        />
+        <div className="flex gap-2">
+          <SmallButton onClick={() => input.current?.click()} disabled={busy}>
+            {busy ? "Envoi…" : value ? "Remplacer le PDF" : "Choisir un PDF"}
+          </SmallButton>
+          {value && (
+            <SmallButton tone="danger" onClick={() => onChange(undefined)}>
+              Retirer
+            </SmallButton>
+          )}
+        </div>
+        {value && (
+          <p className="text-xs text-muted">
+            {value.startsWith("/documents/")
+              ? "PDF envoyé : visible sur le site après la publication (une à deux minutes)."
+              : value}
+          </p>
+        )}
+        {error && <p className="text-xs text-red-400">{error}</p>}
+      </div>
+    </div>
+  );
+}
+
 const CROP_PRESETS: { value: string; label: string }[] = [
   { value: "left top", label: "Haut gauche" },
   { value: "center top", label: "Haut centre" },

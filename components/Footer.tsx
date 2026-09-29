@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import CertificateNumber from "@/components/CertificateNumber";
 import SocialLinks from "@/components/SocialLinks";
 import Visual from "@/components/Visual";
 import {
@@ -258,7 +259,7 @@ export default function Footer() {
                 )}
                 <div className="grid gap-1.5 text-sm">
                   <p className="font-semibold text-foreground">
-                    Organisme certifié Qualiopi — certificat n° {legal.qualiopiCertificate}
+                    Organisme certifié Qualiopi — certificat n° <CertificateNumber />
                   </p>
                   {legal.qualiopiCategory && (
                     <p className="text-xs text-muted">

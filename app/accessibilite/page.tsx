@@ -53,8 +53,22 @@ export default function AccessibilitePage() {
 
       {legal.accessDelay && (
         <>
-          <h2>Délai d&apos;accès</h2>
-          <p>{legal.accessDelay}</p>
+          <h2 id="delais">Délais et conditions d&apos;accès</h2>
+          {legal.accessDelay.split("\n").some((l) => l.startsWith("•")) ? (
+            <>
+              <p>{legal.accessDelay.split("\n").filter((l) => !l.startsWith("•")).join(" ")}</p>
+              <ul>
+                {legal.accessDelay
+                  .split("\n")
+                  .filter((l) => l.startsWith("•"))
+                  .map((l) => (
+                    <li key={l}>{l.replace(/^•\s*/, "")}</li>
+                  ))}
+              </ul>
+            </>
+          ) : (
+            <p>{legal.accessDelay}</p>
+          )}
         </>
       )}
 

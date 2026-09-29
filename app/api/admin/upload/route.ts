@@ -6,6 +6,8 @@ const ALLOWED = new Map([
   ["image/jpeg", "jpg"],
   ["image/png", "png"],
   ["image/webp", "webp"],
+  // Documents (ex. certificat Qualiopi), rangés à part des photos.
+  ["application/pdf", "pdf"],
 ]);
 
 // L'hébergeur (Vercel) refuse les requêtes de plus de 4,5 Mo ; l'admin
@@ -28,29 +30,31 @@ export async function POST(request: Request) {
   const extension = ALLOWED.get(file.type);
   if (!extension) {
     return Response.json(
-      { error: "Format non accepté. Utilisez JPG, PNG ou WebP." },
+      { error: "Format non accepté. Utilisez JPG, PNG, WebP ou PDF." },
       { status: 400 },
     );
   }
 
   if (file.size > MAX_BYTES) {
     return Response.json(
-      { error: "Image trop lourde : 4,5 Mo maximum." },
+      { error: "Fichier trop lourd : 4,5 Mo maximum." },
       { status: 400 },
     );
   }
 
-  const base = slugify(file.name.replace(/\.[^.]+$/, "")) || "image";
+  const isPdf = extension === "pdf";
+  const folder = isPdf ? "documents" : "images";
+  const base = slugify(file.name.replace(/\.[^.]+$/, "")) || (isPdf ? "document" : "image");
   const name = `${base}-${Date.now()}.${extension}`;
-  const filePath = `public/images/${name}`;
+  const filePath = `public/${folder}/${name}`;
 
   try {
     await commitFile(
       filePath,
       Buffer.from(await file.arrayBuffer()),
-      `Ajout de l'image ${name} depuis l'espace d'administration`,
+      `Ajout ${isPdf ? "du document" : "de l'image"} ${name} depuis l'espace d'administration`,
     );
-    return Response.json({ ok: true, path: `/images/${name}` });
+    return Response.json({ ok: true, path: `/${folder}/${name}` });
   } catch (error) {
     return Response.json(
       { error: error instanceof Error ? error.message : "Erreur inconnue." },

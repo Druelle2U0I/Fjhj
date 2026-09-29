@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CertificateNumber from "@/components/CertificateNumber";
 import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import HeroBackgroundVideo from "@/components/HeroBackgroundVideo";
 import { company, home, legal, pages } from "@/lib/data";
@@ -56,7 +57,7 @@ export default function Hero() {
 
         {/* Bandeau d'informations en bas du bandeau d'accueil */}
         <ul className="mt-20 flex flex-wrap gap-x-8 sm:mt-32 gap-y-2 border-t border-current/20 pt-5 text-xs uppercase tracking-[0.18em] opacity-80">
-          {legal.qualiopiCertificate && <li>Certifié Qualiopi n° {legal.qualiopiCertificate}</li>}
+          {legal.qualiopiCertificate && <li>Certifié Qualiopi n° <CertificateNumber /></li>}
           <li>Prise en charge OPCO</li>
           <li>Nord · Pas-de-Calais · Aisne · Somme · Oise</li>
         </ul>

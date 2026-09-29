@@ -72,8 +72,8 @@ export default async function FormationPage(
       ? [{ label: "Effectif", value: training.effectif }]
       : []),
     { label: "Validation", value: training.certification },
-    ...(legal.accessDelay
-      ? [{ label: "Délai d'accès", value: legal.accessDelay }]
+    ...(legal.accessDelayShort || legal.accessDelay
+      ? [{ label: "Délai d'accès", value: legal.accessDelayShort || legal.accessDelay }]
       : []),
   ];
 

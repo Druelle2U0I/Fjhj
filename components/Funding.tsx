@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CertificateNumber from "@/components/CertificateNumber";
 import FundingSteps from "@/components/FundingSteps";
 import HeroBackgroundPhoto from "@/components/HeroBackgroundPhoto";
 import Reveal from "@/components/Reveal";
@@ -26,7 +27,7 @@ function QualiopiCard() {
         </span>
       )}
       <p className="mt-5 text-lg font-semibold">
-        Certificat n&deg; {legal.qualiopiCertificate}
+        Certificat n&deg; <CertificateNumber />
       </p>
       {legal.qualiopiCategory && (
         <p className="mt-2 text-sm text-muted">

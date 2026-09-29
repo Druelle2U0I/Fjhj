@@ -225,6 +225,8 @@ export type SiteContent = {
     cancellationFee?: string;
     court?: string;
     accessDelay?: string;
+    // Version courte, pour l'encart récapitulatif des fiches formation.
+    accessDelayShort?: string;
     resultsIndicators?: string;
     qualiopiLogo?: string;
     qualiopiCertificateUrl?: string;

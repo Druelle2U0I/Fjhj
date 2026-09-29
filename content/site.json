@@ -24,12 +24,13 @@
     "qualiopiCategory": "actions de formation",
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
-    "accessDelay": "Une fois le financement accordé, la session est programmée sous 10 jours ouvrés, et dès 3 jours ouvrés en cas d'urgence.",
+    "accessDelay": "Entre la demande formulée par le client et le commencement de la session de formation, ENMA Formation recommande d'envisager, en raison des processus de financement, les délais suivants :\n• Dix jours ouvrés pour les sessions de formation planifiées à calendrier fixe (inter), une fois l'accord du financeur obtenu.\n• Pour les formations non planifiées sur un calendrier fixe, c'est-à-dire en intra ou sur mesure, ENMA Formation prépare une proposition contractuelle et une offre de service comprenant le planning prévisionnel de formation, en veillant à ce que les besoins spécifiques du client soient pris en compte pour optimiser l'apprentissage et garantir la satisfaction des participants.",
     "resultsIndicators": "Taux de recommandation : {recommandation} des stagiaires recommandent ENMA Formation, d'après le questionnaire « Évaluer la session ! » rempli à la fin de chaque formation depuis 2026. Ce chiffre est mis à jour automatiquement. Les taux de réussite aux certifications seront publiés dès que le nombre de sessions sera suffisant.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras",
     "qualiopiLogo": "/images/action-formations-qualiopi-1790260002712.png",
-    "qualiopiCertificateUrl": ""
+    "qualiopiCertificateUrl": "",
+    "accessDelayShort": "10 jours ouvrés en inter, une fois l'accord du financeur obtenu. En intra ou sur mesure : planning prévisionnel établi selon vos besoins."
   },
   "stats": [
     {
@@ -61,7 +62,7 @@
     },
     {
       "title": "Une session sous 10 jours ouvrés",
-      "text": "Une fois le financement accordé, la session est programmée sous 10 jours ouvrés, et dès 3 jours ouvrés en cas d'urgence."
+      "text": "Dix jours ouvrés pour une session inter une fois l'accord du financeur obtenu ; en intra ou sur mesure, un planning prévisionnel adapté à vos besoins."
     },
     {
       "title": "Une réponse sous 24 heures",
@@ -1639,7 +1640,7 @@
       },
       {
         "title": "Mise en place rapide",
-        "text": "Une fois le financement accordé, la session est généralement programmée sous 10 jours ouvrés. En cas d'urgence, nous pouvons exceptionnellement intervenir dès 3 jours ouvrés, selon la disponibilité de nos formateurs."
+        "text": "Une fois l'accord du financeur obtenu, comptez dix jours ouvrés pour une session inter-entreprises à calendrier fixe. En intra ou sur mesure, nous vous remettons une proposition et un planning prévisionnel adaptés à vos besoins."
       }
     ],
     "stepsTitle": "Comment se déroule votre formation, de la demande au financement ?",
@@ -1831,7 +1832,7 @@
       },
       {
         "question": "Quel est le délai pour organiser une formation ?",
-        "answer": "Nous revenons vers vous sous 24 heures avec une proposition adaptée. Une fois le financement accordé, comptez en règle générale 10 jours ouvrés avant le début de la formation. En cas d'urgence, une session peut exceptionnellement être organisée dès 3 jours ouvrés, selon la disponibilité de nos formateurs."
+        "answer": "Nous revenons vers vous sous 24 heures avec une proposition adaptée. Pour une session inter-entreprises à calendrier fixe, comptez dix jours ouvrés une fois l'accord du financeur obtenu. En intra ou sur mesure, nous établissons avec vous une proposition et un planning prévisionnel qui tiennent compte de vos besoins."
       },
       {
         "question": "Combien de personnes peuvent suivre une formation en même temps ?",

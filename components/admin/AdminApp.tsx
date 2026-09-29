@@ -10,7 +10,7 @@ import ColorEverywhere from "./ColorEverywhere";
 import CommonColors from "./CommonColors";
 import PageColorsEditor from "./PageColorsEditor";
 import PagesEditor from "./PagesEditor";
-import { Card, Field, ImageField, ListEditor, SmallButton, VideoField } from "./ui";
+import { Card, Field, ImageField, ListEditor, PdfField, SmallButton, VideoField } from "./ui";
 
 // Menu par page du site, puis réglages communs à tout le site.
 const SECTIONS = [
@@ -1059,13 +1059,12 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                   « République française »), sans le modifier. Sans logo, un badge
                   texte s&apos;affiche à la place.
                 </p>
-                <Field
-                  label="Lien vers le certificat (facultatif)"
-                  placeholder="https://…"
-                  hint="Adresse du certificat en ligne ou d'un PDF partagé. Le numéro de certificat se modifie dans « Mentions légales & Qualiopi »."
-                  value={content.legal.qualiopiCertificateUrl ?? ""}
+                <PdfField
+                  label="Certificat Qualiopi (PDF)"
+                  hint="S'ouvre quand on clique sur le numéro de certificat (page Financement, pied de page, accueil)."
+                  value={content.legal.qualiopiCertificateUrl || undefined}
                   onChange={(v) =>
-                    update({ ...content, legal: { ...content.legal, qualiopiCertificateUrl: v } })
+                    update({ ...content, legal: { ...content.legal, qualiopiCertificateUrl: v ?? "" } })
                   }
                 />
               </Card>
@@ -1206,14 +1205,26 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                   }
                 />
                 <Field
-                  label="Délai d'accès aux formations"
-                  hint="Affiché sur chaque fiche formation."
-                  rows={2}
+                  label="Délais et conditions d'accès — texte complet"
+                  hint="Affiché sur la page Accessibilité. Une ligne commençant par « • » devient une puce."
+                  rows={6}
                   value={content.legal.accessDelay ?? ""}
                   onChange={(v) =>
                     update({
                       ...content,
                       legal: { ...content.legal, accessDelay: v },
+                    })
+                  }
+                />
+                <Field
+                  label="Délai d'accès — version courte"
+                  hint="Affichée dans l'encart de chaque fiche formation (vide = texte complet)."
+                  rows={2}
+                  value={content.legal.accessDelayShort ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, accessDelayShort: v },
                     })
                   }
                 />
