@@ -232,6 +232,8 @@ export type SiteContent = {
     qualiopiCertificateUrl?: string;
     // Règlement intérieur en PDF (téléchargeable depuis sa page).
     rulesDocument?: string;
+    // Adresse du siège social (si différente de celle du centre de formation).
+    headOffice?: string;
     // Photo d'en-tête des pages légales (mentions, CGV, confidentialité, accessibilité).
     heroImage?: string;
     heroImageAlt?: string;

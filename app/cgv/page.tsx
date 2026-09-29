@@ -30,7 +30,7 @@ export default function CgvPage() {
         {legal.legalForm ? `${legal.legalForm} ` : ""}
         {legal.capital ? `au capital de ${legal.capital}, ` : ""}
         {legal.rcs ? `${legal.rcs}, ` : ""}dont le siège est situé{" "}
-        {company.address} (ci-après « l&apos;organisme »). {activityDeclarationText()}
+        {legal.headOffice || company.address} (ci-après « l&apos;organisme »). {activityDeclarationText()}
       </p>
       <p>
         Nos formations s&apos;adressent exclusivement aux professionnels

@@ -32,7 +32,13 @@ export default function MentionsLegalesPage() {
           </>
         )}
         <dt>Siège social</dt>
-        <dd>{company.address}</dd>
+        <dd>{legal.headOffice || company.address}</dd>
+        {legal.headOffice && legal.headOffice !== company.address && (
+          <>
+            <dt>Centre de formation</dt>
+            <dd>{company.address}</dd>
+          </>
+        )}
         {legal.rcs && (
           <>
             <dt>Immatriculation</dt>

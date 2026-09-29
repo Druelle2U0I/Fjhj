@@ -1131,6 +1131,17 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                   }
                 />
                 <Field
+                  label="Siège social"
+                  hint="Adresse légale de la société. Vide = adresse du centre (Coordonnées)."
+                  value={content.legal.headOffice ?? ""}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      legal: { ...content.legal, headOffice: v },
+                    })
+                  }
+                />
+                <Field
                   label="Forme juridique"
                   value={content.legal.legalForm ?? ""}
                   onChange={(v) =>

@@ -31,7 +31,8 @@
     "qualiopiLogo": "/images/action-formations-qualiopi-1790260002712.png",
     "qualiopiCertificateUrl": "/documents/certificat-qualiopi-10122288.pdf",
     "accessDelayShort": "10 jours ouvrés en inter, une fois l'accord du financeur obtenu. En intra ou sur mesure : planning prévisionnel établi selon vos besoins. Plus rapide en cas d'urgence, sur demande.",
-    "rulesDocument": "/documents/reglement-interieur-enma-formation.pdf"
+    "rulesDocument": "/documents/reglement-interieur-enma-formation.pdf",
+    "headOffice": "24 rue de Colmar, 62410 Wingles"
   },
   "stats": [
     {
@@ -1693,8 +1694,9 @@
     "text": "ENMA Formation s'engage à rechercher, en lien avec chaque client, des solutions d'adaptation pour favoriser l'accueil des personnes en situation de handicap (allongement des sessions, pauses plus fréquentes, supports adaptés, salles accessibles). Les demandes d'aménagement sont à formuler avant l'inscription auprès de notre référent handicap.",
     "referent": "Maxence Druelle-Fourniez, référent handicap",
     "pmrIntro": [
-      "ENMA Formation organise ses sessions dans les locaux des entreprises clientes ou dans des salles standard qui ne sont pas spécifiquement conçues pour la formation, mais qui sont équipées en conséquence. En raison de cette modalité d'accueil, les sessions de formation ne sont pas accessibles aux personnes en situation de handicap.",
-      "Cependant, en collaboration avec le client, ENMA Formation s'engage activement à rechercher des solutions pour favoriser l'inclusion des personnes en situation de handicap et permettre leur participation. Pour ce faire, divers aménagements peuvent être envisagés avant les sessions de formation :"
+      "Notre centre de formation, rue du Père Avrillon à Wingles, est accessible aux personnes à mobilité réduite.",
+      "Une grande partie de nos sessions se déroule toutefois en dehors du centre : dans les locaux des entreprises clientes ou dans des salles qui ne sont pas spécifiquement conçues pour la formation, mais qui sont équipées en conséquence. Ces lieux ne sont pas toujours adaptés aux personnes à mobilité réduite.",
+      "Dans chaque cas, en collaboration avec le client, ENMA Formation recherche activement des solutions pour favoriser l'inclusion des personnes en situation de handicap et permettre leur participation. Divers aménagements peuvent être envisagés avant les sessions de formation :"
     ],
     "pmrMeasures": [
       {
@@ -1717,8 +1719,7 @@
         "title": "Sessions systématiques dans les locaux de l'entreprise",
         "text": "Cette option est proposée pour les personnes ayant de grandes difficultés de mobilité, afin de réduire les obstacles liés au transport."
       }
-    ],
-    "pmrDocument": "/documents/acces-pmr-enma-formation.pdf"
+    ]
   },
   "team": [
     {

@@ -22,7 +22,7 @@ export default function ConfidentialitePage() {
       <h2>Responsable du traitement</h2>
       <p>
         {name}, {legal.legalForm ? `${legal.legalForm}, ` : ""}dont le siège est
-        situé {company.address}
+        situé {legal.headOffice || company.address}
         {legal.rcs ? `, immatriculée sous le numéro ${legal.rcs}` : ""}.
         Contact pour toute question relative à vos données : {mail}.
       </p>
