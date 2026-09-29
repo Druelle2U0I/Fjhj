@@ -160,20 +160,20 @@ export default async function SecteurPage(
       {/* Encart final « formation absente » (textes modifiables dans l'admin,
           Pages des domaines → Encadré final). */}
       <section className="px-6 pb-16 pt-6 sm:pb-20">
-        <Reveal className="relative mx-auto max-w-3xl">
+        <Reveal className="relative mx-auto max-w-2xl">
           {pages.sector.customBadge && (
             <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 rotate-3 items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-lg">
               {pages.sector.customBadge}
             </span>
           )}
-          <div className="on-surface rounded-lg border border-border bg-surface p-10 pt-12 text-center shadow-xl shadow-black/10 sm:p-14 sm:pt-16">
+          <div className="on-surface rounded-lg border border-border bg-surface px-6 pb-7 pt-9 text-center shadow-xl shadow-black/10 sm:px-10 sm:pb-8 sm:pt-10">
             <h2 className="text-xl sm:text-2xl">{pages.sector.customTitle}</h2>
-            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-muted">
+            <p className="mx-auto mt-2 max-w-xl whitespace-pre-line text-muted">
               {service.unlistedNote || pages.sector.customText}
             </p>
             <Link
               href={`/contact?formation=${encodeURIComponent(service.title)}`}
-              className="mt-8 inline-flex rounded-lg bg-highlight px-6 py-3 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
+              className="mt-5 inline-flex rounded-lg bg-highlight px-6 py-3 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
             >
               {pages.sector.customButton || "Nous contacter"}
             </Link>
