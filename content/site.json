@@ -145,7 +145,14 @@
           "funding": "Cette sensibilisation entre dans le champ des actions de formation à la sécurité et peut, à ce titre, être prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre demande de financement. Elle est fréquemment organisée en même temps que l'accueil sécurité des nouveaux embauchés ou dans le cadre d'une campagne annuelle de sensibilisation à la sécurité incendie pour l'ensemble du personnel.",
           "image": "/images/3-1790688125386.jpg",
           "imageAlt": "Feu d'exercice devant une rangée d'extincteurs rouges",
-          "heroImage": "/images/3-1790688106638.jpg"
+          "heroImage": "/images/3-1790688106638.jpg",
+          "objectives": [
+            "Être capable d’identifier les causes de départ de feu et les classes de feu présentes dans son environnement de travail",
+            "Être capable de donner l’alarme, d’alerter les secours et de transmettre un message précis",
+            "Être capable de choisir l’extincteur adapté au feu rencontré et de le mettre en œuvre en sécurité",
+            "Être capable de renoncer à l’attaque et d’évacuer lorsque le feu dépasse le stade naissant",
+            "Être capable d’attaquer un feu naissant en situation réelle simulée"
+          ]
         },
         {
           "title": "Équipier d'évacuation",
@@ -176,7 +183,14 @@
           "funding": "Cette formation, liée à une obligation réglementaire de sécurité incendie, est éligible à une prise en charge par votre OPCO dans le cadre du plan de développement des compétences. ENMA Formation établit un devis et un programme pédagogique détaillés pour appuyer votre demande de financement. Elle peut également être organisée en intra-entreprise pour former simultanément l'ensemble des guides et serre-files d'un même site, ce qui optimise le coût par participant et facilite la coordination du plan d'évacuation.",
           "image": "/images/equipier-evac-1790071054007.jpg",
           "imageAlt": "Pictogramme vert de sortie de secours avec une silhouette qui court",
-          "heroImage": "/images/equipier-evac-1790688155586.jpg"
+          "heroImage": "/images/equipier-evac-1790688155586.jpg",
+          "objectives": [
+            "Être capable de situer le rôle du guide-file et du serre-file dans l’organisation de l’évacuation de l’établissement",
+            "Être capable de reconnaître le signal d’alarme, les cheminements, les issues de secours et le point de rassemblement",
+            "Être capable de faire évacuer une zone, de vérifier qu’elle est vide et de rendre compte au responsable d’évacuation",
+            "Être capable d’adopter la conduite à tenir face aux situations particulières",
+            "Être capable de tenir son rôle lors d’un exercice d’évacuation complet de l’établissement"
+          ]
         },
         {
           "title": "Équipier de première intervention",
@@ -208,7 +222,14 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, dans la mesure où elle répond à une obligation réglementaire de sécurité incendie. ENMA Formation vous accompagne dans la constitution du dossier de financement : devis détaillé, programme pédagogique et convocation nominative sont fournis pour faciliter votre demande de prise en charge auprès de votre opérateur de compétences. Le financement peut également être mobilisé dans le cadre d'un budget formation interne ou d'une convention multi-sites pour les entreprises disposant de plusieurs établissements.",
           "image": "/images/4-1790688185050.jpg",
           "imageAlt": "Équipier projetant un extincteur à poudre sur un feu d'exercice",
-          "heroImage": "/images/4-1790688206923.jpg"
+          "heroImage": "/images/4-1790688206923.jpg",
+          "objectives": [
+            "Être capable de situer le rôle de l’équipier de première intervention dans l’organisation de la sécurité incendie de l’établissement",
+            "Être capable de donner l’alarme, d’alerter les secours et d’organiser l’intervention en binôme",
+            "Être capable de mettre en œuvre les extincteurs adaptés au feu rencontré",
+            "Être capable de mettre en œuvre un robinet d’incendie armé en binôme",
+            "Être capable d’intervenir en binôme sur un début d’incendie en situation simulée"
+          ]
         }
       ],
       "opco": true,
@@ -262,7 +283,13 @@
           "funding": "La formation Gestes Qui Sauvent est éligible à une prise en charge par votre OPCO au titre des actions de sensibilisation à la sécurité, lorsqu'elle est organisée dans un cadre professionnel. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre dossier de financement. Son format court permet d'organiser plusieurs sessions successives afin de sensibiliser l'ensemble de vos effectifs à moindre coût et sans impact majeur sur l'organisation du travail.",
           "image": "/images/10-1790688317776.jpg",
           "imageAlt": "Salarié en gilet haute visibilité portant secours à un collègue allongé au sol",
-          "heroImage": "/images/10-1790688296458.jpg"
+          "heroImage": "/images/10-1790688296458.jpg",
+          "objectives": [
+            "Être capable d’assurer sa propre sécurité, celle de la victime et des témoins, et d’alerter les secours",
+            "Être capable d’arrêter une hémorragie externe par compression directe et de poser un garrot",
+            "Être capable de mettre une victime inconsciente qui respire en position latérale de sécurité",
+            "Être capable de réaliser une réanimation cardio-pulmonaire et d’utiliser un défibrillateur automatisé externe"
+          ]
         },
         {
           "title": "Maintien et actualisation des compétences SST",
@@ -294,7 +321,13 @@
           "funding": "Le MAC SST est éligible à une prise en charge par votre OPCO au même titre que la formation initiale, dans le cadre du plan de développement des compétences. ENMA Formation vous fournit devis, convention et programme pédagogique pour faciliter votre demande de financement. Pour vous simplifier la gestion de vos échéances, nous proposons un suivi personnalisé et vous alertons à l'approche de la date d'expiration des certificats de vos salariés si vous le souhaitez.",
           "image": "/images/13-1790688690773.jpg",
           "imageAlt": "Mains gantées de bleu pratiquant un massage cardiaque sur un mannequin",
-          "heroImage": "/images/13-1790688666484.jpg"
+          "heroImage": "/images/13-1790688666484.jpg",
+          "objectives": [
+            "Être capable de situer son rôle de sauveteur secouriste du travail dans l’organisation des secours et dans la démarche de prévention de son entreprise",
+            "Être capable de protéger la victime et les témoins, puis d’examiner la victime pour repérer les signes vitaux",
+            "Être capable d’alerter ou de faire alerter les secours et de transmettre un message d’alerte précis",
+            "Être capable de secourir la victime de manière appropriée selon la conduite à tenir adaptée à son état"
+          ]
         },
         {
           "title": "PSC 1 — Prévention et secours civiques niveau 1",
@@ -333,7 +366,13 @@
           "funding": "Le PSC1 est éligible à une prise en charge par votre OPCO lorsqu'il est organisé dans un cadre professionnel, au titre des actions de sensibilisation à la sécurité. ENMA Formation vous accompagne dans le montage du dossier de financement en fournissant devis, programme et justificatifs de réalisation. Cette formation peut également être financée sur fonds propres ou proposée en avantage salarié dans le cadre d'une politique de qualité de vie au travail élargie à la sécurité personnelle des collaborateurs.",
           "image": "/images/2-1790688486082.jpg",
           "imageAlt": "Participants s'exerçant au massage cardiaque sur un mannequin lors d'une formation PSC 1",
-          "heroImage": "/images/2-1790688505366.jpg"
+          "heroImage": "/images/2-1790688505366.jpg",
+          "objectives": [
+            "Être capable d’assurer la protection immédiate et d’alerter les secours d’urgence",
+            "Être capable de porter secours à une victime qui s’étouffe ou qui présente une hémorragie externe",
+            "Être capable de porter secours à une victime inconsciente, qui respire ou qui ne respire pas, en utilisant un défibrillateur automatisé externe",
+            "Être capable de porter secours à une victime consciente présentant un malaise, un traumatisme, une plaie ou une brûlure"
+          ]
         },
         {
           "title": "Sauveteur secouriste du travail",
@@ -369,7 +408,13 @@
           "funding": "La formation SST est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, la prise en charge étant fréquemment intégrale pour les entreprises de moins de 50 salariés. ENMA Formation vous fournit l'ensemble des pièces nécessaires à votre dossier : convention de formation, programme conforme au référentiel INRS et convocations nominatives. Nous assurons également le suivi des échéances de recyclage MAC SST de vos salariés afin que votre effectif de sauveteurs secouristes reste opérationnel en continu.",
           "image": "/images/15-1790688598287.jpg",
           "imageAlt": "Stagiaire ganté pratiquant un massage cardiaque sur un mannequin adulte, un mannequin bébé à côté",
-          "heroImage": "/images/15-1790688534248.jpg"
+          "heroImage": "/images/15-1790688534248.jpg",
+          "objectives": [
+            "Être capable de situer son rôle de sauveteur secouriste du travail dans l’organisation des secours et dans la démarche de prévention de son entreprise",
+            "Être capable de protéger la victime et les témoins, puis d’examiner la victime pour repérer les signes vitaux",
+            "Être capable d’alerter ou de faire alerter les secours et de transmettre un message d’alerte précis",
+            "Être capable de secourir la victime de manière appropriée selon la conduite à tenir adaptée à son état"
+          ]
         }
       ],
       "opco": true,
@@ -457,7 +502,13 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Nous vous remettons l'ensemble des documents nécessaires au montage du dossier : convention de formation, devis détaillé et programme pédagogique.",
           "image": "/images/habilitation-b2-tableau-1790689842.jpg",
           "imageAlt": "Électricien casqué, de dos, devant un tableau électrique basse tension ouvert",
-          "heroImage": "/images/21-1790690211539.jpg"
+          "heroImage": "/images/21-1790690211539.jpg",
+          "objectives": [
+            "Être capable d’identifier les risques électriques et d’appliquer les prescriptions de sécurité liées à son niveau d’habilitation H0-B2",
+            "Être capable de délimiter et respecter les zones d’environnement et les distances de sécurité vis-à-vis des ouvrages électriques",
+            "Être capable, en tant que chargé de travaux B2, d’assurer la préparation, la surveillance et la clôture d’une intervention en basse tension hors tension",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
+          ]
         },
         {
           "title": "BR — Chargé d'intervention générale basse tension",
@@ -489,7 +540,11 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-br-armoire-exterieure-1790689131.jpg",
           "imageAlt": "Technicien en tenue haute visibilité et gants intervenant dans une armoire électrique extérieure",
-          "heroImage": "/images/18-1790690236313.jpg"
+          "heroImage": "/images/18-1790690236313.jpg",
+          "objectives": [
+            "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
+            "Être capable de réaliser, en sécurité, des interventions générales basse tension : dépannage, raccordement, remplacement (BR)"
+          ]
         },
         {
           "title": "BC — Chargé de consignation basse tension",
@@ -522,7 +577,11 @@
           "image": "/images/habilitation-bc-gants-isolants-1790689131.jpg",
           "imageAlt": "Électricien portant des gants isolants orange vérifiant l'absence de tension sur un tableau électrique",
           "imagePosition": "right center",
-          "heroImage": "/images/19-1790690252993.jpg"
+          "heroImage": "/images/19-1790690252993.jpg",
+          "objectives": [
+            "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
+            "Être capable de réaliser, en sécurité, une consignation basse tension pour le compte d’autrui (BC)"
+          ]
         },
         {
           "title": "BE Mesurage / Essai / Vérification",
@@ -618,7 +677,12 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-h0-pylone-1790689131.jpg",
           "imageAlt": "Deux intervenants casqués en gilet de sécurité observant un pylône et des lignes haute tension",
-          "heroImage": "/images/habilitation-h0-pylone-paysage-1790689926.jpg"
+          "heroImage": "/images/habilitation-h0-pylone-paysage-1790689926.jpg",
+          "objectives": [
+            "Être capable d’identifier les risques électriques et d’appliquer les prescriptions de sécurité liées à son niveau d’habilitation H0-B2",
+            "Être capable de délimiter et respecter les zones d’environnement et les distances de sécurité vis-à-vis des ouvrages électriques",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
+          ]
         },
         {
           "title": "H1 / H1V — Exécutant électricien haute tension",
@@ -686,7 +750,11 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Comme pour la basse tension, le titre d'habilitation haute tension est délivré par l'employeur, jamais par l'organisme de formation, sur la base des résultats aux évaluations que nous lui transmettons.",
           "image": "/images/26-1790690497389.jpg",
           "heroImage": "/images/26-1790690508716.jpg",
-          "imageAlt": "Électricien en tenue orange travaillant depuis une nacelle sur une ligne électrique aérienne"
+          "imageAlt": "Électricien en tenue orange travaillant depuis une nacelle sur une ligne électrique aérienne",
+          "objectives": [
+            "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
+            "Être capable de réaliser, en sécurité, des travaux hors tension et au voisinage d’installations basse tension (B2V) et d’ouvrages haute tension HTA (H2V)"
+          ]
         },
         {
           "title": "HC — Chargé de consignation haute tension",
@@ -718,7 +786,11 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-hc-armoire-paysage-1790689926.jpg",
           "heroImage": "/images/habilitation-hc-armoire-paysage-1790689926.jpg",
-          "imageAlt": "Technicien casqué accroupi devant une armoire électrique ouverte, un bloc-notes à la main"
+          "imageAlt": "Technicien casqué accroupi devant une armoire électrique ouverte, un bloc-notes à la main",
+          "objectives": [
+            "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
+            "Être capable de réaliser, en sécurité, une consignation pour le compte d’autrui en basse tension (BC) comme en haute tension HTA (HC)"
+          ]
         },
         {
           "title": "HE Manoeuvre / Mesurage / Essai / Vérification",
@@ -806,7 +878,13 @@
           ],
           "audience": "Cette formation s'adresse aux opérateurs, encadrants et concepteurs de travaux intervenant à proximité de réseaux enterrés ou aériens, quel que soit le secteur d'activité (BTP, VRD, espaces verts, réseaux). Aucun prérequis technique n'est exigé, seule une maîtrise suffisante du français écrit et parlé est nécessaire pour passer l'examen final. Le profil visé (opérateur, encadrant ou concepteur) détermine le contenu de l'examen final : nous vous aidons à identifier le profil adapté à la fonction de chaque participant.",
           "funding": "La préparation à l'AIPR est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la sécurité des travaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre dossier de financement. L'examen AIPR étant valable 5 ans, nous pouvons également organiser des sessions de renouvellement groupées pour l'ensemble de vos équipes intervenant sur chantier.",
-          "heroImage": "/images/38-1790691096269.jpg"
+          "heroImage": "/images/38-1790691096269.jpg",
+          "objectives": [
+            "Être capable de situer la réglementation anti-endommagement et le rôle de chaque acteur dans la préparation d’un projet de travaux",
+            "Être capable d’exploiter les déclarations de projet de travaux et d’intention de commencement de travaux ainsi que leurs récépissés",
+            "Être capable d’interpréter le marquage-piquetage, les classes de précision et les plans de réseaux",
+            "Être capable d’appliquer les mesures de prévention, d’arrêter les travaux et de rendre compte en cas de situation à risque"
+          ]
         },
         {
           "title": "CACES R489, conduite de chariots élévateurs",
@@ -841,7 +919,13 @@
             "À l'issue de la formation, le conducteur est capable d'appliquer les règles de circulation propres à son site, de vérifier son chariot avant la prise de poste, de manœuvrer en sécurité en charge comme à vide, et de réaliser les opérations de gerbage, dégerbage et chargement de véhicule dans le respect de la plaque de charge. La durée de la formation varie selon l'expérience du conducteur et le nombre de catégories visées : une journée suffit généralement pour un recyclage, jusqu'à trois jours pour une première qualification portant sur plusieurs catégories."
           ],
           "audience": "Cette formation s'adresse à toute personne appelée à conduire un chariot élévateur, qu'il s'agisse d'une première qualification ou d'un recyclage. Une aptitude médicale à la conduite délivrée par le médecin du travail est requise, ainsi qu'une maîtrise suffisante du français écrit et parlé pour comprendre les consignes de sécurité et répondre au test théorique. Le choix des catégories à faire certifier (1 à 6 selon la nomenclature R489) dépend du type de chariots utilisés sur votre site : nous vous aidons à identifier les catégories pertinentes lors de l'établissement du devis.",
-          "funding": "La formation CACES R489 est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, dans la mesure où elle répond à une obligation réglementaire de sécurité liée à la conduite d'engins. ENMA Formation vous transmet le devis détaillé par catégorie visée, le programme pédagogique et la convention de formation nécessaires à votre demande de financement. Un accompagnement est également proposé pour la mise à jour des autorisations de conduite de l'ensemble de vos conducteurs, notamment lors du renouvellement périodique recommandé tous les 5 ans."
+          "funding": "La formation CACES R489 est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, dans la mesure où elle répond à une obligation réglementaire de sécurité liée à la conduite d'engins. ENMA Formation vous transmet le devis détaillé par catégorie visée, le programme pédagogique et la convention de formation nécessaires à votre demande de financement. Un accompagnement est également proposé pour la mise à jour des autorisations de conduite de l'ensemble de vos conducteurs, notamment lors du renouvellement périodique recommandé tous les 5 ans.",
+          "objectives": [
+            "Être capable d’identifier les différentes catégories des chariots automoteurs de manutention à conducteur porté, leurs caractéristiques techniques et les acteurs de l’acte de conduire",
+            "Être capable d’appliquer la réglementation, les consignes du site et de maîtriser les risques principaux liés à la conduite",
+            "Être capable de réaliser les vérifications de prise et de fin de poste et l’entretien quotidien",
+            "Être capable d’effectuer en sécurité la prise, le transport, le gerbage et le dégerbage de charges ainsi que la circulation en sécurité"
+          ]
         },
         {
           "title": "Engins de chantier (R482)",
@@ -880,7 +964,13 @@
           ],
           "audience": "Cette formation s'adresse à tout conducteur amené à utiliser un engin de chantier dans le cadre de son activité professionnelle. Une aptitude médicale à la conduite délivrée par le médecin du travail est requise. La catégorie R482 visée (de A à G) dépend directement du type d'engin utilisé dans votre activité : pelle, chargeuse, tractopelle, compacteur ou autre engin de chantier ; nous vous aidons à l'identifier lors de l'établissement du devis.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous accompagne dans le montage du dossier de financement en fournissant devis par catégorie, programme pédagogique et convention de formation. Une préparation groupée à l'AIPR peut également être proposée pour les conducteurs intervenant à proximité de réseaux.",
-          "heroImage": "/images/30-1790691171481.jpg"
+          "heroImage": "/images/30-1790691171481.jpg",
+          "objectives": [
+            "Être capable d’identifier les différentes catégories des engins de chantier, leurs caractéristiques techniques et les acteurs de l’acte de conduire",
+            "Être capable d’appliquer la réglementation, les consignes du site et de maîtriser les risques principaux liés à la conduite",
+            "Être capable de réaliser les vérifications de prise et de fin de poste et l’entretien quotidien",
+            "Être capable d’effectuer en sécurité les manœuvres de déplacement, de chargement, de terrassement et de mise en sécurité de l’engin"
+          ]
         },
         {
           "title": "Gerbeur à conducteur accompagnant (R485)",
@@ -919,7 +1009,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous accompagne dans le montage du dossier de financement en fournissant devis, programme pédagogique et convention de formation. Elle peut être couplée avec d'autres formations CACES de votre parc d'engins pour optimiser l'organisation des sessions et le coût global de votre plan de formation.",
           "image": "/images/33-1790691246115.jpg",
           "imageAlt": "Gerbeur électrique à conducteur accompagnant dans une allée d'entrepôt",
-          "heroImage": "/images/33-1790691236312.jpg"
+          "heroImage": "/images/33-1790691236312.jpg",
+          "objectives": [
+            "Être capable d’identifier les différentes catégories des chariots gerbeurs automoteurs à conducteur accompagnant, leurs caractéristiques techniques et les acteurs de l’acte de conduire",
+            "Être capable d’appliquer la réglementation, les consignes du site et de maîtriser les risques principaux liés à la conduite",
+            "Être capable de réaliser les vérifications de prise et de fin de poste et l’entretien quotidien",
+            "Être capable d’effectuer en sécurité la prise, le transport, le gerbage et le dégerbage de charges à l’aide du timon, ainsi que la circulation en sécurité"
+          ]
         },
         {
           "title": "Grue de chargement (R490)",
@@ -958,7 +1054,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée directement sur votre site avec votre propre matériel, sous réserve de sa conformité, afin de limiter les contraintes d'organisation.",
           "image": "/images/31-1790691292238.jpg",
           "imageAlt": "Camion équipé d'une grue de chargement déployée sur un chantier",
-          "heroImage": "/images/31-1790691327680.jpg"
+          "heroImage": "/images/31-1790691327680.jpg",
+          "objectives": [
+            "Être capable de choisir la grue de chargement adaptée à l’opération de levage à réaliser, en identifiant ses principaux types et caractéristiques",
+            "Être capable de contrôler l’état de la grue de chargement et de réaliser les vérifications d’usage avant la mise en service",
+            "Être capable de conduire la grue de chargement en respectant les règles de circulation, de stabilisation et de sécurité",
+            "Être capable de réaliser une opération de levage et de manutention de charges en sécurité, dans le respect de la réglementation et de la recommandation R490"
+          ]
         },
         {
           "title": "PEMP — nacelle élévatrice (R486)",
@@ -997,7 +1099,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être couplée avec une formation au port du harnais antichute pour les conducteurs amenés à travailler en hauteur en dehors de la nacelle elle-même.",
           "image": "/images/34-1790691363162.jpg",
           "imageAlt": "Deux opérateurs équipés de harnais dans la plateforme d'une nacelle élévatrice",
-          "heroImage": "/images/34-1790691393478.jpg"
+          "heroImage": "/images/34-1790691393478.jpg",
+          "objectives": [
+            "Être capable d’identifier les différentes catégories des plates-formes élévatrices mobiles de personnes, leurs caractéristiques techniques et les acteurs de l’acte de conduire",
+            "Être capable d’appliquer la réglementation, les consignes du site et de maîtriser les risques principaux liés à la conduite",
+            "Être capable de réaliser les vérifications de prise et de fin de poste et l’entretien quotidien",
+            "Être capable d’effectuer en sécurité les manœuvres de translation, de mise en station, d’élévation et de descente de secours"
+          ]
         },
         {
           "title": "Pont roulant (R484)",
@@ -1032,7 +1140,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la conduite d'appareils de levage. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée directement sur votre site si vous disposez d'un pont roulant, ou dans nos locaux équipés à cet effet.",
           "image": "/images/32-1790691436139.jpg",
           "imageAlt": "Portique de levage éclairé déplaçant un conteneur, de nuit",
-          "heroImage": "/images/32-1790691425910.jpg"
+          "heroImage": "/images/32-1790691425910.jpg",
+          "objectives": [
+            "Être capable d’identifier les différents types de ponts roulants et portiques, leurs caractéristiques techniques et les acteurs de l’acte de conduire",
+            "Être capable d’appliquer les règles de sécurité, les consignes et la réglementation en vigueur, et de maîtriser les risques principaux",
+            "Être capable de réaliser les vérifications d’usage de prise et de fin de poste ainsi que l’entretien quotidien",
+            "Être capable d’effectuer en sécurité les opérations de levage, de déplacement des charges et les manœuvres"
+          ]
         }
       ],
       "opco": true,
@@ -1089,7 +1203,13 @@
           "image": "/images/2-1790074542563.jpg",
           "imageAlt": "Vue du dessus d'un plateau d'échafaudage de pied en cours de montage",
           "imagePosition": "right center",
-          "heroImage": "/images/11-1790716003664.jpg"
+          "heroImage": "/images/11-1790716003664.jpg",
+          "objectives": [
+            "Être capable de se situer et d’être acteur de la prévention des risques liés au montage et à l’utilisation des échafaudages",
+            "Être capable de monter et de démonter un échafaudage de pied conformément à la notice du fabricant",
+            "Être capable de réaliser la vérification journalière de l’échafaudage avant chaque prise de poste",
+            "Être capable d’utiliser un échafaudage de pied en sécurité et de repérer les situations dangereuses"
+          ]
         },
         {
           "title": "Montage, démontage et utilisation des échafaudages roulants et fixes (R457)",
@@ -1128,7 +1248,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée sur votre site avec votre propre matériel d'échafaudage afin de rapprocher la formation des conditions réelles d'utilisation.",
           "image": "/images/35-1790716044195.jpg",
           "imageAlt": "Échafaudage roulant installé dans un bâtiment industriel",
-          "heroImage": "/images/35-1790716077808.jpg"
+          "heroImage": "/images/35-1790716077808.jpg",
+          "objectives": [
+            "Être capable d’identifier les risques liés au travail en hauteur et les mesures de prévention associées",
+            "Être capable de monter et de démonter un échafaudage fixe de pied ou roulant conformément à la notice du fabricant",
+            "Être capable de réaliser les vérifications réglementaires avant, pendant et après utilisation",
+            "Être capable d’utiliser un échafaudage en sécurité et de repérer les situations dangereuses"
+          ]
         },
         {
           "title": "Travail en hauteur et port du harnais",
@@ -1163,7 +1289,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée directement sur votre site afin d'entraîner les participants sur les points d'ancrage réels qu'ils utiliseront au quotidien.",
           "image": "/images/9-1790716112904.jpg",
           "imageAlt": "Cordiste équipé d'un harnais et d'un casque travaillant en hauteur le long d'une paroi",
-          "heroImage": "/images/9-1790716128780.jpg"
+          "heroImage": "/images/9-1790716128780.jpg",
+          "objectives": [
+            "Être capable d’identifier les risques liés au travail en hauteur et la hiérarchie des mesures de prévention",
+            "Être capable de vérifier, d’ajuster et de porter correctement un harnais antichute et ses accessoires",
+            "Être capable de choisir un point d’ancrage adapté et de composer un système d’arrêt de chute en tenant compte du tirant d’air",
+            "Être capable de repérer les situations dangereuses, de signaler un équipement défectueux et de connaître la conduite à tenir après une chute"
+          ]
         },
         {
           "title": "Vérification des échafaudages",
@@ -1197,7 +1329,13 @@
           "audience": "Cette formation s'adresse aux personnes désignées par l'employeur pour assurer la vérification des échafaudages avant mise à disposition des équipes : chef d'équipe, responsable sécurité ou monteur confirmé. Une bonne connaissance préalable de la technologie des échafaudages est recommandée, une formation au montage d'échafaudages constituant un prérequis idéal avant cette formation de vérification. Elle s'adresse en priorité aux entreprises disposant de leur propre parc d'échafaudages ou intervenant régulièrement sur des chantiers avec montage d'ouvrages temporaires.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en complément d'une formation au montage d'échafaudages afin de former une même personne aux deux compétences complémentaires.",
           "image": "/images/5-copie-1790074688951.jpg",
-          "imageAlt": "Ouvriers vus d'en bas sur une plateforme d'échafaudage en acier"
+          "imageAlt": "Ouvriers vus d'en bas sur une plateforme d'échafaudage en acier",
+          "objectives": [
+            "Être capable de situer les obligations réglementaires de vérification des échafaudages et le rôle de la personne compétente",
+            "Être capable de réaliser la vérification de mise ou de remise en service d’un échafaudage",
+            "Être capable de réaliser la vérification journalière et la vérification trimestrielle de l’état de conservation",
+            "Être capable de consigner les constats, de statuer sur la conformité et de rédiger le rapport de vérification"
+          ]
         }
       ],
       "opco": true,
@@ -1287,7 +1425,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en amont d'une campagne d'intervention groupée sur un site industriel afin de certifier l'ensemble d'une équipe avant le début des travaux.",
           "image": "/images/8-1790716538650.jpg",
           "imageAlt": "Deux intervenants casqués consultant un ordinateur portable devant un échafaudage",
-          "heroImage": "/images/8-1790716544777.jpg"
+          "heroImage": "/images/8-1790716544777.jpg",
+          "objectives": [
+            "Être capable de connaître les risques et les mesures de prévention associées, y compris en situation de coactivité et d’interférences",
+            "Être capable de comprendre l’importance du respect des règles lors de l’intervention sur site industriel",
+            "Être capable de réagir en cas de situation dégradée, oser s’arrêter et vérifier en cas de doute",
+            "Être capable d’être acteur de la prévention par une attitude interrogative et proactive et une vigilance partagée"
+          ]
         },
         {
           "title": "Sécurité des salariés des entreprises extérieures — Niveau 2",
@@ -1322,7 +1466,14 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle est idéalement organisée juste après la formation Niveau 1 de l'équipe encadrée, afin de structurer l'ensemble de la coordination sécurité avant le début d'un chantier ou d'une campagne d'intervention.",
           "image": "/images/photo-nn2-1790717269344.jpg",
           "heroImage": "/images/photo-n2-1790717276617.jpg",
-          "imageAlt": "Deux intervenants en tenue haute visibilité et casque blanc sur un site industriel"
+          "imageAlt": "Deux intervenants en tenue haute visibilité et casque blanc sur un site industriel",
+          "objectives": [
+            "Être capable d’évaluer les risques en permanence",
+            "Être capable de transmettre les informations à son équipe",
+            "Être capable de gérer son équipe et son chantier, y compris en situation dégradée",
+            "Être capable d’intégrer les réflexes de prévention, la vigilance partagée et la responsabilité individuelle dans toutes les situations de travail",
+            "Être capable de développer son leadership de manager de proximité"
+          ]
         }
       ],
       "opco": true,
@@ -1375,7 +1526,13 @@
           "audience": "Cette formation s'adresse à tout salarié en contact avec du public, exposé à un risque d'agressivité ou d'incivilité dans le cadre de son activité : accueil, guichet, service client, intervention à domicile. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les secteurs où le contact avec le public constitue le cœur de l'activité (commerce, administration, transport, établissements de santé) et peut être adaptée aux situations spécifiques rencontrées par chaque groupe de stagiaires.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques professionnels liés aux violences externes. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir de scénarios représentatifs des situations réellement rencontrées par vos équipes pour renforcer la pertinence des mises en situation.",
           "image": "/images/4-copie-2-1790075618735.jpg",
-          "imageAlt": "Discussion tendue entre collègues autour d'une table de réunion"
+          "imageAlt": "Discussion tendue entre collègues autour d'une table de réunion",
+          "objectives": [
+            "Être capable de distinguer incivilité, agressivité et violence et d’en identifier les mécanismes",
+            "Être capable de repérer les signaux d’alerte et d’évaluer le niveau de tension d’une situation",
+            "Être capable d’accueillir la demande et de désamorcer une incivilité par la communication verbale et non verbale",
+            "Être capable de poser un cadre, de se protéger et d’appliquer la procédure d’alerte et de signalement"
+          ]
         },
         {
           "title": "Gestion des conflits",
@@ -1410,7 +1567,14 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences relationnelles et managériales. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en intra-entreprise à partir de situations réellement vécues par vos équipes pour un ancrage pédagogique maximal.",
           "image": "/images/37-1790717356189.jpg",
           "imageAlt": "Poignée de main apaisée à l'issue d'une discussion",
-          "heroImage": "/images/37-1790717340298.jpg"
+          "heroImage": "/images/37-1790717340298.jpg",
+          "objectives": [
+            "Être capable d'identifier les mécanismes et les facteurs de risque de l'agressivité et des situations conflictuelles au travail",
+            "Être capable de repérer les signaux d'alerte et d'évaluer une situation tendue avant son escalade",
+            "Être capable de mobiliser des techniques de communication verbale et non verbale pour désamorcer une situation d'agressivité",
+            "Être capable d'adopter une posture professionnelle sécurisante et de gérer ses émotions face à une situation conflictuelle",
+            "Être capable d'appliquer les procédures d'alerte, de protection et de prise en charge après un incident"
+          ]
         },
         {
           "title": "Les bases de la sécurité au quotidien",
@@ -1449,7 +1613,15 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la sécurité. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à un parcours d'intégration pour tout nouveau manager prenant la responsabilité d'une équipe.",
           "image": "/images/6-1790717438024.jpg",
           "imageAlt": "Équipe en gilets de sécurité réunie dans un entrepôt pour un point sécurité",
-          "heroImage": "/images/5-19-44-14-1790717456710.jpg"
+          "heroImage": "/images/5-19-44-14-1790717456710.jpg",
+          "objectives": [
+            "Être capable d'intégrer la prise en compte de la sécurité dans son fonctionnement managérial quotidien",
+            "Être capable d'identifier les principales obligations et responsabilités du manager en matière de sécurité",
+            "Être capable d'identifier et de prévenir les risques professionnels au sein de son équipe",
+            "Être capable de déterminer dans quels cas et comment utiliser un plan de prévention",
+            "Être capable d'appliquer la procédure du permis feu",
+            "Être capable d'assurer son rôle de manager dans la prévention et la diffusion d'une culture sécurité auprès de son équipe"
+          ]
         },
         {
           "title": "Gestion du stress",
@@ -1484,7 +1656,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention.",
           "image": "/images/14-1790717471502.jpg",
           "imageAlt": "Silhouette d'une salariée, la tête dans les mains devant son ordinateur",
-          "heroImage": "/images/14-1790717478538.jpg"
+          "heroImage": "/images/14-1790717478538.jpg",
+          "objectives": [
+            "Être capable d’identifier les mécanismes du stress et de distinguer stress aigu et stress chronique",
+            "Être capable de repérer ses propres signaux d’alerte physiques, émotionnels et comportementaux",
+            "Être capable de mobiliser des techniques de régulation immédiate et de récupération",
+            "Être capable d’agir sur les facteurs organisationnels et relationnels et de construire son plan d’action personnel"
+          ]
         },
         {
           "title": "Premiers secours en santé mentale (PSSM)",
@@ -1519,7 +1697,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large.",
           "image": "/images/16-1790717508285.jpg",
           "imageAlt": "Main posée sur l'épaule d'un homme accablé, geste de soutien",
-          "heroImage": "/images/16-1790717515590.jpg"
+          "heroImage": "/images/16-1790717515590.jpg",
+          "objectives": [
+            "Être capable de repérer les signes d’un trouble psychique ou d’une souffrance psychique au travail",
+            "Être capable d’appliquer le plan d’action en cinq étapes auprès d’une personne en difficulté",
+            "Être capable d’intervenir face à une situation de crise",
+            "Être capable d’orienter vers les professionnels et les ressources adaptées et de préserver sa propre santé"
+          ]
         },
         {
           "title": "Prévention de l'absentéisme",
@@ -1554,7 +1738,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la prévention. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par une formation à la gestion du stress ou aux risques psychosociaux pour une approche globale de la qualité de vie au travail.",
           "image": "/images/36-1790717549953.jpg",
           "imageAlt": "Rangées de chaises vides dans une salle de réunion",
-          "heroImage": "/images/36-1790717557392.jpg"
+          "heroImage": "/images/36-1790717557392.jpg",
+          "objectives": [
+            "Être capable de définir l’absentéisme, de le mesurer et d’en suivre les indicateurs",
+            "Être capable d’analyser les causes de l’absentéisme, individuelles, organisationnelles et managériales",
+            "Être capable de conduire les entretiens de retour et de maintien dans l’emploi",
+            "Être capable de construire, de piloter et d’évaluer un plan d’action de prévention de l’absentéisme"
+          ]
         }
       ],
       "opco": true,
@@ -1611,7 +1801,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir d'un cahier des charges réel issu de votre activité pour un ancrage pédagogique maximal.",
           "image": "/images/6-1790717609850.jpg",
           "imageAlt": "Technicien casqué travaillant sur un ordinateur portable devant des panneaux photovoltaïques",
-          "heroImage": "/images/6-1790717614982.jpg"
+          "heroImage": "/images/6-1790717614982.jpg",
+          "objectives": [
+            "Être capable d’analyser un site et d’en évaluer le gisement solaire et les contraintes",
+            "Être capable de dimensionner le champ photovoltaïque, les onduleurs et les protections",
+            "Être capable d’appliquer les normes et prescriptions techniques applicables",
+            "Être capable de produire un dossier d’étude complet et de le présenter au client"
+          ]
         },
         {
           "title": "Chiffrage et dimensionnement",
@@ -1650,7 +1846,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par la formation Bureau d'études technique photovoltaïque pour les profils souhaitant approfondir la conception complète d'un projet.",
           "image": "/images/7-1790717637009.jpg",
           "imageAlt": "Main gantée posée sur un panneau photovoltaïque, sous un ciel bleu",
-          "heroImage": "/images/7-1790717629998.jpg"
+          "heroImage": "/images/7-1790717629998.jpg",
+          "objectives": [
+            "Être capable de dimensionner une installation photovoltaïque à partir des besoins et des contraintes du site",
+            "Être capable d’établir le métré et de quantifier les fournitures et la main-d’œuvre",
+            "Être capable de construire un prix de vente intégrant déboursés, frais et marge",
+            "Être capable de produire un devis clair et de justifier le chiffrage auprès du client"
+          ]
         },
         {
           "title": "Contrôle par électroluminescence",
@@ -1689,7 +1891,13 @@
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée avec votre propre matériel de contrôle si vous en disposez déjà, afin d'ancrer la formation dans vos conditions réelles d'utilisation.",
           "imageAlt": "Gros plan sur des panneaux photovoltaïques au coucher du soleil",
           "image": "/images/10-1790717682561.jpg",
-          "heroImage": "/images/10-1790717697312.jpg"
+          "heroImage": "/images/10-1790717697312.jpg",
+          "objectives": [
+            "Être capable d’expliquer le principe de l’électroluminescence et son intérêt pour le diagnostic",
+            "Être capable de préparer et de mettre en œuvre en sécurité un contrôle par électroluminescence",
+            "Être capable d’identifier les défauts révélés par les images",
+            "Être capable de rédiger un rapport de contrôle et de formuler des préconisations"
+          ]
         }
       ],
       "opco": true,
