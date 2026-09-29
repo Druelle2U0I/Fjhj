@@ -745,6 +745,8 @@
           ],
           "audience": "Cette formation s'adresse au personnel technique réalisant des opérations de manœuvre, de mesure, d'essai ou de vérification sur des installations haute tension : exploitation, maintenance. Une expérience préalable en électricité est recommandée.",
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "image": "/images/fregr-1790690916101.jpg",
+          "heroImage": "/images/tere-1790690933013.jpg",
           "imagePosition": "center center",
           "imageAlt": "Technicien en gilet haute visibilité tenant un multimètre et ses pointes de touche devant une armoire"
         }
