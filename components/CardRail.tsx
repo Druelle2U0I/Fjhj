@@ -63,7 +63,7 @@ export default function CardRail({
 
       <ul
         ref={rail}
-        className="spotlight rail-bleed -mx-6 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 md:scroll-px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="rail-bleed -mx-6 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 md:scroll-px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {cards.map((card) => {
           const photo = Boolean(card.image);
@@ -108,7 +108,7 @@ export default function CardRail({
               </div>
             </>
           );
-          const cls = `spotlight-item group relative flex h-full flex-col overflow-hidden rounded-2xl ${
+          const cls = `group relative flex h-full flex-col overflow-hidden rounded-2xl ${
             photo ? "bg-surface" : "border border-[#0b0c31]/15 bg-white"
           }`;
           return (
