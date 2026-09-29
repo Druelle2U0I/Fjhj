@@ -8,7 +8,7 @@ export default async function KeyFacts() {
   return (
     <dl className="grid grid-cols-2 gap-x-10 gap-y-8">
       {stats.map((stat) => (
-        <div key={stat.label} className="flex flex-col-reverse">
+        <div key={stat.label} className="flex flex-col-reverse justify-end">
           <dt className="mt-1 text-sm text-muted">{stat.label}</dt>
           <dd className="font-heading text-4xl text-surface-accent sm:text-5xl">
             <AnimatedStat value={stat.value} />
