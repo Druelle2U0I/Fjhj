@@ -1316,7 +1316,9 @@
             "Cette formation permet à l'encadrant de préparer l'inspection commune préalable, de répartir les tâches et les consignes de sécurité au sein de son équipe, de vérifier le respect des règles du site (autorisations de travail, équipements de protection, balisage) et de savoir réagir face à un incident. Elle s'appuie sur des mises en situation concrètes, proches des interventions réelles sur site industriel."
           ],
           "audience": "Cette formation s'adresse aux chefs d'équipe, encadrants et responsables d'intervention d'entreprises extérieures amenés à superviser une équipe sur un site industriel client, notamment dans les secteurs de la chimie, de la pétrochimie ou de l'industrie lourde. Elle est complémentaire de la formation Niveau 1, suivie au préalable par l'ensemble des intervenants qu'ils encadrent.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle est idéalement organisée juste après la formation Niveau 1 de l'équipe encadrée, afin de structurer l'ensemble de la coordination sécurité avant le début d'un chantier ou d'une campagne d'intervention."
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire de sécurité liée à l'intervention en entreprise extérieure. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle est idéalement organisée juste après la formation Niveau 1 de l'équipe encadrée, afin de structurer l'ensemble de la coordination sécurité avant le début d'un chantier ou d'une campagne d'intervention.",
+          "image": "/images/photo-nn2-1790717269344.jpg",
+          "heroImage": "/images/photo-n2-1790717276617.jpg"
         }
       ],
       "opco": true,
@@ -1402,8 +1404,9 @@
           ],
           "audience": "Cette formation s'adresse à tout salarié en relation avec du public ou avec une équipe, exposé à des situations de tension ou de désaccord dans le cadre de son activité (encadrement, relation client, accueil, coordination de projet). Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée aux managers de proximité et aux personnes en contact fréquent avec du public, pour qui la gestion des tensions relationnelles fait partie intégrante de l'activité quotidienne.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences relationnelles et managériales. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée en intra-entreprise à partir de situations réellement vécues par vos équipes pour un ancrage pédagogique maximal.",
-          "image": "/images/3-copie-2-1790075675753.jpg",
-          "imageAlt": "Personnes en tenue de bureau échangeant avec des gestes lors d'une discussion tendue"
+          "image": "/images/37-1790717356189.jpg",
+          "imageAlt": "Personnes en tenue de bureau échangeant avec des gestes lors d'une discussion tendue",
+          "heroImage": "/images/37-1790717340298.jpg"
         },
         {
           "title": "Les bases de la sécurité au quotidien",
@@ -1440,8 +1443,9 @@
           ],
           "audience": "Cette formation s'adresse aux managers et encadrants de proximité souhaitant intégrer la sécurité dans leur pratique managériale quotidienne, quel que soit leur secteur d'activité. Aucun prérequis n'est nécessaire, bien qu'une première expérience d'encadrement facilite l'appropriation des concepts abordés. Elle est particulièrement recommandée pour les nouveaux managers découvrant leurs responsabilités en matière de sécurité, ainsi que pour tout encadrant souhaitant structurer sa démarche de prévention.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la sécurité. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à un parcours d'intégration pour tout nouveau manager prenant la responsabilité d'une équipe.",
-          "image": "/images/5-19-44-14-1790080659464.jpg",
-          "imageAlt": "Équipe en gilets de sécurité réunie dans un entrepôt pour un point sécurité"
+          "image": "/images/6-1790717438024.jpg",
+          "imageAlt": "Équipe en gilets de sécurité réunie dans un entrepôt pour un point sécurité",
+          "heroImage": "/images/5-19-44-14-1790717456710.jpg"
         },
         {
           "title": "Gestion du stress",
@@ -1474,8 +1478,9 @@
           ],
           "audience": "Cette formation s'adresse à tout salarié exposé au stress professionnel souhaitant développer des techniques de gestion adaptées à sa situation, quel que soit son poste ou son secteur d'activité. Aucun prérequis n'est nécessaire. Elle est particulièrement recommandée dans les environnements à forte charge mentale ou relationnelle (relation client, encadrement, urgence) et peut être proposée en complément d'une démarche plus large de prévention des risques psychosociaux au sein de l'entreprise.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être intégrée à une politique de qualité de vie et des conditions de travail (QVCT) plus globale, en complément d'autres actions de prévention.",
-          "image": "/images/gestion-du-stress.jpg",
-          "imageAlt": "Salariée en situation de stress au travail"
+          "image": "/images/14-1790717471502.jpg",
+          "imageAlt": "Salariée en situation de stress au travail",
+          "heroImage": "/images/14-1790717478538.jpg"
         },
         {
           "title": "Premiers secours en santé mentale (PSSM)",
@@ -1508,8 +1513,9 @@
           ],
           "audience": "Cette formation s'adresse à tout salarié, quel que soit son poste ou son niveau hiérarchique, souhaitant être en mesure d'aider un collègue ou un proche traversant une période de souffrance psychique. Aucun prérequis n'est nécessaire, et la formation n'exige aucune compétence préalable en santé mentale. Elle est particulièrement recommandée pour les managers et les représentants du personnel, en première ligne pour repérer les signaux de mal-être au sein des équipes, ainsi que dans le cadre d'une démarche globale de prévention des risques psychosociaux.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de prévention des risques psychosociaux. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle s'inscrit pleinement dans une démarche de qualité de vie et des conditions de travail (QVCT) et peut être proposée à l'ensemble des collaborateurs dans le cadre d'une politique de prévention plus large.",
-          "image": "/images/premiers-secours-sante-mentale.jpg",
-          "imageAlt": "Geste de soutien et d'écoute entre deux personnes"
+          "image": "/images/16-1790717508285.jpg",
+          "imageAlt": "Geste de soutien et d'écoute entre deux personnes",
+          "heroImage": "/images/16-1790717515590.jpg"
         },
         {
           "title": "Prévention de l'absentéisme",
@@ -1542,8 +1548,9 @@
           ],
           "audience": "Cette formation s'adresse aux managers, encadrants et responsables RH souhaitant prévenir et réduire l'absentéisme au sein de leurs équipes. Une première expérience d'encadrement est recommandée, bien qu'aucun prérequis formel ne soit exigé. Elle s'adresse particulièrement aux entreprises confrontées à un taux d'absentéisme en hausse ou souhaitant structurer une démarche de prévention avant que le phénomène ne s'installe durablement.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant qu'action de développement des compétences managériales liées à la prévention. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par une formation à la gestion du stress ou aux risques psychosociaux pour une approche globale de la qualité de vie au travail.",
-          "image": "/images/4-1790108467451.jpg",
-          "imageAlt": "Salle de formation lumineuse avec des tables et des chaises blanches"
+          "image": "/images/36-1790717549953.jpg",
+          "imageAlt": "Salle de formation lumineuse avec des tables et des chaises blanches",
+          "heroImage": "/images/36-1790717557392.jpg"
         }
       ],
       "opco": true,
