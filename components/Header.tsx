@@ -62,7 +62,7 @@ export default function Header() {
             />
           </Link>
 
-          <nav className="z-10 hidden items-center gap-8 text-base font-medium md:flex">
+          <nav className="z-10 hidden items-center gap-6 text-[15px] font-medium lg:flex xl:gap-8 xl:text-base">
             {leftLinks.map((link) =>
               link.href === "/formations" ? (
                 <div
@@ -161,7 +161,7 @@ export default function Header() {
             aria-label="Ouvrir le menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted transition-colors hover:text-foreground md:hidden"
+            className="z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-muted transition-colors hover:text-foreground lg:hidden"
           >
             <span className="grid gap-1">
               <span className="block h-0.5 w-4 bg-current" />
@@ -169,8 +169,8 @@ export default function Header() {
             </span>
           </button>
 
-          <div className="z-10 ml-auto flex items-center gap-8 text-base font-medium">
-            <nav className="hidden items-center gap-8 md:flex">
+          <div className="z-10 ml-auto flex items-center gap-6 text-[15px] font-medium xl:gap-8 xl:text-base">
+            <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
               {rightLinks.map((link) => (
                 <Link key={link.href} href={link.href} className={linkClass(link.href)}>
                   {link.label}
@@ -187,7 +187,7 @@ export default function Header() {
         </div>
 
         {open && (
-          <nav className="grid gap-1 border-t border-white/10 px-4 py-3 text-sm md:hidden">
+          <nav className="grid gap-1 border-t border-white/10 px-4 py-3 text-sm lg:hidden">
             {[...leftLinks, ...rightLinks].map((link) => (
               <div key={link.href}>
                 <Link
