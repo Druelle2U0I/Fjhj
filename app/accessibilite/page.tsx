@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
 import { accessibility, company, legal, qualiopiText } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Accessibilité",
   description: `Accueil des personnes en situation de handicap et accessibilité du site ${company.name}.`,
-  alternates: { canonical: "/accessibilite" },
-};
+  path: "/accessibilite",
+});
 
 export default function AccessibilitePage() {
   const mail = <a href={`mailto:${company.email}`}>{company.email}</a>;

@@ -63,7 +63,7 @@ export default function Contact({
       className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[148px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24"
     >
       {hasPhoto && (
-        <HeroBackgroundPhoto src={pages.contact.heroImage!} alt={pages.contact.title} />
+        <HeroBackgroundPhoto src={pages.contact.heroImage!} alt={pages.contact.heroImageAlt || pages.contact.title} />
       )}
       <div className={`relative mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 ${hasPhoto ? "on-surface" : ""}`}>
         <div className="flex flex-col">

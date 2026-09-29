@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
 import { company, legal } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Politique de confidentialité",
   description: `Comment ${company.name} collecte, utilise et protège vos données personnelles.`,
-  alternates: { canonical: "/confidentialite" },
-};
+  path: "/confidentialite",
+});
 
 export default function ConfidentialitePage() {
   const name = legal.legalName || company.name;

@@ -7,12 +7,13 @@ import Reveal from "@/components/Reveal";
 import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import Visual from "@/components/Visual";
 import { fillCounts, pages, services } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Nos formations",
   description: fillCounts(pages.catalogue.seoDescription),
-  alternates: { canonical: "/formations" },
-};
+  path: "/formations",
+});
 
 export default function FormationsPage() {
   return (
@@ -23,6 +24,7 @@ export default function FormationsPage() {
         description={fillCounts(pages.catalogue.text)}
         aside={<KeyFacts />}
         backgroundImage={pages.catalogue.heroImage}
+        imageAlt={pages.catalogue.heroImageAlt}
       />
 
       <section className="on-surface bg-surface px-6 pb-12">

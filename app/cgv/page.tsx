@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
 import { activityDeclarationText, company, legal } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Conditions générales de vente",
   description: `Conditions générales de vente des formations professionnelles proposées par ${company.name}.`,
-  alternates: { canonical: "/cgv" },
-};
+  path: "/cgv",
+});
 
 export default function CgvPage() {
   const name = legal.legalName || company.name;

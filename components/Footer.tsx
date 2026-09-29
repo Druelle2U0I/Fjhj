@@ -10,6 +10,7 @@ import {
   company,
   footerCta,
   footerImage,
+  footerImageAlt,
   legal,
   qualiopiText,
   services,
@@ -151,7 +152,7 @@ export default function Footer() {
     <footer className="on-surface relative overflow-hidden">
       {/* Une seule photo de fond, continue sur toute la hauteur du pied de page. */}
       <div className="absolute inset-0">
-        <Visual src={footerImage} alt="Formation ENMA Formation sur le terrain" sizes="100vw" />
+        <Visual src={footerImage} alt={footerImageAlt || "Formation ENMA Formation sur le terrain"} sizes="100vw" />
         <div className="footer-veil absolute inset-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-surface/20 via-transparent to-surface/50" />
       </div>

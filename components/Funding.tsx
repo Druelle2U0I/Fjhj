@@ -71,7 +71,7 @@ export default async function Funding() {
         {pages.funding.heroImage && (
           <HeroBackgroundPhoto
             src={pages.funding.heroImage}
-            alt={pages.funding.title}
+            alt={pages.funding.heroImageAlt || pages.funding.title}
           />
         )}
         <div

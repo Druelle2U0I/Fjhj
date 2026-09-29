@@ -295,6 +295,7 @@ export type SiteContent = {
   };
   theme: Theme;
   footerImage?: string;
+  footerImageAlt?: string;
   footerCta: {
     enabled: boolean;
     eyebrow: string;
@@ -345,6 +346,7 @@ export type Pages = {
     text: string;
     seoDescription: string;
     heroImage?: string;
+    heroImageAlt?: string;
     theme?: PageColorOverride;
   };
   allTrainings: {
@@ -357,6 +359,7 @@ export type Pages = {
     emptyText: string;
     seoDescription: string;
     heroImage?: string;
+    heroImageAlt?: string;
     theme?: PageColorOverride;
   };
   sector: {
@@ -402,6 +405,7 @@ export type Pages = {
     ctaButton: string;
     seoDescription: string;
     heroImage?: string;
+    heroImageAlt?: string;
     theme?: PageColorOverride;
   };
   team: {
@@ -410,6 +414,7 @@ export type Pages = {
     text?: string;
     seoDescription: string;
     heroImage?: string;
+    heroImageAlt?: string;
     theme?: PageColorOverride;
   };
   contact: {
@@ -420,9 +425,10 @@ export type Pages = {
     successMessage: string;
     seoDescription: string;
     heroImage?: string;
+    heroImageAlt?: string;
     theme?: PageColorOverride;
   };
-  funding: { eyebrow: string; title: string; seoDescription: string; heroImage?: string; theme?: PageColorOverride };
+  funding: { eyebrow: string; title: string; seoDescription: string; heroImage?: string; heroImageAlt?: string; theme?: PageColorOverride };
 };
 
 const content = site as SiteContent;
@@ -442,6 +448,7 @@ export const team = content.team;
 export const home = content.home;
 export const theme = content.theme;
 export const footerImage = content.footerImage;
+export const footerImageAlt = content.footerImageAlt;
 export const footerCta = content.footerCta;
 
 /** Variables CSS dérivées du thème, appliquées sur <html>. */

@@ -913,6 +913,11 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                   value={content.footerImage}
                   onChange={(v) => update({ ...content, footerImage: v })}
                 />
+                <Field
+                  label="Description de la photo (accessibilité)"
+                  value={content.footerImageAlt ?? ""}
+                  onChange={(v) => update({ ...content, footerImageAlt: v })}
+                />
                 <p className="text-xs text-muted">
                   Cette photo sert de fond au bandeau et apparaît à travers la
                   découpe du logo. Sans photo, un dégradé de marque est utilisé.

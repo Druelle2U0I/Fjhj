@@ -5,12 +5,13 @@ import PageHero from "@/components/PageHero";
 import PageThemeScope from "@/components/PageThemeScope";
 import UnlistedTrainingNote from "@/components/UnlistedTrainingNote";
 import { fillCounts, pages, services } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Toutes les formations",
   description: fillCounts(pages.allTrainings.seoDescription),
-  alternates: { canonical: "/formations/toutes" },
-};
+  path: "/formations/toutes",
+});
 
 export default function AllTrainingsPage() {
   const items: TrainingItem[] = services.flatMap((service) =>
@@ -35,6 +36,7 @@ export default function AllTrainingsPage() {
         title={fillCounts(pages.allTrainings.title)}
         description={fillCounts(pages.allTrainings.text)}
         backgroundImage={pages.allTrainings.heroImage}
+        imageAlt={pages.allTrainings.heroImageAlt}
         breadcrumb={
           <>
             <Link

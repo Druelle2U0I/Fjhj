@@ -6,12 +6,13 @@ import PageThemeScope from "@/components/PageThemeScope";
 import CardRail from "@/components/CardRail";
 import Reveal from "@/components/Reveal";
 import { company, pages, services, telHref } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Le centre",
   description: pages.centre.seoDescription,
-  alternates: { canonical: "/centre" },
-};
+  path: "/centre",
+});
 
 export default function CentrePage() {
   const accessInfo = (pages.centre.accessText ?? "")
@@ -32,6 +33,7 @@ export default function CentrePage() {
         title={pages.centre.title}
         description={company.tagline}
         backgroundImage={pages.centre.heroImage}
+        imageAlt={pages.centre.heroImageAlt}
       />
 
       <FranceMap>

@@ -11,7 +11,7 @@ export default function Team() {
     <div id="equipe">
       <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[148px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
         {pages.team.heroImage && (
-          <HeroBackgroundPhoto src={pages.team.heroImage} alt={pages.team.title} />
+          <HeroBackgroundPhoto src={pages.team.heroImage} alt={pages.team.heroImageAlt || pages.team.title} />
         )}
         <div
           className={`relative mx-auto max-w-6xl ${

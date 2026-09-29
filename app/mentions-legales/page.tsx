@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import LegalPage from "@/components/LegalPage";
 import { activityDeclarationText, company, legal, qualiopiText, siteUrl } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Mentions légales",
   description: `Mentions légales du site ${siteUrl.replace("https://", "")}, édité par ${company.name}.`,
-  alternates: { canonical: "/mentions-legales" },
-};
+  path: "/mentions-legales",
+});
 
 export default function MentionsLegalesPage() {
   const name = legal.legalName || company.name;

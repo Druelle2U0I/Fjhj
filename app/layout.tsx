@@ -10,8 +10,10 @@ import {
 import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FreshnessGuard from "@/components/FreshnessGuard";
 import SiteChrome from "@/components/SiteChrome";
 import { baseTheme, company, home, legal, siteUrl, telHref, themeStyle } from "@/lib/data";
+import { clip } from "@/lib/seo";
 import "./globals.css";
 
 // Archivo en police variable avec l'axe de largeur : sert aussi aux
@@ -69,7 +71,7 @@ const figtree = Figtree({
 
 const siteTitle =
   home.seoTitle || "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
-const siteDescription = home.seoDescription || company.description;
+const siteDescription = clip(home.seoDescription || company.description);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -169,6 +171,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             __html: `(function(){var h=innerHeight;document.querySelectorAll("[data-reveal]").forEach(function(e){if(e.getBoundingClientRect().top<h)e.setAttribute("data-shown","instant")});document.documentElement.classList.add("reveal-on")})();`,
           }}
         />
+        <FreshnessGuard />
         <Analytics />
       </body>
     </html>

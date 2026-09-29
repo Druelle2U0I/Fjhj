@@ -16,6 +16,7 @@ import {
   telHref,
   trainingInfo,
 } from "@/lib/data";
+import { clip, pageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return services.flatMap((service) =>
@@ -41,11 +42,14 @@ export async function generateMetadata(
   const found = findTraining(secteur, formation);
   if (!found) return {};
   const { service, training } = found;
-  return {
+  // L'accroche de la formation d'abord, puis toujours la durée et les
+  // arguments Qualiopi / OPCO (l'accroche est raccourcie si besoin).
+  const tail = ` ${training.duration} · Qualiopi · finançable OPCO.`;
+  return pageMetadata({
     title: training.title,
-    description: `${training.intro} ${training.duration}, ${training.format}. Formation ${service.title} certifiée Qualiopi, finançable OPCO.`,
-    alternates: { canonical: `/formations/${service.slug}/${training.slug}` },
-  };
+    description: `${clip(training.intro, 158 - tail.length)}${tail}`,
+    path: `/formations/${service.slug}/${training.slug}`,
+  });
 }
 
 export default async function FormationPage(
@@ -103,7 +107,7 @@ export default async function FormationPage(
         <div className="hero-photo-fade absolute inset-0">
           <Visual
             src={training.image ?? service.image}
-            alt={training.title}
+            alt={training.imageAlt || training.title}
             sizes="100vw"
             priority
           />
@@ -202,7 +206,7 @@ export default async function FormationPage(
               le programme) pour ne pas noyer les infos clés sous le mur de
               texte qui suit ; reprend sa place à droite à partir de lg. */}
           <aside className="relative z-10 order-first lg:order-none lg:sticky lg:top-24 lg:-mt-80">
-            <div className="rounded-lg border border-border bg-surface-2 p-6 sm:p-7">
+            <div className="rounded-lg border border-border bg-surface-2 p-6 shadow-[0_12px_32px_-12px_rgba(11,12,49,0.35)] sm:p-7">
               {/* Sur téléphone, le titre vient d'être lu juste au-dessus. */}
               <div className="mb-6 hidden border-b border-border pb-6 lg:block">
                 <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">

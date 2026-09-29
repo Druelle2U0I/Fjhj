@@ -7,6 +7,7 @@ import TipPopover from "@/components/TipPopover";
 import TrainingCard from "@/components/TrainingCard";
 import Visual from "@/components/Visual";
 import { pages, services } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
 // Nombre de colonnes sur grand écran (3 ou 4) choisi pour éviter une
 // carte seule sur la dernière ligne (ex. 7 formations → 4 + 3).
@@ -25,13 +26,13 @@ export async function generateMetadata(
   const { secteur } = await props.params;
   const service = services.find((s) => s.slug === secteur);
   if (!service) return {};
-  return {
-    title: service.title,
+  return pageMetadata({
+    title: `Formation ${service.title}`,
     description: service.summary
       ? `${service.title} : ${service.summary}`
-      : service.description.split(/(?<=\.)\s/)[0],
-    alternates: { canonical: `/formations/${service.slug}` },
-  };
+      : service.description,
+    path: `/formations/${service.slug}`,
+  });
 }
 
 export default async function SecteurPage(

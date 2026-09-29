@@ -17,6 +17,9 @@ type FieldSpec = {
 const HERO_IMAGE_HINT =
   "Grande photo affichée en fond du haut de page, sous le menu. Laissez vide pour garder le fond uni.";
 
+const ALT_HINT =
+  "Décrit la photo pour les personnes malvoyantes et pour Google (ex. « Formateur montrant un extincteur à un groupe »).";
+
 const COUNTS_HINT =
   "{formations} et {domaines} sont remplacés automatiquement par les chiffres du catalogue.";
 const SEO_HINT =
@@ -35,6 +38,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
       { key: "title", label: "Titre", hint: COUNTS_HINT },
       { key: "text", label: "Texte d'introduction", rows: 3, hint: COUNTS_HINT },
       { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
+      { key: "heroImageAlt", label: "Description de la photo (accessibilité)", hint: ALT_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -52,6 +56,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
       { key: "searchPlaceholder", label: "Texte du champ de recherche" },
       { key: "emptyText", label: "Message si aucun résultat", rows: 2 },
       { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
+      { key: "heroImageAlt", label: "Description de la photo (accessibilité)", hint: ALT_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -96,6 +101,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
     fields: [
       { key: "eyebrow", label: "Sur-titre" },
       { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
+      { key: "heroImageAlt", label: "Description de la photo (accessibilité)", hint: ALT_HINT },
       { key: "title", label: "Titre de la page", rows: 2 },
       { key: "mapEyebrow", label: "Carte — sur-titre" },
       { key: "mapText", label: "Carte — texte", rows: 2 },
@@ -136,6 +142,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
         hint: "Affiché sous le titre. Laissez une ligne vide entre deux paragraphes.",
       },
       { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
+      { key: "heroImageAlt", label: "Description de la photo (accessibilité)", hint: ALT_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -151,6 +158,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
       { key: "submitButton", label: "Bouton d'envoi du formulaire" },
       { key: "successMessage", label: "Message après envoi" },
       { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
+      { key: "heroImageAlt", label: "Description de la photo (accessibilité)", hint: ALT_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },
@@ -163,6 +171,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
       { key: "eyebrow", label: "Sur-titre" },
       { key: "title", label: "Titre" },
       { key: "heroImage", label: "Photo de fond du haut de page", type: "image", hint: HERO_IMAGE_HINT },
+      { key: "heroImageAlt", label: "Description de la photo (accessibilité)", hint: ALT_HINT },
       { key: "seoDescription", label: "Description pour Google", rows: 2, hint: SEO_HINT },
     ],
   },

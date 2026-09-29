@@ -38,6 +38,16 @@ const cspHeader = `
   .trim();
 
 const nextConfig: NextConfig = {
+  // Identifiant de la version publiée, comparé à celle en ligne par
+  // components/FreshnessGuard.tsx pour ne jamais afficher une page périmée.
+  env: {
+    NEXT_PUBLIC_BUILD_ID: process.env.VERCEL_GIT_COMMIT_SHA ?? "dev",
+  },
+  experimental: {
+    // Pages gardées le moins longtemps possible dans le cache de navigation
+    // du navigateur (30 s, le minimum ; 5 min par défaut).
+    staleTimes: { static: 30 },
+  },
   images: {
     // 90 pour les photos (meilleur rendu que le 75 par défaut, fichiers
     // encore légers) ; 75 reste disponible.
