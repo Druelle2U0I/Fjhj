@@ -16,7 +16,9 @@ export default function TrainingCard({
   imagePosition,
   quoteHref,
   quoteLabel,
-  sizes = "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw",
+  // Photo paysage dans une carte portrait : elle s'affiche environ 2,2 fois
+  // plus large que la carte, d'où une taille demandée plus grande (netteté).
+  sizes = "(min-width: 1024px) 75vw, (min-width: 640px) 110vw, 200vw",
 }: {
   href: string;
   title: string;

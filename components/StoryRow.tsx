@@ -40,7 +40,7 @@ export default function StoryRow({
             <Visual src={image} alt={imageAlt ?? ""} sizes="(min-width: 640px) 640px, 90vw" className="!object-contain" />
           </div>
         ) : (
-          <Visual src={image} alt={imageAlt ?? ""} sizes="(min-width: 640px) 640px, 90vw" />
+          <Visual src={image} alt={imageAlt ?? ""} sizes="(min-width: 640px) 1400px, 200vw" />
         )}
         </div>
       </Reveal>

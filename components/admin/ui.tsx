@@ -711,7 +711,8 @@ export function ParagraphsField({
 // Réduit une photo à 2400 px de côté maximum et la recompresse en JPEG,
 // pour rester sous la limite d'envoi de l'hébergeur (4,5 Mo). Les petites images restent intactes.
 async function shrinkImage(file: File): Promise<File> {
-  const MAX_SIDE = 2400;
+  // Assez pour une photo pleine largeur nette sur écran haute définition.
+  const MAX_SIDE = 3200;
   const TARGET_BYTES = 3.5 * 1024 * 1024;
   const bitmap = await createImageBitmap(file);
   const scale = Math.min(1, MAX_SIDE / Math.max(bitmap.width, bitmap.height));

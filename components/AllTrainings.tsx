@@ -128,7 +128,7 @@ export default function AllTrainings({
                 imagePosition={item.imagePosition}
                 quoteHref={`/contact?formation=${encodeURIComponent(item.title)}`}
                 quoteLabel={pages.sector.quoteButton}
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                sizes="(min-width: 1024px) 75vw, (min-width: 640px) 110vw, 200vw"
               />
             </li>
           ))}

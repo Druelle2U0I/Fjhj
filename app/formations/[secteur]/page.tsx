@@ -46,11 +46,11 @@ export default async function SecteurPage(
       <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[154px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
         <div className="hero-photo-fade absolute inset-0">
           <Visual
-            src={service.image}
+            src={service.heroImage || service.image}
             alt={service.imageAlt || service.title}
             sizes="100vw"
             priority
-            objectPosition={service.heroImagePosition || service.imagePosition || "center"}
+            objectPosition={service.heroImage ? service.heroImagePosition || "center" : service.heroImagePosition || service.imagePosition || "center"}
           />
           <div className="absolute inset-0 bg-surface/50" />
           <div className="absolute inset-0 bg-gradient-to-b from-surface/65 via-surface/35 to-surface/45" />
@@ -140,7 +140,7 @@ export default async function SecteurPage(
                   imagePosition={training.imagePosition}
                   quoteHref={`/contact?formation=${encodeURIComponent(training.title)}`}
                   quoteLabel={pages.sector.quoteButton}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
+                  sizes="(min-width: 1024px) 75vw, (min-width: 640px) 110vw, 200vw"
                 />
               </Reveal>
             ))}

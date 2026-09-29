@@ -77,7 +77,7 @@ export default function CardRail({
                   <Visual
                     src={card.image}
                     alt={card.imageAlt ?? card.title}
-                    sizes="240px"
+                    sizes="(min-width: 640px) 720px, 170vw"
                     className="transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/5 to-black/50" />
