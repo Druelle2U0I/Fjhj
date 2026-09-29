@@ -316,8 +316,10 @@ export default function SectorsEditor({
                     </p>
                     <ImagePositionField
                       label="Cadrage de la photo en haut de la page du domaine"
-                      hint="La photo y est affichée en grand et en largeur : choisissez la partie à garder visible. Sans réglage, le cadrage des cartes est repris."
+                      hint="Aperçu au format réel du haut de page (large bandeau) : choisissez la partie de la photo à garder visible, surtout en hauteur (haut, centre, bas)."
                       src={sector.heroImage || sector.image}
+                      // Aperçu au format du haut de page (bandeau large), pas des cartes.
+                      aspect="aspect-[12/5]"
                       value={sector.heroImagePosition}
                       onChange={(v) => updateSector(index, { ...sector, heroImagePosition: v })}
                     />

@@ -382,7 +382,7 @@ export function ImagePositionField({
       </p>
       <div className="mt-2 flex items-start gap-4">
         <div
-          className={`relative w-28 shrink-0 overflow-hidden rounded-xl border border-border bg-surface-2 ${aspect}`}
+          className={`relative shrink-0 overflow-hidden rounded-xl border border-border bg-surface-2 ${aspect === "aspect-[4/5]" ? "w-28" : "w-64"} ${aspect}`}
         >
           {/* Aperçu brut (pas next/image) : suffisant pour un cadrage, et
               évite les soucis de domaine/optimisation sur un aperçu local. */}
