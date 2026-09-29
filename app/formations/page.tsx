@@ -50,7 +50,7 @@ export default function FormationsPage() {
                 <Visual
                   src={service.image}
                   alt={service.imageAlt ?? service.title}
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
                   className="transition-transform duration-700 group-hover:scale-105"
                   objectPosition={service.imagePosition}
                 />
