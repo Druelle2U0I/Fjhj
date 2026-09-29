@@ -43,7 +43,7 @@ export default function FormationsPage() {
             <Reveal key={service.slug} delay={(i % 4) * 0.05}>
               <Link
                 href={`/formations/${service.slug}`}
-                className="spotlight-item dyn-card group relative flex aspect-[3/4] w-full flex-col justify-between overflow-hidden rounded-lg"
+                className="spotlight-item dyn-card group relative flex aspect-[3/4] w-full flex-col overflow-hidden rounded-lg"
               >
                 <Visual
                   src={service.image}
@@ -56,9 +56,16 @@ export default function FormationsPage() {
                 <h2 className="font-heading relative p-5 text-sm uppercase leading-tight text-white sm:text-base">
                   {service.title}
                 </h2>
-                <span className="relative self-end p-5 text-xs font-semibold text-white/90">
-                  {service.trainings.length} formation{service.trainings.length > 1 ? "s" : ""}
-                </span>
+                <div className="relative mt-auto p-5">
+                  {service.summary && (
+                    <p className="text-sm leading-relaxed text-white opacity-100 transition-opacity duration-500 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100">
+                      {service.summary}
+                    </p>
+                  )}
+                  <p className="mt-2 text-right text-base font-semibold text-white">
+                    {service.trainings.length} formation{service.trainings.length > 1 ? "s" : ""}
+                  </p>
+                </div>
               </Link>
             </Reveal>
           ))}

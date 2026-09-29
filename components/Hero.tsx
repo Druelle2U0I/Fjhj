@@ -29,14 +29,14 @@ export default function Hero() {
 
       <div className={`relative mx-auto max-w-6xl ${hasPhoto ? "on-surface" : ""}`}>
         <p className="eyebrow block text-muted">
-          Organisme de formation · {legal.activityRegion || "Hauts-de-France"}
+          {pages.hero.badge || `Organisme de formation · ${legal.activityRegion || "Hauts-de-France"}`}
         </p>
         <h1 className="mt-3 max-w-3xl whitespace-pre-line text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
-          {company.tagline}
+          {pages.hero.title || company.tagline}
         </h1>
 
         <p className="page-intro mt-5 line-clamp-4 max-w-xl whitespace-pre-line text-muted sm:line-clamp-none">
-          {company.description}
+          {pages.hero.text || company.description}
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-3">

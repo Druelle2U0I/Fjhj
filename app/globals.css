@@ -560,17 +560,25 @@ h4,
   }
 }
 
-/* Cartes de secteurs : au survol d'une carte, les autres s'assombrissent
-   et celle survolée reste en pleine lumière, légèrement soulevée. */
+/* Cartes (secteurs, formations) : au survol, la carte se soulève avec une
+   ombre marquée. */
 @media (hover: hover) {
   .spotlight-item {
     transition: filter 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
   }
-  .spotlight:has(.spotlight-item:hover) .spotlight-item:not(:hover) {
-    filter: brightness(0.45) saturate(0.7);
-  }
   .spotlight .spotlight-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 40px -12px rgba(11, 3, 43, 0.55);
+    transform: translateY(-6px);
+    box-shadow: 0 30px 50px -14px rgba(11, 3, 43, 0.7), 0 10px 20px -8px rgba(11, 3, 43, 0.4);
   }
+}
+
+/* Bouton « Demander un devis » des cartes formation : pilule translucide,
+   couleurs réglables dans l'admin (Design → Couleurs). */
+.quote-pill {
+  background: color-mix(in srgb, var(--quote-pill-bg, #ffffff) 28%, transparent);
+  color: var(--quote-pill-fg, #ffffff);
+  border: 1px solid color-mix(in srgb, var(--quote-pill-fg, #ffffff) 25%, transparent);
+}
+.quote-pill:hover {
+  background: color-mix(in srgb, var(--quote-pill-bg, #ffffff) 45%, transparent);
 }

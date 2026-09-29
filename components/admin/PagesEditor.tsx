@@ -30,9 +30,10 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
   {
     key: "hero",
     title: "Accueil — haut de page",
-    hint: "Le slogan et la description se modifient dans « Coordonnées » (Tout le site).",
     fields: [
-      { key: "badge", label: "Pastille au-dessus du titre" },
+      { key: "badge", label: "Petit texte au-dessus du titre (ex. « ORGANISME DE FORMATION · HAUTS-DE-FRANCE »)" },
+      { key: "title", label: "Grand titre", rows: 2 },
+      { key: "text", label: "Texte sous le titre", rows: 3 },
       { key: "primaryButton", label: "Bouton principal" },
       { key: "secondaryButton", label: "Bouton secondaire" },
     ],
@@ -75,9 +76,11 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
       { key: "catalogueButton", label: "Bouton « Voir le catalogue »" },
       { key: "whyEyebrow", label: "Sur-titre du bloc « Pourquoi »" },
       { key: "listTitle", label: "Titre de la liste des formations" },
-      { key: "quoteButton", label: "Lien en bas de chaque carte formation" },
+      { key: "quoteButton", label: "Bouton « devis » des cartes formation (apparaît au survol)" },
+      { key: "customBadge", label: "Encadré final — pastille penchée (ex. « Réponse sous 24h »)" },
       { key: "customTitle", label: "Encadré final — titre" },
       { key: "customText", label: "Encadré final — texte", rows: 2 },
+      { key: "customButton", label: "Encadré final — bouton" },
     ],
   },
   {

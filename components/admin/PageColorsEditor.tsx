@@ -55,6 +55,8 @@ const GROUPS: {
   {
     title: "Boutons et encarts",
     fields: [
+      { key: "quotePillBackground", label: "Cartes formation — fond du bouton « Demander un devis » (translucide)" },
+      { key: "quotePillForeground", label: "Cartes formation — texte du bouton « Demander un devis »" },
       {
         key: "heroButtonBackground",
         label: "Accueil — fond du bouton « Découvrir nos formations »",

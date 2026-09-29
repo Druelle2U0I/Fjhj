@@ -130,6 +130,9 @@ export type Theme = {
   // Liens soulignés en petites capitales (« Voir toutes nos formations »,
   // « Le centre », « Une autre question ? »…).
   linkColor?: string;
+  // Bouton « Demander un devis » translucide des cartes formation.
+  quotePillBackground?: string;
+  quotePillForeground?: string;
   // Couleurs du haut de page (sur-titre, titre, texte d'introduction),
   // réglables page par page.
   // Bouton principal du haut de l'accueil (« Découvrir nos formations »).
@@ -161,6 +164,8 @@ export type PageColorOverride = Partial<
     | "highlightForeground"
     | "cardVeil"
     | "linkColor"
+    | "quotePillBackground"
+    | "quotePillForeground"
     | "heroButtonBackground"
     | "heroButtonForeground"
     | "eyebrowColor"
@@ -320,7 +325,15 @@ export type RecommendationSource = {
 };
 
 export type Pages = {
-  hero: { badge: string; primaryButton: string; secondaryButton: string };
+  hero: {
+    badge: string;
+    // Titre et texte du haut de l'accueil (sinon : slogan et description
+    // de « Coordonnées »).
+    title?: string;
+    text?: string;
+    primaryButton: string;
+    secondaryButton: string;
+  };
   catalogue: {
     eyebrow: string;
     title: string;
@@ -349,6 +362,9 @@ export type Pages = {
     quoteButton: string;
     customTitle: string;
     customText: string;
+    // Encart final : pastille penchée au-dessus et bouton.
+    customBadge?: string;
+    customButton?: string;
   };
   training: {
     programmeTitle: string;
@@ -453,6 +469,8 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--highlight-foreground": v.highlightForeground,
     "--card-veil": v.cardVeil,
     "--link-color": v.linkColor,
+    ...(t.quotePillBackground ? { "--quote-pill-bg": t.quotePillBackground } : {}),
+    ...(t.quotePillForeground ? { "--quote-pill-fg": t.quotePillForeground } : {}),
     // Seulement si réglées : sinon le haut de page garde ses couleurs.
     ...(t.eyebrowColor ? { "--eyebrow-color": t.eyebrowColor } : {}),
     ...(t.heroButtonBackground ? { "--hero-btn-bg": t.heroButtonBackground } : {}),

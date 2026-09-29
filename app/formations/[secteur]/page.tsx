@@ -3,8 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import TipPopover from "@/components/TipPopover";
+import TrainingCard from "@/components/TrainingCard";
 import Visual from "@/components/Visual";
-import { company, pages, services, telHref } from "@/lib/data";
+import { pages, services } from "@/lib/data";
 
 // Nombre de colonnes sur grand écran (3 ou 4) choisi pour éviter une
 // carte seule sur la dernière ligne (ex. 7 formations → 4 + 3).
@@ -130,52 +131,21 @@ export default async function SecteurPage(
             </h2>
           </Reveal>
 
-          <div className={`mt-8 grid gap-6 sm:grid-cols-2 ${columnsFor(service.trainings.length)}`}>
+          <div className={`spotlight mt-8 grid gap-6 sm:grid-cols-2 ${columnsFor(service.trainings.length)}`}>
             {service.trainings.map((training, i) => (
               <Reveal key={training.slug} delay={(i % 3) * 0.05}>
-                <article className="dyn-card group relative flex h-full flex-col overflow-hidden rounded-lg">
-                  <div className="relative flex aspect-[4/5] flex-col justify-end overflow-hidden">
-                    <Visual
-                      src={training.image}
-                      alt={training.imageAlt ?? training.title}
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
-                      className="transition-transform duration-500 ease-out group-hover:scale-[1.15] group-hover:duration-[6000ms]"
-                      objectPosition={training.imagePosition}
-                    />
-                    <div className="card-veil absolute inset-0" />
-                    <div className="relative p-6">
-                      {training.category && (
-                        <span className="domain-tag mb-3 inline-flex w-fit rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
-                          {training.category}
-                        </span>
-                      )}
-                      <h3 className="text-lg font-semibold leading-snug text-white">
-                        <Link
-                          href={`/formations/${service.slug}/${training.slug}`}
-                          className="after:absolute after:inset-0 after:content-['']"
-                        >
-                          {training.title}
-                        </Link>
-                      </h3>
-
-                      <p className="mt-3 line-clamp-2 whitespace-pre-line text-sm text-white/80">
-                        {training.intro}
-                      </p>
-
-                      <p className="mt-3 text-sm font-medium text-white">
-                        {training.duration}
-                      </p>
-                    </div>
-                  </div>
-
-                  <Link
-                    href={`/contact?formation=${encodeURIComponent(training.title)}`}
-                    className="absolute bottom-5 right-5 z-10 inline-flex translate-y-2 items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-xs font-semibold text-accent-foreground opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100"
-                  >
-                    {pages.sector.quoteButton}
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </article>
+                <TrainingCard
+                  href={`/formations/${service.slug}/${training.slug}`}
+                  title={training.title}
+                  intro={training.intro}
+                  duration={training.duration}
+                  tag={training.category}
+                  image={training.image}
+                  imageAlt={training.imageAlt}
+                  imagePosition={training.imagePosition}
+                  quoteHref={`/contact?formation=${encodeURIComponent(training.title)}`}
+                  quoteLabel={pages.sector.quoteButton}
+                />
               </Reveal>
             ))}
           </div>
@@ -187,42 +157,26 @@ export default async function SecteurPage(
           et s'arrête avant la bande de contact (placé juste avant elle). */}
       {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
 
-      {/* Bande pleine largeur, photo du domaine voilée : formation absente
-          de la liste, parcours sur mesure. */}
-      <section className="relative overflow-hidden px-6 py-10 sm:py-12">
-        <div className="absolute inset-0">
-          <Visual src={service.image} alt={service.imageAlt || service.title} sizes="100vw" />
-          {/* Voile noir (couleur « Fondu sur les photos de formation » de
-              l'admin) plutôt que marine : la bande se distingue du pied de page. */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to top, color-mix(in srgb, var(--card-veil, #000) 88%, transparent), color-mix(in srgb, var(--card-veil, #000) 62%, transparent))",
-            }}
-          />
-        </div>
-        <Reveal className="on-surface relative mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold text-surface-accent">{pages.sector.customTitle}</p>
-          <h2 className="mt-2 text-lg font-bold leading-snug tracking-tight sm:text-xl">
-            {service.unlistedNote || pages.sector.customText}
-          </h2>
-          {service.unlistedNote && (
-            <p className="mx-auto mt-2 max-w-xl text-sm text-muted">{pages.sector.customText}</p>
+      {/* Encart final « formation absente » (textes modifiables dans l'admin,
+          Pages des domaines → Encadré final). */}
+      <section className="px-6 pb-16 pt-6 sm:pb-20">
+        <Reveal className="relative mx-auto max-w-3xl">
+          {pages.sector.customBadge && (
+            <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 rotate-3 items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-lg">
+              {pages.sector.customBadge}
+            </span>
           )}
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <div className="on-surface rounded-lg border border-border bg-surface p-10 pt-12 text-center shadow-xl shadow-black/10 sm:p-14 sm:pt-16">
+            <h2 className="text-xl sm:text-2xl">{pages.sector.customTitle}</h2>
+            <p className="mx-auto mt-4 max-w-xl whitespace-pre-line text-muted">
+              {service.unlistedNote || pages.sector.customText}
+            </p>
             <Link
               href={`/contact?formation=${encodeURIComponent(service.title)}`}
-              className="rounded-lg bg-highlight px-5 py-2.5 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
+              className="mt-8 inline-flex rounded-lg bg-highlight px-6 py-3 text-sm font-semibold text-highlight-foreground transition-transform hover:scale-105"
             >
-              Nous contacter
+              {pages.sector.customButton || "Nous contacter"}
             </Link>
-            <a
-              href={telHref(company.phone)}
-              className="rounded-lg border border-current/40 px-5 py-2.5 text-sm font-semibold transition-colors hover:border-current hover:bg-white/10"
-            >
-              {company.phone}
-            </a>
           </div>
         </Reveal>
       </section>
