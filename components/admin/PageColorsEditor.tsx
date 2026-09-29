@@ -57,6 +57,8 @@ export const GROUPS: {
     fields: [
       { key: "quotePillBackground", label: "Cartes formation — fond du bouton « Demander un devis » (translucide)" },
       { key: "quotePillForeground", label: "Cartes formation — texte du bouton « Demander un devis »" },
+      { key: "badgeBackground", label: "Pages secteurs — fond de la pastille penchée « Sans engagement »" },
+      { key: "badgeForeground", label: "Pages secteurs — texte de la pastille penchée « Sans engagement »" },
       {
         key: "heroButtonBackground",
         label: "Accueil — fond du bouton « Découvrir nos formations »",

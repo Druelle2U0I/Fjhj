@@ -133,6 +133,9 @@ export type Theme = {
   // Bouton « Demander un devis » translucide des cartes formation.
   quotePillBackground?: string;
   quotePillForeground?: string;
+  // Pastille penchée (« Sans engagement ») de l'encadré final des pages secteurs.
+  badgeBackground?: string;
+  badgeForeground?: string;
   // Couleurs du haut de page (sur-titre, titre, texte d'introduction),
   // réglables page par page.
   // Bouton principal du haut de l'accueil (« Découvrir nos formations »).
@@ -166,6 +169,8 @@ export type PageColorOverride = Partial<
     | "linkColor"
     | "quotePillBackground"
     | "quotePillForeground"
+    | "badgeBackground"
+    | "badgeForeground"
     | "heroButtonBackground"
     | "heroButtonForeground"
     | "eyebrowColor"
@@ -471,6 +476,8 @@ export function themeStyle(t: Theme): Record<string, string> {
     "--link-color": v.linkColor,
     ...(t.quotePillBackground ? { "--quote-pill-bg": t.quotePillBackground } : {}),
     ...(t.quotePillForeground ? { "--quote-pill-fg": t.quotePillForeground } : {}),
+    ...(t.badgeBackground ? { "--badge-bg": t.badgeBackground } : {}),
+    ...(t.badgeForeground ? { "--badge-fg": t.badgeForeground } : {}),
     // Seulement si réglées : sinon le haut de page garde ses couleurs.
     ...(t.eyebrowColor ? { "--eyebrow-color": t.eyebrowColor } : {}),
     ...(t.heroButtonBackground ? { "--hero-btn-bg": t.heroButtonBackground } : {}),
@@ -482,8 +489,13 @@ export function themeStyle(t: Theme): Record<string, string> {
 
 /** Variables CSS du thème global, avec les couleurs propres à une page
  *  (si elle en a) appliquées par-dessus. Voir components/PageThemeScope.tsx. */
+// Couleurs par défaut de toutes les pages : thème du site complété par les
+// couleurs réglées sur la page d'accueil. Chaque page peut ensuite les
+// remplacer par les siennes.
+export const baseTheme: Theme = { ...theme, ...home.theme };
+
 export function pageThemeStyle(overrides?: PageColorOverride): Record<string, string> {
-  return themeStyle({ ...theme, ...overrides });
+  return themeStyle({ ...baseTheme, ...overrides });
 }
 
 export const services = content.sectors.map((sector) => ({

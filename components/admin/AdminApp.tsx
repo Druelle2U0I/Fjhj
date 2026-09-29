@@ -593,7 +593,7 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
               <PagesEditor
                 only={["catalogue", "allTrainings", "sector", "training"]}
                 pages={content.pages}
-                theme={content.theme}
+                theme={{ ...content.theme, ...content.home.theme }}
                 onChange={(pages) => update({ ...content, pages })}
               />
 
@@ -664,7 +664,7 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
               <PagesEditor
                 only={["centre"]}
                 pages={content.pages}
-                theme={content.theme}
+                theme={{ ...content.theme, ...content.home.theme }}
                 onChange={(pages) => update({ ...content, pages })}
               />
 
@@ -680,7 +680,7 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
               <PagesEditor
                 only={["funding"]}
                 pages={content.pages}
-                theme={content.theme}
+                theme={{ ...content.theme, ...content.home.theme }}
                 onChange={(pages) => update({ ...content, pages })}
               />
 
@@ -769,7 +769,7 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
               <PagesEditor
                 only={["team"]}
                 pages={content.pages}
-                theme={content.theme}
+                theme={{ ...content.theme, ...content.home.theme }}
                 onChange={(pages) => update({ ...content, pages })}
               />
 
@@ -829,7 +829,7 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
               <PagesEditor
                 only={["contact"]}
                 pages={content.pages}
-                theme={content.theme}
+                theme={{ ...content.theme, ...content.home.theme }}
                 onChange={(pages) => update({ ...content, pages })}
               />
             </>

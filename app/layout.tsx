@@ -11,7 +11,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
-import { company, home, legal, siteUrl, telHref, theme, themeStyle } from "@/lib/data";
+import { baseTheme, company, home, legal, siteUrl, telHref, themeStyle } from "@/lib/data";
 import "./globals.css";
 
 // Archivo en police variable avec l'axe de largeur : sert aussi aux
@@ -149,7 +149,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="fr"
       data-scroll-behavior="smooth"
       className={`${archivo.variable} ${grotesk.variable} ${manrope.variable} ${fraunces.variable} ${figtree.variable} ${dejavu.variable} h-full antialiased`}
-      style={themeStyle(theme) as React.CSSProperties}
+      style={themeStyle(baseTheme) as React.CSSProperties}
     >
       <head>
         <script
