@@ -424,7 +424,8 @@
           "audience": "Cette formation s'adresse aux électriciens débutant une activité de travaux sur des installations basse tension, appelés à exécuter des travaux sous les ordres d'un chargé de travaux. Aucun prérequis n'est exigé, mais une aptitude médicale au poste de travail délivrée par le médecin du travail est nécessaire avant toute habilitation.",
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Le titre d'habilitation n'est jamais délivré par l'organisme de formation, mais par l'employeur, sur la base des résultats aux évaluations théorique et pratique que nous lui transmettons à l'issue de la session.",
           "image": "/images/habilitation-b1-multimetre-1790689131.jpg",
-          "imageAlt": "Électricien casqué, en gilet et gants de protection, relevant une mesure au multimètre sur un tableau électrique basse tension"
+          "imageAlt": "Électricien casqué, en gilet et gants de protection, relevant une mesure au multimètre sur un tableau électrique basse tension",
+          "heroImage": "/images/17-1790690143310.jpg"
         },
         {
           "title": "B2 / B2V — Chargé de travaux électriques basse tension",
@@ -456,7 +457,7 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Nous vous remettons l'ensemble des documents nécessaires au montage du dossier : convention de formation, devis détaillé et programme pédagogique.",
           "image": "/images/habilitation-b2-tableau-1790689842.jpg",
           "imageAlt": "Électricien casqué, de dos, devant un tableau électrique basse tension ouvert",
-          "heroImage": "/images/habilitation-b2-tableau-mains-paysage-1790689926.jpg"
+          "heroImage": "/images/21-1790690211539.jpg"
         },
         {
           "title": "BR — Chargé d'intervention générale basse tension",
@@ -743,8 +744,7 @@
       ],
       "opco": true,
       "image": "/images/3-1790608693104.jpg",
-      "imageAlt": "Électricien casqué intervenant sur une armoire électrique avec un appareil de mesure",
-      "heroImage": "/images/habilitation-secteur-nacelle-paysage-1790689926.jpg"
+      "imageAlt": "Électricien casqué intervenant sur une armoire électrique avec un appareil de mesure"
     },
     {
       "title": "CACES & habilitations",
