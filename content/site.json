@@ -1847,7 +1847,8 @@
     "bandColor": "#0b0c31",
     "bandOpacity": 74,
     "panelShadowColor": "#ffffff",
-    "surfaceMuted": "#d6d6d6"
+    "surfaceMuted": "#d6d6d6",
+    "linkColor": "#7a7a7a"
   },
   "footerImage": "/images/2048-1790071486997.webp",
   "footerCta": {
@@ -1889,8 +1890,7 @@
       "customTitle": "Une formation absente de cette liste ?",
       "customText": "Nous construisons également des parcours sur mesure adaptés à vos besoins spécifiques.",
       "quoteMainButton": "Demander un devis",
-      "catalogueButton": "Voir le catalogue",
-      "customBadge": "Sans engagement"
+      "catalogueButton": "Voir le catalogue"
     },
     "training": {
       "programmeTitle": "Programme de la formation",
