@@ -5,7 +5,7 @@ import { OptionalColorField } from "./ui";
 
 // Réglages regroupés par zone de la page, avec des exemples concrets pour
 // savoir ce que chaque couleur change.
-const GROUPS: {
+export const GROUPS: {
   title: string;
   fields: { key: keyof PageColorOverride; label: string }[];
 }[] = [
@@ -14,7 +14,7 @@ const GROUPS: {
     fields: [
       {
         key: "eyebrowColor",
-        label: "Petit texte au-dessus du titre et fil d'Ariane (ex. « CONTACT », « Formations / … »)",
+        label: "Petit texte au-dessus du titre (ex. « CONTACT », « 6 FORMATIONS »)",
       },
       { key: "titleColor", label: "Grand titre" },
       { key: "introColor", label: "Texte sous le titre" },

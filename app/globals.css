@@ -533,7 +533,6 @@ h4,
 /* Couleurs du haut de page réglées page par page (admin → Couleurs de
    cette page) : appliquées seulement si la page les définit. */
 [style*="--eyebrow-color"] .page-hero .eyebrow,
-[style*="--eyebrow-color"] .page-hero .crumbs,
 [style*="--eyebrow-color"] .home-hero .eyebrow {
   color: var(--eyebrow-color);
 }

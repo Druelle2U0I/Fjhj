@@ -1893,7 +1893,12 @@
       "quoteMainButton": "Demander un devis",
       "catalogueButton": "Voir le catalogue",
       "customBadge": "Sans engagement",
-      "customButton": "Nous contacter"
+      "customButton": "Nous contacter",
+      "theme": {
+        "eyebrowColor": "#fffbb9",
+        "titleColor": "#fbffda",
+        "introColor": "#f4f2d4"
+      }
     },
     "training": {
       "programmeTitle": "Programme de la formation",
@@ -1904,7 +1909,12 @@
       "accessibilityTitle": "Accessibilité aux personnes en situation de handicap",
       "price": "Sur devis · éligible à une prise en charge OPCO",
       "quoteButton": "Demander un devis",
-      "questionText": "Une question sur cette formation ?"
+      "questionText": "Une question sur cette formation ?",
+      "theme": {
+        "eyebrowColor": "#fffbb9",
+        "titleColor": "#fbffda",
+        "introColor": "#f4f2d4"
+      }
     },
     "centre": {
       "eyebrow": "Le centre",

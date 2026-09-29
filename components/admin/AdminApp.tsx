@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import type { HomeSection, HomeSectionId, SiteContent, Stat } from "@/lib/data";
 import SectorsEditor from "./SectorsEditor";
 import DesignEditor from "./DesignEditor";
+import ColorEverywhere from "./ColorEverywhere";
 import PageColorsEditor from "./PageColorsEditor";
 import PagesEditor from "./PagesEditor";
 import { Card, Field, ImageField, ListEditor, SmallButton, VideoField } from "./ui";
@@ -1307,6 +1308,8 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                 <h2 className="text-lg font-semibold">Design & couleurs</h2>
                 <p className="mt-1 text-sm text-muted">Police, couleurs, aurore, voiles et bandes : s&apos;appliquent à tout le site.</p>
               </div>
+
+              <ColorEverywhere content={content} onChange={update} />
 
               <DesignEditor
                 part="theme"
