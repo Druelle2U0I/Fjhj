@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import CardRail from "@/components/CardRail";
 import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
+import TrainingInfoTabs from "@/components/TrainingInfoTabs";
 import Visual from "@/components/Visual";
 import {
   accessibility,
@@ -151,18 +152,20 @@ export default async function FormationPage(
 
       {/* Programme (encadré foncé) + encart récapitulatif : deux colonnes,
           l'encart reste collé (sticky) à côté du programme sur grand écran. */}
-      <section className="overflow-x-clip px-6 pb-14 pt-10 sm:pb-20 sm:pt-16">
+      <section className="overflow-x-clip px-6 pb-14 sm:pb-20">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_360px] lg:items-start">
           <div className="grid gap-10">
             {training.programme.length > 0 && (
-              <div className="on-surface rounded-2xl bg-surface p-6 shadow-xl shadow-black/10 sm:p-10">
-                <Reveal>
-                  <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">
+              <div>
+                {/* Seul le titre est posé sur une bande foncée pleine
+                    largeur, dans la continuité du bas de la photo. */}
+                <div className="on-surface relative py-8 sm:py-10 before:absolute before:inset-y-0 before:-left-[100vw] before:-right-[100vw] before:bg-surface">
+                  <h2 className="relative font-semibold tracking-tight text-xl sm:text-2xl">
                     {pages.training.programmeTitle}
                   </h2>
-                </Reveal>
+                </div>
 
-                <div className="group/programme mt-6 divide-y divide-white/15">
+                <div className="group/programme mt-4 divide-y divide-border">
                   {training.programme.map((module, i) => (
                     <Reveal key={module.title} delay={i * 0.1} className="py-7 last:pb-0">
                       {/* L'opacité de survol vit sur ce div interne, séparé de
@@ -170,7 +173,7 @@ export default async function FormationPage(
                           inline opacity:1 après l'entrée, qui écraserait sinon
                           cette classe. */}
                       <div className="grid gap-3 opacity-100 transition-opacity duration-300 hover:!opacity-100 group-hover/programme:opacity-40 sm:grid-cols-[100px_1fr] sm:gap-8">
-                        <span className="text-4xl font-semibold text-surface-accent sm:text-5xl">
+                        <span className="text-4xl font-semibold text-foreground/80 sm:text-5xl">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <div>
@@ -198,7 +201,7 @@ export default async function FormationPage(
           {/* Encart récapitulatif : passe en premier sur mobile (juste après
               le programme) pour ne pas noyer les infos clés sous le mur de
               texte qui suit ; reprend sa place à droite à partir de lg. */}
-          <aside className="relative z-10 order-first lg:order-none lg:sticky lg:top-24 lg:-mt-96">
+          <aside className="relative z-10 order-first lg:order-none lg:sticky lg:top-24 lg:-mt-80">
             <div className="rounded-lg border border-border bg-surface-2 p-6 sm:p-7">
               {/* Sur téléphone, le titre vient d'être lu juste au-dessus. */}
               <div className="mb-6 hidden border-b border-border pb-6 lg:block">
@@ -256,11 +259,12 @@ export default async function FormationPage(
       </section>
 
       {/* Public, financement, méthodes, évaluation, accessibilité : bande
-          foncée pleine largeur, chaque ligne avec son pictogramme. */}
-      <section className="on-surface bg-surface px-6 py-14 sm:py-20">
+          foncée compacte, une rangée de pictogrammes et le texte de celui
+          choisi. */}
+      <section className="on-surface bg-surface px-6 py-12 sm:py-16">
         <Reveal className="mx-auto max-w-6xl">
-          <ul className="grid gap-x-14 md:grid-cols-2">
-            {[
+          <TrainingInfoTabs
+            rows={[
               { icon: "audience", title: pages.training.audienceTitle, text: training.audience },
               { icon: "funding", title: pages.training.fundingTitle, text: training.funding },
               { icon: "methods", title: pages.training.methodsTitle, text: trainingInfo.methods },
@@ -270,22 +274,8 @@ export default async function FormationPage(
                 title: pages.training.accessibilityTitle,
                 text: `${accessibility.text} Contact : ${accessibility.referent}, ${company.email}.`,
               },
-            ]
-              .filter((row) => row.text)
-              .map((row) => (
-                <li key={row.icon} className="flex gap-5 border-t border-white/15 py-7">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-surface-accent/40 bg-white/5 text-surface-accent">
-                    <InfoIcon name={row.icon} />
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
-                      {row.title}
-                    </p>
-                    <p className="mt-2 text-sm text-muted">{row.text}</p>
-                  </div>
-                </li>
-              ))}
-          </ul>
+            ].filter((row) => row.text)}
+          />
         </Reveal>
       </section>
 
@@ -335,57 +325,4 @@ export default async function FormationPage(
       </section>
     </PageThemeScope>
   );
-}
-
-// Pictogrammes de la liste d'informations pratiques d'une fiche formation.
-function InfoIcon({ name }: { name: string }) {
-  const common = {
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.6,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    className: "h-5 w-5",
-    "aria-hidden": true,
-  };
-  switch (name) {
-    case "funding":
-      return (
-        <svg {...common}>
-          <path d="M17 6.5A6.5 6.5 0 1 0 17 17.5" />
-          <path d="M4 10.5h9M4 13.5h9" />
-        </svg>
-      );
-    case "methods":
-      return (
-        <svg {...common}>
-          <rect x="3" y="4" width="18" height="12" rx="2" />
-          <path d="M8 20h8M12 16v4M7 12l3-3 2 2 4-4" />
-        </svg>
-      );
-    case "evaluation":
-      return (
-        <svg {...common}>
-          <rect x="5" y="3.5" width="14" height="17" rx="2" />
-          <path d="M9 3.5h6v3H9zM8.5 12l2 2 4-4.5M8.5 17h7" />
-        </svg>
-      );
-    case "audience":
-      return (
-        <svg {...common}>
-          <circle cx="9" cy="8" r="3" />
-          <path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5" />
-          <circle cx="17" cy="9" r="2.3" />
-          <path d="M15.5 14.2c2.4-.4 4.4 1.1 5 4.3" />
-        </svg>
-      );
-    default:
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="4.5" r="1.5" />
-          <path d="M6 8.5h12M12 8.5v5M12 13.5l-3 6.5M12 13.5l3 6.5" />
-        </svg>
-      );
-  }
 }
