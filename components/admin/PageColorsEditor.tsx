@@ -5,6 +5,17 @@ import { OptionalColorField } from "./ui";
 
 // Réglages regroupés par zone de la page, avec des exemples concrets pour
 // savoir ce que chaque couleur change.
+// Éléments identiques sur tout le site (cartes formation, pastille des
+// pages secteurs…) : leurs couleurs se règlent en un seul endroit, dans
+// Design & couleurs, et non page par page.
+export const COMMON_KEYS: (keyof PageColorOverride)[] = [
+  "quotePillBackground",
+  "quotePillForeground",
+  "badgeBackground",
+  "badgeForeground",
+  "cardVeil",
+];
+
 export const GROUPS: {
   title: string;
   fields: { key: keyof PageColorOverride; label: string }[];
@@ -128,7 +139,9 @@ export default function PageColorsEditor({
           <p className="text-sm font-semibold">{group.title}</p>
           {group.fields
             .filter(
-              ({ key }) => showHeroButton || !key.startsWith("heroButton"),
+              ({ key }) =>
+                !COMMON_KEYS.includes(key) &&
+                (showHeroButton || !key.startsWith("heroButton")),
             )
             .map(({ key, label }) => (
               <OptionalColorField

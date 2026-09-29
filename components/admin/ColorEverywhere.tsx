@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { THEME_DEFAULTS, type PageColorOverride, type SiteContent } from "@/lib/data";
-import { GROUPS } from "./PageColorsEditor";
+import { COMMON_KEYS, GROUPS } from "./PageColorsEditor";
 import { Card } from "./ui";
 
 // Pages qui ont leur propre réglage « Couleurs de cette page ».
@@ -108,7 +108,7 @@ export default function ColorEverywhere({
           </button>
           {open === group.title && (
             <div className="grid gap-4 border-t border-border p-4">
-              {group.fields.map(({ key, label }) => {
+              {group.fields.filter(({ key }) => !COMMON_KEYS.includes(key)).map(({ key, label }) => {
                 const values = pageThemes().map((t) => t?.[key]);
                 const set = values.filter(Boolean) as string[];
                 const same = set.length === values.length && set.every((v) => v === set[0]);
