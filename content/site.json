@@ -2032,7 +2032,8 @@
       "price": "Sur devis · éligible à une prise en charge OPCO",
       "quoteButton": "Demander un devis",
       "questionText": "Une question sur cette formation ?",
-      "theme": {}
+      "theme": {},
+      "objectivesTitle": "Objectifs pédagogiques"
     },
     "centre": {
       "eyebrow": "Le centre",

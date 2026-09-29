@@ -22,6 +22,9 @@ export type Training = {
   certification: string;
   effectif?: string;
   programme: Module[];
+  // Objectifs pédagogiques (« Être capable de … »), repris des déroulés
+  // pédagogiques : exigés par Qualiopi (indicateur 1).
+  objectives?: string[];
   image?: string;
   imageAlt?: string;
   // Photo en paysage pour le haut de la fiche (sinon : `image`).
@@ -397,6 +400,7 @@ export type Pages = {
   };
   training: {
     programmeTitle: string;
+    objectivesTitle?: string;
     audienceTitle: string;
     fundingTitle: string;
     methodsTitle: string;

@@ -193,6 +193,26 @@ export default async function FormationPage(
               </div>
             )}
 
+            {training.objectives && training.objectives.length > 0 && (
+              <Reveal className="rounded-2xl border border-border p-6 sm:p-8">
+                <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">
+                  {pages.training.objectivesTitle || "Objectifs pédagogiques"}
+                </h2>
+                <p className="mt-2 text-sm text-muted">À l&apos;issue de la formation, le stagiaire sera capable de :</p>
+                <ul className="mt-5 grid gap-3">
+                  {training.objectives.map((objective) => (
+                    <li key={objective} className="flex gap-3">
+                      <svg viewBox="0 0 20 20" aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-accent">
+                        <circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                        <path d="M6 10.2l2.6 2.6L14 7.4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span>{objective.replace(/^[ÊEêe]tre capable (de |d['’])/, "").replace(/^./, (c) => c.toUpperCase())}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            )}
+
             {training.description.length > 0 && (
               <Reveal className="space-y-4 text-muted">
                 {training.description.map((paragraph, i) => (

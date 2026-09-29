@@ -84,6 +84,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
     hint: "Titres communs à toutes les fiches. Le contenu de chaque formation se modifie plus bas sur cette page, dans la liste des secteurs.",
     fields: [
       { key: "programmeTitle", label: "Titre du programme" },
+      { key: "objectivesTitle", label: "Titre des objectifs pédagogiques" },
       { key: "audienceTitle", label: "Titre « Public concerné »" },
       { key: "fundingTitle", label: "Titre « Financement »" },
       { key: "methodsTitle", label: "Titre « Méthodes pédagogiques »" },

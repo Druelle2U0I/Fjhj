@@ -120,6 +120,12 @@ function TrainingEditor({
       </p>
 
       <ParagraphsField
+        label="Objectifs pédagogiques (un par paragraphe, « Être capable de … »)"
+        value={training.objectives ?? []}
+        onChange={(v) => set("objectives", v)}
+      />
+
+      <ParagraphsField
         label="Description"
         value={training.description}
         onChange={(v) => set("description", v)}
