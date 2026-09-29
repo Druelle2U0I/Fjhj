@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative -mt-[86px] overflow-hidden bg-surface px-6 pt-[126px] pb-24 sm:-mt-[98px] sm:pt-[154px]"
+      className="home-hero relative -mt-[86px] overflow-hidden bg-surface px-6 pt-[126px] pb-24 sm:-mt-[98px] sm:pt-[154px]"
     >
       {hasVideo ? (
         <HeroBackgroundVideo

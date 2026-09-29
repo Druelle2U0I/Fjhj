@@ -532,13 +532,16 @@ h4,
 
 /* Couleurs du haut de page réglées page par page (admin → Couleurs de
    cette page) : appliquées seulement si la page les définit. */
-[style*="--eyebrow-color"] .page-hero .eyebrow {
+[style*="--eyebrow-color"] .page-hero .eyebrow,
+[style*="--eyebrow-color"] .home-hero .eyebrow {
   color: var(--eyebrow-color);
 }
-[style*="--title-color"] .page-hero h1 {
+[style*="--title-color"] .page-hero h1,
+[style*="--title-color"] .home-hero h1 {
   color: var(--title-color);
 }
-[style*="--intro-color"] .page-hero .page-intro {
+[style*="--intro-color"] .page-hero .page-intro,
+[style*="--intro-color"] .home-hero .page-intro {
   color: var(--intro-color);
 }
 
