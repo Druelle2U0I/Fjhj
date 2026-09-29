@@ -260,8 +260,9 @@
           ],
           "audience": "Cette sensibilisation s'adresse à tout public, sans prérequis, et convient particulièrement aux entreprises souhaitant sensibiliser rapidement un grand nombre de collaborateurs, aux collectivités organisant des campagnes de sensibilisation citoyenne, ou à toute personne désireuse d'acquérir les réflexes de base avant d'envisager, dans un second temps, une formation PSC1 ou SST plus complète et plus approfondie. Sa durée courte en fait un format particulièrement adapté aux plannings contraints des entreprises.",
           "funding": "La formation Gestes Qui Sauvent est éligible à une prise en charge par votre OPCO au titre des actions de sensibilisation à la sécurité, lorsqu'elle est organisée dans un cadre professionnel. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre dossier de financement. Son format court permet d'organiser plusieurs sessions successives afin de sensibiliser l'ensemble de vos effectifs à moindre coût et sans impact majeur sur l'organisation du travail.",
-          "image": "/images/2-1790072297690.png",
-          "imageAlt": "Salarié en gilet de sécurité portant secours à un collègue allongé au sol sur un chantier"
+          "image": "/images/10-1790688317776.jpg",
+          "imageAlt": "Salarié en gilet de sécurité portant secours à un collègue allongé au sol sur un chantier",
+          "heroImage": "/images/10-1790688296458.jpg"
         },
         {
           "title": "Maintien et actualisation des compétences SST",
@@ -291,8 +292,9 @@
           ],
           "audience": "Cette formation s'adresse exclusivement aux titulaires d'un certificat SST en cours de validité, à suivre impérativement avant la date d'échéance des 24 mois pour éviter toute rupture de couverture. Aucun prérequis supplémentaire n'est demandé au-delà de la détention du certificat initial. Nous recommandons d'anticiper l'inscription au recyclage plusieurs semaines avant l'échéance afin de garantir une place disponible et d'éviter que votre entreprise ne se retrouve temporairement sans sauveteur secouriste opérationnel.",
           "funding": "Le MAC SST est éligible à une prise en charge par votre OPCO au même titre que la formation initiale, dans le cadre du plan de développement des compétences. ENMA Formation vous fournit devis, convention et programme pédagogique pour faciliter votre demande de financement. Pour vous simplifier la gestion de vos échéances, nous proposons un suivi personnalisé et vous alertons à l'approche de la date d'expiration des certificats de vos salariés si vous le souhaitez.",
-          "image": "/images/3-1790072978777.png",
-          "imageAlt": "Stagiaire ganté pratiquant un massage cardiaque sur un mannequin lors d'un recyclage SST"
+          "image": "/images/13-1790688690773.jpg",
+          "imageAlt": "Stagiaire ganté pratiquant un massage cardiaque sur un mannequin lors d'un recyclage SST",
+          "heroImage": "/images/13-1790688666484.jpg"
         },
         {
           "title": "PSC 1 — Prévention et secours civiques niveau 1",
@@ -329,8 +331,9 @@
           ],
           "audience": "Cette formation s'adresse à tout public à partir de l'adolescence, sans aucun prérequis technique ou médical. Elle est particulièrement recommandée pour les salariés en dehors du cadre strictement professionnel du SST, les représentants du personnel, les encadrants d'activités périscolaires ou associatives, ainsi qu'à toute personne souhaitant être en mesure d'agir efficacement face à une urgence dans sa vie personnelle. Elle constitue également une excellente première étape avant d'envisager, pour les salariés directement concernés, une formation SST plus orientée sur le contexte professionnel.",
           "funding": "Le PSC1 est éligible à une prise en charge par votre OPCO lorsqu'il est organisé dans un cadre professionnel, au titre des actions de sensibilisation à la sécurité. ENMA Formation vous accompagne dans le montage du dossier de financement en fournissant devis, programme et justificatifs de réalisation. Cette formation peut également être financée sur fonds propres ou proposée en avantage salarié dans le cadre d'une politique de qualité de vie au travail élargie à la sécurité personnelle des collaborateurs.",
-          "image": "/images/psc-1-1790072953207.jpg",
-          "imageAlt": "Participants s'exerçant au massage cardiaque sur un mannequin lors d'une formation PSC 1"
+          "image": "/images/2-1790688486082.jpg",
+          "imageAlt": "Participants s'exerçant au massage cardiaque sur un mannequin lors d'une formation PSC 1",
+          "heroImage": "/images/2-1790688505366.jpg"
         },
         {
           "title": "Sauveteur secouriste du travail",
@@ -364,8 +367,9 @@
           ],
           "audience": "Cette formation s'adresse à tout salarié désigné par son employeur pour intégrer le dispositif de secours interne à l'entreprise, sans prérequis particulier si ce n'est une aptitude physique compatible avec la réalisation des gestes de premiers secours (notamment le massage cardiaque). Elle est particulièrement recommandée dans les ateliers, ERP et chantiers où le risque d'accident est élevé, mais reste utile dans tout environnement de travail. La formation est accessible aux personnes en situation de handicap : contactez notre référent handicap pour étudier ensemble les adaptations pédagogiques et matérielles nécessaires avant la session.",
           "funding": "La formation SST est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, la prise en charge étant fréquemment intégrale pour les entreprises de moins de 50 salariés. ENMA Formation vous fournit l'ensemble des pièces nécessaires à votre dossier : convention de formation, programme conforme au référentiel INRS et convocations nominatives. Nous assurons également le suivi des échéances de recyclage MAC SST de vos salariés afin que votre effectif de sauveteurs secouristes reste opérationnel en continu.",
-          "image": "/images/5-copie-3-1790073007472.jpg",
-          "imageAlt": "Massage cardiaque sur un mannequin avec un défibrillateur, lors d'une formation SST"
+          "image": "/images/15-1790688598287.jpg",
+          "imageAlt": "Massage cardiaque sur un mannequin avec un défibrillateur, lors d'une formation SST",
+          "heroImage": "/images/15-1790688534248.jpg"
         }
       ],
       "opco": true,
