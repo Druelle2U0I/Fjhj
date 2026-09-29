@@ -94,12 +94,12 @@ export default async function SecteurPage(
               >
                 {pages.sector.quoteMainButton}
               </Link>
-              <a
-                href="#catalogue"
+              <Link
+                href="/formations"
                 className="text-sm font-semibold underline underline-offset-4 transition-colors hover:text-surface-accent"
               >
                 {pages.sector.catalogueButton}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
