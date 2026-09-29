@@ -1826,7 +1826,8 @@
       "heroButtonForeground": "#1f1a4d",
       "eyebrowColor": "#fffbb9",
       "titleColor": "#fbffda",
-      "introColor": "#f4f2d4"
+      "introColor": "#f4f2d4",
+      "surfaceForeground": "#fffbb9"
     }
   },
   "theme": {
