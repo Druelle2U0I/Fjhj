@@ -229,8 +229,9 @@ h4,
    elle s'efface progressivement vers le bas pour laisser apparaître le
    fond aurore, sans ligne de coupure. */
 .hero-photo-fade {
-  -webkit-mask-image: linear-gradient(to bottom, #000 60%, rgba(0, 0, 0, 0.7) 85%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 60%, rgba(0, 0, 0, 0.7) 85%, transparent 100%);
+  /* Fondu long et progressif (plusieurs paliers) vers le bas. */
+  -webkit-mask-image: linear-gradient(to bottom, #000 20%, rgba(0, 0, 0, 0.88) 38%, rgba(0, 0, 0, 0.66) 54%, rgba(0, 0, 0, 0.42) 68%, rgba(0, 0, 0, 0.22) 80%, rgba(0, 0, 0, 0.08) 91%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 20%, rgba(0, 0, 0, 0.88) 38%, rgba(0, 0, 0, 0.66) 54%, rgba(0, 0, 0, 0.42) 68%, rgba(0, 0, 0, 0.22) 80%, rgba(0, 0, 0, 0.08) 91%, transparent 100%);
 }
 
 /* Étiquette de domaine (page Toutes les formations) */
