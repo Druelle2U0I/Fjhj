@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
 import TipPopover from "@/components/TipPopover";
 import TrainingCard from "@/components/TrainingCard";
@@ -43,7 +44,7 @@ export default async function SecteurPage(
   const count = service.trainings.length;
 
   return (
-    <>
+    <PageThemeScope overrides={pages.sector.theme}>
       {/* Hero : même en-tête que l'accueil, photo plein cadre voilée
           (cadrage réglable dans l'admin). Remonte sous
           l'en-tête (sticky, semi-transparent) pour que la photo continue
@@ -65,11 +66,11 @@ export default async function SecteurPage(
           {/* Sur téléphone, un simple lien retour remplace le fil d'Ariane. */}
           <Link
             href="/formations"
-            className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-surface-accent sm:hidden"
+            className="crumbs mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-surface-accent sm:hidden"
           >
             <span aria-hidden="true">←</span> Formations
           </Link>
-          <div className="mb-6 hidden text-sm text-muted sm:block">
+          <div className="crumbs mb-6 hidden text-sm text-muted sm:block">
             <Link href="/formations" className="underline decoration-dotted underline-offset-2 hover:text-surface-accent">
               Formations
             </Link>
@@ -180,6 +181,6 @@ export default async function SecteurPage(
           </div>
         </Reveal>
       </section>
-    </>
+    </PageThemeScope>
   );
 }

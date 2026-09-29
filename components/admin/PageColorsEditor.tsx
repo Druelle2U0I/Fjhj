@@ -14,7 +14,7 @@ const GROUPS: {
     fields: [
       {
         key: "eyebrowColor",
-        label: "Petit texte au-dessus du titre (ex. « CONTACT »)",
+        label: "Petit texte au-dessus du titre et fil d'Ariane (ex. « CONTACT », « Formations / … »)",
       },
       { key: "titleColor", label: "Grand titre" },
       { key: "introColor", label: "Texte sous le titre" },

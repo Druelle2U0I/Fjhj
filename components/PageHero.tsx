@@ -37,7 +37,7 @@ export default function PageHero({
       >
         <div>
           {breadcrumb && (
-            <div className="mb-6 hidden text-sm text-muted sm:block">{breadcrumb}</div>
+            <div className="crumbs mb-6 hidden text-sm text-muted sm:block">{breadcrumb}</div>
           )}
           <span className="eyebrow block text-muted">
             {eyebrow}

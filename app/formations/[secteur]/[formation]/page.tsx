@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import RelatedCarousel from "@/components/RelatedCarousel";
+import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
 import Visual from "@/components/Visual";
 import {
@@ -88,7 +89,7 @@ export default async function FormationPage(
   };
 
   return (
-    <>
+    <PageThemeScope overrides={pages.training.theme}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLd) }}
@@ -113,11 +114,11 @@ export default async function FormationPage(
           {/* Sur téléphone, un simple lien retour remplace le fil d'Ariane. */}
           <Link
             href={`/formations/${service.slug}`}
-            className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent sm:hidden"
+            className="crumbs mb-4 inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent sm:hidden"
           >
             <span aria-hidden="true">←</span> {service.title}
           </Link>
-          <div className="mb-6 hidden text-sm text-muted sm:block">
+          <div className="crumbs mb-6 hidden text-sm text-muted sm:block">
             <Link href="/formations" className="underline decoration-dotted underline-offset-2 hover:text-accent">
               Formations
             </Link>
@@ -319,7 +320,7 @@ export default async function FormationPage(
           </div>
         </section>
       )}
-    </>
+    </PageThemeScope>
   );
 }
 

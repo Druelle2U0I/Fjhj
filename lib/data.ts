@@ -365,6 +365,7 @@ export type Pages = {
     // Encart final : pastille penchée au-dessus et bouton.
     customBadge?: string;
     customButton?: string;
+    theme?: PageColorOverride;
   };
   training: {
     programmeTitle: string;
@@ -376,6 +377,7 @@ export type Pages = {
     price: string;
     quoteButton: string;
     questionText: string;
+    theme?: PageColorOverride;
   };
   centre: {
     eyebrow: string;

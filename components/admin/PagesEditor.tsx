@@ -23,9 +23,8 @@ const SEO_HINT =
   "Texte affiché par Google sous le titre de la page. Idéalement 150 caractères environ.";
 
 // Chaque bloc correspond à une page (ou à un modèle de page) du site.
-// `colors: true` ajoute un réglage de couleurs propre à cette page (sur
-// les pages qui correspondent à une seule adresse du site — pas les
-// modèles partagés par plusieurs pages comme « sector » ou « training »).
+// `colors: true` ajoute un réglage de couleurs propre à cette page (pour
+// « sector » et « training », commun à toutes les pages de ce modèle).
 const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; colors?: boolean }[] = [
   {
     key: "catalogue",
@@ -59,6 +58,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
   {
     key: "sector",
     title: "Pages des domaines de formation",
+    colors: true,
     hint: "Ces textes sont communs à toutes les pages de domaine. Le titre, la description et le « pourquoi » de chaque domaine se modifient plus bas sur cette page, dans la liste des secteurs.",
     fields: [
       { key: "quoteMainButton", label: "Bouton « Demander un devis »" },
@@ -75,6 +75,7 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
   {
     key: "training",
     title: "Fiches formation",
+    colors: true,
     hint: "Titres communs à toutes les fiches. Le contenu de chaque formation se modifie plus bas sur cette page, dans la liste des secteurs.",
     fields: [
       { key: "programmeTitle", label: "Titre du programme" },
