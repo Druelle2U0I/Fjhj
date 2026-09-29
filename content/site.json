@@ -1618,7 +1618,8 @@
           ],
           "audience": "Cette formation s'adresse aux techniciens et installateurs amenés à contrôler la qualité de modules photovoltaïques, que ce soit à la réception d'une livraison, en cours de garantie ou dans le cadre d'une opération de maintenance. Aucun prérequis technique poussé n'est exigé, une connaissance de base des installations photovoltaïques étant suffisante pour suivre la formation. Elle est particulièrement recommandée pour les entreprises réalisant des contrôles qualité réguliers sur leurs propres installations ou pour le compte de tiers.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée avec votre propre matériel de contrôle si vous en disposez déjà, afin d'ancrer la formation dans vos conditions réelles d'utilisation.",
-          "imageAlt": "Gros plan sur des panneaux photovoltaïques au coucher du soleil"
+          "imageAlt": "Gros plan sur des panneaux photovoltaïques au coucher du soleil",
+          "image": "/images/5-1790687165200.jpg"
         }
       ],
       "opco": true,
