@@ -1816,7 +1816,10 @@
     "heroBackgroundImageAlt": "Silhouette d'une technicienne casquée sur un chantier au coucher du soleil",
     "aboutImage": "/images/enma-logo-jpg-1790597170463.jpg",
     "heroVideo": "https://he61u75bwwrjpmk6.public.blob.vercel-storage.com/vrai%20video-14qRz792XOPqazc2FCvwwOZSUwPX4R.mp4",
-    "theme": {},
+    "theme": {
+      "badgeBackground": "#1f1a4d",
+      "badgeForeground": "#fffbb9"
+    },
     "seoTitle": "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France",
     "seoDescription": "Formations sécurité incendie, secourisme, habilitation électrique, CACES, travail en hauteur, prévention des risques, management et photovoltaïque. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO, en intra et inter-entreprises dans les Hauts-de-France."
   },
