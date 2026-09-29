@@ -1890,7 +1890,9 @@
       "customTitle": "Une formation absente de cette liste ?",
       "customText": "Nous construisons également des parcours sur mesure adaptés à vos besoins spécifiques.",
       "quoteMainButton": "Demander un devis",
-      "catalogueButton": "Voir le catalogue"
+      "catalogueButton": "Voir le catalogue",
+      "customBadge": "Sans engagement",
+      "customButton": "Nous contacter"
     },
     "training": {
       "programmeTitle": "Programme de la formation",
