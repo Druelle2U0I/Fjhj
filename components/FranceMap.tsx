@@ -84,7 +84,7 @@ function MapScene({
     // défiler : le zoom se voit en entier au lieu de passer en un éclair.
     // Grand écran : pas de carte épinglée (elle laissait un grand vide) ;
     // le zoom se termine dès que la carte est entièrement à l'écran.
-    offset: isDesktop ? ["start 0.95", "start 0.3"] : ["start start", "end end"],
+    offset: isDesktop ? ["start 1", "start 0.12"] : ["start start", "end end"],
   });
 
   // Zoom : l'essentiel du défilement, puis un temps d'arrêt sur la région.
@@ -167,8 +167,9 @@ function MapScene({
                       d={dept.path}
                       fill={dept.hdf ? "var(--accent)" : "#c9c6b6"}
                       fillOpacity={dept.hdf ? 1 : otherOpacity}
-                      // Contours blancs entre départements (et autour de la région).
-                      stroke="#ffffff"
+                      // Contours blancs sur la région (bleue), bleu foncé sur le
+                      // reste de la France (clair).
+                      stroke={dept.hdf ? "#ffffff" : "var(--surface)"}
                       strokeWidth={strokeW}
                       strokeOpacity={dept.hdf ? 1 : otherStroke}
                       onMouseEnter={() => dept.hdf && setHovered(dept.code)}
