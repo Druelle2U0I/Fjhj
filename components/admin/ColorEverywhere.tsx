@@ -53,6 +53,20 @@ export default function ColorEverywhere({
     });
   };
 
+  // Retire toutes les couleurs propres aux pages : tout le site reprend les
+  // couleurs de base (celles de l'accueil).
+  const resetAll = () => {
+    const pages = { ...content.pages } as Record<string, unknown>;
+    for (const k of PAGE_KEYS) {
+      pages[k] = { ...(content.pages[k] as object), theme: {} };
+    }
+    onChange({
+      ...content,
+      home: { ...content.home, theme: {} },
+      pages: pages as SiteContent["pages"],
+    });
+  };
+
   const fallback = (key: Key) =>
     (content.theme as unknown as Record<string, string | undefined>)[key] ??
     (THEME_DEFAULTS as unknown as Record<string, string>)[key] ??
@@ -69,8 +83,18 @@ export default function ColorEverywhere({
         <p className="mt-1 text-sm text-muted">
           La couleur choisie remplace celle de chaque page (accueil, catalogue, secteurs, fiches
           formation, Le centre, Équipe, Contact, Financement). Vous pouvez ensuite l&apos;ajuster
-          page par page si besoin.
+          page par page si besoin. « Réinitialiser » remet la couleur de base du site : celle
+          de l&apos;accueil.
         </p>
+        <button
+          type="button"
+          onClick={() => {
+            if (confirm("Mettre toutes les pages aux couleurs de l'accueil ?")) resetAll();
+          }}
+          className="mt-3 rounded-full bg-highlight px-4 py-2 text-sm font-semibold text-highlight-foreground"
+        >
+          Tout réinitialiser : toutes les pages aux couleurs de l&apos;accueil
+        </button>
       </div>
       {GROUPS.map((group) => (
         <div key={group.title} className="rounded-2xl border border-border">
@@ -122,7 +146,7 @@ export default function ColorEverywhere({
                       {same
                         ? "Identique sur toutes les pages."
                         : set.length === 0
-                          ? "Couleur par défaut du site sur toutes les pages."
+                          ? "Identique sur toutes les pages (couleur de l'accueil)."
                           : `Réglée sur ${set.length} page${set.length > 1 ? "s" : ""} sur ${values.length}, pas toutes identiques.`}
                     </p>
                   </div>

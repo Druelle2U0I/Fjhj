@@ -1816,18 +1816,7 @@
     "heroBackgroundImageAlt": "Silhouette d'une technicienne casquée sur un chantier au coucher du soleil",
     "aboutImage": "/images/enma-logo-jpg-1790597170463.jpg",
     "heroVideo": "https://he61u75bwwrjpmk6.public.blob.vercel-storage.com/vrai%20video-14qRz792XOPqazc2FCvwwOZSUwPX4R.mp4",
-    "theme": {
-      "surfaceMuted": "#c0c0c0",
-      "highlightBackground": "#fefcdd",
-      "linkColor": "#444444",
-      "accent": "#0e0a29",
-      "highlightForeground": "#1f1a4d",
-      "heroButtonBackground": "#fffbb9",
-      "heroButtonForeground": "#1f1a4d",
-      "eyebrowColor": "#fffbb9",
-      "introColor": "#f4f2d4",
-      "titleColor": "#fbffda"
-    },
+    "theme": {},
     "seoTitle": "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France",
     "seoDescription": "Formations sécurité incendie, secourisme, habilitation électrique, CACES, travail en hauteur, prévention des risques, management et photovoltaïque. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO, en intra et inter-entreprises dans les Hauts-de-France."
   },
@@ -1838,7 +1827,7 @@
     "foreground": "#0b0c31",
     "muted": "#636a77",
     "border": "#3c337a",
-    "accent": "#160f3f",
+    "accent": "#0e0a29",
     "accentForeground": "#fffbb9",
     "headingFont": "archivo-expanded",
     "sectorVeil": 56,
@@ -1848,8 +1837,15 @@
     "bandColor": "#0b0c31",
     "bandOpacity": 74,
     "panelShadowColor": "#ffffff",
-    "surfaceMuted": "#d6d6d6",
-    "linkColor": "#7a7a7a"
+    "surfaceMuted": "#c0c0c0",
+    "linkColor": "#444444",
+    "highlightBackground": "#fefcdd",
+    "highlightForeground": "#1f1a4d",
+    "heroButtonBackground": "#fffbb9",
+    "heroButtonForeground": "#1f1a4d",
+    "eyebrowColor": "#fffbb9",
+    "introColor": "#f4f2d4",
+    "titleColor": "#fbffda"
   },
   "footerImage": "/images/2048-1790071486997.webp",
   "footerCta": {
