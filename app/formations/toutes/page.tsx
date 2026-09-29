@@ -51,7 +51,7 @@ export default function AllTrainingsPage() {
         }
       />
 
-      <section className="px-6 py-12">
+      <section className="overflow-x-clip px-6 pb-12">
         <div className="mx-auto max-w-6xl">
           <AllTrainings
             items={items}

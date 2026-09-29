@@ -53,13 +53,16 @@ export default function AllTrainings({
   const chip = (active: boolean) =>
     `shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
       active
-        ? "border-accent bg-accent text-accent-foreground"
-        : "border-foreground/30 bg-transparent text-foreground hover:border-foreground"
+        ? "border-highlight bg-highlight text-highlight-foreground"
+        : "border-white/30 bg-transparent text-foreground hover:border-white"
     }`;
 
   return (
     <div>
-      <div className="flex flex-col gap-4">
+      {/* Recherche et filtres : bande foncée pleine largeur, dans la
+          continuité du bas de la photo d'en-tête. */}
+      <div className="on-surface relative pb-8 pt-4 before:absolute before:inset-y-0 before:-left-[100vw] before:-right-[100vw] before:bg-surface sm:pb-10">
+      <div className="relative flex flex-col gap-4">
         <label htmlFor="training-search" className="sr-only">
           {searchPlaceholder}
         </label>
@@ -69,7 +72,7 @@ export default function AllTrainings({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={searchPlaceholder}
-          className="w-full rounded-sm border border-foreground/25 bg-white px-5 py-3 text-sm text-foreground outline-none placeholder:text-muted focus:border-foreground sm:max-w-md"
+          className="w-full rounded-sm border border-white/25 bg-white/10 px-5 py-3 text-sm text-foreground outline-none placeholder:text-muted focus:border-white sm:max-w-md"
         />
         <div
           className="-mx-6 flex gap-2 overflow-x-auto px-6 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 [&::-webkit-scrollbar]:hidden"
@@ -101,16 +104,17 @@ export default function AllTrainings({
         </div>
       </div>
 
-      <p className="mt-6 text-sm text-muted" aria-live="polite">
+      <p className="relative mt-6 text-sm text-muted" aria-live="polite">
         {visible.length} formation{visible.length > 1 ? "s" : ""}
       </p>
+      </div>
 
       {visible.length === 0 ? (
         <p className="mt-6 rounded-lg border border-border bg-surface/70 p-6 text-muted">
           {emptyText}
         </p>
       ) : (
-        <ul className="spotlight mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="spotlight mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {visible.map((item) => (
             <li key={item.href}>
               <TrainingCard
@@ -124,6 +128,7 @@ export default function AllTrainings({
                 imagePosition={item.imagePosition}
                 quoteHref={`/contact?formation=${encodeURIComponent(item.title)}`}
                 quoteLabel={pages.sector.quoteButton}
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
               />
             </li>
           ))}

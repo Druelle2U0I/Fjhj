@@ -9,13 +9,6 @@ import Visual from "@/components/Visual";
 import { pages, services } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo";
 
-// Nombre de colonnes sur grand écran (3 ou 4) choisi pour éviter une
-// carte seule sur la dernière ligne (ex. 7 formations → 4 + 3).
-function columnsFor(count: number) {
-  if (count % 3 === 0 || count % 3 === 2 || count < 4) return "lg:grid-cols-3";
-  return "lg:grid-cols-4";
-}
-
 export async function generateStaticParams() {
   return services.map((service) => ({ secteur: service.slug }));
 }
@@ -133,9 +126,9 @@ export default async function SecteurPage(
             </h2>
           </Reveal>
 
-          <div className={`spotlight mt-8 grid gap-6 sm:grid-cols-2 ${columnsFor(service.trainings.length)}`}>
+          <div className="spotlight mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {service.trainings.map((training, i) => (
-              <Reveal key={training.slug} delay={(i % 3) * 0.05}>
+              <Reveal key={training.slug} delay={(i % 4) * 0.05}>
                 <TrainingCard
                   href={`/formations/${service.slug}/${training.slug}`}
                   title={training.title}
@@ -147,6 +140,7 @@ export default async function SecteurPage(
                   imagePosition={training.imagePosition}
                   quoteHref={`/contact?formation=${encodeURIComponent(training.title)}`}
                   quoteLabel={pages.sector.quoteButton}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
                 />
               </Reveal>
             ))}
