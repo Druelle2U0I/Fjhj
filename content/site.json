@@ -455,7 +455,8 @@
           "audience": "Cette formation s'adresse aux électriciens de maintenance, techniciens et agents de travaux amenés à diriger ou surveiller des travaux sur des installations basse tension. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Nous vous remettons l'ensemble des documents nécessaires au montage du dossier : convention de formation, devis détaillé et programme pédagogique.",
           "image": "/images/habilitation-b2-tableau-1790689842.jpg",
-          "imageAlt": "Électricien casqué, de dos, devant un tableau électrique basse tension ouvert"
+          "imageAlt": "Électricien casqué, de dos, devant un tableau électrique basse tension ouvert",
+          "heroImage": "/images/habilitation-b2-tableau-mains-paysage-1790689926.jpg"
         },
         {
           "title": "BR — Chargé d'intervention générale basse tension",
@@ -608,7 +609,8 @@
           "audience": "Cette formation s'adresse au personnel non électricien travaillant ou circulant à proximité d'ouvrages haute tension : agents d'entretien, personnel de chantier, personnel d'exploitation. Aucun prérequis n'est exigé.",
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-h0-pylone-1790689131.jpg",
-          "imageAlt": "Deux intervenants casqués en gilet de sécurité observant un pylône et des lignes haute tension"
+          "imageAlt": "Deux intervenants casqués en gilet de sécurité observant un pylône et des lignes haute tension",
+          "heroImage": "/images/habilitation-h0-pylone-paysage-1790689926.jpg"
         },
         {
           "title": "H1 / H1V — Exécutant électricien haute tension",
@@ -699,7 +701,11 @@
             "Cette formation prépare le participant à appliquer les étapes de la consignation haute tension et à communiquer clairement avec le chargé de travaux."
           ],
           "audience": "Personnel électricien confirmé amené à réaliser des consignations haute tension pour le compte d'autrui, généralement déjà habilité H2/H2V. Une expérience préalable sur des installations électriques est fortement recommandée.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "image": "/images/habilitation-hc-armoire-paysage-1790689926.jpg",
+          "heroImage": "/images/habilitation-hc-armoire-paysage-1790689926.jpg",
+          "imagePosition": "right center",
+          "imageAlt": "Technicien casqué accroupi devant une armoire électrique ouverte, un bloc-notes à la main"
         },
         {
           "title": "HE Manoeuvre / Mesurage / Essai / Vérification",
@@ -728,12 +734,17 @@
             "Cette formation prépare le participant à réaliser en sécurité l'opération qui lui est confiée, avec le matériel de mesure et de contrôle adapté à la haute tension, dans le respect de la norme NF C 18-510."
           ],
           "audience": "Cette formation s'adresse au personnel technique réalisant des opérations de manœuvre, de mesure, d'essai ou de vérification sur des installations haute tension : exploitation, maintenance. Une expérience préalable en électricité est recommandée.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "image": "/images/habilitation-he-multimetre-paysage-1790689926.jpg",
+          "heroImage": "/images/habilitation-he-multimetre-paysage-1790689926.jpg",
+          "imagePosition": "center center",
+          "imageAlt": "Technicien en gilet haute visibilité tenant un multimètre et ses pointes de touche devant une armoire"
         }
       ],
       "opco": true,
       "image": "/images/3-1790608693104.jpg",
-      "imageAlt": "Électricien casqué intervenant sur une armoire électrique avec un appareil de mesure"
+      "imageAlt": "Électricien casqué intervenant sur une armoire électrique avec un appareil de mesure",
+      "heroImage": "/images/habilitation-secteur-nacelle-paysage-1790689926.jpg"
     },
     {
       "title": "CACES & habilitations",
