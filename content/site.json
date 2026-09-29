@@ -1605,8 +1605,9 @@
           ],
           "audience": "Cette formation s'adresse aux chargés d'études, chargés de projet et référents techniques d'entreprises d'installation photovoltaïque souhaitant structurer ou approfondir leur démarche d'étude. Des bases en électricité et en calcul technique sont utiles pour suivre les séquences de dimensionnement dans de bonnes conditions, sans constituer un prérequis strict. Elle est particulièrement adaptée aux entreprises souhaitant internaliser tout ou partie de leurs études techniques plutôt que de les sous-traiter.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être construite à partir d'un cahier des charges réel issu de votre activité pour un ancrage pédagogique maximal.",
-          "image": "/images/6-1790686988410.jpg",
-          "imageAlt": "Technicien casqué travaillant sur un ordinateur portable devant des panneaux photovoltaïques"
+          "image": "/images/6-1790717609850.jpg",
+          "imageAlt": "Technicien casqué travaillant sur un ordinateur portable devant des panneaux photovoltaïques",
+          "heroImage": "/images/6-1790717614982.jpg"
         },
         {
           "title": "Chiffrage et dimensionnement",
@@ -1643,8 +1644,9 @@
           ],
           "audience": "Cette formation s'adresse aux chargés d'affaires et techniciens amenés à chiffrer et dimensionner des installations photovoltaïques dans le cadre de leur activité commerciale ou technique. Des bases en électricité sont utiles mais ne constituent pas un prérequis strict, la formation reprenant les notions essentielles nécessaires au calcul. Elle est particulièrement recommandée pour les équipes commerciales souhaitant gagner en autonomie sur l'établissement des devis techniques.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être complétée par la formation Bureau d'études technique photovoltaïque pour les profils souhaitant approfondir la conception complète d'un projet.",
-          "image": "/images/7-1790687025566.jpg",
-          "imageAlt": "Main gantée posée sur un panneau photovoltaïque, sous un ciel bleu"
+          "image": "/images/7-1790717637009.jpg",
+          "imageAlt": "Main gantée posée sur un panneau photovoltaïque, sous un ciel bleu",
+          "heroImage": "/images/7-1790717629998.jpg"
         },
         {
           "title": "Contrôle par électroluminescence",
@@ -1682,7 +1684,8 @@
           "audience": "Cette formation s'adresse aux techniciens et installateurs amenés à contrôler la qualité de modules photovoltaïques, que ce soit à la réception d'une livraison, en cours de garantie ou dans le cadre d'une opération de maintenance. Aucun prérequis technique poussé n'est exigé, une connaissance de base des installations photovoltaïques étant suffisante pour suivre la formation. Elle est particulièrement recommandée pour les entreprises réalisant des contrôles qualité réguliers sur leurs propres installations ou pour le compte de tiers.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation technique liée au développement d'une activité photovoltaïque. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée avec votre propre matériel de contrôle si vous en disposez déjà, afin d'ancrer la formation dans vos conditions réelles d'utilisation.",
           "imageAlt": "Gros plan sur des panneaux photovoltaïques au coucher du soleil",
-          "image": "/images/5-1790687165200.jpg"
+          "image": "/images/10-1790717682561.jpg",
+          "heroImage": "/images/10-1790717697312.jpg"
         }
       ],
       "opco": true,
