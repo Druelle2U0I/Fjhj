@@ -209,7 +209,8 @@
       ],
       "opco": true,
       "image": "/images/9-1790608640906.jpg",
-      "imageAlt": "Panneau vert de point de rassemblement fixé sur un mur"
+      "imageAlt": "Panneau vert de point de rassemblement fixé sur un mur",
+      "heroImagePosition": "center top"
     },
     {
       "title": "Secours & premiers soins",
