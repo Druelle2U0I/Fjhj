@@ -54,21 +54,30 @@ export default function AccessibilitePage() {
       {legal.accessDelay && (
         <>
           <h2 id="delais">Délais et conditions d&apos;accès</h2>
-          {legal.accessDelay.split("\n").some((l) => l.startsWith("•")) ? (
-            <>
-              <p>{legal.accessDelay.split("\n").filter((l) => !l.startsWith("•")).join(" ")}</p>
-              <ul>
-                {legal.accessDelay
-                  .split("\n")
-                  .filter((l) => l.startsWith("•"))
-                  .map((l) => (
-                    <li key={l}>{l.replace(/^•\s*/, "")}</li>
+          {/* Lignes « • » regroupées en liste, les autres en paragraphes. */}
+          {legal.accessDelay
+            .split("\n")
+            .filter((l) => l.trim())
+            .reduce<(string | string[])[]>((blocks, line) => {
+              const last = blocks[blocks.length - 1];
+              if (line.startsWith("•")) {
+                const item = line.replace(/^•\s*/, "");
+                if (Array.isArray(last)) last.push(item);
+                else blocks.push([item]);
+              } else blocks.push(line);
+              return blocks;
+            }, [])
+            .map((block, i) =>
+              Array.isArray(block) ? (
+                <ul key={i}>
+                  {block.map((item) => (
+                    <li key={item}>{item}</li>
                   ))}
-              </ul>
-            </>
-          ) : (
-            <p>{legal.accessDelay}</p>
-          )}
+                </ul>
+              ) : (
+                <p key={i}>{block}</p>
+              ),
+            )}
         </>
       )}
 

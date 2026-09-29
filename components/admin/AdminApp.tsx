@@ -1080,6 +1080,23 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
 
               <Card className="grid gap-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+                  Photo d&apos;en-tête des pages légales
+                </p>
+                <ImageField
+                  label="Photo (mentions légales, CGV, confidentialité, accessibilité)"
+                  value={content.legal.heroImage}
+                  onChange={(v) => update({ ...content, legal: { ...content.legal, heroImage: v } })}
+                />
+                <Field
+                  label="Description de la photo (accessibilité)"
+                  value={content.legal.heroImageAlt ?? ""}
+                  onChange={(v) => update({ ...content, legal: { ...content.legal, heroImageAlt: v } })}
+                />
+                <p className="text-xs text-muted">Sans photo, celle de la page Équipe est utilisée.</p>
+              </Card>
+
+              <Card className="grid gap-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
                   Mentions réglementaires
                 </p>
                 <Field

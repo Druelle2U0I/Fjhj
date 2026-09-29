@@ -24,13 +24,13 @@
     "qualiopiCategory": "actions de formation",
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
-    "accessDelay": "Entre la demande formulée par le client et le commencement de la session de formation, ENMA Formation recommande d'envisager, en raison des processus de financement, les délais suivants :\n• Dix jours ouvrés pour les sessions de formation planifiées à calendrier fixe (inter), une fois l'accord du financeur obtenu.\n• Pour les formations non planifiées sur un calendrier fixe, c'est-à-dire en intra ou sur mesure, ENMA Formation prépare une proposition contractuelle et une offre de service comprenant le planning prévisionnel de formation, en veillant à ce que les besoins spécifiques du client soient pris en compte pour optimiser l'apprentissage et garantir la satisfaction des participants.",
+    "accessDelay": "Entre la demande formulée par le client et le commencement de la session de formation, ENMA Formation recommande d'envisager, en raison des processus de financement, les délais suivants :\n• Dix jours ouvrés pour les sessions de formation planifiées à calendrier fixe (inter), une fois l'accord du financeur obtenu.\n• Pour les formations non planifiées sur un calendrier fixe, c'est-à-dire en intra ou sur mesure, ENMA Formation prépare une proposition contractuelle et une offre de service comprenant le planning prévisionnel de formation, en veillant à ce que les besoins spécifiques du client soient pris en compte pour optimiser l'apprentissage et garantir la satisfaction des participants.\nEn cas d'urgence, un montage de formation plus rapide peut être étudié : contactez-nous pour en discuter.",
     "resultsIndicators": "Taux de recommandation : {recommandation} des stagiaires recommandent ENMA Formation, d'après le questionnaire « Évaluer la session ! » rempli à la fin de chaque formation depuis 2026. Ce chiffre est mis à jour automatiquement. Les taux de réussite aux certifications seront publiés dès que le nombre de sessions sera suffisant.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras",
     "qualiopiLogo": "/images/action-formations-qualiopi-1790260002712.png",
     "qualiopiCertificateUrl": "",
-    "accessDelayShort": "10 jours ouvrés en inter, une fois l'accord du financeur obtenu. En intra ou sur mesure : planning prévisionnel établi selon vos besoins."
+    "accessDelayShort": "10 jours ouvrés en inter, une fois l'accord du financeur obtenu. En intra ou sur mesure : planning prévisionnel établi selon vos besoins. Plus rapide en cas d'urgence, sur demande."
   },
   "stats": [
     {
@@ -1640,7 +1640,7 @@
       },
       {
         "title": "Mise en place rapide",
-        "text": "Une fois l'accord du financeur obtenu, comptez dix jours ouvrés pour une session inter-entreprises à calendrier fixe. En intra ou sur mesure, nous vous remettons une proposition et un planning prévisionnel adaptés à vos besoins."
+        "text": "Une fois l'accord du financeur obtenu, comptez dix jours ouvrés pour une session inter-entreprises à calendrier fixe. En intra ou sur mesure, nous vous remettons une proposition et un planning prévisionnel adaptés à vos besoins. En cas d'urgence, un montage plus rapide peut être étudié."
       }
     ],
     "stepsTitle": "Comment se déroule votre formation, de la demande au financement ?",
@@ -1832,7 +1832,7 @@
       },
       {
         "question": "Quel est le délai pour organiser une formation ?",
-        "answer": "Nous revenons vers vous sous 24 heures avec une proposition adaptée. Pour une session inter-entreprises à calendrier fixe, comptez dix jours ouvrés une fois l'accord du financeur obtenu. En intra ou sur mesure, nous établissons avec vous une proposition et un planning prévisionnel qui tiennent compte de vos besoins."
+        "answer": "Nous revenons vers vous sous 24 heures avec une proposition adaptée. Pour une session inter-entreprises à calendrier fixe, comptez dix jours ouvrés une fois l'accord du financeur obtenu. En intra ou sur mesure, nous établissons avec vous une proposition et un planning prévisionnel qui tiennent compte de vos besoins. Une urgence peut justifier un montage plus rapide : parlons-en."
       },
       {
         "question": "Combien de personnes peuvent suivre une formation en même temps ?",

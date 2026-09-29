@@ -230,6 +230,9 @@ export type SiteContent = {
     resultsIndicators?: string;
     qualiopiLogo?: string;
     qualiopiCertificateUrl?: string;
+    // Photo d'en-tête des pages légales (mentions, CGV, confidentialité, accessibilité).
+    heroImage?: string;
+    heroImageAlt?: string;
   };
   social?: Social;
   trainingInfo?: { methods: string; evaluation: string };
