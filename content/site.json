@@ -1084,7 +1084,9 @@
           "audience": "Cette formation s'adresse à tout salarié amené à monter, démonter ou utiliser des échafaudages fixes de pied dans le cadre de son activité, en particulier sur des chantiers de longue durée nécessitant un ouvrage stable et de grande hauteur. Aucun prérequis technique n'est exigé, mais une aptitude médicale au travail en hauteur est recommandée. Cette formation constitue un approfondissement recommandé pour les monteurs confrontés régulièrement à des configurations de montage complexes.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être couplée avec la formation aux échafaudages roulants pour les équipes amenées à utiliser les deux types d'ouvrages selon les chantiers.",
           "image": "/images/2-1790074542563.jpg",
-          "imageAlt": "Vue du dessus d'ouvriers casqués montant un échafaudage de pied"
+          "imageAlt": "Vue du dessus d'ouvriers casqués montant un échafaudage de pied",
+          "imagePosition": "right center",
+          "heroImage": "/images/11-1790716003664.jpg"
         },
         {
           "title": "Montage, démontage et utilisation des échafaudages roulants et fixes (R457)",
@@ -1121,8 +1123,9 @@
           ],
           "audience": "Cette formation s'adresse à tout salarié amené à monter, démonter ou utiliser des échafaudages fixes de pied ou roulants dans le cadre de son activité (BTP, industrie, maintenance de bâtiment). Aucun prérequis technique n'est exigé, mais une aptitude médicale au travail en hauteur est recommandée pour les opérations de montage réalisées en hauteur. Un recyclage périodique est conseillé afin de maintenir la maîtrise des procédures de montage et des évolutions réglementaires.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée sur votre site avec votre propre matériel d'échafaudage afin de rapprocher la formation des conditions réelles d'utilisation.",
-          "image": "/images/3-1790074567912.jpg",
-          "imageAlt": "Échafaudage roulant installé dans un bâtiment industriel"
+          "image": "/images/35-1790716044195.jpg",
+          "imageAlt": "Échafaudage roulant installé dans un bâtiment industriel",
+          "heroImage": "/images/35-1790716077808.jpg"
         },
         {
           "title": "Travail en hauteur et port du harnais",
@@ -1155,8 +1158,9 @@
           ],
           "audience": "Cette formation s'adresse à tout salarié amené à travailler en hauteur avec port du harnais antichute, quel que soit le secteur d'activité (bâtiment, industrie, maintenance, télécommunications, espaces verts). Une aptitude médicale au travail en hauteur délivrée par le médecin du travail est requise, ainsi qu'une absence de contre-indication au port prolongé d'un harnais. Un recyclage est recommandé tous les 1 à 3 ans selon la fréquence d'exposition au risque, afin de maintenir les automatismes de vérification et d'arrimage.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, en tant que formation réglementaire liée à la prévention du risque de chute de hauteur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement. Elle peut être organisée directement sur votre site afin d'entraîner les participants sur les points d'ancrage réels qu'ils utiliseront au quotidien.",
-          "image": "/images/4-copie-1790074581376.jpg",
-          "imageAlt": "Cordiste équipé d'un harnais et d'un casque travaillant en hauteur le long d'une paroi"
+          "image": "/images/9-1790716112904.jpg",
+          "imageAlt": "Cordiste équipé d'un harnais et d'un casque travaillant en hauteur le long d'une paroi",
+          "heroImage": "/images/9-1790716128780.jpg"
         },
         {
           "title": "Vérification des échafaudages",
@@ -1195,7 +1199,8 @@
       ],
       "opco": true,
       "image": "/images/5-1790608731991.jpg",
-      "imageAlt": "Ouvriers casqués travaillant sur un échafaudage"
+      "imageAlt": "Ouvriers casqués travaillant sur un échafaudage",
+      "heroImagePosition": "center bottom"
     },
     {
       "title": "Prévention des risques professionnels",
