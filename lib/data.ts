@@ -24,6 +24,8 @@ export type Training = {
   programme: Module[];
   image?: string;
   imageAlt?: string;
+  // Photo en paysage pour le haut de la fiche (sinon : `image`).
+  heroImage?: string;
   // Partie de la photo à garder visible dans les cartes (portrait) :
   // utile quand la photo d'origine est au format paysage. Voir
   // components/admin/ui.tsx (ImagePositionField).

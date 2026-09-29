@@ -109,6 +109,15 @@ function TrainingEditor({
           />
         </>
       )}
+      <ImageField
+        label="Photo du haut de la fiche (paysage, facultative)"
+        value={training.heroImage}
+        onChange={(v) => onChange({ ...training, heroImage: v })}
+      />
+      <p className="text-xs text-muted">
+        Affichée sur toute la largeur de l&apos;écran : choisissez une photo en paysage d&apos;au moins
+        2 400 px de large pour qu&apos;elle reste nette. Sans photo, celle des cartes est reprise.
+      </p>
 
       <ParagraphsField
         label="Description"

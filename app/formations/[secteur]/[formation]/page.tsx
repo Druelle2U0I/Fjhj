@@ -106,7 +106,7 @@ export default async function FormationPage(
       <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[154px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
         <div className="hero-photo-fade absolute inset-0">
           <Visual
-            src={training.image ?? service.image}
+            src={training.heroImage || training.image || service.heroImage || service.image}
             alt={training.imageAlt || training.title}
             sizes="100vw"
             priority
