@@ -1842,7 +1842,7 @@
     "headingFont": "archivo-expanded",
     "sectorVeil": 56,
     "footerVeil": 84,
-    "tagBackground": "#371a94",
+    "tagBackground": "#595094",
     "tagText": "#dcfafe",
     "bandColor": "#0b0c31",
     "bandOpacity": 74,
@@ -1863,11 +1863,9 @@
   },
   "pages": {
     "hero": {
-      "badge": "Organisme de formation · Hauts-de-France",
+      "badge": "Organisme de formation professionnelle",
       "primaryButton": "Découvrir nos formations",
-      "secondaryButton": "Parler à un conseiller",
-      "title": "La compétence se forme sur le terrain.",
-      "text": "Sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention, management : des formations pratiques, chez vous ou sur notre plateau technique de Wingles."
+      "secondaryButton": "Parler à un conseiller"
     },
     "catalogue": {
       "eyebrow": "Nos formations",
@@ -1891,9 +1889,7 @@
       "customTitle": "Une formation absente de cette liste ?",
       "customText": "Nous construisons également des parcours sur mesure adaptés à vos besoins spécifiques.",
       "quoteMainButton": "Demander un devis",
-      "catalogueButton": "Voir le catalogue",
-      "customBadge": "Réponse sous 24h",
-      "customButton": "Nous contacter"
+      "catalogueButton": "Voir le catalogue"
     },
     "training": {
       "programmeTitle": "Programme de la formation",
