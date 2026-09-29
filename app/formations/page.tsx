@@ -40,7 +40,7 @@ export default function FormationsPage() {
       </section>
 
       <section className="px-6 py-12">
-        <div className="spotlight mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="spotlight mx-auto grid max-w-6xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <Reveal key={service.slug} delay={(i % 4) * 0.05}>
               <Link
