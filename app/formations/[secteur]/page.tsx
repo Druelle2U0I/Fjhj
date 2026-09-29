@@ -126,9 +126,9 @@ export default async function SecteurPage(
             </h2>
           </Reveal>
 
-          <div className="spotlight mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="spotlight mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {service.trainings.map((training, i) => (
-              <Reveal key={training.slug} delay={(i % 4) * 0.05}>
+              <Reveal key={training.slug} delay={(i % 3) * 0.05}>
                 <TrainingCard
                   href={`/formations/${service.slug}/${training.slug}`}
                   title={training.title}
@@ -140,7 +140,7 @@ export default async function SecteurPage(
                   imagePosition={training.imagePosition}
                   quoteHref={`/contact?formation=${encodeURIComponent(training.title)}`}
                   quoteLabel={pages.sector.quoteButton}
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 90vw"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 90vw"
                 />
               </Reveal>
             ))}
