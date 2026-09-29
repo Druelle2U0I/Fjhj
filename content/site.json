@@ -1864,8 +1864,8 @@
     "headingFont": "archivo-expanded",
     "sectorVeil": 56,
     "footerVeil": 84,
-    "tagBackground": "#595094",
-    "tagText": "#dcfafe",
+    "tagBackground": "#474b71",
+    "tagText": "#e8f2f4",
     "bandColor": "#0b0c31",
     "bandOpacity": 74,
     "panelShadowColor": "#ffffff",
@@ -1906,9 +1906,6 @@
       "theme": {
         "highlightBackground": "#160f3f",
         "highlightForeground": "#fff9c7",
-        "eyebrowColor": "#fff76b",
-        "titleColor": "#fbffda",
-        "introColor": "#f4f2d4",
         "linkColor": "#7a7a7a"
       },
       "heroImageAlt": "Mains d'une équipe réunies les unes sur les autres au-dessus d'une table de travail"
@@ -1923,11 +1920,7 @@
       "catalogueButton": "Voir le catalogue",
       "customBadge": "Sans engagement",
       "customButton": "Nous contacter",
-      "theme": {
-        "eyebrowColor": "#fffbb9",
-        "titleColor": "#fbffda",
-        "introColor": "#f4f2d4"
-      }
+      "theme": {}
     },
     "training": {
       "programmeTitle": "Programme de la formation",
@@ -1939,11 +1932,7 @@
       "price": "Sur devis · éligible à une prise en charge OPCO",
       "quoteButton": "Demander un devis",
       "questionText": "Une question sur cette formation ?",
-      "theme": {
-        "eyebrowColor": "#fffbb9",
-        "titleColor": "#fbffda",
-        "introColor": "#f4f2d4"
-      }
+      "theme": {}
     },
     "centre": {
       "eyebrow": "Le centre",
@@ -1963,10 +1952,7 @@
       "heroImage": "/images/incendie-temoin-1790071012662.jpg",
       "theme": {
         "linkColor": "#7a7a7a",
-        "accent": "#1f1a4d",
-        "eyebrowColor": "#fffbb9",
-        "titleColor": "#f8fadb",
-        "introColor": "#fbffda"
+        "accent": "#1f1a4d"
       },
       "heroImageAlt": "Feu d'exercice au sol devant une rangée d'extincteurs rouges, sur le plateau technique"
     },
@@ -1979,10 +1965,7 @@
       "theme": {
         "border": "#2b2459",
         "surfaceMuted": "#aaaaaa",
-        "linkColor": "#7a7a7a",
-        "eyebrowColor": "#fffbb9",
-        "titleColor": "#f8fadb",
-        "introColor": "#fbffda"
+        "linkColor": "#7a7a7a"
       },
       "heroImageAlt": "Terrils et paysage minier du Pas-de-Calais sous un ciel nuageux"
     },
@@ -2003,10 +1986,7 @@
         "surface": "#1f1a4d",
         "accent": "#1f1a4d",
         "muted": "#7a7a7a",
-        "surfaceForeground": "#f4f2d4",
-        "eyebrowColor": "#fffbb9",
-        "titleColor": "#fbffda",
-        "introColor": "#f4f2d4"
+        "surfaceForeground": "#f4f2d4"
       }
     },
     "funding": {
@@ -2015,9 +1995,6 @@
       "seoDescription": "ENMA Formation, organisme certifié Qualiopi : formations éligibles à une prise en charge OPCO et accompagnement dans le montage de votre dossier.",
       "heroImage": "/images/7-1790074465812.jpg",
       "theme": {
-        "eyebrowColor": "#fffbb9",
-        "titleColor": "#f8fadb",
-        "introColor": "#f4f2d4",
         "accent": "#1f1a4d",
         "highlightForeground": "#fff9c7",
         "linkColor": "#7a7a7a",
@@ -2037,7 +2014,8 @@
       "emptyText": "Aucune formation ne correspond à votre recherche. Contactez-nous : nous construisons aussi des parcours sur mesure.",
       "seoDescription": "Les {formations} formations d'ENMA Formation sur une seule page : sécurité, secourisme, CACES, habilitation électrique, travail en hauteur, management et photovoltaïque.",
       "heroImage": "/images/1-1790074549460.jpg",
-      "heroImageAlt": "Ouvriers casqués en gilet orange travaillant sur un échafaudage de façade"
+      "heroImageAlt": "Ouvriers casqués en gilet orange travaillant sur un échafaudage de façade",
+      "theme": {}
     }
   },
   "social": {
