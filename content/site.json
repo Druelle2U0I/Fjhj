@@ -143,8 +143,9 @@
           ],
           "audience": "Cette sensibilisation s'adresse à l'ensemble des salariés d'une entreprise, sans distinction de poste ni de fonction, et ne nécessite aucun prérequis. Elle se distingue de la formation d'équipier de première intervention par un contenu plus général, centré sur les réflexes d'alerte et de mise en sécurité plutôt que sur la maîtrise technique de l'extinction. Elle constitue un socle minimal recommandé pour tout nouvel arrivant dans le cadre de son accueil sécurité, en complément de la formation des équipiers désignés.",
           "funding": "Cette sensibilisation entre dans le champ des actions de formation à la sécurité et peut, à ce titre, être prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit le programme pédagogique et les justificatifs nécessaires à votre demande de financement. Elle est fréquemment organisée en même temps que l'accueil sécurité des nouveaux embauchés ou dans le cadre d'une campagne annuelle de sensibilisation à la sécurité incendie pour l'ensemble du personnel.",
-          "image": "/images/extincteur-1600px-1790070965699.png",
-          "imageAlt": "Personne éteignant un feu d'exercice avec un extincteur"
+          "image": "/images/3-1790688125386.jpg",
+          "imageAlt": "Personne éteignant un feu d'exercice avec un extincteur",
+          "heroImage": "/images/3-1790688106638.jpg"
         },
         {
           "title": "Équipier d'évacuation",
@@ -174,7 +175,8 @@
           "audience": "Cette formation s'adresse à tout salarié désigné pour tenir un rôle de guide ou de serre-file dans le cadre du plan d'évacuation de son établissement. Elle ne nécessite aucun prérequis particulier, si ce n'est une bonne connaissance des locaux et des circulations du site. Le nombre d'équipiers à former dépend de la configuration des locaux, du nombre d'occupants et du nombre d'issues de secours : nous vous conseillons sur le dimensionnement adapté à votre site lors de l'élaboration du devis, afin de garantir une couverture complète même en cas d'absence d'un équipier titulaire.",
           "funding": "Cette formation, liée à une obligation réglementaire de sécurité incendie, est éligible à une prise en charge par votre OPCO dans le cadre du plan de développement des compétences. ENMA Formation établit un devis et un programme pédagogique détaillés pour appuyer votre demande de financement. Elle peut également être organisée en intra-entreprise pour former simultanément l'ensemble des guides et serre-files d'un même site, ce qui optimise le coût par participant et facilite la coordination du plan d'évacuation.",
           "image": "/images/equipier-evac-1790071054007.jpg",
-          "imageAlt": "photo d'une signalétique d'une sortie de secours"
+          "imageAlt": "photo d'une signalétique d'une sortie de secours",
+          "heroImage": "/images/equipier-evac-1790688155586.jpg"
         },
         {
           "title": "Équipier de première intervention",
@@ -204,8 +206,9 @@
           ],
           "audience": "Cette formation s'adresse à tout salarié désigné par l'employeur pour intégrer une équipe de première intervention (EPI) au sein de son établissement, quel que soit le secteur d'activité. Aucun prérequis technique n'est nécessaire : la formation est accessible à tout public apte physiquement à manipuler un extincteur. Il est recommandé de former plusieurs équipiers par site et par poste afin de garantir une présence permanente en cas d'absence ou de rotation d'équipe. Conformément aux préconisations de la commission de sécurité, un recyclage est conseillé tous les 2 ans afin de maintenir les automatismes et d'actualiser les connaissances face à l'évolution des consignes internes.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences, dans la mesure où elle répond à une obligation réglementaire de sécurité incendie. ENMA Formation vous accompagne dans la constitution du dossier de financement : devis détaillé, programme pédagogique et convocation nominative sont fournis pour faciliter votre demande de prise en charge auprès de votre opérateur de compétences. Le financement peut également être mobilisé dans le cadre d'un budget formation interne ou d'une convention multi-sites pour les entreprises disposant de plusieurs établissements.",
-          "image": "/images/formation-epi-1790071357409.jpg",
-          "imageAlt": "Équipier en gilet jaune projetant un extincteur sur un feu lors d'une formation EPI"
+          "image": "/images/4-1790688185050.jpg",
+          "imageAlt": "Équipier en gilet jaune projetant un extincteur sur un feu lors d'une formation EPI",
+          "heroImage": "/images/4-1790688206923.jpg"
         }
       ],
       "opco": true,
