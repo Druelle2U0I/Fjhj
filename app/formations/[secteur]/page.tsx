@@ -162,7 +162,7 @@ export default async function SecteurPage(
       <section className="px-6 pb-16 pt-6 sm:pb-20">
         <Reveal className="relative mx-auto max-w-3xl">
           {pages.sector.customBadge && (
-            <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 rotate-3 items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-lg">
+            <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 -rotate-3 items-center rounded-full bg-accent px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-accent-foreground shadow-lg">
               {pages.sector.customBadge}
             </span>
           )}
