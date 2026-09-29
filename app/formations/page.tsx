@@ -38,12 +38,12 @@ export default function FormationsPage() {
       </section>
 
       <section className="px-6 py-12">
-        <div className="mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="spotlight mx-auto grid max-w-6xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, i) => (
             <Reveal key={service.slug} delay={(i % 4) * 0.05}>
               <Link
                 href={`/formations/${service.slug}`}
-                className="dyn-card group relative flex aspect-[3/4] w-full flex-col justify-end overflow-hidden rounded-lg"
+                className="spotlight-item dyn-card group relative flex aspect-[3/4] w-full flex-col justify-between overflow-hidden rounded-lg"
               >
                 <Visual
                   src={service.image}
@@ -52,16 +52,13 @@ export default function FormationsPage() {
                   className="transition-transform duration-700 group-hover:scale-105"
                   objectPosition={service.imagePosition}
                 />
-                <div className="card-veil absolute inset-0" />
-                <div className="relative flex items-end justify-between gap-3 p-6">
-                  <h2 className="text-lg font-semibold leading-snug text-white">
-                    {service.title}
-                  </h2>
-                  <span className="shrink-0 text-sm text-white/80">
-                    {service.trainings.length} formation
-                    {service.trainings.length > 1 ? "s" : ""}
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/5 to-black/50" />
+                <h2 className="font-heading relative p-5 text-sm uppercase leading-tight text-white sm:text-base">
+                  {service.title}
+                </h2>
+                <span className="relative self-end p-5 text-xs font-semibold text-white/90">
+                  {service.trainings.length} formation{service.trainings.length > 1 ? "s" : ""}
+                </span>
               </Link>
             </Reveal>
           ))}

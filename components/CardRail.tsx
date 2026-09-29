@@ -63,7 +63,7 @@ export default function CardRail({
 
       <ul
         ref={rail}
-        className="rail-bleed -mx-6 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 md:scroll-px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="spotlight rail-bleed -mx-6 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 md:scroll-px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {cards.map((card) => {
           const photo = Boolean(card.image);
@@ -77,34 +77,38 @@ export default function CardRail({
                     sizes="240px"
                     className="transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/5 to-black/10" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/5 to-black/50" />
                   <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/45" />
                 </>
               )}
-              <div className="relative p-4">
-                <p className={`font-heading text-sm uppercase leading-tight sm:text-base ${photo ? "text-white" : "text-[#0b0c31]"}`}>
-                  {card.title}
-                </p>
+              <p
+                className={`font-heading relative p-4 text-sm uppercase leading-tight sm:text-base ${
+                  photo ? "text-white" : "text-[#0b0c31]"
+                }`}
+              >
+                {card.title}
+              </p>
+              <div className="relative mt-auto p-4">
+                {card.text && (
+                  <p
+                    className={`text-xs leading-relaxed ${
+                      photo
+                        ? "text-white opacity-100 transition-opacity duration-500 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100"
+                        : "text-[#0b0c31]"
+                    }`}
+                  >
+                    {card.text}
+                  </p>
+                )}
                 {card.subtitle && (
-                  <p className={`mt-1 text-xs font-semibold ${photo ? "text-white/85" : "text-[#0b0c31]/70"}`}>
+                  <p className={`mt-2 text-right text-xs font-semibold ${photo ? "text-white/90" : "text-[#0b0c31]/70"}`}>
                     {card.subtitle}
                   </p>
                 )}
               </div>
-              {card.text && (
-                <p
-                  className={`relative mt-auto p-4 text-xs leading-relaxed ${
-                    photo
-                      ? "text-white opacity-100 transition-opacity duration-500 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100"
-                      : "text-[#0b0c31]"
-                  }`}
-                >
-                  {card.text}
-                </p>
-              )}
             </>
           );
-          const cls = `group relative flex h-full flex-col overflow-hidden rounded-2xl ${
+          const cls = `spotlight-item group relative flex h-full flex-col overflow-hidden rounded-2xl ${
             photo ? "bg-surface" : "border border-[#0b0c31]/15 bg-white"
           }`;
           return (

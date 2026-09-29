@@ -559,3 +559,18 @@ h4,
     min-height: 34rem;
   }
 }
+
+/* Cartes de secteurs : au survol d'une carte, les autres s'assombrissent
+   et celle survolée reste en pleine lumière, légèrement soulevée. */
+@media (hover: hover) {
+  .spotlight-item {
+    transition: filter 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  .spotlight:has(.spotlight-item:hover) .spotlight-item:not(:hover) {
+    filter: brightness(0.45) saturate(0.7);
+  }
+  .spotlight .spotlight-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 40px -12px rgba(11, 3, 43, 0.55);
+  }
+}
