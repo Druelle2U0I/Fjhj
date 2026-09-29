@@ -54,6 +54,27 @@ async function currentSha(config: GitHubConfig, filePath: string) {
   return body.sha;
 }
 
+export class ConflictError extends Error {}
+
+/**
+ * Lit la version à jour d'un fichier du dépôt (et son identifiant de
+ * version, « sha »). En local, ou sans jeton, renvoie null : l'appelant se
+ * rabat alors sur le contenu embarqué dans le site.
+ */
+export async function readFile(filePath: string): Promise<{ text: string; sha: string } | null> {
+  if (process.env.NODE_ENV !== "production") return null;
+  const config = githubConfig();
+  if (!config) return null;
+  const res = await githubRequest(
+    config,
+    `/contents/${encodeURIComponent(filePath).replace(/%2F/g, "/")}?ref=${config.branch}`,
+  );
+  if (!res.ok) return null;
+  const body = (await res.json()) as { sha?: string; content?: string; encoding?: string };
+  if (!body.sha || !body.content) return null;
+  return { text: Buffer.from(body.content, "base64").toString("utf8"), sha: body.sha };
+}
+
 /**
  * En production le contenu vit dans le dépôt : chaque enregistrement est un
  * commit, qui déclenche un redéploiement Vercel. En développement local il
@@ -63,6 +84,10 @@ export async function commitFile(
   filePath: string,
   content: Buffer,
   message: string,
+  // Version sur laquelle s'appuie l'enregistrement : si le fichier a été
+  // modifié depuis (autre onglet, autre personne, mise à jour du site),
+  // GitHub refuse et on lève ConflictError au lieu d'écraser.
+  baseSha?: string,
 ) {
   if (process.env.NODE_ENV !== "production") {
     const target = path.join(process.cwd(), filePath);
@@ -78,7 +103,7 @@ export async function commitFile(
     );
   }
 
-  const sha = await currentSha(config, filePath);
+  const sha = baseSha ?? (await currentSha(config, filePath));
   const res = await githubRequest(
     config,
     `/contents/${encodeURIComponent(filePath).replace(/%2F/g, "/")}`,
@@ -93,10 +118,14 @@ export async function commitFile(
     },
   );
 
+  if (baseSha && (res.status === 409 || res.status === 422)) {
+    throw new ConflictError("Le site a été modifié depuis l'ouverture de cette page.");
+  }
   if (!res.ok) {
     const detail = await res.text();
     throw new Error(`GitHub a refusé l'enregistrement (${res.status}) ${detail.slice(0, 200)}`);
   }
 
-  return { mode: "github" as const };
+  const body = (await res.json().catch(() => ({}))) as { content?: { sha?: string } };
+  return { mode: "github" as const, sha: body.content?.sha };
 }

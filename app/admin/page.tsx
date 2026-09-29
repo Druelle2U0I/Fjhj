@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import site from "@/content/site.json";
 import type { SiteContent } from "@/lib/data";
 import { adminPassword, isAuthenticated } from "@/lib/admin-auth";
+import { readFile } from "@/lib/store";
 import AdminApp from "@/components/admin/AdminApp";
 import LoginForm from "@/components/admin/LoginForm";
 
@@ -32,5 +33,14 @@ export default async function AdminPage() {
     return <LoginForm />;
   }
 
-  return <AdminApp initial={site as SiteContent} />;
+  // Contenu à jour lu dans le dépôt (le site en ligne peut avoir une ou deux
+  // minutes de retard), avec sa version pour détecter les conflits.
+  const fresh = await readFile("content/site.json").catch(() => null);
+  let initial = site as SiteContent;
+  if (fresh) {
+    try {
+      initial = JSON.parse(fresh.text) as SiteContent;
+    } catch {}
+  }
+  return <AdminApp initial={initial} baseSha={fresh?.sha} />;
 }

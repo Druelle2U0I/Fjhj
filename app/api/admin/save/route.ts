@@ -1,5 +1,5 @@
 import { isAuthenticated } from "@/lib/admin-auth";
-import { commitFile } from "@/lib/store";
+import { commitFile, ConflictError } from "@/lib/store";
 import type { SiteContent } from "@/lib/data";
 
 function isValid(content: unknown): content is SiteContent {
@@ -18,7 +18,10 @@ export async function POST(request: Request) {
     return Response.json({ error: "Non autorisé." }, { status: 401 });
   }
 
-  const body = await request.json().catch(() => null);
+  const payload = (await request.json().catch(() => null)) as
+    | { content?: unknown; baseSha?: string }
+    | null;
+  const body = payload?.content;
   if (!isValid(body)) {
     return Response.json(
       { error: "Contenu invalide : enregistrement refusé." },
@@ -31,9 +34,20 @@ export async function POST(request: Request) {
       "content/site.json",
       Buffer.from(JSON.stringify(body, null, 2) + "\n", "utf8"),
       "Mise à jour du contenu depuis l'espace d'administration",
+      payload?.baseSha || undefined,
     );
-    return Response.json({ ok: true, mode: result.mode });
+    return Response.json({ ok: true, mode: result.mode, sha: "sha" in result ? result.sha : undefined });
   } catch (error) {
+    if (error instanceof ConflictError) {
+      return Response.json(
+        {
+          error:
+            "Le site a été modifié depuis l'ouverture de cette page (autre onglet ou mise à jour). Enregistrement bloqué pour ne rien écraser : copiez vos changements, rechargez la page (Cmd + Maj + R) puis refaites-les.",
+          conflict: true,
+        },
+        { status: 409 },
+      );
+    }
     return Response.json(
       { error: error instanceof Error ? error.message : "Erreur inconnue." },
       { status: 500 },

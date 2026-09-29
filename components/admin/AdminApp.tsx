@@ -27,11 +27,13 @@ const SECTIONS = [
 
 type SectionId = (typeof SECTIONS)[number]["id"];
 
-export default function AdminApp({ initial }: { initial: SiteContent }) {
+export default function AdminApp({ initial, baseSha }: { initial: SiteContent; baseSha?: string }) {
   const router = useRouter();
   const [content, setContent] = useState<SiteContent>(initial);
   const [section, setSection] = useState<SectionId>("accueil");
   const [dirty, setDirty] = useState(false);
+  // Version du contenu sur laquelle s'appuient les modifications en cours.
+  const [sha, setSha] = useState(baseSha);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{
     kind: "ok" | "error";
@@ -50,7 +52,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
     const res = await fetch("/api/admin/save", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(content),
+      body: JSON.stringify({ content, baseSha: sha }),
     });
     const data = await res.json().catch(() => ({}));
     setSaving(false);
@@ -59,6 +61,7 @@ export default function AdminApp({ initial }: { initial: SiteContent }) {
       return;
     }
     setDirty(false);
+    if (data.sha) setSha(data.sha);
     setMessage({
       kind: "ok",
       text:
