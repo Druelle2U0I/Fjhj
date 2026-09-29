@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
-    ...["mentions-legales", "confidentialite", "cgv", "accessibilite"].map(
+    ...["mentions-legales", "confidentialite", "cgv", "accessibilite", "reglement-interieur"].map(
       (path) => ({
         url: `${base}/${path}`,
         lastModified: now,

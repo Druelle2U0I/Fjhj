@@ -1,0 +1,525 @@
+{
+  "chapters": [
+    {
+      "title": "Dispositions générales",
+      "intro": [],
+      "articles": [
+        {
+          "num": "1.1",
+          "title": "Objet du présent règlement",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "En application des dispositions de l'article L.6352-3 du Code du travail et en vertu de son pouvoir réglementaire général et collectif, la direction d'ENMA Formation fixe ci-après :"
+            },
+            {
+              "kind": "li",
+              "text": "les mesures d'application de la réglementation en matière d'hygiène et de sécurité ;"
+            },
+            {
+              "kind": "li",
+              "text": "les règles générales et permanentes relatives à la discipline."
+            },
+            {
+              "kind": "p",
+              "text": "Elle détermine également, dans le respect des principes définis à l'article L.6352-4 du Code du travail, la nature et l'échelle des sanctions qui pourront être appliquées en cas de manquement aux règles susvisées, et énonce les dispositions relatives aux droits de la défense qui devront accompagner la mise en œuvre de telles sanctions."
+            }
+          ]
+        },
+        {
+          "num": "1.2",
+          "title": "Champ d'application",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les règles issues du présent règlement intérieur s'appliquent à l'ensemble des apprenants de chaque session de formation dispensée par ENMA Formation."
+            }
+          ]
+        },
+        {
+          "num": "1.3",
+          "title": "Caractère obligatoire",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les dispositions instituées par le présent règlement s'imposent de plein droit aux apprenants définis à l'article précédent. Elles n'appellent aucune adhésion individuelle de la part des apprenants auxquels elles sont directement applicables."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hygiène et sécurité",
+      "intro": [
+        {
+          "kind": "p",
+          "text": "Conformément à l'article R.6352-1 du Code du travail, il est rappelé que lorsque la formation se déroule dans un établissement déjà doté d'un règlement intérieur, les mesures de sécurité et d'hygiène applicables sont celles de ce dernier règlement."
+        },
+        {
+          "kind": "p",
+          "text": "Lorsque la formation se déroule dans les locaux de l'organisme de formation ou dans des locaux extérieurs non dotés d'un règlement intérieur, il sera appliqué l'ensemble des dispositions du présent chapitre II — Hygiène et Sécurité."
+        }
+      ],
+      "articles": [
+        {
+          "num": "2.1",
+          "title": "Principes généraux",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "La direction d'ENMA Formation assume la responsabilité de l'hygiène et de la sécurité au sein de l'établissement."
+            },
+            {
+              "kind": "p",
+              "text": "Il lui incombe, à ce titre, de mettre en œuvre et de faire assurer le respect de toutes les dispositions législatives et réglementaires qui s'imposent à elle en raison des caractéristiques de son activité et de son organisation."
+            },
+            {
+              "kind": "p",
+              "text": "Les dispositions revêtant un caractère général font l'objet des paragraphes ci-après. Des mesures spéciales ou ponctuelles pourront intervenir par notes de service lorsque les spécificités de la situation, de l'activité ou de l'organisation de la session de formation l'exigent."
+            }
+          ]
+        },
+        {
+          "num": "2.2",
+          "title": "Respect des mesures d'hygiène et de sécurité",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Il appartient aux formateurs d'encadrer les apprenants et de compléter, aussi fréquemment que nécessaire, l'information des stagiaires en matière de sécurité applicable à l'accomplissement des sessions de formation qu'ils animent, ainsi que de contrôler le respect de ces consignes."
+            },
+            {
+              "kind": "p",
+              "text": "Tout apprenant a le devoir de signaler immédiatement au formateur ou à la direction d'ENMA Formation les mesures urgentes à mettre en œuvre pour faire cesser tout danger."
+            },
+            {
+              "kind": "p",
+              "text": "Tout formateur a le devoir de refuser, sur le lieu de formation, toute personne ne respectant pas les consignes de sécurité et refusant de s'y conformer après notification par ce formateur."
+            }
+          ]
+        },
+        {
+          "num": "2.3",
+          "title": "Lavabos et toilettes",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Chaque apprenant est tenu de laisser en bon état de propreté les lavabos et toilettes mis à sa disposition."
+            }
+          ]
+        },
+        {
+          "num": "2.4",
+          "title": "Repas et boissons",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Il est interdit aux apprenants de prendre leurs repas dans les locaux affectés au déroulement de l'action de formation, sauf autorisation expresse de la direction d'ENMA Formation."
+            },
+            {
+              "kind": "p",
+              "text": "Les apprenants ne doivent pas introduire de boissons alcoolisées sur les lieux du stage."
+            }
+          ]
+        },
+        {
+          "num": "2.5",
+          "title": "Accident et problèmes de santé",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Tout accident, même apparemment bénin, survenu à un stagiaire à l'occasion de la session de formation, doit être immédiatement signalé à la direction d'ENMA Formation, soit par l'intéressé lui-même, soit par toute personne en ayant eu connaissance."
+            },
+            {
+              "kind": "p",
+              "text": "Il est dans l'intérêt des apprenants d'informer le responsable de la formation d'éventuels problèmes de santé (par exemple : maux de dos, problèmes respiratoires, incapacités physiques) afin de permettre, le cas échéant, un aménagement de la session de formation."
+            }
+          ]
+        },
+        {
+          "num": "2.6",
+          "title": "Dispositifs d'hygiène et de sécurité",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les mesures d'hygiène et de sécurité, ainsi que les prescriptions de la médecine du travail qui résultent de la réglementation en vigueur, sont obligatoires pour tous."
+            },
+            {
+              "kind": "p",
+              "text": "À cet effet, les consignes générales et particulières de sécurité applicables dans l'organisme de formation doivent être strictement respectées. Les apprenants doivent :"
+            },
+            {
+              "kind": "li",
+              "text": "utiliser les dispositifs individuels de protection mis à leur disposition, en assurer la conservation et l'entretien ;"
+            },
+            {
+              "kind": "li",
+              "text": "respecter les consignes de sécurité propres à chaque stage ou local ;"
+            },
+            {
+              "kind": "li",
+              "text": "signaler immédiatement au formateur ou à la direction d'ENMA Formation toute défectuosité ou détérioration des dispositifs d'hygiène et de sécurité ;"
+            },
+            {
+              "kind": "li",
+              "text": "signaler immédiatement au formateur ou à la direction d'ENMA Formation tout arrêt ou incident d'appareils ou d'installations de toute nature, ainsi que toute défaillance risquant de compromettre la sécurité ;"
+            },
+            {
+              "kind": "li",
+              "text": "ne pas toucher aux équipements, matériels et éléments des installations électriques sans y être qualifié ni commandé par un responsable et, dans tous les cas, sans être habilité et sans observer les mesures de sécurité ;"
+            },
+            {
+              "kind": "li",
+              "text": "ne pas utiliser de matériel pour lequel ils n'ont pas reçu d'habilitation et/ou d'autorisation ;"
+            },
+            {
+              "kind": "li",
+              "text": "ne pas procéder à une réparation ou à un démontage sans autorisation lorsque cette opération s'effectue hors de la mission normale du stagiaire concerné."
+            }
+          ]
+        },
+        {
+          "num": "2.7",
+          "title": "Dispositifs de lutte contre l'incendie",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Chaque apprenant doit connaître et respecter les consignes de sécurité en cas d'incendie. Il doit veiller au libre accès aux moyens et matériels de lutte contre l'incendie ainsi qu'aux issues de secours."
+            }
+          ]
+        },
+        {
+          "num": "2.8",
+          "title": "Interdiction de fumer et de vapoter",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Il est formellement interdit de fumer à l'intérieur de tous les locaux de l'établissement affectés à un usage collectif. Par locaux à usage collectif, sont concernés non seulement ceux occupés de manière permanente par au moins deux personnes, mais également tous ceux au sein desquels sont susceptibles de passer d'autres personnes que l'occupant habituel, qu'il s'agisse d'apprenants, du personnel de l'organisme ou de personnes extérieures. Une affichette rappelant cette interdiction est apposée dans les locaux visés."
+            },
+            {
+              "kind": "p",
+              "text": "Le non-respect de cette interdiction, de même que l'usage de la cigarette électronique (vapotage) dans les mêmes locaux, donnera lieu au prononcé d'une sanction disciplinaire."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Discipline",
+      "intro": [],
+      "articles": [
+        {
+          "num": "3.1",
+          "title": "Horaires des sessions de formation",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les horaires des sessions de formation sont fixés par l'organisme de formation, en relation avec le client."
+            },
+            {
+              "kind": "p",
+              "text": "Ils sont portés à la connaissance des apprenants à l'occasion de la remise du programme de formation au client, ce dernier se chargeant d'en avertir les apprenants participant à la session. Les apprenants sont tenus de respecter ces horaires."
+            },
+            {
+              "kind": "p",
+              "text": "Le formateur se réserve, dans les limites imposées par les dispositions en vigueur, le droit de modifier les horaires de stage en fonction des nécessités de service. Les apprenants doivent se conformer aux modifications apportées par le formateur à l'organisation de la session de formation."
+            },
+            {
+              "kind": "p",
+              "text": "Les horaires des sessions de formation devront être respectés scrupuleusement, sous peine d'application de sanctions disciplinaires. Les retardataires devront faire connaître immédiatement au formateur les motifs de leur retard. En fonction des conditions de fonctionnement de la session, il pourra être imposé au retardataire de ne reprendre effectivement la formation qu'à l'heure indiquée par le formateur. Les retards réitérés et non justifiés peuvent entraîner l'une des sanctions prévues par le présent règlement intérieur."
+            }
+          ]
+        },
+        {
+          "num": "3.2",
+          "title": "Présence à la session de formation",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Pendant la durée de la session de formation, les apprenants doivent se comporter de façon professionnelle, en s'interdisant de s'absenter de la formation en dehors des pauses préalablement convenues ou des nécessités d'accomplissement et d'aménagement de la session."
+            }
+          ]
+        },
+        {
+          "num": "3.3",
+          "title": "Obligations des apprenants en cas d'absence",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "La direction d'ENMA Formation doit être prévenue par tout moyen dès le début d'une absence."
+            },
+            {
+              "kind": "p",
+              "text": "Toute absence prévisible pour motif personnel doit être préalablement autorisée par la direction d'ENMA Formation. Cette autorisation est subordonnée au respect d'un délai de prévenance de trois (3) jours."
+            },
+            {
+              "kind": "p",
+              "text": "Cette obligation ne vise pas les situations imprévisibles ou de force majeure, qui devront être portées à la connaissance de la direction dans les plus brefs délais."
+            }
+          ]
+        },
+        {
+          "num": "3.4",
+          "title": "Matériels et documents",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Chaque apprenant a l'obligation de conserver en bon état le matériel et les documents pédagogiques qui lui sont confiés."
+            },
+            {
+              "kind": "p",
+              "text": "À la fin de chaque session de formation, tout apprenant doit restituer au formateur tout matériel et document en sa possession appartenant à ENMA Formation."
+            }
+          ]
+        },
+        {
+          "num": "3.5",
+          "title": "Comportement général",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les valeurs portées par ENMA Formation ainsi que l'exigence de qualité des rapports internes justifient que chacun s'efforce de faire preuve, en toutes circonstances, de courtoisie, de respect de l'autre, de discrétion et de politesse. Les règles de comportement général et de bonne marche de l'organisme de formation interdisent donc formellement :"
+            },
+            {
+              "kind": "li",
+              "text": "d'avoir une attitude incorrecte vis-à-vis des autres apprenants ;"
+            },
+            {
+              "kind": "li",
+              "text": "de consacrer le temps de la session de formation à des occupations étrangères à celle-ci ;"
+            },
+            {
+              "kind": "li",
+              "text": "de conserver des dossiers ou des documents au domicile privé sans autorisation expresse et écrite de la direction d'ENMA Formation ;"
+            },
+            {
+              "kind": "li",
+              "text": "de mettre en circulation des listes de souscriptions, collectes, loteries, pétitions ou adhésions, à but politique ou non ;"
+            },
+            {
+              "kind": "li",
+              "text": "d'organiser des quêtes non autorisées ;"
+            },
+            {
+              "kind": "li",
+              "text": "de se livrer à quelque négoce que ce soit ;"
+            },
+            {
+              "kind": "li",
+              "text": "d'emporter, sans autorisation expresse et écrite du formateur, des objets appartenant à l'organisme de formation ou aux établissements d'accueil ;"
+            },
+            {
+              "kind": "li",
+              "text": "de se trouver en état d'ébriété ou sous l'emprise de stupéfiants."
+            }
+          ]
+        },
+        {
+          "num": "3.6",
+          "title": "Entrées et sorties",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les entrées et sorties des apprenants s'effectuent en empruntant les itinéraires et issues prévus à cet effet. Il est interdit de pénétrer dans les locaux ou d'en sortir par toute autre issue."
+            },
+            {
+              "kind": "p",
+              "text": "Les apprenants n'ont accès aux locaux de l'organisme de formation que dans le cadre de l'exécution de leur session de formation ; ils n'ont aucun droit d'entrer ou de se maintenir sur les lieux pour une autre cause, sauf autorisation écrite du formateur ou de la direction d'ENMA Formation."
+            },
+            {
+              "kind": "p",
+              "text": "Il est en outre interdit d'introduire, dans l'organisme de formation ou dans la session de formation, des personnes étrangères à celle-ci, sauf accord du formateur ou de la direction d'ENMA Formation. Les sorties pendant les heures de formation doivent demeurer exceptionnelles ; elles sont subordonnées à une autorisation expresse du formateur."
+            }
+          ]
+        },
+        {
+          "num": "3.7",
+          "title": "Téléphone et moyens de communication",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Sauf autorisation expresse du formateur ou de la direction d'ENMA Formation, l'usage du téléphone à des fins privées est proscrit pendant les temps de formation."
+            },
+            {
+              "kind": "p",
+              "text": "Les apprenants ne sont pas habilités à se faire expédier des correspondances ou colis personnels à l'adresse de l'organisme de formation ou de l'établissement d'accueil."
+            }
+          ]
+        },
+        {
+          "num": "3.8",
+          "title": "Tenue vestimentaire",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les apprenants sont invités à se présenter au lieu de formation en tenue décente et à adopter un comportement correct à l'égard de toute personne présente à la formation et dans l'établissement où elle se déroule."
+            }
+          ]
+        },
+        {
+          "num": "3.9",
+          "title": "Propriété intellectuelle",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Il est formellement interdit d'enregistrer, de photographier ou de filmer les sessions de formation, ainsi que les supports filmés ou tout autre support pédagogique."
+            },
+            {
+              "kind": "p",
+              "text": "La documentation pédagogique remise lors des sessions de formation est protégée au titre des droits d'auteur et ne peut être utilisée autrement que pour un strict usage lié à la session de formation concernée."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Droit disciplinaire et droits de la défense des stagiaires",
+      "intro": [],
+      "articles": [
+        {
+          "num": "4.1",
+          "title": "Champ d'application",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "La discipline au sein de l'établissement est constituée par l'ensemble des règles qui ont pour objet l'organisation collective du stage, de l'hygiène et de la sécurité, telles qu'elles ont été définies aux titres II et III ci-dessus. Les actes fautifs qui donneront lieu à des poursuites disciplinaires seront notamment les suivants :"
+            },
+            {
+              "kind": "li",
+              "text": "se rendre coupable de vol ou de détérioration volontaire de tout matériel ;"
+            },
+            {
+              "kind": "li",
+              "text": "avoir une attitude incorrecte ou agressive à l'égard des autres stagiaires, du formateur ou de tout représentant d'ENMA Formation ;"
+            },
+            {
+              "kind": "li",
+              "text": "être en état d'ébriété ou sous l'emprise de stupéfiants ;"
+            },
+            {
+              "kind": "li",
+              "text": "entraver, de quelque manière que ce soit, le bon déroulement de la formation."
+            }
+          ]
+        },
+        {
+          "num": "4.2",
+          "title": "Sanctions",
+          "blocks": []
+        },
+        {
+          "num": "4.2.1",
+          "title": "Définition",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Conformément à l'article R.6352-3 du Code du travail, une sanction constitue toute mesure, autre que les observations verbales, prise par le directeur de l'organisme de formation à la suite d'un agissement d'un stagiaire considéré par lui comme fautif, que cette mesure soit de nature à affecter immédiatement ou non la présence de l'intéressé dans la session de formation, ou à mettre en cause la continuité de la formation qu'il reçoit."
+            }
+          ]
+        },
+        {
+          "num": "4.2.2",
+          "title": "Nature des sanctions",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les sanctions susceptibles d'être mises en œuvre au sein d'ENMA Formation sont les suivantes :"
+            },
+            {
+              "kind": "li",
+              "text": "l'avertissement : cette mesure, destinée à sanctionner un agissement fautif, constitue un rappel à l'ordre sans incidence, immédiate ou non, sur la présence de l'apprenant dans la session de formation. L'avertissement doit obligatoirement être formulé par écrit et faire l'objet d'une reconnaissance de réception par le destinataire (soit sous forme manuscrite et signée, soit par l'envoi d'une lettre recommandée avec accusé de réception) ;"
+            },
+            {
+              "kind": "li",
+              "text": "l'exclusion temporaire de la session de formation ;"
+            },
+            {
+              "kind": "li",
+              "text": "l'exclusion définitive de la session de formation : cette mesure entraîne l'interruption définitive de la participation de l'apprenant à la session de formation à laquelle il était inscrit."
+            }
+          ]
+        },
+        {
+          "num": "4.2.3",
+          "title": "Échelle des sanctions",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Les sanctions définies à l'article précédent sont énumérées selon un ordre de gravité croissant. Le choix de la sanction dans l'échelle ainsi définie sera fonction de la gravité de la faute."
+            }
+          ]
+        },
+        {
+          "num": "4.3",
+          "title": "Procédures disciplinaires et droits de la défense",
+          "blocks": []
+        },
+        {
+          "num": "4.3.1",
+          "title": "Procédures disciplinaires simples",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Conformément aux dispositions de l'article R.6352-4 du Code du travail, il est rappelé que l'apprenant sera préalablement informé des griefs établis contre lui."
+            },
+            {
+              "kind": "p",
+              "text": "Les simples avertissements écrits font l'objet d'une notification à l'apprenant concerné, précisant les griefs retenus contre lui. Cette notification est effectuée :"
+            },
+            {
+              "kind": "li",
+              "text": "soit par lettre remise en main propre contre signature d'un exemplaire, avec la mention manuscrite de la date de réception ;"
+            },
+            {
+              "kind": "li",
+              "text": "soit par lettre recommandée avec accusé de réception."
+            }
+          ]
+        },
+        {
+          "num": "4.3.2",
+          "title": "Procédure en cas d'exclusion temporaire ou définitive",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Lorsque le directeur de l'organisme de formation ou son représentant envisage de prendre une sanction ayant une incidence, immédiate ou non, sur la présence d'un apprenant dans une formation, il est procédé comme suit :"
+            },
+            {
+              "kind": "ol",
+              "text": "Le directeur ou son représentant convoque l'apprenant en lui indiquant l'objet de cette convocation. Celle-ci précise la date, l'heure et le lieu de l'entretien ; elle est écrite et adressée par lettre recommandée ou remise à l'intéressé contre décharge."
+            },
+            {
+              "kind": "ol",
+              "text": "Au cours de l'entretien, l'apprenant peut se faire assister par la personne de son choix, notamment le délégué de stage s'il existe. La convocation mentionnée au point 1 fait état de cette faculté."
+            },
+            {
+              "kind": "ol",
+              "text": "Le directeur ou son représentant indique le motif de la sanction envisagée et recueille les explications de l'apprenant."
+            },
+            {
+              "kind": "p",
+              "text": "Conformément aux dispositions de l'article R.6352-6 du Code du travail, la sanction ne peut alors intervenir moins d'un jour franc ni plus de quinze jours après l'entretien. Elle fait l'objet d'une décision écrite et motivée, notifiée à l'apprenant par lettre recommandée ou remise contre récépissé."
+            },
+            {
+              "kind": "p",
+              "text": "Lorsque l'agissement a rendu indispensable une mesure conservatoire d'exclusion temporaire à effet immédiat, aucune sanction définitive relative à cet agissement ne peut être prise sans que la procédure prévue à l'article R.6352-4 du Code du travail et, éventuellement, aux articles R.6352-5 et R.6352-6 du même code, ait été observée."
+            }
+          ]
+        },
+        {
+          "num": "4.3.3",
+          "title": "Mise à pied à titre conservatoire",
+          "blocks": [
+            {
+              "kind": "p",
+              "text": "Lorsque l'agissement de l'apprenant rend indispensable une mesure conservatoire de mise à pied à effet immédiat, cette mesure lui sera notifiée de vive voix au moment où elle s'impose, puis confirmée ensuite par écrit. L'apprenant devra s'y conformer immédiatement."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "closing": {
+    "text": "Le présent règlement intérieur est établi conformément aux articles L.6352-3 à L.6352-5 et R.6352-1 à R.6352-15 du Code du travail. Il est remis à chaque apprenant préalablement à son entrée en formation et affiché dans les locaux de formation. Il entre en vigueur à compter du 10/07/2026.",
+    "signed": "Fait à Wingles, le 09/07/2026 — pour ENMA Formation, la Direction."
+  }
+}

@@ -24,6 +24,31 @@ export default function AccessibilitePage() {
         <strong>Référent handicap :</strong> {accessibility.referent} — {mail}.
       </p>
 
+      {accessibility.pmrIntro && accessibility.pmrIntro.length > 0 && (
+        <>
+          <h2 id="acces-pmr">Accès PMR</h2>
+          {accessibility.pmrIntro.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+          {accessibility.pmrMeasures && accessibility.pmrMeasures.length > 0 && (
+            <ul>
+              {accessibility.pmrMeasures.map((m) => (
+                <li key={m.title}>
+                  <strong>{m.title} :</strong> {m.text}
+                </li>
+              ))}
+            </ul>
+          )}
+          {accessibility.pmrDocument && (
+            <p>
+              <a href={accessibility.pmrDocument} target="_blank" rel="noopener noreferrer">
+                Télécharger le document « Accès PMR » (PDF)
+              </a>
+            </p>
+          )}
+        </>
+      )}
+
       <h2>Accessibilité du site</h2>
       <p>
         {company.name} veille à ce que son site soit utilisable par le plus

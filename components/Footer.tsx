@@ -48,6 +48,7 @@ const NO_NEWSLETTER = [
   "/confidentialite",
   "/cgv",
   "/accessibilite",
+  "/reglement-interieur",
 ];
 
 function NewsletterForm() {
@@ -298,6 +299,9 @@ export default function Footer() {
                 </Link>
                 <Link href="/accessibilite" className="hover:text-surface-accent">
                   Accessibilité
+                </Link>
+                <Link href="/reglement-interieur" className="hover:text-surface-accent">
+                  Règlement intérieur
                 </Link>
               </nav>
               {(activityDeclarationText() || (!legal.qualiopiCertificate && qualiopiText())) && (

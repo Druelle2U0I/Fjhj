@@ -230,6 +230,8 @@ export type SiteContent = {
     resultsIndicators?: string;
     qualiopiLogo?: string;
     qualiopiCertificateUrl?: string;
+    // Règlement intérieur en PDF (téléchargeable depuis sa page).
+    rulesDocument?: string;
     // Photo d'en-tête des pages légales (mentions, CGV, confidentialité, accessibilité).
     heroImage?: string;
     heroImageAlt?: string;
@@ -253,7 +255,14 @@ export type SiteContent = {
     stepsText?: string;
     steps?: { title: string; text: string }[];
   };
-  accessibility: { text: string; referent: string };
+  accessibility: {
+    text: string;
+    referent: string;
+    // Accès PMR : paragraphes d'explication puis aménagements possibles.
+    pmrIntro?: string[];
+    pmrMeasures?: { title: string; text: string }[];
+    pmrDocument?: string;
+  };
   team: {
     name: string;
     role: string;

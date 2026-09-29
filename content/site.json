@@ -29,8 +29,9 @@
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras",
     "qualiopiLogo": "/images/action-formations-qualiopi-1790260002712.png",
-    "qualiopiCertificateUrl": "",
-    "accessDelayShort": "10 jours ouvrés en inter, une fois l'accord du financeur obtenu. En intra ou sur mesure : planning prévisionnel établi selon vos besoins. Plus rapide en cas d'urgence, sur demande."
+    "qualiopiCertificateUrl": "/documents/certificat-qualiopi-10122288.pdf",
+    "accessDelayShort": "10 jours ouvrés en inter, une fois l'accord du financeur obtenu. En intra ou sur mesure : planning prévisionnel établi selon vos besoins. Plus rapide en cas d'urgence, sur demande.",
+    "rulesDocument": "/documents/reglement-interieur-enma-formation.pdf"
   },
   "stats": [
     {
@@ -1690,7 +1691,34 @@
   },
   "accessibility": {
     "text": "ENMA Formation s'engage à rechercher, en lien avec chaque client, des solutions d'adaptation pour favoriser l'accueil des personnes en situation de handicap (allongement des sessions, pauses plus fréquentes, supports adaptés, salles accessibles). Les demandes d'aménagement sont à formuler avant l'inscription auprès de notre référent handicap.",
-    "referent": "Maxence Druelle-Fourniez, référent handicap"
+    "referent": "Maxence Druelle-Fourniez, référent handicap",
+    "pmrIntro": [
+      "ENMA Formation organise ses sessions dans les locaux des entreprises clientes ou dans des salles standard qui ne sont pas spécifiquement conçues pour la formation, mais qui sont équipées en conséquence. En raison de cette modalité d'accueil, les sessions de formation ne sont pas accessibles aux personnes en situation de handicap.",
+      "Cependant, en collaboration avec le client, ENMA Formation s'engage activement à rechercher des solutions pour favoriser l'inclusion des personnes en situation de handicap et permettre leur participation. Pour ce faire, divers aménagements peuvent être envisagés avant les sessions de formation :"
+    ],
+    "pmrMeasures": [
+      {
+        "title": "Allongement de la session",
+        "text": "Cette option permet d'améliorer la compréhension et la concentration des personnes ayant des troubles de l'attention, en leur offrant plus de temps pour assimiler les informations."
+      },
+      {
+        "title": "Augmentation des pauses",
+        "text": "Des pauses supplémentaires sont prévues pour aider les personnes ayant des difficultés d'attention à maintenir leur concentration tout au long de la session."
+      },
+      {
+        "title": "Adaptation des supports",
+        "text": "ENMA Formation offre la possibilité d'envoyer, sur demande, des documents adaptés aux personnes ayant des problèmes de vision ou de mémorisation, garantissant ainsi un accès égal à tous les participants."
+      },
+      {
+        "title": "Choix de salles accessibles",
+        "text": "La sélection de salles situées en rez-de-chaussée ou accessibles par ascenseur est privilégiée pour faciliter les déplacements des personnes ayant des difficultés de mobilité."
+      },
+      {
+        "title": "Sessions systématiques dans les locaux de l'entreprise",
+        "text": "Cette option est proposée pour les personnes ayant de grandes difficultés de mobilité, afin de réduire les obstacles liés au transport."
+      }
+    ],
+    "pmrDocument": "/documents/acces-pmr-enma-formation.pdf"
   },
   "team": [
     {
