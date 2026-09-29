@@ -422,7 +422,9 @@
             "Cette formation permet au participant de comprendre les risques électriques, d'exécuter les travaux qui lui sont confiés dans le respect des instructions reçues, et de réagir de manière adaptée en cas de situation imprévue au voisinage d'une installation sous tension."
           ],
           "audience": "Cette formation s'adresse aux électriciens débutant une activité de travaux sur des installations basse tension, appelés à exécuter des travaux sous les ordres d'un chargé de travaux. Aucun prérequis n'est exigé, mais une aptitude médicale au poste de travail délivrée par le médecin du travail est nécessaire avant toute habilitation.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Le titre d'habilitation n'est jamais délivré par l'organisme de formation, mais par l'employeur, sur la base des résultats aux évaluations théorique et pratique que nous lui transmettons à l'issue de la session."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Le titre d'habilitation n'est jamais délivré par l'organisme de formation, mais par l'employeur, sur la base des résultats aux évaluations théorique et pratique que nous lui transmettons à l'issue de la session.",
+          "image": "/images/habilitation-b1-multimetre-1790689131.jpg",
+          "imageAlt": "Électricien casqué, en gilet et gants de protection, relevant une mesure au multimètre sur un tableau électrique basse tension"
         },
         {
           "title": "B2 / B2V — Chargé de travaux électriques basse tension",
@@ -480,7 +482,9 @@
             "Cette formation prépare le participant à réaliser ces interventions en sécurité, à utiliser correctement le matériel de mesure et de vérification, et à rendre compte de son intervention conformément à la norme NF C 18-510."
           ],
           "audience": "Cette formation s'adresse aux électriciens de maintenance amenés à intervenir seuls pour du dépannage, du raccordement ou du remplacement de matériel sur des installations basse tension. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "image": "/images/habilitation-br-armoire-exterieure-1790689131.jpg",
+          "imageAlt": "Technicien en tenue haute visibilité et gants intervenant dans une armoire électrique extérieure"
         },
         {
           "title": "BC — Chargé de consignation basse tension",
@@ -509,7 +513,9 @@
             "Cette formation prépare le participant à appliquer les 4 étapes de la consignation, à communiquer clairement avec le chargé de travaux, et à assumer la responsabilité qui accompagne ce rôle."
           ],
           "audience": "Cette formation s'adresse aux électriciens amenés à réaliser des consignations basse tension pour le compte d'autrui, généralement déjà habilités B2V ou BR. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "image": "/images/habilitation-bc-gants-isolants-1790689131.jpg",
+          "imageAlt": "Électricien portant des gants isolants orange vérifiant l'absence de tension sur un tableau électrique"
         },
         {
           "title": "BE Mesurage / Essai / Vérification",
@@ -538,7 +544,9 @@
             "Cette formation prépare le participant à réaliser en sécurité l'opération qui lui est confiée, avec le matériel de mesure et de contrôle adapté, dans le respect de la norme NF C 18-510."
           ],
           "audience": "Cette formation s'adresse au personnel technique réalisant des opérations de mesure, d'essai ou de vérification sur des installations basse tension : bureaux d'études, contrôle qualité, maintenance. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "image": "/images/habilitation-be-mesure-1790689131.jpg",
+          "imageAlt": "Mains gantées tenant un multimètre pour un mesurage sur une armoire électrique"
         },
         {
           "title": "BP — Habilitation photovoltaïque",
@@ -596,7 +604,9 @@
             "Cette formation permet au participant de comprendre les risques propres à la haute tension, de respecter les distances de sécurité, et de savoir réagir en cas d'incident, sans nécessiter de connaissances électriques préalables."
           ],
           "audience": "Cette formation s'adresse au personnel non électricien travaillant ou circulant à proximité d'ouvrages haute tension : agents d'entretien, personnel de chantier, personnel d'exploitation. Aucun prérequis n'est exigé.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "image": "/images/habilitation-h0-pylone-1790689131.jpg",
+          "imageAlt": "Deux intervenants casqués en gilet de sécurité observant un pylône et des lignes haute tension"
         },
         {
           "title": "H1 / H1V — Exécutant électricien haute tension",
