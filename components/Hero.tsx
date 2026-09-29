@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="home-hero relative -mt-[86px] overflow-hidden bg-surface px-6 pt-[126px] pb-8 sm:-mt-[98px] sm:pb-10 sm:pt-[154px]"
+      className="home-hero relative -mt-[86px] overflow-hidden bg-surface px-6 pt-[126px] pb-6 sm:-mt-[98px] sm:pb-8 sm:pt-[154px]"
     >
       {hasVideo ? (
         <HeroBackgroundVideo
@@ -55,7 +55,7 @@ export default function Hero() {
         </div>
 
         {/* Bandeau d'informations en bas du bandeau d'accueil */}
-        <ul className="mt-14 flex flex-wrap gap-x-8 gap-y-2 border-t border-current/20 pt-5 text-xs uppercase tracking-[0.18em] opacity-80">
+        <ul className="mt-20 flex flex-wrap gap-x-8 sm:mt-32 gap-y-2 border-t border-current/20 pt-5 text-xs uppercase tracking-[0.18em] opacity-80">
           {legal.qualiopiCertificate && <li>Certifié Qualiopi n° {legal.qualiopiCertificate}</li>}
           <li>Prise en charge OPCO</li>
           <li>Nord · Pas-de-Calais · Aisne · Somme · Oise</li>
