@@ -488,7 +488,8 @@
           "audience": "Cette formation s'adresse aux électriciens de maintenance amenés à intervenir seuls pour du dépannage, du raccordement ou du remplacement de matériel sur des installations basse tension. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-br-armoire-exterieure-1790689131.jpg",
-          "imageAlt": "Technicien en tenue haute visibilité et gants intervenant dans une armoire électrique extérieure"
+          "imageAlt": "Technicien en tenue haute visibilité et gants intervenant dans une armoire électrique extérieure",
+          "heroImage": "/images/18-1790690236313.jpg"
         },
         {
           "title": "BC — Chargé de consignation basse tension",
@@ -519,7 +520,9 @@
           "audience": "Cette formation s'adresse aux électriciens amenés à réaliser des consignations basse tension pour le compte d'autrui, généralement déjà habilités B2V ou BR. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-bc-gants-isolants-1790689131.jpg",
-          "imageAlt": "Électricien portant des gants isolants orange vérifiant l'absence de tension sur un tableau électrique"
+          "imageAlt": "Électricien portant des gants isolants orange vérifiant l'absence de tension sur un tableau électrique",
+          "imagePosition": "right center",
+          "heroImage": "/images/19-1790690252993.jpg"
         },
         {
           "title": "BE Mesurage / Essai / Vérification",
@@ -550,7 +553,8 @@
           "audience": "Cette formation s'adresse au personnel technique réalisant des opérations de mesure, d'essai ou de vérification sur des installations basse tension : bureaux d'études, contrôle qualité, maintenance. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-be-mesure-1790689131.jpg",
-          "imageAlt": "Mains gantées tenant un multimètre pour un mesurage sur une armoire électrique"
+          "imageAlt": "Mains gantées tenant un multimètre pour un mesurage sur une armoire électrique",
+          "heroImage": "/images/20-1790690263612.jpg"
         },
         {
           "title": "BP — Habilitation photovoltaïque",
@@ -579,7 +583,9 @@
             "Cette formation prépare le participant à identifier ces risques spécifiques et à intervenir en sécurité sur les installations de production photovoltaïque, dans le respect de la norme NF C 18-510."
           ],
           "audience": "Cette formation s'adresse aux installateurs et techniciens amenés à intervenir sur des installations de production photovoltaïque. Une aptitude médicale au poste de travail est nécessaire avant toute habilitation.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "heroImage": "/images/photo-secteur-arriere-plan-virtuel-zoom-1790690414248.jpg",
+          "image": "/images/photo-secteur-1920-x-1080-px-1790690422611.jpg"
         },
         {
           "title": "H0 / H0V — Non-électricien à proximité d'ouvrages HT",
@@ -640,7 +646,9 @@
             "Cette formation prépare le participant à exécuter ces travaux dans le respect strict des distances de sécurité renforcées propres à la haute tension et des instructions du chargé de travaux."
           ],
           "audience": "Cette formation s'adresse aux électriciens confirmés, généralement déjà habilités en basse tension, amenés à exécuter des travaux sur des installations haute tension sous la direction d'un chargé de travaux. Une aptitude médicale au poste de travail est nécessaire.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
+          "image": "/images/28-1790690459683.jpg",
+          "heroImage": "/images/28-1790690470478.jpg"
         },
         {
           "title": "H2 / H2V — Chargé de travaux haute tension",
@@ -673,7 +681,9 @@
             "Cette formation prépare le participant à mettre en œuvre la procédure de consignation haute tension, à encadrer une équipe d'exécutants H1/H1V, et à réaliser les essais qui lui sont confiés, dans le respect de la norme NF C 18-510."
           ],
           "audience": "Personnel électricien confirmé amené à diriger des travaux sur des installations haute tension, généralement déjà habilité en basse tension. Une expérience préalable sur des installations électriques est fortement recommandée.",
-          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Comme pour la basse tension, le titre d'habilitation haute tension est délivré par l'employeur, jamais par l'organisme de formation, sur la base des résultats aux évaluations que nous lui transmettons."
+          "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Comme pour la basse tension, le titre d'habilitation haute tension est délivré par l'employeur, jamais par l'organisme de formation, sur la base des résultats aux évaluations que nous lui transmettons.",
+          "image": "/images/26-1790690497389.jpg",
+          "heroImage": "/images/26-1790690508716.jpg"
         },
         {
           "title": "HC — Chargé de consignation haute tension",
@@ -705,7 +715,6 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-hc-armoire-paysage-1790689926.jpg",
           "heroImage": "/images/habilitation-hc-armoire-paysage-1790689926.jpg",
-          "imagePosition": "right center",
           "imageAlt": "Technicien casqué accroupi devant une armoire électrique ouverte, un bloc-notes à la main"
         },
         {
@@ -736,8 +745,6 @@
           ],
           "audience": "Cette formation s'adresse au personnel technique réalisant des opérations de manœuvre, de mesure, d'essai ou de vérification sur des installations haute tension : exploitation, maintenance. Une expérience préalable en électricité est recommandée.",
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
-          "image": "/images/habilitation-he-multimetre-paysage-1790689926.jpg",
-          "heroImage": "/images/habilitation-he-multimetre-paysage-1790689926.jpg",
           "imagePosition": "center center",
           "imageAlt": "Technicien en gilet haute visibilité tenant un multimètre et ses pointes de touche devant une armoire"
         }
