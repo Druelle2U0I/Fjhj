@@ -34,12 +34,12 @@ export default function FundingSteps() {
     // Présentation comme « À propos » sur l'accueil : le texte d'un côté,
     // une grande carte des étapes de l'autre.
     <div className="mt-14 grid items-center gap-8 sm:grid-cols-[1fr_1.25fr] sm:gap-10 lg:gap-14">
-      <Reveal className="text-center sm:text-left">
+      <Reveal className="text-center">
         {funding.stepsTitle && (
-          <h2 className="mx-auto max-w-md text-xl sm:mx-0 sm:text-2xl">{funding.stepsTitle}</h2>
+          <h2 className="mx-auto max-w-md text-xl sm:text-2xl">{funding.stepsTitle}</h2>
         )}
         {funding.stepsText && (
-          <p className="mx-auto mt-4 max-w-md text-base text-muted sm:mx-0 sm:text-lg">
+          <p className="mx-auto mt-4 max-w-md text-base text-muted sm:text-lg">
             {funding.stepsText}
           </p>
         )}
