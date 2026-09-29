@@ -264,6 +264,10 @@ export type SiteContent = {
     // Source affichée sous les chiffres clés (pour le pourcentage de
     // recommandation), précédée d'un astérisque.
     statsNote?: string;
+    // Titre de l'onglet du navigateur et des résultats Google.
+    seoTitle?: string;
+    // Description affichée par Google sous ce titre.
+    seoDescription?: string;
     // Contenu de la bande : toutes les formations (par défaut) ou les
     // photos choisies à la main.
     marqueeSource?: "trainings" | "slides";
@@ -327,10 +331,6 @@ export type RecommendationSource = {
 export type Pages = {
   hero: {
     badge: string;
-    // Titre et texte du haut de l'accueil (sinon : slogan et description
-    // de « Coordonnées »).
-    title?: string;
-    text?: string;
     primaryButton: string;
     secondaryButton: string;
   };
@@ -390,8 +390,6 @@ export type Pages = {
     accessTitle: string;
     // Stationnement, accessibilité, horaires… (paragraphes séparés par une ligne vide).
     accessText?: string;
-    domainsEyebrow: string;
-    domainsTitle: string;
     ctaTitle: string;
     ctaText: string;
     ctaButton: string;

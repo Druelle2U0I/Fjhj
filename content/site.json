@@ -1828,7 +1828,9 @@
       "introColor": "#f4f2d4",
       "surfaceForeground": "#fbffda",
       "titleColor": "#fbffda"
-    }
+    },
+    "seoTitle": "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France",
+    "seoDescription": "Formations sécurité incendie, secourisme, habilitation électrique, CACES, travail en hauteur, prévention des risques, management et photovoltaïque. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO, en intra et inter-entreprises dans les Hauts-de-France."
   },
   "theme": {
     "background": "#f4f2d4",
@@ -1916,8 +1918,6 @@
       "accessEyebrow": "Accès",
       "accessTitle": "Venir au centre",
       "accessText": "Stationnement : places de parking devant le centre et à proximité immédiate.\n\nAccessibilité : le centre est accessible aux personnes à mobilité réduite.\n\nHoraires d'accueil : du lundi au vendredi, de 9 h à 18 h.",
-      "domainsEyebrow": "Nos domaines",
-      "domainsTitle": "{domaines} domaines de formation, du terrain jusqu'au bureau d'études",
       "ctaTitle": "Un projet de formation pour vos équipes ?",
       "ctaText": "Décrivez votre besoin : nous vous répondons sous 24 heures avec une proposition adaptée et le montage du dossier de financement.",
       "ctaButton": "Nous contacter",

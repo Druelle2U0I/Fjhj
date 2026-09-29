@@ -28,17 +28,6 @@ const SEO_HINT =
 // modèles partagés par plusieurs pages comme « sector » ou « training »).
 const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; colors?: boolean }[] = [
   {
-    key: "hero",
-    title: "Accueil — haut de page",
-    fields: [
-      { key: "badge", label: "Petit texte au-dessus du titre (ex. « ORGANISME DE FORMATION · HAUTS-DE-FRANCE »)" },
-      { key: "title", label: "Grand titre", rows: 2 },
-      { key: "text", label: "Texte sous le titre", rows: 3 },
-      { key: "primaryButton", label: "Bouton principal" },
-      { key: "secondaryButton", label: "Bouton secondaire" },
-    ],
-  },
-  {
     key: "catalogue",
     title: "Catalogue (Nos formations)",
     colors: true,
@@ -125,8 +114,6 @@ const PAGES: { key: PageKey; title: string; hint?: string; fields: FieldSpec[]; 
         rows: 5,
         hint: "Stationnement, accessibilité aux personnes à mobilité réduite, horaires d'accueil… L'adresse, le bouton Itinéraire et le téléphone s'affichent automatiquement. Laissez une ligne vide entre deux paragraphes.",
       },
-      { key: "domainsEyebrow", label: "Domaines — sur-titre" },
-      { key: "domainsTitle", label: "Domaines — titre", hint: COUNTS_HINT },
       { key: "ctaTitle", label: "Appel final — titre" },
       { key: "ctaText", label: "Appel final — texte", rows: 2 },
       { key: "ctaButton", label: "Appel final — bouton" },

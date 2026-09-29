@@ -3,12 +3,12 @@
 import { Fragment, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import type { SiteContent, Stat } from "@/lib/data";
+import type { HomeSection, HomeSectionId, SiteContent, Stat } from "@/lib/data";
 import SectorsEditor from "./SectorsEditor";
 import DesignEditor from "./DesignEditor";
 import PageColorsEditor from "./PageColorsEditor";
 import PagesEditor from "./PagesEditor";
-import { Card, Field, ImageField, ListEditor, VideoField } from "./ui";
+import { Card, Field, ImageField, ListEditor, SmallButton, VideoField } from "./ui";
 
 // Menu par page du site, puis réglages communs à tout le site.
 const SECTIONS = [
@@ -27,6 +27,37 @@ const SECTIONS = [
 
 type SectionId = (typeof SECTIONS)[number]["id"];
 
+const SECTION_NAMES: Record<HomeSectionId, string> = {
+  formations: "Secteurs",
+  about: "À propos",
+  financement: "Financement",
+  faq: "FAQ",
+  contact: "Contact",
+};
+
+function BlockTitle({ n, title }: { n?: number; title: string }) {
+  return (
+    <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
+      {n ? `${n}. ` : ""}
+      {title}
+    </p>
+  );
+}
+
+function Check({ label, checked, onChange }: { label: string; checked: boolean; onChange: (c: boolean) => void }) {
+  return (
+    <label className="flex items-center gap-3 text-sm">
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={(e) => onChange(e.target.checked)}
+        className="h-4 w-4 accent-[color:var(--accent)]"
+      />
+      {label}
+    </label>
+  );
+}
+
 export default function AdminApp({ initial, baseSha }: { initial: SiteContent; baseSha?: string }) {
   const router = useRouter();
   const [content, setContent] = useState<SiteContent>(initial);
@@ -44,6 +75,36 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
     setContent(next);
     setDirty(true);
     setMessage(null);
+  };
+
+  const setHome = (patch: Partial<SiteContent["home"]>) =>
+    update({ ...content, home: { ...content.home, ...patch } });
+  const setHero = (patch: Partial<SiteContent["pages"]["hero"]>) =>
+    update({ ...content, pages: { ...content.pages, hero: { ...content.pages.hero, ...patch } } });
+  const homeSection = (id: HomeSectionId) => content.home.sections.find((s) => s.id === id);
+  const setHomeSection = (id: HomeSectionId, patch: Partial<HomeSection>) =>
+    setHome({ sections: content.home.sections.map((s) => (s.id === id ? { ...s, ...patch } : s)) });
+  const moveSection = (id: HomeSectionId, delta: number) => {
+    const list = [...content.home.sections];
+    const i = list.findIndex((s) => s.id === id);
+    let j = i + delta;
+    // Les secteurs et le contact ne se déplacent pas ici.
+    while (list[j] && (list[j].id === "formations" || list[j].id === "contact")) j += delta;
+    if (i < 0 || !list[j]) return;
+    [list[i], list[j]] = [list[j], list[i]];
+    setHome({ sections: list });
+  };
+  // Petit texte, titre et texte d'une section de l'accueil.
+  const sectionFields = (id: HomeSectionId) => {
+    const sec = homeSection(id);
+    if (!sec) return null;
+    return (
+      <>
+        <Field label="Petit texte au-dessus du titre" value={sec.eyebrow} onChange={(v) => setHomeSection(id, { eyebrow: v })} />
+        <Field label="Titre" rows={2} value={sec.title} onChange={(v) => setHomeSection(id, { title: v })} />
+        <Field label="Texte" rows={3} value={sec.text} onChange={(v) => setHomeSection(id, { text: v })} />
+      </>
+    );
   };
 
   const publish = async () => {
@@ -150,114 +211,73 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
             <>
               <div className="border-b border-border pb-3">
                 <h2 className="text-lg font-semibold">Page d&apos;accueil</h2>
-                <p className="mt-1 text-sm text-muted">Tout ce qui s&apos;affiche sur la page d&apos;accueil, de haut en bas.</p>
+                <p className="mt-1 text-sm text-muted">Les blocs sont dans l&apos;ordre de la page, de haut en bas.</p>
               </div>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
-                  Grande photo ou vidéo de fond (haut de page)
-                </p>
-                <p className="text-xs text-muted">
-                  Affichée en fond, derrière le titre et le carrousel. Laissez vide pour garder le fond uni.
-                </p>
+                <BlockTitle n={1} title="Haut de page (vidéo)" />
+                <Field
+                  label="Petit texte au-dessus du titre"
+                  hint="Ex. « Organisme de formation · Hauts-de-France »."
+                  value={content.pages.hero.badge ?? ""}
+                  onChange={(v) => setHero({ badge: v })}
+                />
+                <Field
+                  label="Grand titre"
+                  rows={2}
+                  value={content.company.tagline}
+                  onChange={(v) => update({ ...content, company: { ...content.company, tagline: v } })}
+                />
+                <Field
+                  label="Texte sous le titre"
+                  rows={3}
+                                    value={content.company.description}
+                  onChange={(v) => update({ ...content, company: { ...content.company, description: v } })}
+                />
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Field
+                    label="Bouton principal"
+                    value={content.pages.hero.primaryButton}
+                    onChange={(v) => setHero({ primaryButton: v })}
+                  />
+                  <Field
+                    label="Bouton secondaire"
+                    value={content.pages.hero.secondaryButton}
+                    onChange={(v) => setHero({ secondaryButton: v })}
+                  />
+                </div>
+                <VideoField
+                  label="Vidéo de fond"
+                  hint="Courte boucle sans son, 100 Mo maximum."
+                  value={content.home.heroVideo || undefined}
+                  onChange={(v) => setHome({ heroVideo: v ?? "" })}
+                />
                 <ImageField
-                  label="Photo"
+                  label="Photo affichée pendant le chargement de la vidéo (ou à la place)"
                   value={content.home.heroBackgroundImage || undefined}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, heroBackgroundImage: v ?? "" },
-                    })
-                  }
+                  onChange={(v) => setHome({ heroBackgroundImage: v ?? "" })}
                 />
                 <Field
                   label="Description de la photo (accessibilité)"
                   value={content.home.heroBackgroundImageAlt ?? ""}
-                  onChange={(v) =>
-                    update({ ...content, home: { ...content.home, heroBackgroundImageAlt: v } })
-                  }
-                />
-                <VideoField
-                  label="Vidéo (remplace la photo, se lance et boucle automatiquement)"
-                  hint="Idéalement une courte boucle sans son (quelques secondes), pour un chargement rapide : 100 Mo maximum. La photo ci-dessus reste utilisée comme image de secours pendant le chargement."
-                  value={content.home.heroVideo || undefined}
-                  onChange={(v) =>
-                    update({ ...content, home: { ...content.home, heroVideo: v ?? "" } })
-                  }
+                  onChange={(v) => setHome({ heroBackgroundImageAlt: v })}
                 />
               </Card>
 
               <Card className="grid gap-4">
-                <PageColorsEditor
-                  siteTheme={content.theme}
-                  value={content.home.theme}
-                  showHeroButton
-                  onChange={(next) => update({ ...content, home: { ...content.home, theme: next } })}
+                <BlockTitle n={2} title="Bande défilante « Nos formations sur le terrain »" />
+                <Check
+                  label="Afficher la bande défilante"
+                  checked={content.home.showMarquee !== false}
+                  onChange={(c) => setHome({ showMarquee: c })}
                 />
-              </Card>
-
-              <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
-                  Photo du bloc Financement
-                </p>
-                <ImageField
-                  label="Photo (à droite du texte ; vide = photo de la page Financement)"
-                  value={content.home.fundingImage || undefined}
-                  onChange={(v) =>
-                    update({ ...content, home: { ...content.home, fundingImage: v ?? "" } })
-                  }
+                <Check
+                  label="Utiliser mes propres photos (sinon : toutes les formations du catalogue, une par une)"
+                  checked={content.home.marqueeSource === "slides"}
+                  onChange={(c) => setHome({ marqueeSource: c ? "slides" : "trainings" })}
                 />
-              </Card>
-
-              <Card className="grid gap-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
-                  Mise en page
-                </p>
-                <label className="flex items-center gap-3 text-sm">
-                  <input
-                    type="checkbox"
-                    checked={content.home.showMarquee !== false}
-                    onChange={(e) =>
-                      update({ ...content, home: { ...content.home, showMarquee: e.target.checked } })
-                    }
-                    className="h-4 w-4 accent-[color:var(--accent)]"
-                  />
-                  Afficher la bande défilante « Nos formations sur le terrain »
-                </label>
-                <label className="flex items-center gap-3 text-sm">
-                  <input
-                    type="checkbox"
-                    checked={content.home.marqueeSource === "slides"}
-                    onChange={(e) =>
-                      update({
-                        ...content,
-                        home: { ...content.home, marqueeSource: e.target.checked ? "slides" : "trainings" },
-                      })
-                    }
-                    className="h-4 w-4 accent-[color:var(--accent)]"
-                  />
-                  Bande défilante : utiliser les photos choisies ci-dessous (sinon : toutes les formations, une par une)
-                </label>
-                <label className="flex items-center gap-3 text-sm">
-                  <input
-                    type="checkbox"
-                    checked={content.home.sectorsLayout === "accordion"}
-                    onChange={(e) =>
-                      update({
-                        ...content,
-                        home: { ...content.home, sectorsLayout: e.target.checked ? "accordion" : "grid" },
-                      })
-                    }
-                    className="h-4 w-4 accent-[color:var(--accent)]"
-                  />
-                  Domaines en accordéon (sinon : grille des 8 domaines)
-                </label>
-              </Card>
-
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Bande défilante « Nos formations sur le terrain »
-                </p>
+                {content.home.marqueeSource === "slides" && (
+                  <div>
                 <ListEditor
                   items={content.home.heroSlides}
                   onChange={(heroSlides) =>
@@ -297,54 +317,144 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                     </div>
                   )}
                 />
-              </div>
+                  </div>
+                )}
+              </Card>
 
-              <PagesEditor
-                only={["hero"]}
-                pages={content.pages}
-                onChange={(pages) => update({ ...content, pages })}
-              />
-
-              <DesignEditor
-                part="sections"
-                theme={content.theme}
-                sections={content.home.sections}
-                onThemeChange={(theme) => update({ ...content, theme })}
-                onSectionsChange={(sections) =>
-                  update({ ...content, home: { ...content.home, sections } })
-                }
-              />
+              <Card className="grid gap-2">
+                <BlockTitle n={3} title="8 secteurs de formation" />
+                <p className="text-sm text-muted">
+                  Les cartes reprennent automatiquement les domaines du catalogue (nom, photo, résumé,
+                  nombre de formations) : ils se modifient dans « Catalogue &amp; formations ».
+                </p>
+              </Card>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
-                  Section « À propos »
-                </p>
+                <BlockTitle n={4} title="Bande des chiffres clés" />
                 <ImageField
-                  label="Photo"
-                  value={content.home.aboutImage}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, aboutImage: v },
-                    })
-                  }
+                  label="Photo de fond"
+                  value={content.home.statsBandImage}
+                  onChange={(v) => setHome({ statsBandImage: v })}
                 />
                 <Field
                   label="Description de la photo (accessibilité)"
-                  value={content.home.aboutImageAlt ?? ""}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, aboutImageAlt: v },
-                    })
-                  }
+                  value={content.home.statsBandImageAlt ?? ""}
+                  onChange={(v) => setHome({ statsBandImageAlt: v })}
+                />
+                <ListEditor
+                  items={content.stats}
+                  onChange={(stats) => update({ ...content, stats })}
+                  createItem={(): Stat => ({ value: "", label: "" })}
+                  addLabel="Ajouter un chiffre"
+                  titleFor={(s) => `${s.value} ${s.label}`}
+                  renderItem={(stat, set) => (
+                    <div className="grid gap-4 sm:grid-cols-[120px_1fr]">
+                      <Field
+                        label="Chiffre"
+                        value={stat.value}
+                        onChange={(v) => set({ ...stat, value: v })}
+                      />
+                      <Field
+                        label="Légende"
+                        value={stat.label}
+                        onChange={(v) => set({ ...stat, label: v })}
+                      />
+                      <label className="flex items-center gap-2 text-xs text-muted sm:col-span-2">
+                        <input
+                          type="checkbox"
+                          checked={stat.source === "recommendation"}
+                          onChange={(e) =>
+                            set({ ...stat, source: e.target.checked ? "recommendation" : undefined })
+                          }
+                        />
+                        Mettre à jour automatiquement avec la note de recommandation du
+                        fichier Excel (le chiffre ci-dessus sert en attendant)
+                      </label>
+                    </div>
+                  )}
+                />
+                <Field
+                  label="Source du pourcentage de recommandation (petite ligne sous les chiffres)"
+                  rows={2}
+                  value={content.home.statsNote ?? ""}
+                  onChange={(v) => setHome({ statsNote: v })}
                 />
               </Card>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
-                  Message du patron
+                <BlockTitle n={5} title="À propos" />
+                {sectionFields("about")}
+                <ImageField
+                  label="Image (le logo)"
+                  value={content.home.aboutImage}
+                  onChange={(v) => setHome({ aboutImage: v })}
+                />
+                <Field
+                  label="Description de l'image (accessibilité)"
+                  value={content.home.aboutImageAlt ?? ""}
+                  onChange={(v) => setHome({ aboutImageAlt: v })}
+                />
+                <p className="text-xs text-muted">
+                  Le texte à côté de l&apos;image (« Une expertise de terrain… ») est celui de la page
+                  Le centre, bloc « Notre approche ».
                 </p>
+              </Card>
+
+              <Card className="grid gap-4">
+                <BlockTitle n={6} title="Financement" />
+                <Field
+                  label="Titre"
+                  rows={2}
+                  value={homeSection("financement")?.title ?? ""}
+                  onChange={(v) => setHomeSection("financement", { title: v })}
+                />
+                <ImageField
+                  label="Photo (vide = photo de la page Financement)"
+                  value={content.home.fundingImage || undefined}
+                  onChange={(v) => setHome({ fundingImage: v ?? "" })}
+                />
+                <p className="text-xs text-muted">
+                  Les trois points sous le titre se modifient dans « Qualiopi &amp; financement ».
+                </p>
+              </Card>
+
+              <Card className="grid gap-4">
+                <BlockTitle n={7} title="Questions fréquentes (FAQ)" />
+                <Field
+                  label="Phrase sous « FAQ »"
+                  rows={2}
+                  value={homeSection("faq")?.title ?? ""}
+                  onChange={(v) => setHomeSection("faq", { title: v })}
+                />
+                <ListEditor
+                  items={content.home.faq}
+                  onChange={(faq) =>
+                    update({ ...content, home: { ...content.home, faq } })
+                  }
+                  createItem={() => ({ question: "", answer: "" })}
+                  addLabel="Ajouter une question"
+                  titleFor={(f) => f.question}
+                  renderItem={(item, set) => (
+                    <div className="grid gap-4">
+                      <Field
+                        label="Question"
+                        value={item.question}
+                        onChange={(v) => set({ ...item, question: v })}
+                      />
+                      <Field
+                        label="Réponse"
+                        rows={3}
+                        value={item.answer}
+                        onChange={(v) => set({ ...item, answer: v })}
+                      />
+                    </div>
+                  )}
+                />
+              </Card>
+
+              <Card className="grid gap-4">
+                <BlockTitle title="Citation du dirigeant (facultative)" />
+                <p className="text-xs text-muted">Affichée sous « À propos » si la citation est remplie.</p>
                 <Field
                   label="Citation"
                   rows={5}
@@ -424,113 +534,51 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                     })
                   }
                 />
-                <p className="text-xs text-muted">
-                  Sans photo, les initiales du nom sont affichées à la place.
-                </p>
               </Card>
 
               <Card className="grid gap-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-surface-accent">
-                  Bande chiffres clés (après le catalogue de formations)
-                </p>
-                <ImageField
-                  label="Photo de fond"
-                  value={content.home.statsBandImage}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, statsBandImage: v },
-                    })
-                  }
+                <BlockTitle title="Onglet du navigateur & Google" />
+                <Field
+                  label="Titre de l'onglet et des résultats Google"
+                  hint="Ex. « ENMA Formation — Organisme de formation Qualiopi Hauts-de-France »."
+                  value={content.home.seoTitle ?? ""}
+                  onChange={(v) => setHome({ seoTitle: v })}
                 />
                 <Field
-                  label="Description de la photo (accessibilité)"
-                  value={content.home.statsBandImageAlt ?? ""}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      home: { ...content.home, statsBandImageAlt: v },
-                    })
-                  }
-                />
-                <Field
-                  label="Source du pourcentage de recommandation"
-                  rows={2}
-                  hint="Affichée en petit sous les chiffres, avec un astérisque sur le chiffre concerné. Précisez l'enquête et la période."
-                  value={content.home.statsNote ?? ""}
-                  onChange={(v) =>
-                    update({ ...content, home: { ...content.home, statsNote: v } })
-                  }
+                  label="Description pour Google"
+                  rows={3}
+                  hint="Environ 150 caractères. Vide = texte sous le grand titre."
+                  value={content.home.seoDescription ?? ""}
+                  onChange={(v) => setHome({ seoDescription: v })}
                 />
               </Card>
 
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Chiffres clés
-                </p>
-                <ListEditor
-                  items={content.stats}
-                  onChange={(stats) => update({ ...content, stats })}
-                  createItem={(): Stat => ({ value: "", label: "" })}
-                  addLabel="Ajouter un chiffre"
-                  titleFor={(s) => `${s.value} ${s.label}`}
-                  renderItem={(stat, set) => (
-                    <div className="grid gap-4 sm:grid-cols-[120px_1fr]">
-                      <Field
-                        label="Chiffre"
-                        value={stat.value}
-                        onChange={(v) => set({ ...stat, value: v })}
-                      />
-                      <Field
-                        label="Légende"
-                        value={stat.label}
-                        onChange={(v) => set({ ...stat, label: v })}
-                      />
-                      <label className="flex items-center gap-2 text-xs text-muted sm:col-span-2">
-                        <input
-                          type="checkbox"
-                          checked={stat.source === "recommendation"}
-                          onChange={(e) =>
-                            set({ ...stat, source: e.target.checked ? "recommendation" : undefined })
-                          }
-                        />
-                        Mettre à jour automatiquement avec la note de recommandation du
-                        fichier Excel (le chiffre ci-dessus sert en attendant)
-                      </label>
+              <Card className="grid gap-3">
+                <BlockTitle title="Ordre et affichage des blocs 5 à 7" />
+                {content.home.sections
+                  .filter((s) => s.id !== "formations" && s.id !== "contact")
+                  .map((s) => (
+                    <div key={s.id} className="flex items-center justify-between gap-3 text-sm">
+                      <span className={s.visible ? "" : "text-muted line-through"}>{SECTION_NAMES[s.id]}</span>
+                      <span className="flex gap-1.5">
+                        <SmallButton onClick={() => moveSection(s.id, -1)}>↑</SmallButton>
+                        <SmallButton onClick={() => moveSection(s.id, 1)}>↓</SmallButton>
+                        <SmallButton onClick={() => setHomeSection(s.id, { visible: !s.visible })}>
+                          {s.visible ? "Masquer" : "Afficher"}
+                        </SmallButton>
+                      </span>
                     </div>
-                  )}
-                />
-              </div>
+                  ))}
+              </Card>
 
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
-                  Questions fréquentes (bas de page d&apos;accueil)
-                </p>
-                <ListEditor
-                  items={content.home.faq}
-                  onChange={(faq) =>
-                    update({ ...content, home: { ...content.home, faq } })
-                  }
-                  createItem={() => ({ question: "", answer: "" })}
-                  addLabel="Ajouter une question"
-                  titleFor={(f) => f.question}
-                  renderItem={(item, set) => (
-                    <div className="grid gap-4">
-                      <Field
-                        label="Question"
-                        value={item.question}
-                        onChange={(v) => set({ ...item, question: v })}
-                      />
-                      <Field
-                        label="Réponse"
-                        rows={3}
-                        value={item.answer}
-                        onChange={(v) => set({ ...item, answer: v })}
-                      />
-                    </div>
-                  )}
+              <Card className="grid gap-4">
+                <PageColorsEditor
+                  siteTheme={content.theme}
+                  value={content.home.theme}
+                  showHeroButton
+                  onChange={(next) => setHome({ theme: next })}
                 />
-              </div>
+              </Card>
             </>
           )}
 
@@ -596,6 +644,21 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
               <div className="border-b border-border pb-3">
                 <h2 className="text-lg font-semibold">Le centre</h2>
               </div>
+
+              <Card className="grid gap-4">
+                <Field
+                  label="Présentation de l'entreprise"
+                  hint="Premier paragraphe de la page Le centre (et texte de secours du bloc À propos de l'accueil)."
+                  rows={4}
+                  value={content.company.about}
+                  onChange={(v) =>
+                    update({
+                      ...content,
+                      company: { ...content.company, about: v },
+                    })
+                  }
+                />
+              </Card>
 
               <PagesEditor
                 only={["centre"]}
@@ -775,7 +838,7 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
             <>
               <div className="border-b border-border pb-3">
                 <h2 className="text-lg font-semibold">Coordonnées</h2>
-                <p className="mt-1 text-sm text-muted">Nom, slogan, adresse, téléphone : repris sur tout le site.</p>
+                <p className="mt-1 text-sm text-muted">Nom, e-mail, téléphone et adresse : repris sur tout le site (menu, pied de page, contact).</p>
               </div>
 
               <Card className="grid gap-4">
@@ -784,39 +847,6 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                   value={content.company.name}
                   onChange={(v) =>
                     update({ ...content, company: { ...content.company, name: v } })
-                  }
-                />
-                <Field
-                  label="Accroche (page d'accueil)"
-                  rows={2}
-                  value={content.company.tagline}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      company: { ...content.company, tagline: v },
-                    })
-                  }
-                />
-                <Field
-                  label="Description (référencement)"
-                  rows={4}
-                  value={content.company.description}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      company: { ...content.company, description: v },
-                    })
-                  }
-                />
-                <Field
-                  label="À propos"
-                  rows={4}
-                  value={content.company.about}
-                  onChange={(v) =>
-                    update({
-                      ...content,
-                      company: { ...content.company, about: v },
-                    })
                   }
                 />
                 <div className="grid gap-4 sm:grid-cols-2">

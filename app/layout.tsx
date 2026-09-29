@@ -11,7 +11,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SiteChrome from "@/components/SiteChrome";
-import { company, legal, siteUrl, telHref, theme, themeStyle } from "@/lib/data";
+import { company, home, legal, siteUrl, telHref, theme, themeStyle } from "@/lib/data";
 import "./globals.css";
 
 // Archivo en police variable avec l'axe de largeur : sert aussi aux
@@ -68,9 +68,8 @@ const figtree = Figtree({
 });
 
 const siteTitle =
-  "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
-const siteDescription =
-  "Formations sécurité incendie, secourisme, habilitation électrique, CACES, travail en hauteur, prévention des risques, management et photovoltaïque. Organisme certifié Qualiopi, formations éligibles à une prise en charge OPCO, en intra et inter-entreprises dans les Hauts-de-France.";
+  home.seoTitle || "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
+const siteDescription = home.seoDescription || company.description;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
