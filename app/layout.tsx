@@ -119,12 +119,23 @@ export const metadata: Metadata = {
 const [addressLine1, addressLine2] = company.address.split(", ");
 const [postalCode, ...cityParts] = (addressLine2 ?? "").split(" ");
 
+// Nom du site affiché par Google au-dessus de l'adresse (« ENMA Formation »
+// au lieu de « enma-formation.com »).
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: company.name,
+  alternateName: ["ENMA", "enma-formation.com"],
+  url: `${siteUrl}/`,
+};
+
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   name: company.name,
   url: siteUrl,
-  logo: `${siteUrl}/brand/logo-wordmark.png`,
+  // Logo carré : format attendu par Google pour l'afficher dans les résultats.
+  logo: `${siteUrl}/icon.png`,
   image: `${siteUrl}/opengraph-image`,
   description: company.description,
   telephone: telHref(company.phone).slice(4),
@@ -157,6 +168,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body className="min-h-full flex flex-col">
