@@ -87,7 +87,7 @@
       "trainings": [
         {
           "title": "Exercice d'évacuation",
-          "duration": "1 demi-journée",
+          "duration": "3 h 30 (½ journée)",
           "format": "Intra ou inter-entreprises",
           "intro": "Exercice chronométré en conditions réelles, pour éprouver votre plan d'évacuation et ajuster les consignes.",
           "prerequisites": "Aucun",
@@ -114,11 +114,12 @@
           "funding": "L'exercice d'évacuation, en tant qu'action de formation pratique liée à une obligation réglementaire, est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit l'ensemble des pièces justificatives nécessaires à votre dossier de financement : convention de formation, programme détaillé et compte-rendu d'exercice. Cette prestation peut être couplée avec les formations EPI/ESI et équipier d'évacuation pour une prise en charge globale de votre dispositif de sécurité incendie.",
           "image": "/images/9-1790681664214.jpg",
           "imageAlt": "Panneau vert de point de rassemblement fixé sur une façade, repère d'un exercice d'évacuation",
-          "heroImage": "/images/exo-evac-1790688007252.jpg"
+          "heroImage": "/images/exo-evac-1790688007252.jpg",
+          "recycling": "Exercice à renouveler tous les 6 mois"
         },
         {
           "title": "Premier témoin incendie",
-          "duration": "1 à 2 demi-journées",
+          "duration": "3 à 4 h (½ journée)",
           "format": "Intra ou inter-entreprises",
           "intro": "Alerter vite et bien : le réflexe qui empêche un départ de feu de devenir un sinistre.",
           "prerequisites": "Aucun",
@@ -156,7 +157,7 @@
         },
         {
           "title": "Équipier d'évacuation",
-          "duration": "1 à 2 demi-journées",
+          "duration": "3 à 4 h (½ journée)",
           "format": "Intra ou inter-entreprises",
           "intro": "Guide-file, serre-file, point de rassemblement : organiser une évacuation qui ne laisse personne derrière.",
           "prerequisites": "Aucun",
@@ -194,7 +195,7 @@
         },
         {
           "title": "Équipier de première intervention",
-          "duration": "2 demi-journées",
+          "duration": "3 à 4 h (½ journée)",
           "format": "Intra-entreprise",
           "intro": "Extincteur, RIA, triangle du feu : agir sur un départ de feu sans se mettre en danger.",
           "prerequisites": "Aucun",
@@ -252,7 +253,7 @@
       "trainings": [
         {
           "title": "Gestes qui sauvent (GQS)",
-          "duration": "1 demi-journée",
+          "duration": "3 h 30 (½ journée)",
           "format": "Intra ou inter-entreprises",
           "intro": "Quelques heures pour savoir quoi faire pendant les minutes qui précèdent l'arrivée des secours.",
           "prerequisites": "Aucun",
@@ -293,7 +294,7 @@
         },
         {
           "title": "Maintien et actualisation des compétences SST",
-          "duration": "2 demi-journées",
+          "duration": "7 h (1 jour)",
           "format": "Intra-entreprise",
           "intro": "Le recyclage obligatoire qui maintient le certificat SST de vos salariés valide.",
           "prerequisites": "Être titulaire d'un certificat SST, en cours de validité ou expiré depuis moins de 24 mois",
@@ -327,11 +328,12 @@
             "Être capable de protéger la victime et les témoins, puis d’examiner la victime pour repérer les signes vitaux",
             "Être capable d’alerter ou de faire alerter les secours et de transmettre un message d’alerte précis",
             "Être capable de secourir la victime de manière appropriée selon la conduite à tenir adaptée à son état"
-          ]
+          ],
+          "recycling": "Tous les 24 mois"
         },
         {
           "title": "PSC 1 — Prévention et secours civiques niveau 1",
-          "duration": "2 demi-journées",
+          "duration": "7 h (1 jour)",
           "format": "Intra ou inter-entreprises",
           "intro": "La formation citoyenne de référence aux premiers secours, reconnue par l'État.",
           "prerequisites": "Aucun",
@@ -376,7 +378,7 @@
         },
         {
           "title": "Sauveteur secouriste du travail",
-          "duration": "4 demi-journées",
+          "duration": "14 h (2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Le secouriste de votre entreprise : intervenir sur un accident et repérer les risques au quotidien.",
           "prerequisites": "Aucun",
@@ -414,7 +416,8 @@
             "Être capable de protéger la victime et les témoins, puis d’examiner la victime pour repérer les signes vitaux",
             "Être capable d’alerter ou de faire alerter les secours et de transmettre un message d’alerte précis",
             "Être capable de secourir la victime de manière appropriée selon la conduite à tenir adaptée à son état"
-          ]
+          ],
+          "recycling": "MAC SST de 7 h (1 jour) tous les 24 mois"
         }
       ],
       "opco": true,
@@ -443,7 +446,7 @@
         {
           "title": "B1 / B1V — Exécutant électricien basse tension",
           "category": "Basse tension",
-          "duration": "1 journée",
+          "duration": "21 h (3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Le premier niveau d'habilitation pour exécuter des travaux électriques basse tension sous les ordres d'un chargé de travaux.",
           "prerequisites": "Aucun",
@@ -470,12 +473,13 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Le titre d'habilitation n'est jamais délivré par l'organisme de formation, mais par l'employeur, sur la base des résultats aux évaluations théorique et pratique que nous lui transmettons à l'issue de la session.",
           "image": "/images/habilitation-b1-multimetre-1790689131.jpg",
           "imageAlt": "Électricien casqué, en gants de protection, relevant une mesure au multimètre sur un tableau électrique",
-          "heroImage": "/images/17-1790690143310.jpg"
+          "heroImage": "/images/17-1790690143310.jpg",
+          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
         },
         {
           "title": "B2 / B2V — Chargé de travaux électriques basse tension",
           "category": "Basse tension",
-          "duration": "1 à 2 journées",
+          "duration": "21 h (3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Diriger et surveiller des travaux électriques basse tension, hors tension ou au voisinage.",
           "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
@@ -508,12 +512,13 @@
             "Être capable de délimiter et respecter les zones d’environnement et les distances de sécurité vis-à-vis des ouvrages électriques",
             "Être capable, en tant que chargé de travaux B2, d’assurer la préparation, la surveillance et la clôture d’une intervention en basse tension hors tension",
             "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
-          ]
+          ],
+          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
         },
         {
           "title": "BR — Chargé d'intervention générale basse tension",
           "category": "Basse tension",
-          "duration": "1 journée",
+          "duration": "21 h (3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Réaliser seul des interventions de dépannage, maintenance et raccordement basse tension.",
           "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
@@ -544,12 +549,13 @@
           "objectives": [
             "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
             "Être capable de réaliser, en sécurité, des interventions générales basse tension : dépannage, raccordement, remplacement (BR)"
-          ]
+          ],
+          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
         },
         {
           "title": "BC — Chargé de consignation basse tension",
           "category": "Basse tension",
-          "duration": "1 journée",
+          "duration": "14 h (2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Réaliser une consignation basse tension pour le compte d'autrui, en toute sécurité.",
           "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
@@ -581,12 +587,13 @@
           "objectives": [
             "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
             "Être capable de réaliser, en sécurité, une consignation basse tension pour le compte d’autrui (BC)"
-          ]
+          ],
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
         },
         {
           "title": "BE Mesurage / Essai / Vérification",
           "category": "Basse tension",
-          "duration": "1 journée",
+          "duration": "14 h (2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Réaliser des opérations de mesure, d'essai ou de vérification sur des installations basse tension.",
           "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
@@ -613,12 +620,13 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/habilitation-be-mesure-1790689131.jpg",
           "imageAlt": "Mains gantées tenant un multimètre pour un mesurage sur une armoire électrique",
-          "heroImage": "/images/20-1790690263612.jpg"
+          "heroImage": "/images/20-1790690263612.jpg",
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
         },
         {
           "title": "BP — Habilitation photovoltaïque",
           "category": "Basse tension",
-          "duration": "1 journée",
+          "duration": "14 h (2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Intervenir en sécurité sur les installations de production photovoltaïque.",
           "prerequisites": "Connaissances en électricité adaptées aux opérations confiées",
@@ -645,12 +653,13 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "heroImage": "/images/photo-secteur-arriere-plan-virtuel-zoom-1790690414248.jpg",
           "image": "/images/photo-secteur-1920-x-1080-px-1790690422611.jpg",
-          "imageAlt": "Technicien casqué raccordant des câbles sous une rangée de panneaux photovoltaïques"
+          "imageAlt": "Technicien casqué raccordant des câbles sous une rangée de panneaux photovoltaïques",
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
         },
         {
           "title": "H0 / H0V — Non-électricien à proximité d'ouvrages HT",
           "category": "Haute tension",
-          "duration": "1 journée",
+          "duration": "7 h (1 jour)",
           "format": "Intra ou inter-entreprises",
           "intro": "Le niveau pour tout non-électricien amené à travailler ou circuler à proximité d'ouvrages haute tension.",
           "prerequisites": "Aucun",
@@ -682,12 +691,13 @@
             "Être capable d’identifier les risques électriques et d’appliquer les prescriptions de sécurité liées à son niveau d’habilitation H0-B2",
             "Être capable de délimiter et respecter les zones d’environnement et les distances de sécurité vis-à-vis des ouvrages électriques",
             "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
-          ]
+          ],
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
         },
         {
           "title": "H1 / H1V — Exécutant électricien haute tension",
           "category": "Haute tension",
-          "duration": "1 à 2 journées",
+          "duration": "21 h (3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Exécuter des travaux électriques haute tension sous les ordres d'un chargé de travaux.",
           "prerequisites": "Connaissances en électricité, habilitation basse tension recommandée",
@@ -714,12 +724,13 @@
           "funding": "Formation finançable par votre OPCO au titre du plan de développement des compétences. Convention de formation, devis détaillé et programme pédagogique vous sont remis pour constituer votre dossier.",
           "image": "/images/28-1790690459683.jpg",
           "heroImage": "/images/28-1790690470478.jpg",
-          "imageAlt": "Électricien casqué intervenant sur un transformateur fixé à un poteau haute tension"
+          "imageAlt": "Électricien casqué intervenant sur un transformateur fixé à un poteau haute tension",
+          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
         },
         {
           "title": "H2 / H2V — Chargé de travaux haute tension",
           "category": "Haute tension",
-          "duration": "2 journées",
+          "duration": "21 h (3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Diriger des travaux haute tension et réaliser les essais associés (H2V Essai).",
           "prerequisites": "Expérience des travaux électriques et connaissances techniques en haute tension",
@@ -754,12 +765,13 @@
           "objectives": [
             "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
             "Être capable de réaliser, en sécurité, des travaux hors tension et au voisinage d’installations basse tension (B2V) et d’ouvrages haute tension HTA (H2V)"
-          ]
+          ],
+          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
         },
         {
           "title": "HC — Chargé de consignation haute tension",
           "category": "Haute tension",
-          "duration": "1 journée",
+          "duration": "14 h (2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Réaliser une consignation haute tension pour le compte d'autrui, en toute sécurité.",
           "prerequisites": "Expérience des travaux électriques et connaissances techniques en haute tension",
@@ -790,12 +802,13 @@
           "objectives": [
             "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
             "Être capable de réaliser, en sécurité, une consignation pour le compte d’autrui en basse tension (BC) comme en haute tension HTA (HC)"
-          ]
+          ],
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
         },
         {
           "title": "HE Manoeuvre / Mesurage / Essai / Vérification",
           "category": "Haute tension",
-          "duration": "1 journée",
+          "duration": "14 h (2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Réaliser des manœuvres, mesurages, essais ou vérifications sur des installations haute tension.",
           "prerequisites": "Expérience des travaux électriques et connaissances techniques en haute tension",
@@ -823,7 +836,8 @@
           "image": "/images/fregr-1790690916101.jpg",
           "heroImage": "/images/tere-1790690933013.jpg",
           "imagePosition": "center center",
-          "imageAlt": "Électricien en casque rouge et visière de protection manipulant un appareil haute tension"
+          "imageAlt": "Électricien en casque rouge et visière de protection manipulant un appareil haute tension",
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
         }
       ],
       "opco": true,
@@ -846,7 +860,7 @@
       "trainings": [
         {
           "title": "AIPR, intervention à proximité des réseaux",
-          "duration": "2 demi-journées",
+          "duration": "7 h (1 jour)",
           "format": "Intra-entreprise",
           "intro": "Travailler près des réseaux enterrés sans provoquer l'accident qui coûte le plus cher.",
           "prerequisites": "Aucun",
@@ -884,11 +898,12 @@
             "Être capable d’exploiter les déclarations de projet de travaux et d’intention de commencement de travaux ainsi que leurs récépissés",
             "Être capable d’interpréter le marquage-piquetage, les classes de précision et les plans de réseaux",
             "Être capable d’appliquer les mesures de prévention, d’arrêter les travaux et de rendre compte en cas de situation à risque"
-          ]
+          ],
+          "recycling": "Attestation valable 5 ans"
         },
         {
           "title": "CACES R489, conduite de chariots élévateurs",
-          "duration": "2 à 6 demi-journées",
+          "duration": "7 à 21 h (1 à 3 jours)",
           "format": "Intra-entreprise",
           "intro": "Conduire un chariot élévateur en sécurité, avec le certificat reconnu par vos donneurs d'ordre.",
           "prerequisites": "Aptitude médicale à la conduite, 18 ans minimum",
@@ -925,11 +940,13 @@
             "Être capable d’appliquer la réglementation, les consignes du site et de maîtriser les risques principaux liés à la conduite",
             "Être capable de réaliser les vérifications de prise et de fin de poste et l’entretien quotidien",
             "Être capable d’effectuer en sécurité la prise, le transport, le gerbage et le dégerbage de charges ainsi que la circulation en sécurité"
-          ]
+          ],
+          "durationDetail": "Préparation au CACES : 14 à 21 h (2 à 3 jours) · Autorisation de conduite : 7 à 14 h (1 à 2 jours)",
+          "recycling": "CACES : 7 à 14 h (1 à 2 jours), tous les 5 ans · Autorisation de conduite : 7 h (1 jour)"
         },
         {
           "title": "Engins de chantier (R482)",
-          "duration": "4 à 10 demi-journées",
+          "duration": "14 à 35 h (2 à 5 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Pelles, chargeuses, tombereaux : la conduite d'engins de chantier certifiée par catégorie.",
           "prerequisites": "Aptitude médicale à la conduite, 18 ans minimum",
@@ -970,11 +987,13 @@
             "Être capable d’appliquer la réglementation, les consignes du site et de maîtriser les risques principaux liés à la conduite",
             "Être capable de réaliser les vérifications de prise et de fin de poste et l’entretien quotidien",
             "Être capable d’effectuer en sécurité les manœuvres de déplacement, de chargement, de terrassement et de mise en sécurité de l’engin"
-          ]
+          ],
+          "durationDetail": "Préparation au CACES : 21 à 35 h (3 à 5 jours) · Autorisation de conduite : 14 à 21 h (2 à 3 jours)",
+          "recycling": "CACES : 14 h (2 jours), tous les 10 ans · Autorisation de conduite : 7 h (1 jour)"
         },
         {
           "title": "Gerbeur à conducteur accompagnant (R485)",
-          "duration": "2 à 4 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "La certification adaptée aux gerbeurs accompagnants, souvent oubliée des plans de formation.",
           "prerequisites": "Aptitude médicale à la conduite, 18 ans minimum",
@@ -1015,11 +1034,13 @@
             "Être capable d’appliquer la réglementation, les consignes du site et de maîtriser les risques principaux liés à la conduite",
             "Être capable de réaliser les vérifications de prise et de fin de poste et l’entretien quotidien",
             "Être capable d’effectuer en sécurité la prise, le transport, le gerbage et le dégerbage de charges à l’aide du timon, ainsi que la circulation en sécurité"
-          ]
+          ],
+          "durationDetail": "Préparation au CACES : 14 h (2 jours) · Autorisation de conduite : 7 h (1 jour)",
+          "recycling": "CACES : 7 h (1 jour), tous les 5 ans · Autorisation de conduite : 3 h 30 (½ journée)"
         },
         {
           "title": "Grue de chargement (R490)",
-          "duration": "6 demi-journées",
+          "duration": "14 à 21 h (2 à 3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Manipuler une grue auxiliaire sans jamais compromettre la stabilité du véhicule porteur.",
           "prerequisites": "Aptitude médicale à la conduite, 18 ans minimum",
@@ -1060,11 +1081,13 @@
             "Être capable de contrôler l’état de la grue de chargement et de réaliser les vérifications d’usage avant la mise en service",
             "Être capable de conduire la grue de chargement en respectant les règles de circulation, de stabilisation et de sécurité",
             "Être capable de réaliser une opération de levage et de manutention de charges en sécurité, dans le respect de la réglementation et de la recommandation R490"
-          ]
+          ],
+          "durationDetail": "Préparation au CACES : 21 h (3 jours) · Autorisation de conduite : 14 h (2 jours)",
+          "recycling": "CACES : 14 h (2 jours), tous les 5 ans · Autorisation de conduite : 7 h (1 jour)"
         },
         {
           "title": "PEMP — nacelle élévatrice (R486)",
-          "duration": "2 à 6 demi-journées",
+          "duration": "7 à 21 h (1 à 3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Nacelles élévatrices : travailler en hauteur sur plateforme mobile, en sécurité et en conformité.",
           "prerequisites": "Aptitude médicale à la conduite et au travail en hauteur, 18 ans minimum",
@@ -1105,11 +1128,13 @@
             "Être capable d’appliquer la réglementation, les consignes du site et de maîtriser les risques principaux liés à la conduite",
             "Être capable de réaliser les vérifications de prise et de fin de poste et l’entretien quotidien",
             "Être capable d’effectuer en sécurité les manœuvres de translation, de mise en station, d’élévation et de descente de secours"
-          ]
+          ],
+          "durationDetail": "Préparation au CACES : 14 à 21 h (2 à 3 jours) · Autorisation de conduite : 7 à 14 h (1 à 2 jours)",
+          "recycling": "CACES : 7 à 14 h (1 à 2 jours), tous les 5 ans · Autorisation de conduite : 7 h (1 jour)"
         },
         {
           "title": "Pont roulant (R484)",
-          "duration": "2 à 4 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Lever et déplacer des charges au pont roulant sans mettre l'atelier en danger.",
           "prerequisites": "Aptitude médicale à la conduite, 18 ans minimum",
@@ -1146,7 +1171,9 @@
             "Être capable d’appliquer les règles de sécurité, les consignes et la réglementation en vigueur, et de maîtriser les risques principaux",
             "Être capable de réaliser les vérifications d’usage de prise et de fin de poste ainsi que l’entretien quotidien",
             "Être capable d’effectuer en sécurité les opérations de levage, de déplacement des charges et les manœuvres"
-          ]
+          ],
+          "durationDetail": "Préparation au CACES : 14 h (2 jours) · Autorisation de conduite : 7 h (1 jour)",
+          "recycling": "CACES : 7 h (1 jour), tous les 5 ans · Autorisation de conduite : 3 h 30 (½ journée)"
         }
       ],
       "opco": true,
@@ -1167,7 +1194,7 @@
       "trainings": [
         {
           "title": "Montage, démontage et utilisation des échafaudages de pied (R408)",
-          "duration": "4 à 6 demi-journées",
+          "duration": "7 à 21 h (1 à 3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Monter, démonter et réceptionner un échafaudage de pied selon la recommandation R408.",
           "prerequisites": "Aptitude médicale au travail en hauteur",
@@ -1213,7 +1240,7 @@
         },
         {
           "title": "Montage, démontage et utilisation des échafaudages roulants et fixes (R457)",
-          "duration": "2 à 4 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Échafaudages roulants et fixes : le montage conforme et l'utilisation sécurisée au quotidien.",
           "prerequisites": "Aptitude médicale au travail en hauteur",
@@ -1258,7 +1285,7 @@
         },
         {
           "title": "Travail en hauteur et port du harnais",
-          "duration": "2 à 4 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Harnais, points d'ancrage, systèmes antichute : travailler en hauteur sans jouer sa vie.",
           "prerequisites": "Aptitude médicale au travail en hauteur",
@@ -1299,7 +1326,7 @@
         },
         {
           "title": "Vérification des échafaudages",
-          "duration": "2 à 4 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Former votre vérificateur interne aux contrôles réglementaires avant, pendant et après montage.",
           "prerequisites": "Expérience du montage ou de l'utilisation d'échafaudages",
@@ -1358,7 +1385,7 @@
       "trainings": [
         {
           "title": "Gestes et postures",
-          "duration": "1 à 2 demi-journées",
+          "duration": "3 h 30 à 7 h (½ journée à 1 jour)",
           "format": "Intra-entreprise",
           "intro": "Manutention et port de charges : protéger le dos de vos équipes avant que le mal s'installe.",
           "prerequisites": "Aucun",
@@ -1394,7 +1421,7 @@
         },
         {
           "title": "Sécurité des salariés des entreprises extérieures — Niveau 1",
-          "duration": "2 demi-journées",
+          "duration": "7 h (1 jour)",
           "format": "Intra-entreprise",
           "intro": "Le socle sécurité exigé avant toute intervention sur un site industriel client.",
           "prerequisites": "Aucun",
@@ -1435,7 +1462,7 @@
         },
         {
           "title": "Sécurité des salariés des entreprises extérieures — Niveau 2",
-          "duration": "1 journée",
+          "duration": "14 h (2 jours)",
           "format": "Intra-entreprise",
           "intro": "Le niveau encadrement pour organiser et superviser la sécurité des équipes intervenantes sur site industriel.",
           "prerequisites": "Avoir suivi la formation Niveau 1, ou justifier d'une expérience équivalente",
@@ -1496,7 +1523,7 @@
       "trainings": [
         {
           "title": "Faire face à l'agressivité et à l'incivilité",
-          "duration": "Durée à définir",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra-entreprise",
           "intro": "Accueil et relation client : désamorcer une montée en tension avant le passage à l'acte.",
           "prerequisites": "Aucun",
@@ -1536,7 +1563,7 @@
         },
         {
           "title": "Gestion des conflits",
-          "duration": "4 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra-entreprise",
           "intro": "Repérer la phase dans laquelle se trouve un conflit et l'interrompre avant l'escalade.",
           "prerequisites": "Aucun",
@@ -1578,7 +1605,7 @@
         },
         {
           "title": "Les bases de la sécurité au quotidien",
-          "duration": "2 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra-entreprise",
           "intro": "Le manager, premier maillon de la prévention : assumer ce rôle au quotidien.",
           "prerequisites": "Aucun ; une première expérience d'encadrement facilite l'appropriation",
@@ -1625,7 +1652,7 @@
         },
         {
           "title": "Gestion du stress",
-          "duration": "2 à 4 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra-entreprise",
           "intro": "Identifier les signaux, comprendre les mécanismes, retrouver des marges de manœuvre.",
           "prerequisites": "Aucun",
@@ -1666,7 +1693,7 @@
         },
         {
           "title": "Premiers secours en santé mentale (PSSM)",
-          "duration": "4 demi-journées",
+          "duration": "14 h (2 jours)",
           "format": "Intra-entreprise",
           "intro": "Repérer un collègue en souffrance psychique et savoir comment l'orienter.",
           "prerequisites": "Aucun",
@@ -1707,7 +1734,7 @@
         },
         {
           "title": "Prévention de l'absentéisme",
-          "duration": "2 à 4 demi-journées",
+          "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra-entreprise",
           "intro": "Comprendre ce que l'absentéisme dit de votre organisation, puis agir dessus.",
           "prerequisites": "Aucun",
@@ -1766,7 +1793,7 @@
       "trainings": [
         {
           "title": "Bureau d'études technique photovoltaïque",
-          "duration": "10 demi-journées",
+          "duration": "35 h (5 jours)",
           "format": "Intra-entreprise",
           "intro": "Conduire une étude photovoltaïque complète, du cahier des charges au dossier finalisé.",
           "prerequisites": "Bases en électricité et en calcul technique recommandées",
@@ -1811,7 +1838,7 @@
         },
         {
           "title": "Chiffrage et dimensionnement",
-          "duration": "4 demi-journées",
+          "duration": "14 h (2 jours)",
           "format": "Intra-entreprise",
           "intro": "Produire un chiffrage fiable et argumenté sur tout type d'installation photovoltaïque.",
           "prerequisites": "Bases en électricité recommandées",

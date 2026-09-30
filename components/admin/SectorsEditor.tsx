@@ -63,9 +63,19 @@ function TrainingEditor({
       />
       <div className="grid gap-4 sm:grid-cols-2">
         <Field
-          label="Durée"
+          label="Durée (cartes)"
           value={training.duration}
           onChange={(v) => set("duration", v)}
+        />
+        <Field
+          label="Durée détaillée (fiche, facultatif)"
+          value={training.durationDetail ?? ""}
+          onChange={(v) => set("durationDetail", v || undefined)}
+        />
+        <Field
+          label="Recyclage (facultatif)"
+          value={training.recycling ?? ""}
+          onChange={(v) => set("recycling", v || undefined)}
         />
         <Field
           label="Modalité"

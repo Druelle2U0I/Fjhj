@@ -66,7 +66,8 @@ export default async function FormationPage(
 
   const recap = [
     { label: "Lieu", value: training.format },
-    { label: "Durée", value: training.duration },
+    { label: "Durée", value: training.durationDetail || training.duration },
+    ...(training.recycling ? [{ label: "Recyclage", value: training.recycling }] : []),
     { label: "Prérequis", value: training.prerequisites },
     ...(training.effectif
       ? [{ label: "Effectif", value: training.effectif }]

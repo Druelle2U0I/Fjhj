@@ -25,6 +25,10 @@ export type Training = {
   // Objectifs pédagogiques (« Être capable de … »), repris des déroulés
   // pédagogiques : exigés par Qualiopi (indicateur 1).
   objectives?: string[];
+  // Détail de la durée affiché dans l'encart de la fiche (sinon : duration).
+  durationDetail?: string;
+  // Durée et périodicité du recyclage.
+  recycling?: string;
   image?: string;
   imageAlt?: string;
   // Photo en paysage pour le haut de la fiche (sinon : `image`).
