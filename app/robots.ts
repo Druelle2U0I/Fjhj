@@ -6,7 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/admin", "/api/"],
+      // L'espace d'administration n'est pas cité ici : son adresse est secrète.
+      disallow: ["/api/"],
     },
     sitemap: `${siteUrl}/sitemap.xml`,
   };
