@@ -23,6 +23,8 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [catalogueOpen, setCatalogueOpen] = useState(false);
+  // Menu téléphone : les secteurs du catalogue restent repliés par défaut.
+  const [mobileCatalogueOpen, setMobileCatalogueOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Petit délai à la fermeture : la souris peut passer du lien au menu
@@ -190,15 +192,42 @@ export default function Header() {
           <nav className="grid gap-1 border-t border-white/10 px-4 py-3 text-sm lg:hidden">
             {[...leftLinks, ...rightLinks].map((link) => (
               <div key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`block rounded-lg px-3 py-2.5 ${linkClass(link.href)}`}
-                >
-                  {link.label}
-                </Link>
-                {link.href === "/formations" && (
+                {link.href === "/formations" ? (
+                  // Téléphone : « Catalogue » ouvre la liste des secteurs au
+                  // lieu d'aller directement à la page.
+                  <button
+                    type="button"
+                    aria-expanded={mobileCatalogueOpen}
+                    onClick={() => setMobileCatalogueOpen((v) => !v)}
+                    className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left ${linkClass(link.href)}`}
+                  >
+                    {link.label}
+                    <svg
+                      viewBox="0 0 12 12"
+                      aria-hidden="true"
+                      className={`h-3 w-3 transition-transform duration-300 ${mobileCatalogueOpen ? "rotate-180" : ""}`}
+                    >
+                      <path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className={`block rounded-lg px-3 py-2.5 ${linkClass(link.href)}`}
+                  >
+                    {link.label}
+                  </Link>
+                )}
+                {link.href === "/formations" && mobileCatalogueOpen && (
                   <div className="mb-1 ml-3 grid gap-0.5 border-l border-white/10 pl-3">
+                    <Link
+                      href="/formations"
+                      onClick={() => setOpen(false)}
+                      className="rounded-lg px-3 py-1.5 font-semibold text-foreground"
+                    >
+                      Voir le catalogue
+                    </Link>
                     {services.map((service) => (
                       <Link
                         key={service.slug}
