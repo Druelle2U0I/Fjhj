@@ -155,7 +155,7 @@ export default async function SecteurPage(
           clients de ce domaine. Bande pleine largeur, dans le même esprit
           sombre que la bande « Pourquoi former vos équipes » plus haut. */}
       {service.articles && service.articles.length > 0 && (
-        <section className="on-surface bg-surface px-6 py-14 sm:py-20">
+        <section className="on-surface bg-surface px-6 py-10 sm:py-14">
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
             <Reveal className="lg:sticky lg:top-28 lg:self-start">
               <p className="eyebrow block text-surface-accent">

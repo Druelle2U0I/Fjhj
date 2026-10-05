@@ -14,6 +14,8 @@ export default function ArticleCarousel({ articles }: { articles: Article[] }) {
   const viewport = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
   const x = useMotionValue(0);
+  const itemRefs = useRef<(HTMLElement | null)[]>([]);
+  const [height, setHeight] = useState<number>();
 
   useLayoutEffect(() => {
     const node = viewport.current;
@@ -26,6 +28,13 @@ export default function ArticleCarousel({ articles }: { articles: Article[] }) {
   const maxIndex = articles.length - 1;
   const current = Math.min(index, maxIndex);
   const target = -current * width;
+
+  // La carte ne garde que la hauteur de l'article affiché (pas celle du
+  // plus long de la liste), pour éviter un grand vide sous un texte court.
+  useLayoutEffect(() => {
+    const node = itemRefs.current[current];
+    if (node) setHeight(node.offsetHeight);
+  }, [current, width]);
 
   useEffect(() => {
     const controls = animate(
@@ -57,19 +66,26 @@ export default function ArticleCarousel({ articles }: { articles: Article[] }) {
 
   return (
     <div className="min-w-0">
-      <div ref={viewport} className="overflow-hidden">
+      <div
+        ref={viewport}
+        className="overflow-hidden transition-[height] duration-300 ease-out"
+        style={{ height }}
+      >
         <motion.div
           style={{ x }}
           drag={maxIndex > 0 ? "x" : false}
           dragConstraints={{ left: -maxIndex * width, right: 0 }}
           dragElastic={0.12}
           onDragEnd={onDragEnd}
-          className="flex cursor-grab touch-pan-y active:cursor-grabbing"
+          className="flex items-start cursor-grab touch-pan-y active:cursor-grabbing"
         >
-          {articles.map((article) => (
+          {articles.map((article, i) => (
             <article
               key={article.title}
-              className="shrink-0 select-none rounded-lg border border-border bg-surface-2 p-6 sm:p-10"
+              ref={(node) => {
+                itemRefs.current[i] = node;
+              }}
+              className="shrink-0 select-none rounded-lg border border-border bg-surface-2 p-6 sm:p-8"
               style={{ width: width || "100%" }}
             >
               <h3 className="text-lg font-semibold leading-snug sm:text-xl">
