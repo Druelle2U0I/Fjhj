@@ -43,6 +43,12 @@ export type Training = {
   // Étiquette courte affichée près du titre (ex. "Basse tension"),
   // utile quand un secteur regroupe plusieurs niveaux/variantes.
   category?: string;
+  // Titre/description dédiés pour les moteurs de recherche (balise
+  // title et meta description) : à défaut, generateMetadata recompose
+  // un titre/texte à partir du contenu affiché, moins optimisé pour le
+  // référencement qu'un texte pensé pour ça.
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 export type Sector = {
@@ -64,6 +70,12 @@ export type Sector = {
   popularPaths?: string[];
   unlistedNote?: string;
   tip?: { title: string; text: string };
+  // Titre/description dédiés pour les moteurs de recherche (balise
+  // title et meta description) : à défaut, generateMetadata recompose
+  // un titre/texte à partir du contenu affiché, moins optimisé pour le
+  // référencement qu'un texte pensé pour ça.
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 export type HeroSlide = {

@@ -99,6 +99,20 @@ function TrainingEditor({
         onChange={(v) => set("certification", v)}
       />
 
+      <Field
+        label="Titre pour Google (facultatif)"
+        hint="Remplace le titre de la page dans les résultats Google. Laissez vide pour utiliser le nom de la formation."
+        value={training.seoTitle ?? ""}
+        onChange={(v) => set("seoTitle", v || undefined)}
+      />
+      <Field
+        label="Description pour Google (facultative)"
+        rows={2}
+        hint="Texte affiché par Google sous le titre de la page. Idéalement 150 caractères environ. Laissez vide pour un texte généré automatiquement."
+        value={training.seoDescription ?? ""}
+        onChange={(v) => set("seoDescription", v || undefined)}
+      />
+
       <ImageField
         label="Photo de la formation"
         value={training.image}
@@ -285,6 +299,23 @@ export default function SectorsEditor({
                   value={sector.summary ?? ""}
                   onChange={(v) =>
                     updateSector(index, { ...sector, summary: v || undefined })
+                  }
+                />
+                <Field
+                  label="Titre pour Google (facultatif)"
+                  hint="Remplace le titre de la page dans les résultats Google. Laissez vide pour utiliser « Formation + nom du secteur »."
+                  value={sector.seoTitle ?? ""}
+                  onChange={(v) =>
+                    updateSector(index, { ...sector, seoTitle: v || undefined })
+                  }
+                />
+                <Field
+                  label="Description pour Google (facultative)"
+                  rows={2}
+                  hint="Texte affiché par Google sous le titre de la page. Idéalement 150 caractères environ. Laissez vide pour un texte généré automatiquement."
+                  value={sector.seoDescription ?? ""}
+                  onChange={(v) =>
+                    updateSector(index, { ...sector, seoDescription: v || undefined })
                   }
                 />
                 <label className="flex items-center gap-3 text-sm">

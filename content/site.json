@@ -74,6 +74,8 @@
   "sectors": [
     {
       "title": "Sécurité incendie & évacuation",
+      "seoTitle": "Formation évacuation incendie et EPI en entreprise",
+      "seoDescription": "Exercices d'évacuation et équipiers de première intervention formés sur site par des sapeurs-pompiers, partout en Hauts-de-France.",
       "description": "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation — équipier de première intervention, guide et serre-file, exercice d'évacuation — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises et les établissements recevant du public dans le respect de leurs obligations réglementaires de prévention incendie et la construction d'une véritable culture de sécurité au sein de leurs équipes.",
       "summary": "Manipuler un extincteur, guider une évacuation, réagir dans les premières minutes : EPI, guide et serre-file, exercices.",
       "why": {
@@ -294,6 +296,8 @@
         },
         {
           "title": "Maintien et actualisation des compétences SST",
+          "seoTitle": "MAC SST : recyclage 7 h tous les 24 mois",
+          "seoDescription": "Votre certificat SST arrive à échéance ? Maintien et actualisation des compétences en 1 jour, en intra, partout en Hauts-de-France.",
           "duration": "7 h (1 jour)",
           "format": "Intra-entreprise",
           "intro": "Le recyclage obligatoire qui maintient le certificat SST de vos salariés valide.",
@@ -378,6 +382,8 @@
         },
         {
           "title": "Sauveteur secouriste du travail",
+          "seoTitle": "Formation SST en entreprise : 14 h dans vos locaux",
+          "seoDescription": "Formez vos sauveteurs secouristes du travail sur site en 2 jours. Formateurs sapeurs-pompiers, devis rapide pour Lens, Béthune, Arras, Lille.",
           "duration": "14 h (2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Le secouriste de votre entreprise : intervenir sur un accident et repérer les risques au quotidien.",
@@ -426,6 +432,8 @@
     },
     {
       "title": "Habilitation électrique",
+      "seoTitle": "Habilitation électrique H0B0, BS, B1V, B2V, BR",
+      "seoDescription": "Formations NF C18-510 pour électriciens et non-électriciens, animées par des électriciens expérimentés. En intra dans vos locaux.",
       "description": "ENMA Formation prépare vos salariés électriciens et non électriciens à l'habilitation électrique selon la norme NF C 18-510, en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises de l'industrie, du bâtiment et de la maintenance pour répondre à leurs obligations réglementaires en matière de sécurité électrique et délivrer un avis d'habilitation fiable à l'employeur.",
       "summary": "Électriciens ou non, basse et haute tension : de H0 à BC et HC, selon la norme NF C 18-510.",
       "why": {
@@ -846,6 +854,8 @@
     },
     {
       "title": "CACES & habilitations",
+      "seoTitle": "Préparation au CACES® en entreprise",
+      "seoDescription": "Formation à la conduite en sécurité de vos engins, sur votre site. Préparation aux tests CACES® pour vos salariés en Hauts-de-France.",
       "description": "ENMA Formation forme vos conducteurs d'engins et de chariots à la conduite en sécurité — CACES R482, R485, R486, R489, R490, pont roulant R484, AIPR — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises du BTP, de la logistique et de l'industrie pour répondre à leurs obligations réglementaires de conduite d'engins et sécuriser durablement leurs chantiers et entrepôts.",
       "summary": "Chariots R489, nacelles R486, engins de chantier R482, pont roulant, grue de chargement et AIPR.",
       "why": {
@@ -1385,6 +1395,8 @@
       "trainings": [
         {
           "title": "Gestes et postures",
+          "seoTitle": "Formation gestes et postures en entreprise",
+          "seoDescription": "Réduisez les TMS : formation pratique adaptée aux postes de vos salariés, réalisée dans vos locaux en Hauts-de-France.",
           "duration": "3 h 30 à 7 h (½ journée à 1 jour)",
           "format": "Intra-entreprise",
           "intro": "Manutention et port de charges : protéger le dos de vos équipes avant que le mal s'installe.",
