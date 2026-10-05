@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ArticleCarousel from "@/components/ArticleCarousel";
 import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
 import TipPopover from "@/components/TipPopover";
@@ -162,18 +163,9 @@ export default async function SecteurPage(
               </p>
               <h2 className="font-heading mt-4 text-3xl sm:text-4xl">Articles</h2>
             </Reveal>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {service.articles.map((article, i) => (
-                <Reveal key={article.title} delay={(i % 2) * 0.05}>
-                  <article className="h-full rounded-lg border border-border bg-surface-2 p-6">
-                    <h3 className="font-semibold leading-snug">{article.title}</h3>
-                    <p className="mt-3 whitespace-pre-line text-sm text-muted">
-                      {article.text}
-                    </p>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
+            <Reveal className="min-w-0">
+              <ArticleCarousel articles={service.articles} />
+            </Reveal>
           </div>
         </section>
       )}
