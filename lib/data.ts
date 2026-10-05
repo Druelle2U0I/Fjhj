@@ -76,6 +76,10 @@ export type Sector = {
   // référencement qu'un texte pensé pour ça.
   seoTitle?: string;
   seoDescription?: string;
+  // Courts articles affichés en bas de la page du domaine, toujours
+  // visibles (pas une FAQ à dérouler) : répondent à une question que se
+  // posent les clients, avec un lien de retour implicite vers ce domaine.
+  articles?: Module[];
 };
 
 export type HeroSlide = {

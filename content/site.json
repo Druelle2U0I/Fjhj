@@ -86,6 +86,12 @@
         "title": "Le saviez-vous ?",
         "text": "Le guide-file et le serre-file sont désignés par l'employeur, pas par l'organisme de formation : ce sont des rôles internes à l'entreprise, qui doivent être connus de tous avant qu'une alarme ne retentisse."
       },
+      "articles": [
+        {
+          "title": "7 erreurs fréquentes lors d'un exercice d'évacuation",
+          "text": "Signalétique de sortie masquée par du matériel stocké, point de rassemblement trop proche du bâtiment ou mal connu des occupants, guide-file ou serre-file absents ou désignés au dernier moment, portes coupe-feu bloquées en position ouverte, décompte des présents approximatif une fois au point de rassemblement, exercice réalisé toujours au même horaire et donc prévisible, absence de débriefing écrit : ce sont les écarts les plus souvent observés lors des exercices d'évacuation en entreprise. Chacun d'eux est facile à corriger une fois identifié, ce qui en fait un bon indicateur de ce qu'apporte réellement un exercice encadré par un professionnel plutôt qu'un simple test d'alarme."
+        }
+      ],
       "trainings": [
         {
           "title": "Exercice d'évacuation",
@@ -252,6 +258,20 @@
         "title": "Le saviez-vous ?",
         "text": "Le certificat SST se maintient par un recyclage (MAC SST) tous les 24 mois. Au-delà de la validité administrative, c'est ce qui permet de rester à jour : les gestes qui sauvent évoluent, notamment sur la réanimation cardio-pulmonaire."
       },
+      "articles": [
+        {
+          "title": "Combien de SST faut-il dans une entreprise ?",
+          "text": "Le Code du travail (article R4224-15) impose à l'employeur de disposer d'un nombre de salariés formés aux premiers secours « suffisant » pour couvrir les risques de l'entreprise, sans fixer de ratio unique applicable partout. En pratique, l'INRS recommande au moins un SST par équipe, par poste de travail isolé ou par vingtaine de salariés dans les activités à risque, et davantage dès qu'un atelier ou un chantier comporte des dangers particuliers. Le bon réflexe : raisonner par poste et par créneau horaire plutôt que par effectif total, pour qu'un secouriste formé soit toujours présent, y compris en cas d'absence. ENMA Formation vous aide à évaluer le nombre de SST adapté à votre site lors de la prise de devis."
+        },
+        {
+          "title": "SST ou PSC1 : quelle différence pour l'employeur ?",
+          "text": "Les deux formations enseignent les gestes de premiers secours, mais seul le certificat SST, délivré selon le référentiel INRS, est reconnu par le Code du travail pour répondre à l'obligation de disposer de secouristes dans l'entreprise. Le PSC1, orienté grand public, ne couvre pas le volet prévention des risques professionnels propre au SST et n'est pas reconnu comme équivalent pour cette obligation réglementaire. Si vos salariés détiennent déjà un PSC1, cela reste un atout, mais ne dispense pas de former des SST dédiés dans l'entreprise."
+        },
+        {
+          "title": "MAC SST : que se passe-t-il si le certificat expire ?",
+          "text": "Le certificat SST est valable 24 mois et doit être maintenu à jour par une formation MAC SST. Passé ce délai, le certificat n'est plus valide : le salarié reste volontaire et motivé, mais ne peut plus être comptabilisé comme secouriste formé au sens de l'obligation de l'employeur. Un MAC SST réalisé peu après l'expiration permet généralement de prolonger le certificat sans repasser l'intégralité de la formation initiale ; au-delà d'un certain délai, un nouveau parcours SST complet devient nécessaire. Pour éviter toute rupture de couverture, ENMA Formation assure le suivi des échéances de vos salariés et vous alerte avant l'expiration."
+        }
+      ],
       "trainings": [
         {
           "title": "Gestes qui sauvent (GQS)",
@@ -450,6 +470,16 @@
         "title": "Le saviez-vous ?",
         "text": "Le recyclage est recommandé tous les 3 ans par la norme. L'habilitation elle-même est délivrée par l'employeur, sur la base de l'avis de formation."
       },
+      "articles": [
+        {
+          "title": "Habilitation électrique : quelle durée de validité et quand recycler ?",
+          "text": "Contrairement au certificat SST, l'habilitation électrique n'a pas de durée de validité fixée par un texte unique : c'est l'employeur qui la délivre, la renouvelle ou la retire, en fonction de l'évolution du poste, du matériel ou des compétences du salarié. La norme NF C 18-510 recommande néanmoins un recyclage tous les 3 ans pour les habilitations courantes, et plus fréquemment en cas de changement d'installation, d'incident ou d'interruption prolongée de la pratique. En l'absence de recyclage, l'habilitation reste juridiquement valable mais expose l'employeur en cas d'accident si les compétences du salarié ne sont plus à jour : le recyclage régulier reste la meilleure protection, pour le salarié comme pour l'entreprise."
+        },
+        {
+          "title": "H0B0, BS, B1V, BR, B2 : quelle habilitation pour quel salarié ?",
+          "text": "Chaque symbole d'habilitation électrique correspond à un champ de tension et à un niveau d'intervention précis. H0 et H0V concernent le personnel non électricien intervenant à proximité d'installations haute tension, sans y toucher directement. BS et BE Manœuvre s'adressent aux non-électriciens autorisés à réaliser des opérations simples en basse tension (remplacement de fusibles, réarmement). B1V et B2V distinguent l'électricien exécutant (B1V) du chargé de travaux (B2V), ce dernier pouvant diriger une équipe. BR est réservé à l'électricien habilité à intervenir seul en dépannage. Le bon niveau dépend du poste occupé et des opérations réellement confiées au salarié : ENMA Formation vous aide à identifier l'habilitation adaptée à chaque profil avant la session."
+        }
+      ],
       "trainings": [
         {
           "title": "B1 / B1V — Exécutant électricien basse tension",
@@ -866,6 +896,12 @@
         "title": "Le saviez-vous ?",
         "text": "Le CACES atteste d'une évaluation des connaissances et savoir-faire ; il ne remplace pas l'autorisation de conduite, document distinct que l'employeur doit délivrer en complément, sur la base de cette évaluation."
       },
+      "articles": [
+        {
+          "title": "CACES® ou autorisation de conduite : ce que l'employeur doit vraiment fournir",
+          "text": "Le CACES® atteste qu'un salarié a suivi une formation et réussi une évaluation théorique et pratique sur un type d'engin donné. Il ne remplace pas l'autorisation de conduite, document distinct que l'article R4323-56 du Code du travail impose à l'employeur de délivrer nommément à chaque conducteur, sur la base notamment du résultat du CACES®, d'un examen d'aptitude médicale et d'une connaissance des lieux où l'engin sera utilisé. En résumé : le CACES® évalue la compétence, l'autorisation de conduite engage la responsabilité de l'employeur à l'accorder. Les deux documents sont donc nécessaires, et ENMA Formation vous remet tous les éléments du premier pour constituer sereinement le second."
+        }
+      ],
       "imageAlt": "Cariste conduisant un chariot élévateur chargé dans un entrepôt",
       "trainings": [
         {
@@ -1392,6 +1428,12 @@
         "title": "Le saviez-vous ?",
         "text": "Le référentiel France Chimie DT40 distingue deux niveaux : le Niveau 1, suivi par tout salarié d'entreprise extérieure intervenant sur un site industriel, et le Niveau 2, réservé aux chefs d'équipe et encadrants qui organisent et supervisent cette intervention."
       },
+      "articles": [
+        {
+          "title": "Gestes et postures : 5 exercices que vos salariés peuvent faire au poste",
+          "text": "Quelques gestes simples, répétés régulièrement, réduisent significativement le risque de troubles musculosquelettiques : étirement des fléchisseurs du dos en position debout avant une tâche de manutention, rotation lente des épaules pour les postes avec gestes répétitifs des bras, auto-grandissement de la colonne vertébrale pour les postes assis prolongés, mobilisation des poignets avant une tâche de préhension fine, et marche active de quelques minutes pour relancer la circulation après une station prolongée. Ces exercices ne remplacent pas une analyse ergonomique du poste, mais constituent un premier réflexe facile à diffuser auprès des équipes. La formation Gestes et postures d'ENMA Formation les adapte précisément aux postes réels de votre entreprise."
+        }
+      ],
       "trainings": [
         {
           "title": "Gestes et postures",
