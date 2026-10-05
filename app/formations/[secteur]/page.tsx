@@ -149,6 +149,33 @@ export default async function SecteurPage(
         </div>
       </section>
 
+      {/* Pour aller plus loin : courts articles toujours visibles (pas une
+          FAQ à dérouler), qui répondent à une question que se posent les
+          clients de ce domaine. */}
+      {service.articles && service.articles.length > 0 && (
+        <section className="px-6 pb-12 sm:pb-16">
+          <div className="mx-auto max-w-4xl">
+            <Reveal>
+              <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">
+                Pour aller plus loin
+              </h2>
+            </Reveal>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {service.articles.map((article, i) => (
+                <Reveal key={article.title} delay={(i % 2) * 0.05}>
+                  <article className="h-full rounded-lg border border-border bg-surface p-6">
+                    <h3 className="font-semibold leading-snug">{article.title}</h3>
+                    <p className="mt-3 whitespace-pre-line text-sm text-muted">
+                      {article.text}
+                    </p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* « Le saviez-vous ? » : flotte en bas à droite pendant le défilement
           et s'arrête avant la bande de contact (placé juste avant elle). */}
       {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
