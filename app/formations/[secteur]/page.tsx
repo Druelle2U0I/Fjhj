@@ -20,10 +20,10 @@ export async function generateMetadata(
   const service = services.find((s) => s.slug === secteur);
   if (!service) return {};
   return pageMetadata({
-    title: `Formation ${service.title}`,
-    description: service.summary
-      ? `${service.title} : ${service.summary}`
-      : service.description,
+    title: service.seoTitle ?? `Formation ${service.title}`,
+    description:
+      service.seoDescription ??
+      (service.summary ? `${service.title} : ${service.summary}` : service.description),
     path: `/formations/${service.slug}`,
   });
 }

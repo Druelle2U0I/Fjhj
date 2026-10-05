@@ -70,8 +70,11 @@ const figtree = Figtree({
 });
 
 const siteTitle =
-  home.seoTitle || "ENMA Formation — Organisme de formation Qualiopi Hauts-de-France";
-const siteDescription = clip(home.seoDescription || company.description);
+  home.seoTitle || "Formation sécurité en entreprise Hauts-de-France | ENMA Formation";
+const siteDescription = clip(
+  home.seoDescription ||
+    "Organisme certifié Qualiopi à Wingles : SST, habilitation électrique, CACES, incendie. Formations en intra, dans vos locaux, partout en Hauts-de-France.",
+);
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -148,6 +151,9 @@ const organizationJsonLd = {
     addressCountry: "FR",
   },
   areaServed: company.serviceArea,
+  ...(legal.legalName ? { legalName: legal.legalName } : {}),
+  ...(legal.siret ? { taxID: legal.siret } : {}),
+  ...(legal.vat ? { vatID: legal.vat } : {}),
   identifier: {
     "@type": "PropertyValue",
     name: "Certification Qualiopi",

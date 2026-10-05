@@ -43,11 +43,12 @@ export async function generateMetadata(
   if (!found) return {};
   const { service, training } = found;
   // L'accroche de la formation d'abord, puis toujours la durée et les
-  // arguments Qualiopi / OPCO (l'accroche est raccourcie si besoin).
+  // arguments Qualiopi / OPCO (l'accroche est raccourcie si besoin), sauf
+  // si un titre/texte dédié au référencement a été renseigné.
   const tail = ` ${training.duration} · Qualiopi · finançable OPCO.`;
   return pageMetadata({
-    title: training.title,
-    description: `${clip(training.intro, 158 - tail.length)}${tail}`,
+    title: training.seoTitle ?? training.title,
+    description: training.seoDescription ?? `${clip(training.intro, 158 - tail.length)}${tail}`,
     path: `/formations/${service.slug}/${training.slug}`,
   });
 }
@@ -92,6 +93,14 @@ export default async function FormationPage(
     ...(training.certification
       ? { educationalCredentialAwarded: training.certification }
       : {}),
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "Onsite",
+      location: {
+        "@type": "Place",
+        name: "Dans les locaux du client, Hauts-de-France",
+      },
+    },
   };
 
   return (
