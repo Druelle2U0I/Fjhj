@@ -168,7 +168,13 @@ export default async function SecteurPage(
 
       {/* Encart final « formation absente » (textes modifiables dans l'admin,
           Pages des domaines → Encadré final). */}
-      <section className="px-6 pb-16 pt-6 sm:pb-20">
+      {/* Même blanc au-dessus et en dessous : la bande sombre « Pour aller
+          plus loin », quand elle est présente, n'apporte pas de marge. */}
+      <section
+        className={`px-6 pb-16 sm:pb-20 ${
+          service.articles && service.articles.length > 0 ? "pt-16 sm:pt-20" : "pt-6"
+        }`}
+      >
         <Reveal className="relative mx-auto max-w-3xl">
           {(pages.sector.customBadge ?? "Sans engagement") && (
             <span className="absolute -top-4 left-1/2 z-10 inline-flex -translate-x-1/2 -rotate-3 items-center rounded-full bg-[var(--badge-bg,var(--accent))] px-4 py-1.5 text-xs font-bold uppercase tracking-wide text-[var(--badge-fg,var(--accent-foreground))] shadow-lg">
