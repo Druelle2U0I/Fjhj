@@ -156,17 +156,9 @@ export default async function SecteurPage(
           sombre que la bande « Pourquoi former vos équipes » plus haut. */}
       {service.articles && service.articles.length > 0 && (
         <section className="on-surface bg-surface px-6 py-10 sm:py-14">
-          <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[280px_1fr] lg:gap-16">
-            <Reveal className="lg:sticky lg:top-28 lg:self-start">
-              <p className="eyebrow block text-surface-accent">
-                Pour aller plus loin
-              </p>
-              <h2 className="font-heading mt-4 text-3xl sm:text-4xl">Articles</h2>
-            </Reveal>
-            <Reveal className="min-w-0">
-              <ArticleCarousel articles={service.articles} />
-            </Reveal>
-          </div>
+          <Reveal className="mx-auto max-w-6xl">
+            <ArticleCarousel title="Pour aller plus loin" articles={service.articles} />
+          </Reveal>
         </section>
       )}
 

@@ -5,9 +5,10 @@ import { animate, motion, useMotionValue, useReducedMotion, type PanInfo } from 
 
 export type Article = { title: string; text: string };
 
-// Un seul article affiché à la fois (plus large que haut), avec flèches
-// et glisser au doigt ou à la souris, et un repère « 1 sur 3 ».
-export default function ArticleCarousel({ articles }: { articles: Article[] }) {
+// Un seul article affiché à la fois (plus large que haut). À gauche : le
+// titre, le repère « 1 sur 3 » et les flèches juste dessous ; on peut
+// aussi glisser au doigt ou à la souris.
+export default function ArticleCarousel({ title, articles }: { title: string; articles: Article[] }) {
   const [index, setIndex] = useState(0);
   const reduce = useReducedMotion();
 
@@ -65,10 +66,39 @@ export default function ArticleCarousel({ articles }: { articles: Article[] }) {
     }`;
 
   return (
-    <div className="min-w-0">
+    <div className="grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-16">
+      <div className="lg:self-start">
+        <h2 className="font-heading text-2xl leading-tight sm:text-3xl">{title}</h2>
+        {maxIndex > 0 && (
+          <>
+            <p className="mt-4 text-sm text-muted" aria-live="polite">
+              {current + 1} sur {articles.length}
+            </p>
+            <div className="mt-3 flex items-center gap-3">
+              <button
+                type="button"
+                aria-label="Article précédent"
+                onClick={() => go(-1)}
+                className={arrow(current === 0)}
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                aria-label="Article suivant"
+                onClick={() => go(1)}
+                className={arrow(current === maxIndex)}
+              >
+                ›
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+
       <div
         ref={viewport}
-        className="overflow-hidden transition-[height] duration-300 ease-out"
+        className="min-w-0 overflow-hidden transition-[height] duration-300 ease-out"
         style={{ height }}
       >
         <motion.div
@@ -98,30 +128,6 @@ export default function ArticleCarousel({ articles }: { articles: Article[] }) {
           ))}
         </motion.div>
       </div>
-
-      {maxIndex > 0 && (
-        <div className="mt-6 flex items-center justify-center gap-5">
-          <button
-            type="button"
-            aria-label="Article précédent"
-            onClick={() => go(-1)}
-            className={arrow(current === 0)}
-          >
-            ‹
-          </button>
-          <p className="text-sm text-muted" aria-live="polite">
-            {current + 1} sur {articles.length}
-          </p>
-          <button
-            type="button"
-            aria-label="Article suivant"
-            onClick={() => go(1)}
-            className={arrow(current === maxIndex)}
-          >
-            ›
-          </button>
-        </div>
-      )}
     </div>
   );
 }
