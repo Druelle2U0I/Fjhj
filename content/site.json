@@ -2418,8 +2418,8 @@
   "recommendation": {
     "driveId": "b!XQbitKSa2UaRfVKI8xKmSPZa2QFX95xJpy0LvY0j5h1ZQuJTYEE4TqFwl-lTqvG9",
     "itemId": "01KAVFK7PRY32ZUBXHHJEKB5RJZKC6GSUI",
-    "sheet": "Feuil1",
-    "cell": "C3:D3",
+    "sheet": "stat",
+    "cell": "H3",
     "file": "Documentation Formation/Excel et Forms/Excel/Évaluer la session !.xlsx"
   },
   "footerImageAlt": "Chemin menant à un terril du bassin minier, en Hauts-de-France"
