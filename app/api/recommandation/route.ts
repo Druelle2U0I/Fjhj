@@ -8,10 +8,14 @@ export async function GET() {
   const configured = Boolean(
     process.env.MS_TENANT_ID && process.env.MS_CLIENT_ID && process.env.MS_CLIENT_SECRET,
   );
-  const reco = configured ? await fetchRecommendation() : null;
+  if (!configured) {
+    return Response.json({ identifiants_renseignes: false, lecture_excel_ok: false, pourcentage: null });
+  }
+  const reco = await fetchRecommendation();
   return Response.json({
-    identifiants_renseignes: configured,
-    lecture_excel_ok: Boolean(reco),
-    pourcentage: reco ? Math.round(reco.percent) : null,
+    identifiants_renseignes: true,
+    lecture_excel_ok: reco.ok,
+    pourcentage: reco.ok ? Math.round(reco.percent) : null,
+    erreur: reco.ok ? null : reco.reason,
   });
 }
