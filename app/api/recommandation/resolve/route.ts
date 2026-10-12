@@ -9,7 +9,15 @@ import { graphErrorCode, graphToken } from "@/lib/recommendation";
 // - ?headers=<nom de l'onglet> renvoie uniquement la première ligne
 //   (en-têtes de colonnes) et le nombre de lignes de données, jamais les
 //   réponses individuelles (aucune donnée personnelle exposée).
+// - ?dump=stat renvoie le contenu complet de l'onglet « stat » (chiffres
+//   agrégés, jamais de réponse individuelle) pour repérer une cellule
+//   précise.
 export const dynamic = "force-dynamic";
+
+// Seul « stat » peut être entièrement affiché : c'est un onglet de
+// chiffres agrégés (pas de nom, pas de réponse individuelle), contrairement
+// aux autres onglets du fichier.
+const DUMPABLE_SHEET = "stat";
 
 // Encodage requis par l'API Microsoft Graph « shares » :
 // https://learn.microsoft.com/graph/api/shares-get
@@ -24,12 +32,13 @@ export async function GET(request: Request) {
   const url = params.get("url");
   const listWorksheets = params.has("worksheets");
   const headerSheet = params.get("headers");
+  const dumpSheet = params.get("dump");
 
   const auth = await graphToken();
   if ("reason" in auth) return Response.json({ erreur: auth.reason }, { status: 502 });
   const headers = { Authorization: `Bearer ${auth.token}` };
 
-  if (listWorksheets || headerSheet) {
+  if (listWorksheets || headerSheet || dumpSheet) {
     const source = recommendationSource;
     if (!source?.driveId || !source.itemId) {
       return Response.json({ erreur: "source_non_configuree" }, { status: 400 });
@@ -41,6 +50,18 @@ export async function GET(request: Request) {
       if (!res.ok) return Response.json({ erreur: await graphErrorCode(res) }, { status: 502 });
       const { value } = (await res.json()) as { value: { name: string }[] };
       return Response.json({ onglets: value.map((w) => w.name) });
+    }
+
+    if (dumpSheet) {
+      if (dumpSheet !== DUMPABLE_SHEET) {
+        return Response.json({ erreur: "onglet_non_autorise" }, { status: 400 });
+      }
+      const res = await fetch(
+        `${base}/worksheets('${encodeURIComponent(dumpSheet)}')/usedRange(valuesOnly=true)?$select=values,address`,
+        { headers },
+      );
+      if (!res.ok) return Response.json({ erreur: await graphErrorCode(res) }, { status: 502 });
+      return Response.json(await res.json());
     }
 
     const res = await fetch(
