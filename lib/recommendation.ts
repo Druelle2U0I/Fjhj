@@ -17,7 +17,7 @@ type RecoResult =
   | { ok: true; percent: number; count: number }
   | { ok: false; reason: string };
 
-async function graphErrorCode(res: Response): Promise<string> {
+export async function graphErrorCode(res: Response): Promise<string> {
   try {
     const body = (await res.json()) as { error?: { code?: string } };
     return body.error?.code ?? String(res.status);
@@ -26,7 +26,7 @@ async function graphErrorCode(res: Response): Promise<string> {
   }
 }
 
-async function graphToken(): Promise<{ token: string } | { reason: string }> {
+export async function graphToken(): Promise<{ token: string } | { reason: string }> {
   const { MS_TENANT_ID, MS_CLIENT_ID, MS_CLIENT_SECRET } = process.env;
   if (!MS_TENANT_ID || !MS_CLIENT_ID || !MS_CLIENT_SECRET) return { reason: "identifiants_absents" };
   const res = await fetch(`https://login.microsoftonline.com/${MS_TENANT_ID}/oauth2/v2.0/token`, {
