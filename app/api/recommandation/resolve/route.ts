@@ -1,9 +1,11 @@
+import { recommendationSource } from "@/lib/data";
 import { graphErrorCode, graphToken } from "@/lib/recommendation";
 
-// Retrouve le driveId/itemId actuels d'un fichier OneDrive/SharePoint à
-// partir d'un lien de partage (utile quand le fichier a été déplacé ou
-// recréé et que les identifiants enregistrés dans le site ne correspondent
-// plus à rien). Usage : /api/recommandation/resolve?url=<lien copié>
+// Outils de diagnostic pour la liaison Excel (taux de recommandation) :
+// - ?url=<lien de partage> retrouve le driveId/itemId actuels d'un fichier
+//   OneDrive/SharePoint (utile si le fichier a été déplacé ou recréé).
+// - ?worksheets=1 liste les onglets du fichier déjà configuré (utile si
+//   l'onglet a été renommé).
 export const dynamic = "force-dynamic";
 
 // Encodage requis par l'API Microsoft Graph « shares » :
@@ -15,15 +17,33 @@ function encodeShareUrl(url: string): string {
 }
 
 export async function GET(request: Request) {
-  const url = new URL(request.url).searchParams.get("url");
-  if (!url) return Response.json({ erreur: "parametre_url_manquant" }, { status: 400 });
+  const params = new URL(request.url).searchParams;
+  const url = params.get("url");
+  const listWorksheets = params.has("worksheets");
 
   const auth = await graphToken();
   if ("reason" in auth) return Response.json({ erreur: auth.reason }, { status: 502 });
+  const headers = { Authorization: `Bearer ${auth.token}` };
+
+  if (listWorksheets) {
+    const source = recommendationSource;
+    if (!source?.driveId || !source.itemId) {
+      return Response.json({ erreur: "source_non_configuree" }, { status: 400 });
+    }
+    const res = await fetch(
+      `https://graph.microsoft.com/v1.0/drives/${source.driveId}/items/${source.itemId}/workbook/worksheets?$select=name`,
+      { headers },
+    );
+    if (!res.ok) return Response.json({ erreur: await graphErrorCode(res) }, { status: 502 });
+    const { value } = (await res.json()) as { value: { name: string }[] };
+    return Response.json({ onglets: value.map((w) => w.name) });
+  }
+
+  if (!url) return Response.json({ erreur: "parametre_url_ou_worksheets_manquant" }, { status: 400 });
 
   const res = await fetch(
     `https://graph.microsoft.com/v1.0/shares/${encodeShareUrl(url)}/driveItem?$select=id,name,parentReference`,
-    { headers: { Authorization: `Bearer ${auth.token}` } },
+    { headers },
   );
   if (!res.ok) return Response.json({ erreur: await graphErrorCode(res) }, { status: 502 });
 
