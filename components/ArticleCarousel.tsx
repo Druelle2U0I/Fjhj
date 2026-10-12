@@ -5,9 +5,9 @@ import { animate, motion, useMotionValue, useReducedMotion, type PanInfo } from 
 
 export type Article = { title: string; text: string };
 
-// Un seul article affiché à la fois (plus large que haut). À gauche : le
-// titre, le repère « 1 sur 3 » et les flèches juste dessous ; on peut
-// aussi glisser au doigt ou à la souris.
+// Un seul article affiché à la fois (plus large que haut), dans une bande
+// de hauteur fixe (celle de l'article le plus long). À gauche : le titre,
+// le repère « 1 sur 3 » et les flèches ; on peut aussi glisser au doigt.
 export default function ArticleCarousel({ title, articles }: { title: string; articles: Article[] }) {
   const [index, setIndex] = useState(0);
   const reduce = useReducedMotion();
@@ -15,8 +15,6 @@ export default function ArticleCarousel({ title, articles }: { title: string; ar
   const viewport = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
   const x = useMotionValue(0);
-  const itemRefs = useRef<(HTMLElement | null)[]>([]);
-  const [height, setHeight] = useState<number>();
 
   useLayoutEffect(() => {
     const node = viewport.current;
@@ -29,13 +27,6 @@ export default function ArticleCarousel({ title, articles }: { title: string; ar
   const maxIndex = articles.length - 1;
   const current = Math.min(index, maxIndex);
   const target = -current * width;
-
-  // La carte ne garde que la hauteur de l'article affiché (pas celle du
-  // plus long de la liste), pour éviter un grand vide sous un texte court.
-  useLayoutEffect(() => {
-    const node = itemRefs.current[current];
-    if (node) setHeight(node.offsetHeight);
-  }, [current, width]);
 
   useEffect(() => {
     const controls = animate(
@@ -68,13 +59,13 @@ export default function ArticleCarousel({ title, articles }: { title: string; ar
   return (
     <div className="grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-16">
       <div className="lg:self-start">
-        <h2 className="font-heading text-2xl leading-tight sm:text-3xl">{title}</h2>
+        <h2 className="eyebrow block text-surface-accent">{title}</h2>
         {maxIndex > 0 && (
           <>
-            <p className="mt-4 text-sm text-muted" aria-live="polite">
+            <p className="font-heading mt-4 text-3xl sm:text-4xl" aria-live="polite">
               {current + 1} sur {articles.length}
             </p>
-            <div className="mt-3 flex items-center gap-3">
+            <div className="mt-5 flex items-center gap-3">
               <button
                 type="button"
                 aria-label="Article précédent"
@@ -98,8 +89,7 @@ export default function ArticleCarousel({ title, articles }: { title: string; ar
 
       <div
         ref={viewport}
-        className="min-w-0 overflow-hidden transition-[height] duration-300 ease-out"
-        style={{ height }}
+        className="min-w-0 overflow-hidden"
       >
         <motion.div
           style={{ x }}
@@ -107,14 +97,11 @@ export default function ArticleCarousel({ title, articles }: { title: string; ar
           dragConstraints={{ left: -maxIndex * width, right: 0 }}
           dragElastic={0.12}
           onDragEnd={onDragEnd}
-          className="flex items-start cursor-grab touch-pan-y active:cursor-grabbing"
+          className="flex cursor-grab touch-pan-y active:cursor-grabbing"
         >
-          {articles.map((article, i) => (
+          {articles.map((article) => (
             <article
               key={article.title}
-              ref={(node) => {
-                itemRefs.current[i] = node;
-              }}
               className="shrink-0 select-none rounded-lg border border-border bg-surface-2 p-6 sm:p-8"
               style={{ width: width || "100%" }}
             >
