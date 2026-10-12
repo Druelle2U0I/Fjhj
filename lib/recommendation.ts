@@ -13,9 +13,22 @@ import { recommendationSource, stats, type Stat } from "@/lib/data";
 
 const REFRESH_SECONDS = 3600;
 
-async function graphToken(): Promise<string | null> {
+type RecoResult =
+  | { ok: true; percent: number; count: number }
+  | { ok: false; reason: string };
+
+async function graphErrorCode(res: Response): Promise<string> {
+  try {
+    const body = (await res.json()) as { error?: { code?: string } };
+    return body.error?.code ?? String(res.status);
+  } catch {
+    return String(res.status);
+  }
+}
+
+async function graphToken(): Promise<{ token: string } | { reason: string }> {
   const { MS_TENANT_ID, MS_CLIENT_ID, MS_CLIENT_SECRET } = process.env;
-  if (!MS_TENANT_ID || !MS_CLIENT_ID || !MS_CLIENT_SECRET) return null;
+  if (!MS_TENANT_ID || !MS_CLIENT_ID || !MS_CLIENT_SECRET) return { reason: "identifiants_absents" };
   const res = await fetch(`https://login.microsoftonline.com/${MS_TENANT_ID}/oauth2/v2.0/token`, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -27,22 +40,23 @@ async function graphToken(): Promise<string | null> {
     }),
     next: { revalidate: REFRESH_SECONDS },
   });
-  if (!res.ok) return null;
+  if (!res.ok) return { reason: `jeton_refuse_${await graphErrorCode(res)}` };
   const data = (await res.json()) as { access_token?: string };
-  return data.access_token ?? null;
+  if (!data.access_token) return { reason: "jeton_absent" };
+  return { token: data.access_token };
 }
 
 // Part des répondants qui recommandent (note ≥ seuil, 9 par défaut, comme
 // les « promoteurs » du Net Promoter Score), lue dans la colonne dont
 // l'en-tête correspond au libellé configuré (« Recommandation »).
-export async function fetchRecommendation(): Promise<{ percent: number; count: number } | null> {
+export async function fetchRecommendation(): Promise<RecoResult> {
   const source = recommendationSource;
-  if (!source?.driveId || !source.itemId) return null;
+  if (!source?.driveId || !source.itemId) return { ok: false, reason: "source_non_configuree" };
   try {
-    const token = await graphToken();
-    if (!token) return null;
+    const auth = await graphToken();
+    if ("reason" in auth) return { ok: false, reason: auth.reason };
     const base = `https://graph.microsoft.com/v1.0/drives/${source.driveId}/items/${source.itemId}/workbook`;
-    const headers = { Authorization: `Bearer ${token}` };
+    const headers = { Authorization: `Bearer ${auth.token}` };
 
     // Cellule ou plage précise (ex. Feuil1!C3:D3) contenant des
     // pourcentages : leurs valeurs sont additionnées (part des 10 + part
@@ -52,28 +66,29 @@ export async function fetchRecommendation(): Promise<{ percent: number; count: n
         `${base}/worksheets('${encodeURIComponent(source.sheet)}')/range(address='${encodeURIComponent(source.cell)}')?$select=values`,
         { headers, next: { revalidate: REFRESH_SECONDS } },
       );
-      if (!res.ok) return null;
+      if (!res.ok) return { ok: false, reason: `lecture_cellule_${await graphErrorCode(res)}` };
       const { values } = (await res.json()) as { values: unknown[][] };
       const numbers = (values ?? []).flat().map((raw) =>
         typeof raw === "number" ? raw : Number(String(raw).replace("%", "").replace(",", ".")),
       );
-      if (numbers.length === 0 || numbers.some((n) => !Number.isFinite(n))) return null;
+      if (numbers.length === 0 || numbers.some((n) => !Number.isFinite(n)))
+        return { ok: false, reason: "cellule_valeurs_invalides" };
       // Excel renvoie 0,6875 pour une cellule affichée « 68,75 % ».
       const total = numbers.reduce((sum, n) => sum + (n <= 1 ? n * 100 : n), 0);
-      return { percent: Math.min(100, total), count: 0 };
+      return { ok: true, percent: Math.min(100, total), count: 0 };
     }
     let sheet = source.sheet;
     if (!sheet) {
       const list = await fetch(`${base}/worksheets?$select=name`, { headers, next: { revalidate: REFRESH_SECONDS } });
-      if (!list.ok) return null;
+      if (!list.ok) return { ok: false, reason: `liste_feuilles_${await graphErrorCode(list)}` };
       sheet = ((await list.json()) as { value: { name: string }[] }).value[0]?.name;
-      if (!sheet) return null;
+      if (!sheet) return { ok: false, reason: "aucune_feuille" };
     }
     const res = await fetch(
       `${base}/worksheets('${encodeURIComponent(sheet)}')/usedRange(valuesOnly=true)?$select=values`,
       { headers, next: { revalidate: REFRESH_SECONDS } },
     );
-    if (!res.ok) return null;
+    if (!res.ok) return { ok: false, reason: `lecture_feuille_${await graphErrorCode(res)}` };
     const { values } = (await res.json()) as { values: unknown[][] };
     const label = (source.column || "Recommandation").toLowerCase();
 
@@ -84,7 +99,7 @@ export async function fetchRecommendation(): Promise<{ percent: number; count: n
       const c = values[r].findIndex((cell) => String(cell).trim().toLowerCase() === label);
       if (c >= 0) [row, col] = [r, c];
     }
-    if (row < 0) return null;
+    if (row < 0) return { ok: false, reason: "colonne_introuvable" };
 
     const notes: number[] = [];
     for (let r = row + 1; r < values.length; r++) {
@@ -94,12 +109,12 @@ export async function fetchRecommendation(): Promise<{ percent: number; count: n
       if (!Number.isFinite(n) || n < 0 || n > 10) break;
       notes.push(n);
     }
-    if (notes.length === 0) return null;
+    if (notes.length === 0) return { ok: false, reason: "aucune_note" };
     const threshold = source.minScore ?? 9;
     const recommending = notes.filter((n) => n >= threshold).length;
-    return { percent: (recommending / notes.length) * 100, count: notes.length };
-  } catch {
-    return null;
+    return { ok: true, percent: (recommending / notes.length) * 100, count: notes.length };
+  } catch (e) {
+    return { ok: false, reason: `exception_${e instanceof Error ? e.message : "inconnue"}` };
   }
 }
 
@@ -112,6 +127,6 @@ function format(percent: number) {
 export async function getStats(): Promise<Stat[]> {
   if (!stats.some((s) => s.source === "recommendation")) return stats;
   const reco = await fetchRecommendation();
-  if (!reco) return stats;
+  if (!reco.ok) return stats;
   return stats.map((s) => (s.source === "recommendation" ? { ...s, value: format(reco.percent) } : s));
 }
