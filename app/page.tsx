@@ -13,6 +13,9 @@ import StoryRow, { StoryFact, StoryLink, StoryTitle } from "@/components/StoryRo
 import { services, funding, home, pages } from "@/lib/data";
 import type { HeroSlide, HomeSection } from "@/lib/data";
 
+// Relit régulièrement le taux de recommandation (fichier Excel).
+export const revalidate = 300;
+
 // Bande défilante : les formations une par une (et non les domaines,
 // présentés juste en dessous), en alternant les domaines d'une carte à
 // l'autre. Photo de la formation, ou à défaut celle de son domaine.

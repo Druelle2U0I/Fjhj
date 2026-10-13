@@ -4,6 +4,9 @@ import PageThemeScope from "@/components/PageThemeScope";
 import { pages } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo";
 
+// Relit régulièrement le taux de recommandation (fichier Excel).
+export const revalidate = 300;
+
 export const metadata: Metadata = pageMetadata({
   title: "Qualiopi & financement",
   description: pages.funding.seoDescription,

@@ -9,6 +9,9 @@ import Visual from "@/components/Visual";
 import { fillCounts, pages, services } from "@/lib/data";
 import { pageMetadata } from "@/lib/seo";
 
+// Relit régulièrement le taux de recommandation (fichier Excel).
+export const revalidate = 300;
+
 export const metadata: Metadata = pageMetadata({
   title: "Nos formations",
   description: fillCounts(pages.catalogue.seoDescription),
