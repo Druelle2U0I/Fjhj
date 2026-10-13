@@ -2,7 +2,7 @@ import { fetchRecommendation } from "@/lib/recommendation";
 
 // Vérification de la liaison avec le fichier Excel : indique si la valeur
 // est bien lue (sans exposer de secret ni de donnée personnelle).
-export const revalidate = 3600;
+export const revalidate = 300;
 
 export async function GET() {
   const configured = Boolean(

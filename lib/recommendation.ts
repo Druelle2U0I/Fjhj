@@ -11,7 +11,10 @@ import { recommendationSource, stats, type Stat } from "@/lib/data";
 // Sans elles, ou en cas d'erreur, le chiffre saisi dans l'admin est
 // affiché.
 
-const REFRESH_SECONDS = 3600;
+// Le chiffre est relu dans Excel toutes les 5 minutes au plus ; le jeton
+// Microsoft (valable environ 1 h) est gardé 30 minutes.
+const REFRESH_SECONDS = 300;
+const TOKEN_SECONDS = 1800;
 
 type RecoResult =
   | { ok: true; percent: number; count: number }
@@ -38,7 +41,7 @@ export async function graphToken(): Promise<{ token: string } | { reason: string
       scope: "https://graph.microsoft.com/.default",
       grant_type: "client_credentials",
     }),
-    next: { revalidate: REFRESH_SECONDS },
+    next: { revalidate: TOKEN_SECONDS },
   });
   if (!res.ok) return { reason: `jeton_refuse_${await graphErrorCode(res)}` };
   const data = (await res.json()) as { access_token?: string };
