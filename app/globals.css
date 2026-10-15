@@ -609,7 +609,7 @@ h4,
   .spotlight-item {
     transition: filter 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
   }
-  .spotlight .spotlight-item:hover {
+  .spotlight .spotlight-item[data-hover] {
     transform: translateY(-6px);
     box-shadow: 0 30px 50px -14px rgba(11, 3, 43, 0.7), 0 10px 20px -8px rgba(11, 3, 43, 0.4);
   }
@@ -627,7 +627,7 @@ h4,
 }
 
 /* Carte secteur ou formation cliquée : la photo zoome pendant le chargement
-   de la page suivante (voir components/CardPressZoom.tsx). */
+   de la page suivante (voir components/CardInteractions.tsx). */
 .zoom-card[data-pressed] .zoom-img {
   scale: 1.12;
   transition-duration: 450ms;

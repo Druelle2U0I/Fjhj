@@ -54,7 +54,7 @@ export default function FormationsPage() {
                   src={service.image}
                   alt={service.imageAlt ?? service.title}
                   sizes="(min-width: 1024px) 75vw, (min-width: 640px) 110vw, 200vw"
-                  className="zoom-img transition-transform duration-700 group-hover:scale-105"
+                  className="zoom-img transition-transform duration-700 group-data-[hover]:scale-105"
                   objectPosition={service.imagePosition}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/5 to-black/50" />
@@ -63,7 +63,7 @@ export default function FormationsPage() {
                 </h2>
                 <div className="relative mt-auto p-5">
                   {service.summary && (
-                    <p className="text-sm leading-relaxed text-white opacity-100 transition-opacity duration-500 [@media(any-hover:hover)]:opacity-0 [@media(any-hover:hover)]:group-hover:opacity-100">
+                    <p className="text-sm leading-relaxed text-white opacity-100 transition-opacity duration-500 [@media(any-hover:hover)]:opacity-0 [@media(any-hover:hover)]:group-data-[hover]:opacity-100">
                       {service.summary}
                     </p>
                   )}

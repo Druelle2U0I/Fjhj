@@ -78,10 +78,10 @@ export default function CardRail({
                     src={card.image}
                     alt={card.imageAlt ?? card.title}
                     sizes="(min-width: 640px) 720px, 170vw"
-                    className="zoom-img transition-transform duration-700 group-hover:scale-105"
+                    className="zoom-img transition-transform duration-700 group-data-[hover]:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/5 to-black/50" />
-                  <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/45" />
+                  <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-data-[hover]:bg-black/45" />
                 </>
               )}
               <p
@@ -96,7 +96,7 @@ export default function CardRail({
                   <p
                     className={`text-xs leading-relaxed ${
                       photo
-                        ? "text-white opacity-100 transition-opacity duration-500 [@media(any-hover:hover)]:opacity-0 [@media(any-hover:hover)]:group-hover:opacity-100"
+                        ? "text-white opacity-100 transition-opacity duration-500 [@media(any-hover:hover)]:opacity-0 [@media(any-hover:hover)]:group-data-[hover]:opacity-100"
                         : "text-[#0b0c31]"
                     }`}
                   >

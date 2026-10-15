@@ -40,7 +40,7 @@ export default function TrainingCard({
         alt={imageAlt ?? title}
         sizes={sizes}
         objectPosition={imagePosition}
-        className="zoom-img transition-transform duration-700 ease-out group-hover:scale-105"
+        className="zoom-img transition-transform duration-700 ease-out group-data-[hover]:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/75" />
 
@@ -56,12 +56,12 @@ export default function TrainingCard({
         <h3 className="font-heading text-sm uppercase leading-tight text-white sm:text-base">{title}</h3>
       </div>
 
-      <div className="pointer-events-none relative mt-auto p-5 translate-y-[4.25rem] transition-transform duration-500 ease-out group-hover:translate-y-0 group-focus-within:translate-y-0">
+      <div className="pointer-events-none relative mt-auto p-5 translate-y-[4.25rem] transition-transform duration-500 ease-out group-data-[hover]:translate-y-0 group-focus-within:translate-y-0">
         {intro && <p className="line-clamp-2 whitespace-pre-line text-sm text-white/85">{intro}</p>}
         {duration && <p className="mt-2 text-sm font-semibold text-white">{duration}</p>}
         <Link
           href={quoteHref}
-          className="quote-pill pointer-events-none relative z-[2] mt-4 flex w-full items-center justify-center rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] opacity-0 backdrop-blur-md transition-opacity duration-500 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100"
+          className="quote-pill pointer-events-none relative z-[2] mt-4 flex w-full items-center justify-center rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] opacity-0 transition-opacity duration-500 group-data-[hover]:pointer-events-auto group-data-[hover]:opacity-100 group-data-[hover]:backdrop-blur-md group-focus-within:pointer-events-auto group-focus-within:opacity-100 group-focus-within:backdrop-blur-md"
         >
           {quoteLabel}
         </Link>
