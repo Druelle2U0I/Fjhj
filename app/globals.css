@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Effets de survol actifs dès qu'une souris ou un trackpad est présent :
+   Safari sur iPad annonce un écran tactile (hover: none) même avec un
+   trackpad, ce qui coupait les effets au survol des cartes. */
+@custom-variant hover {
+  @media (any-hover: hover) {
+    &:hover {
+      @slot;
+    }
+  }
+}
+
 :root {
   --background: #0b032b;
   --surface: #160f3f;
@@ -594,7 +605,7 @@ h4,
 
 /* Cartes (secteurs, formations) : au survol, la carte se soulève avec une
    ombre marquée. */
-@media (hover: hover) {
+@media (any-hover: hover) {
   .spotlight-item {
     transition: filter 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
   }

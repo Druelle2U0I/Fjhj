@@ -96,7 +96,7 @@ export default function CardRail({
                   <p
                     className={`text-xs leading-relaxed ${
                       photo
-                        ? "text-white opacity-100 transition-opacity duration-500 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100"
+                        ? "text-white opacity-100 transition-opacity duration-500 [@media(any-hover:hover)]:opacity-0 [@media(any-hover:hover)]:group-hover:opacity-100"
                         : "text-[#0b0c31]"
                     }`}
                   >
