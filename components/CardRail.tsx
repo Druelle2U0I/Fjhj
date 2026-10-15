@@ -78,7 +78,7 @@ export default function CardRail({
                     src={card.image}
                     alt={card.imageAlt ?? card.title}
                     sizes="(min-width: 640px) 720px, 170vw"
-                    className="transition-transform duration-700 group-hover:scale-105"
+                    className="zoom-img transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/5 to-black/50" />
                   <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/45" />
@@ -111,7 +111,7 @@ export default function CardRail({
               </div>
             </>
           );
-          const cls = `group relative flex h-full flex-col overflow-hidden rounded-2xl ${
+          const cls = `zoom-card group relative flex h-full flex-col overflow-hidden rounded-2xl ${
             photo ? "bg-surface" : "border border-[#0b0c31]/15 bg-white"
           }`;
           return (

@@ -625,3 +625,15 @@ h4,
 .quote-pill:hover {
   background: color-mix(in srgb, var(--quote-pill-bg, #ffffff) 45%, transparent);
 }
+
+/* Carte secteur ou formation cliquée : la photo zoome pendant le chargement
+   de la page suivante (voir components/CardPressZoom.tsx). */
+.zoom-card[data-pressed] .zoom-img {
+  scale: 1.12;
+  transition-duration: 450ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .zoom-card[data-pressed] .zoom-img {
+    scale: 1;
+  }
+}
