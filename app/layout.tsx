@@ -11,7 +11,7 @@ import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FreshnessGuard from "@/components/FreshnessGuard";
-import CardPressZoom from "@/components/CardPressZoom";
+import CardInteractions from "@/components/CardInteractions";
 import SiteChrome from "@/components/SiteChrome";
 import { baseTheme, company, home, legal, siteUrl, telHref, themeStyle } from "@/lib/data";
 import { clip } from "@/lib/seo";
@@ -185,7 +185,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteChrome header={<Header />} footer={<Footer />}>
           {children}
         </SiteChrome>
-        <CardPressZoom />
+        <CardInteractions />
         {/* Avant le premier affichage : les blocs animés déjà à l'écran
             sont marqués visibles, puis le masquage des autres est activé.
             Voir components/Reveal.tsx. */}
