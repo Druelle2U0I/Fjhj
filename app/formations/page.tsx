@@ -63,7 +63,7 @@ export default function FormationsPage() {
                 </h2>
                 <div className="relative mt-auto p-5">
                   {service.summary && (
-                    <p className="text-sm leading-relaxed text-white opacity-100 transition-opacity duration-500 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100">
+                    <p className="text-sm leading-relaxed text-white opacity-100 transition-opacity duration-500 [@media(any-hover:hover)]:opacity-0 [@media(any-hover:hover)]:group-hover:opacity-100">
                       {service.summary}
                     </p>
                   )}

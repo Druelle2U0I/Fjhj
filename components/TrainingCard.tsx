@@ -55,12 +55,12 @@ export default function TrainingCard({
         <h3 className="font-heading text-sm uppercase leading-tight text-white sm:text-base">{title}</h3>
       </div>
 
-      <div className="pointer-events-none relative mt-auto p-5 transition-transform duration-500 ease-out [@media(hover:hover)]:translate-y-[4.25rem] [@media(hover:hover)]:group-hover:translate-y-0 [@media(hover:hover)]:group-focus-within:translate-y-0">
+      <div className="pointer-events-none relative mt-auto p-5 transition-transform duration-500 ease-out [@media(any-hover:hover)]:translate-y-[4.25rem] [@media(any-hover:hover)]:group-hover:translate-y-0 [@media(any-hover:hover)]:group-focus-within:translate-y-0">
         {intro && <p className="line-clamp-2 whitespace-pre-line text-sm text-white/85">{intro}</p>}
         {duration && <p className="mt-2 text-sm font-semibold text-white">{duration}</p>}
         <Link
           href={quoteHref}
-          className="quote-pill pointer-events-auto relative z-[2] mt-4 flex w-full items-center justify-center rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] backdrop-blur-md transition-opacity duration-500 [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-focus-within:opacity-100"
+          className="quote-pill pointer-events-auto relative z-[2] mt-4 flex w-full items-center justify-center rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] backdrop-blur-md transition-opacity duration-500 [@media(any-hover:hover)]:opacity-0 [@media(any-hover:hover)]:group-hover:opacity-100 [@media(any-hover:hover)]:group-focus-within:opacity-100"
         >
           {quoteLabel}
         </Link>
