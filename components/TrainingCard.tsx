@@ -4,7 +4,8 @@ import Visual from "@/components/Visual";
 // Carte formation : toute la photo mène à la fiche. Titre en haut à gauche,
 // description et durée en bas à gauche ; au survol, le bas remonte et un
 // grand bouton « Demander un devis » translucide apparaît (comme un bouton
-// « Ajouter au panier »). Sur écran tactile, le bouton reste visible.
+// « Ajouter au panier »). Sans survol possible (écran tactile), il reste
+// caché : on ouvre la fiche, qui a son propre bouton devis.
 export default function TrainingCard({
   href,
   title,
@@ -33,13 +34,13 @@ export default function TrainingCard({
   sizes?: string;
 }) {
   return (
-    <article className="spotlight-item group relative flex aspect-[4/5] h-full flex-col overflow-hidden rounded-2xl bg-surface">
+    <article className="zoom-card spotlight-item group relative flex aspect-[4/5] h-full flex-col overflow-hidden rounded-2xl bg-surface">
       <Visual
         src={image}
         alt={imageAlt ?? title}
         sizes={sizes}
         objectPosition={imagePosition}
-        className="transition-transform duration-700 ease-out group-hover:scale-105"
+        className="zoom-img transition-transform duration-700 ease-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/75" />
 
@@ -55,12 +56,12 @@ export default function TrainingCard({
         <h3 className="font-heading text-sm uppercase leading-tight text-white sm:text-base">{title}</h3>
       </div>
 
-      <div className="pointer-events-none relative mt-auto p-5 transition-transform duration-500 ease-out [@media(any-hover:hover)]:translate-y-[4.25rem] [@media(any-hover:hover)]:group-hover:translate-y-0 [@media(any-hover:hover)]:group-focus-within:translate-y-0">
+      <div className="pointer-events-none relative mt-auto p-5 translate-y-[4.25rem] transition-transform duration-500 ease-out group-hover:translate-y-0 group-focus-within:translate-y-0">
         {intro && <p className="line-clamp-2 whitespace-pre-line text-sm text-white/85">{intro}</p>}
         {duration && <p className="mt-2 text-sm font-semibold text-white">{duration}</p>}
         <Link
           href={quoteHref}
-          className="quote-pill pointer-events-auto relative z-[2] mt-4 flex w-full items-center justify-center rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] backdrop-blur-md transition-opacity duration-500 [@media(any-hover:hover)]:opacity-0 [@media(any-hover:hover)]:group-hover:opacity-100 [@media(any-hover:hover)]:group-focus-within:opacity-100"
+          className="quote-pill pointer-events-none relative z-[2] mt-4 flex w-full items-center justify-center rounded-full px-5 py-3 text-xs font-bold uppercase tracking-[0.12em] opacity-0 backdrop-blur-md transition-opacity duration-500 group-hover:pointer-events-auto group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:opacity-100"
         >
           {quoteLabel}
         </Link>

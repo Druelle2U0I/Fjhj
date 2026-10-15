@@ -48,13 +48,13 @@ export default function FormationsPage() {
             <Reveal key={service.slug} delay={(i % 4) * 0.05}>
               <Link
                 href={`/formations/${service.slug}`}
-                className="spotlight-item dyn-card group relative flex aspect-[3/4] w-full flex-col overflow-hidden rounded-lg"
+                className="zoom-card spotlight-item dyn-card group relative flex aspect-[3/4] w-full flex-col overflow-hidden rounded-lg"
               >
                 <Visual
                   src={service.image}
                   alt={service.imageAlt ?? service.title}
                   sizes="(min-width: 1024px) 75vw, (min-width: 640px) 110vw, 200vw"
-                  className="transition-transform duration-700 group-hover:scale-105"
+                  className="zoom-img transition-transform duration-700 group-hover:scale-105"
                   objectPosition={service.imagePosition}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/5 to-black/50" />
