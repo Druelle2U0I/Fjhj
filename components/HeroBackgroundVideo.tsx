@@ -7,6 +7,12 @@ import { useEffect, useRef, useState } from "react";
 // boucle automatiquement à l'arrivée sur la page. Coupée pour les
 // personnes qui préfèrent moins d'animations (prefers-reduced-motion) :
 // la première image de la vidéo (poster) reste alors affichée, fixe.
+// Sur écran étroit (téléphone, tablette en portrait), seule une bande
+// verticale de la vidéo 16:9 est visible : on la décale vers la droite pour
+// garder la technicienne du premier plan (vers 62 % de la largeur) dans le
+// cadre. Sur grand écran, la vidéo reste centrée.
+const MOBILE_FRAMING = "object-[66%_50%] lg:object-center";
+
 export default function HeroBackgroundVideo({
   src,
   poster,
@@ -32,11 +38,11 @@ export default function HeroBackgroundVideo({
       {/* Image affichée tout de suite, pendant que la vidéo se charge. */}
       {poster && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={poster} alt={posterAlt ?? ""} className="absolute inset-0 h-full w-full object-cover" fetchPriority="high" />
+        <img src={poster} alt={posterAlt ?? ""} className={`absolute inset-0 h-full w-full object-cover ${MOBILE_FRAMING}`} fetchPriority="high" />
       )}
       <video
         ref={ref}
-        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
+        className={`absolute inset-0 h-full w-full object-cover ${MOBILE_FRAMING} transition-opacity duration-700 ${
           playing || !poster ? "opacity-100" : "opacity-0"
         }`}
         onPlaying={() => setPlaying(true)}
