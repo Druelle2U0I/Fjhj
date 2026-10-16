@@ -45,7 +45,9 @@ export default function TrainingCard({
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/10 to-black/75" />
 
       {/* Lien couvrant toute la carte, vers la fiche formation. */}
-      <Link href={href} aria-label={title} className="absolute inset-0 z-[1]" />
+      <Link href={href} className="absolute inset-0 z-[1]">
+        <span className="sr-only">{title}</span>
+      </Link>
 
       <div className="pointer-events-none relative p-5">
         {tag && (

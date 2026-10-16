@@ -18,6 +18,15 @@ import {
 } from "@/lib/data";
 import { clip, pageMetadata } from "@/lib/seo";
 
+// Durée en heures au format ISO 8601 demandé par Google pour une
+// formation (« 14 h (2 jours) » → PT14H, « 3 h 30 » → PT3H30M). Pour une
+// fourchette (« 7 à 14 h »), c'est la durée indiquée avec « h » qui compte.
+function courseWorkload(duration?: string): string | undefined {
+  const match = duration?.match(/(\d+)\s*h(?:\s*(\d{1,2}))?/);
+  if (!match) return undefined;
+  return `PT${match[1]}H${match[2] ? `${match[2]}M` : ""}`;
+}
+
 export async function generateStaticParams() {
   return services.flatMap((service) =>
     service.trainings.map((training) => ({
@@ -79,6 +88,7 @@ export default async function FormationPage(
       : []),
   ];
 
+  const workload = courseWorkload(training.duration);
   const courseJsonLd = {
     "@context": "https://schema.org",
     "@type": "Course",
@@ -93,14 +103,25 @@ export default async function FormationPage(
     ...(training.certification
       ? { educationalCredentialAwarded: training.certification }
       : {}),
-    hasCourseInstance: {
-      "@type": "CourseInstance",
-      courseMode: "Onsite",
-      location: {
-        "@type": "Place",
-        name: "Dans les locaux du client, Hauts-de-France",
-      },
-    },
+    offers: { "@type": "Offer", category: "Paid", priceCurrency: "EUR" },
+    ...(workload
+      ? {
+          hasCourseInstance: {
+            "@type": "CourseInstance",
+            courseMode: "Onsite",
+            courseWorkload: workload,
+            location: {
+              "@type": "Place",
+              name: "Dans les locaux du client, Hauts-de-France",
+              address: {
+                "@type": "PostalAddress",
+                addressRegion: "Hauts-de-France",
+                addressCountry: "FR",
+              },
+            },
+          },
+        }
+      : {}),
   };
 
   return (
