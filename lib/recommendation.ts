@@ -76,6 +76,7 @@ export async function fetchRecommendation(): Promise<RecoResult> {
       );
       if (numbers.length === 0 || numbers.some((n) => !Number.isFinite(n)))
         return { ok: false, reason: "cellule_valeurs_invalides" };
+      if (source.scale === "ten") return { ok: true, percent: numbers[0], count: 0 };
       // Excel renvoie 0,6875 pour une cellule affichée « 68,75 % ».
       const total = numbers.reduce((sum, n) => sum + (n <= 1 ? n * 100 : n), 0);
       return { ok: true, percent: Math.min(100, total), count: 0 };
@@ -121,8 +122,10 @@ export async function fetchRecommendation(): Promise<RecoResult> {
   }
 }
 
-function format(percent: number) {
-  return `${Math.round(percent)} %`;
+// « 86 % », ou « 9,6/10 » pour une note moyenne sur 10.
+export function formatRecommendation(value: number) {
+  if (recommendationSource?.scale === "ten") return `${value.toFixed(1).replace(".", ",")}/10`;
+  return `${Math.round(value)} %`;
 }
 
 // Chiffres clés, avec la note de recommandation à jour quand elle est
@@ -131,5 +134,5 @@ export async function getStats(): Promise<Stat[]> {
   if (!stats.some((s) => s.source === "recommendation")) return stats;
   const reco = await fetchRecommendation();
   if (!reco.ok) return stats;
-  return stats.map((s) => (s.source === "recommendation" ? { ...s, value: format(reco.percent) } : s));
+  return stats.map((s) => (s.source === "recommendation" ? { ...s, value: formatRecommendation(reco.percent) } : s));
 }

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { animate } from "framer-motion";
 
 function parseStat(value: string) {
-  const match = value.match(/^(\D*)(\d+(?:[.,]\d+)?)(\D*)$/);
+  const match = value.match(/^(\D*)(\d+(?:[.,]\d+)?)(.*)$/);
   if (!match) return null;
   const [, prefix, numStr, suffix] = match;
   return {
@@ -12,6 +12,7 @@ function parseStat(value: string) {
     suffix,
     target: parseFloat(numStr.replace(",", ".")),
     decimals: /[.,]/.test(numStr) ? 1 : 0,
+    comma: numStr.includes(","),
   };
 }
 
@@ -31,7 +32,7 @@ export default function AnimatedStat({ value }: { value: string }) {
       ease: "easeOut",
       onUpdate: (latest) => {
         const formatted = parsed.decimals
-          ? latest.toFixed(parsed.decimals)
+          ? latest.toFixed(parsed.decimals).replace(".", parsed.comma ? "," : ".")
           : Math.round(latest).toString();
         setDisplay(`${parsed.prefix}${formatted}${parsed.suffix}`);
       },

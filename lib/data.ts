@@ -371,8 +371,11 @@ export type RecommendationSource = {
   column?: string;
   // Note minimale (sur 10) pour compter un répondant comme recommandant.
   minScore?: number;
-  // Cellule qui contient directement le pourcentage (prioritaire).
+  // Cellule qui contient directement le chiffre à afficher (prioritaire).
   cell?: string;
+  // « ten » : la cellule contient une note moyenne sur 10, affichée
+  // « 9,6/10 ». Par défaut, un pourcentage.
+  scale?: "percent" | "ten";
   // Emplacement du fichier, pour mémoire (non utilisé par le code).
   file?: string;
 };
