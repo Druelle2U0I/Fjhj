@@ -376,7 +376,7 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                   )}
                 />
                 <Field
-                  label="Source du pourcentage de recommandation (petite ligne sous les chiffres)"
+                  label="Source de la note de recommandation (petite ligne sous les chiffres)"
                   rows={2}
                   value={content.home.statsNote ?? ""}
                   onChange={(v) => setHome({ statsNote: v })}
@@ -1300,7 +1300,7 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
                 />
                 <Field
                   label="Indicateurs de résultats"
-                  hint="Affichés sur la page Qualiopi & financement. {recommandation} est remplacé par le pourcentage à jour du questionnaire de fin de session."
+                  hint="Affichés sur la page Qualiopi & financement. {recommandation} est remplacé par la note de recommandation à jour du questionnaire de fin de session."
                   rows={4}
                   value={content.legal.resultsIndicators ?? ""}
                   onChange={(v) =>

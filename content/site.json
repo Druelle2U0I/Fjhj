@@ -25,7 +25,7 @@
     "cancellationNotice": "15 jours",
     "paymentTerms": "30 jours",
     "accessDelay": "Entre la demande formulée par le client et le commencement de la session de formation, ENMA Formation recommande d'envisager, en raison des processus de financement, les délais suivants :\n• Dix jours ouvrés pour les sessions de formation planifiées à calendrier fixe (inter), une fois l'accord du financeur obtenu.\n• Pour les formations non planifiées sur un calendrier fixe, c'est-à-dire en intra ou sur mesure, ENMA Formation prépare une proposition contractuelle et une offre de service comprenant le planning prévisionnel de formation, en veillant à ce que les besoins spécifiques du client soient pris en compte pour optimiser l'apprentissage et garantir la satisfaction des participants.\nEn cas d'urgence, un montage de formation plus rapide peut être étudié : contactez-nous pour en discuter.",
-    "resultsIndicators": "Taux de recommandation : {recommandation} des stagiaires recommandent ENMA Formation, d'après le questionnaire « Évaluer la session ! » rempli à la fin de chaque formation depuis 2026. Ce chiffre est mis à jour automatiquement. Les taux de réussite aux certifications seront publiés dès que le nombre de sessions sera suffisant.",
+    "resultsIndicators": "Note moyenne de recommandation : {recommandation}, d'après le questionnaire « Évaluer la session ! » rempli à la fin de chaque formation depuis 2026. Ce chiffre est mis à jour automatiquement. Les taux de réussite aux certifications seront publiés dès que le nombre de sessions sera suffisant.",
     "cancellationFee": "la totalité du prix de la formation",
     "court": "Tribunal de commerce d'Arras",
     "qualiopiLogo": "/images/action-formations-qualiopi-1790260002712.png",
@@ -48,8 +48,8 @@
       "label": "domaines de formation"
     },
     {
-      "value": "81 %",
-      "label": "de nos apprenants nous recommandent",
+      "value": "9,6/10",
+      "label": "note moyenne de recommandation de nos apprenants",
       "source": "recommendation"
     }
   ],
@@ -2171,7 +2171,7 @@
     "aboutImageAlt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
     "statsBandImage": "/images/pexels-plato-terentev-3804555-5917555-1790611883873.jpg",
     "statsBandImageAlt": "Groupe d'ouvriers de dos, en casque et gilet orange haute visibilité",
-    "statsNote": "Part des stagiaires qui recommandent ENMA Formation, d'après le questionnaire « Évaluer la session ! » rempli à la fin de chaque formation depuis 2026. Chiffre mis à jour automatiquement.",
+    "statsNote": "Moyenne des notes de recommandation (sur 10) données par les stagiaires dans le questionnaire « Évaluer la session ! », rempli à la fin de chaque formation depuis 2026. Chiffre mis à jour automatiquement.",
     "sections": [
       {
         "id": "formations",
@@ -2431,7 +2431,8 @@
     "driveId": "b!XQbitKSa2UaRfVKI8xKmSPZa2QFX95xJpy0LvY0j5h1ZQuJTYEE4TqFwl-lTqvG9",
     "itemId": "01KAVFK7PRY32ZUBXHHJEKB5RJZKC6GSUI",
     "sheet": "stat",
-    "cell": "H3",
+    "cell": "G2",
+    "scale": "ten",
     "file": "Documentation Formation/Excel et Forms/Excel/Évaluer la session !.xlsx"
   },
   "footerImageAlt": "Chemin menant à un terril du bassin minier, en Hauts-de-France"
