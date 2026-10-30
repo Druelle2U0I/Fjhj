@@ -2107,6 +2107,14 @@
       "bio": "Votre contact pour le suivi administratif de vos dossiers de formation et de financement.",
       "photo": "/images/c36a7117-c143-4995-bca6-0c8dec01a4a4-1790258743037.jpg",
       "photoAlt": "Portrait de Kenza Kessad, Directrice administrative chez ENMA Formation"
+    },
+    {
+      "name": "Clément Jasinski",
+      "role": "Conseiller Formation",
+      "email": "clement.jasinski@enma-formation.com",
+      "bio": "",
+      "photo": "",
+      "photoAlt": ""
     }
   ],
   "home": {
