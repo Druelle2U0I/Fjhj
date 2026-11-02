@@ -1,7 +1,7 @@
 {
   "company": {
     "name": "ENMA Formation",
-    "tagline": "La compétence se forme sur le terrain.",
+    "tagline": "Formations sécurité et prévention des risques en entreprise en Hauts-de-France",
     "description": "Sécurité incendie, secourisme, habilitations électriques, CACES, travail en hauteur, prévention, management : des formations pratiques, chez vous ou sur notre plateau technique de Wingles.",
     "about": "Organisme de formation certifié Qualiopi, implanté à Wingles (Pas-de-Calais). Formations en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France : Nord, Pas-de-Calais, Aisne, Somme et Oise.",
     "email": "contact@enma-formation.com",
@@ -2328,7 +2328,7 @@
   },
   "pages": {
     "hero": {
-      "badge": "Formations sécurité et prévention des risques en entreprise, en Hauts-de-France",
+      "badge": "La compétence se forme sur le terrain.",
       "primaryButton": "Découvrir nos formations",
       "secondaryButton": "Parler à un conseiller"
     },

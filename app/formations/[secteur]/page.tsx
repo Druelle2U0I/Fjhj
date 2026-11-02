@@ -170,19 +170,6 @@ export default async function SecteurPage(
         </div>
       </section>
 
-      {faq.length > 0 && (
-        <section className="px-6 pb-12 sm:pb-16">
-          <div className="mx-auto max-w-6xl">
-            <Reveal>
-              <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">Questions fréquentes</h2>
-            </Reveal>
-            <div className="mt-6">
-              <SectorFaq items={faq} />
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* Pour aller plus loin : courts articles toujours visibles (pas une
           FAQ à dérouler), qui répondent à une question que se posent les
           clients de ce domaine. Bande pleine largeur, dans le même esprit
@@ -228,6 +215,21 @@ export default async function SecteurPage(
           </div>
         </Reveal>
       </section>
+
+      {/* Questions fréquentes : en dernier, après l'encadré « formation
+          absente ». */}
+      {faq.length > 0 && (
+        <section className="px-6 pb-16 sm:pb-20">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">Questions fréquentes</h2>
+            </Reveal>
+            <div className="mt-6">
+              <SectorFaq items={faq} />
+            </div>
+          </div>
+        </section>
+      )}
     </PageThemeScope>
   );
 }
