@@ -122,12 +122,18 @@
             "Former des équipiers d'évacuation ne suffit pas : encore faut-il vérifier que l'organisation fonctionne réellement, en conditions proches du réel. L'article R4227-39 du Code du travail impose des exercices d'évacuation périodiques afin de familiariser l'ensemble du personnel avec les issues de secours et les procédures d'alerte. Ces exercices permettent de révéler les points faibles d'un plan d'évacuation (issue mal signalée, point de rassemblement inadapté, temps d'évacuation trop long) avant qu'ils ne deviennent critiques lors d'un sinistre réel.",
             "ENMA Formation organise pour votre établissement un exercice d'évacuation grandeur nature, avec déclenchement de l'alarme, observation du comportement des occupants et des équipiers, chronométrage du temps d'évacuation et vérification du point de rassemblement. L'exercice se conclut par un débriefing détaillé et un compte-rendu écrit formulant des axes d'amélioration concrets pour votre organisation."
           ],
-          "audience": "Cet exercice s'adresse à l'ensemble des occupants d'un site : salariés, encadrement, équipiers d'évacuation et, le cas échéant, public accueilli dans l'établissement. Il ne nécessite aucun prérequis et constitue le complément indispensable des formations théoriques dispensées aux équipiers d'évacuation et équipiers de première intervention. La fréquence recommandée est d'au moins un exercice par an, davantage dans les établissements recevant du public ou présentant un effectif important ou une forte rotation de personnel.",
+          "audience": "Cet exercice s'adresse à l'ensemble des occupants d'un site : salariés, encadrement, équipiers d'évacuation et, le cas échéant, public accueilli dans l'établissement. Il ne nécessite aucun prérequis et constitue le complément indispensable des formations théoriques dispensées aux équipiers d'évacuation et équipiers de première intervention. Dans les établissements soumis à une consigne de sécurité incendie, le Code du travail impose un exercice au moins tous les six mois ; il est utile de les multiplier lorsque l'effectif est important ou que le personnel change souvent.",
           "funding": "L'exercice d'évacuation, en tant qu'action de formation pratique liée à une obligation réglementaire, est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit l'ensemble des pièces justificatives nécessaires à votre dossier de financement : convention de formation, programme détaillé et compte-rendu d'exercice. Cette prestation peut être couplée avec les formations EPI/ESI et équipier d'évacuation pour une prise en charge globale de votre dispositif de sécurité incendie.",
           "image": "/images/9-1790681664214.jpg",
           "imageAlt": "Panneau vert de point de rassemblement fixé sur une façade, repère d'un exercice d'évacuation",
           "heroImage": "/images/exo-evac-1790688007252.jpg",
-          "recycling": "Exercice à renouveler tous les 6 mois"
+          "recycling": "Exercice à renouveler tous les 6 mois",
+          "objectives": [
+            "Être capable d’organiser un exercice d’évacuation représentatif des conditions réelles d’occupation du site",
+            "Être capable d’appliquer les consignes d’évacuation et de rejoindre le point de rassemblement dans les délais",
+            "Être capable d’observer et d’évaluer le comportement des occupants et des équipiers d’évacuation pendant l’exercice",
+            "Être capable d’analyser les résultats de l’exercice et de formuler des préconisations d’amélioration"
+          ]
         },
         {
           "title": "Premier témoin incendie",
@@ -474,7 +480,29 @@
       ],
       "opco": true,
       "image": "/images/4-1790608680597.jpg",
-      "imageAlt": "Mains effectuant un massage cardiaque sur un mannequin de secourisme"
+      "imageAlt": "Mains effectuant un massage cardiaque sur un mannequin de secourisme",
+      "faq": [
+        {
+          "question": "Combien de temps dure la formation SST et combien de stagiaires par session ?",
+          "answer": "La formation initiale Sauveteur secouriste du travail dure 14 heures, généralement réparties sur deux jours. Le référentiel de l'INRS prévoit des groupes de 4 à 10 participants, ce qui laisse à chacun le temps de pratiquer les gestes sur mannequin : massage cardiaque, utilisation du défibrillateur, mise en position latérale de sécurité, conduite à tenir face à un saignement abondant. À l'issue, les stagiaires qui ont validé les épreuves reçoivent le certificat SST."
+        },
+        {
+          "question": "Le certificat SST est-il reconnu en dehors de l'entreprise ?",
+          "answer": "Oui. Le titulaire d'un certificat SST à jour bénéficie de l'équivalence avec le PSC1, la formation grand public aux premiers secours. Ses compétences de secouriste lui servent donc aussi dans la vie de tous les jours, à la maison comme sur la route. L'inverse n'est pas vrai : un PSC1 ne remplace pas le certificat SST pour répondre à l'obligation de l'employeur."
+        },
+        {
+          "question": "À qui s'adresse la formation Gestes qui sauvent ?",
+          "answer": "À tous vos salariés, sans prérequis. C'est une initiation courte aux réflexes essentiels en attendant les secours : protéger, alerter correctement, arrêter un saignement abondant, mettre une personne inconsciente en position latérale de sécurité et pratiquer un massage cardiaque avec un défibrillateur. Elle ne délivre pas de certificat SST, mais permet de sensibiliser rapidement l'ensemble d'une équipe, en complément des sauveteurs secouristes du travail."
+        },
+        {
+          "question": "Où se déroulent les formations ?",
+          "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. Le formateur apporte le matériel pédagogique (mannequins, défibrillateur de formation) et adapte les mises en situation aux risques réels de votre activité. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
+        },
+        {
+          "question": "Ces formations peuvent-elles être financées ?",
+          "answer": "Oui, en grande partie. ENMA Formation est certifié Qualiopi, condition indispensable pour une prise en charge par votre OPCO (opérateur de compétences) au titre du plan de développement des compétences. Le montant pris en charge dépend de votre branche professionnelle et de la taille de votre entreprise. Nous vous transmettons un devis et un programme détaillé pour constituer votre demande, à adresser à l'OPCO avant le début de la formation."
+        }
+      ]
     },
     {
       "title": "Habilitation électrique",
@@ -538,7 +566,13 @@
           "image": "/images/habilitation-b1-multimetre-1790689131.jpg",
           "imageAlt": "Électricien casqué, en gants de protection, relevant une mesure au multimètre sur un tableau électrique",
           "heroImage": "/images/17-1790690143310.jpg",
-          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
+          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans",
+          "objectives": [
+            "Être capable d’identifier les risques électriques et d’appliquer les prescriptions de sécurité liées à son niveau d’habilitation",
+            "Être capable d’exécuter, en sécurité, des travaux hors tension sur des installations basse tension sous les ordres d’un chargé de travaux (B1)",
+            "Être capable de délimiter et respecter les zones d’environnement et les distances de voisinage de pièces nues sous tension (B1V)",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
+          ]
         },
         {
           "title": "B2 / B2V — Chargé de travaux électriques basse tension",
@@ -612,7 +646,9 @@
           "heroImage": "/images/18-1790690236313.jpg",
           "objectives": [
             "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
-            "Être capable de réaliser, en sécurité, des interventions générales basse tension : dépannage, raccordement, remplacement (BR)"
+            "Être capable de réaliser, en sécurité, des interventions générales basse tension : dépannage, raccordement, remplacement (BR)",
+            "Être capable de rendre compte de son intervention et de vérifier la conformité de l’installation avant sa remise en service",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
           ],
           "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
         },
@@ -650,7 +686,9 @@
           "heroImage": "/images/19-1790690252993.jpg",
           "objectives": [
             "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
-            "Être capable de réaliser, en sécurité, une consignation basse tension pour le compte d’autrui (BC)"
+            "Être capable de réaliser, en sécurité, une consignation basse tension pour le compte d’autrui (BC)",
+            "Être capable de situer ses responsabilités de chargé de consignation vis-à-vis du chargé de travaux et de transmettre l’attestation de consignation",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
           ],
           "recycling": "7 h (1 jour), recommandé tous les 3 ans"
         },
@@ -685,7 +723,13 @@
           "image": "/images/habilitation-be-mesure-1790689131.jpg",
           "imageAlt": "Mains gantées tenant un multimètre pour un mesurage sur une armoire électrique",
           "heroImage": "/images/20-1790690263612.jpg",
-          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans",
+          "objectives": [
+            "Être capable d’identifier les risques électriques et d’appliquer les prescriptions de sécurité liées à son niveau d’habilitation",
+            "Être capable de situer le champ d’application de l’habilitation BE selon l’opération confiée : mesurage, essai ou vérification",
+            "Être capable de réaliser, en sécurité, l’opération de mesurage, d’essai ou de vérification qui lui est confiée sur une installation basse tension",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
+          ]
         },
         {
           "title": "BP — Habilitation photovoltaïque",
@@ -718,7 +762,13 @@
           "heroImage": "/images/photo-secteur-arriere-plan-virtuel-zoom-1790690414248.jpg",
           "image": "/images/photo-secteur-1920-x-1080-px-1790690422611.jpg",
           "imageAlt": "Technicien casqué raccordant des câbles sous une rangée de panneaux photovoltaïques",
-          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans",
+          "objectives": [
+            "Être capable d’identifier les risques propres aux installations photovoltaïques, sous tension dès leur exposition à la lumière",
+            "Être capable d’appliquer les prescriptions de sécurité liées à l’habilitation BP et aux spécificités du courant continu",
+            "Être capable d’intervenir, en sécurité, sur une installation photovoltaïque en appliquant les procédures adaptées à l’impossibilité d’une mise hors tension complète",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
+          ]
         },
         {
           "title": "H0 / H0V — Non-électricien à proximité d'ouvrages HT",
@@ -789,7 +839,13 @@
           "image": "/images/28-1790690459683.jpg",
           "heroImage": "/images/28-1790690470478.jpg",
           "imageAlt": "Électricien casqué intervenant sur un transformateur fixé à un poteau haute tension",
-          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
+          "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans",
+          "objectives": [
+            "Être capable d’identifier les risques électriques spécifiques à la haute tension et le rôle de l’exécutant H1/H1V",
+            "Être capable d’exécuter, en sécurité, des travaux hors tension sur des installations haute tension sous les ordres d’un chargé de travaux (H1)",
+            "Être capable de respecter les distances de voisinage renforcé et les équipements de protection propres à la haute tension (H1V)",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
+          ]
         },
         {
           "title": "H2 / H2V — Chargé de travaux haute tension",
@@ -828,7 +884,9 @@
           "imageAlt": "Électricien en tenue orange travaillant depuis une nacelle sur une ligne électrique aérienne",
           "objectives": [
             "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
-            "Être capable de réaliser, en sécurité, des travaux hors tension et au voisinage d’installations basse tension (B2V) et d’ouvrages haute tension HTA (H2V)"
+            "Être capable de réaliser, en sécurité, des travaux hors tension et au voisinage d’installations basse tension (B2V) et d’ouvrages haute tension HTA (H2V)",
+            "Être capable d’organiser et de surveiller l’exécution des travaux haute tension confiés à son équipe",
+            "Être capable de réaliser, en sécurité, des essais sur des installations haute tension (H2V Essai)"
           ],
           "recycling": "10 h 30 (1,5 jour), recommandé tous les 3 ans"
         },
@@ -865,7 +923,9 @@
           "imageAlt": "Technicien casqué accroupi devant une armoire électrique ouverte, un bloc-notes à la main",
           "objectives": [
             "Être capable d’identifier les risques électriques et les mesures de prévention associées à son niveau d’habilitation",
-            "Être capable de réaliser, en sécurité, une consignation pour le compte d’autrui en basse tension (BC) comme en haute tension HTA (HC)"
+            "Être capable de réaliser, en sécurité, une consignation pour le compte d’autrui en basse tension (BC) comme en haute tension HTA (HC)",
+            "Être capable de situer ses responsabilités de chargé de consignation haute tension et de communiquer avec le chargé de travaux",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
           ],
           "recycling": "7 h (1 jour), recommandé tous les 3 ans"
         },
@@ -901,12 +961,40 @@
           "heroImage": "/images/tere-1790690933013.jpg",
           "imagePosition": "center center",
           "imageAlt": "Électricien en casque rouge et visière de protection manipulant un appareil haute tension",
-          "recycling": "7 h (1 jour), recommandé tous les 3 ans"
+          "recycling": "7 h (1 jour), recommandé tous les 3 ans",
+          "objectives": [
+            "Être capable d’identifier les risques électriques spécifiques à la haute tension et les prescriptions de sécurité liées à l’habilitation HE",
+            "Être capable de situer le champ d’application de l’habilitation HE selon l’opération confiée : manœuvre, mesurage, essai ou vérification",
+            "Être capable de réaliser, en sécurité, l’opération qui lui est confiée sur une installation haute tension avec les appareils adaptés",
+            "Être capable d’appliquer la conduite à tenir en cas d’accident d’origine électrique"
+          ]
         }
       ],
       "opco": true,
       "image": "/images/3-1790608693104.jpg",
-      "imageAlt": "Électricien casqué et en tenue haute visibilité intervenant dans une armoire électrique"
+      "imageAlt": "Électricien casqué et en tenue haute visibilité intervenant dans une armoire électrique",
+      "faq": [
+        {
+          "question": "Combien de temps dure une formation habilitation électrique ?",
+          "answer": "Cela dépend du niveau visé. Comptez une journée pour le personnel non électricien (H0, H0V), deux jours pour les chargés de consignation, les opérations spécifiques et le photovoltaïque (BC, HC, BE, HE, BP), et trois jours pour les électriciens exécutants, chargés de travaux ou d'intervention (B1, B2, BR, H1, H2). Nous ajustons le programme au profil de chaque salarié et aux opérations qu'il réalise réellement."
+        },
+        {
+          "question": "Quelle différence entre basse tension et haute tension ?",
+          "answer": "En courant alternatif, la basse tension va jusqu'à 1 000 volts et la haute tension commence au-delà ; en courant continu, la limite est fixée à 1 500 volts. Les habilitations commençant par B concernent les ouvrages basse tension, la grande majorité des installations des bâtiments et des machines ; celles commençant par H concernent la haute tension, présente par exemple dans les postes de transformation. Un même salarié peut cumuler des symboles B et H."
+        },
+        {
+          "question": "La formation comprend-elle de la pratique ?",
+          "answer": "Oui. La norme NF C 18-510 prévoit une partie théorique (dangers de l'électricité, prévention, rôles de chacun) et une partie pratique, avec des mises en situation correspondant aux opérations confiées au salarié : identification des zones à risque, consignation, vérification d'absence de tension, choix et utilisation des équipements de protection. À la fin, le formateur remet un avis sur lequel l'employeur s'appuie pour délivrer le titre d'habilitation."
+        },
+        {
+          "question": "Où se déroulent les formations ?",
+          "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. Former vos électriciens sur place permet de travailler à partir de vos propres armoires et installations, dans le respect des règles de sécurité. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
+        },
+        {
+          "question": "Ces formations peuvent-elles être financées ?",
+          "answer": "Oui, en grande partie. ENMA Formation est certifié Qualiopi, condition indispensable pour une prise en charge par votre OPCO (opérateur de compétences) au titre du plan de développement des compétences. Le montant pris en charge dépend de votre branche professionnelle et de la taille de votre entreprise. Nous vous transmettons un devis et un programme détaillé pour constituer votre demande, à adresser à l'OPCO avant le début de la formation."
+        }
+      ]
     },
     {
       "title": "CACES & habilitations",
@@ -1253,7 +1341,29 @@
         }
       ],
       "opco": true,
-      "image": "/images/ecurite-in-1790608712610.jpg"
+      "image": "/images/ecurite-in-1790608712610.jpg",
+      "faq": [
+        {
+          "question": "Le CACES® est-il obligatoire ?",
+          "answer": "Le Code du travail (article R4323-55) impose que la conduite des engins mobiles automoteurs et de levage soit réservée aux travailleurs ayant reçu une formation adéquate. Le CACES® n'est pas imposé en tant que tel par la loi, mais c'est le dispositif de référence recommandé par l'Assurance Maladie pour évaluer et attester les compétences du conducteur. En pratique, la plupart des entreprises, des donneurs d'ordre et des assureurs l'exigent."
+        },
+        {
+          "question": "Qu'est-ce que l'AIPR ?",
+          "answer": "L'Autorisation d'intervention à proximité des réseaux est obligatoire depuis le 1er janvier 2018 pour les salariés qui interviennent près des réseaux enterrés ou aériens (gaz, électricité, eau, télécoms). Elle existe en trois profils : concepteur, encadrant et opérateur. Elle est délivrée par l'employeur après la réussite d'un examen sous forme de QCM, et doit être renouvelée tous les cinq ans."
+        },
+        {
+          "question": "Comment se passe un test CACES® ?",
+          "answer": "Le candidat passe une épreuve théorique (réglementation, sécurité, connaissance de l'engin) puis une épreuve pratique de conduite et de manœuvres, évaluées par un testeur d'un organisme certifié. La formation qui précède les tests est adaptée à l'expérience de chacun : plus courte pour un conducteur confirmé qui renouvelle son CACES®, plus longue pour un débutant. C'est ce qui explique les durées variables indiquées sur chaque formation."
+        },
+        {
+          "question": "Où se déroulent les formations ?",
+          "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. La formation sur vos propres engins et dans vos allées de stockage est souvent la plus efficace : les conducteurs s'entraînent dans les conditions exactes de leur poste. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
+        },
+        {
+          "question": "Ces formations peuvent-elles être financées ?",
+          "answer": "Oui, en grande partie. ENMA Formation est certifié Qualiopi, condition indispensable pour une prise en charge par votre OPCO (opérateur de compétences) au titre du plan de développement des compétences. Le montant pris en charge dépend de votre branche professionnelle et de la taille de votre entreprise. Nous vous transmettons un devis et un programme détaillé pour constituer votre demande, à adresser à l'OPCO avant le début de la formation."
+        }
+      ]
     },
     {
       "title": "Travail en hauteur & échafaudages",
@@ -1446,7 +1556,29 @@
       "opco": true,
       "image": "/images/5-1790608731991.jpg",
       "imageAlt": "Ouvriers casqués en gilet orange travaillant sur un échafaudage",
-      "heroImagePosition": "center bottom"
+      "heroImagePosition": "center bottom",
+      "faq": [
+        {
+          "question": "À partir de quelle hauteur parle-t-on de travail en hauteur ?",
+          "answer": "Il n'existe pas de hauteur minimale dans le Code du travail : le risque de chute de hauteur doit être prévenu dès qu'une personne peut tomber d'un niveau à un autre, que ce soit depuis un toit, une plateforme, un escabeau ou une trémie. L'ancienne référence des 3 mètres, encore souvent citée, n'est plus applicable. L'évaluation se fait donc tâche par tâche, en fonction de l'environnement et de la durée de l'intervention."
+        },
+        {
+          "question": "Qui peut monter un échafaudage ?",
+          "answer": "Selon l'article R4323-69 du Code du travail, les échafaudages ne peuvent être montés, démontés ou sensiblement modifiés que sous la direction d'une personne compétente et par des travailleurs ayant reçu une formation adéquate et spécifique. Les recommandations de l'Assurance Maladie R408 (échafaudages de pied) et R457 (échafaudages roulants) servent de référence pour ces formations, que nous adaptons au matériel que vous utilisez."
+        },
+        {
+          "question": "Quelles vérifications faire sur un échafaudage ?",
+          "answer": "L'arrêté du 21 décembre 2004 prévoit une vérification avant la mise ou la remise en service, un examen de l'état de conservation chaque jour d'utilisation et une vérification trimestrielle. Ces contrôles doivent être réalisés par une personne compétente et consignés dans le registre de sécurité. La formation Vérification des échafaudages prépare vos salariés à mener ces contrôles et à savoir quand interdire l'accès à une structure."
+        },
+        {
+          "question": "Faut-il une formation pour utiliser un harnais ?",
+          "answer": "Oui. L'article R4323-106 du Code du travail impose à l'employeur de former les travailleurs qui doivent utiliser un équipement de protection individuelle, avec si nécessaire un entraînement à son port. Pour un harnais antichute, cela couvre le choix du point d'ancrage, le réglage, la vérification avant usage, la longueur de chute et l'organisation du secours en cas de suspension, un point souvent négligé."
+        },
+        {
+          "question": "Où se déroulent les formations ?",
+          "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. Les exercices se font de préférence sur vos structures et votre matériel, pour travailler sur les situations réelles de vos chantiers. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
+        }
+      ]
     },
     {
       "title": "Prévention des risques professionnels",
@@ -1507,7 +1639,13 @@
           "image": "/images/7-1790716449681.jpg",
           "imageAlt": "Salarié guidé pour adopter la bonne posture en soulevant un carton",
           "imagePosition": "right center",
-          "heroImage": "/images/7-1790716517292.jpg"
+          "heroImage": "/images/7-1790716517292.jpg",
+          "objectives": [
+            "Être capable d’expliquer les mécanismes d’apparition des troubles musculosquelettiques",
+            "Être capable de repérer les situations de son poste de travail susceptibles de générer des TMS",
+            "Être capable d’appliquer les principes de sécurité physique et d’économie d’effort lors des manutentions",
+            "Être capable de transposer les bonnes pratiques apprises à son propre poste de travail"
+          ]
         },
         {
           "title": "Sécurité des salariés des entreprises extérieures — Niveau 1",
@@ -1598,7 +1736,29 @@
       "opco": true,
       "imageAlt": "Contrôleur casqué, masqué et en gilet haute visibilité remplissant une fiche sur un site industriel",
       "image": "/images/photo-prev-1790718364904.jpg",
-      "heroImage": "/images/41-1790718410419.jpg"
+      "heroImage": "/images/41-1790718410419.jpg",
+      "faq": [
+        {
+          "question": "La formation gestes et postures est-elle obligatoire ?",
+          "answer": "Pour les salariés qui manutentionnent des charges, oui : l'article R4541-8 du Code du travail impose à l'employeur de leur faire bénéficier d'une formation adéquate à la sécurité pour réaliser ces opérations. Au-delà de l'obligation, c'est l'un des leviers les plus efficaces contre les troubles musculosquelettiques, première cause de maladie professionnelle en France. Nous construisons les exercices à partir des postes réels de vos salariés."
+        },
+        {
+          "question": "Quand faut-il un plan de prévention avec une entreprise extérieure ?",
+          "answer": "Dès qu'une entreprise extérieure intervient dans vos locaux, une analyse commune des risques doit être menée avec l'entreprise utilisatrice. Le plan de prévention doit être écrit lorsque l'intervention dépasse 400 heures sur douze mois, ou lorsqu'il s'agit de travaux figurant sur la liste des travaux dangereux (article R4512-7 du Code du travail). Les formations Sécurité des entreprises extérieures préparent vos intervenants et vos encadrants à ces situations."
+        },
+        {
+          "question": "Les formations peuvent-elles être adaptées à notre activité ?",
+          "answer": "Oui, c'est même tout leur intérêt. Avant la session, nous échangeons avec vous sur vos postes de travail, vos contraintes et les incidents déjà survenus. Les exemples, les exercices et les mises en situation sont ensuite construits à partir de votre réalité, qu'il s'agisse d'un atelier, d'un entrepôt, d'un chantier ou d'un établissement de soins."
+        },
+        {
+          "question": "Où se déroulent les formations ?",
+          "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. Se former sur le lieu de travail permet d'analyser directement les postes et les situations à risque. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
+        },
+        {
+          "question": "Ces formations peuvent-elles être financées ?",
+          "answer": "Oui, en grande partie. ENMA Formation est certifié Qualiopi, condition indispensable pour une prise en charge par votre OPCO (opérateur de compétences) au titre du plan de développement des compétences. Le montant pris en charge dépend de votre branche professionnelle et de la taille de votre entreprise. Nous vous transmettons un devis et un programme détaillé pour constituer votre demande, à adresser à l'OPCO avant le début de la formation."
+        }
+      ]
     },
     {
       "title": "Management & qualité",
@@ -1868,7 +2028,29 @@
       ],
       "opco": true,
       "image": "/images/2-1790608875864.jpg",
-      "imageAlt": "Mains d'une équipe réunies au-dessus d'une table de travail"
+      "imageAlt": "Mains d'une équipe réunies au-dessus d'une table de travail",
+      "faq": [
+        {
+          "question": "Qu'est-ce que la formation Premiers secours en santé mentale ?",
+          "answer": "Sur le modèle des premiers secours physiques, cette formation de deux jours apprend à repérer les signes d'un trouble psychique ou d'une crise, à engager le dialogue avec la personne, à l'écouter sans jugement et à l'orienter vers une aide adaptée. Elle ne fait pas du participant un professionnel de santé, mais un premier relais capable d'agir au bon moment. Elle s'adresse à tous les salariés, managers comme collaborateurs."
+        },
+        {
+          "question": "La santé mentale fait-elle partie des obligations de l'employeur ?",
+          "answer": "Oui. L'article L4121-1 du Code du travail impose à l'employeur de prendre les mesures nécessaires pour assurer la sécurité et protéger la santé physique et mentale des travailleurs. Les risques psychosociaux (stress, conflits, violences internes ou externes, épuisement) doivent donc être évalués dans le document unique et faire l'objet d'actions de prévention, dont la formation des managers et des équipes."
+        },
+        {
+          "question": "À qui s'adressent les formations gestion des conflits et gestion du stress ?",
+          "answer": "Aux managers et chefs d'équipe, mais aussi aux salariés en contact avec le public ou soumis à une forte charge : accueil, relation client, services techniques, soignants. Les sessions alternent apports concrets, échanges d'expériences et mises en situation, pour repartir avec des outils directement utilisables : désamorcer une tension, poser un cadre, récupérer après une situation difficile."
+        },
+        {
+          "question": "Où se déroulent les formations ?",
+          "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. Les sessions en intra permettent de travailler sur des situations propres à votre organisation, en toute confidentialité. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
+        },
+        {
+          "question": "Ces formations peuvent-elles être financées ?",
+          "answer": "Oui, en grande partie. ENMA Formation est certifié Qualiopi, condition indispensable pour une prise en charge par votre OPCO (opérateur de compétences) au titre du plan de développement des compétences. Le montant pris en charge dépend de votre branche professionnelle et de la taille de votre entreprise. Nous vous transmettons un devis et un programme détaillé pour constituer votre demande, à adresser à l'OPCO avant le début de la formation."
+        }
+      ]
     },
     {
       "title": "Photovoltaïque",
@@ -2021,7 +2203,29 @@
       ],
       "opco": true,
       "image": "/images/4-1790608536783.jpg",
-      "imageAlt": "Techniciens en gilet de sécurité transportant un panneau solaire sur un chantier"
+      "imageAlt": "Techniciens en gilet de sécurité transportant un panneau solaire sur un chantier",
+      "faq": [
+        {
+          "question": "À qui s'adresse la formation Chiffrage et dimensionnement ?",
+          "answer": "Aux commerciaux, techniciens et chargés d'affaires qui conçoivent ou vendent des installations photovoltaïques. Elle apprend à estimer la production d'une installation selon l'orientation, l'inclinaison et l'ombrage, à choisir et dimensionner modules, onduleurs et protections, puis à bâtir un chiffrage cohérent pour le client. L'objectif : des devis justes, ni sous-dimensionnés ni surévalués."
+        },
+        {
+          "question": "Qu'est-ce que le contrôle par électroluminescence ?",
+          "answer": "C'est une méthode d'inspection des modules photovoltaïques : on fait circuler un courant dans les panneaux et une caméra spécifique capte la lumière infrarouge qu'ils émettent. Les cellules fissurées, les microfissures ou les connexions défaillantes apparaissent alors nettement, alors qu'elles sont invisibles à l'œil nu. Ce contrôle est utile à la réception d'une installation, après un sinistre (grêle, transport) ou en cas de baisse de production."
+        },
+        {
+          "question": "Que contient la formation Bureau d'études technique photovoltaïque ?",
+          "answer": "Sur cinq jours, elle couvre l'ensemble du travail d'un bureau d'études : relevé et analyse du site, conception et dimensionnement de l'installation, choix du matériel, calculs électriques et de protections, rédaction des documents techniques et préparation du dossier de raccordement. Elle s'adresse aux techniciens qui veulent concevoir des installations conformes et fiables, du résidentiel au tertiaire."
+        },
+        {
+          "question": "Où se déroulent les formations ?",
+          "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. Les formations peuvent être organisées en intra pour votre équipe technique ou commerciale. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
+        },
+        {
+          "question": "Ces formations peuvent-elles être financées ?",
+          "answer": "Oui, en grande partie. ENMA Formation est certifié Qualiopi, condition indispensable pour une prise en charge par votre OPCO (opérateur de compétences) au titre du plan de développement des compétences. Le montant pris en charge dépend de votre branche professionnelle et de la taille de votre entreprise. Nous vous transmettons un devis et un programme détaillé pour constituer votre demande, à adresser à l'OPCO avant le début de la formation."
+        }
+      ]
     }
   ],
   "topTrainings": [],

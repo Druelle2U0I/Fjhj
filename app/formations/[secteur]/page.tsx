@@ -182,9 +182,6 @@ export default async function SecteurPage(
         </section>
       )}
 
-      {/* « Le saviez-vous ? » : flotte en bas à droite pendant le défilement
-          et s'arrête avant la bande de contact (placé juste avant elle). */}
-      {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
 
       {/* Encart final « formation absente » (textes modifiables dans l'admin,
           Pages des domaines → Encadré final). */}
@@ -230,6 +227,10 @@ export default async function SecteurPage(
           </div>
         </section>
       )}
+
+      {/* « Le saviez-vous ? » : flotte en bas à droite pendant le défilement
+          jusqu'en bas de la page (placé en dernier). */}
+      {service.tip && <TipPopover title={service.tip.title} text={service.tip.text} />}
     </PageThemeScope>
   );
 }
