@@ -432,6 +432,34 @@ export default function SectorsEditor({
 
                 <div>
                   <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted">
+                    Questions fréquentes (affichées sous les formations, lues par Google)
+                  </p>
+                  <ListEditor
+                    items={sector.faq ?? []}
+                    onChange={(v) => updateSector(index, { ...sector, faq: v.length > 0 ? v : undefined })}
+                    createItem={() => ({ question: "Nouvelle question", answer: "" })}
+                    addLabel="Ajouter une question"
+                    titleFor={(item, i) => `${i + 1}. ${item.question}`}
+                    renderItem={(item, update) => (
+                      <div className="grid gap-3">
+                        <Field
+                          label="Question"
+                          value={item.question}
+                          onChange={(v) => update({ ...item, question: v })}
+                        />
+                        <Field
+                          label="Réponse"
+                          rows={5}
+                          value={item.answer}
+                          onChange={(v) => update({ ...item, answer: v })}
+                        />
+                      </div>
+                    )}
+                  />
+                </div>
+
+                <div>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted">
                     Formations du secteur
                   </p>
                   <div className="grid gap-3">

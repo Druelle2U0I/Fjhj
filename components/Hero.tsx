@@ -29,12 +29,14 @@ export default function Hero() {
       )}
 
       <div className={`relative mx-auto max-w-6xl ${hasPhoto ? "on-surface" : ""}`}>
-        <p className="eyebrow block text-muted">
-          {pages.hero.badge || `Organisme de formation · ${legal.activityRegion || "Hauts-de-France"}`}
-        </p>
-        <h1 className="mt-3 max-w-3xl whitespace-pre-line text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
-          {company.tagline}
+        {/* Le H1 (lu par Google) est la petite ligne qui décrit l'activité ;
+            la grande accroche juste dessous reste un simple paragraphe. */}
+        <h1 className="eyebrow block max-w-4xl text-muted">
+          {pages.hero.badge || `Formations sécurité et prévention des risques en entreprise, en ${legal.activityRegion || "Hauts-de-France"}`}
         </h1>
+        <p className="home-title font-heading mt-3 max-w-3xl whitespace-pre-line text-[2.3rem] font-bold leading-[1.05] tracking-tight sm:text-5xl">
+          {company.tagline}
+        </p>
 
         <p className="page-intro mt-5 line-clamp-4 max-w-xl whitespace-pre-line text-muted sm:line-clamp-none">
           {company.description}

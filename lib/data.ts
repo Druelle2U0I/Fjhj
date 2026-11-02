@@ -80,6 +80,9 @@ export type Sector = {
   // visibles (pas une FAQ à dérouler) : répondent à une question que se
   // posent les clients, avec un lien de retour implicite vers ce domaine.
   articles?: Module[];
+  // Questions fréquentes affichées sur la page du domaine (réponses
+  // présentes dans la page, donc lues par Google, + balisage FAQPage).
+  faq?: FaqItem[];
 };
 
 export type HeroSlide = {

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import ArticleCarousel from "@/components/ArticleCarousel";
 import PageThemeScope from "@/components/PageThemeScope";
 import Reveal from "@/components/Reveal";
+import SectorFaq from "@/components/SectorFaq";
 import TipPopover from "@/components/TipPopover";
 import TrainingCard from "@/components/TrainingCard";
 import Visual from "@/components/Visual";
@@ -37,9 +38,28 @@ export default async function SecteurPage(
   if (!service) notFound();
 
   const count = service.trainings.length;
+  const faq = (service.faq ?? []).filter((item) => item.question.trim() && item.answer.trim());
+  const faqJsonLd =
+    faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: { "@type": "Answer", text: item.answer },
+          })),
+        }
+      : null;
 
   return (
     <PageThemeScope overrides={pages.sector.theme}>
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       {/* Hero : même en-tête que l'accueil, photo plein cadre voilée
           (cadrage réglable dans l'admin). Remonte sous
           l'en-tête (sticky, semi-transparent) pour que la photo continue
@@ -149,6 +169,19 @@ export default async function SecteurPage(
 
         </div>
       </section>
+
+      {faq.length > 0 && (
+        <section className="px-6 pb-12 sm:pb-16">
+          <div className="mx-auto max-w-6xl">
+            <Reveal>
+              <h2 className="font-semibold tracking-tight text-xl sm:text-2xl">Questions fréquentes</h2>
+            </Reveal>
+            <div className="mt-6">
+              <SectorFaq items={faq} />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Pour aller plus loin : courts articles toujours visibles (pas une
           FAQ à dérouler), qui répondent à une question que se posent les

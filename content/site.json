@@ -76,7 +76,7 @@
       "title": "Sécurité incendie & évacuation",
       "seoTitle": "Formation évacuation incendie et EPI en entreprise",
       "seoDescription": "Exercices d'évacuation et équipiers de première intervention formés sur site par des sapeurs-pompiers, partout en Hauts-de-France.",
-      "description": "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation — équipier de première intervention, guide et serre-file, exercice d'évacuation — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises et les établissements recevant du public dans le respect de leurs obligations réglementaires de prévention incendie et la construction d'une véritable culture de sécurité au sein de leurs équipes.",
+      "description": "ENMA Formation forme vos équipes à la sécurité incendie et à l'évacuation — équipier de première intervention, guide et serre-file, exercice d'évacuation — en intra ou en inter-entreprise, partout dans les Hauts-de-France. Certifié Qualiopi, notre organisme accompagne les entreprises et les établissements recevant du public dans le respect de leurs obligations réglementaires de prévention incendie et la construction d'une véritable culture de sécurité au sein de leurs équipes. Basés à Wingles, nous intervenons directement dans vos locaux à Lens, Béthune, Arras, Douai, Lille et dans l'ensemble du Nord et du Pas-de-Calais.",
       "summary": "Manipuler un extincteur, guider une évacuation, réagir dans les premières minutes : EPI, guide et serre-file, exercices.",
       "why": {
         "title": "Une obligation réglementaire, un réflexe à installer",
@@ -92,8 +92,8 @@
           "text": "Signalétique de sortie masquée par du matériel stocké, point de rassemblement trop proche du bâtiment ou mal connu des occupants, consignes de sécurité non affichées ou périmées, portes coupe-feu bloquées en position ouverte, décompte des présents approximatif une fois au point de rassemblement, exercice réalisé toujours au même horaire et donc prévisible, absence de débriefing écrit : ce sont les écarts les plus souvent observés lors des exercices d'évacuation en entreprise. Chacun d'eux est facile à corriger une fois identifié, ce qui en fait un bon indicateur de ce qu'apporte réellement un exercice encadré par un professionnel plutôt qu'un simple test d'alarme."
         },
         {
-          "title": "Exercice d'évacuation : à quelle fréquence l'organiser ?",
-          "text": "Dans les établissements où une consigne de sécurité incendie est obligatoire (notamment à partir de 50 salariés, ou dès que des matières inflammables sont manipulées), le Code du travail (article R4227-39) impose des exercices et essais périodiques au moins tous les six mois. Ces exercices permettent d'apprendre à reconnaître le signal d'alarme, à localiser les sorties et à utiliser les moyens de premier secours. Leur date et leurs observations doivent être consignées dans un registre tenu à la disposition de l'inspection du travail. Un exercice bien préparé, avec un scénario réaliste et un retour d'expérience écrit, est aussi le meilleur moyen de vérifier que vos consignes fonctionnent vraiment sur le terrain."
+          "title": "Extincteurs : combien en faut-il et où les placer ?",
+          "text": "Le Code du travail (article R4227-29) fixe un minimum : au moins un extincteur portatif à eau pulvérisée d'au moins 6 litres pour 200 m² de plancher, et au moins un appareil par niveau. Lorsque l'activité présente des risques particuliers, notamment électriques ou liés à des produits inflammables, il faut ajouter des extincteurs adaptés à ces risques, par exemple à CO2 près des armoires électriques. Les appareils doivent rester visibles, signalés et accessibles, jamais masqués par du stockage, et être vérifiés régulièrement : en pratique une fois par an, comme le prévoit la règle APSAD R4 souvent exigée par les assureurs. Encore faut-il que vos salariés sachent choisir le bon extincteur et s'en servir sans se mettre en danger : c'est tout l'objet de la formation Équipier de première intervention."
         }
       ],
       "trainings": [
@@ -248,7 +248,29 @@
       "opco": true,
       "image": "/images/9-1790608640906.jpg",
       "imageAlt": "Panneau vert de point de rassemblement fixé sur une façade",
-      "heroImage": "/images/exo-evac-1790687214071.jpg"
+      "heroImage": "/images/exo-evac-1790687214071.jpg",
+      "faq": [
+        {
+          "question": "Quelle fréquence pour un exercice d'évacuation ?",
+          "answer": "Au moins tous les six mois. L'article R4227-39 du Code du travail impose des exercices et essais périodiques à cette fréquence dans les établissements où une consigne de sécurité incendie est obligatoire, c'est-à-dire notamment à partir de 50 salariés ou dès que des matières inflammables sont manipulées. Les dates des exercices et les observations faites doivent être consignées dans un registre tenu à la disposition de l'inspection du travail. Pour qu'un exercice soit utile, variez les horaires et les scénarios (issue bloquée, personne manquante) et terminez toujours par un débriefing écrit."
+        },
+        {
+          "question": "Combien d'équipiers de première intervention faut-il former ?",
+          "answer": "Le Code du travail ne fixe pas de nombre précis. Il impose à l'employeur de prendre les mesures nécessaires pour que tout début d'incendie puisse être combattu rapidement et efficacement (article R4227-28), et la consigne de sécurité incendie doit désigner le personnel chargé de mettre en œuvre les extincteurs (article R4227-38). Le bon réflexe : raisonner par zone et par créneau horaire, pour qu'un équipier formé soit toujours présent, y compris pendant les congés, les absences et les horaires décalés. Votre assureur peut aussi avoir ses propres exigences : nous vous aidons à dimensionner l'équipe lors du devis."
+        },
+        {
+          "question": "Qui peut être guide-file ou serre-file ?",
+          "answer": "Tout salarié présent régulièrement sur la zone dont il a la charge et qui connaît bien les lieux. Le guide-file ouvre la marche : il dirige ses collègues vers les sorties et le point de rassemblement. Le serre-file ferme la marche : il vérifie qu'aucune personne ne reste dans les bureaux, les sanitaires ou les locaux annexes, puis rend compte au responsable de l'évacuation. Prévoyez au moins un binôme par niveau ou par zone, avec des suppléants pour couvrir les absences. La formation Équipier d'évacuation les prépare à ce rôle en situation réelle."
+        },
+        {
+          "question": "Faut-il former tous les salariés à l'utilisation des extincteurs ?",
+          "answer": "Tous les salariés doivent au minimum savoir donner l'alerte, reconnaître le signal d'alarme et évacuer. La consigne de sécurité incendie prévoit d'ailleurs des exercices au cours desquels le personnel apprend à se servir des moyens de premier secours (article R4227-39). La manipulation des extincteurs sur feu réel est surtout indispensable pour les équipiers de première intervention, mais de nombreuses entreprises choisissent d'y initier l'ensemble du personnel : quelques heures suffisent avec la formation Premier témoin incendie."
+        },
+        {
+          "question": "Intervenez-vous dans notre ville ?",
+          "answer": "Oui. Basé à Wingles, ENMA Formation organise ses formations incendie et ses exercices d'évacuation directement dans vos locaux à Lens, Béthune, Liévin, Hénin-Beaumont, Arras, Douai, Lille et dans toute la région Hauts-de-France (Nord, Pas-de-Calais, Aisne, Somme et Oise). Former vos équipes sur place, avec vos propres issues, vos extincteurs et votre point de rassemblement, rend l'exercice bien plus concret qu'en salle."
+        }
+      ]
     },
     {
       "title": "Secours & premiers soins",
@@ -320,7 +342,7 @@
         },
         {
           "title": "Maintien et actualisation des compétences SST",
-          "seoTitle": "MAC SST : recyclage 7 h tous les 24 mois",
+          "seoTitle": "Formation MAC SST, recyclage SST – Hauts-de-France | ENMA",
           "seoDescription": "Votre certificat SST arrive à échéance ? Maintien et actualisation des compétences en 1 jour, en intra, partout en Hauts-de-France.",
           "duration": "7 h (1 jour)",
           "format": "Intra-entreprise",
@@ -406,7 +428,7 @@
         },
         {
           "title": "Sauveteur secouriste du travail",
-          "seoTitle": "Formation SST en entreprise : 14 h dans vos locaux",
+          "seoTitle": "Formation SST (sauveteur secouriste) – Hauts-de-France | ENMA",
           "seoDescription": "Formez vos sauveteurs secouristes du travail sur site en 2 jours. Formateurs sapeurs-pompiers, devis rapide pour Lens, Béthune, Arras, Lille.",
           "duration": "14 h (2 jours)",
           "format": "Intra ou inter-entreprises",
@@ -1248,6 +1270,7 @@
       "trainings": [
         {
           "title": "Montage, démontage et utilisation des échafaudages de pied (R408)",
+          "seoTitle": "Formation échafaudages de pied R408 – Hauts-de-France | ENMA",
           "duration": "7 à 21 h (1 à 3 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Monter, démonter et réceptionner un échafaudage de pied selon la recommandation R408.",
@@ -1294,6 +1317,7 @@
         },
         {
           "title": "Montage, démontage et utilisation des échafaudages roulants et fixes (R457)",
+          "seoTitle": "Formation échafaudages roulants R457 – Hauts-de-France | ENMA",
           "duration": "7 à 14 h (1 à 2 jours)",
           "format": "Intra ou inter-entreprises",
           "intro": "Échafaudages roulants et fixes : le montage conforme et l'utilisation sécurisée au quotidien.",
@@ -1449,7 +1473,7 @@
       "trainings": [
         {
           "title": "Gestes et postures",
-          "seoTitle": "Formation gestes et postures en entreprise",
+          "seoTitle": "Formation gestes et postures – Hauts-de-France | ENMA",
           "seoDescription": "Réduisez les TMS : formation pratique adaptée aux postes de vos salariés, réalisée dans vos locaux en Hauts-de-France.",
           "duration": "3 h 30 à 7 h (½ journée à 1 jour)",
           "format": "Intra-entreprise",
@@ -1487,6 +1511,7 @@
         },
         {
           "title": "Sécurité des salariés des entreprises extérieures — Niveau 1",
+          "seoTitle": "Formation entreprises extérieures N1 – Hauts-de-France | ENMA",
           "duration": "7 h (1 jour)",
           "format": "Intra-entreprise",
           "intro": "Le socle sécurité exigé avant toute intervention sur un site industriel client.",
@@ -1528,6 +1553,7 @@
         },
         {
           "title": "Sécurité des salariés des entreprises extérieures — Niveau 2",
+          "seoTitle": "Formation entreprises extérieures N2 – Hauts-de-France | ENMA",
           "duration": "14 h (2 jours)",
           "format": "Intra-entreprise",
           "intro": "Le niveau encadrement pour organiser et superviser la sécurité des équipes intervenantes sur site industriel.",
@@ -2302,7 +2328,7 @@
   },
   "pages": {
     "hero": {
-      "badge": "Organisme de formation professionnelle",
+      "badge": "Formations sécurité et prévention des risques en entreprise, en Hauts-de-France",
       "primaryButton": "Découvrir nos formations",
       "secondaryButton": "Parler à un conseiller"
     },

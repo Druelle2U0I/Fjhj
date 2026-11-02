@@ -219,13 +219,13 @@ export default function AdminApp({ initial, baseSha }: { initial: SiteContent; b
               <Card className="grid gap-4">
                 <BlockTitle n={1} title="Haut de page (vidéo)" />
                 <Field
-                  label="Petit texte au-dessus du titre"
-                  hint="Ex. « Organisme de formation · Hauts-de-France »."
+                  label="Titre principal pour Google (petite ligne au-dessus de l'accroche)"
+                  hint="C'est le H1 de la page : dites ce que vous faites et où. Ex. « Formations sécurité et prévention des risques en entreprise, en Hauts-de-France »."
                   value={content.pages.hero.badge ?? ""}
                   onChange={(v) => setHero({ badge: v })}
                 />
                 <Field
-                  label="Grand titre"
+                  label="Grande accroche"
                   rows={2}
                   value={content.company.tagline}
                   onChange={(v) => update({ ...content, company: { ...content.company, tagline: v } })}

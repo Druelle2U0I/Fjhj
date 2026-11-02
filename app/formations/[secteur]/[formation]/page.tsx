@@ -16,7 +16,7 @@ import {
   telHref,
   trainingInfo,
 } from "@/lib/data";
-import { clip, pageMetadata } from "@/lib/seo";
+import { clip, pageMetadata, trainingTitle } from "@/lib/seo";
 
 // Durée en heures au format ISO 8601 demandé par Google pour une
 // formation (« 14 h (2 jours) » → PT14H, « 3 h 30 » → PT3H30M). Pour une
@@ -56,7 +56,8 @@ export async function generateMetadata(
   // si un titre/texte dédié au référencement a été renseigné.
   const tail = ` ${training.duration} · Qualiopi · finançable OPCO.`;
   return pageMetadata({
-    title: training.seoTitle ?? training.title,
+    title: training.seoTitle ?? trainingTitle(training.title),
+    brand: false,
     description: training.seoDescription ?? `${clip(training.intro, 158 - tail.length)}${tail}`,
     path: `/formations/${service.slug}/${training.slug}`,
   });
