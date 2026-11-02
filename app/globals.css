@@ -568,6 +568,12 @@ h4,
   text-transform: uppercase;
   letter-spacing: 0.22em;
 }
+/* Petite ligne utilisée comme H1 (accueil) : garde l'apparence d'un
+   sur-titre, pas celle d'un grand titre. */
+h1.eyebrow {
+  font-family: var(--font-ui), sans-serif;
+  font-stretch: 100%;
+}
 
 /* Couleurs du haut de page réglées page par page (admin → Couleurs de
    cette page) : appliquées seulement si la page les définit, et seulement
@@ -577,7 +583,7 @@ h4,
   color: var(--eyebrow-color);
 }
 [style*="--title-color"] .page-hero:has(.on-surface) h1,
-[style*="--title-color"] .home-hero h1 {
+[style*="--title-color"] .home-hero .home-title {
   color: var(--title-color);
 }
 [style*="--intro-color"] .page-hero:has(.on-surface) .page-intro,

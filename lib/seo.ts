@@ -24,12 +24,15 @@ export function pageMetadata({
   title,
   description,
   path,
+  brand = true,
 }: {
   title: string;
   description: string;
   path: string;
+  // false : le titre contient déjà la marque, on n'ajoute rien.
+  brand?: boolean;
 }): Metadata {
-  const full = title.length + SUFFIX.length <= TITLE_MAX ? `${title}${SUFFIX}` : title;
+  const full = brand && title.length + SUFFIX.length <= TITLE_MAX ? `${title}${SUFFIX}` : title;
   const desc = clip(description);
   return {
     title: { absolute: full },
@@ -47,4 +50,13 @@ export function pageMetadata({
     },
     twitter: { card: "summary_large_image", title: full, description: desc, images: [OG_IMAGE.url] },
   };
+}
+
+// Titre d'une page formation : « Formation <nom> – Hauts-de-France | ENMA ».
+// Si c'est trop long pour Google, on retire d'abord la marque, puis la
+// région.
+export function trainingTitle(name: string, region = "Hauts-de-France"): string {
+  const base = /^formation\b/i.test(name) ? name : `Formation ${name}`;
+  const candidates = [`${base} – ${region} | ENMA`, `${base} – ${region}`, `${base} | ENMA`, base];
+  return candidates.find((c) => c.length <= TITLE_MAX) ?? base;
 }
