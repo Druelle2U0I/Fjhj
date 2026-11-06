@@ -135,7 +135,7 @@ export default async function FormationPage(
       {/* Hero : grande photo de fond. Remonte sous l'en-tête (sticky,
           semi-transparent) pour que la photo continue jusqu'en haut de
           la page au lieu de s'arrêter net dessous. */}
-      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[154px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24">
+      <section className="page-hero relative -mt-[86px] overflow-hidden px-6 pt-[112px] sm:-mt-[98px] sm:pt-[154px] pt-[126px] pb-16 sm:pt-[154px] sm:pb-24 lg:flex lg:flex-col lg:!pb-10">
         <div className="hero-photo-fade absolute inset-0">
           <Visual
             src={training.heroImage || training.image || service.heroImage || service.image}
@@ -147,7 +147,10 @@ export default async function FormationPage(
           <div className="absolute inset-0 bg-gradient-to-b from-surface/65 via-surface/35 to-surface/45" />
         </div>
 
-        <div className="on-surface relative mx-auto max-w-6xl">
+        {/* Sur grand écran, l'en-tête garde une hauteur minimale : le titre
+            est calé en bas, au plus près du programme, plutôt que de laisser
+            un grand vide entre les deux. */}
+        <div className="on-surface relative mx-auto max-w-6xl lg:flex lg:w-full lg:flex-1 lg:flex-col">
           {/* Sur téléphone, un simple lien retour remplace le fil d'Ariane. */}
           <Link
             href={`/formations/${service.slug}`}
@@ -172,7 +175,7 @@ export default async function FormationPage(
 
           {/* Sur grand écran, la colonne de droite reste libre : l'encart
               récapitulatif remonte à cet endroit, à côté du titre. */}
-          <div className="lg:pr-[400px]">
+          <div className="lg:mt-auto lg:pr-[400px]">
             <div className="flex flex-wrap items-center gap-3">
               <p className="hidden text-sm font-semibold text-surface-accent sm:block">
                 {service.title}
