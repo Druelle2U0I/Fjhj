@@ -2161,64 +2161,6 @@
           ],
           "seoTitle": "Formation auditeur interne ISO 9001 – Hauts-de-France | ENMA",
           "seoDescription": "Formation de deux jours pour préparer, conduire et restituer un audit interne qualité selon l'ISO 9001 et l'ISO 19011. Hauts-de-France."
-        },
-        {
-          "title": "Maîtriser la création d'un dossier de candidature à un appel d'offres public",
-          "slug": "appel-d-offres-public",
-          "duration": "14 h (2 jours)",
-          "durationDetail": "14 heures — 2 journées",
-          "format": "Intra ou inter-entreprises",
-          "intro": "Repérer, analyser et répondre aux consultations publiques avec un dossier recevable.",
-          "prerequisites": "Aucun prérequis juridique n'est exigé. Une connaissance de l'activité et des références de l'entreprise facilite les ateliers.",
-          "certification": "Attestation de fin de formation | Grille de compétences individuelle, après QCM et production d'un dossier de candidature complet",
-          "programme": [],
-          "description": [
-            "Répondre à un marché public suppose de connaître les règles du Code de la commande publique et de savoir lire un dossier de consultation. Cette formation de deux jours présente les principes fondamentaux de la commande publique, les principales procédures et les seuils applicables, et aide à repérer les consultations pertinentes pour décider d'y répondre ou non.",
-            "Les participants analysent un dossier de consultation des entreprises et son règlement de consultation, constituent un dossier de candidature et une offre recevables et complets, puis apprennent à déposer par voie dématérialisée et à exploiter la décision de l'acheteur. La validation repose sur un QCM et la production d'un dossier de candidature complet."
-          ],
-          "audience": "Dirigeant, responsable commercial ou personnel administratif de la société, chargé de répondre aux consultations publiques.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
-          "image": "",
-          "imageAlt": "",
-          "objectives": [
-            "Être capable de situer le cadre de la commande publique et ses principes fondamentaux",
-            "Être capable de distinguer les principales procédures et les seuils applicables",
-            "Être capable de repérer les consultations pertinentes et de décider d’y répondre ou non",
-            "Être capable d’analyser un dossier de consultation des entreprises et son règlement de consultation",
-            "Être capable de constituer un dossier de candidature et une offre recevables et complets",
-            "Être capable de déposer une offre par voie dématérialisée et d’exploiter la décision de l’acheteur"
-          ],
-          "seoTitle": "Formation appel d'offres public – Hauts-de-France | ENMA",
-          "seoDescription": "Formation de deux jours pour analyser un dossier de consultation, constituer une candidature recevable et déposer une offre dématérialisée."
-        },
-        {
-          "title": "Développer l'activité commerciale par les réseaux sociaux",
-          "slug": "developper-activite-commerciale-reseaux-sociaux",
-          "duration": "14 h (2 jours)",
-          "durationDetail": "14 heures — 2 journées de 7 heures",
-          "format": "Intra ou inter-entreprises",
-          "intro": "Choisir ses réseaux, publier régulièrement et suivre ses indicateurs pour développer son activité.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation",
-          "programme": [],
-          "description": [
-            "Être présent sur les réseaux sociaux ne suffit pas : encore faut-il choisir les bons, publier avec régularité et mesurer ce que cela rapporte. Cette formation de deux jours compare les réseaux existants au regard des objectifs commerciaux fixés, accompagne la création des comptes entreprise et la définition d'un rythme de publication.",
-            "Les participants apprennent à élaborer des contenus rédactionnels et des visuels propices à la diffusion, à concevoir des vidéos promotionnelles de leur activité et à utiliser les indicateurs de suivi pour piloter leur stratégie de développement commercial."
-          ],
-          "audience": "Dirigeants de TPE/PME indépendants et leurs collaborateurs (responsables commerciaux, community managers) en charge de leur communication marketing.",
-          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
-          "image": "",
-          "imageAlt": "",
-          "objectives": [
-            "Comparer les différents réseaux sociaux existants afin de choisir les plus pertinents au regard des objectifs commerciaux fixés",
-            "Créer un compte entreprise sur les réseaux sociaux sélectionnés afin de développer la présence de son organisation",
-            "Définir un rythme de publication afin de garantir une diffusion optimale et régulière des informations",
-            "Élaborer des contenus rédactionnels percutants et des visuels propices à la diffusion afin d’animer, d’informer et de fidéliser la communauté cible",
-            "Concevoir des vidéos promotionnelles de son activité professionnelle afin d’animer sa présence digitale",
-            "Utiliser les indicateurs de suivi afin de piloter la stratégie de développement de l’activité commerciale"
-          ],
-          "seoTitle": "Formation réseaux sociaux pour l'entreprise – Hauts-de-France | ENMA",
-          "seoDescription": "Formation de deux jours pour choisir ses réseaux sociaux, publier régulièrement, créer contenus et vidéos et suivre ses indicateurs."
         }
       ],
       "opco": true,
@@ -2387,47 +2329,6 @@
           ],
           "seoTitle": "Formation SSCT du CSE, renouvellement – Hauts-de-France | ENMA",
           "seoDescription": "Formation santé, sécurité et conditions de travail de 3 jours pour les élus du CSE au renouvellement du mandat. À la charge de l'employeur."
-        }
-      ],
-      "opco": false,
-      "image": "",
-      "imageAlt": ""
-    },
-    {
-      "title": "Collectivités & élus",
-      "slug": "collectivites-elus",
-      "description": "ENMA Formation propose aux élus municipaux une journée pour bien débuter leur mandat : rôle de chacun au sein de l'équipe municipale, place de la commune dans l'organisation territoriale, droits et devoirs de l'élu, relation avec les habitants et les agents.",
-      "summary": "Les repères essentiels pour les élus municipaux en début de mandat.",
-      "why": {
-        "title": "Prendre ses fonctions avec des repères clairs",
-        "text": "Maires, adjoints, conseillers délégués ou conseillers municipaux, de la majorité comme de l'opposition : chaque élu découvre en début de mandat un rôle, des interlocuteurs et des responsabilités nouvelles. Cette journée donne les repères pour s'y retrouver dès les premiers mois."
-      },
-      "trainings": [
-        {
-          "title": "Posture de l'Élu — bien débuter son mandat municipal",
-          "slug": "posture-de-l-elu",
-          "duration": "7 h (1 jour)",
-          "durationDetail": "7 heures — 1 journée",
-          "format": "Intra ou inter-entreprises",
-          "intro": "Les repères essentiels pour bien débuter un mandat municipal.",
-          "prerequisites": "Aucun",
-          "certification": "Attestation de fin de formation | Attestation d'assiduité",
-          "programme": [],
-          "description": [
-            "Cette journée s'adresse aux élus municipaux qui prennent leurs fonctions. Elle permet d'identifier les attributions de chaque membre de l'équipe municipale, de situer l'action communale dans l'organisation territoriale (intercommunalité, Département, Région, État) et d'exercer son mandat dans le respect de ses droits, de ses devoirs et de l'exemplarité attendue d'un élu."
-          ],
-          "audience": "Maires, adjoints, conseillers délégués et conseillers municipaux, de la majorité comme de l'opposition, souhaitant bien débuter leur mandat.",
-          "funding": "",
-          "image": "",
-          "imageAlt": "",
-          "objectives": [
-            "Être capable d’identifier les attributions de chaque membre de l’équipe municipale (maire, adjoints, conseillers délégués, conseillers municipaux)",
-            "Être capable de situer l’action communale dans l’organisation territoriale (intercommunalité, Département, Région, État)",
-            "Être capable d’exercer son mandat dans le respect de ses droits, de ses devoirs et de l’exemplarité attendue d’un élu",
-            "Être capable d’entretenir une relation de proximité avec les habitants et les agents municipaux"
-          ],
-          "draft": true,
-          "seoTitle": "Formation posture de l'élu municipal – Hauts-de-France | ENMA"
         }
       ],
       "opco": false,
