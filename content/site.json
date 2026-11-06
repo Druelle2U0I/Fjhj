@@ -36,7 +36,7 @@
   },
   "stats": [
     {
-      "value": "42",
+      "value": "{formations}",
       "label": "formations au catalogue"
     },
     {
@@ -44,7 +44,7 @@
       "label": "départements couverts"
     },
     {
-      "value": "8",
+      "value": "{domaines}",
       "label": "domaines de formation"
     },
     {
@@ -1731,6 +1731,114 @@
             "Être capable d’intégrer les réflexes de prévention, la vigilance partagée et la responsabilité individuelle dans toutes les situations de travail",
             "Être capable de développer son leadership de manager de proximité"
           ]
+        },
+        {
+          "title": "Port et vérification des EPI",
+          "slug": "port-et-verification-des-epi",
+          "duration": "7 h (1 jour)",
+          "durationDetail": "7 heures — 1 journée (8h30-17h30)",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Choisir, porter, contrôler et suivre les équipements de protection individuelle de son poste.",
+          "prerequisites": "Aucun. La connaissance des équipements utilisés sur son poste de travail facilite les ateliers pratiques.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Identifier les risques et les familles d'EPI",
+              "text": ""
+            },
+            {
+              "title": "Lire le marquage et choisir l'équipement adapté",
+              "text": ""
+            },
+            {
+              "title": "Porter, ajuster, retirer, entretenir",
+              "text": ""
+            },
+            {
+              "title": "Contrôler avant usage et vérifier périodiquement",
+              "text": ""
+            },
+            {
+              "title": "Suivi, traçabilité et mise au rebut",
+              "text": ""
+            }
+          ],
+          "description": [
+            "Un équipement de protection individuelle ne protège que s'il est adapté au risque, correctement porté et en bon état. Cette formation d'une journée apprend à lire le marquage CE et la notice du fabricant, à distinguer les catégories I, II et III, à contrôler un équipement avant usage et à reconnaître celui qu'il faut réformer.",
+            "Elle s'appuie sur les articles L.4121-1 et L.4121-2 et R.4321-1 à R.4321-5 et R.4323-91 à R.4323-106 du Code du travail, l'arrêté du 19 mars 1993 et le règlement (UE) 2016/425. Les participants repartent en sachant quels équipements sont soumis à vérification générale périodique, à quelle fréquence, et comment renseigner la fiche de vérification."
+          ],
+          "audience": "Salarié de la société doté d'équipements de protection individuelle, ainsi que toute personne chargée de les distribuer, de les contrôler ou d'en assurer le suivi.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable de citer les risques de son poste et les équipements de protection individuelle qui y répondent",
+            "Être capable de lire le marquage CE, la notice du fabricant et les indices de performance d’un équipement",
+            "Être capable de distinguer les catégories I, II et III et les obligations qui s’y rattachent",
+            "Être capable de contrôler l’état d’un équipement avant usage et d’identifier un équipement à réformer",
+            "Être capable de porter, d’ajuster, de retirer, de nettoyer et de stocker ses équipements de protection individuelle",
+            "Être capable de citer les équipements soumis à vérification générale périodique, d’en respecter la périodicité et de renseigner la fiche de vérification"
+          ],
+          "seoTitle": "Formation port et vérification des EPI – Hauts-de-France | ENMA",
+          "seoDescription": "Formation d'une journée : choisir, porter, contrôler et assurer la vérification périodique des équipements de protection individuelle. Hauts-de-France."
+        },
+        {
+          "title": "Port des EPI et prévention des risques chimiques",
+          "slug": "port-des-epi-et-prevention-des-risques-chimiques",
+          "duration": "7 h (1 jour)",
+          "durationDetail": "7 heures — 1 journée (8h30-17h30)",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Lire une étiquette, exploiter une fiche de données de sécurité et se protéger face aux produits chimiques.",
+          "prerequisites": "Aucun. La connaissance des produits utilisés sur son poste de travail facilite les ateliers pratiques.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [],
+          "description": [
+            "Manipuler, transvaser, stocker ou nettoyer des produits chimiques expose à des risques qui ne se voient pas toujours. Cette formation d'une journée apprend à identifier les dangers d'un produit à partir des pictogrammes et mentions de l'étiquetage CLP, à retrouver les rubriques utiles d'une fiche de données de sécurité et à connaître les voies de pénétration et les effets sur la santé.",
+            "Elle s'appuie sur les articles L.4121-1 et L.4121-2, R.4412-1 et suivants, R.4321-4 et R.4323-91 à R.4323-106 du Code du travail, le règlement CLP n° 1272/2008 et les fiches de données de sécurité (REACH). Les participants s'exercent à choisir, porter, retirer et entretenir les équipements adaptés au produit et à la tâche, et à réagir en cas de déversement ou de contact accidentel."
+          ],
+          "audience": "Salarié de la société amené à manipuler, transvaser, stocker ou nettoyer des produits chimiques, ou à intervenir à proximité de ceux-ci.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable d’identifier les dangers d’un produit chimique à partir des pictogrammes et mentions de l’étiquetage CLP",
+            "Être capable de retrouver et d’exploiter les rubriques utiles d’une fiche de données de sécurité",
+            "Être capable de citer les voies de pénétration des produits chimiques et les effets sur la santé",
+            "Être capable d’appliquer les mesures de prévention collective et les consignes de stockage et de manipulation du site",
+            "Être capable de choisir les équipements de protection individuelle adaptés au produit manipulé et à la tâche",
+            "Être capable de porter, d’ajuster, de retirer et d’entretenir ses équipements de protection individuelle et de réagir en cas de déversement ou de contact accidentel"
+          ],
+          "seoTitle": "Formation EPI et risques chimiques – Hauts-de-France | ENMA",
+          "seoDescription": "Formation d'une journée : étiquetage CLP, fiches de données de sécurité, choix et port des EPI face aux produits chimiques. Hauts-de-France."
+        },
+        {
+          "title": "Prévention des risques liés à la manutention et à la manipulation des tondeuses auto-portées",
+          "slug": "tondeuses-auto-portees",
+          "duration": "7 h (1 jour)",
+          "durationDetail": "7 heures — 1 journée",
+          "format": "Intra-entreprise",
+          "intro": "Conduire une tondeuse auto-portée en sécurité : vérifications, manœuvres, tonte en dévers.",
+          "prerequisites": "Être âgé de 18 ans au moins, être reconnu médicalement apte à la conduite et comprendre le français écrit et parlé. Aucune expérience préalable n'est exigée.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle | Éléments du dossier d'autorisation de conduite",
+          "programme": [],
+          "description": [
+            "Renversement en dévers, heurt de piéton, projection de débris, coupure et happement, brûlure au remplissage : la tondeuse auto-portée concentre plusieurs risques sur un même engin. Cette formation d'une journée apprend à reconnaître les catégories de tondeuses et de petits engins autoportés, à réaliser les vérifications de prise et de fin de poste et à effectuer en sécurité les manœuvres de déplacement, de tonte en dévers, de vidage du bac et de mise en sécurité de l'engin.",
+            "Elle s'inscrit dans le cadre des articles R.4323-55 et suivants du Code du travail. À l'issue de la formation, le participant reçoit une attestation de fin de formation, sa grille de compétences individuelle et les éléments du dossier d'autorisation de conduite. L'employeur reste seul habilité à délivrer l'autorisation de conduite."
+          ],
+          "audience": "Salarié de la société appelé à conduire des tondeuses auto-portées et des petits engins autoportés d'entretien des espaces verts.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable d’identifier les catégories des tondeuses auto-portées et des petits engins autoportés et leurs caractéristiques techniques",
+            "Être capable d’identifier le rôle et les responsabilités des acteurs de l’acte de conduire",
+            "Être capable d’appliquer la réglementation et les consignes de sécurité du site",
+            "Être capable de maîtriser les risques principaux : renversement en dévers, heurt de piéton, projection de débris, coupure et happement, brûlure et incendie au remplissage, bruit et vibrations",
+            "Être capable de réaliser les vérifications de prise et de fin de poste",
+            "Être capable d’effectuer en sécurité les manœuvres de déplacement, de tonte en dévers, de vidage du bac et de mise en sécurité de l’engin"
+          ],
+          "seoTitle": "Formation tondeuses auto-portées – Hauts-de-France | ENMA",
+          "seoDescription": "Formation d'une journée à la conduite en sécurité des tondeuses auto-portées : vérifications, tonte en dévers, vidage du bac. Hauts-de-France."
         }
       ],
       "opco": true,
@@ -2024,6 +2132,93 @@
             "Être capable de conduire les entretiens de retour et de maintien dans l’emploi",
             "Être capable de construire, de piloter et d’évaluer un plan d’action de prévention de l’absentéisme"
           ]
+        },
+        {
+          "title": "Auditeur interne qualité ISO 9001",
+          "slug": "auditeur-interne-qualite-iso-9001",
+          "duration": "14 h (2 jours)",
+          "durationDetail": "14 heures — 2 journées",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Préparer, conduire et restituer un audit interne du système de management de la qualité.",
+          "prerequisites": "Connaître le fonctionnement et l'organisation de son entreprise. Une première approche de la norme ISO 9001 ou de la démarche qualité facilite les ateliers.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle, après QCM et mise en situation d'audit simulé",
+          "programme": [],
+          "description": [
+            "L'audit interne est l'outil qui fait vivre un système de management de la qualité entre deux audits de certification. Cette formation de deux jours situe les exigences de la norme ISO 9001 et ses évolutions dans l'édition 2026, puis applique les principes et le vocabulaire de l'audit définis par la norme ISO 19011.",
+            "Les participants préparent un audit (programme, plan et liste de vérification), le conduisent en recueillant des preuves objectives, formulent et classent des constats d'écart factuels, puis rédigent le rapport et assurent le suivi des actions correctives. La validation repose sur un QCM et une mise en situation d'audit simulé."
+          ],
+          "audience": "Responsable qualité, pilote de processus, manager ou salarié de la société appelé à réaliser des audits internes du système de management de la qualité.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable de situer les exigences de la norme ISO 9001 et ses évolutions dans l’édition 2026",
+            "Être capable d’appliquer les principes et le vocabulaire de l’audit définis par la norme ISO 19011",
+            "Être capable de préparer un audit interne : programme d’audit, plan d’audit et liste de vérification",
+            "Être capable de conduire un audit interne et de recueillir des preuves objectives",
+            "Être capable de formuler des constats d’écart factuels et de les classer",
+            "Être capable de rédiger un rapport d’audit et d’assurer le suivi des actions correctives"
+          ],
+          "seoTitle": "Formation auditeur interne ISO 9001 – Hauts-de-France | ENMA",
+          "seoDescription": "Formation de deux jours pour préparer, conduire et restituer un audit interne qualité selon l'ISO 9001 et l'ISO 19011. Hauts-de-France."
+        },
+        {
+          "title": "Maîtriser la création d'un dossier de candidature à un appel d'offres public",
+          "slug": "appel-d-offres-public",
+          "duration": "14 h (2 jours)",
+          "durationDetail": "14 heures — 2 journées",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Repérer, analyser et répondre aux consultations publiques avec un dossier recevable.",
+          "prerequisites": "Aucun prérequis juridique n'est exigé. Une connaissance de l'activité et des références de l'entreprise facilite les ateliers.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle, après QCM et production d'un dossier de candidature complet",
+          "programme": [],
+          "description": [
+            "Répondre à un marché public suppose de connaître les règles du Code de la commande publique et de savoir lire un dossier de consultation. Cette formation de deux jours présente les principes fondamentaux de la commande publique, les principales procédures et les seuils applicables, et aide à repérer les consultations pertinentes pour décider d'y répondre ou non.",
+            "Les participants analysent un dossier de consultation des entreprises et son règlement de consultation, constituent un dossier de candidature et une offre recevables et complets, puis apprennent à déposer par voie dématérialisée et à exploiter la décision de l'acheteur. La validation repose sur un QCM et la production d'un dossier de candidature complet."
+          ],
+          "audience": "Dirigeant, responsable commercial ou personnel administratif de la société, chargé de répondre aux consultations publiques.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable de situer le cadre de la commande publique et ses principes fondamentaux",
+            "Être capable de distinguer les principales procédures et les seuils applicables",
+            "Être capable de repérer les consultations pertinentes et de décider d’y répondre ou non",
+            "Être capable d’analyser un dossier de consultation des entreprises et son règlement de consultation",
+            "Être capable de constituer un dossier de candidature et une offre recevables et complets",
+            "Être capable de déposer une offre par voie dématérialisée et d’exploiter la décision de l’acheteur"
+          ],
+          "seoTitle": "Formation appel d'offres public – Hauts-de-France | ENMA",
+          "seoDescription": "Formation de deux jours pour analyser un dossier de consultation, constituer une candidature recevable et déposer une offre dématérialisée."
+        },
+        {
+          "title": "Développer l'activité commerciale par les réseaux sociaux",
+          "slug": "developper-activite-commerciale-reseaux-sociaux",
+          "duration": "14 h (2 jours)",
+          "durationDetail": "14 heures — 2 journées de 7 heures",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Choisir ses réseaux, publier régulièrement et suivre ses indicateurs pour développer son activité.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation",
+          "programme": [],
+          "description": [
+            "Être présent sur les réseaux sociaux ne suffit pas : encore faut-il choisir les bons, publier avec régularité et mesurer ce que cela rapporte. Cette formation de deux jours compare les réseaux existants au regard des objectifs commerciaux fixés, accompagne la création des comptes entreprise et la définition d'un rythme de publication.",
+            "Les participants apprennent à élaborer des contenus rédactionnels et des visuels propices à la diffusion, à concevoir des vidéos promotionnelles de leur activité et à utiliser les indicateurs de suivi pour piloter leur stratégie de développement commercial."
+          ],
+          "audience": "Dirigeants de TPE/PME indépendants et leurs collaborateurs (responsables commerciaux, community managers) en charge de leur communication marketing.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Comparer les différents réseaux sociaux existants afin de choisir les plus pertinents au regard des objectifs commerciaux fixés",
+            "Créer un compte entreprise sur les réseaux sociaux sélectionnés afin de développer la présence de son organisation",
+            "Définir un rythme de publication afin de garantir une diffusion optimale et régulière des informations",
+            "Élaborer des contenus rédactionnels percutants et des visuels propices à la diffusion afin d’animer, d’informer et de fidéliser la communauté cible",
+            "Concevoir des vidéos promotionnelles de son activité professionnelle afin d’animer sa présence digitale",
+            "Utiliser les indicateurs de suivi afin de piloter la stratégie de développement de l’activité commerciale"
+          ],
+          "seoTitle": "Formation réseaux sociaux pour l'entreprise – Hauts-de-France | ENMA",
+          "seoDescription": "Formation de deux jours pour choisir ses réseaux sociaux, publier régulièrement, créer contenus et vidéos et suivre ses indicateurs."
         }
       ],
       "opco": true,
@@ -2051,6 +2246,258 @@
           "answer": "Oui, en grande partie. ENMA Formation est certifié Qualiopi, condition indispensable pour une prise en charge par votre OPCO (opérateur de compétences) au titre du plan de développement des compétences. Le montant pris en charge dépend de votre branche professionnelle et de la taille de votre entreprise. Nous vous transmettons un devis et un programme détaillé pour constituer votre demande, à adresser à l'OPCO avant le début de la formation."
         }
       ]
+    },
+    {
+      "title": "Représentants du personnel — CSE",
+      "slug": "representants-du-personnel-cse",
+      "seoTitle": "Formations des élus du CSE – Hauts-de-France | ENMA",
+      "seoDescription": "Formation économique et formation santé, sécurité et conditions de travail (SSCT) des élus du CSE, en intra ou inter-entreprises, Hauts-de-France.",
+      "description": "ENMA Formation accompagne les élus du comité social et économique dans l'exercice de leur mandat : formation économique des membres titulaires, formation en santé, sécurité et conditions de travail au premier mandat comme au renouvellement. Les sessions sont organisées en intra ou en inter-entreprises, partout dans les Hauts-de-France.",
+      "summary": "Formation économique et formation santé, sécurité et conditions de travail des élus du comité social et économique.",
+      "why": {
+        "title": "Un mandat d'élu s'exerce mieux quand on en maîtrise les outils",
+        "text": "Lire les comptes de l'entreprise, analyser une situation de travail, conduire une enquête après un accident : les attributions du CSE demandent des méthodes que l'on n'acquiert pas du seul fait d'être élu. Nos sessions partent des situations rencontrées par les participants dans leur établissement."
+      },
+      "trainings": [
+        {
+          "title": "Formation économique des membres du CSE",
+          "slug": "formation-economique-membres-cse",
+          "duration": "35 h (5 jours)",
+          "durationDetail": "35 heures — 5 journées (8h30-17h30)",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Comprendre les comptes de l'entreprise pour exercer pleinement les attributions économiques du comité.",
+          "prerequisites": "Aucun. Être titulaire d'un mandat au comité social et économique.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Cadre du mandat et fonctionnement du CSE",
+              "text": ""
+            },
+            {
+              "title": "Attributions consultatives, expertises et droits d'alerte",
+              "text": ""
+            },
+            {
+              "title": "Lire un bilan et un compte de résultat",
+              "text": ""
+            },
+            {
+              "title": "Analyser la situation économique et financière",
+              "text": ""
+            },
+            {
+              "title": "Données juridiques et restructurations",
+              "text": ""
+            }
+          ],
+          "description": [
+            "L'article L.2315-63 du Code du travail ouvre aux membres titulaires du comité social et économique élus pour la première fois, dans les entreprises d'au moins 50 salariés, une formation économique d'une durée maximale de cinq jours. Ce stage est renouvelé lorsque les élus ont exercé leur mandat pendant quatre ans (L.2315-17).",
+            "Pendant cinq journées, les participants situent le cadre de leur mandat et les règles de fonctionnement du comité, distinguent les consultations récurrentes et ponctuelles, mobilisent expertises et droits d'alerte, puis apprennent à lire un bilan et un compte de résultat, à calculer les soldes intermédiaires de gestion et à identifier les opérations de restructuration et les procédures de traitement des difficultés des entreprises."
+          ],
+          "audience": "Membre titulaire du comité social et économique, élu pour la première fois, dans une entreprise d'au moins cinquante salariés. Ouverte aux suppléants dans la limite des places disponibles.",
+          "funding": "Cette formation est prise en charge sur le budget de fonctionnement du CSE, et non par l'employeur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable de situer le cadre du mandat, la composition et les règles de fonctionnement du comité social et économique",
+            "Être capable de distinguer les attributions consultatives récurrentes et ponctuelles et d’en respecter les délais",
+            "Être capable de mobiliser les expertises et les droits d’alerte du comité",
+            "Être capable de lire un bilan et un compte de résultat et d’en expliquer les grandes masses",
+            "Être capable de calculer et d’interpréter les soldes intermédiaires de gestion et les principaux indicateurs d’activité",
+            "Être capable d’identifier les formes juridiques, les opérations de restructuration et les procédures de traitement des difficultés des entreprises"
+          ],
+          "seoTitle": "Formation économique des élus du CSE – Hauts-de-France | ENMA",
+          "seoDescription": "Formation économique de 5 jours pour les membres titulaires du CSE : comptes, indicateurs, consultations, droits d'alerte. Hauts-de-France."
+        },
+        {
+          "title": "Santé, sécurité et conditions de travail — premier mandat",
+          "slug": "ssct-premier-mandat",
+          "duration": "35 h (5 jours)",
+          "durationDetail": "35 heures — 5 journées (8h30-17h30)",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Les repères et les méthodes pour agir en prévention dès le premier mandat au CSE.",
+          "prerequisites": "Aucun. Être élu au comité social et économique.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Cadre de la prévention et rôle du CSE",
+              "text": ""
+            },
+            {
+              "title": "Déceler et mesurer les risques",
+              "text": ""
+            },
+            {
+              "title": "Analyser les conditions de travail",
+              "text": ""
+            },
+            {
+              "title": "Analyse d'accident et risques spécifiques",
+              "text": ""
+            },
+            {
+              "title": "Inspections, enquêtes et plan d'action",
+              "text": ""
+            }
+          ],
+          "description": [
+            "L'article L.2315-18 du Code du travail prévoit pour les membres de la délégation du personnel du CSE une formation en santé, sécurité et conditions de travail d'une durée minimale de cinq jours lors du premier mandat, quelle que soit la taille de l'entreprise (R.2315-9).",
+            "Les participants situent les obligations de l'employeur et les attributions du comité, identifient les acteurs de la prévention, apprennent à distinguer danger, risque et exposition, à exploiter le document unique d'évaluation des risques, à conduire une analyse d'accident par la méthode de l'arbre des causes, une inspection ou une enquête, et à exercer les droits d'alerte et de retrait."
+          ],
+          "audience": "Membre de la délégation du personnel du CSE, titulaire ou suppléant, ainsi que membre de la CSSCT lorsqu'elle existe. Élus exerçant leur premier mandat.",
+          "funding": "Cette formation est à la charge de l'employeur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable de situer les obligations de l’employeur et les attributions du comité en matière de santé, de sécurité et de conditions de travail",
+            "Être capable d’identifier les acteurs internes et externes de la prévention et leur rôle respectif",
+            "Être capable de distinguer danger, risque et exposition et de mesurer un risque professionnel",
+            "Être capable d’exploiter et de contribuer au document unique d’évaluation des risques",
+            "Être capable d’analyser une situation de travail et de conduire une analyse d’accident par la méthode de l’arbre des causes",
+            "Être capable de conduire une inspection, une enquête et d’exercer les droits d’alerte et de retrait"
+          ],
+          "seoTitle": "Formation SSCT du CSE, premier mandat – Hauts-de-France | ENMA",
+          "seoDescription": "Formation santé, sécurité et conditions de travail de 5 jours pour les élus du CSE au premier mandat. À la charge de l'employeur."
+        },
+        {
+          "title": "Santé, sécurité et conditions de travail — renouvellement de mandat",
+          "slug": "ssct-renouvellement-de-mandat",
+          "duration": "21 h (3 jours)",
+          "durationDetail": "21 heures — 3 journées (8h30-17h30)",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Actualiser ses repères et approfondir la prévention au renouvellement du mandat.",
+          "prerequisites": "Avoir exercé un mandat au CSE et avoir suivi la formation initiale en santé, sécurité et conditions de travail.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [],
+          "description": [
+            "En cas de renouvellement du mandat, les articles L.2315-17 et L.2315-18 du Code du travail prévoient une formation en santé, sécurité et conditions de travail d'au moins trois jours pour chaque membre de la délégation du personnel.",
+            "Les participants actualisent leurs repères réglementaires, exploitent les statistiques d'accidents et d'absentéisme de l'établissement, réexaminent le document unique d'évaluation des risques et approfondissent la prévention des risques psychosociaux, des troubles musculo-squelettiques et du risque chimique, jusqu'à contribuer au programme annuel de prévention et formuler un avis motivé."
+          ],
+          "audience": "Membre de la délégation du personnel du CSE, titulaire ou suppléant, dont le mandat est renouvelé après quatre ans d'exercice, consécutifs ou non, ainsi que membre de la CSSCT.",
+          "funding": "Cette formation est à la charge de l'employeur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation.",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable d’actualiser ses repères réglementaires en matière de santé, de sécurité et de conditions de travail",
+            "Être capable d’exploiter les statistiques d’accidents et d’absentéisme de l’établissement",
+            "Être capable de réexaminer et de faire mettre à jour le document unique d’évaluation des risques",
+            "Être capable d’approfondir la prévention des risques psychosociaux, des troubles musculo-squelettiques et du risque chimique",
+            "Être capable de conduire une inspection et une enquête et d’en assurer le suivi",
+            "Être capable de contribuer au programme annuel de prévention et de formuler un avis motivé"
+          ],
+          "seoTitle": "Formation SSCT du CSE, renouvellement – Hauts-de-France | ENMA",
+          "seoDescription": "Formation santé, sécurité et conditions de travail de 3 jours pour les élus du CSE au renouvellement du mandat. À la charge de l'employeur."
+        }
+      ],
+      "opco": false,
+      "image": "",
+      "imageAlt": ""
+    },
+    {
+      "title": "Collectivités & élus",
+      "slug": "collectivites-elus",
+      "description": "ENMA Formation propose aux élus municipaux une journée pour bien débuter leur mandat : rôle de chacun au sein de l'équipe municipale, place de la commune dans l'organisation territoriale, droits et devoirs de l'élu, relation avec les habitants et les agents.",
+      "summary": "Les repères essentiels pour les élus municipaux en début de mandat.",
+      "why": {
+        "title": "Prendre ses fonctions avec des repères clairs",
+        "text": "Maires, adjoints, conseillers délégués ou conseillers municipaux, de la majorité comme de l'opposition : chaque élu découvre en début de mandat un rôle, des interlocuteurs et des responsabilités nouvelles. Cette journée donne les repères pour s'y retrouver dès les premiers mois."
+      },
+      "trainings": [
+        {
+          "title": "Posture de l'Élu — bien débuter son mandat municipal",
+          "slug": "posture-de-l-elu",
+          "duration": "7 h (1 jour)",
+          "durationDetail": "7 heures — 1 journée",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Les repères essentiels pour bien débuter un mandat municipal.",
+          "prerequisites": "Aucun",
+          "certification": "Attestation de fin de formation | Attestation d'assiduité",
+          "programme": [],
+          "description": [
+            "Cette journée s'adresse aux élus municipaux qui prennent leurs fonctions. Elle permet d'identifier les attributions de chaque membre de l'équipe municipale, de situer l'action communale dans l'organisation territoriale (intercommunalité, Département, Région, État) et d'exercer son mandat dans le respect de ses droits, de ses devoirs et de l'exemplarité attendue d'un élu."
+          ],
+          "audience": "Maires, adjoints, conseillers délégués et conseillers municipaux, de la majorité comme de l'opposition, souhaitant bien débuter leur mandat.",
+          "funding": "",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable d’identifier les attributions de chaque membre de l’équipe municipale (maire, adjoints, conseillers délégués, conseillers municipaux)",
+            "Être capable de situer l’action communale dans l’organisation territoriale (intercommunalité, Département, Région, État)",
+            "Être capable d’exercer son mandat dans le respect de ses droits, de ses devoirs et de l’exemplarité attendue d’un élu",
+            "Être capable d’entretenir une relation de proximité avec les habitants et les agents municipaux"
+          ],
+          "draft": true,
+          "seoTitle": "Formation posture de l'élu municipal – Hauts-de-France | ENMA"
+        }
+      ],
+      "opco": false,
+      "image": "",
+      "imageAlt": ""
+    },
+    {
+      "title": "Professionnels de santé",
+      "slug": "professionnels-de-sante",
+      "description": "ENMA Formation propose aux professionnels de santé visés par le décret n° 2023-736 du 8 août 2023 les formations à la prescription de vaccins et à la prescription et l'administration de vaccins.",
+      "summary": "Prescription et administration des vaccins pour les professionnels de santé concernés.",
+      "why": {
+        "title": "Des compétences vaccinales élargies",
+        "text": "Infirmiers, pharmaciens et professionnels exerçant en laboratoire de biologie médicale peuvent prescrire, et pour certains administrer, des vaccins. Ces formations réglementées reprennent le contenu fixé par arrêté."
+      },
+      "trainings": [
+        {
+          "title": "Prescription de vaccins",
+          "slug": "prescription-de-vaccins",
+          "duration": "10 h 30 (1,5 jour)",
+          "durationDetail": "10 h 30 (8h30-17h30)",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Prescrire les vaccins dans le cadre ouvert par le décret n° 2023-736 du 8 août 2023.",
+          "prerequisites": "Être titulaire d'un diplôme permettant l'exercice de l'une des professions visées par le décret n° 2023-736 du 8 août 2023. Aucun prérequis en matière de vaccination.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [],
+          "description": [],
+          "audience": "Infirmier, pharmacien d'officine, pharmacien ou infirmier exerçant en pharmacie à usage intérieur, professionnel de santé exerçant en laboratoire de biologie médicale, relevant du décret n° 2023-736 du 8 août 2023.",
+          "funding": "",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable de citer les maladies à prévention vaccinale et les vaccins correspondants",
+            "Être capable de situer une personne dans le calendrier vaccinal en vigueur",
+            "Être capable d’identifier les personnes éligibles à la prescription selon sa profession",
+            "Être capable de repérer les contre-indications, les précautions d’emploi et les situations nécessitant un avis médical",
+            "Être capable de rédiger une prescription vaccinale conforme",
+            "Être capable d’assurer la traçabilité de la prescription dans le carnet de vaccination et dans Mon espace santé"
+          ],
+          "draft": true
+        },
+        {
+          "title": "Prescription et administration de vaccins",
+          "slug": "prescription-et-administration-de-vaccins",
+          "duration": "17 h 30 (2,5 jours)",
+          "durationDetail": "17 h 30 (8h30-17h30)",
+          "format": "Intra ou inter-entreprises",
+          "intro": "Prescrire et administrer les vaccins dans le cadre ouvert par le décret n° 2023-736 du 8 août 2023.",
+          "prerequisites": "Être titulaire d'un diplôme permettant l'exercice de l'une des professions visées par le décret n° 2023-736 du 8 août 2023.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [],
+          "description": [],
+          "audience": "Infirmier, pharmacien d'officine, pharmacien ou infirmier exerçant en pharmacie à usage intérieur, professionnel de santé exerçant en laboratoire de biologie médicale, relevant du décret n° 2023-736 du 8 août 2023.",
+          "funding": "",
+          "image": "",
+          "imageAlt": "",
+          "objectives": [
+            "Être capable de citer les maladies à prévention vaccinale et de situer une personne dans le calendrier vaccinal",
+            "Être capable d’identifier les personnes éligibles et de repérer les contre-indications et précautions d’emploi",
+            "Être capable de rédiger une prescription vaccinale conforme et d’en assurer la traçabilité",
+            "Être capable de préparer le vaccin et de choisir la voie et le site d’injection adaptés",
+            "Être capable de réaliser le geste vaccinal en respectant les règles d’asepsie et d’élimination des déchets",
+            "Être capable de reconnaître une réaction anaphylactique et d’appliquer la conduite à tenir"
+          ],
+          "draft": true
+        }
+      ],
+      "opco": false,
+      "image": "",
+      "imageAlt": ""
     },
     {
       "title": "Photovoltaïque",
@@ -2415,7 +2862,7 @@
         "id": "formations",
         "visible": true,
         "eyebrow": "Nos formations",
-        "title": "8 domaines de formation,\nun seul interlocuteur",
+        "title": "{domaines} domaines de formation,\nun seul interlocuteur",
         "text": "Des formations éligibles à une prise en charge OPCO, proposées en intra-entreprise et en inter-entreprises dans toute la région Hauts-de-France."
       },
       {
@@ -2522,7 +2969,7 @@
   "footerCta": {
     "enabled": true,
     "eyebrow": "Recevez notre catalogue",
-    "title": "Le catalogue complet de nos 42 formations",
+    "title": "Le catalogue complet de nos {formations} formations",
     "text": "Laissez votre adresse e-mail : nous vous envoyons le catalogue et nous restons disponibles pour construire un parcours adapté à vos équipes.",
     "buttonLabel": "Recevoir"
   },

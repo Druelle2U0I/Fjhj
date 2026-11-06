@@ -15,6 +15,11 @@ export type Module = { title: string; text: string };
 
 export type Training = {
   title: string;
+  // Adresse de la page (sinon : déduite du titre).
+  slug?: string;
+  // Brouillon : visible et modifiable dans l'admin, mais absent du site
+  // (pages, menus, compteurs, plan du site) tant que la case est cochée.
+  draft?: boolean;
   duration: string;
   format: string;
   intro: string;
@@ -53,6 +58,8 @@ export type Training = {
 
 export type Sector = {
   title: string;
+  // Adresse de la page (sinon : déduite du titre).
+  slug?: string;
   description: string;
   // Deux lignes rédigées pour les cartes des domaines de l'accueil.
   summary?: string;
@@ -488,18 +495,15 @@ export const legal = content.legal;
 export const social: Social = content.social ?? {};
 export const pages = content.pages;
 export const trainingInfo = content.trainingInfo ?? { methods: "", evaluation: "" };
-export const stats = content.stats;
 export const recommendationSource = content.recommendation;
 export const pillars = content.pillars;
 export const topTrainings = content.topTrainings;
 export const funding = content.funding;
 export const accessibility = content.accessibility;
 export const team = content.team;
-export const home = content.home;
 export const theme = content.theme;
 export const footerImage = content.footerImage;
 export const footerImageAlt = content.footerImageAlt;
-export const footerCta = content.footerCta;
 
 /** Variables CSS dérivées du thème, appliquées sur <html>. */
 export function themeStyle(t: Theme): Record<string, string> {
@@ -549,20 +553,27 @@ export function themeStyle(t: Theme): Record<string, string> {
 // Couleurs par défaut de toutes les pages : thème du site complété par les
 // couleurs réglées sur la page d'accueil. Chaque page peut ensuite les
 // remplacer par les siennes.
-export const baseTheme: Theme = { ...theme, ...home.theme };
+export const baseTheme: Theme = { ...theme, ...content.home.theme };
 
 export function pageThemeStyle(overrides?: PageColorOverride): Record<string, string> {
   return themeStyle({ ...baseTheme, ...overrides });
 }
 
-export const services = content.sectors.map((sector) => ({
-  ...sector,
-  slug: slugify(sector.title),
-  trainings: sector.trainings.map((training) => ({
-    ...training,
-    slug: slugify(training.title),
-  })),
-}));
+// Domaines et formations publiés sur le site : les formations en
+// brouillon sont retirées, et un domaine sans formation publiée n'apparaît
+// pas.
+export const services = content.sectors
+  .map((sector) => ({
+    ...sector,
+    slug: sector.slug || slugify(sector.title),
+    trainings: sector.trainings
+      .filter((training) => !training.draft)
+      .map((training) => ({
+        ...training,
+        slug: training.slug || slugify(training.title),
+      })),
+  }))
+  .filter((sector) => sector.trainings.length > 0);
 
 /** Lien tel: au format international (07 69 35 55 19 → +33769355519). */
 export function telHref(phone: string): string {
@@ -594,3 +605,15 @@ export function fillCounts(text: string): string {
     .replaceAll("{formations}", String(trainings))
     .replaceAll("{domaines}", String(services.length));
 }
+
+// Chiffres clés et textes de l'accueil, avec {formations} et {domaines}
+// remplacés par les vrais chiffres du catalogue publié.
+export const stats: Stat[] = content.stats.map((stat) => ({ ...stat, value: fillCounts(stat.value) }));
+export const home = {
+  ...content.home,
+  sections: content.home.sections.map((section) => ({
+    ...section,
+    title: fillCounts(section.title),
+  })),
+};
+export const footerCta = { ...content.footerCta, title: fillCounts(content.footerCta.title) };
