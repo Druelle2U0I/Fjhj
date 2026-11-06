@@ -2293,8 +2293,8 @@
           ],
           "audience": "Membre de la délégation du personnel du CSE, titulaire ou suppléant, ainsi que membre de la CSSCT lorsqu'elle existe. Élus exerçant leur premier mandat.",
           "funding": "Cette formation est à la charge de l'employeur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation.",
-          "image": "",
-          "imageAlt": "",
+          "image": "/images/ssct-premier-mandat-vertical.webp",
+          "imageAlt": "Mains réunies au-dessus d'une table couverte de graphiques",
           "objectives": [
             "Être capable de situer les obligations de l’employeur et les attributions du comité en matière de santé, de sécurité et de conditions de travail",
             "Être capable d’identifier les acteurs internes et externes de la prévention et leur rôle respectif",
@@ -2304,7 +2304,8 @@
             "Être capable de conduire une inspection, une enquête et d’exercer les droits d’alerte et de retrait"
           ],
           "seoTitle": "Formation SSCT du CSE, premier mandat – Hauts-de-France | ENMA",
-          "seoDescription": "Formation santé, sécurité et conditions de travail de 5 jours pour les élus du CSE au premier mandat. À la charge de l'employeur."
+          "seoDescription": "Formation santé, sécurité et conditions de travail de 5 jours pour les élus du CSE au premier mandat. À la charge de l'employeur.",
+          "heroImage": "/images/ssct-premier-mandat.webp"
         },
         {
           "title": "Santé, sécurité et conditions de travail — renouvellement de mandat",
@@ -2322,8 +2323,8 @@
           ],
           "audience": "Membre de la délégation du personnel du CSE, titulaire ou suppléant, dont le mandat est renouvelé après quatre ans d'exercice, consécutifs ou non, ainsi que membre de la CSSCT.",
           "funding": "Cette formation est à la charge de l'employeur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation.",
-          "image": "",
-          "imageAlt": "",
+          "image": "/images/ssct-renouvellement-vertical.webp",
+          "imageAlt": "Mains de collègues réunies au centre d'un cercle",
           "objectives": [
             "Être capable d’actualiser ses repères réglementaires en matière de santé, de sécurité et de conditions de travail",
             "Être capable d’exploiter les statistiques d’accidents et d’absentéisme de l’établissement",
@@ -2333,12 +2334,15 @@
             "Être capable de contribuer au programme annuel de prévention et de formuler un avis motivé"
           ],
           "seoTitle": "Formation SSCT du CSE, renouvellement – Hauts-de-France | ENMA",
-          "seoDescription": "Formation santé, sécurité et conditions de travail de 3 jours pour les élus du CSE au renouvellement du mandat. À la charge de l'employeur."
+          "seoDescription": "Formation santé, sécurité et conditions de travail de 3 jours pour les élus du CSE au renouvellement du mandat. À la charge de l'employeur.",
+          "heroImage": "/images/ssct-renouvellement.webp"
         }
       ],
       "opco": false,
-      "image": "",
-      "imageAlt": ""
+      "image": "/images/representants-personnel-cse.webp",
+      "imageAlt": "Participants levant la main pendant une session de formation",
+      "heroImage": "/images/representants-personnel-cse.webp",
+      "imagePosition": "65% center"
     },
     {
       "title": "Professionnels de santé",
