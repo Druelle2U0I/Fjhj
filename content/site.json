@@ -2339,10 +2339,9 @@
         }
       ],
       "opco": false,
-      "image": "/images/representants-personnel-cse.webp",
+      "image": "/images/representants-personnel-cse-vertical.webp",
       "imageAlt": "Participants levant la main pendant une session de formation",
-      "heroImage": "/images/representants-personnel-cse.webp",
-      "imagePosition": "65% center"
+      "heroImage": "/images/representants-personnel-cse.webp"
     },
     {
       "title": "Professionnels de santé",
