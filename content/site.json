@@ -1769,8 +1769,8 @@
           ],
           "audience": "Salarié de la société doté d'équipements de protection individuelle, ainsi que toute personne chargée de les distribuer, de les contrôler ou d'en assurer le suivi.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
-          "image": "",
-          "imageAlt": "",
+          "image": "/images/epi-port-verification-vertical.webp",
+          "imageAlt": "Casque, gilet haute visibilité, gants, lunettes et chaussures de sécurité",
           "objectives": [
             "Être capable de citer les risques de son poste et les équipements de protection individuelle qui y répondent",
             "Être capable de lire le marquage CE, la notice du fabricant et les indices de performance d’un équipement",
@@ -1780,7 +1780,8 @@
             "Être capable de citer les équipements soumis à vérification générale périodique, d’en respecter la périodicité et de renseigner la fiche de vérification"
           ],
           "seoTitle": "Formation port et vérification des EPI – Hauts-de-France | ENMA",
-          "seoDescription": "Formation d'une journée : choisir, porter, contrôler et assurer la vérification périodique des équipements de protection individuelle. Hauts-de-France."
+          "seoDescription": "Formation d'une journée : choisir, porter, contrôler et assurer la vérification périodique des équipements de protection individuelle. Hauts-de-France.",
+          "heroImage": "/images/epi-port-verification.webp"
         },
         {
           "title": "Port des EPI et prévention des risques chimiques",
@@ -1798,8 +1799,8 @@
           ],
           "audience": "Salarié de la société amené à manipuler, transvaser, stocker ou nettoyer des produits chimiques, ou à intervenir à proximité de ceux-ci.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
-          "image": "",
-          "imageAlt": "",
+          "image": "/images/epi-risques-chimiques-vertical.webp",
+          "imageAlt": "Salarié en combinaison enfilant des gants en nitrile avant de manipuler un produit",
           "objectives": [
             "Être capable d’identifier les dangers d’un produit chimique à partir des pictogrammes et mentions de l’étiquetage CLP",
             "Être capable de retrouver et d’exploiter les rubriques utiles d’une fiche de données de sécurité",
@@ -1809,7 +1810,8 @@
             "Être capable de porter, d’ajuster, de retirer et d’entretenir ses équipements de protection individuelle et de réagir en cas de déversement ou de contact accidentel"
           ],
           "seoTitle": "Formation EPI et risques chimiques – Hauts-de-France | ENMA",
-          "seoDescription": "Formation d'une journée : étiquetage CLP, fiches de données de sécurité, choix et port des EPI face aux produits chimiques. Hauts-de-France."
+          "seoDescription": "Formation d'une journée : étiquetage CLP, fiches de données de sécurité, choix et port des EPI face aux produits chimiques. Hauts-de-France.",
+          "heroImage": "/images/epi-risques-chimiques.webp"
         },
         {
           "title": "Prévention des risques liés à la manutention et à la manipulation des tondeuses auto-portées",
@@ -1827,8 +1829,8 @@
           ],
           "audience": "Salarié de la société appelé à conduire des tondeuses auto-portées et des petits engins autoportés d'entretien des espaces verts.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
-          "image": "",
-          "imageAlt": "",
+          "image": "/images/tondeuse-auto-portee.webp",
+          "imageAlt": "Agent équipé d'un casque antibruit conduisant une tondeuse auto-portée",
           "objectives": [
             "Être capable d’identifier les catégories des tondeuses auto-portées et des petits engins autoportés et leurs caractéristiques techniques",
             "Être capable d’identifier le rôle et les responsabilités des acteurs de l’acte de conduire",
@@ -1838,7 +1840,9 @@
             "Être capable d’effectuer en sécurité les manœuvres de déplacement, de tonte en dévers, de vidage du bac et de mise en sécurité de l’engin"
           ],
           "seoTitle": "Formation tondeuses auto-portées – Hauts-de-France | ENMA",
-          "seoDescription": "Formation d'une journée à la conduite en sécurité des tondeuses auto-portées : vérifications, tonte en dévers, vidage du bac. Hauts-de-France."
+          "seoDescription": "Formation d'une journée à la conduite en sécurité des tondeuses auto-portées : vérifications, tonte en dévers, vidage du bac. Hauts-de-France.",
+          "heroImage": "/images/tondeuse-auto-portee.webp",
+          "imagePosition": "70% center"
         }
       ],
       "opco": true,
