@@ -1744,23 +1744,23 @@
           "programme": [
             {
               "title": "Identifier les risques et les familles d'EPI",
-              "text": ""
+              "text": "Objectif : être capable de citer les risques de son poste et les équipements de protection individuelle qui y répondent. Risques présents sur le poste de travail, familles d'équipements (tête, yeux, ouïe, voies respiratoires, mains, pieds, corps, antichute), place des équipements individuels après les protections collectives."
             },
             {
               "title": "Lire le marquage et choisir l'équipement adapté",
-              "text": ""
+              "text": "Objectif : être capable de lire le marquage CE, la notice du fabricant et les indices de performance d'un équipement, et de distinguer les catégories I, II et III. Marquage CE, notice d'instructions du fabricant, normes et indices de performance, catégories I, II et III et obligations qui s'y rattachent."
             },
             {
               "title": "Porter, ajuster, retirer, entretenir",
-              "text": ""
+              "text": "Objectif : être capable de porter, d'ajuster, de retirer, de nettoyer et de stocker ses équipements de protection individuelle. Ateliers pratiques sur les équipements du poste : réglages, compatibilité entre équipements portés ensemble, retrait, nettoyage et stockage."
             },
             {
               "title": "Contrôler avant usage et vérifier périodiquement",
-              "text": ""
+              "text": "Objectif : être capable de contrôler l'état d'un équipement avant usage et de citer les équipements soumis à vérification générale périodique. Contrôle visuel et fonctionnel avant usage, critères de réforme, équipements soumis à vérification générale périodique et périodicité fixée par l'arrêté du 19 mars 1993."
             },
             {
               "title": "Suivi, traçabilité et mise au rebut",
-              "text": ""
+              "text": "Objectif : être capable de renseigner la fiche de vérification et d'identifier un équipement à réformer. Fiche de vérification, suivi des dotations, durée de vie des équipements, mise au rebut et remplacement."
             }
           ],
           "description": [
@@ -1792,7 +1792,28 @@
           "intro": "Lire une étiquette, exploiter une fiche de données de sécurité et se protéger face aux produits chimiques.",
           "prerequisites": "Aucun. La connaissance des produits utilisés sur son poste de travail facilite les ateliers pratiques.",
           "certification": "Attestation de fin de formation | Grille de compétences individuelle",
-          "programme": [],
+          "programme": [
+            {
+              "title": "Reconnaître les dangers d'un produit",
+              "text": "Objectif : être capable d'identifier les dangers d'un produit chimique à partir des pictogrammes et mentions de l'étiquetage CLP. Pictogrammes de danger, mentions d'avertissement, mentions de danger et conseils de prudence de l'étiquette."
+            },
+            {
+              "title": "Exploiter la fiche de données de sécurité",
+              "text": "Objectif : être capable de retrouver et d'exploiter les rubriques utiles d'une fiche de données de sécurité. Structure de la fiche, rubriques utiles au poste : identification des dangers, premiers secours, manipulation et stockage, contrôle de l'exposition et protection individuelle."
+            },
+            {
+              "title": "Comprendre les effets sur la santé",
+              "text": "Objectif : être capable de citer les voies de pénétration des produits chimiques et les effets sur la santé. Voies respiratoire, cutanée et digestive, effets immédiats et effets différés."
+            },
+            {
+              "title": "Prévenir et choisir ses protections",
+              "text": "Objectif : être capable d'appliquer les mesures de prévention collective et de choisir les équipements de protection individuelle adaptés. Consignes de stockage et de manipulation du site, protections collectives, choix des gants, lunettes, protections respiratoires et vêtements selon le produit et la tâche."
+            },
+            {
+              "title": "Mise en pratique et situations accidentelles",
+              "text": "Objectif : être capable de porter, d'ajuster, de retirer et d'entretenir ses équipements et de réagir en cas de déversement ou de contact accidentel. Ateliers d'habillage et de retrait, entretien des équipements, conduite à tenir en cas de déversement, de projection ou de contact."
+            }
+          ],
           "description": [
             "Manipuler, transvaser, stocker ou nettoyer des produits chimiques expose à des risques qui ne se voient pas toujours. Cette formation d'une journée apprend à identifier les dangers d'un produit à partir des pictogrammes et mentions de l'étiquetage CLP, à retrouver les rubriques utiles d'une fiche de données de sécurité et à connaître les voies de pénétration et les effets sur la santé.",
             "Elle s'appuie sur les articles L.4121-1 et L.4121-2, R.4412-1 et suivants, R.4321-4 et R.4323-91 à R.4323-106 du Code du travail, le règlement CLP n° 1272/2008 et les fiches de données de sécurité (REACH). Les participants s'exercent à choisir, porter, retirer et entretenir les équipements adaptés au produit et à la tâche, et à réagir en cas de déversement ou de contact accidentel."
@@ -1822,7 +1843,28 @@
           "intro": "Conduire une tondeuse auto-portée en sécurité : vérifications, manœuvres, tonte en dévers.",
           "prerequisites": "Être âgé de 18 ans au moins, être reconnu médicalement apte à la conduite et comprendre le français écrit et parlé. Aucune expérience préalable n'est exigée.",
           "certification": "Attestation de fin de formation | Grille de compétences individuelle | Éléments du dossier d'autorisation de conduite",
-          "programme": [],
+          "programme": [
+            {
+              "title": "Connaître l'engin",
+              "text": "Objectif : être capable d'identifier les catégories des tondeuses auto-portées et des petits engins autoportés et leurs caractéristiques techniques. Types d'engins, organes principaux, commandes et dispositifs de sécurité."
+            },
+            {
+              "title": "Rôles, responsabilités et règles du site",
+              "text": "Objectif : être capable d'identifier le rôle et les responsabilités des acteurs de l'acte de conduire et d'appliquer la réglementation et les consignes de sécurité du site. Articles R.4323-55 et suivants du Code du travail, autorisation de conduite délivrée par l'employeur, consignes de sécurité du site."
+            },
+            {
+              "title": "Maîtriser les risques principaux",
+              "text": "Objectif : être capable de maîtriser les risques liés à la conduite et à l'entretien de l'engin. Renversement en dévers, heurt de piéton, projection de débris, coupure et happement, brûlure et incendie au remplissage, bruit et vibrations."
+            },
+            {
+              "title": "Vérifications de prise et de fin de poste",
+              "text": "Objectif : être capable de réaliser les vérifications de prise et de fin de poste. Contrôles visuels et fonctionnels avant utilisation, remplissage en sécurité, nettoyage et remisage en fin de poste."
+            },
+            {
+              "title": "Pratique de la conduite",
+              "text": "Objectif : être capable d'effectuer en sécurité les manœuvres de déplacement, de tonte en dévers, de vidage du bac et de mise en sécurité de l'engin. Exercices pratiques de conduite, de tonte et de mise en sécurité sur le terrain."
+            }
+          ],
           "description": [
             "Renversement en dévers, heurt de piéton, projection de débris, coupure et happement, brûlure au remplissage : la tondeuse auto-portée concentre plusieurs risques sur un même engin. Cette formation d'une journée apprend à reconnaître les catégories de tondeuses et de petits engins autoportés, à réaliser les vérifications de prise et de fin de poste et à effectuer en sécurité les manœuvres de déplacement, de tonte en dévers, de vidage du bac et de mise en sécurité de l'engin.",
             "Elle s'inscrit dans le cadre des articles R.4323-55 et suivants du Code du travail. À l'issue de la formation, le participant reçoit une attestation de fin de formation, sa grille de compétences individuelle et les éléments du dossier d'autorisation de conduite. L'employeur reste seul habilité à délivrer l'autorisation de conduite."
@@ -2145,7 +2187,28 @@
           "intro": "Préparer, conduire et restituer un audit interne du système de management de la qualité.",
           "prerequisites": "Connaître le fonctionnement et l'organisation de son entreprise. Une première approche de la norme ISO 9001 ou de la démarche qualité facilite les ateliers.",
           "certification": "Attestation de fin de formation | Grille de compétences individuelle, après QCM et mise en situation d'audit simulé",
-          "programme": [],
+          "programme": [
+            {
+              "title": "La norme ISO 9001",
+              "text": "Objectif : être capable de situer les exigences de la norme ISO 9001 et ses évolutions dans l'édition 2026. Structure de la norme, approche processus, exigences principales et évolutions de l'édition 2026."
+            },
+            {
+              "title": "Les principes de l'audit",
+              "text": "Objectif : être capable d'appliquer les principes et le vocabulaire de l'audit définis par la norme ISO 19011. Principes et vocabulaire de l'audit, rôle et posture de l'auditeur interne."
+            },
+            {
+              "title": "Préparer un audit interne",
+              "text": "Objectif : être capable de préparer un audit interne. Programme d'audit, plan d'audit et liste de vérification."
+            },
+            {
+              "title": "Conduire l'audit et formuler les constats",
+              "text": "Objectif : être capable de conduire un audit interne, de recueillir des preuves objectives et de formuler des constats d'écart factuels. Réunion d'ouverture, entretiens et observations, recueil de preuves objectives, formulation et classement des constats, réunion de clôture."
+            },
+            {
+              "title": "Rapport et suivi des actions",
+              "text": "Objectif : être capable de rédiger un rapport d'audit et d'assurer le suivi des actions correctives. Rédaction du rapport, suivi des actions correctives, mise en situation d'audit simulé et QCM."
+            }
+          ],
           "description": [
             "L'audit interne est l'outil qui fait vivre un système de management de la qualité entre deux audits de certification. Cette formation de deux jours situe les exigences de la norme ISO 9001 et ses évolutions dans l'édition 2026, puis applique les principes et le vocabulaire de l'audit définis par la norme ISO 19011.",
             "Les participants préparent un audit (programme, plan et liste de vérification), le conduisent en recueillant des preuves objectives, formulent et classent des constats d'écart factuels, puis rédigent le rapport et assurent le suivi des actions correctives. La validation repose sur un QCM et une mise en situation d'audit simulé."
@@ -2217,23 +2280,23 @@
           "programme": [
             {
               "title": "Cadre du mandat et fonctionnement du CSE",
-              "text": ""
+              "text": "Objectif : être capable de situer le cadre du mandat, la composition et les règles de fonctionnement du comité social et économique. Composition du comité, réunions, ordre du jour et procès-verbaux, moyens du comité."
             },
             {
               "title": "Attributions consultatives, expertises et droits d'alerte",
-              "text": ""
+              "text": "Objectif : être capable de distinguer les attributions consultatives récurrentes et ponctuelles, d'en respecter les délais et de mobiliser les expertises et les droits d'alerte du comité. Consultations récurrentes (orientations stratégiques, situation économique et financière, politique sociale) et ponctuelles, délais de consultation, recours à l'expertise, droit d'alerte économique."
             },
             {
               "title": "Lire un bilan et un compte de résultat",
-              "text": ""
+              "text": "Objectif : être capable de lire un bilan et un compte de résultat et d'en expliquer les grandes masses. Actif, passif et capitaux propres, charges et produits, formation du résultat."
             },
             {
               "title": "Analyser la situation économique et financière",
-              "text": ""
+              "text": "Objectif : être capable de calculer et d'interpréter les soldes intermédiaires de gestion et les principaux indicateurs d'activité. Soldes intermédiaires de gestion, valeur ajoutée, excédent brut d'exploitation, capacité d'autofinancement, indicateurs d'activité."
             },
             {
               "title": "Données juridiques et restructurations",
-              "text": ""
+              "text": "Objectif : être capable d'identifier les formes juridiques, les opérations de restructuration et les procédures de traitement des difficultés des entreprises. Formes juridiques des sociétés, groupes, fusions et cessions, procédures de sauvegarde, de redressement et de liquidation judiciaires."
             }
           ],
           "description": [
@@ -2268,23 +2331,23 @@
           "programme": [
             {
               "title": "Cadre de la prévention et rôle du CSE",
-              "text": ""
+              "text": "Objectif : être capable de situer les obligations de l'employeur et les attributions du comité, et d'identifier les acteurs de la prévention. Obligation de sécurité de l'employeur, principes généraux de prévention, attributions du CSE, acteurs internes et externes (service de prévention et de santé au travail, inspection du travail, Carsat)."
             },
             {
               "title": "Déceler et mesurer les risques",
-              "text": ""
+              "text": "Objectif : être capable de distinguer danger, risque et exposition, de mesurer un risque professionnel et d'exploiter le document unique. Notions de danger, de risque et d'exposition, évaluation des risques, document unique d'évaluation des risques."
             },
             {
               "title": "Analyser les conditions de travail",
-              "text": ""
+              "text": "Objectif : être capable d'analyser une situation de travail. Travail prescrit et travail réel, observation d'un poste, organisation et conditions de travail."
             },
             {
               "title": "Analyse d'accident et risques spécifiques",
-              "text": ""
+              "text": "Objectif : être capable de conduire une analyse d'accident par la méthode de l'arbre des causes. Recueil des faits, construction de l'arbre des causes, recherche de mesures de prévention, risques spécifiques de l'établissement."
             },
             {
               "title": "Inspections, enquêtes et plan d'action",
-              "text": ""
+              "text": "Objectif : être capable de conduire une inspection, une enquête et d'exercer les droits d'alerte et de retrait. Préparation et conduite d'une inspection et d'une enquête, droits d'alerte et de retrait, propositions d'actions de prévention."
             }
           ],
           "description": [
@@ -2316,7 +2379,28 @@
           "intro": "Actualiser ses repères et approfondir la prévention au renouvellement du mandat.",
           "prerequisites": "Avoir exercé un mandat au CSE et avoir suivi la formation initiale en santé, sécurité et conditions de travail.",
           "certification": "Attestation de fin de formation | Grille de compétences individuelle",
-          "programme": [],
+          "programme": [
+            {
+              "title": "Actualiser ses repères",
+              "text": "Objectif : être capable d'actualiser ses repères réglementaires en matière de santé, de sécurité et de conditions de travail. Évolutions réglementaires, retour d'expérience sur le mandat écoulé."
+            },
+            {
+              "title": "Exploiter les indicateurs de l'établissement",
+              "text": "Objectif : être capable d'exploiter les statistiques d'accidents et d'absentéisme de l'établissement. Lecture des statistiques d'accidents du travail et d'absentéisme, identification des situations prioritaires."
+            },
+            {
+              "title": "Réexaminer le document unique",
+              "text": "Objectif : être capable de réexaminer et de faire mettre à jour le document unique d'évaluation des risques. Analyse critique du document unique existant, propositions de mise à jour."
+            },
+            {
+              "title": "Approfondir les risques spécifiques",
+              "text": "Objectif : être capable d'approfondir la prévention des risques psychosociaux, des troubles musculo-squelettiques et du risque chimique. Facteurs de risques, repérage et pistes de prévention pour chacun de ces risques."
+            },
+            {
+              "title": "Inspections, enquêtes et programme de prévention",
+              "text": "Objectif : être capable de conduire une inspection et une enquête, d'en assurer le suivi, de contribuer au programme annuel de prévention et de formuler un avis motivé. Conduite et suivi des inspections et enquêtes, contribution au programme annuel de prévention, rédaction d'un avis motivé."
+            }
+          ],
           "description": [
             "En cas de renouvellement du mandat, les articles L.2315-17 et L.2315-18 du Code du travail prévoient une formation en santé, sécurité et conditions de travail d'au moins trois jours pour chaque membre de la délégation du personnel.",
             "Les participants actualisent leurs repères réglementaires, exploitent les statistiques d'accidents et d'absentéisme de l'établissement, réexaminent le document unique d'évaluation des risques et approfondissent la prévention des risques psychosociaux, des troubles musculo-squelettiques et du risque chimique, jusqu'à contribuer au programme annuel de prévention et formuler un avis motivé."
