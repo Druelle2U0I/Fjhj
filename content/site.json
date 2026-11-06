@@ -1829,7 +1829,7 @@
           ],
           "audience": "Salarié de la société appelé à conduire des tondeuses auto-portées et des petits engins autoportés d'entretien des espaces verts.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
-          "image": "/images/tondeuse-auto-portee.webp",
+          "image": "/images/tondeuse-auto-portee-vertical.webp",
           "imageAlt": "Agent équipé d'un casque antibruit conduisant une tondeuse auto-portée",
           "objectives": [
             "Être capable d’identifier les catégories des tondeuses auto-portées et des petits engins autoportés et leurs caractéristiques techniques",
@@ -1841,8 +1841,7 @@
           ],
           "seoTitle": "Formation tondeuses auto-portées – Hauts-de-France | ENMA",
           "seoDescription": "Formation d'une journée à la conduite en sécurité des tondeuses auto-portées : vérifications, tonte en dévers, vidage du bac. Hauts-de-France.",
-          "heroImage": "/images/tondeuse-auto-portee.webp",
-          "imagePosition": "70% center"
+          "heroImage": "/images/tondeuse-auto-portee.webp"
         }
       ],
       "opco": true,
@@ -2153,8 +2152,8 @@
           ],
           "audience": "Responsable qualité, pilote de processus, manager ou salarié de la société appelé à réaliser des audits internes du système de management de la qualité.",
           "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
-          "image": "",
-          "imageAlt": "",
+          "image": "/images/auditeur-iso-9001-vertical.webp",
+          "imageAlt": "Deux personnes passant en revue un document sur un porte-bloc",
           "objectives": [
             "Être capable de situer les exigences de la norme ISO 9001 et ses évolutions dans l’édition 2026",
             "Être capable d’appliquer les principes et le vocabulaire de l’audit définis par la norme ISO 19011",
@@ -2164,7 +2163,8 @@
             "Être capable de rédiger un rapport d’audit et d’assurer le suivi des actions correctives"
           ],
           "seoTitle": "Formation auditeur interne ISO 9001 – Hauts-de-France | ENMA",
-          "seoDescription": "Formation de deux jours pour préparer, conduire et restituer un audit interne qualité selon l'ISO 9001 et l'ISO 19011. Hauts-de-France."
+          "seoDescription": "Formation de deux jours pour préparer, conduire et restituer un audit interne qualité selon l'ISO 9001 et l'ISO 19011. Hauts-de-France.",
+          "heroImage": "/images/auditeur-iso-9001.webp"
         }
       ],
       "opco": true,
@@ -2242,8 +2242,8 @@
           ],
           "audience": "Membre titulaire du comité social et économique, élu pour la première fois, dans une entreprise d'au moins cinquante salariés. Ouverte aux suppléants dans la limite des places disponibles.",
           "funding": "Cette formation est prise en charge sur le budget de fonctionnement du CSE, et non par l'employeur. ENMA Formation vous fournit devis, programme pédagogique et convention de formation.",
-          "image": "",
-          "imageAlt": "",
+          "image": "/images/formation-economique-cse-vertical.webp",
+          "imageAlt": "Formateur s'adressant à un groupe de participants en salle",
           "objectives": [
             "Être capable de situer le cadre du mandat, la composition et les règles de fonctionnement du comité social et économique",
             "Être capable de distinguer les attributions consultatives récurrentes et ponctuelles et d’en respecter les délais",
@@ -2253,7 +2253,8 @@
             "Être capable d’identifier les formes juridiques, les opérations de restructuration et les procédures de traitement des difficultés des entreprises"
           ],
           "seoTitle": "Formation économique des élus du CSE – Hauts-de-France | ENMA",
-          "seoDescription": "Formation économique de 5 jours pour les membres titulaires du CSE : comptes, indicateurs, consultations, droits d'alerte. Hauts-de-France."
+          "seoDescription": "Formation économique de 5 jours pour les membres titulaires du CSE : comptes, indicateurs, consultations, droits d'alerte. Hauts-de-France.",
+          "heroImage": "/images/formation-economique-cse.webp"
         },
         {
           "title": "Santé, sécurité et conditions de travail — premier mandat",
