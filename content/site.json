@@ -1904,6 +1904,14 @@
           "answer": "Oui, c'est même tout leur intérêt. Avant la session, nous échangeons avec vous sur vos postes de travail, vos contraintes et les incidents déjà survenus. Les exemples, les exercices et les mises en situation sont ensuite construits à partir de votre réalité, qu'il s'agisse d'un atelier, d'un entrepôt, d'un chantier ou d'un établissement de soins."
         },
         {
+          "question": "Quels équipements de protection individuelle doivent être vérifiés périodiquement ?",
+          "answer": "L'arrêté du 19 mars 1993 fixe la liste des équipements de protection individuelle soumis à vérification générale périodique, comme les équipements de protection contre les chutes de hauteur ou certains appareils de protection respiratoire, ainsi que la périodicité de ces vérifications. Leurs résultats sont consignés. Pour tous les autres équipements, un contrôle visuel avant chaque usage reste indispensable. La formation Port et vérification des EPI apprend à faire ces contrôles et à renseigner la fiche de vérification."
+        },
+        {
+          "question": "Qui délivre l'autorisation de conduite d'une tondeuse auto-portée ?",
+          "answer": "C'est l'employeur. Il délivre l'autorisation de conduite à un salarié qui a reçu une formation adéquate, qui est reconnu médicalement apte et qui connaît les lieux et les consignes du site. La formation d'ENMA Formation aux tondeuses auto-portées remet une attestation de fin de formation, la grille de compétences individuelle et les éléments du dossier d'autorisation de conduite."
+        },
+        {
           "question": "Où se déroulent les formations ?",
           "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. Se former sur le lieu de travail permet d'analyser directement les postes et les situations à risque. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
         },
@@ -2254,6 +2262,16 @@
           "question": "Ces formations peuvent-elles être financées ?",
           "answer": "Oui, en grande partie. ENMA Formation est certifié Qualiopi, condition indispensable pour une prise en charge par votre OPCO (opérateur de compétences) au titre du plan de développement des compétences. Le montant pris en charge dépend de votre branche professionnelle et de la taille de votre entreprise. Nous vous transmettons un devis et un programme détaillé pour constituer votre demande, à adresser à l'OPCO avant le début de la formation."
         }
+      ],
+      "articles": [
+        {
+          "title": "Audit interne ISO 9001 : à quoi sert-il vraiment ?",
+          "text": "La norme ISO 9001 impose de réaliser des audits internes à intervalles planifiés pour vérifier que le système de management de la qualité est conforme et efficacement mis en œuvre. Bien mené, l'audit interne n'est pas une inspection : il compare ce qui est prévu à ce qui est réellement fait, en s'appuyant sur des preuves objectives, et fait remonter des constats factuels à la direction. Ses résultats alimentent la revue de direction et les actions d'amélioration, bien avant le passage de l'auditeur de certification. Former des auditeurs internes en interne permet de faire vivre la démarche qualité au quotidien."
+        },
+        {
+          "title": "Risques psychosociaux : les signaux à surveiller dans une équipe",
+          "text": "Les risques psychosociaux s'installent rarement du jour au lendemain. Plusieurs signaux méritent l'attention des managers : hausse de l'absentéisme ou des arrêts courts, départs plus fréquents, tensions ou conflits répétés, baisse de la qualité du travail, isolement d'un collaborateur, plaintes ou remarques sur la charge de travail. Pris isolément, aucun ne suffit à conclure ; ensemble, ils indiquent qu'il faut en parler et agir sur l'organisation du travail. Les formations gestion du stress, gestion des conflits et premiers secours en santé mentale donnent aux équipes des outils pour repérer ces situations et y répondre."
+        }
       ]
     },
     {
@@ -2425,7 +2443,43 @@
       "opco": false,
       "image": "/images/representants-personnel-cse-vertical.webp",
       "imageAlt": "Participants levant la main pendant une session de formation",
-      "heroImage": "/images/representants-personnel-cse.webp"
+      "heroImage": "/images/representants-personnel-cse.webp",
+      "tip": {
+        "title": "Le saviez-vous ?",
+        "text": "Le temps passé par les élus du CSE en formation santé, sécurité et conditions de travail est pris sur le temps de travail et rémunéré comme tel : il n'est pas déduit de leurs heures de délégation (article L.2315-16 du Code du travail)."
+      },
+      "faq": [
+        {
+          "question": "Qui finance la formation économique des élus du CSE ?",
+          "answer": "La formation économique des membres titulaires du comité social et économique est prise en charge sur le budget de fonctionnement du CSE, et non par l'employeur. Elle concerne les élus titulaires pour la première fois dans les entreprises d'au moins 50 salariés, pour une durée maximale de cinq jours. ENMA Formation transmet au comité un devis et un programme détaillé pour préparer la décision."
+        },
+        {
+          "question": "Qui finance la formation santé, sécurité et conditions de travail ?",
+          "answer": "La formation santé, sécurité et conditions de travail des membres du CSE est à la charge de l'employeur, au premier mandat comme au renouvellement. Le temps de formation est pris sur le temps de travail et rémunéré comme tel."
+        },
+        {
+          "question": "Quelle est la durée de la formation SSCT ?",
+          "answer": "Au premier mandat, la formation dure au minimum cinq jours, quelle que soit la taille de l'entreprise (article L.2315-18 du Code du travail). En cas de renouvellement du mandat, chaque membre de la délégation du personnel suit une formation d'au moins trois jours. ENMA Formation propose les deux sessions : 35 heures pour le premier mandat, 21 heures pour le renouvellement."
+        },
+        {
+          "question": "Les suppléants peuvent-ils suivre ces formations ?",
+          "answer": "La formation santé, sécurité et conditions de travail s'adresse à tous les membres de la délégation du personnel du CSE, titulaires comme suppléants, ainsi qu'aux membres de la CSSCT lorsqu'elle existe. La formation économique vise les membres titulaires ; ENMA Formation l'ouvre aux suppléants dans la limite des places disponibles."
+        },
+        {
+          "question": "Où se déroulent les formations ?",
+          "answer": "Principalement dans vos locaux, partout dans les Hauts-de-France : Lens, Béthune, Arras, Douai, Lille et l'ensemble du Nord et du Pas-de-Calais, jusqu'à l'Aisne, la Somme et l'Oise. Les sessions en intra permettent de travailler sur des situations propres à votre organisation, en toute confidentialité. Certaines sessions peuvent aussi se tenir sur notre site de Wingles, et des sessions inter-entreprises sont possibles lorsque vous n'avez que quelques salariés à former."
+        }
+      ],
+      "articles": [
+        {
+          "title": "Élus du CSE : les formations à prévoir dès le début du mandat",
+          "text": "Un élu qui siège pour la première fois au comité social et économique a droit à deux formations distinctes. La formation santé, sécurité et conditions de travail, d'au moins cinq jours au premier mandat, concerne tous les membres de la délégation du personnel et reste à la charge de l'employeur. Dans les entreprises d'au moins 50 salariés, les membres titulaires élus pour la première fois bénéficient aussi d'une formation économique d'au plus cinq jours, financée sur le budget de fonctionnement du comité. Ces formations sont renouvelées lorsque les élus ont exercé leur mandat pendant quatre ans, consécutifs ou non. Les organiser tôt permet aux nouveaux élus de jouer pleinement leur rôle dès les premières consultations."
+        },
+        {
+          "title": "L'arbre des causes : analyser un accident sans chercher de coupable",
+          "text": "Après un accident du travail, la tentation est grande de s'arrêter à l'erreur humaine. La méthode de l'arbre des causes propose l'inverse : partir de l'accident et remonter, fait par fait, toutes les circonstances qui l'ont rendu possible, en se demandant à chaque étape « qu'a-t-il fallu pour que cela se produise ? ». On ne retient que des faits établis, sans interprétation ni jugement. L'arbre fait apparaître plusieurs causes, souvent liées à l'organisation, au matériel ou à l'environnement de travail, sur lesquelles on peut agir pour éviter que l'accident ne se reproduise. C'est l'un des outils travaillés pendant la formation santé, sécurité et conditions de travail des élus du CSE."
+        }
+      ]
     },
     {
       "title": "Professionnels de santé",
