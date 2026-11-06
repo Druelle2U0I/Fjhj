@@ -49,6 +49,18 @@ function TrainingEditor({
 
   return (
     <div className="grid gap-4">
+      <label className="flex items-center gap-3 rounded-lg border border-border px-4 py-3 text-sm">
+        <input
+          type="checkbox"
+          checked={Boolean(training.draft)}
+          onChange={(e) => set("draft", e.target.checked || undefined)}
+          className="h-4 w-4 accent-[color:var(--accent)]"
+        />
+        <span>
+          <strong>Brouillon</strong> : la formation n&apos;apparaît pas sur le site tant que cette case est
+          cochée (décochez-la pour la publier).
+        </span>
+      </label>
       <Field
         label="Nom de la formation"
         value={training.title}
@@ -486,6 +498,7 @@ export default function SectorsEditor({
                               className="flex-1 text-left text-sm font-medium"
                             >
                               {training.title}
+                              {training.draft && <span className="ml-2 text-xs font-semibold uppercase text-muted">(brouillon)</span>}
                             </button>
                             <div className="flex shrink-0 gap-1.5">
                               <SmallButton

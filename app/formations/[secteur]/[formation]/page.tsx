@@ -216,7 +216,7 @@ export default async function FormationPage(
                           <h3 className="text-lg font-semibold sm:text-xl">
                             {module.title}
                           </h3>
-                          <p className="mt-3 max-w-2xl text-muted">{module.text}</p>
+                          {module.text && <p className="mt-3 max-w-2xl text-muted">{module.text}</p>}
                         </div>
                       </div>
                     </Reveal>
