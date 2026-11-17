@@ -1884,6 +1884,319 @@
           "seoTitle": "Formation tondeuses auto-portées – Hauts-de-France | ENMA",
           "seoDescription": "Formation d'une journée à la conduite en sécurité des tondeuses auto-portées : vérifications, tonte en dévers, vidage du bac. Hauts-de-France.",
           "heroImage": "/images/tondeuse-auto-portee.webp"
+        },
+        {
+          "title": "Responsable en protection et prévention des risques professionnels",
+          "slug": "responsable-protection-prevention-risques-professionnels",
+          "seoTitle": "Formation salarié compétent en prévention – Hauts-de-France | ENMA",
+          "seoDescription": "Formation de 6 jours pour le salarié désigné compétent en prévention : évaluer les risques, tenir le DUERP, bâtir le PAPRIPACT. En intra, Hauts-de-France.",
+          "duration": "42 h (6 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Former le salarié désigné pour s'occuper de la prévention des risques professionnels dans l'entreprise.",
+          "prerequisites": "Aucun. Une expérience de l'entreprise et de ses situations de travail facilite les études de cas.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Situer la réglementation santé et sécurité au travail et le rôle des acteurs de la prévention",
+              "text": "Les sources du droit, l'obligation générale de sécurité, les principes généraux de prévention et les responsabilités civile et pénale. Les acteurs internes (employeur, encadrement, salarié compétent, CSE, CSSCT, référents) et externes (service de prévention et de santé au travail, inspection du travail, CARSAT, INRS, OPPBTP). Les indicateurs de santé et sécurité : accidents du travail, maladies professionnelles, taux de fréquence et de gravité."
+            },
+            {
+              "title": "Expliquer le fonctionnement du corps humain et appliquer les principes d'ergonomie",
+              "text": "Les bases de physiologie : colonne vertébrale, disques intervertébraux, articulations, muscles et tendons. Les troubles musculosquelettiques, la lombalgie et leurs facteurs : biomécaniques, organisationnels et psychosociaux. L'ergonomie : travail prescrit et travail réel, aménagement des postes, observation de l'activité."
+            },
+            {
+              "title": "Analyser une situation de travail et évaluer méthodiquement les risques",
+              "text": "Danger, risque, dommage : les composantes qui génèrent le risque et la nomenclature des familles de risques de l'INRS. L'évaluation méthodique : découpage en unités de travail, identification, cotation en gravité et en fréquence, hiérarchisation. Les contremesures appropriées selon les principes généraux de prévention : supprimer, réduire, protéger collectivement, puis individuellement."
+            },
+            {
+              "title": "Prendre en compte les risques psychosociaux et utiliser les outils de la prévention",
+              "text": "Les risques psychosociaux : définitions, facteurs de risques, signaux d'alerte et démarche de prévention. L'analyse d'accident par la méthode de l'arbre des causes : recueil des faits, construction, choix des mesures. L'analyse de risque a priori d'une tâche ou d'une activité nouvelle."
+            },
+            {
+              "title": "Tenir le DUERP et le PAPRIPACT et organiser la sécurité avec les entreprises extérieures",
+              "text": "Le DUERP et le PAPRIPACT : contenu, mise à jour, conservation, mise à disposition et suivi des actions. La sécurité des entreprises extérieures : inspection commune préalable, plan de prévention, protocole de sécurité pour les opérations de chargement et de déchargement."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de désigner et de former un ou plusieurs salariés compétents pour s'occuper des activités de protection et de prévention des risques professionnels, capables d'analyser les situations de travail, d'évaluer les risques, de tenir le document unique et de piloter les actions de prévention, conformément aux articles L.4644-1 et R.4644-1 du Code du travail. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et des apports méthodologiques, et enseignement pratique, avec des études de cas construites à partir des situations de travail de l'entreprise, des exercices d'analyse de risques et d'accident et des travaux en sous-groupes sur le DUERP, permettant d'approfondir les notions et de les transposer directement dans l'entreprise.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur l'analyse d'une situation de travail réelle et la proposition de mesures de prévention hiérarchisées. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : articles L.4644-1 et R.4644-1 du Code du travail, principes généraux de prévention (L.4121-1 à L.4121-3)."
+          ],
+          "audience": "Salariés en charge de la santé, de la sécurité et des conditions de travail, managers, cadres dirigeants, ainsi que toute personne souhaitant acquérir les connaissances essentielles pour intervenir dans la prévention des risques professionnels.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/5-copie-2-1790108515161.jpg",
+          "imageAlt": "Deux techniciens en casque consultant un ordinateur portable lors d'une inspection de site",
+          "heroImage": "/images/5-copie-2-1790108515161.jpg",
+          "objectives": [
+            "Être capable de citer les principales obligations réglementaires en santé et sécurité au travail et le rôle des acteurs internes et externes",
+            "Être capable d’expliquer le fonctionnement de la colonne vertébrale, des articulations et des muscles et d’appliquer les principes d’ergonomie",
+            "Être capable d’analyser une situation de travail et d’identifier les composantes qui génèrent les risques en s’appuyant sur la nomenclature de l’INRS",
+            "Être capable d’évaluer méthodiquement les risques, y compris psychosociaux, et d’analyser un accident",
+            "Être capable de mettre à jour le DUERP et de construire le PAPRIPACT",
+            "Être capable de préparer un plan de prévention et un protocole de sécurité avec une entreprise extérieure"
+          ]
+        },
+        {
+          "title": "Formation sur risque ciblé",
+          "slug": "formation-risque-cible",
+          "seoTitle": "Formation sur risque ciblé – Hauts-de-France | ENMA",
+          "seoDescription": "Formation d'une journée sur un risque précis de votre entreprise, défini avec vous à la commande : analyse, mécanismes, mesures de prévention. Intra-entreprise.",
+          "duration": "7 h (1 jour)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Une journée consacrée à un risque précis de votre entreprise, défini avec vous lors de la commande.",
+          "prerequisites": "Aucun. Le risque retenu et les postes concernés sont définis avec l'entreprise avant la session.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Situer la réglementation applicable au risque retenu",
+              "text": "Les enjeux : accidents, maladies professionnelles et atteintes à la santé liés au risque retenu. L'obligation générale de sécurité, les principes généraux de prévention et les dispositions particulières du Code du travail. Les recommandations et référentiels de l'INRS et de l'Assurance Maladie – Risques professionnels."
+            },
+            {
+              "title": "Identifier les composantes qui génèrent le risque dans les situations de travail",
+              "text": "Les composantes du risque : la tâche, l'opérateur, les équipements, l'environnement et l'organisation. Le repérage des situations exposantes à partir des postes de l'entreprise. Les écarts entre travail prescrit et travail réel."
+            },
+            {
+              "title": "Analyser méthodiquement le risque",
+              "text": "L'analyse méthodique : identification, estimation de la gravité et de la fréquence d'exposition. La hiérarchisation des situations à traiter en priorité. La lecture critique du document unique pour le risque retenu."
+            },
+            {
+              "title": "Expliquer les mécanismes qui conduisent aux dommages",
+              "text": "Le processus d'apparition du dommage : danger, situation dangereuse, événement déclencheur, dommage. Les facteurs aggravants et les signaux faibles. L'analyse de cas réels survenus dans l'entreprise ou dans le secteur."
+            },
+            {
+              "title": "Coconstruire des contremesures et les articuler avec le DUERP",
+              "text": "La recherche de contremesures selon les principes généraux de prévention et leur hiérarchisation. L'articulation avec le DUERP et le PAPRIPACT : formalisation, responsables, échéances et suivi."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de maîtriser le développement d'un risque précis impactant la sécurité, la santé ou les conditions de travail de ses salariés, en leur permettant de le reconnaître dans leurs situations de travail, d'en comprendre les mécanismes et de coconstruire les mesures de prévention adaptées, conformément aux articles L.4121-1 et suivants du Code du travail. Le risque traité est défini avec l'entreprise lors de la commande. La formation se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs centrés sur le risque retenu, et enseignement pratique, avec l'observation de situations de travail réelles, l'analyse des postes exposés et des ateliers de coconstruction des mesures de prévention avec les participants, permettant de transposer directement les acquis dans l'entreprise.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur l'analyse d'une situation de travail exposée au risque retenu et la proposition de mesures de prévention. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : articles L.4121-1 et suivants du Code du travail et dispositions propres au risque retenu."
+          ],
+          "audience": "Salariés en charge de la santé, de la sécurité et des conditions de travail, managers de proximité, cadres, ainsi que toute personne souhaitant acquérir les connaissances essentielles pour intervenir dans la prévention des risques professionnels.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/5-19-44-14-1790075416917.jpg",
+          "imageAlt": "Équipe en gilets haute visibilité échangeant dans un entrepôt",
+          "heroImage": "/images/5-19-44-14-1790075416917.jpg",
+          "objectives": [
+            "Être capable de citer la réglementation applicable au risque retenu",
+            "Être capable d’identifier les situations de travail exposant au risque et les composantes qui le génèrent",
+            "Être capable de conduire une analyse méthodique du risque",
+            "Être capable d’expliquer les mécanismes qui conduisent aux dommages",
+            "Être capable de proposer des contremesures coconstruites et hiérarchisées",
+            "Être capable d’articuler les mesures retenues avec le DUERP"
+          ]
+        },
+        {
+          "title": "Gestion du risque chimique",
+          "slug": "gestion-du-risque-chimique",
+          "seoTitle": "Formation gestion du risque chimique – Hauts-de-France | ENMA",
+          "seoDescription": "Formation d'une journée au risque chimique : REACH et CLP, étiquettes, fiches de données de sécurité et évaluation sur l'outil Seirich. Intra-entreprise.",
+          "duration": "7 h (1 jour)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Identifier les dangers des produits utilisés et évaluer le risque chimique avec l'outil Seirich.",
+          "prerequisites": "Savoir utiliser un ordinateur. Disposer, si possible, de la liste des produits chimiques utilisés dans l'entreprise et de leurs fiches de données de sécurité.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Situer la réglementation REACH et CLP et les obligations de l'employeur",
+              "text": "Le règlement REACH : enregistrement, évaluation, autorisation, restriction et rôle de la fiche de données de sécurité. Le règlement CLP, déclinaison européenne du SGH : classification, étiquetage et emballage. Les obligations de l'employeur : évaluation, substitution, mesures de prévention, information, formation et suivi de l'exposition."
+            },
+            {
+              "title": "Identifier les différentes natures de risque chimique",
+              "text": "Les neuf pictogrammes de danger, les mentions d'avertissement, les mentions de danger H et les conseils de prudence P. Les seize rubriques de la fiche de données de sécurité et les informations essentielles pour la prévention. Les natures de risque : toxicité aiguë et chronique, CMR, corrosion, sensibilisation, incendie et explosion, danger pour l'environnement."
+            },
+            {
+              "title": "Expliquer les mécanismes conduisant aux dommages",
+              "text": "Les voies de pénétration : respiratoire, cutanée, digestive et oculaire. Les effets immédiats et différés, la notion de dose, les valeurs limites d'exposition professionnelle et les mélanges incompatibles. Les risques d'incendie, d'explosion et de réactions dangereuses lors du stockage et des transvasements."
+            },
+            {
+              "title": "Maîtriser l'outil de gestion du risque chimique Seirich",
+              "text": "La présentation de Seirich : niveaux d'utilisation, paramétrage de l'entreprise et des unités de travail. L'inventaire des produits et la saisie des informations des fiches de données de sécurité. La hiérarchisation des risques potentiels, l'évaluation des risques résiduels par inhalation, contact cutané, incendie et explosion."
+            },
+            {
+              "title": "Construire un plan d'actions de prévention du risque chimique",
+              "text": "La hiérarchie des mesures : suppression, substitution, travail en vase clos, captage à la source, ventilation, protections individuelles. Le plan d'actions Seirich, la traçabilité des expositions, l'information des salariés et l'articulation avec le DUERP."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de maîtriser le risque chimique lié aux produits qu'elle utilise, en permettant à ses salariés d'identifier les dangers à partir des étiquettes et des fiches de données de sécurité, de comprendre les mécanismes conduisant aux dommages et d'évaluer le risque à l'aide de l'outil Seirich, conformément aux articles R.4412-1 et suivants du Code du travail et aux règlements REACH et CLP. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et des études de cas construites à partir des produits réellement utilisés dans l'entreprise, et enseignement pratique, avec des ateliers de lecture d'étiquettes et de fiches de données de sécurité et des exercices guidés sur l'outil Seirich, permettant d'approfondir les notions et de repartir avec une évaluation amorcée.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur l'inventaire de produits et l'évaluation du risque chimique sur l'outil Seirich. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : articles R.4412-1 et suivants du Code du travail, règlements REACH (CE) n° 1907/2006 et CLP (CE) n° 1272/2008."
+          ],
+          "audience": "Salariés en charge de la santé, de la sécurité et des conditions de travail, managers de proximité, ainsi que toute personne souhaitant acquérir les connaissances essentielles pour intervenir dans la prévention du risque chimique.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/9-1790074290755.jpg",
+          "imageAlt": "Ouvrier équipé d'un casque, de gants et d'un gilet haute visibilité",
+          "heroImage": "/images/9-1790074290755.jpg",
+          "objectives": [
+            "Être capable de citer les principes des règlements REACH et CLP et les obligations de l’employeur",
+            "Être capable de lire une étiquette CLP et d’exploiter une fiche de données de sécurité",
+            "Être capable de distinguer les différentes natures de risque chimique : toxique, CMR, corrosif, inflammable, explosif, environnemental",
+            "Être capable d’expliquer les voies de pénétration et les mécanismes conduisant aux dommages",
+            "Être capable de réaliser l’inventaire des produits et une évaluation du risque chimique sur Seirich",
+            "Être capable de proposer des mesures de prévention hiérarchisées et de les suivre dans un plan d’actions"
+          ]
+        },
+        {
+          "title": "Référent en matière de lutte contre le harcèlement sexuel et les agissements sexistes",
+          "slug": "referent-harcelement-sexuel-agissements-sexistes",
+          "seoTitle": "Formation référent harcèlement sexuel – Hauts-de-France | ENMA",
+          "seoDescription": "Formation d'une journée pour les référents CSE et employeur : qualifier une situation, accueillir une victime ou un témoin, contribuer à l'enquête, prévenir.",
+          "duration": "7 h (1 jour)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Donner aux référents désignés les repères pour prévenir, accueillir, orienter et contribuer au traitement des situations.",
+          "prerequisites": "Être désigné, ou en voie de l'être, référent en matière de lutte contre le harcèlement sexuel et les agissements sexistes, ou exercer des fonctions d'encadrement.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Situer les enjeux, le contexte et le cadre d'intervention du référent",
+              "text": "Les enjeux humains, juridiques et organisationnels et les chiffres clés. Le référent CSE et le référent employeur : désignation, missions, moyens, articulation entre eux. Les autres acteurs : employeur, CSE, service de prévention et de santé au travail, inspection du travail, Défenseur des droits."
+            },
+            {
+              "title": "Citer ce que dit la loi et qualifier les différentes formes",
+              "text": "L'agissement sexiste (L.1142-2-1), le harcèlement sexuel et les faits assimilés (L.1153-1), l'agression sexuelle (Code pénal). Les éléments constitutifs, la répétition, l'acte unique grave, la notion de pression. Les sanctions disciplinaires, civiles et pénales et la protection des victimes et des témoins."
+            },
+            {
+              "title": "Accueillir et orienter une victime ou un témoin",
+              "text": "La posture d'écoute active, la neutralité, la bienveillance et la confidentialité. Le déroulement de l'entretien : accueil, recueil des faits, information sur les droits, traces écrites. L'orientation vers les ressources internes et externes et les situations d'urgence."
+            },
+            {
+              "title": "Contribuer à une enquête et accompagner les parties",
+              "text": "Le déclenchement et l'organisation de l'enquête : commission, calendrier, auditions, principe du contradictoire. Le compte rendu d'enquête, la conservation des éléments et la restitution. L'accompagnement de la victime, de l'auteur présumé et de l'employeur pendant et après l'enquête."
+            },
+            {
+              "title": "Engager une démarche de lutte et de prévention",
+              "text": "Les actions de prévention : information, affichage obligatoire, règlement intérieur, formation, intégration au DUERP. Le plan d'actions du référent : communication, procédure de signalement, suivi et bilan."
+            }
+          ],
+          "description": [
+            "Cette formation permet aux référents désignés par le comité social et économique ou par l'employeur d'exercer leur mission de prévention des agissements sexistes et du harcèlement sexuel, d'accueillir et d'orienter les victimes ou témoins et de contribuer au traitement des situations, conformément aux articles L.2314-1 et L.1153-5-1 du Code du travail. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et l'analyse de situations, et enseignement pratique, avec des études de cas de qualification, des jeux de rôle d'entretien et des exercices de préparation d'enquête, dans un cadre bienveillant garantissant la confidentialité des échanges, permettant aux référents d'exercer leur mission dès leur retour en poste.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique sous forme de mise en situation d'accueil d'une victime ou d'un témoin et de qualification d'une situation. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : articles L.2314-1, L.1153-5-1, L.1142-2-1 et L.1153-1 du Code du travail."
+          ],
+          "audience": "Membres du CSE désignés référents par le comité, salariés désignés référents par l'employeur, managers et cadres.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/premiers-secours-sante-mentale.jpg",
+          "imageAlt": "Mains posées sur celles d'une personne en signe de soutien",
+          "heroImage": "/images/premiers-secours-sante-mentale.jpg",
+          "objectives": [
+            "Être capable d’expliquer les enjeux, le contexte et le cadre d’intervention du référent",
+            "Être capable de citer les définitions légales et les sanctions prévues par le Code du travail et le Code pénal",
+            "Être capable de qualifier une situation : agissement sexiste, harcèlement sexuel, agression sexuelle",
+            "Être capable de mener un entretien d’accueil et d’orienter une victime ou un témoin",
+            "Être capable de contribuer à une enquête interne et d’accompagner la victime, l’auteur présumé et l’employeur",
+            "Être capable de proposer des actions de lutte et de prévention adaptées à l’entreprise"
+          ]
+        },
+        {
+          "title": "Prévenir et agir contre les risques psychosociaux",
+          "slug": "prevenir-agir-risques-psychosociaux",
+          "seoTitle": "Formation risques psychosociaux – Hauts-de-France | ENMA",
+          "seoDescription": "Formation de 1 ou 2 jours pour comprendre les risques psychosociaux, repérer les premiers signaux, évaluer les facteurs de risques et engager la prévention.",
+          "duration": "7 à 14 h (1 à 2 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Comprendre les risques psychosociaux, en repérer les premiers signaux et engager une démarche de prévention.",
+          "prerequisites": "Aucun.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Situer les enjeux relatifs aux risques psychosociaux",
+              "text": "Les enjeux humains : atteintes à la santé mentale et physique, troubles anxio-dépressifs, TMS, maladies cardiovasculaires. Les enjeux économiques et juridiques : absentéisme, turnover, qualité, responsabilité de l'employeur. Les représentations et idées reçues sur le stress et la souffrance au travail."
+            },
+            {
+              "title": "Définir les risques psychosociaux et leur cadre réglementaire",
+              "text": "Les définitions : stress, épuisement professionnel, violences internes et externes, harcèlement moral et sexuel. Le cadre réglementaire : L.4121-1, harcèlement moral (L.1152-1), ANI de 2008 et 2010, DUERP. Les acteurs : employeur, managers, CSE, service de prévention et de santé au travail, référents."
+            },
+            {
+              "title": "Reconnaître les premiers signaux",
+              "text": "Les signaux individuels : changements de comportement, troubles du sommeil, irritabilité, isolement. Les indicateurs collectifs : absentéisme, turnover, accidents, conflits, baisse de la qualité. L'attitude à adopter et les relais à mobiliser."
+            },
+            {
+              "title": "Évaluer les facteurs de risques et maîtriser le développement du risque",
+              "text": "Les six familles de facteurs : exigences du travail, exigences émotionnelles, autonomie, rapports sociaux, conflits de valeurs, insécurité de la situation de travail. L'analyse d'une situation de travail et la hiérarchisation des facteurs. Les outils d'évaluation de l'INRS."
+            },
+            {
+              "title": "Contribuer à une démarche de prévention",
+              "text": "Les trois niveaux de prévention : primaire, secondaire et tertiaire, et la priorité donnée à l'organisation du travail. Les étapes de la démarche : pilotage, diagnostic, plan d'actions, intégration au DUERP et suivi."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de prévenir les risques psychosociaux, en donnant à ses salariés et à son encadrement les moyens de comprendre ce qu'ils recouvrent, d'en reconnaître les premiers signaux, d'évaluer les facteurs de risques et d'engager une démarche de prévention, conformément à l'obligation de protéger la santé physique et mentale des travailleurs prévue par les articles L.4121-1 et suivants du Code du travail. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux, sur 1 jour (7 h) ou 2 jours (14 h) au choix de l'entreprise : le programme est le même, le format 2 jours approfondit chaque module (photolangage, jeux de rôle d'entretien avec un salarié en difficulté, méthodes d'évaluation par indicateurs, entretiens et questionnaires, conduite complète de la démarche avec comité de pilotage).",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et des apports méthodologiques, et enseignement pratique, avec des études de cas, des exercices de repérage et d'analyse de situations de travail et des travaux en sous-groupes, dans un cadre bienveillant garantissant la confidentialité des échanges, permettant d'approfondir les notions et de les transposer dans l'entreprise.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur l'analyse d'une situation de travail et l'identification des facteurs de risques psychosociaux et des actions de prévention. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : articles L.4121-1 et suivants du Code du travail, ANI du 2 juillet 2008 et du 26 mars 2010."
+          ],
+          "audience": "Salariés en charge de la santé, de la sécurité et des conditions de travail, managers, cadres dirigeants, ainsi que toute personne souhaitant acquérir les connaissances essentielles pour intervenir dans la prévention des risques psychosociaux.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/gestion-du-stress.jpg",
+          "imageAlt": "Salariée préoccupée, la tête appuyée sur la main",
+          "heroImage": "/images/gestion-du-stress.jpg",
+          "objectives": [
+            "Être capable d’expliquer les enjeux humains, juridiques et économiques des risques psychosociaux",
+            "Être capable de définir le stress, l’épuisement professionnel, les violences internes et externes et le harcèlement",
+            "Être capable de citer le cadre réglementaire et les acteurs de la prévention",
+            "Être capable de reconnaître les premiers signaux individuels et collectifs",
+            "Être capable d’évaluer les facteurs de risques psychosociaux d’une situation de travail",
+            "Être capable de contribuer à une démarche de prévention et de l’intégrer au DUERP"
+          ],
+          "durationDetail": "1 jour (7 h) ou 2 jours (14 h), au choix de l'entreprise. Même programme ; le format 2 jours approfondit chaque module (photolangage, jeux de rôle d'entretien avec un salarié en difficulté, méthodes d'évaluation par indicateurs, entretiens et questionnaires, conduite complète de la démarche avec comité de pilotage)."
+        },
+        {
+          "title": "ATEX, sensibilisation au risque et à la prévention",
+          "slug": "atex-sensibilisation-risque-prevention",
+          "seoTitle": "Formation ATEX sensibilisation – Hauts-de-France | ENMA",
+          "seoDescription": "Formation ATEX d'une journée : mécanismes de l'explosion, zonage, sources d'inflammation, marquage du matériel et règles de travail en zone ATEX. En intra.",
+          "duration": "7 h (1 jour)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Comprendre le risque d'explosion, lire le zonage et appliquer les règles de travail en sécurité en zone ATEX.",
+          "prerequisites": "Aucun. La connaissance des installations de l'établissement facilite les exercices pratiques.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Situer les bases réglementaires et le phénomène de combustion",
+              "text": "Les bases réglementaires : directives 1999/92/CE et 2014/34/UE, articles R.4227-42 et suivants, arrêté du 8 juillet 2003, document relatif à la protection contre les explosions. Le triangle du feu, l'hexagone de l'explosion, la déflagration et la détonation. Les effets d'une explosion : surpression, flamme, projections, explosions secondaires."
+            },
+            {
+              "title": "Décrire les conditions d'apparition du risque",
+              "text": "Les ATEX gaz et vapeurs : limites inférieure et supérieure d'explosivité, point éclair. Les ATEX poussières : granulométrie, mise en suspension, dépôts et explosions secondaires. Les situations à risque dans l'établissement : stockage, transvasement, nettoyage, fuites."
+            },
+            {
+              "title": "Lire le zonage et détecter le risque",
+              "text": "Le zonage : zones 0, 1, 2 pour les gaz et vapeurs, zones 20, 21, 22 pour les poussières, et le panneau Ex. Les treize sources d'inflammation de la norme EN 1127-1 : flammes, surfaces chaudes, étincelles mécaniques et électriques, électricité statique. La détection : explosimètres, détecteurs fixes et portatifs, seuils d'alarme."
+            },
+            {
+              "title": "Utiliser le matériel et les EPI adaptés en zone ATEX",
+              "text": "Le marquage du matériel : symbole Ex, groupe, catégorie 1, 2 ou 3, classe de température. Les outils, téléphones, lampes et appareils interdits ou autorisés selon la zone. Les EPI en zone ATEX : vêtements et chaussures antistatiques, mise à la terre, gants adaptés."
+            },
+            {
+              "title": "Appliquer les règles lors des travaux de maintenance et des interventions d'entreprises extérieures",
+              "text": "Le plan de prévention, le permis de feu, l'autorisation de travail et la consignation des installations. La conduite à tenir en cas de fuite, d'alarme ou d'incident et la surveillance après travaux."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de protéger les salariés susceptibles d'être exposés à la formation d'une atmosphère explosive, en leur permettant de comprendre les mécanismes du risque, de lire le zonage, d'identifier les sources d'inflammation et d'appliquer les règles de travail en sécurité, conformément aux articles R.4227-42 à R.4227-54 du Code du travail et à l'arrêté du 8 juillet 2003. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs, des démonstrations et des vidéos d'accidents, et enseignement pratique, avec des exercices de lecture du plan de zonage, d'identification des sources d'inflammation, de lecture du marquage du matériel et des études de cas construites à partir des installations de l'établissement, permettant de travailler en sécurité dès le retour au poste.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur l'identification des zones, des sources d'inflammation et des règles à appliquer dans une situation de travail en zone ATEX. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : articles R.4227-42 à R.4227-54 du Code du travail, arrêté du 8 juillet 2003, directives 1999/92/CE et 2014/34/UE."
+          ],
+          "audience": "Salariés et managers de proximité confrontés à la formation d'une atmosphère explosive, ainsi que toute personne souhaitant acquérir les connaissances essentielles sur le risque ATEX.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/formation-epi-1790071357409.jpg",
+          "imageAlt": "Salarié en gilet haute visibilité éteignant un feu à l'extincteur",
+          "heroImage": "/images/formation-epi-1790071357409.jpg",
+          "objectives": [
+            "Être capable de citer les bases réglementaires applicables aux atmosphères explosives",
+            "Être capable d’expliquer le phénomène de combustion, le triangle et l’hexagone de l’explosion",
+            "Être capable de décrire les conditions d’apparition d’une ATEX gaz, vapeurs ou poussières",
+            "Être capable de lire le zonage et la signalisation ATEX et d’identifier les sources d’inflammation",
+            "Être capable de choisir le matériel et les EPI adaptés à une zone à partir de leur marquage",
+            "Être capable d’appliquer les règles de sécurité lors des travaux de maintenance et des interventions d’entreprises extérieures"
+          ]
         }
       ],
       "opco": true,
@@ -2236,6 +2549,370 @@
           "seoTitle": "Formation auditeur interne ISO 9001 – Hauts-de-France | ENMA",
           "seoDescription": "Formation de deux jours pour préparer, conduire et restituer un audit interne qualité selon l'ISO 9001 et l'ISO 19011. Hauts-de-France.",
           "heroImage": "/images/auditeur-iso-9001.webp"
+        },
+        {
+          "title": "Gestion des crises et continuité d'activité",
+          "slug": "gestion-crises-continuite-activite",
+          "seoTitle": "Formation gestion de crise et PCA – Hauts-de-France | ENMA",
+          "seoDescription": "Formation de 3 jours : identifier les menaces, bâtir un plan de gestion de crise et un plan de continuité d'activité, piloter une cellule de crise. En intra.",
+          "duration": "21 h (3 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Se préparer à faire face à une crise : plans, cellule de crise, communication et retour à la normale.",
+          "prerequisites": "Connaître l'organisation et les activités essentielles de son entreprise.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Identifier les dangers qui menacent l'activité d'une entreprise",
+              "text": "Les notions d'incident, de crise, de catastrophe et la dynamique d'une crise. Les familles de menaces : naturelles, technologiques, sanitaires, cyber, sociales, fournisseurs, réputation. La cartographie des menaces et l'identification des activités essentielles."
+            },
+            {
+              "title": "Évaluer et prioriser les mesures préventives et réactionnelles",
+              "text": "Le bilan d'impact sur l'activité : durée maximale d'interruption admissible, perte de données maximale admissible. L'évaluation des risques en probabilité et en gravité et le choix des stratégies : réduire, transférer, accepter. Les mesures préventives et les mesures réactionnelles, leur coût et leur priorisation."
+            },
+            {
+              "title": "Élaborer un plan de gestion de crise et un plan de continuité d'activité",
+              "text": "Le plan de gestion de crise : organisation, rôles, déclenchement, annuaire de crise, fiches réflexes. Le plan de continuité d'activité : stratégies de continuité, moyens de repli, ressources critiques, procédures dégradées. Le maintien en condition opérationnelle des plans : tests, exercices, mises à jour."
+            },
+            {
+              "title": "Mettre en œuvre une cellule de crise et communiquer",
+              "text": "La cellule de crise : composition, rôles, salle, outils, main courante, tableau de situation, rythme des points de situation. La prise de décision en situation d'incertitude et la gestion du stress. La communication de crise interne et externe : salariés, clients, autorités, médias, réseaux sociaux."
+            },
+            {
+              "title": "Organiser le retour à la normale et rendre l'organisation plus robuste",
+              "text": "La sortie de crise et le retour progressif au fonctionnement standard : critères, étapes, communication. Le retour d'expérience, le plan d'amélioration et le renforcement de la résilience de l'organisation."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de renforcer sa capacité à faire face à une situation de crise, en donnant à ses dirigeants et responsables les moyens d'identifier les menaces pesant sur son activité, d'élaborer un plan de gestion de crise et un plan de continuité d'activité, de piloter une cellule de crise et d'organiser un retour rapide à la normale. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et des retours d'expérience de crises réelles, et enseignement pratique, avec des ateliers de cartographie des menaces et d'analyse d'impact, de rédaction de fiches réflexes et un exercice de simulation de crise en temps réel suivi d'un débriefing, permettant de repartir avec les bases des plans de l'entreprise.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique sous forme d'exercice de simulation de crise en cellule et de production d'un extrait de plan de continuité d'activité. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : NF EN ISO 22301, ISO 22361, ISO 31000 et guide PCA du SGDSN."
+          ],
+          "audience": "Risk managers, membres du comité de direction, ainsi que toute personne souhaitant acquérir les connaissances essentielles sur le management du risque et de la crise.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/2-1790110393319.jpg",
+          "imageAlt": "Mains échangeant des documents au-dessus d'un ordinateur portable",
+          "heroImage": "/images/2-1790110393319.jpg",
+          "objectives": [
+            "Être capable d’identifier les dangers qui menacent l’activité de l’entreprise",
+            "Être capable d’évaluer et de prioriser les mesures préventives et réactionnelles",
+            "Être capable d’élaborer un plan de gestion de crise et un plan de continuité d’activité",
+            "Être capable de mettre en œuvre et d’animer une cellule de crise",
+            "Être capable de communiquer avec les acteurs internes et externes en situation de crise",
+            "Être capable d’organiser le retour progressif au fonctionnement standard et de pérenniser les enseignements"
+          ]
+        },
+        {
+          "title": "Audits normes ISO 9001, 14001, 45001, 50001",
+          "slug": "audits-normes-iso-9001-14001-45001-50001",
+          "seoTitle": "Formation audits ISO 9001, 14001, 45001, 50001 – Hauts-de-France",
+          "seoDescription": "Formation de 5 jours pour réaliser des audits internes ou clients selon les normes ISO 9001, 14001, 45001 et 50001, avec la méthodologie de l'ISO 19011. Intra.",
+          "duration": "35 h (5 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Préparer, conduire et suivre des audits internes ou clients sur quatre normes ISO, avec une méthode commune.",
+          "prerequisites": "Connaître le fonctionnement général de l'entreprise. Une première approche de l'une des normes concernées facilite la formation.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Lire les exigences des normes et utiliser une grille de lecture commune",
+              "text": "La structure harmonisée : contexte, leadership, planification, support, réalisation des activités opérationnelles, évaluation des performances, amélioration. Les exigences spécifiques : satisfaction client (9001), aspects environnementaux (14001), dangers et participation des travailleurs (45001), revue énergétique et usages énergétiques significatifs (50001). L'approche processus, l'approche par les risques et le cycle PDCA."
+            },
+            {
+              "title": "Situer l'audit dans un système de management et en appliquer la méthodologie",
+              "text": "Les types d'audit : première, deuxième et tierce partie, audits de certification, audits combinés. Les principes de l'audit : intégrité, présentation impartiale, conscience professionnelle, confidentialité, indépendance, approche fondée sur la preuve et sur les risques. Le programme d'audit, le plan d'audit, la revue documentaire et la compétence des auditeurs."
+            },
+            {
+              "title": "Construire un questionnaire d'audit",
+              "text": "La construction du questionnaire à partir des exigences, des processus et des risques. Les questions ouvertes, fermées, de reformulation et la méthode QQOQCP. L'échantillonnage, la traçabilité et la préparation des documents de travail."
+            },
+            {
+              "title": "Conduire les investigations d'audit",
+              "text": "La réunion d'ouverture, la conduite des entretiens, l'observation et la vérification des enregistrements. Les preuves d'audit et la formulation des constats : conformité, non-conformité majeure ou mineure, piste d'amélioration. La posture de l'auditeur : écoute, neutralité, gestion des situations difficiles, réunion de clôture."
+            },
+            {
+              "title": "Rédiger le rapport et assurer le suivi d'audit",
+              "text": "La rédaction du rapport d'audit : périmètre, constats, conclusions, diffusion. Le suivi d'audit : analyse des causes, actions correctives, vérification de l'efficacité et revue du programme d'audit."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de disposer d'auditeurs capables de réaliser des audits internes ou des audits clients efficaces et conformes aux exigences des normes ISO 9001, ISO 14001, ISO 45001 et ISO 50001, en s'appuyant sur une méthodologie commune issue de la norme ISO 19011. Elle prépare à la conduite d'audits et ne délivre aucune certification ISO. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et une lecture guidée des normes, et enseignement pratique, avec des ateliers de construction des outils de l'auditeur, des jeux de rôle d'entretien d'audit et un audit à blanc réalisé dans l'entreprise ou sur une étude de cas complète, suivi de la rédaction des constats et du rapport, permettant aux participants de conduire leurs premiers audits dès la fin de la formation.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique sous forme d'audit à blanc, de rédaction des constats et du rapport d'audit. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : ISO 9001, ISO 14001, ISO 45001, ISO 50001 et lignes directrices ISO 19011."
+          ],
+          "audience": "Salariés et managers amenés à réaliser des audits internes ou des audits clients, ainsi que toute personne souhaitant acquérir les compétences pour réaliser des audits conformes aux exigences normatives.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/3-1790110354277.jpg",
+          "imageAlt": "Technicien en casque consultant des plans",
+          "heroImage": "/images/3-1790110354277.jpg",
+          "objectives": [
+            "Être capable de lire les exigences des quatre normes et d’utiliser une grille de lecture commune fondée sur la structure harmonisée",
+            "Être capable d’expliquer la place de l’audit dans un système de management et les principes de l’audit",
+            "Être capable de construire un programme, un plan et un questionnaire d’audit",
+            "Être capable de conduire les réunions d’ouverture et de clôture et les entretiens d’audit",
+            "Être capable de recueillir des preuves, de formuler des constats et de rédiger un rapport d’audit",
+            "Être capable d’assurer le suivi des actions correctives et d’en évaluer l’efficacité"
+          ]
+        },
+        {
+          "title": "Méthodes de résolution de problèmes",
+          "slug": "methodes-resolution-problemes",
+          "seoTitle": "Formation résolution de problèmes – Hauts-de-France | ENMA",
+          "seoDescription": "Formation de 3 jours aux méthodes de résolution de problèmes : QQOQCP, Ishikawa, 5 pourquoi, Pareto, PDCA, 8D, DMAIC, standardisation et amélioration continue.",
+          "duration": "21 h (3 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Traiter les problèmes à la racine avec des outils éprouvés, sur un cas réel de votre entreprise.",
+          "prerequisites": "Aucun. Les participants sont invités à apporter un problème réel de leur activité pour le traiter pendant la formation.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Situer les enjeux de la résolution de problèmes",
+              "text": "Les enjeux : coûts de non-qualité, satisfaction client, sécurité, motivation des équipes. Les pièges : solution avant analyse, recherche de coupable, traitement des symptômes. Correction, action corrective, action préventive et notion de cause racine."
+            },
+            {
+              "title": "Maîtriser les outils essentiels",
+              "text": "La description du problème : QQOQCP, est ou n'est pas, recueil de données. La recherche des causes : brainstorming, diagramme d'Ishikawa, 5 pourquoi, diagramme de Pareto. La décision : vote pondéré, matrice multicritère, analyse coûts et bénéfices."
+            },
+            {
+              "title": "Choisir la technique adaptée et suivre les étapes clés",
+              "text": "Les différentes techniques : PDCA, 8D, DMAIC, A3 et leurs domaines d'application. Les étapes clés : constituer l'équipe, décrire, contenir, analyser, choisir, mettre en œuvre, vérifier, standardiser. Le choix de la méthode selon la complexité, l'urgence et les données disponibles."
+            },
+            {
+              "title": "Mettre en œuvre une méthode de résolution de problèmes",
+              "text": "L'animation du groupe de résolution : rôles, règles, gestion du temps et des désaccords. Le traitement d'un problème réel de l'entreprise de la description à la vérification de l'efficacité. Le plan d'actions et les indicateurs de suivi."
+            },
+            {
+              "title": "Standardiser et inscrire la démarche dans l'amélioration continue",
+              "text": "La standardisation : mode opératoire, standard visuel, formation, généralisation à d'autres périmètres. L'intégration dans les pratiques métier et la dynamique d'amélioration continue : rituels, management visuel, Kaizen, partage des retours d'expérience."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de donner à ses salariés et managers les moyens de résoudre efficacement les problèmes opérationnels qu'ils rencontrent, d'en traiter les causes racines pour empêcher leur réapparition et d'inscrire leurs équipes dans une dynamique d'amélioration continue tendant vers l'excellence opérationnelle. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et des démonstrations des outils, et enseignement pratique, avec des ateliers de mise en œuvre sur des cas concrets et le traitement, en sous-groupes, d'un problème réel apporté par l'entreprise, permettant aux participants de repartir avec une démarche déjà engagée.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur le traitement complet d'un problème en sous-groupe, de la description jusqu'à la standardisation. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : PDCA, 8D, DMAIC, Kaizen et exigences d'amélioration continue de l'ISO 9001."
+          ],
+          "audience": "Salariés et managers confrontés à des problèmes opérationnels complexes, ainsi que toute personne souhaitant acquérir les compétences pour traiter efficacement les problèmes rencontrés en entreprise.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/4-copie-2-1790075245511.jpg",
+          "imageAlt": "Collaborateurs échangeant autour d'un bureau",
+          "heroImage": "/images/4-copie-2-1790075245511.jpg",
+          "objectives": [
+            "Être capable d’expliquer les enjeux de la résolution de problèmes et la différence entre correction et action corrective",
+            "Être capable de décrire un problème de façon factuelle à l’aide du QQOQCP",
+            "Être capable de rechercher et de hiérarchiser les causes avec le diagramme d’Ishikawa, les 5 pourquoi et le Pareto",
+            "Être capable de conduire les étapes clés d’une méthode de résolution : PDCA, 8D ou DMAIC",
+            "Être capable de choisir des solutions, de les mettre en œuvre et d’en vérifier l’efficacité",
+            "Être capable de standardiser les solutions et de les intégrer dans les pratiques métier"
+          ]
+        },
+        {
+          "title": "Système de management de l'énergie (ISO 50001)",
+          "slug": "systeme-management-energie-iso-50001",
+          "seoTitle": "Formation ISO 50001 management de l'énergie – Hauts-de-France",
+          "seoDescription": "Formation ISO 50001 de 2 jours : exigences de la norme, revue énergétique et préparation d'un système certifiable, obligatoire dès 23,6 GWh au 11 octobre 2027.",
+          "duration": "14 h (2 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Comprendre la norme ISO 50001 et anticiper l'obligation de système de management de l'énergie certifié.",
+          "prerequisites": "Connaître le fonctionnement général et les activités de son entreprise.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Expliquer les enjeux liés aux usages énergétiques pour l'entreprise",
+              "text": "Les enjeux économiques, environnementaux et d'image liés aux usages énergétiques. Ce que dit la loi : loi DDADUE du 30 avril 2025, système de management de l'énergie certifié obligatoire au plus tard le 11 octobre 2027 au-delà de 23,6 GWh, audit énergétique tous les quatre ans au-delà de 2,75 GWh. Les usages de l'énergie en entreprise : bâtiments, procédés, utilités, transport."
+            },
+            {
+              "title": "Définir un système de management et ses composantes essentielles",
+              "text": "Ce qu'est un système de management : politique, objectifs, processus, ressources, pilotage. L'approche processus, l'approche par les risques et opportunités et le cycle PDCA. Les composantes essentielles : contexte, leadership, planification, support, réalisation, évaluation, amélioration."
+            },
+            {
+              "title": "Lire les exigences de la norme ISO 50001",
+              "text": "La structure harmonisée et les chapitres 4 à 10 de la norme. Les exigences spécifiques : revue énergétique, usages énergétiques significatifs, situation énergétique de référence, indicateurs de performance énergétique, plan de collecte des données. Les informations documentées exigées et le vocabulaire de la norme."
+            },
+            {
+              "title": "Proposer des éléments de réponse aux exigences normatives",
+              "text": "La revue énergétique de l'entreprise : analyse des consommations, identification des usages énergétiques significatifs et des opportunités d'amélioration. Le diagnostic de l'existant : ce qui est déjà en place, les écarts et les priorités. Les éléments de réponse : politique, objectifs, indicateurs, procédures, enregistrements, audit interne et revue de direction."
+            },
+            {
+              "title": "Préparer la démarche de certification",
+              "text": "La démarche de certification : choix d'un organisme accrédité, audit initial en deux étapes, certificat valable trois ans, audits de surveillance annuels et renouvellement. Le plan de mise en œuvre : pilotage du projet, rôles, ressources, calendrier et communication interne."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de comprendre et d'anticiper ses obligations en matière de management de l'énergie, en donnant à ses responsables les moyens d'appréhender les exigences de la norme ISO 50001 et d'accompagner la mise en place d'un système de management de l'énergie certifiable. Depuis la loi n° 2025-391 du 30 avril 2025 dite DDADUE, les entreprises dont la consommation annuelle moyenne d'énergie finale atteint 23,6 GWh doivent disposer d'un système de management de l'énergie certifié au plus tard le 11 octobre 2027. Elle prépare à la mise en place d'un système certifiable et ne délivre aucune certification ISO. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et une lecture guidée de la norme ISO 50001, et enseignement pratique, avec des exercices de diagnostic de l'existant, des ateliers de construction des éléments de réponse aux exigences et l'élaboration d'un plan de mise en œuvre, permettant aux participants d'accompagner la mise en place d'un système de management certifiable.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur un diagnostic de l'existant au regard des exigences de la norme et la construction d'un plan de mise en œuvre. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : norme ISO 50001, structure harmonisée ISO et règles de certification ISO/IEC 17021-1."
+          ],
+          "audience": "Personnes en charge de la certification, managers, cadres dirigeants, ainsi que toute personne souhaitant acquérir les compétences pour accompagner la mise en place d'un système de management certifiable.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/10-1790074855592.jpg",
+          "imageAlt": "Panneaux photovoltaïques au coucher du soleil",
+          "heroImage": "/images/10-1790074855592.jpg",
+          "objectives": [
+            "Être capable d’expliquer les enjeux liés aux usages énergétiques pour l’entreprise, ainsi que les obligations issues de la loi DDADUE",
+            "Être capable de définir un système de management, l’approche processus, l’approche par les risques et le cycle PDCA",
+            "Être capable de décrire les composantes essentielles du système",
+            "Être capable de lire les exigences de la norme ISO 50001 et d’utiliser une grille de lecture",
+            "Être capable de réaliser une revue énergétique, d’identifier les usages énergétiques significatifs et de définir des indicateurs de performance énergétique",
+            "Être capable de décrire les étapes de la démarche de certification et d’élaborer un plan de mise en œuvre"
+          ]
+        },
+        {
+          "title": "Système de management de la qualité (ISO 9001)",
+          "slug": "systeme-management-qualite-iso-9001",
+          "seoTitle": "Formation ISO 9001 management de la qualité – Hauts-de-France",
+          "seoDescription": "Formation ISO 9001 de 2 jours : enjeux de la qualité, exigences de la norme, diagnostic de l'existant et plan de mise en œuvre d'un système certifiable.",
+          "duration": "14 h (2 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Comprendre la norme ISO 9001 et accompagner la mise en place d'un système de management de la qualité certifiable.",
+          "prerequisites": "Connaître le fonctionnement général et les activités de son entreprise.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Expliquer les enjeux liés à la qualité pour l'entreprise",
+              "text": "Les enjeux liés à la qualité : satisfaction et fidélisation des clients, coûts de non-qualité, image, accès aux marchés. Les sept principes de management de la qualité : orientation client, leadership, implication du personnel, approche processus, amélioration, prise de décision fondée sur des preuves, management des relations avec les parties intéressées. La place de la certification ISO 9001 dans les relations commerciales et les appels d'offres."
+            },
+            {
+              "title": "Définir un système de management et ses composantes essentielles",
+              "text": "Ce qu'est un système de management : politique, objectifs, processus, ressources, pilotage. L'approche processus, l'approche par les risques et opportunités et le cycle PDCA. Les composantes essentielles : contexte, leadership, planification, support, réalisation, évaluation, amélioration."
+            },
+            {
+              "title": "Lire les exigences de la norme ISO 9001",
+              "text": "La structure harmonisée et les chapitres 4 à 10 de la norme. Les exigences spécifiques : exigences relatives aux produits et services, maîtrise des prestataires externes, maîtrise des éléments de sortie non conformes, satisfaction du client. Les informations documentées exigées et le vocabulaire de la norme."
+            },
+            {
+              "title": "Proposer des éléments de réponse aux exigences normatives",
+              "text": "La cartographie des processus de l'entreprise : processus de management, de réalisation et de support. Le diagnostic de l'existant : ce qui est déjà en place, les écarts et les priorités. Les éléments de réponse : politique, objectifs, indicateurs, procédures, enregistrements, audit interne et revue de direction."
+            },
+            {
+              "title": "Préparer la démarche de certification",
+              "text": "La démarche de certification : choix d'un organisme accrédité, audit initial en deux étapes, certificat valable trois ans, audits de surveillance annuels et renouvellement. Le plan de mise en œuvre : pilotage du projet, rôles, ressources, calendrier et communication interne."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de structurer et d'améliorer son organisation au service de la satisfaction de ses clients, en donnant à ses responsables les moyens d'appréhender les exigences de la norme ISO 9001 et d'accompagner la mise en place d'un système de management de la qualité certifiable. Elle prépare à la mise en place d'un système certifiable et ne délivre aucune certification ISO. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et une lecture guidée de la norme ISO 9001, et enseignement pratique, avec des exercices de diagnostic de l'existant, des ateliers de construction des éléments de réponse aux exigences et l'élaboration d'un plan de mise en œuvre, permettant aux participants d'accompagner la mise en place d'un système de management certifiable.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur un diagnostic de l'existant au regard des exigences de la norme et la construction d'un plan de mise en œuvre. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : norme ISO 9001, structure harmonisée ISO et règles de certification ISO/IEC 17021-1."
+          ],
+          "audience": "Personnes en charge de la certification, managers, cadres dirigeants, ainsi que toute personne souhaitant acquérir les compétences pour accompagner la mise en place d'un système de management certifiable.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/4-1790108467451.jpg",
+          "imageAlt": "Salle de réunion lumineuse avec tables et chaises",
+          "heroImage": "/images/4-1790108467451.jpg",
+          "objectives": [
+            "Être capable d’expliquer les enjeux liés à la qualité pour l’entreprise",
+            "Être capable de définir un système de management, l’approche processus, l’approche par les risques et le cycle PDCA",
+            "Être capable de décrire les composantes essentielles du système",
+            "Être capable de lire les exigences de la norme ISO 9001 et d’utiliser une grille de lecture",
+            "Être capable d’identifier les exigences relatives au client, à la maîtrise des processus opérationnels et au traitement des non-conformités",
+            "Être capable de décrire les étapes de la démarche de certification et d’élaborer un plan de mise en œuvre"
+          ]
+        },
+        {
+          "title": "Système de management de la sécurité (ISO 45001)",
+          "slug": "systeme-management-securite-iso-45001",
+          "seoTitle": "Formation ISO 45001 management de la sécurité – Hauts-de-France",
+          "seoDescription": "Formation ISO 45001 de 2 jours : enjeux santé-sécurité, exigences de la norme, lien avec le DUERP et plan de mise en œuvre d'un système certifiable. En intra.",
+          "duration": "14 h (2 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Comprendre la norme ISO 45001 et accompagner la mise en place d'un système de management de la santé et de la sécurité certifiable.",
+          "prerequisites": "Connaître le fonctionnement général et les activités de son entreprise.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Expliquer les enjeux liés à la sécurité pour l'entreprise",
+              "text": "Les enjeux liés à la santé et à la sécurité au travail : humains, juridiques, économiques et sociaux. Le lien entre le système de management et les obligations réglementaires : évaluation des risques, DUERP, PAPRIPACT, consultation du CSE. Les indicateurs : taux de fréquence, taux de gravité, presque-accidents, maladies professionnelles."
+            },
+            {
+              "title": "Définir un système de management et ses composantes essentielles",
+              "text": "Ce qu'est un système de management : politique, objectifs, processus, ressources, pilotage. L'approche processus, l'approche par les risques et opportunités et le cycle PDCA. Les composantes essentielles : contexte, leadership, planification, support, réalisation, évaluation, amélioration."
+            },
+            {
+              "title": "Lire les exigences de la norme ISO 45001",
+              "text": "La structure harmonisée et les chapitres 4 à 10 de la norme. Les exigences spécifiques : consultation et participation des travailleurs, identification des dangers, évaluation des risques pour la santé et la sécurité, exigences légales, préparation aux situations d'urgence, incidents. Les informations documentées exigées et le vocabulaire de la norme."
+            },
+            {
+              "title": "Proposer des éléments de réponse aux exigences normatives",
+              "text": "L'articulation entre le DUERP existant et les exigences de la norme, la hiérarchie des mesures de prévention. Le diagnostic de l'existant : ce qui est déjà en place, les écarts et les priorités. Les éléments de réponse : politique, objectifs, indicateurs, procédures, enregistrements, audit interne et revue de direction."
+            },
+            {
+              "title": "Préparer la démarche de certification",
+              "text": "La démarche de certification : choix d'un organisme accrédité, audit initial en deux étapes, certificat valable trois ans, audits de surveillance annuels et renouvellement. Le plan de mise en œuvre : pilotage du projet, rôles, ressources, calendrier et communication interne."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de structurer sa démarche de prévention des risques professionnels et d'améliorer durablement la santé et la sécurité de ses salariés, en donnant à ses responsables les moyens d'appréhender les exigences de la norme ISO 45001 et d'accompagner la mise en place d'un système de management de la santé et de la sécurité au travail certifiable. Elle prépare à la mise en place d'un système certifiable et ne délivre aucune certification ISO. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et une lecture guidée de la norme ISO 45001, et enseignement pratique, avec des exercices de diagnostic de l'existant, des ateliers de construction des éléments de réponse aux exigences et l'élaboration d'un plan de mise en œuvre, permettant aux participants d'accompagner la mise en place d'un système de management certifiable.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur un diagnostic de l'existant au regard des exigences de la norme et la construction d'un plan de mise en œuvre. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : norme ISO 45001, structure harmonisée ISO et règles de certification ISO/IEC 17021-1."
+          ],
+          "audience": "Personnes en charge de la certification, managers, cadres dirigeants, ainsi que toute personne souhaitant acquérir les compétences pour accompagner la mise en place d'un système de management certifiable.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/6-1790716343174.jpg",
+          "imageAlt": "Responsables et salariés en gilets haute visibilité réunis dans un atelier",
+          "heroImage": "/images/6-1790716343174.jpg",
+          "objectives": [
+            "Être capable d’expliquer les enjeux liés à la sécurité pour l’entreprise",
+            "Être capable de définir un système de management, l’approche processus, l’approche par les risques et le cycle PDCA",
+            "Être capable de décrire les composantes essentielles du système",
+            "Être capable de lire les exigences de la norme ISO 45001 et d’utiliser une grille de lecture",
+            "Être capable d’identifier les exigences relatives à la participation des travailleurs, à l’identification des dangers et à l’évaluation des risques",
+            "Être capable de décrire les étapes de la démarche de certification et d’élaborer un plan de mise en œuvre"
+          ]
+        },
+        {
+          "title": "Système de management de l'environnement (ISO 14001)",
+          "slug": "systeme-management-environnement-iso-14001",
+          "seoTitle": "Formation ISO 14001 management environnemental – Hauts-de-France",
+          "seoDescription": "Formation ISO 14001 de 2 jours : enjeux environnementaux, aspects significatifs, exigences de la norme et plan de mise en œuvre d'un système certifiable.",
+          "duration": "14 h (2 jours)",
+          "format": "Intra-entreprise",
+          "effectif": "2 à 8 stagiaires",
+          "intro": "Comprendre la norme ISO 14001 et accompagner la mise en place d'un système de management environnemental certifiable.",
+          "prerequisites": "Connaître le fonctionnement général et les activités de son entreprise.",
+          "certification": "Attestation de fin de formation | Grille de compétences individuelle",
+          "programme": [
+            {
+              "title": "Expliquer les enjeux environnementaux pour l'entreprise",
+              "text": "Les enjeux environnementaux pour l'entreprise : réglementation, attentes des clients et des parties intéressées, maîtrise des coûts, image. Les impacts des activités : rejets, déchets, consommations de ressources, émissions de gaz à effet de serre, biodiversité. La place de la certification ISO 14001 dans la démarche RSE et les appels d'offres."
+            },
+            {
+              "title": "Définir un système de management et ses composantes essentielles",
+              "text": "Ce qu'est un système de management : politique, objectifs, processus, ressources, pilotage. L'approche processus, l'approche par les risques et opportunités et le cycle PDCA. Les composantes essentielles : contexte, leadership, planification, support, réalisation, évaluation, amélioration."
+            },
+            {
+              "title": "Lire les exigences de la norme ISO 14001",
+              "text": "La structure harmonisée et les chapitres 4 à 10 de la norme. Les exigences spécifiques : aspects environnementaux et impacts associés, perspective du cycle de vie, obligations de conformité, préparation et réponse aux situations d'urgence. Les informations documentées exigées et le vocabulaire de la norme."
+            },
+            {
+              "title": "Proposer des éléments de réponse aux exigences normatives",
+              "text": "L'analyse environnementale de l'entreprise : identification des aspects, cotation et détermination des aspects significatifs. Le diagnostic de l'existant : ce qui est déjà en place, les écarts et les priorités. Les éléments de réponse : politique, objectifs, indicateurs, procédures, enregistrements, audit interne et revue de direction."
+            },
+            {
+              "title": "Préparer la démarche de certification",
+              "text": "La démarche de certification : choix d'un organisme accrédité, audit initial en deux étapes, certificat valable trois ans, audits de surveillance annuels et renouvellement. Le plan de mise en œuvre : pilotage du projet, rôles, ressources, calendrier et communication interne."
+            }
+          ],
+          "description": [
+            "Cette formation permet à l'entreprise de maîtriser les impacts de ses activités sur l'environnement et de répondre aux attentes de ses parties intéressées, en donnant à ses responsables les moyens d'appréhender les exigences de la norme ISO 14001 et d'accompagner la mise en place d'un système de management environnemental certifiable. Elle prépare à la mise en place d'un système certifiable et ne délivre aucune certification ISO. Elle se déroule en présentiel, en intra-entreprise, dans vos locaux.",
+            "Le formateur mêle enseignement théorique, par des exposés interactifs et une lecture guidée de la norme ISO 14001, et enseignement pratique, avec des exercices de diagnostic de l'existant, des ateliers de construction des éléments de réponse aux exigences et l'élaboration d'un plan de mise en œuvre, permettant aux participants d'accompagner la mise en place d'un système de management certifiable.",
+            "L'évaluation des acquis repose sur une évaluation des connaissances par QCM et une évaluation pratique portant sur un diagnostic de l'existant au regard des exigences de la norme et la construction d'un plan de mise en œuvre. La formation est sanctionnée par une attestation de fin de formation et une grille de compétences individuelle, remises au stagiaire et à son employeur. Elle est animée par un formateur qualifié du réseau ENMA Formation, justifiant d'au moins cinq ans d'expérience dans le domaine. Cadre réglementaire et références : norme ISO 14001, structure harmonisée ISO et règles de certification ISO/IEC 17021-1."
+          ],
+          "audience": "Personnes en charge de la certification, managers, cadres dirigeants, ainsi que toute personne souhaitant acquérir les compétences pour accompagner la mise en place d'un système de management certifiable.",
+          "funding": "Cette formation est éligible à une prise en charge par votre OPCO au titre du plan de développement des compétences. ENMA Formation vous fournit devis, programme pédagogique et convention de formation pour appuyer votre demande de financement.",
+          "image": "/images/2048-1790069858090.webp",
+          "imageAlt": "Terril des Hauts-de-France sous un ciel clair",
+          "heroImage": "/images/2048-1790069858090.webp",
+          "objectives": [
+            "Être capable d’expliquer les enjeux environnementaux pour l’entreprise",
+            "Être capable de définir un système de management, l’approche processus, l’approche par les risques et le cycle PDCA",
+            "Être capable de décrire les composantes essentielles du système",
+            "Être capable de lire les exigences de la norme ISO 14001 et d’utiliser une grille de lecture",
+            "Être capable d’identifier les aspects environnementaux significatifs, les obligations de conformité et les situations d’urgence",
+            "Être capable de décrire les étapes de la démarche de certification et d’élaborer un plan de mise en œuvre"
+          ]
         }
       ],
       "opco": true,
